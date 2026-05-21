@@ -16,8 +16,8 @@ GdkPixbuf can load image data encoded in different formats, such as:
 Additionally, you can write a GdkPixbuf loader module and install it into
 a well-known location, in order to load a file format.
 
-GdkPixbuf is used by the [GTK](https://www.gtk.org) toolkit for loading
-graphical assets.
+GdkPixbuf is used by the [CTK](https://github.com/cafe-desktop/ctk) toolkit
+for loading graphical assets.
 
 ## Building GdkPixbuf
 
