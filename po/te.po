@@ -1,7 +1,7 @@
-# translation of gtk+.master.te.po to Telugu
-# Telugu translation of gtk+
+# translation of ctk+.master.te.po to Telugu
+# Telugu translation of ctk+
 # Copyright (C) 2005,2007 Free Software Foundation, Andhra Pradesh.
-# This file is distributed under the same license as the gtk+ package.
+# This file is distributed under the same license as the ctk+ package.
 #
 #
 # Prajasakti Localisation Team <localisation@prajasakti.com>, 2005.
@@ -11,8 +11,8 @@
 # GVS.Giri <gvs.giri947@gmail.com>,2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+.master.te\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gtk"
+"Project-Id-Version: ctk+.master.te\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=ctk"
 "%2b&keywords=I18N+L10N&component=gdk\n"
 "POT-Creation-Date: 2012-09-14 22:09+0000\n"
 "PO-Revision-Date: 2012-09-19 00:18+0530\n"

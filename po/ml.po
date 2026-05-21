@@ -1,14 +1,14 @@
-# translation of gtk+.master.ml.po to
-# This file is distributed under the same license as the gtk+ package.
-# Copyright (C) 2003-2008 gtk+'S COPYRIGHT HOLDER.
+# translation of ctk+.master.ml.po to
+# This file is distributed under the same license as the ctk+ package.
+# Copyright (C) 2003-2008 ctk+'S COPYRIGHT HOLDER.
 # FSF-India <locale@gnu.org.in>, 2003.
 # Ani Peter <apeter@redhat.com>, 2006, 2007, 2009.
 # Hari Vishnu <harivishnu@gmail.com>, 2008.
 # Anish A <aneesh.nl@gmail.com>, 2012, 2013.
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+.master.ml\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gtk"
+"Project-Id-Version: ctk+.master.ml\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=ctk"
 "%2b&keywords=I18N+L10N&component=gdk\n"
 "POT-Creation-Date: 2013-02-12 15:45+0000\n"
 "PO-Revision-Date: 2013-02-15 11:28+0530\n"

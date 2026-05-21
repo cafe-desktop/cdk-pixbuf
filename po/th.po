@@ -1,12 +1,12 @@
-# Thai translation for gtk+.
+# Thai translation for ctk+.
 # Copyright (C) 2003-2014 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gtk+ package.
+# This file is distributed under the same license as the ctk+ package.
 # Paisa Seeluangsawat <paisa@users.sf.net>, 2003, 2004.
 # Theppitak Karoonboonyanan <thep@linux.thai.net>, 2005-2014.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+\n"
+"Project-Id-Version: ctk+\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gdk-pixbuf/issues/new\n"
 "POT-Creation-Date: 2024-09-03 21:05+0000\n"
 "PO-Revision-Date: 2024-10-01 11:58+0700\n"

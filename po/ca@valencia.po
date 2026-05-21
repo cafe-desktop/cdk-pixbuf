@@ -29,7 +29,7 @@
 # Jordi Serratosa <jordis@softcatala.cat>, 2017.
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+ 2.8.2\n"
+"Project-Id-Version: ctk+ 2.8.2\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gdk-"
 "pixbuf&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2017-09-10 06:41+0000\n"

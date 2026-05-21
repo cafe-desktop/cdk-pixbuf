@@ -7,7 +7,7 @@
 # pan93412 <pan93412@gmail.com>, 2019.
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+ 2.25.3\n"
+"Project-Id-Version: ctk+ 2.25.3\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gdk-pixbuf/issues\n"
 "POT-Creation-Date: 2020-11-10 02:27+0000\n"
 "PO-Revision-Date: 2021-04-24 01:41+0000\n"
@@ -129,7 +129,7 @@ msgstr "無法載入用來載入影像的模組：%s：%s"
 msgid ""
 "Image-loading module %s does not export the proper interface; perhaps it’s "
 "from a different gdk-pixbuf version?"
-msgstr "影像載入模組 %s 沒有匯出正確的介面；它是否屬於另一個 gtk-pixbuf 版本？"
+msgstr "影像載入模組 %s 沒有匯出正確的介面；它是否屬於另一個 ctk-pixbuf 版本？"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:836 gdk-pixbuf/gdk-pixbuf-io.c:879
 #, c-format

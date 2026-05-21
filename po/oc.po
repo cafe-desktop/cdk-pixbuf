@@ -1,5 +1,5 @@
 # Translation of oc.po to Occitan
-# Occitan translation of gtk+ 2.x.
+# Occitan translation of ctk+ 2.x.
 # Copyright (C) 1998-2007 Free Software Foundation, Inc.
 # This file is distributed under the GNU Library General Public License Version 2.
 # Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>, 2006-2008.

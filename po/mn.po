@@ -1,6 +1,6 @@
 # translation of mn.po to Mongolian
-# translation of gtk+.HEAD.po to Mongolian
-# translation of gtk+.mn.po to Mongolian
+# translation of ctk+.HEAD.po to Mongolian
+# translation of ctk+.mn.po to Mongolian
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) 2003 OpenMN team
 # SukhOchir <sukhochir@csms.edu.mn>
@@ -248,7 +248,7 @@ msgstr "Файлын төгсгөл хэт эрт олдлоо"
 msgid "Couldn't allocate memory for saving BMP file"
 msgstr "JPEG төрлийн файлыг санах ойд байрлуулж чадсангүй"
 
-# gtk/gtkfilesel.c:3854
+# ctk/ctkfilesel.c:3854
 #: gdk-pixbuf/io-bmp.c:1369
 #, fuzzy
 msgid "Couldn't write to BMP file"
@@ -302,7 +302,7 @@ msgstr "JPEG зургийн төрөл байна"
 msgid "Could not allocate memory: %s"
 msgstr "Файлын толгойг санах ойд ачаалж чадахгүй байна"
 
-# gtk/gtkfilesel.c:1369
+# ctk/ctkfilesel.c:1369
 #: gdk-pixbuf/io-gdip-utils.c:179 gdk-pixbuf/io-gdip-utils.c:293
 #: gdk-pixbuf/io-gdip-utils.c:333
 #, fuzzy, c-format
@@ -316,19 +316,19 @@ msgstr ""
 "%s-г тэмдэглэж чадсангүй:\n"
 "%s"
 
-# gtk/gtkfilesel.c:1369
+# ctk/ctkfilesel.c:1369
 #: gdk-pixbuf/io-gdip-utils.c:205
 #, fuzzy, c-format
 msgid "Could not read from stream: %s"
 msgstr "\"%s\" хавтас үүсгэхэд алдлаа: %s"
 
-# gtk/gtkfilesel.c:3854
+# ctk/ctkfilesel.c:3854
 #: gdk-pixbuf/io-gdip-utils.c:617 gdk-pixbuf/io-gdip-utils.c:752
 #, fuzzy
 msgid "Couldn't load bitmap"
 msgstr "Файлын нэр өөрчлөгдсөнгүй"
 
-# gtk/gtkfilesel.c:3854
+# ctk/ctkfilesel.c:3854
 #: gdk-pixbuf/io-gdip-utils.c:774
 #, fuzzy
 msgid "Couldn't load metafile"
@@ -509,7 +509,7 @@ msgstr "ICO файлын өнгөний гүн дэмжигдээгүй: %d"
 msgid "Couldn't allocate memory for stream"
 msgstr "Файлын толгойг санах ойд ачаалж чадахгүй байна"
 
-# gtk/gtkfilesel.c:3854
+# ctk/ctkfilesel.c:3854
 #: gdk-pixbuf/io-jasper.c:104
 #, fuzzy
 msgid "Couldn't decode image"
@@ -1057,7 +1057,7 @@ msgstr ""
 msgid "Failed to write TIFF data"
 msgstr "TIFF зураг онгойсонгүй "
 
-# gtk/gtkfilesel.c:3854
+# ctk/ctkfilesel.c:3854
 #: gdk-pixbuf/io-tiff.c:813
 #, fuzzy
 msgid "Couldn't write to TIFF file"

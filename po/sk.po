@@ -1,6 +1,6 @@
 # Slovak translation of gdk-pixbuf.
 # Copyright (C) 1999, 2001, 2002, 2004-2010, 2013 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gtk+ package.
+# This file is distributed under the same license as the ctk+ package.
 # Stefan Ondrejicka <ondrej@idata.sk>, 1999.
 # Stanislav Visnovsky <visnovsky@nenya.ms.mff.cuni.cz>, 2001, 2002, 2004.
 # Marcel Telka <marcel@telka.sk>, 2005, 2008.

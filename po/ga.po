@@ -1,6 +1,6 @@
-# Irish translations for gtk+ package.
+# Irish translations for ctk+ package.
 # Copyright (C) 1999-2009 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gtk+ package.
+# This file is distributed under the same license as the ctk+ package.
 # Seán Ó Ceallaigh <soc@users.sourceforge.net>, 1999.
 # Alastair McKinstry <mckinstry@computer.org>, 2004.
 # Alan Horkan <horkan@maths.tcd.ie>, 2005.
@@ -8,7 +8,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+.master\n"
+"Project-Id-Version: ctk+.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gdk-"
 "pixbuf\n"
 "POT-Creation-Date: 2012-02-04 18:44-0500\n"

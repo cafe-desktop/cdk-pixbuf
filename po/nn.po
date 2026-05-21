@@ -1,5 +1,5 @@
 # translation of nn.po to Norwegian Nynorsk
-# Norwegian translation of gtk+.
+# Norwegian translation of ctk+.
 # Copyright (C) 1998-2002, 2003, 2004 Free Software Foundation, Inc.
 #
 # Kjartan Maraas <kmaraas@gnome.org>, 1998-2001.

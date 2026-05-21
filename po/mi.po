@@ -1,11 +1,11 @@
-# Māori translation of gtk+ 2.0.
+# Māori translation of ctk+ 2.0.
 # Copyright (C) 2004 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gtk+ package.
+# This file is distributed under the same license as the ctk+ package.
 # John C Barstow <jbowtie@amathaine.com>, 2004.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+ 2.3.2\n"
+"Project-Id-Version: ctk+ 2.3.2\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gdk-"
 "pixbuf\n"
 "POT-Creation-Date: 2012-02-04 18:44-0500\n"

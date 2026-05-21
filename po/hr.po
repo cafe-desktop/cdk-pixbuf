@@ -1,9 +1,9 @@
-# Translation of gtk+ to Croatiann
+# Translation of ctk+ to Croatiann
 # Copyright (C) Croatiann team
 # Translators: Automatski Prijevod <>,Denis Lackovic <delacko@fly.srk.fer.hr>,Kresimir Kalafatic <>,Mato Kutlić <mate@iskraemeco.hr>,pr pr <delacko@192.168.0.1>,Robert Sedak <robert.sedak@sk.tel.hr>,Vlatko Kosturjak <kost@linux.hr>,
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+ 0\n"
+"Project-Id-Version: ctk+ 0\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gdk-pixbuf/issues\n"
 "POT-Creation-Date: 2020-11-10 02:27+0000\n"
 "PO-Revision-Date: 2021-09-04 20:14+0200\n"

@@ -1,13 +1,13 @@
-# translation of gtk+.master.mai.po to Hindi
+# translation of ctk+.master.mai.po to Hindi
 # BOSS GNU/Linux <bosslinux@cdac.in>, 2008.
 # Rajesh Ranjan <rranjan@redhat.com>, 2009.
 # Rajesh Ranjan <rajesh672@gmail.com>, 2009.
-# translation to gtk+ to Maithili
+# translation to ctk+ to Maithili
 # Copyright (C) 2006 The GNOME Foundation
 # This file is distributed under the same license as the PACKAGE package.
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+.master.mai\n"
+"Project-Id-Version: ctk+.master.mai\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gdk-"
 "pixbuf\n"
 "POT-Creation-Date: 2012-02-04 18:44-0500\n"

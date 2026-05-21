@@ -56,7 +56,7 @@ MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
   gdip_fill_vtable (module);
 
   module->save_to_callback = gdk_pixbuf__gdip_image_save_TIFF_to_callback;
-  module->save = gdk_pixbuf__gdip_image_save_TIFF; /* for gtk < 2.14, you need to implement both. otherwise gdk-pixbuf-queryloaders fails */
+  module->save = gdk_pixbuf__gdip_image_save_TIFF; /* for ctk < 2.14, you need to implement both. otherwise gdk-pixbuf-queryloaders fails */
 }
 
 MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)

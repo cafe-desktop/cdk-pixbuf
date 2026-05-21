@@ -1,4 +1,4 @@
-# translation of gtk+.HEAD.po to Arabic
+# translation of ctk+.HEAD.po to Arabic
 # Copyright (C) 2002,2003, 2004, 2006, 2007, 2008 Free Software Foundation, Inc.
 # Sayed Jaffer Al-Mosawi <mosawi@arabeyes.org>, 2002.
 # Isam Bayazidi <bayazidi@arabeyes.org>, 2002.
@@ -10,7 +10,7 @@
 # Khaled Hosny <khaledhosny@eglug.org>, 2006, 2007, 2008, 2009, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+.HEAD\n"
+"Project-Id-Version: ctk+.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gdk-"
 "pixbuf\n"
 "POT-Creation-Date: 2012-02-04 18:44-0500\n"

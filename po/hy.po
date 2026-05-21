@@ -1,5 +1,5 @@
-# Translation of gtk+ to Armenian
-# This file is distributed under the same license as the gtk+ package.
+# Translation of ctk+ to Armenian
+# This file is distributed under the same license as the ctk+ package.
 # Lilit Azizbekyan <l@freenet.am>, 2005.
 # Lilit Sargsyan <magicliliac@yahoo.co.uk>, 2005.
 # Norayr Chilingaryan <norik@freenet.am>, 2005.
@@ -8,7 +8,7 @@
 # Nune <nune@instigatedesign.com>, 2010
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+.HEAD.hy\n"
+"Project-Id-Version: ctk+.HEAD.hy\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gdk-"
 "pixbuf\n"
 "POT-Creation-Date: 2012-02-04 18:44-0500\n"

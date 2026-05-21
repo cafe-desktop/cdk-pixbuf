@@ -1,9 +1,9 @@
-# Limburgish translation of gtk+.
+# Limburgish translation of ctk+.
 # Mathieu van Woerkom <mathieu@brabants.org>, 2003.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+ 2.0\n"
+"Project-Id-Version: ctk+ 2.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gdk-"
 "pixbuf\n"
 "POT-Creation-Date: 2012-02-04 18:44-0500\n"

@@ -1,5 +1,5 @@
-# translation of gtk+.master.ta.po to Tamil
-# translation of gtk+.HEAD.ta.po to
+# translation of ctk+.master.ta.po to Tamil
+# translation of ctk+.HEAD.ta.po to
 # translation of ta.po to
 # Tamil translation of Gtk+
 # Copyright (C) 2001, 2002, 2003, 2006, 2009 Free Software Foundation, Inc.
@@ -10,7 +10,7 @@
 # I Felix <ifelix@redhat.com>, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+.master.ta\n"
+"Project-Id-Version: ctk+.master.ta\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gdk-"
 "pixbuf\n"
 "POT-Creation-Date: 2012-02-04 18:44-0500\n"

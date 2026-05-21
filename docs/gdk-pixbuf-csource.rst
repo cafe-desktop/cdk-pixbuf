@@ -91,7 +91,7 @@ SEE ALSO
 --------
 
 The ``GdkPixbuf`` documentation, shipped by gdk-pixbuf, and also
-available online on `docs.gtk.org <https://docs.gtk.org/gdk-pixbuf/>`__.
+available online on `docs.ctk.org <https://docs.ctk.org/gdk-pixbuf/>`__.
 
 BUGS
 ----

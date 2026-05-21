@@ -360,7 +360,7 @@ msgstr "Resim BMP formatı için çok geniş."
 msgid "Couldn’t allocate memory for saving BMP file"
 msgstr "BMP dosyasını kaydetmek için bellek ayrılamadı"
 
-# gtk/gtkfilesel.c:3277
+# ctk/ctkfilesel.c:3277
 #: gdk-pixbuf/io-bmp.c:1462
 msgid "Couldn’t write to BMP file"
 msgstr "BMP dosyasına yazılamadı"
@@ -420,7 +420,7 @@ msgstr "TIFF"
 msgid "Could not allocate memory: %s"
 msgstr "Bellek ayrılamadı: %s"
 
-# gtk/gtkfilesel.c:1011
+# ctk/ctkfilesel.c:1011
 #: gdk-pixbuf/io-gdip-utils.c:180 gdk-pixbuf/io-gdip-utils.c:294
 #: gdk-pixbuf/io-gdip-utils.c:334
 #, c-format
@@ -432,18 +432,18 @@ msgstr "Akış oluşturulamadı: %s"
 msgid "Could not seek stream: %s"
 msgstr "Akışta atlanamadı: %s"
 
-# gtk/gtkfilesel.c:1011
+# ctk/ctkfilesel.c:1011
 #: gdk-pixbuf/io-gdip-utils.c:206
 #, c-format
 msgid "Could not read from stream: %s"
 msgstr "Akıştan okunamadı: %s"
 
-# gtk/gtkfilesel.c:3277
+# ctk/ctkfilesel.c:3277
 #: gdk-pixbuf/io-gdip-utils.c:620
 msgid "Couldn’t load bitmap"
 msgstr "Biteşlem yüklenemedi"
 
-# gtk/gtkfilesel.c:3277
+# ctk/ctkfilesel.c:3277
 #: gdk-pixbuf/io-gdip-utils.c:776
 msgid "Couldn’t load metafile"
 msgstr "Metafile yüklenemedi"
@@ -1000,7 +1000,7 @@ msgstr "TIFF x-dpi sıfırdan büyük olmalıdır; “%s” değeri kabul edilmi
 msgid "TIFF y-dpi must be greater than zero; value “%s” is not allowed."
 msgstr "TIFF y-dpi sıfırdan büyük olmalıdır; “%s” değeri kabul edilmiyor."
 
-# gtk/gtkfilesel.c:3277
+# ctk/ctkfilesel.c:3277
 #: gdk-pixbuf/io-tiff.c:1018
 msgid "Couldn’t write to TIFF file"
 msgstr "TIFF dosyasına yazılamadı"

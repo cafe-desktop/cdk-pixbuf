@@ -1,5 +1,5 @@
-# translation of gtk+-master-po-ru-9735.merged.po to Russian
-# Russian translation of gtk+
+# translation of ctk+-master-po-ru-9735.merged.po to Russian
+# Russian translation of ctk+
 # Copyright (C) 1999-2009, 2010 Free Software Foundation, Inc.
 #
 #
@@ -21,7 +21,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+.master\n"
+"Project-Id-Version: ctk+.master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gdk-pixbuf/issues\n"
 "POT-Creation-Date: 2020-11-10 02:27+0000\n"
 "PO-Revision-Date: 2021-06-27 19:19+0300\n"

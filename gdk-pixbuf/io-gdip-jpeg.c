@@ -119,7 +119,7 @@ MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
   gdip_fill_vtable (module);
 
   module->save_to_callback = gdk_pixbuf__gdip_image_save_JPEG_to_callback;
-  module->save = gdk_pixbuf__gdip_image_save_JPEG; /* for gtk < 2.14, you need to implement both. otherwise gdk-pixbuf-queryloaders fails */
+  module->save = gdk_pixbuf__gdip_image_save_JPEG; /* for ctk < 2.14, you need to implement both. otherwise gdk-pixbuf-queryloaders fails */
   module->is_save_option_supported = gdk_pixbuf__gdip_is_save_option_supported_JPEG;
 }
 

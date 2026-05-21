@@ -31,7 +31,7 @@ option('builtin_loaders',
        type: 'array',
        choices: ['default', 'all', 'none', 'windows', 'png', 'bmp', 'gif', 'ico', 'ani', 'jpeg', 'pnm', 'tiff', 'xpm', 'xbm', 'tga', 'icns', 'qtif', 'glycin'],
        value: ['png','jpeg'])
-option('gtk_doc',
+option('ctk_doc',
        description: 'Whether to generate the API reference',
        deprecated: 'documentation',
        type: 'boolean',

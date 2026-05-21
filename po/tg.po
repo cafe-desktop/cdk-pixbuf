@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tajik Gnome\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gtk"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=ctk"
 "%2b&keywords=I18N+L10N&component=gdk\n"
 "POT-Creation-Date: 2013-03-12 21:02+0000\n"
 "PO-Revision-Date: 2013-01-21 18:02+0500\n"
