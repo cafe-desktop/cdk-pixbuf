@@ -65,7 +65,7 @@ check the current build configuration, and change its options.
 
 You can specify the following options in the command line to `meson`:
 
- * `-Dctk_doc=true` - Build the API reference documentation
+ * `-Dgtk_doc=true` - Build the API reference documentation
  * `-Drelocatable=true` - Enable application bundle relocation support
 
 For a complete list of build-time options, see the file
