@@ -1,4 +1,4 @@
-# Lithuanian translation of GTK+
+# Lithuanian translation of CTK+
 # Copyright (C) 2000-2010 Free Software Foundation, Inc.
 # Gediminas Paulauskas <menesis@delfi.lt>, 2000-2004.
 # Tomas Kuliavas <tokul@users.sourceforge.net>, 2004.

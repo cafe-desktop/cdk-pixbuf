@@ -56,7 +56,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "Aafbiljingslajer %s geuf de verkierde interface door ; mesjiens is 't de "
-"lajer van ein anger GTK+ verzie?"
+"lajer van ein anger CTK+ verzie?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format

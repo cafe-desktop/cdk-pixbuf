@@ -63,7 +63,7 @@ msgid ""
 "Image-loading module %s does not export the proper interface; perhaps it's "
 "from a different gdk-pixbuf version?"
 msgstr ""
-"وحدة تحميل الصور %s لا تصدّر الواجهة الصحيحة؛ قد تكون من إصدارة GTK مغايرة؟"
+"وحدة تحميل الصور %s لا تصدّر الواجهة الصحيحة؛ قد تكون من إصدارة CTK مغايرة؟"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format

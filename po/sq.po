@@ -60,7 +60,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "Moduli i ngarkimit të figurave %s nuk eksporton interfaqen e duhur; mbase "
-"është për një version tjetër të GTK?"
+"është për një version tjetër të CTK?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format

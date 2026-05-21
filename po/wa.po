@@ -64,7 +64,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "Li module di tcherdjaedje d' imådjes %s n' ebague nén li boune eterface; "
-"motoit k' il est po ene diferinne modêye di GTK?"
+"motoit k' il est po ene diferinne modêye di CTK?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format

@@ -25,8 +25,8 @@ git diff -U0 --no-color "${newest_common_ancestor_sha}" | .gitlab/scripts/clang-
 exit_status=$?
 
 # The style check is not infallible. The clang-format configuration cannot
-# perfectly describe GTK’s coding style: in particular, it cannot align
-# function arguments. The documented coding style for GTK takes priority over
+# perfectly describe CTK’s coding style: in particular, it cannot align
+# function arguments. The documented coding style for CTK takes priority over
 # clang-format suggestions. Hopefully we can eventually improve clang-format to
 # be configurable enough for our coding style. That’s why this CI check is OK
 # to fail: the idea is that people can look through the output and ignore it if
@@ -35,7 +35,7 @@ exit_status=$?
 # style with the changes they’re making.)
 echo ""
 echo "Note that clang-format output is advisory and cannot always match the"
-echo "GTK coding style, documented at:"
+echo "CTK coding style, documented at:"
 echo "   https://gitlab.gnome.org/GNOME/ctk/blob/master/docs/CODING-STYLE"
 echo "Warnings from this tool can be ignored in favour of the documented "
 echo "coding style, or in favour of matching the style of existing"

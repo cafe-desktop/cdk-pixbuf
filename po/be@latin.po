@@ -61,7 +61,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "Modul %s dziela vyśviatleńnia vyjavaŭ nie ekspartuje adpaviednaha "
-"interfejsu; moža jon pachodzić ź inšaj versii GTK+?"
+"interfejsu; moža jon pachodzić ź inšaj versii CTK+?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format

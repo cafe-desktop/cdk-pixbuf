@@ -13,13 +13,13 @@ VS_VERSION_INFO VERSIONINFO
     BEGIN
       BLOCK "040904B0"
       BEGIN
-	VALUE "CompanyName", "The GTK developer community"
+	VALUE "CompanyName", "The CTK developer community"
 	VALUE "FileDescription", "GIMP Toolkit"
 	VALUE "FileVersion", "@GDK_PIXBUF_VERSION@.0"
 	VALUE "InternalName", "libgdk_pixbuf-@GDK_PIXBUF_API_VERSION@-@LT_CURRENT_MINUS_AGE@"
-	VALUE "LegalCopyright", "Copyright (C) 1999 The Free Software Foundation. Modified by the GTK+ Team and others 1999-2011."
+	VALUE "LegalCopyright", "Copyright (C) 1999 The Free Software Foundation. Modified by the CTK+ Team and others 1999-2011."
 	VALUE "OriginalFilename", "libgdk_pixbuf-@GDK_PIXBUF_API_VERSION@-@LT_CURRENT_MINUS_AGE@.dll"
-	VALUE "ProductName", "GTK+"
+	VALUE "ProductName", "CTK+"
 	VALUE "ProductVersion", "@GDK_PIXBUF_VERSION@"
       END
     END

@@ -1,6 +1,6 @@
-# Shavian translation of GTK.
+# Shavian translation of CTK.
 # Copyright (C) 2009.
-# This file is distributed under the same license as the GTK package.
+# This file is distributed under the same license as the CTK package.
 # Thomas Thurman <tthurman@gnome.org>, 2009.
 #
 msgid ""
@@ -55,7 +55,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "𐑦𐑥𐑦𐑡-𐑤𐑴𐑛𐑦𐑙 𐑥𐑪𐑛𐑿𐑤 %s 𐑛𐑳𐑟 𐑯𐑪𐑑 𐑧𐑒𐑕𐑐𐑹𐑑 𐑞 𐑐𐑮𐑪𐑐𐑼 𐑦𐑯𐑑𐑼𐑓𐑱𐑕; 𐑐𐑼𐑣𐑨𐑐𐑕 𐑦𐑑𐑕 𐑓𐑮𐑪𐑥 𐑩 "
-"𐑛𐑦𐑓𐑼𐑩𐑯𐑑 GTK 𐑝𐑻𐑠𐑩𐑯?"
+"𐑛𐑦𐑓𐑼𐑩𐑯𐑑 CTK 𐑝𐑻𐑠𐑩𐑯?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format

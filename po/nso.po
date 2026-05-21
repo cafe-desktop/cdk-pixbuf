@@ -60,7 +60,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "Tekanyo ya go laiša seswantšho ya %s ga e romele poledišano e swanetšego; "
-"mohlomongwe e tšwa tokollong e fapanego ya GTK?"
+"mohlomongwe e tšwa tokollong e fapanego ya CTK?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format

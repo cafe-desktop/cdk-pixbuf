@@ -1,5 +1,5 @@
-# Bengali Translation of GTK+
-# This file is distributed under the same license as the GTK+ package.
+# Bengali Translation of CTK+
+# This file is distributed under the same license as the CTK+ package.
 # Copyright (C) 2003-2005, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
 # 
 # Sayamindu Dasgupta <unmadindu@Softhome.net>, 2004.
@@ -63,7 +63,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "ছবি লোড করতে ব্যবহৃত %s নামক মডিউলটি সঠিক ইন্টারফেস এক্সপোর্ট করে না; সম্ভবত এটি "
-"ভিন্ন কোন GTK সংস্করণের অংশ?"
+"ভিন্ন কোন CTK সংস্করণের অংশ?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format

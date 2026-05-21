@@ -1,4 +1,4 @@
-# Vietnamese translation for GTK+.
+# Vietnamese translation for CTK+.
 # Copyright © 2010 GNOME i18n Project for Vietnamese.
 # Hoang Ngoc Tu <hntu@gmx.de>, 2000-2002.
 # Joern v. Kattchee <kattchee@cs.tu-berlin.de>, 2000-2002.

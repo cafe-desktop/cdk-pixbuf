@@ -62,7 +62,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "Պատկեր բեռնող %s մոդուլը չի ցուցաբերում համապատասխան ինտերֆեյս․ հավանաբար "
-"այն այլ GTK տարբերակից է։"
+"այն այլ CTK տարբերակից է։"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format

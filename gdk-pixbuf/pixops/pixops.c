@@ -2296,7 +2296,7 @@ pixops_medialib_composite (guchar          *dest_buf,
 
       if (interp_type == PIXOPS_INTERP_NEAREST)
         {
-          blend = src_has_alpha ? MLIB_BLEND_GTK_SRC_OVER2 : MLIB_BLEND_GTK_SRC;
+          blend = src_has_alpha ? MLIB_BLEND_CTK_SRC_OVER2 : MLIB_BLEND_CTK_SRC;
 
           mlib_ImageZoomTranslateBlend (&img_dest,
                                         &img_src,
@@ -2312,7 +2312,7 @@ pixops_medialib_composite (guchar          *dest_buf,
         }
       else
         {
-          blend = src_has_alpha ? MLIB_BLEND_GTK_SRC_OVER : MLIB_BLEND_GTK_SRC;
+          blend = src_has_alpha ? MLIB_BLEND_CTK_SRC_OVER : MLIB_BLEND_CTK_SRC;
 
           if (interp_type == PIXOPS_INTERP_BILINEAR &&
 	      scale_x > 1.0 && scale_y > 1.0)
@@ -2630,7 +2630,7 @@ pixops_medialib_scale     (guchar          *dest_buf,
                                             ml_offset_y,
                                             MLIB_NEAREST,
                                             MLIB_EDGE_SRC_EXTEND_INDEF,
-                                            MLIB_BLEND_GTK_SRC,
+                                            MLIB_BLEND_CTK_SRC,
                                             1.0,
                                             1);
             }
@@ -2711,7 +2711,7 @@ pixops_medialib_scale     (guchar          *dest_buf,
                                         ml_offset_y,
                                         MLIB_BILINEAR,
                                         MLIB_EDGE_SRC_EXTEND_INDEF,
-                                        MLIB_BLEND_GTK_SRC,
+                                        MLIB_BLEND_CTK_SRC,
                                         1.0,
                                         1);
         }
@@ -2730,7 +2730,7 @@ pixops_medialib_scale     (guchar          *dest_buf,
                                                  ml_offset_y + ml_interp.ty,
                                                  ml_interp.interp_table,
                                                  MLIB_EDGE_SRC_EXTEND_INDEF,
-                                                 MLIB_BLEND_GTK_SRC,
+                                                 MLIB_BLEND_CTK_SRC,
                                                  1);
               mlib_ImageInterpTableDelete (ml_interp.interp_table);
             }

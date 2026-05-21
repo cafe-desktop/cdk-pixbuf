@@ -64,7 +64,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "Biletelastingsmodulen %s eksporterer ikkje rett grensesnitt. Kanskje han er "
-"frå ein annan GTK+-versjon?"
+"frå ein annan CTK+-versjon?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format
