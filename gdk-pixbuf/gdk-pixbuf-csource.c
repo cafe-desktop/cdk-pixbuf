@@ -28,7 +28,7 @@
 #define	G_LOG_DOMAIN	"Gdk-Pixbuf-CSource"
 #define PRG_NAME        "gdk-pixbuf-csource-3.0"
 #define PKG_NAME        "gdk-pixbuf"
-#define PKG_HTTP_HOME   "http://www.gtk.org"
+#define PKG_HTTP_HOME   "https://github.com/cafe-desktop/ctk"
 
 
 /* --- prototypes --- */

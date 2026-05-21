@@ -29,7 +29,7 @@
 #define	G_LOG_DOMAIN	"Gdk-Pixbuf-Pixdata"
 #define PRG_NAME        "gdk-pixbuf-pixdata-3.0"
 #define PKG_NAME        "gdk-pixbuf"
-#define PKG_HTTP_HOME   "http://www.gtk.org"
+#define PKG_HTTP_HOME   "https://github.com/cafe-desktop/ctk"
 
 static gboolean use_rle = FALSE;
 
