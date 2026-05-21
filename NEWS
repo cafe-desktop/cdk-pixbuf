@@ -94,7 +94,7 @@
   (e.g. for pixdata conversions) will fail if bubblewrap sandboxing is not
   available (as is the case in many build systems). The recommendation is
   to simply stop using pixdata as a format for resources, and just use png.
-- Deprecate "ctk_doc" configuration option; to conform with the rest of the
+- Deprecate "gtk_doc" configuration option; to conform with the rest of the
   GNOME core libraries, use "documentation" instead
 - Remove the long-since deprecated "docs" configuration option
 - Require Meson 1.0 to build gdk-pixbuf
@@ -154,7 +154,7 @@
 ===
 
  - Disable shared-mime-info dependency on Android [BogDan Vatra, !104]
- - Yield ctk_doc option value in subprojects
+ - Yield gtk_doc option value in subprojects
  - Always initialise locale on thumbnailer startup [Bastien Nocera, !110]
  - Add fallback subproject for libjpeg [Benjamin Otte, !109]
  - Install API reference directly under $datadir/doc/gdk-pixbuf
@@ -204,7 +204,7 @@
  - Check for mmap failure [Tobias Müller]
  - Fix UB in the XPM loader [Tobias Stoeckmann]
  - Speed up alpha scaling pixop [Jan Ziak]
- - Add the `ctk_doc` configuration option, and deprecate `docs`
+ - Add the `gtk_doc` configuration option, and deprecate `docs`
  - Add the `introspection` configuration option, and remove `gir` [Xavier Claessens, !85]
  - Handle truncated PNMs more gracefully [Felix Riemann, #111]
  - Clean up GIF loader code [Robert Ancell]
