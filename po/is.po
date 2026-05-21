@@ -1,6 +1,6 @@
 # Icelandic translation of ctk 2.2
 # Copyright (C) 2003 Free Software Foundation, Inc.
-# This file is distributed under the same license as the GTK package.
+# This file is distributed under the same license as the CTK package.
 #
 # Richard Allen <ra@ra.is>, 2003.
 # Sveinn í Felli <sv1@fellsnet.is>, 2015, 2017, 2019, 2021.

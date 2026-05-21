@@ -65,7 +65,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "Модулот за вчитување на слики %s не го извесува точниот интерфејс; можеби е "
-"напишан во друга верзија на GTK?"
+"напишан во друга верзија на CTK?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format

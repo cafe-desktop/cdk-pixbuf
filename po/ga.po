@@ -62,7 +62,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "Ní easpórtálann an modúl íomhá-luchtaithe %s an comhéadan ceart; b'fhéidir "
-"gur as leagan GTK difriúil é?"
+"gur as leagan CTK difriúil é?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format

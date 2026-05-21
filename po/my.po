@@ -54,7 +54,7 @@ msgid ""
 "Image-loading module %s does not export the proper interface; perhaps it's "
 "from a different gdk-pixbuf version?"
 msgstr ""
-"ရုပ်ပုံ-ဖွင့်ပေးတဲ့ အစိတ်အပိုင်း %s က သင့်တော်တဲ့ ကြားခံမြင်ကွင်းကို မတင်ပို့​ဘူး၊ ခြားနားတဲ့ GTK မူအဆင့်​ "
+"ရုပ်ပုံ-ဖွင့်ပေးတဲ့ အစိတ်အပိုင်း %s က သင့်တော်တဲ့ ကြားခံမြင်ကွင်းကို မတင်ပို့​ဘူး၊ ခြားနားတဲ့ CTK မူအဆင့်​ "
 "တခုကြောင့် ဖြစ်နိုင်တယ်။"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884

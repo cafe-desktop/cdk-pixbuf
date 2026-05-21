@@ -67,7 +67,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "Зураг ачаалагч модул \"%s\" зөв интерфейсийг гаргаж чадахгүй байна.Магад энэ "
-"нь ялгаатай GTK хувилбараас байж болох юм."
+"нь ялгаатай CTK хувилбараас байж болох юм."
 
 # gdk-pixbuf/gdk-pixbuf-io.c:490 gdk-pixbuf/gdk-pixbuf-io.c:516
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884

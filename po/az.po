@@ -57,7 +57,7 @@ msgid ""
 "Image-loading module %s does not export the proper interface; perhaps it's "
 "from a different gdk-pixbuf version?"
 msgstr ""
-"Rəsm yükləmə modulu %s düzgün ara üz idxal etmir; yoxsa bu, GTK "
+"Rəsm yükləmə modulu %s düzgün ara üz idxal etmir; yoxsa bu, CTK "
 "buraxılışından fərqlidir?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884

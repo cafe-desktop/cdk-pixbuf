@@ -58,7 +58,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "Kaore te tauira kaiwhakauta whakaahua %s i te tuku i te (takawaenga) tuturu; "
-"pea no tetahi whakaaturanga GTK rereke?"
+"pea no tetahi whakaaturanga CTK rereke?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format

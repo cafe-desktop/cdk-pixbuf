@@ -85,7 +85,7 @@ msgid ""
 "Image-loading module %s does not export the proper interface; perhaps it's "
 "from a different gdk-pixbuf version?"
 msgstr ""
-"ચિત્ર લાવવા માટેનું મોડ્યુલ %s યોગ્ય ઈન્ટરફેસનો નિકાસ કરતું નથી, કદાચ એ અલગ GTK "
+"ચિત્ર લાવવા માટેનું મોડ્યુલ %s યોગ્ય ઈન્ટરફેસનો નિકાસ કરતું નથી, કદાચ એ અલગ CTK "
 "અહેવાલમાંથી છે?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884

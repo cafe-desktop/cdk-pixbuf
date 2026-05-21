@@ -60,7 +60,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "Imodyuli yokufaka umfanekiso %s ayihambisi umdibanisi wemida onguwo; "
-"mhlawumbi isuka kuhlobo lwe-GTK olwahlukileyo?"
+"mhlawumbi isuka kuhlobo lwe-CTK olwahlukileyo?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format

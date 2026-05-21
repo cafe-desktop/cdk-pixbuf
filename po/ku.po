@@ -59,7 +59,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "Modula barkirina wêne %s ji navrûyê rastî re nehatiye şandin. Gelo dibe ew "
-"guhertoyeke cuda ya GTK'ê be?"
+"guhertoyeke cuda ya CTK'ê be?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format

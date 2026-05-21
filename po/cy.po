@@ -59,7 +59,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "Nid yw'r modiwl llwytho delweddau %s yn darparu'r rhyngwyneb cywir; efallai "
-"ei fod o fersiwn arall o GTK"
+"ei fod o fersiwn arall o CTK"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format

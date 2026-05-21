@@ -139,7 +139,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "Modul Image-loading %s tidak boleh mengeksport antara muka dengan baik; "
-"mungkin ianya daripada GTK versi lain?"
+"mungkin ianya daripada CTK versi lain?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:844 gdk-pixbuf/gdk-pixbuf-io.c:887
 #, c-format

@@ -62,7 +62,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "ಚಿತ್ರ-ಲೋಡ್ ಮಾಡುವ ಘಟಕ %s ವು ಸರಿಯಾದ ಸಂಪರ್ಕಸಾಧನವನ್ನು ರವಾನಿಸುವುದಿಲ್ಲ; ಬಹುಷಃ ಅದು "
-"ಬೇರೊಂದು GTK ಆವೃತ್ತಿಯದ್ದಾಗಿರಬೇಕು?"
+"ಬೇರೊಂದು CTK ಆವೃತ್ತಿಯದ್ದಾಗಿರಬೇಕು?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format

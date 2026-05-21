@@ -57,7 +57,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "בילד־אַרײַנשטעל מאָדול %s עקספּאָרטירט ניט דעם פּאַסיקן צובינד; אפֿשר פֿון אַ צװײטע "
-"GTK װערסיע?"
+"CTK װערסיע?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format

@@ -59,7 +59,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "Mòdul %s do wladowania òbrôzów nie ekspòrtëjë gwësnegò interfejsu; czë mòże "
-"bëc, że je òn z jinëj wersëji GTK+?"
+"bëc, że je òn z jinëj wersëji CTK+?"
 
 #: ../gdk-pixbuf/gdk-pixbuf-io.c:833 ../gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format

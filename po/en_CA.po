@@ -59,7 +59,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "Image-loading module %s does not export the proper interface; perhaps it's "
-"from a different GTK version?"
+"from a different CTK version?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format

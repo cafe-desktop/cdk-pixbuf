@@ -62,7 +62,7 @@ msgid ""
 "Image-loading module %s does not export the proper interface; perhaps it's "
 "from a different gdk-pixbuf version?"
 msgstr ""
-"बिंब लोडिंग माड्यूल %s सही अंतरफलक निर्यात नहि कए सकल, साइत ई भिन्न GTK संस्करणसँ अछि?"
+"बिंब लोडिंग माड्यूल %s सही अंतरफलक निर्यात नहि कए सकल, साइत ई भिन्न CTK संस्करणसँ अछि?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format

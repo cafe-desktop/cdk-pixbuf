@@ -59,7 +59,7 @@ msgid ""
 "from a different gdk-pixbuf version?"
 msgstr ""
 "Beeldlaai-module %s voer nie die regte koppelvlak uit nie; miskien is dit "
-"van 'n verskillende GTK-weergawe?"
+"van 'n verskillende CTK-weergawe?"
 
 #: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
 #, c-format
