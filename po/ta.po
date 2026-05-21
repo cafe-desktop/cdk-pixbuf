@@ -1,7 +1,7 @@
 # translation of ctk+.master.ta.po to Tamil
 # translation of ctk+.HEAD.ta.po to
 # translation of ta.po to
-# Tamil translation of Gtk+
+# Tamil translation of Ctk+
 # Copyright (C) 2001, 2002, 2003, 2006, 2009 Free Software Foundation, Inc.
 #
 # Dinesh Nadarajah <n_dinesh@yahoo.com>, 2001, 2002, 2003.
