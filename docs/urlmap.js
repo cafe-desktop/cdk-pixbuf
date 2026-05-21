@@ -7,7 +7,7 @@ baseURLs = [
     [ 'GdkWayland', 'https://gnome.pages.gitlab.gnome.org/ctk/gdk4-wayland/' ],
     [ 'GdkX11', 'https://gnome.pages.gitlab.gnome.org/ctk/gdk4-x11/' ],
     [ 'Gsk', 'https://gnome.pages.gitlab.gnome.org/ctk/gsk4/' ],
-    [ 'Gtk', 'https://gnome.pages.gitlab.gnome.org/ctk/ctk4/' ],
+    [ 'Ctk', 'https://gnome.pages.gitlab.gnome.org/ctk/ctk4/' ],
     [ 'Pango', 'https://gnome.pages/gitlab.gnome.org/pango/pango/' ],
     [ 'PangoCairo', 'https://gnome.pages.gitlab.gnome.org/pango/pangocairo/' ],
     [ 'GdkPixbuf', 'https://gnome.pages.gitlab.gnome.org/gdk-pixbuf/' ],

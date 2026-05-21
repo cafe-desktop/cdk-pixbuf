@@ -167,7 +167,7 @@ prepared_callback (GdkPixbufLoader *loader,
 	}
 	else {
 		/* FIXME - this is necessary for nice display of loading 
-		   animations because GtkImage ignores 
+		   animations because CtkImage ignores 
 		   gdk_pixbuf_animation_iter_on_currently_loading_frame()
 		   and always exposes the full frame */
 		GdkPixbuf *last = context->animation->pixbufs[context->pos - 1];
