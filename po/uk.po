@@ -1,4 +1,4 @@
-# Ukrainian translation of gtk+.
+# Ukrainian translation of ctk+.
 # Copyright (C) 1999 Free Software Foundation, Inc.
 # Yuri Syrota <rasta@cvs.gnome.org>, 1999, 2004.
 # Maxim Dziumanenko <dziumanenko@gmail.com>, 2004-2010.
@@ -7,7 +7,7 @@
 # Yuri Chornoivan <yurchor@ukr.net>, 2020.
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+\n"
+"Project-Id-Version: ctk+\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gdk-pixbuf/issues\n"
 "POT-Creation-Date: 2020-11-10 02:27+0000\n"
 "PO-Revision-Date: 2020-11-10 09:51+0200\n"

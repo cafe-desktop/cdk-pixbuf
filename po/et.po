@@ -3,7 +3,7 @@
 #
 # Copyright (C) 1999-2007 Free Software Foundation, Inc.
 # Copyright (C) 2007-2010 The GNOME Project.
-# This file is distributed under the same license as the gtk package.
+# This file is distributed under the same license as the ctk package.
 #
 # Lauris Kaplinski <lauris ariman ee>, 1999.
 # Tõivo Leedjärv <toivo linux ee>, 2002-2004.
@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gdk-pixbuf MASTER\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gtk"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=ctk"
 "%2b&keywords=I18N+L10N&component=gdk\n"
 "POT-Creation-Date: 2013-09-11 19:46+0000\n"
 "PO-Revision-Date: 2013-09-11 23:20+0300\n"

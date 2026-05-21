@@ -1,4 +1,4 @@
-# translation of gtk+.master.po to Hindi
+# translation of ctk+.master.po to Hindi
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
@@ -13,7 +13,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+.master\n"
+"Project-Id-Version: ctk+.master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gdk-pixbuf/issues\n"
 "POT-Creation-Date: 2022-07-11 14:00+0000\n"
 "PO-Revision-Date: 2024-04-24 14:34+0530\n"

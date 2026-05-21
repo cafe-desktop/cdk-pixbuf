@@ -1,11 +1,11 @@
-# Ido gtk+ po file.
+# Ido ctk+ po file.
 # Copyright (C) 2007
-# This file is distributed under the same license as the gtk+ package.
+# This file is distributed under the same license as the ctk+ package.
 # Michael Terry <mike@mterry.name>, 2007.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+ 2.12.1\n"
+"Project-Id-Version: ctk+ 2.12.1\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gdk-"
 "pixbuf\n"
 "POT-Creation-Date: 2012-02-04 18:44-0500\n"

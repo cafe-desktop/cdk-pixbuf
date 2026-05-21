@@ -1,12 +1,12 @@
-# Përkthimi i gtk+.HEAD në shqip.
+# Përkthimi i ctk+.HEAD në shqip.
 # Copyright (C) 2006 - 2009 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gtk+ package.
+# This file is distributed under the same license as the ctk+ package.
 #
 # Besnik Bleta	<besnikbleta@hotmail.com>,	2003.
 # Laurent Dhima	<laurenti@alblinux.net>,	2003-2008, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+ HEAD\n"
+"Project-Id-Version: ctk+ HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gdk-"
 "pixbuf\n"
 "POT-Creation-Date: 2012-02-04 18:44-0500\n"

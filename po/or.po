@@ -1,7 +1,7 @@
 # translation of or.po to Oriya
-# Oriya translation of gtk+.HEAD.pot.
+# Oriya translation of ctk+.HEAD.pot.
 # Copyright (C) 2005, 2006, 2008, 2009, 2010, Free Software Foundation, Inc.
-# This file is distributed under the same license as the gtk+ package.
+# This file is distributed under the same license as the ctk+ package.
 # $Id: or.po,v 1.18 2006/12/13 09:55:51 sbehera Exp $
 # $Id: or.po,v 1.18 2006/12/13 09:55:51 sbehera Exp $
 #
@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: or\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gtk%"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=ctk%"
 "2b&keywords=I18N+L10N&component=gdk\n"
 "POT-Creation-Date: 2012-03-05 18:51+0000\n"
 "PO-Revision-Date: 2012-04-05 17:16+0530\n"

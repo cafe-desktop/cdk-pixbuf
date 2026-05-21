@@ -1,6 +1,6 @@
-# Breton translation for gtk+ 2.0.
+# Breton translation for ctk+ 2.0.
 # Copyright (c) 2004 Rosetta Contributors and Canonical Ltd
-# This file is distributed under the same license as the gtk+ 2.0. package.
+# This file is distributed under the same license as the ctk+ 2.0. package.
 #
 # Thierry Vignaud <tvignaud@mandriva.com>, 2004
 # Alan Monfort <alan.monfort@free.fr>, 2005-2008

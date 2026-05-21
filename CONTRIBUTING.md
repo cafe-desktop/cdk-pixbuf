@@ -117,7 +117,7 @@ $ meson test
 ```
 
 When introducing a new feature or new API, you should document it using the
-[gtk-doc](https://developer.gnome.org/gtk-doc-manual/stable/) format. You
+[ctk-doc](https://developer.gnome.org/ctk-doc-manual/stable/) format. You
 can build the GdkPixbuf API reference locally by enabling the `docs`
 configuration option and building the `gdk-pixbuf-doc` target:
 

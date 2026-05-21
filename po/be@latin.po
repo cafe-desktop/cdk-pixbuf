@@ -1,6 +1,6 @@
-# Biełaruski pierakład gtk+.
-# Copyright (C) 2007 THE gtk+'s COPYRIGHT HOLDER
-# This file is distributed under the same license as the gtk+ package.
+# Biełaruski pierakład ctk+.
+# Copyright (C) 2007 THE ctk+'s COPYRIGHT HOLDER
+# This file is distributed under the same license as the ctk+ package.
 # Alaksandar Navicki <zolak@lacinka.org>, 2006. Łacinka.org
 #
 msgid ""

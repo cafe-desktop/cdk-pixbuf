@@ -1,10 +1,10 @@
-# Translation of gtk+ to Qırımtatarca.
-# This file is distributed under the same license as the gtk+ package.
+# Translation of ctk+ to Qırımtatarca.
+# This file is distributed under the same license as the ctk+ package.
 # Reşat SABIQ <tilde.birlik@gmail.com>, 2009, 2010, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+ TRUNK\n"
+"Project-Id-Version: ctk+ TRUNK\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-24 20:13-0500\n"
 "PO-Revision-Date: 2013-03-24 20:24-0500\n"
@@ -241,7 +241,7 @@ msgstr "Baliğ olmağan dosye-soñu rastkeldi"
 msgid "Couldn't allocate memory for saving BMP file"
 msgstr "BMP dosyesini saqlamaq içün hafiza tahsis etilamadı"
 
-# gtk/gtkfilesel.c:3277
+# ctk/ctkfilesel.c:3277
 #: ../gdk-pixbuf/io-bmp.c:1369
 msgid "Couldn't write to BMP file"
 msgstr "BMP dosyesine yazamadım"
@@ -292,7 +292,7 @@ msgstr "JPEG suret formatı"
 msgid "Could not allocate memory: %s"
 msgstr "Hafiza tahsis etilamadı: %s"
 
-# gtk/gtkfilesel.c:1011
+# ctk/ctkfilesel.c:1011
 #: ../gdk-pixbuf/io-gdip-utils.c:179 ../gdk-pixbuf/io-gdip-utils.c:293
 #: ../gdk-pixbuf/io-gdip-utils.c:333
 #, c-format
@@ -304,18 +304,18 @@ msgstr "Aqım icat etilamadı: %s"
 msgid "Could not seek stream: %s"
 msgstr "Aqım aranamadı: %s"
 
-# gtk/gtkfilesel.c:1011
+# ctk/ctkfilesel.c:1011
 #: ../gdk-pixbuf/io-gdip-utils.c:205
 #, c-format
 msgid "Could not read from stream: %s"
 msgstr "Aqımdan oqulamadı: %s"
 
-# gtk/gtkfilesel.c:3277
+# ctk/ctkfilesel.c:3277
 #: ../gdk-pixbuf/io-gdip-utils.c:617
 msgid "Couldn't load bitmap"
 msgstr "Bit-haritası yüklenamadı"
 
-# gtk/gtkfilesel.c:3277
+# ctk/ctkfilesel.c:3277
 #: ../gdk-pixbuf/io-gdip-utils.c:773
 msgid "Couldn't load metafile"
 msgstr "Meta-dosye yüklenamadı"
@@ -488,7 +488,7 @@ msgstr "ICO dosyesi içün desteklenmegen terenlik: %d"
 msgid "Couldn't allocate memory for stream"
 msgstr "Aqım içün hafiza tahsis etilamadı"
 
-# gtk/gtkfilesel.c:3277
+# ctk/ctkfilesel.c:3277
 #: ../gdk-pixbuf/io-jasper.c:104
 msgid "Couldn't decode image"
 msgstr "Suret ğayrı-kodlandırılamadı"
@@ -997,7 +997,7 @@ msgstr "TIFF sıqıştırması keçerli bir kodekke sıltamay."
 msgid "Failed to write TIFF data"
 msgstr "TIFF verileri yazılamadı"
 
-# gtk/gtkfilesel.c:3277
+# ctk/ctkfilesel.c:3277
 #: ../gdk-pixbuf/io-tiff.c:733
 msgid "Couldn't write to TIFF file"
 msgstr "TIFF dosyesine yazılamadı"

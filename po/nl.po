@@ -1,6 +1,6 @@
 # Dutch translation for gdk-pixbuf
 #
-# This file is distributed under the same license as the gtk+ package.
+# This file is distributed under the same license as the ctk+ package.
 #
 # Dirk-Jan C. Binnema <djcb@djcbsoftware.nl>, 2002
 # Ronald Hummelink <ronald@hummelink.xs4all.nl>, 2002

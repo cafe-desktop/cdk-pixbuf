@@ -1,6 +1,6 @@
 # translation of ku.po to Kurdish
-# This file is distributed under the same license as the gtk+ package.
-# Copyright (C) 2005 THE gtk+'S COPYRIGHT HOLDER.
+# This file is distributed under the same license as the ctk+ package.
+# Copyright (C) 2005 THE ctk+'S COPYRIGHT HOLDER.
 # Erdal Ronahi <erdal dot ronahi at gmail dot com>, 2008.
 # Erdal Ronahi <erdal dot ronahi at gmail dot com>, 2009
 msgid ""

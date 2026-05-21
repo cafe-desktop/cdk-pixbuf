@@ -1,6 +1,6 @@
 # Esperanto translation for gdk-pixbuf.
 # Copyright (C) 2007-2011 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gtk+ package.
+# This file is distributed under the same license as the ctk+ package.
 # Antono VASILJEV <antono.vasiljev@gmail.com>, 2007.
 # Guillaume SAVATON <llumeao@gmail.com>, 2007.
 # Tiffany ANTOPOLSKI <tiffany.antopolski@gmail.com>, 2011.
@@ -8,7 +8,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+2-eo-20070615\n"
+"Project-Id-Version: ctk+2-eo-20070615\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gdk-pixbuf/issues\n"
 "POT-Creation-Date: 2022-07-11 14:00+0000\n"
 "PO-Revision-Date: 2023-09-20 23:39+0200\n"

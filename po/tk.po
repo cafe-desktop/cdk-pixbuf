@@ -1,4 +1,4 @@
-# Turkmen translation of gtk+
+# Turkmen translation of ctk+
 # Copyright (C) 2004 Free Software Foundation
 # Copyright (C) 2004 Gurban Mühemmet Tewekgeli and
 #                                Kakilik - Turkmen free software developers community
@@ -8,7 +8,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+ VERSION\n"
+"Project-Id-Version: ctk+ VERSION\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gdk-"
 "pixbuf\n"
 "POT-Creation-Date: 2012-02-04 18:44-0500\n"

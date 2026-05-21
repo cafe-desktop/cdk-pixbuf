@@ -1,5 +1,5 @@
-# translation of gtk.gnome-2-14.ne.po to Nepali
-# translation of gtk+.HEAD.po to Nepali
+# translation of ctk.gnome-2-14.ne.po to Nepali
+# translation of ctk+.HEAD.po to Nepali
 # Pawan Chitrakar <pawan@nplinux.org>, 2004.
 # Jyotshna Shrestha <shresthajyo@hotmail.com>, 2005.
 # Ganesh Ghimire <gghimire@gmail.com>, 2005.
@@ -9,7 +9,7 @@
 # Mahesh subedi <submanesh@hotmail.com>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk.gnome-2-14.ne\n"
+"Project-Id-Version: ctk.gnome-2-14.ne\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gdk-pixbuf/issues\n"
 "POT-Creation-Date: 2020-11-10 02:27+0000\n"
 "PO-Revision-Date: 2021-05-04 08:54+0545\n"

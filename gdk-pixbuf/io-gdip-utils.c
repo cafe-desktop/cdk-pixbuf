@@ -719,7 +719,7 @@ stop_load (GpBitmap *bitmap, GdipContext *context, GError **error)
       frame->delay_time = 100;
 
     /* No GIFs gets to play faster than 50 fps. They just
-     * lock up poor gtk.
+     * lock up poor ctk.
      */
     else if (frame->delay_time < 20)
       frame->delay_time = 20; /* 20 = "fast" */

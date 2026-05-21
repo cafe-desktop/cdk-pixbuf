@@ -16,7 +16,7 @@ fi
 
 # Work out the newest common ancestor between the detached HEAD that this CI job
 # has checked out, and the upstream target branch (which will typically be
-# `upstream/master` or `upstream/gtk-3-24`).
+# `upstream/master` or `upstream/ctk-3-24`).
 #
 # `${CI_MERGE_REQUEST_TARGET_BRANCH_NAME}` is only defined if we’re running in
 # a merge request pipeline; fall back to `${CI_DEFAULT_BRANCH}` otherwise.
@@ -36,7 +36,7 @@ exit_status=$?
 echo ""
 echo "Note that clang-format output is advisory and cannot always match the"
 echo "GTK coding style, documented at:"
-echo "   https://gitlab.gnome.org/GNOME/gtk/blob/master/docs/CODING-STYLE"
+echo "   https://gitlab.gnome.org/GNOME/ctk/blob/master/docs/CODING-STYLE"
 echo "Warnings from this tool can be ignored in favour of the documented "
 echo "coding style, or in favour of matching the style of existing"
 echo "surrounding code."

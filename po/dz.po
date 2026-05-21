@@ -1,10 +1,10 @@
-# Dzongkha translation of gtk+
+# Dzongkha translation of ctk+
 # Copyright @ 2006 Free Software Foundation, Inc.
 # Mindu Dorji.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk+.HEAD.dz\n"
+"Project-Id-Version: ctk+.HEAD.dz\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gdk-"
 "pixbuf\n"
 "POT-Creation-Date: 2012-02-04 18:44-0500\n"

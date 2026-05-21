@@ -1,7 +1,7 @@
-# translation of gtk+.po to Asturian
-# Asturian translation for gtk+2.0
+# translation of ctk+.po to Asturian
+# Asturian translation for ctk+2.0
 # Copyright (c) 2007 Rosetta Contributors and Canonical Ltd 2007
-# This file is distributed under the same license as the gtk+2.0 package.
+# This file is distributed under the same license as the ctk+2.0 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2007.
 # Xose S. Puente <xspuente@gmail.com>, 2007.
 # Xandru Armesto <xandru@softastur.org>, 2011.
