@@ -1,0 +1,28 @@
+##########################################################
+# THE FOLLOWING LINES IS USED BY docker-build
+##########################################################
+requires:
+  debian:
+    # Useful URL: https://github.com/cafe-desktop/debian-packages
+    - aptitude
+    - cmake
+    - clang
+    - clang-tools
+    - cppcheck
+    - git
+    - expect #required for unbuffer
+    - gi-docgen
+    - libglib2.0-dev
+    - meson
+    - python3-docutils
+
+before_scripts:
+  - ./html-cppcheck
+
+build_scripts:
+  - ./before-build
+  - ./make-scanbuild meson 'setup -Dglycin=disabled'
+  - ./after-build
+
+after_scripts:
+  - if [ -f "gen-index" ]; then ./gen-index -l 20 ; fi
