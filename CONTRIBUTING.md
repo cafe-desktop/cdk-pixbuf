@@ -23,11 +23,7 @@ many things that we value:
 Please, do not use the issue tracker for support questions. If you have
 questions on how to use GdkPixbuf effectively, you can use:
 
- - the `#gtk+` IRC channel on irc.gnome.org
- - the [gtk](https://mail.gnome.org/mailman/listinfo/gtk-list) mailing list,
-   for general questions on GdkPixbuf
- - the [gtk-devel](https://mail.gnome.org/mailman/listinfo/gtk-devel-list)
-   mailing list, for questions on developing GdkPixbuf itself
+ - the Matrix Room: #cafe-desktop:matrix.org
 
 The issue tracker is meant to be used for actionable issues only.
 
@@ -39,13 +35,6 @@ As it deals with loading image data into user processes, it's also important
 to note that GdkPixbuf must always deal with potential security issues.
 
 ## How to report bugs
-
-### Security issues
-
-You should not open a new issue for security related questions.
-
-When in doubt, send an email to the [security](mailto:security@gnome.org)
-mailing list.
 
 ### Bug reports
 
@@ -77,7 +66,7 @@ For small issues, such as:
  - source tree clean ups and reorganizations;
 
 or for self-contained bug fixes where you have implemented and tested a solution
-already, you should directly open a merge request instead of filing a new issue.
+already, you should directly open a pull request instead of filing a new issue.
 
 ## Your first contribution
 
@@ -173,29 +162,27 @@ Closes #1234
  `git commit -a --author "Joe Coder <joe@coder.org>"` and `--signoff`.
 
  - If your commit is addressing an issue, use the
- [GitLab syntax](https://docs.gitlab.com/ce/user/project/issues/managing_issues.html#default-closing-pattern)
- to automatically close the issue when merging the commit with the upstream
- repository:
+ Github syntax to automatically close the issue when merging the commit
+ with the upstream repository:
 
 ```plain
 Closes #1234
 Fixes #1234
-Closes: https://gitlab.gnome.org/GNOME/glib/issues/1234
+Closes https://github.com/cafe-desktop/cdk-pixbuf/issues/numberissue
 ```
 
- - If you have a merge request with multiple commits and none of them
+ - If you have a pull request with multiple commits and none of them
  completely fixes an issue, you should add a reference to the issue in
  the commit message, e.g. `Bug: #1234`, and use the automatic issue
- closing syntax in the description of the merge request.
+ closing syntax in the description of the pull request.
 
 ### Submitting your contribution for review
 
 Once you're done with your work, you should commit it, push it to a remote
-repository, and open a Merge Request against the GdkPixbuf upstream
-repository. Follow the [GitLab workflow page](https://wiki.gnome.org/GitLab/)
-on the GNOME wiki for further instructions.
+repository, and open a Pull Request against the GdkPixbuf upstream
+repository.
 
-Once you opened a Merge Request, the GdkPixbuf maintainers will review your
+Once you opened a Pull Request, the GdkPixbuf maintainers will review your
 contribution.
 
 ## Project layout
@@ -229,24 +216,14 @@ contribution.
 
 GdkPixbuf is divided into logical sections:
 
- - Core: the [GdkPixbuf][gdkpixbuf-api-core] object and its properties
- - Construction: [creating][gdkpixbuf-api-ctor] a new GdkPixbuf instance from a buffer
- - I/O: [Loading][gdkpixbuf-api-load] and [Saving][gdkpixbuf-api-save] image
-   data in different formats
- - Image transformations: [Scaling and compositing][gdkpixbuf-api-ops] image
+ - Core: the GdkPixbuf object and its properties
+ - Construction: creating a new GdkPixbuf instance from a buffer
+ - I/O: Loading and Saving image data in different formats
+ - Image transformations: Scaling and compositing image
    data inside GdkPixbuf instances
- - The [GdkPixbuf loader][gdkpixbuf-api-loader] API, for incremental
+ - The GdkPixbuf loaderAPI, for incremental
    asynchronous loading of image data in a GdkPixbuf
- - The [loadable module interface][gdkpixbuf-api-module] for writing out of
+ - The loadable module interface for writing out of
    tree image loaders
- - The [animated image][gdkpixbuf-api-animation] API, for image formats
+ - The animated image API, for image formats
    that support animations
-
-[gdkpixbuf-api-core]: https://developer.gnome.org/gdk-pixbuf/stable/gdk-pixbuf-The-GdkPixbuf-Structure.html
-[gdkpixbuf-api-ctor]: https://developer.gnome.org/gdk-pixbuf/stable/gdk-pixbuf-Image-Data-in-Memory.html
-[gdkpixbuf-api-load]: https://developer.gnome.org/gdk-pixbuf/stable/gdk-pixbuf-File-Loading.html
-[gdkpixbuf-api-save]: https://developer.gnome.org/gdk-pixbuf/stable/gdk-pixbuf-File-saving.html
-[gdkpixbuf-api-ops]: https://developer.gnome.org/gdk-pixbuf/stable/gdk-pixbuf-Scaling.html
-[gdkpixbuf-api-loader]: https://developer.gnome.org/gdk-pixbuf/stable/GdkPixbufLoader.html
-[gdkpixbuf-api-module]: https://developer.gnome.org/gdk-pixbuf/stable/gdk-pixbuf-Module-Interface.html
-[gdkpixbuf-api-animation]: https://developer.gnome.org/gdk-pixbuf/stable/gdk-pixbuf-Animations.html
