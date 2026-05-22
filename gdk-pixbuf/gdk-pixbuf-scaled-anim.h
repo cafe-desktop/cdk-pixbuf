@@ -19,15 +19,15 @@
  * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef GDK_PIXBUF_SCALED_ANIM_H
-#define GDK_PIXBUF_SCALED_ANIM_H
+#ifndef CDK_PIXBUF_SCALED_ANIM_H
+#define CDK_PIXBUF_SCALED_ANIM_H
 
 #include <cdk-pixbuf/cdk-pixbuf-animation.h>
 
 G_BEGIN_DECLS
 
-#define GDK_TYPE_PIXBUF_SCALED_ANIM              (cdk_pixbuf_scaled_anim_get_type ())
-#define GDK_TYPE_PIXBUF_SCALED_ANIM_ITER         (cdk_pixbuf_scaled_anim_iter_get_type ())
+#define CDK_TYPE_PIXBUF_SCALED_ANIM              (cdk_pixbuf_scaled_anim_get_type ())
+#define CDK_TYPE_PIXBUF_SCALED_ANIM_ITER         (cdk_pixbuf_scaled_anim_iter_get_type ())
 
 typedef struct _GdkPixbufScaledAnim GdkPixbufScaledAnim;
 typedef struct _GdkPixbufScaledAnimClass GdkPixbufScaledAnimClass;
@@ -44,4 +44,4 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC (GdkPixbufScaledAnim, g_object_unref)
 
 G_END_DECLS
 
-#endif  /* GDK_PIXBUF_SCALED_ANIM_H */
+#endif  /* CDK_PIXBUF_SCALED_ANIM_H */

@@ -21,10 +21,10 @@
  * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef GDK_PIXBUF_TRANSFORM_H
-#define GDK_PIXBUF_TRANSFORM_H
+#ifndef CDK_PIXBUF_TRANSFORM_H
+#define CDK_PIXBUF_TRANSFORM_H
 
-#if defined(GDK_PIXBUF_DISABLE_SINGLE_INCLUDES) && !defined (GDK_PIXBUF_H_INSIDE) && !defined (GDK_PIXBUF_COMPILATION)
+#if defined(CDK_PIXBUF_DISABLE_SINGLE_INCLUDES) && !defined (CDK_PIXBUF_H_INSIDE) && !defined (CDK_PIXBUF_COMPILATION)
 #error "Only <cdk-pixbuf/cdk-pixbuf.h> can be included directly."
 #endif
 
@@ -38,32 +38,32 @@ G_BEGIN_DECLS
 
 /**
  * GdkInterpType:
- * @GDK_INTERP_NEAREST: Nearest neighbor sampling; this is the fastest
+ * @CDK_INTERP_NEAREST: Nearest neighbor sampling; this is the fastest
  *  and lowest quality mode. Quality is normally unacceptable when scaling 
  *  down, but may be OK when scaling up.
- * @GDK_INTERP_TILES: This is an accurate simulation of the PostScript
+ * @CDK_INTERP_TILES: This is an accurate simulation of the PostScript
  *  image operator without any interpolation enabled.  Each pixel is
  *  rendered as a tiny parallelogram of solid color, the edges of which
  *  are implemented with antialiasing.  It resembles nearest neighbor for
  *  enlargement, and bilinear for reduction.
- * @GDK_INTERP_BILINEAR: Best quality/speed balance; use this mode by
+ * @CDK_INTERP_BILINEAR: Best quality/speed balance; use this mode by
  *  default. Bilinear interpolation.  For enlargement, it is
  *  equivalent to point-sampling the ideal bilinear-interpolated image.
  *  For reduction, it is equivalent to laying down small tiles and
  *  integrating over the coverage area.
- * @GDK_INTERP_HYPER: This is the slowest and highest quality
+ * @CDK_INTERP_HYPER: This is the slowest and highest quality
  *  reconstruction function. It is derived from the hyperbolic filters in
  *  Wolberg's "Digital Image Warping", and is formally defined as the
  *  hyperbolic-filter sampling the ideal hyperbolic-filter interpolated
  *  image (the filter is designed to be idempotent for 1:1 pixel mapping).
  *  **Deprecated**: this interpolation filter is deprecated, as in reality
- *  it has a lower quality than the @GDK_INTERP_BILINEAR filter
+ *  it has a lower quality than the @CDK_INTERP_BILINEAR filter
  *  (Since: 2.38)
  *
  * Interpolation modes for scaling functions.
  *
- * The `GDK_INTERP_NEAREST` mode is the fastest scaling method, but has
- * horrible quality when scaling down; `GDK_INTERP_BILINEAR` is the best
+ * The `CDK_INTERP_NEAREST` mode is the fastest scaling method, but has
+ * horrible quality when scaling down; `CDK_INTERP_BILINEAR` is the best
  * choice if you aren't sure what to choose, it has a good speed/quality
  * balance.
  * 
@@ -71,31 +71,31 @@ G_BEGIN_DECLS
  * interpolation is just as fast and results in higher quality.
  */
 typedef enum {
-	GDK_INTERP_NEAREST,
-	GDK_INTERP_TILES,
-	GDK_INTERP_BILINEAR,
-	GDK_INTERP_HYPER
+	CDK_INTERP_NEAREST,
+	CDK_INTERP_TILES,
+	CDK_INTERP_BILINEAR,
+	CDK_INTERP_HYPER
 } GdkInterpType;
 
 /**
  * GdkPixbufRotation:
- * @GDK_PIXBUF_ROTATE_NONE: No rotation.
- * @GDK_PIXBUF_ROTATE_COUNTERCLOCKWISE: Rotate by 90 degrees.
- * @GDK_PIXBUF_ROTATE_UPSIDEDOWN: Rotate by 180 degrees.
- * @GDK_PIXBUF_ROTATE_CLOCKWISE: Rotate by 270 degrees.
+ * @CDK_PIXBUF_ROTATE_NONE: No rotation.
+ * @CDK_PIXBUF_ROTATE_COUNTERCLOCKWISE: Rotate by 90 degrees.
+ * @CDK_PIXBUF_ROTATE_UPSIDEDOWN: Rotate by 180 degrees.
+ * @CDK_PIXBUF_ROTATE_CLOCKWISE: Rotate by 270 degrees.
  * 
  * The possible rotations which can be passed to cdk_pixbuf_rotate_simple().
  *
  * To make them easier to use, their numerical values are the actual degrees.
  */
 typedef enum {
-	GDK_PIXBUF_ROTATE_NONE             =   0,
-	GDK_PIXBUF_ROTATE_COUNTERCLOCKWISE =  90,
-	GDK_PIXBUF_ROTATE_UPSIDEDOWN       = 180,
-	GDK_PIXBUF_ROTATE_CLOCKWISE        = 270
+	CDK_PIXBUF_ROTATE_NONE             =   0,
+	CDK_PIXBUF_ROTATE_COUNTERCLOCKWISE =  90,
+	CDK_PIXBUF_ROTATE_UPSIDEDOWN       = 180,
+	CDK_PIXBUF_ROTATE_CLOCKWISE        = 270
 } GdkPixbufRotation;
 
-GDK_PIXBUF_AVAILABLE_IN_ALL
+CDK_PIXBUF_AVAILABLE_IN_ALL
 void cdk_pixbuf_scale           (const GdkPixbuf *src,
 				 GdkPixbuf       *dest,
 				 int              dest_x,
@@ -107,7 +107,7 @@ void cdk_pixbuf_scale           (const GdkPixbuf *src,
 				 double           scale_x,
 				 double           scale_y,
 				 GdkInterpType    interp_type);
-GDK_PIXBUF_AVAILABLE_IN_ALL
+CDK_PIXBUF_AVAILABLE_IN_ALL
 void cdk_pixbuf_composite       (const GdkPixbuf *src,
 				 GdkPixbuf       *dest,
 				 int              dest_x,
@@ -120,7 +120,7 @@ void cdk_pixbuf_composite       (const GdkPixbuf *src,
 				 double           scale_y,
 				 GdkInterpType    interp_type,
 				 int              overall_alpha);
-GDK_PIXBUF_AVAILABLE_IN_ALL
+CDK_PIXBUF_AVAILABLE_IN_ALL
 void cdk_pixbuf_composite_color (const GdkPixbuf *src,
 				 GdkPixbuf       *dest,
 				 int              dest_x,
@@ -139,13 +139,13 @@ void cdk_pixbuf_composite_color (const GdkPixbuf *src,
 				 guint32          color1,
 				 guint32          color2);
 
-GDK_PIXBUF_AVAILABLE_IN_ALL
+CDK_PIXBUF_AVAILABLE_IN_ALL
 GdkPixbuf *cdk_pixbuf_scale_simple           (const GdkPixbuf *src,
 					      int              dest_width,
 					      int              dest_height,
 					      GdkInterpType    interp_type);
 
-GDK_PIXBUF_AVAILABLE_IN_ALL
+CDK_PIXBUF_AVAILABLE_IN_ALL
 GdkPixbuf *cdk_pixbuf_composite_color_simple (const GdkPixbuf *src,
 					      int              dest_width,
 					      int              dest_height,
@@ -155,14 +155,14 @@ GdkPixbuf *cdk_pixbuf_composite_color_simple (const GdkPixbuf *src,
 					      guint32          color1,
 					      guint32          color2);
 
-GDK_PIXBUF_AVAILABLE_IN_2_6
+CDK_PIXBUF_AVAILABLE_IN_2_6
 GdkPixbuf *cdk_pixbuf_rotate_simple          (const GdkPixbuf   *src,
 				              GdkPixbufRotation  angle);
-GDK_PIXBUF_AVAILABLE_IN_2_6
+CDK_PIXBUF_AVAILABLE_IN_2_6
 GdkPixbuf *cdk_pixbuf_flip                   (const GdkPixbuf   *src,
 				              gboolean           horizontal);
 				     
 G_END_DECLS
 
 
-#endif  /* GDK_PIXBUF_TRANSFORM_H */
+#endif  /* CDK_PIXBUF_TRANSFORM_H */

@@ -71,12 +71,12 @@ cdk_pixbuf_new_from_data (const guchar           *data,
 	/* Only 8-bit/sample RGB buffers are supported for now */
 
 	g_return_val_if_fail (data != NULL, NULL);
-	g_return_val_if_fail (colorspace == GDK_COLORSPACE_RGB, NULL);
+	g_return_val_if_fail (colorspace == CDK_COLORSPACE_RGB, NULL);
 	g_return_val_if_fail (bits_per_sample == 8, NULL);
 	g_return_val_if_fail (width > 0, NULL);
 	g_return_val_if_fail (height > 0, NULL);
 
-	pixbuf = g_object_new (GDK_TYPE_PIXBUF, 
+	pixbuf = g_object_new (CDK_TYPE_PIXBUF, 
 			       "colorspace", colorspace,
 			       "n-channels", has_alpha ? 4 : 3,
 			       "bits-per-sample", bits_per_sample,
@@ -124,13 +124,13 @@ cdk_pixbuf_new_from_bytes (GBytes        *data,
                            int            rowstride)
 {
 	g_return_val_if_fail (data != NULL, NULL);
-	g_return_val_if_fail (colorspace == GDK_COLORSPACE_RGB, NULL);
+	g_return_val_if_fail (colorspace == CDK_COLORSPACE_RGB, NULL);
 	g_return_val_if_fail (bits_per_sample == 8, NULL);
 	g_return_val_if_fail (width > 0, NULL);
 	g_return_val_if_fail (height > 0, NULL);
 	g_return_val_if_fail (g_bytes_get_size (data) >= width * height * (has_alpha ? 4 : 3), NULL);
 
-	return g_object_new (GDK_TYPE_PIXBUF,
+	return g_object_new (CDK_TYPE_PIXBUF,
                              "pixel-bytes", data,
                              "colorspace", colorspace,
                              "n-channels", has_alpha ? 4 : 3,

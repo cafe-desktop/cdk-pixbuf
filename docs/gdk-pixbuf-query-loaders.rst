@@ -28,7 +28,7 @@ be absolute or relative paths.
 Normally, the output of ``cdk-pixbuf-query-loaders`` is written to
 ``$libdir/cdk-pixbuf-2.0/2.10.0/loaders.cache``, where ``cdk-pixbuf`` looks for
 it by default. If it is written to some other location, the environment variable
-``GDK_PIXBUF_MODULE_FILE`` can be set to point ``cdk-pixbuf`` at the file.
+``CDK_PIXBUF_MODULE_FILE`` can be set to point ``cdk-pixbuf`` at the file.
 
 OPTIONS
 -------
@@ -41,7 +41,7 @@ OPTIONS
 ENVIRONMENT
 -----------
 
-The environment variable ``GDK_PIXBUF_MODULEDIR`` can be used to specify a
+The environment variable ``CDK_PIXBUF_MODULEDIR`` can be used to specify a
 different loader directory.
 
 The default ``cdk-pixbuf`` loader directory is

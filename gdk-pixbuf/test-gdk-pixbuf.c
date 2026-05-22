@@ -84,8 +84,8 @@ simple_composite_test_one (GdkInterpType type,
 	GdkPixbuf *destination_pixbuf;
 	int result_pixel;
 
-	source_pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, source_alpha, 8, 32, 32);
-	destination_pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, destination_alpha, 8, 32, 32);
+	source_pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, source_alpha, 8, 32, 32);
+	destination_pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, destination_alpha, 8, 32, 32);
 	
 	fill_with_pixel (source_pixbuf, source_pixel);
 	fill_with_pixel (destination_pixbuf, destination_pixel);
@@ -105,10 +105,10 @@ simple_composite_test_one (GdkInterpType type,
 		char *interpolation_type, *source_string, *destination_string, *result_string, *expected_string;
 
 		switch (type) {
-		case GDK_INTERP_NEAREST:  interpolation_type = "GDK_INTERP_NEAREST"; break;
-		case GDK_INTERP_TILES:    interpolation_type = "GDK_INTERP_TILES"; break;
-		case GDK_INTERP_BILINEAR: interpolation_type = "GDK_INTERP_BILINEAR"; break;
-		case GDK_INTERP_HYPER:    interpolation_type = "GDK_INTERP_HYPER"; break;
+		case CDK_INTERP_NEAREST:  interpolation_type = "CDK_INTERP_NEAREST"; break;
+		case CDK_INTERP_TILES:    interpolation_type = "CDK_INTERP_TILES"; break;
+		case CDK_INTERP_BILINEAR: interpolation_type = "CDK_INTERP_BILINEAR"; break;
+		case CDK_INTERP_HYPER:    interpolation_type = "CDK_INTERP_HYPER"; break;
 		default:                  interpolation_type = "???";
 		}
 
@@ -214,10 +214,10 @@ simple_composite_test (void)
 
 	success = TRUE;
 
-	success &= simple_composite_test_one_type (GDK_INTERP_NEAREST);
-	success &= simple_composite_test_one_type (GDK_INTERP_TILES);
-	success &= simple_composite_test_one_type (GDK_INTERP_BILINEAR);
-	success &= simple_composite_test_one_type (GDK_INTERP_HYPER);
+	success &= simple_composite_test_one_type (CDK_INTERP_NEAREST);
+	success &= simple_composite_test_one_type (CDK_INTERP_TILES);
+	success &= simple_composite_test_one_type (CDK_INTERP_BILINEAR);
+	success &= simple_composite_test_one_type (CDK_INTERP_HYPER);
 
 	return success;
 }

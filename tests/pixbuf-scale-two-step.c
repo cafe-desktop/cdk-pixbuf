@@ -119,12 +119,12 @@ test_old_and_new (gconstpointer data)
   source = make_checkerboard (width, height);
 
   /* Scale it without and with the two-step optimization */
-  g_setenv ("GDK_PIXBUF_DISABLE_TWO_STEP_SCALER", "1", TRUE);
+  g_setenv ("CDK_PIXBUF_DISABLE_TWO_STEP_SCALER", "1", TRUE);
   one = cdk_pixbuf_scale_simple (source,
 				 (int) (width * SCALE_FACTOR + 0.5),
 				 (int) (height * SCALE_FACTOR + 0.5),
 				 interp_type);
-  g_unsetenv("GDK_PIXBUF_DISABLE_TWO_STEP_SCALER");
+  g_unsetenv("CDK_PIXBUF_DISABLE_TWO_STEP_SCALER");
   two = cdk_pixbuf_scale_simple (source,
 				 (int) (width * SCALE_FACTOR + 0.5),
 				 (int) (height * SCALE_FACTOR + 0.5),
@@ -173,7 +173,7 @@ crop_n_compare(const GdkPixbuf *source,	/* The source image */
   g_assert_nonnull (cropped);
 
   /* Now crop and scale it in one go */
-  scaled = cdk_pixbuf_new (GDK_COLORSPACE_RGB, 0, 8, width, height);
+  scaled = cdk_pixbuf_new (CDK_COLORSPACE_RGB, 0, 8, width, height);
   g_assert_nonnull (scaled);
   cdk_pixbuf_scale (source, scaled,
 		    0, 0,                              /* dest_[xy] */
@@ -283,7 +283,7 @@ test_dest (gconstpointer data)
 
   source = make_checkerboard (swidth, sheight);
 
-  copy = cdk_pixbuf_new (GDK_COLORSPACE_RGB, 0, 8, dwidth, dheight);
+  copy = cdk_pixbuf_new (CDK_COLORSPACE_RGB, 0, 8, dwidth, dheight);
   g_assert_nonnull (copy);
 
   /* Copy the four quadrants separately */
@@ -330,9 +330,9 @@ test_dest (gconstpointer data)
 int
 main (int argc, char **argv)
 {
-  GdkInterpType tiles = GDK_INTERP_TILES;
-  GdkInterpType bilinear = GDK_INTERP_BILINEAR;
-  GdkInterpType hyper = GDK_INTERP_HYPER;
+  GdkInterpType tiles = CDK_INTERP_TILES;
+  GdkInterpType bilinear = CDK_INTERP_BILINEAR;
+  GdkInterpType hyper = CDK_INTERP_HYPER;
   g_test_init (&argc, &argv, NULL);
 
   g_test_add_data_func ("/pixbuf/scale/two-step/tiles", &tiles, test_old_and_new);

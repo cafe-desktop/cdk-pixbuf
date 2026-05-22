@@ -43,8 +43,8 @@ filter_keys (char   **keys,
           if (icc_length < 127)
             {
               g_set_error (error,
-                           GDK_PIXBUF_ERROR,
-                           GDK_PIXBUF_ERROR_BAD_OPTION,
+                           CDK_PIXBUF_ERROR,
+                           CDK_PIXBUF_ERROR_BAD_OPTION,
                            "Color profile has invalid length %lu",
                            icc_length);
               g_free (icc_data);
@@ -162,6 +162,6 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
   info->description = "TIFF";
   info->mime_types = (gchar **) mime_types;
   info->extensions = (gchar **) extensions;
-  info->flags = GDK_PIXBUF_FORMAT_WRITABLE | GDK_PIXBUF_FORMAT_THREADSAFE;
+  info->flags = CDK_PIXBUF_FORMAT_WRITABLE | CDK_PIXBUF_FORMAT_THREADSAFE;
   info->license = "LGPL";
 }

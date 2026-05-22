@@ -22,8 +22,8 @@
  * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef GDK_PIXBUF_GDIP_H
-#define GDK_PIXBUF_GDIP_H
+#ifndef CDK_PIXBUF_GDIP_H
+#define CDK_PIXBUF_GDIP_H
 
 #include <cdk-pixbuf/cdk-pixbuf-animation.h>
 
@@ -31,13 +31,13 @@ typedef struct _GdkPixbufGdipAnim GdkPixbufGdipAnim;
 typedef struct _GdkPixbufGdipAnimClass GdkPixbufGdipAnimClass;
 typedef struct _GdkPixbufFrame GdkPixbufFrame;
 
-#define GDK_TYPE_PIXBUF_GDIP_ANIM              (cdk_pixbuf_gdip_anim_get_type ())
-#define GDK_PIXBUF_GDIP_ANIM(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_PIXBUF_GDIP_ANIM, GdkPixbufGdipAnim))
-#define GDK_IS_PIXBUF_GDIP_ANIM(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_PIXBUF_GDIP_ANIM))
+#define CDK_TYPE_PIXBUF_GDIP_ANIM              (cdk_pixbuf_gdip_anim_get_type ())
+#define CDK_PIXBUF_GDIP_ANIM(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF_GDIP_ANIM, GdkPixbufGdipAnim))
+#define CDK_IS_PIXBUF_GDIP_ANIM(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), CDK_TYPE_PIXBUF_GDIP_ANIM))
 
-#define GDK_PIXBUF_GDIP_ANIM_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GDK_TYPE_PIXBUF_GDIP_ANIM, GdkPixbufGdipAnimClass))
-#define GDK_IS_PIXBUF_GDIP_ANIM_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GDK_TYPE_PIXBUF_GDIP_ANIM))
-#define GDK_PIXBUF_GDIP_ANIM_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GDK_TYPE_PIXBUF_GDIP_ANIM, GdkPixbufGdipAnimClass))
+#define CDK_PIXBUF_GDIP_ANIM_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_GDIP_ANIM, GdkPixbufGdipAnimClass))
+#define CDK_IS_PIXBUF_GDIP_ANIM_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), CDK_TYPE_PIXBUF_GDIP_ANIM))
+#define CDK_PIXBUF_GDIP_ANIM_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_GDIP_ANIM, GdkPixbufGdipAnimClass))
 
 /* Private part of the GdkPixbufGdipAnim structure */
 struct _GdkPixbufGdipAnim {
@@ -70,13 +70,13 @@ typedef struct _GdkPixbufGdipAnimIter GdkPixbufGdipAnimIter;
 typedef struct _GdkPixbufGdipAnimIterClass GdkPixbufGdipAnimIterClass;
 
 
-#define GDK_TYPE_PIXBUF_GDIP_ANIM_ITER              (cdk_pixbuf_gdip_anim_iter_get_type ())
-#define GDK_PIXBUF_GDIP_ANIM_ITER(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_PIXBUF_GDIP_ANIM_ITER, GdkPixbufGdipAnimIter))
-#define GDK_IS_PIXBUF_GDIP_ANIM_ITER(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_PIXBUF_GDIP_ANIM_ITER))
+#define CDK_TYPE_PIXBUF_GDIP_ANIM_ITER              (cdk_pixbuf_gdip_anim_iter_get_type ())
+#define CDK_PIXBUF_GDIP_ANIM_ITER(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF_GDIP_ANIM_ITER, GdkPixbufGdipAnimIter))
+#define CDK_IS_PIXBUF_GDIP_ANIM_ITER(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), CDK_TYPE_PIXBUF_GDIP_ANIM_ITER))
 
-#define GDK_PIXBUF_GDIP_ANIM_ITER_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GDK_TYPE_PIXBUF_GDIP_ANIM_ITER, GdkPixbufGdipAnimIterClass))
-#define GDK_IS_PIXBUF_GDIP_ANIM_ITER_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GDK_TYPE_PIXBUF_GDIP_ANIM_ITER))
-#define GDK_PIXBUF_GDIP_ANIM_ITER_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GDK_TYPE_PIXBUF_GDIP_ANIM_ITER, GdkPixbufGdipAnimIterClass))
+#define CDK_PIXBUF_GDIP_ANIM_ITER_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_GDIP_ANIM_ITER, GdkPixbufGdipAnimIterClass))
+#define CDK_IS_PIXBUF_GDIP_ANIM_ITER_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), CDK_TYPE_PIXBUF_GDIP_ANIM_ITER))
+#define CDK_PIXBUF_GDIP_ANIM_ITER_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_GDIP_ANIM_ITER, GdkPixbufGdipAnimIterClass))
 
 struct _GdkPixbufGdipAnimIter {
         GdkPixbufAnimationIter parent_instance;

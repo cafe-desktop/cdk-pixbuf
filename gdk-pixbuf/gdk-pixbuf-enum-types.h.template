@@ -1,10 +1,10 @@
 /*** BEGIN file-header ***/
-#if defined(GDK_PIXBUF_DISABLE_SINGLE_INCLUDES) && !defined (GDK_PIXBUF_H_INSIDE) && !defined (GDK_PIXBUF_COMPILATION)
+#if defined(CDK_PIXBUF_DISABLE_SINGLE_INCLUDES) && !defined (CDK_PIXBUF_H_INSIDE) && !defined (CDK_PIXBUF_COMPILATION)
 #error "Only <cdk-pixbuf/cdk-pixbuf.h> can be included directly."
 #endif
 
-#ifndef __GDK_PIXBUF_ENUM_TYPES_H__
-#define __GDK_PIXBUF_ENUM_TYPES_H__
+#ifndef __CDK_PIXBUF_ENUM_TYPES_H__
+#define __CDK_PIXBUF_ENUM_TYPES_H__
 
 #include <glib-object.h>
 
@@ -19,7 +19,7 @@ G_BEGIN_DECLS
 /*** END file-production ***/
 
 /*** BEGIN value-header ***/
-GDK_PIXBUF_AVAILABLE_IN_ALL
+CDK_PIXBUF_AVAILABLE_IN_ALL
 GType @enum_name@_get_type (void) G_GNUC_CONST;
 #define @ENUMPREFIX@_TYPE_@ENUMSHORT@ (@enum_name@_get_type ())
 /*** END value-header ***/
@@ -27,5 +27,5 @@ GType @enum_name@_get_type (void) G_GNUC_CONST;
 /*** BEGIN file-tail ***/
 G_END_DECLS
 
-#endif /* __GDK_PIXBUF_ENUM_TYPES_H__ */
+#endif /* __CDK_PIXBUF_ENUM_TYPES_H__ */
 /*** END file-tail ***/

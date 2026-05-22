@@ -1,32 +1,32 @@
-#ifndef __GDK_PIXBUF_FEATURES_H__
-#define __GDK_PIXBUF_FEATURES_H__
+#ifndef __CDK_PIXBUF_FEATURES_H__
+#define __CDK_PIXBUF_FEATURES_H__
 
-#if defined(GDK_PIXBUF_DISABLE_SINGLE_INCLUDES) && !defined (GDK_PIXBUF_H_INSIDE) && !defined (GDK_PIXBUF_COMPILATION)
+#if defined(CDK_PIXBUF_DISABLE_SINGLE_INCLUDES) && !defined (CDK_PIXBUF_H_INSIDE) && !defined (CDK_PIXBUF_COMPILATION)
 #error "Only <cdk-pixbuf/cdk-pixbuf.h> can be included directly."
 #endif
 
 #include <glib.h>
 
 /**
- * GDK_PIXBUF_MAJOR:
+ * CDK_PIXBUF_MAJOR:
  * 
  * Major version of cdk-pixbuf library, that is the "0" in
  * "0.8.2" for example.
  */
 /**
- * GDK_PIXBUF_MINOR:
+ * CDK_PIXBUF_MINOR:
  * 
  * Minor version of cdk-pixbuf library, that is the "8" in
  * "0.8.2" for example.
  */
 /**
- * GDK_PIXBUF_MICRO:
+ * CDK_PIXBUF_MICRO:
  * 
  * Micro version of cdk-pixbuf library, that is the "2" in
  * "0.8.2" for example.
  */
 /**
- * GDK_PIXBUF_VERSION:
+ * CDK_PIXBUF_VERSION:
  * 
  * Contains the full version of GdkPixbuf as a string.
  *
@@ -34,34 +34,34 @@
  * `cdk_pixbuf_version`.
  */
 
-#define GDK_PIXBUF_MAJOR (@GDK_PIXBUF_MAJOR@)
-#define GDK_PIXBUF_MINOR (@GDK_PIXBUF_MINOR@)
-#define GDK_PIXBUF_MICRO (@GDK_PIXBUF_MICRO@)
-#define GDK_PIXBUF_VERSION "@GDK_PIXBUF_VERSION@"
+#define CDK_PIXBUF_MAJOR (@CDK_PIXBUF_MAJOR@)
+#define CDK_PIXBUF_MINOR (@CDK_PIXBUF_MINOR@)
+#define CDK_PIXBUF_MICRO (@CDK_PIXBUF_MICRO@)
+#define CDK_PIXBUF_VERSION "@CDK_PIXBUF_VERSION@"
 
-#ifndef _GDK_PIXBUF_EXTERN
-#define _GDK_PIXBUF_EXTERN extern
+#ifndef _CDK_PIXBUF_EXTERN
+#define _CDK_PIXBUF_EXTERN extern
 #endif
 
 /* We prefix variable declarations so they can
  * properly get exported/imported from Windows DLLs.
  */
 #ifdef G_PLATFORM_WIN32
-#  ifdef GDK_PIXBUF_STATIC_COMPILATION
-#    define GDK_PIXBUF_VAR extern
-#  else /* !GDK_PIXBUF_STATIC_COMPILATION */
-#    ifdef GDK_PIXBUF_C_COMPILATION
+#  ifdef CDK_PIXBUF_STATIC_COMPILATION
+#    define CDK_PIXBUF_VAR extern
+#  else /* !CDK_PIXBUF_STATIC_COMPILATION */
+#    ifdef CDK_PIXBUF_C_COMPILATION
 #      ifdef DLL_EXPORT
-#        define GDK_PIXBUF_VAR _GDK_PIXBUF_EXTERN
+#        define CDK_PIXBUF_VAR _CDK_PIXBUF_EXTERN
 #      else /* !DLL_EXPORT */
-#        define GDK_PIXBUF_VAR extern
+#        define CDK_PIXBUF_VAR extern
 #      endif /* !DLL_EXPORT */
-#    else /* !GDK_PIXBUF_C_COMPILATION */
-#      define GDK_PIXBUF_VAR extern __declspec(dllimport)
-#    endif /* !GDK_PIXBUF_C_COMPILATION */
-#  endif /* !GDK_PIXBUF_STATIC_COMPILATION */
+#    else /* !CDK_PIXBUF_C_COMPILATION */
+#      define CDK_PIXBUF_VAR extern __declspec(dllimport)
+#    endif /* !CDK_PIXBUF_C_COMPILATION */
+#  endif /* !CDK_PIXBUF_STATIC_COMPILATION */
 #else /* !G_PLATFORM_WIN32 */
-#  define GDK_PIXBUF_VAR _GDK_PIXBUF_EXTERN
+#  define CDK_PIXBUF_VAR _CDK_PIXBUF_EXTERN
 #endif /* !G_PLATFORM_WIN32 */
 
 /**
@@ -73,7 +73,7 @@
  * 
  * This variable is in the library, so represents the
  * cdk-pixbuf library you have linked against. Contrast with the
- * `GDK_PIXBUF_MAJOR` macro, which represents the major version of the
+ * `CDK_PIXBUF_MAJOR` macro, which represents the major version of the
  * cdk-pixbuf headers you have included.
  */
 /**
@@ -85,7 +85,7 @@
  * 
  * This variable is in the library, so represents the
  * cdk-pixbuf library you have linked against. Contrast with the
- * `GDK_PIXBUF_MINOR` macro, which represents the minor version of the
+ * `CDK_PIXBUF_MINOR` macro, which represents the minor version of the
  * cdk-pixbuf headers you have included.
  */
 /**
@@ -97,7 +97,7 @@
  * 
  * This variable is in the library, so represents the
  * cdk-pixbuf library you have linked against. Contrast with the
- * `GDK_PIXBUF_MICRO` macro, which represents the micro version of the
+ * `CDK_PIXBUF_MICRO` macro, which represents the micro version of the
  * cdk-pixbuf headers you have included.
  */
 /**
@@ -107,9 +107,9 @@
  * This is the version currently in use by a running program.
  */
 
-GDK_PIXBUF_VAR const guint cdk_pixbuf_major_version;
-GDK_PIXBUF_VAR const guint cdk_pixbuf_minor_version;
-GDK_PIXBUF_VAR const guint cdk_pixbuf_micro_version;
-GDK_PIXBUF_VAR const char *cdk_pixbuf_version;
+CDK_PIXBUF_VAR const guint cdk_pixbuf_major_version;
+CDK_PIXBUF_VAR const guint cdk_pixbuf_minor_version;
+CDK_PIXBUF_VAR const guint cdk_pixbuf_micro_version;
+CDK_PIXBUF_VAR const char *cdk_pixbuf_version;
 
-#endif /* __GDK_PIXBUF_FEATURES_H__ */
+#endif /* __CDK_PIXBUF_FEATURES_H__ */

@@ -38,7 +38,7 @@ static int output_size = 256;
 static gboolean g_fatal_warnings = FALSE;
 static char **filenames = NULL;
 
-#if !GDK_PIXBUF_CHECK_VERSION(2,36,5)
+#if !CDK_PIXBUF_CHECK_VERSION(2,36,5)
 /**
  * gnome_desktop_thumbnail_scale_down_pixbuf:
  * @pixbuf: a #GdkPixbuf
@@ -97,7 +97,7 @@ gnome_desktop_thumbnail_scale_down_pixbuf (GdkPixbuf *pixbuf,
 	source_rowstride = cdk_pixbuf_get_rowstride (pixbuf);
 	src_pixels = cdk_pixbuf_get_pixels (pixbuf);
 
-	dest_pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, has_alpha, 8,
+	dest_pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, has_alpha, 8,
 				      dest_width, dest_height);
 	dest = cdk_pixbuf_get_pixels (dest_pixbuf);
 	dest_rowstride = cdk_pixbuf_get_rowstride (dest_pixbuf);
@@ -299,7 +299,7 @@ int main (int argc, char **argv)
 
 			scale = (double)output_size / MAX (width, height);
 
-#if !GDK_PIXBUF_CHECK_VERSION(2,36,5)
+#if !CDK_PIXBUF_CHECK_VERSION(2,36,5)
 			scaled = gnome_desktop_thumbnail_scale_down_pixbuf (pixbuf,
 									    floor (width * scale + 0.5),
 									    floor (height * scale + 0.5));
@@ -307,7 +307,7 @@ int main (int argc, char **argv)
 			scaled = cdk_pixbuf_scale_simple (pixbuf,
 							  floor (width * scale + 0.5),
 							  floor (height * scale + 0.5),
-							  GDK_INTERP_BILINEAR);
+							  CDK_INTERP_BILINEAR);
 #endif
 			cdk_pixbuf_copy_options (pixbuf, scaled);
 			g_object_unref (pixbuf);

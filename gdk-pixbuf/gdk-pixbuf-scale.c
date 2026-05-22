@@ -69,8 +69,8 @@ cdk_pixbuf_scale (const GdkPixbuf *src,
   const guint8 *src_pixels;
   guint8 *dest_pixels;
 
-  g_return_if_fail (GDK_IS_PIXBUF (src));
-  g_return_if_fail (GDK_IS_PIXBUF (dest));
+  g_return_if_fail (CDK_IS_PIXBUF (src));
+  g_return_if_fail (CDK_IS_PIXBUF (dest));
   g_return_if_fail (dest_x >= 0 && dest_x + dest_width <= dest->width);
   g_return_if_fail (dest_y >= 0 && dest_y + dest_height <= dest->height);
 
@@ -134,8 +134,8 @@ cdk_pixbuf_composite (const GdkPixbuf *src,
   const guint8 *src_pixels;
   guint8 *dest_pixels;
 
-  g_return_if_fail (GDK_IS_PIXBUF (src));
-  g_return_if_fail (GDK_IS_PIXBUF (dest));
+  g_return_if_fail (CDK_IS_PIXBUF (src));
+  g_return_if_fail (CDK_IS_PIXBUF (dest));
   g_return_if_fail (dest_x >= 0 && dest_x + dest_width <= dest->width);
   g_return_if_fail (dest_y >= 0 && dest_y + dest_height <= dest->height);
   g_return_if_fail (overall_alpha >= 0 && overall_alpha <= 255);
@@ -210,8 +210,8 @@ cdk_pixbuf_composite_color (const GdkPixbuf *src,
   const guint8 *src_pixels;
   guint8 *dest_pixels;
 
-  g_return_if_fail (GDK_IS_PIXBUF (src));
-  g_return_if_fail (GDK_IS_PIXBUF (dest));
+  g_return_if_fail (CDK_IS_PIXBUF (src));
+  g_return_if_fail (CDK_IS_PIXBUF (dest));
   g_return_if_fail (dest_x >= 0 && dest_x + dest_width <= dest->width);
   g_return_if_fail (dest_y >= 0 && dest_y + dest_height <= dest->height);
   g_return_if_fail (overall_alpha >= 0 && overall_alpha <= 255);
@@ -245,9 +245,9 @@ cdk_pixbuf_composite_color (const GdkPixbuf *src,
  *
  * This function leaves `src` unaffected.
  *
- * The `interp_type` should be `GDK_INTERP_NEAREST` if you want maximum
- * speed (but when scaling down `GDK_INTERP_NEAREST` is usually unusably
- * ugly). The default `interp_type` should be `GDK_INTERP_BILINEAR` which
+ * The `interp_type` should be `CDK_INTERP_NEAREST` if you want maximum
+ * speed (but when scaling down `CDK_INTERP_NEAREST` is usually unusably
+ * ugly). The default `interp_type` should be `CDK_INTERP_BILINEAR` which
  * offers reasonable quality and speed.
  *
  * You can scale a sub-portion of `src` by creating a sub-pixbuf
@@ -269,7 +269,7 @@ cdk_pixbuf_scale_simple (const GdkPixbuf *src,
 {
   GdkPixbuf *dest;
 
-  g_return_val_if_fail (GDK_IS_PIXBUF (src), NULL);
+  g_return_val_if_fail (CDK_IS_PIXBUF (src), NULL);
   g_return_val_if_fail (dest_width > 0, NULL);
   g_return_val_if_fail (dest_height > 0, NULL);
 
@@ -277,7 +277,7 @@ cdk_pixbuf_scale_simple (const GdkPixbuf *src,
   if (dest_width == src->width && dest_height == src->height)
     return cdk_pixbuf_copy (src);
 
-  dest = cdk_pixbuf_new (GDK_COLORSPACE_RGB, src->has_alpha, 8, dest_width, dest_height);
+  dest = cdk_pixbuf_new (CDK_COLORSPACE_RGB, src->has_alpha, 8, dest_width, dest_height);
   if (!dest)
     return NULL;
 
@@ -318,12 +318,12 @@ cdk_pixbuf_composite_color_simple (const GdkPixbuf *src,
 {
   GdkPixbuf *dest;
 
-  g_return_val_if_fail (GDK_IS_PIXBUF (src), NULL);
+  g_return_val_if_fail (CDK_IS_PIXBUF (src), NULL);
   g_return_val_if_fail (dest_width > 0, NULL);
   g_return_val_if_fail (dest_height > 0, NULL);
   g_return_val_if_fail (overall_alpha >= 0 && overall_alpha <= 255, NULL);
 
-  dest = cdk_pixbuf_new (GDK_COLORSPACE_RGB, src->has_alpha, 8, dest_width, dest_height);
+  dest = cdk_pixbuf_new (CDK_COLORSPACE_RGB, src->has_alpha, 8, dest_width, dest_height);
   if (!dest)
     return NULL;
 
@@ -362,7 +362,7 @@ cdk_pixbuf_rotate_simple (const GdkPixbuf   *src,
   guchar *q;
   gint x, y;
 
-  g_return_val_if_fail (GDK_IS_PIXBUF (src), NULL);
+  g_return_val_if_fail (CDK_IS_PIXBUF (src), NULL);
   src_pixels = cdk_pixbuf_read_pixels (src);
 
   switch (angle % 360)
@@ -466,7 +466,7 @@ cdk_pixbuf_flip (const GdkPixbuf *src,
   guchar *q;
   gint x, y;
 
-  g_return_val_if_fail (GDK_IS_PIXBUF (src), NULL);
+  g_return_val_if_fail (CDK_IS_PIXBUF (src), NULL);
   dest = cdk_pixbuf_new (src->colorspace, 
 			 src->has_alpha, 
 			 src->bits_per_sample, 

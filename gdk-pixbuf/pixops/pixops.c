@@ -170,7 +170,7 @@ _pixops_use_medialib ()
 
   medialib_initialized = TRUE; 
 
-  if (getenv ("GDK_DISABLE_MEDIALIB"))
+  if (getenv ("CDK_DISABLE_MEDIALIB"))
     {
       use_medialib = FALSE;
       return;
@@ -1685,8 +1685,8 @@ make_weights (PixopsFilter     *filter,
  * Limiting it to 1000 filters limits the scaler's RAM consumption to about 2MB
  * which should be OK on machines with relatively little memory.
  *
- * GDK_INTER_BILINEAR, GDK_INTERP_TILES and GDK_INTER_HYPER all have
- * similar symptoms; only GDK_INTERP_NEAREST does not need this trick.
+ * CDK_INTER_BILINEAR, CDK_INTERP_TILES and CDK_INTER_HYPER all have
+ * similar symptoms; only CDK_INTERP_NEAREST does not need this trick.
  **/
 #define MAX_FILTERS 1000
 
@@ -1699,7 +1699,7 @@ need_to_prescale (double           scale_x,
   int n_x, n_y; /* See make_weights() */
 
   /* The testsuite sets this to compare the results with and without it. */
-  if (g_getenv ("GDK_PIXBUF_DISABLE_TWO_STEP_SCALER"))
+  if (g_getenv ("CDK_PIXBUF_DISABLE_TWO_STEP_SCALER"))
     return FALSE;
 
   /* Calculate the number of weights created in make_weights() */

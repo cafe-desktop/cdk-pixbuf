@@ -49,8 +49,8 @@ cdk_pixbuf__gdip_image_save_JPEG_to_callback (GdkPixbufSaveFunc   save_func,
         
         if (endptr == *viter) {
           g_set_error (error,
-                       GDK_PIXBUF_ERROR,
-                       GDK_PIXBUF_ERROR_BAD_OPTION,
+                       CDK_PIXBUF_ERROR,
+                       CDK_PIXBUF_ERROR_BAD_OPTION,
                        _("JPEG quality must be a value between 0 and 100; value “%s” could not be parsed."),
                        *viter);
           
@@ -64,8 +64,8 @@ cdk_pixbuf__gdip_image_save_JPEG_to_callback (GdkPixbufSaveFunc   save_func,
            * in their app.
            */
           g_set_error (error,
-                       GDK_PIXBUF_ERROR,
-                       GDK_PIXBUF_ERROR_BAD_OPTION,
+                       CDK_PIXBUF_ERROR,
+                       CDK_PIXBUF_ERROR_BAD_OPTION,
                        _("JPEG quality must be a value between 0 and 100; value “%d” is not allowed."),
                        (int)quality);
           
@@ -147,6 +147,6 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
   info->description = NC_("image format", "JPEG");
   info->mime_types  = (gchar **) mime_types;
   info->extensions  = (gchar **) extensions;
-  info->flags       = GDK_PIXBUF_FORMAT_WRITABLE | GDK_PIXBUF_FORMAT_THREADSAFE;
+  info->flags       = CDK_PIXBUF_FORMAT_WRITABLE | CDK_PIXBUF_FORMAT_THREADSAFE;
   info->license     = "LGPL";
 }

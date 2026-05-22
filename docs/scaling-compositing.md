@@ -26,7 +26,7 @@ acceleration on systems where MMX is supported. If `GdkPixbuf` is built
 with the Sun mediaLib library, these functions are instead accelerated
 using mediaLib, which provides hardware acceleration on Intel, AMD,
 and Sparc chipsets. If desired, mediaLib support can be turned off by
-setting the `GDK_DISABLE_MEDIALIB` environment variable.
+setting the `CDK_DISABLE_MEDIALIB` environment variable.
 
 The alpha blending function used is:
 

@@ -21,10 +21,10 @@
  * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef GDK_PIXBUF_H
-#define GDK_PIXBUF_H
+#ifndef CDK_PIXBUF_H
+#define CDK_PIXBUF_H
 
-#define GDK_PIXBUF_H_INSIDE
+#define CDK_PIXBUF_H_INSIDE
 
 #include <glib.h>
 #include <cdk-pixbuf/cdk-pixbuf-macros.h>
@@ -39,6 +39,6 @@
 #include <cdk-pixbuf/cdk-pixbuf-loader.h>
 #include <cdk-pixbuf/cdk-pixbuf-enum-types.h>
 
-#undef GDK_PIXBUF_H_INSIDE
+#undef CDK_PIXBUF_H_INSIDE
 
-#endif  /* GDK_PIXBUF_H */
+#endif  /* CDK_PIXBUF_H */

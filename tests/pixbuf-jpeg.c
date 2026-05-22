@@ -58,7 +58,7 @@ test_bug_775218 (void)
     }
 
   ref = cdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "bug775218.jpg", NULL), &error);
-  g_assert_error (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_CORRUPT_IMAGE);
+  g_assert_error (error, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_CORRUPT_IMAGE);
   g_error_free (error);
   g_clear_object (&ref);
 }
@@ -158,7 +158,7 @@ test_jpeg_fbfbfbfb (void)
 
   if (!g_file_get_contents (g_test_get_filename (G_TEST_DIST, "issue205.jpg", NULL), &contents, &size, &error))
     {
-      if (g_error_matches (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY))
+      if (g_error_matches (error, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY))
         {
           g_test_skip ("not enough memory for this test");
           return;
@@ -173,7 +173,7 @@ test_jpeg_fbfbfbfb (void)
   g_assert_no_error (error);
 
   cdk_pixbuf_loader_close (loader, &error);
-  _g_assert_error_domain (error, GDK_PIXBUF_ERROR);
+  _g_assert_error_domain (error, CDK_PIXBUF_ERROR);
 
   g_error_free (error);
   g_object_unref (loader);

@@ -112,7 +112,7 @@
  *   int n_channels = cdk_pixbuf_get_n_channels (pixbuf);
  *
  *   // Ensure that the pixbuf is valid
- *   g_assert (cdk_pixbuf_get_colorspace (pixbuf) == GDK_COLORSPACE_RGB);
+ *   g_assert (cdk_pixbuf_get_colorspace (pixbuf) == CDK_COLORSPACE_RGB);
  *   g_assert (cdk_pixbuf_get_bits_per_sample (pixbuf) == 8);
  *   g_assert (cdk_pixbuf_get_has_alpha (pixbuf));
  *   g_assert (n_channels == 4);
@@ -164,7 +164,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define GDK_PIXBUF_C_COMPILATION
+#define CDK_PIXBUF_C_COMPILATION
 #include "cdk-pixbuf-private.h"
 #include "cdk-pixbuf-features.h"
 #include "cdk-pixbuf-enum-types.h"
@@ -210,7 +210,7 @@ G_DEFINE_TYPE_WITH_CODE (GdkPixbuf, cdk_pixbuf, G_TYPE_OBJECT,
 static void 
 cdk_pixbuf_init (GdkPixbuf *pixbuf)
 {
-  pixbuf->colorspace = GDK_COLORSPACE_RGB;
+  pixbuf->colorspace = CDK_COLORSPACE_RGB;
   pixbuf->n_channels = 3;
   pixbuf->bits_per_sample = 8;
   pixbuf->has_alpha = FALSE;
@@ -256,15 +256,15 @@ cdk_pixbuf_class_init (GdkPixbufClass *klass)
          *
          * The color space of the pixbuf.
          *
-         * Currently, only `GDK_COLORSPACE_RGB` is supported.
+         * Currently, only `CDK_COLORSPACE_RGB` is supported.
          */
         g_object_class_install_property (object_class,
                                          PROP_COLORSPACE,
                                          g_param_spec_enum ("colorspace",
                                                             _("Colorspace"),
                                                             _("The colorspace in which the samples are interpreted"),
-                                                            GDK_TYPE_COLORSPACE,
-                                                            GDK_COLORSPACE_RGB,
+                                                            CDK_TYPE_COLORSPACE,
+                                                            CDK_COLORSPACE_RGB,
                                                             PIXBUF_PARAM_FLAGS));
         /**
          * GdkPixbuf:has-alpha:
@@ -392,7 +392,7 @@ free_bytes (GdkPixbuf *pixbuf)
 static void
 cdk_pixbuf_finalize (GObject *object)
 {
-        GdkPixbuf *pixbuf = GDK_PIXBUF (object);
+        GdkPixbuf *pixbuf = CDK_PIXBUF (object);
 
         switch (pixbuf->storage) {
         case STORAGE_PIXELS:
@@ -461,7 +461,7 @@ cdk_pixbuf_serialize (GIcon *icon)
   GVariant *result;
   GBytes *bytes;
 
-  bytes = cdk_pixbuf_make_bytes (GDK_PIXBUF (icon), &error);
+  bytes = cdk_pixbuf_make_bytes (CDK_PIXBUF (icon), &error);
   if (!bytes)
     {
       g_critical ("Unable to serialise GdkPixbuf to png (via g_icon_serialize()): %s", error->message);
@@ -484,7 +484,7 @@ cdk_pixbuf_load (GLoadableIcon  *icon,
   GInputStream *stream;
   GBytes *bytes;
 
-  bytes = cdk_pixbuf_make_bytes (GDK_PIXBUF (icon), error);
+  bytes = cdk_pixbuf_make_bytes (CDK_PIXBUF (icon), error);
   if (!bytes)
     return NULL;
 
@@ -581,7 +581,7 @@ cdk_pixbuf_calculate_rowstride (GdkColorspace colorspace,
 {
 	unsigned int channels;
 
-	g_return_val_if_fail (colorspace == GDK_COLORSPACE_RGB, -1);
+	g_return_val_if_fail (colorspace == CDK_COLORSPACE_RGB, -1);
 	g_return_val_if_fail (bits_per_sample == 8, -1);
 	g_return_val_if_fail (width > 0, -1);
 	g_return_val_if_fail (height > 0, -1);
@@ -658,7 +658,7 @@ cdk_pixbuf_copy (const GdkPixbuf *pixbuf)
 	guchar *buf;
 	int size;
 
-	g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), NULL);
+	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), NULL);
 
 	/* Calculate a semi-exact size.  Here we copy with full rowstrides;
 	 * maybe we should copy each row individually with the minimum
@@ -712,7 +712,7 @@ cdk_pixbuf_new_subpixbuf (GdkPixbuf *src_pixbuf,
         guchar *pixels;
         GdkPixbuf *sub;
 
-        g_return_val_if_fail (GDK_IS_PIXBUF (src_pixbuf), NULL);
+        g_return_val_if_fail (CDK_IS_PIXBUF (src_pixbuf), NULL);
         g_return_val_if_fail (src_x >= 0 && src_x + width <= src_pixbuf->width, NULL);
         g_return_val_if_fail (src_y >= 0 && src_y + height <= src_pixbuf->height, NULL);
         
@@ -755,7 +755,7 @@ cdk_pixbuf_new_subpixbuf (GdkPixbuf *src_pixbuf,
 GdkColorspace
 cdk_pixbuf_get_colorspace (const GdkPixbuf *pixbuf)
 {
-	g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), GDK_COLORSPACE_RGB);
+	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), CDK_COLORSPACE_RGB);
 
 	return pixbuf->colorspace;
 }
@@ -771,7 +771,7 @@ cdk_pixbuf_get_colorspace (const GdkPixbuf *pixbuf)
 int
 cdk_pixbuf_get_n_channels (const GdkPixbuf *pixbuf)
 {
-	g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), -1);
+	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), -1);
 
 	return pixbuf->n_channels;
 }
@@ -787,7 +787,7 @@ cdk_pixbuf_get_n_channels (const GdkPixbuf *pixbuf)
 gboolean
 cdk_pixbuf_get_has_alpha (const GdkPixbuf *pixbuf)
 {
-	g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), FALSE);
+	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), FALSE);
 
 	return pixbuf->has_alpha ? TRUE : FALSE;
 }
@@ -803,7 +803,7 @@ cdk_pixbuf_get_has_alpha (const GdkPixbuf *pixbuf)
 int
 cdk_pixbuf_get_bits_per_sample (const GdkPixbuf *pixbuf)
 {
-	g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), -1);
+	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), -1);
 
 	return pixbuf->bits_per_sample;
 }
@@ -876,7 +876,7 @@ guchar *
 cdk_pixbuf_get_pixels_with_length (const GdkPixbuf *pixbuf,
                                    guint           *length)
 {
-	g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), NULL);
+	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), NULL);
 
         downgrade_to_pixels (pixbuf);
         g_assert (pixbuf->storage == STORAGE_PIXELS);
@@ -903,7 +903,7 @@ cdk_pixbuf_get_pixels_with_length (const GdkPixbuf *pixbuf,
 const guint8*
 cdk_pixbuf_read_pixels (const GdkPixbuf  *pixbuf)
 {
-	g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), NULL);
+	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), NULL);
 
         switch (pixbuf->storage) {
         case STORAGE_PIXELS:
@@ -941,7 +941,7 @@ cdk_pixbuf_read_pixels (const GdkPixbuf  *pixbuf)
 GBytes *
 cdk_pixbuf_read_pixel_bytes (const GdkPixbuf  *pixbuf)
 {
-        g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), NULL);
+        g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), NULL);
 
         switch (pixbuf->storage) {
         case STORAGE_PIXELS:
@@ -967,7 +967,7 @@ cdk_pixbuf_read_pixel_bytes (const GdkPixbuf  *pixbuf)
 int
 cdk_pixbuf_get_width (const GdkPixbuf *pixbuf)
 {
-	g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), -1);
+	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), -1);
 
 	return pixbuf->width;
 }
@@ -983,7 +983,7 @@ cdk_pixbuf_get_width (const GdkPixbuf *pixbuf)
 int
 cdk_pixbuf_get_height (const GdkPixbuf *pixbuf)
 {
-	g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), -1);
+	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), -1);
 
 	return pixbuf->height;
 }
@@ -1000,7 +1000,7 @@ cdk_pixbuf_get_height (const GdkPixbuf *pixbuf)
 int
 cdk_pixbuf_get_rowstride (const GdkPixbuf *pixbuf)
 {
-	g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), -1);
+	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), -1);
 
 	return pixbuf->rowstride;
 }
@@ -1018,7 +1018,7 @@ cdk_pixbuf_get_rowstride (const GdkPixbuf *pixbuf)
 gsize
 cdk_pixbuf_get_byte_length (const GdkPixbuf *pixbuf)
 {
-	g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), -1);
+	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), -1);
 
         return ((pixbuf->height - 1) * pixbuf->rowstride +
                 pixbuf->width * ((pixbuf->n_channels * pixbuf->bits_per_sample + 7) / 8));
@@ -1027,11 +1027,11 @@ cdk_pixbuf_get_byte_length (const GdkPixbuf *pixbuf)
 
 
 /* General initialization hooks */
-const guint cdk_pixbuf_major_version = GDK_PIXBUF_MAJOR;
-const guint cdk_pixbuf_minor_version = GDK_PIXBUF_MINOR;
-const guint cdk_pixbuf_micro_version = GDK_PIXBUF_MICRO;
+const guint cdk_pixbuf_major_version = CDK_PIXBUF_MAJOR;
+const guint cdk_pixbuf_minor_version = CDK_PIXBUF_MINOR;
+const guint cdk_pixbuf_micro_version = CDK_PIXBUF_MICRO;
 
-const char *cdk_pixbuf_version = GDK_PIXBUF_VERSION;
+const char *cdk_pixbuf_version = CDK_PIXBUF_VERSION;
 
 /* Error quark */
 GQuark
@@ -1061,7 +1061,7 @@ cdk_pixbuf_fill (GdkPixbuf *pixbuf,
         guchar *p;
         guint w, h;
 
-        g_return_if_fail (GDK_IS_PIXBUF (pixbuf));
+        g_return_if_fail (CDK_IS_PIXBUF (pixbuf));
 
         if (pixbuf->width == 0 || pixbuf->height == 0)
                 return;
@@ -1138,7 +1138,7 @@ cdk_pixbuf_get_option (GdkPixbuf   *pixbuf,
         gchar **options;
         gint i;
 
-        g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), NULL);
+        g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), NULL);
         g_return_val_if_fail (key != NULL, NULL);
   
         options = g_object_get_qdata (G_OBJECT (pixbuf), 
@@ -1172,7 +1172,7 @@ cdk_pixbuf_get_options (GdkPixbuf *pixbuf)
         GHashTable *ht;
         gchar **options;
 
-        g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), NULL);
+        g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), NULL);
 
         ht = g_hash_table_new (g_str_hash, g_str_equal);
 
@@ -1209,7 +1209,7 @@ cdk_pixbuf_remove_option (GdkPixbuf   *pixbuf,
         GPtrArray *array;
         gboolean found;
 
-        g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), FALSE);
+        g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), FALSE);
         g_return_val_if_fail (key != NULL, FALSE);
 
         quark = g_quark_from_static_string ("cdk_pixbuf_options");
@@ -1278,7 +1278,7 @@ cdk_pixbuf_set_option (GdkPixbuf   *pixbuf,
         gchar **options;
         gint n = 0;
  
-        g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), FALSE);
+        g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), FALSE);
         g_return_val_if_fail (key != NULL, FALSE);
         g_return_val_if_fail (value != NULL, FALSE);
 
@@ -1331,8 +1331,8 @@ cdk_pixbuf_copy_options (GdkPixbuf *src_pixbuf,
         GQuark  quark;
         gchar **options;
 
-        g_return_val_if_fail (GDK_IS_PIXBUF (src_pixbuf), FALSE);
-        g_return_val_if_fail (GDK_IS_PIXBUF (dest_pixbuf), FALSE);
+        g_return_val_if_fail (CDK_IS_PIXBUF (src_pixbuf), FALSE);
+        g_return_val_if_fail (CDK_IS_PIXBUF (dest_pixbuf), FALSE);
 
         quark = g_quark_from_static_string ("cdk_pixbuf_options");
 
@@ -1356,7 +1356,7 @@ cdk_pixbuf_set_property (GObject         *object,
 			 const GValue    *value,
 			 GParamSpec      *pspec)
 {
-        GdkPixbuf *pixbuf = GDK_PIXBUF (object);
+        GdkPixbuf *pixbuf = CDK_PIXBUF (object);
         gboolean notify = TRUE;
 
         switch (prop_id) {
@@ -1442,7 +1442,7 @@ cdk_pixbuf_get_property (GObject         *object,
 			 GValue          *value,
 			 GParamSpec      *pspec)
 {
-        GdkPixbuf *pixbuf = GDK_PIXBUF (object);
+        GdkPixbuf *pixbuf = CDK_PIXBUF (object);
   
         switch (prop_id) {
         case PROP_COLORSPACE:
@@ -1489,7 +1489,7 @@ make_storage_invalid (GdkPixbuf *pixbuf)
         pixbuf->storage = STORAGE_BYTES;
         pixbuf->s.bytes.bytes = g_bytes_new_take (buf, bufsize);
 
-        pixbuf->colorspace = GDK_COLORSPACE_RGB;
+        pixbuf->colorspace = CDK_COLORSPACE_RGB;
         pixbuf->n_channels = 3;
         pixbuf->bits_per_sample = 8;
         pixbuf->width = 1;
@@ -1501,7 +1501,7 @@ make_storage_invalid (GdkPixbuf *pixbuf)
 static void
 cdk_pixbuf_constructed (GObject *object)
 {
-        GdkPixbuf *pixbuf = GDK_PIXBUF (object);
+        GdkPixbuf *pixbuf = CDK_PIXBUF (object);
 
         G_OBJECT_CLASS (cdk_pixbuf_parent_class)->constructed (object);
 

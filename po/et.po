@@ -1,5 +1,5 @@
-# GDK-pixbuf eesti keele tõlge.
-# Estonian translation of GDK-pixbuf.
+# CDK-pixbuf eesti keele tõlge.
+# Estonian translation of CDK-pixbuf.
 #
 # Copyright (C) 1999-2007 Free Software Foundation, Inc.
 # Copyright (C) 2007-2010 The GNOME Project.

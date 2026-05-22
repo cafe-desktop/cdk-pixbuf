@@ -127,7 +127,7 @@ test_mutate_readonly (void)
 		    cdk_pixbuf_get_width (src) / 4, 
 		    cdk_pixbuf_get_height (src) / 4,
 		    0, 0, 0.5, 0.5,
-		    GDK_INTERP_NEAREST);
+		    CDK_INTERP_NEAREST);
   g_object_unref (src);
 
   src = get_readonly_pixbuf ();
@@ -135,13 +135,13 @@ test_mutate_readonly (void)
   dest = cdk_pixbuf_scale_simple (src,
 				  cdk_pixbuf_get_width (src) / 4, 
 				  cdk_pixbuf_get_height (src) / 4,
-				  GDK_INTERP_NEAREST);
+				  CDK_INTERP_NEAREST);
   g_object_unref (dest);
 
   dest = cdk_pixbuf_composite_color_simple (src,
 					    cdk_pixbuf_get_width (src) / 4, 
 					    cdk_pixbuf_get_height (src) / 4,
-					    GDK_INTERP_NEAREST,
+					    CDK_INTERP_NEAREST,
 					    128,
 					    8,
 					    G_MAXUINT32,

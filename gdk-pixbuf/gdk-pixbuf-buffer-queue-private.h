@@ -17,8 +17,8 @@
  * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_PIXBUF_BUFFER_QUEUE_H__
-#define __GDK_PIXBUF_BUFFER_QUEUE_H__
+#ifndef __CDK_PIXBUF_BUFFER_QUEUE_H__
+#define __CDK_PIXBUF_BUFFER_QUEUE_H__
 
 #include <glib.h>
 

@@ -1,8 +1,8 @@
 #include <winver.h>
 
 VS_VERSION_INFO VERSIONINFO
-  FILEVERSION @GDK_PIXBUF_MAJOR@,@GDK_PIXBUF_MINOR@,@GDK_PIXBUF_MICRO@,0
-  PRODUCTVERSION @GDK_PIXBUF_MAJOR@,@GDK_PIXBUF_MINOR@,@GDK_PIXBUF_MICRO@,0
+  FILEVERSION @CDK_PIXBUF_MAJOR@,@CDK_PIXBUF_MINOR@,@CDK_PIXBUF_MICRO@,0
+  PRODUCTVERSION @CDK_PIXBUF_MAJOR@,@CDK_PIXBUF_MINOR@,@CDK_PIXBUF_MICRO@,0
   FILEFLAGSMASK 0
   FILEFLAGS 0
   FILEOS VOS__WINDOWS32
@@ -15,12 +15,12 @@ VS_VERSION_INFO VERSIONINFO
       BEGIN
 	VALUE "CompanyName", "The CTK developer community"
 	VALUE "FileDescription", "GIMP Toolkit"
-	VALUE "FileVersion", "@GDK_PIXBUF_VERSION@.0"
-	VALUE "InternalName", "libcdk_pixbuf-@GDK_PIXBUF_API_VERSION@-@LT_CURRENT_MINUS_AGE@"
+	VALUE "FileVersion", "@CDK_PIXBUF_VERSION@.0"
+	VALUE "InternalName", "libcdk_pixbuf-@CDK_PIXBUF_API_VERSION@-@LT_CURRENT_MINUS_AGE@"
 	VALUE "LegalCopyright", "Copyright (C) 1999 The Free Software Foundation. Modified by the CTK+ Team and others 1999-2011."
-	VALUE "OriginalFilename", "libcdk_pixbuf-@GDK_PIXBUF_API_VERSION@-@LT_CURRENT_MINUS_AGE@.dll"
+	VALUE "OriginalFilename", "libcdk_pixbuf-@CDK_PIXBUF_API_VERSION@-@LT_CURRENT_MINUS_AGE@.dll"
 	VALUE "ProductName", "CTK+"
-	VALUE "ProductVersion", "@GDK_PIXBUF_VERSION@"
+	VALUE "ProductVersion", "@CDK_PIXBUF_VERSION@"
       END
     END
     BLOCK "VarFileInfo"

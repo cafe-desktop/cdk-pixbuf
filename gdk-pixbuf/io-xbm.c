@@ -315,19 +315,19 @@ cdk_pixbuf__xbm_image_load_real (FILE     *f,
 
 	if (!read_bitmap_file_data (f, &w, &h, &data, &x_hot, &y_hot)) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("Invalid XBM file"));
 		return NULL;
 	}
 
-	pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, w, h);
+	pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8, w, h);
 
         if (pixbuf == NULL) {
                 g_free (data);
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                      _("Insufficient memory to load XBM image file"));
                 return NULL;
         }
@@ -521,6 +521,6 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
 	info->description = NC_("image format", "XBM");
 	info->mime_types = (gchar **) mime_types;
 	info->extensions = (gchar **) extensions;
-	info->flags = GDK_PIXBUF_FORMAT_THREADSAFE;
+	info->flags = CDK_PIXBUF_FORMAT_THREADSAFE;
 	info->license = "LGPL";
 }

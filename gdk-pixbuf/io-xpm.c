@@ -71,7 +71,7 @@ struct mem_handle {
 };
 
 /* The following 2 routines (parse_color, find_color) come from Tk, via the Win32
- * port of GDK. The licensing terms on these (longer than the functions) is:
+ * port of CDK. The licensing terms on these (longer than the functions) is:
  *
  * This software is copyrighted by the Regents of the University of
  * California, Sun Microsystems, Inc., and other parties.  The following
@@ -467,8 +467,8 @@ pixbuf_create_from_xpm (const gchar * (*get_buf) (enum buf_op op, gpointer handl
 	buffer = (*get_buf) (op_header, handle);
 	if (!buffer) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("No XPM header found"));
 		return NULL;
 	}
@@ -476,24 +476,24 @@ pixbuf_create_from_xpm (const gchar * (*get_buf) (enum buf_op op, gpointer handl
 
 	if (items != 4 && items != 6) {
 		g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("Invalid XPM header"));
 		return NULL;
 	}
 
 	if (w <= 0) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("XPM file has image width <= 0"));
 		return NULL;
 
 	}
 	if (h <= 0) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("XPM file has image height <= 0"));
 		return NULL;
 
@@ -502,15 +502,15 @@ pixbuf_create_from_xpm (const gchar * (*get_buf) (enum buf_op op, gpointer handl
 	if ((h > 0 && w >= UINT_MAX / h) ||
 	    w * h >= UINT_MAX / sizeof(unsigned int)) {
 		g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("Invalid XPM header"));
 		return NULL;
 	}
 	if (cpp <= 0 || cpp >= 32 || w >= G_MAXINT / cpp) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("XPM has invalid number of chars per pixel"));
 		return NULL;
 	}
@@ -518,8 +518,8 @@ pixbuf_create_from_xpm (const gchar * (*get_buf) (enum buf_op op, gpointer handl
 	    n_col >= G_MAXINT / (cpp + 1) || 
 	    n_col >= G_MAXINT / sizeof (XPMColor)) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("XPM file has invalid number of colors"));
 		return NULL;
 	}
@@ -530,8 +530,8 @@ pixbuf_create_from_xpm (const gchar * (*get_buf) (enum buf_op op, gpointer handl
 	name_buf = g_try_malloc (n_col * (cpp + 1));
 	if (!name_buf) {
 		g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                      _("Cannot allocate memory for loading XPM image"));
 		g_hash_table_destroy (color_hash);
 		return NULL;
@@ -539,8 +539,8 @@ pixbuf_create_from_xpm (const gchar * (*get_buf) (enum buf_op op, gpointer handl
 	colors = (XPMColor *) g_try_malloc (sizeof (XPMColor) * n_col);
 	if (!colors) {
 		g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                      _("Cannot allocate memory for loading XPM image"));
 		g_hash_table_destroy (color_hash);
 		g_free (name_buf);
@@ -553,8 +553,8 @@ pixbuf_create_from_xpm (const gchar * (*get_buf) (enum buf_op op, gpointer handl
 		buffer = (*get_buf) (op_cmap, handle);
 		if (!buffer) {
                         g_set_error_literal (error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              _("Cannot read XPM colormap"));
                         goto out;
 		}
@@ -584,12 +584,12 @@ pixbuf_create_from_xpm (const gchar * (*get_buf) (enum buf_op op, gpointer handl
 			fallbackcolor = color;
 	}
 
-	pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, is_trans, 8, w, h);
+	pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, is_trans, 8, w, h);
 
 	if (!pixbuf) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                      _("Cannot allocate memory for loading XPM image"));
                 goto out;
 	}
@@ -605,8 +605,8 @@ pixbuf_create_from_xpm (const gchar * (*get_buf) (enum buf_op op, gpointer handl
 		if ((!buffer) || (strlen (buffer) < wbytes)) {
 			/* Advertised width doesn't match pixels */
 			g_set_error_literal (error,
-					     GDK_PIXBUF_ERROR,
-					     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+					     CDK_PIXBUF_ERROR,
+					     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
 					     _("Dimensions do not match data"));
 			goto out;
 		}
@@ -845,6 +845,6 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
 	info->description = NC_("image format", "XPM");
 	info->mime_types = (gchar **) mime_types;
 	info->extensions = (gchar **) extensions;
-	info->flags = GDK_PIXBUF_FORMAT_THREADSAFE;
+	info->flags = CDK_PIXBUF_FORMAT_THREADSAFE;
 	info->license = "LGPL";
 }

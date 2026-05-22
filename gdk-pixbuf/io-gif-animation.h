@@ -22,23 +22,23 @@
  * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef GDK_PIXBUF_GIF_H
-#define GDK_PIXBUF_GIF_H
+#ifndef CDK_PIXBUF_GIF_H
+#define CDK_PIXBUF_GIF_H
 
 #include "cdk-pixbuf-animation.h"
 
 typedef enum {
         /* Keep this frame and composite next frame over it */
         /* (GIF disposal method 1) */
-	GDK_PIXBUF_FRAME_RETAIN,
+	CDK_PIXBUF_FRAME_RETAIN,
         /* Revert to background color before compositing next frame */
         /* (GIF disposal method 2) */
-	GDK_PIXBUF_FRAME_DISPOSE,
+	CDK_PIXBUF_FRAME_DISPOSE,
         /* Revert to previously-displayed composite image after
          * displaying this frame
          */
         /* (GIF disposal method 3) */
-	GDK_PIXBUF_FRAME_REVERT
+	CDK_PIXBUF_FRAME_REVERT
 } GdkPixbufFrameAction;
 
 
@@ -47,13 +47,13 @@ typedef struct _GdkPixbufGifAnim GdkPixbufGifAnim;
 typedef struct _GdkPixbufGifAnimClass GdkPixbufGifAnimClass;
 typedef struct _GdkPixbufFrame GdkPixbufFrame;
 
-#define GDK_TYPE_PIXBUF_GIF_ANIM              (cdk_pixbuf_gif_anim_get_type ())
-#define GDK_PIXBUF_GIF_ANIM(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_PIXBUF_GIF_ANIM, GdkPixbufGifAnim))
-#define GDK_IS_PIXBUF_GIF_ANIM(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_PIXBUF_GIF_ANIM))
+#define CDK_TYPE_PIXBUF_GIF_ANIM              (cdk_pixbuf_gif_anim_get_type ())
+#define CDK_PIXBUF_GIF_ANIM(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF_GIF_ANIM, GdkPixbufGifAnim))
+#define CDK_IS_PIXBUF_GIF_ANIM(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), CDK_TYPE_PIXBUF_GIF_ANIM))
 
-#define GDK_PIXBUF_GIF_ANIM_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GDK_TYPE_PIXBUF_GIF_ANIM, GdkPixbufGifAnimClass))
-#define GDK_IS_PIXBUF_GIF_ANIM_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GDK_TYPE_PIXBUF_GIF_ANIM))
-#define GDK_PIXBUF_GIF_ANIM_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GDK_TYPE_PIXBUF_GIF_ANIM, GdkPixbufGifAnimClass))
+#define CDK_PIXBUF_GIF_ANIM_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_GIF_ANIM, GdkPixbufGifAnimClass))
+#define CDK_IS_PIXBUF_GIF_ANIM_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), CDK_TYPE_PIXBUF_GIF_ANIM))
+#define CDK_PIXBUF_GIF_ANIM_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_GIF_ANIM, GdkPixbufGifAnimClass))
 
 /* Private part of the GdkPixbufGifAnim structure */
 struct _GdkPixbufGifAnim {
@@ -92,13 +92,13 @@ typedef struct _GdkPixbufGifAnimIter GdkPixbufGifAnimIter;
 typedef struct _GdkPixbufGifAnimIterClass GdkPixbufGifAnimIterClass;
 
 
-#define GDK_TYPE_PIXBUF_GIF_ANIM_ITER              (cdk_pixbuf_gif_anim_iter_get_type ())
-#define GDK_PIXBUF_GIF_ANIM_ITER(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_PIXBUF_GIF_ANIM_ITER, GdkPixbufGifAnimIter))
-#define GDK_IS_PIXBUF_GIF_ANIM_ITER(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_PIXBUF_GIF_ANIM_ITER))
+#define CDK_TYPE_PIXBUF_GIF_ANIM_ITER              (cdk_pixbuf_gif_anim_iter_get_type ())
+#define CDK_PIXBUF_GIF_ANIM_ITER(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF_GIF_ANIM_ITER, GdkPixbufGifAnimIter))
+#define CDK_IS_PIXBUF_GIF_ANIM_ITER(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), CDK_TYPE_PIXBUF_GIF_ANIM_ITER))
 
-#define GDK_PIXBUF_GIF_ANIM_ITER_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GDK_TYPE_PIXBUF_GIF_ANIM_ITER, GdkPixbufGifAnimIterClass))
-#define GDK_IS_PIXBUF_GIF_ANIM_ITER_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GDK_TYPE_PIXBUF_GIF_ANIM_ITER))
-#define GDK_PIXBUF_GIF_ANIM_ITER_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GDK_TYPE_PIXBUF_GIF_ANIM_ITER, GdkPixbufGifAnimIterClass))
+#define CDK_PIXBUF_GIF_ANIM_ITER_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_GIF_ANIM_ITER, GdkPixbufGifAnimIterClass))
+#define CDK_IS_PIXBUF_GIF_ANIM_ITER_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), CDK_TYPE_PIXBUF_GIF_ANIM_ITER))
+#define CDK_PIXBUF_GIF_ANIM_ITER_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_GIF_ANIM_ITER, GdkPixbufGifAnimIterClass))
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 struct _GdkPixbufGifAnimIter {

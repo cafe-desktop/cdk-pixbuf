@@ -94,7 +94,7 @@ test_save_ico (void)
   ref = cdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "test-image.png", NULL), &error);
   g_assert_no_error (error);
 
-  ref2 = cdk_pixbuf_scale_simple (ref, 256, 256, GDK_INTERP_NEAREST);
+  ref2 = cdk_pixbuf_scale_simple (ref, 256, 256, CDK_INTERP_NEAREST);
   g_object_unref (ref);
   ref = ref2;
 
@@ -125,7 +125,7 @@ test_save_options (void)
       return;
     }
 
-  ref = cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, 10, 10);
+  ref = cdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8, 10, 10);
   cdk_pixbuf_fill (ref, 0xff00ff00);
 
   cdk_pixbuf_save (ref, "pixbuf-save-options", "png", &error,

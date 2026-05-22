@@ -22,8 +22,8 @@
  * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef GDK_PIXBUF_PRIVATE_H
-#define GDK_PIXBUF_PRIVATE_H
+#ifndef CDK_PIXBUF_PRIVATE_H
+#define CDK_PIXBUF_PRIVATE_H
 
 #include <stdio.h>
 #include <math.h>
@@ -42,9 +42,9 @@
 
 typedef struct _GdkPixbufClass GdkPixbufClass;
 
-#define GDK_PIXBUF_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GDK_TYPE_PIXBUF, GdkPixbufClass))
-#define GDK_IS_PIXBUF_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GDK_TYPE_PIXBUF))
-#define GDK_PIXBUF_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GDK_TYPE_PIXBUF, GdkPixbufClass))
+#define CDK_PIXBUF_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF, GdkPixbufClass))
+#define CDK_IS_PIXBUF_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), CDK_TYPE_PIXBUF))
+#define CDK_PIXBUF_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF, GdkPixbufClass))
 
 /* Default fill color */
 #define DEFAULT_FILL_COLOR 0x979899ff
@@ -105,7 +105,7 @@ struct _GdkPixbufClass {
 
 };
 
-#ifdef GDK_PIXBUF_ENABLE_BACKEND
+#ifdef CDK_PIXBUF_ENABLE_BACKEND
 
 GdkPixbufModule *_cdk_pixbuf_get_module (guchar *buffer, guint size,
                                          const gchar *filename,
@@ -122,16 +122,16 @@ GdkPixbuf *_cdk_pixbuf_generic_image_load (GdkPixbufModule *image_module,
 GdkPixbufFormat *_cdk_pixbuf_get_format (GdkPixbufModule *image_module);
 
 
-#endif /* GDK_PIXBUF_ENABLE_BACKEND */
+#endif /* CDK_PIXBUF_ENABLE_BACKEND */
 
 GdkPixbuf * _cdk_pixbuf_new_from_resource_try_pixdata (const char *resource_path);
 GdkPixbufLoader *_cdk_pixbuf_loader_new_with_filename (const char *filename);
 
 void _cdk_pixbuf_init_gettext (void);
 
-#endif /* GDK_PIXBUF_PRIVATE_H */
+#endif /* CDK_PIXBUF_PRIVATE_H */
 
-#ifdef GDK_PIXBUF_RELOCATABLE
+#ifdef CDK_PIXBUF_RELOCATABLE
 
 gchar * cdk_pixbuf_get_toplevel (void);
 

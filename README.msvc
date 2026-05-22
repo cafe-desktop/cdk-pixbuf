@@ -1,12 +1,12 @@
-Notes about building GDK-Pixbuf with Visual Studio
+Notes about building CDK-Pixbuf with Visual Studio
 ==================================================
 
-Building GDK-Pixbuf on Visual Studio is now done via using Meson, which
+Building CDK-Pixbuf on Visual Studio is now done via using Meson, which
 gives us more flexible build configurations versus what we used to have
 in the Visual Studio projects.
 
 The following describes the steps and the items that are needed to build
-GDK-Pixbuf with Visual Studio using Meson.  Visual Studio 2008 through
+CDK-Pixbuf with Visual Studio using Meson.  Visual Studio 2008 through
 2017 are supported.
 
 You will need a Python 3.5+ installation (and Ninja, unless using
@@ -33,27 +33,27 @@ part of the dependency's build process.
 Set the PATH, LIB, INCLUDE and PKG_CONFIG_PATH environmental variables as
 needed.  Run the following in a Visual Studio command prompt:
 
-python $(PATH_TO_meson.py)\meson.py $(GDK_PIXBUF_SRCDIR) --buildtype=$(BUILD_CONFIG) --prefix=$(PREFIX) -Dman=false $(OTHER_OPTIONS)
+python $(PATH_TO_meson.py)\meson.py $(CDK_PIXBUF_SRCDIR) --buildtype=$(BUILD_CONFIG) --prefix=$(PREFIX) -Dman=false $(OTHER_OPTIONS)
 
 For $(OTHER_OPTIONS), the following may be of interest, besides the png,
 jpeg and tiff options.  Prefix each option with -D:
 
 -builtin_loaders: list of image loaders that we want to build into
- the main GDK-Pixbuf DLL, or use 'all' to include all buildable image
- loaders into the GDK-Pixbuf DLL.  This would simplify deployment
- of GDK-Pixbuf for Windows.
+ the main CDK-Pixbuf DLL, or use 'all' to include all buildable image
+ loaders into the CDK-Pixbuf DLL.  This would simplify deployment
+ of CDK-Pixbuf for Windows.
 
 -native_windows_loaders: Use GDI+ to load JPEG, TIFF and other image
  formats, without the need of IJG JPEG, libjpeg-turbo and libtiff.
  This support is considered experimental.  To build this image
- loader into the GDK-Pixbuf DLL, pass in 'windows' as part of the list
+ loader into the CDK-Pixbuf DLL, pass in 'windows' as part of the list
  passed into builtin_loaders or use 'all', in conjunction with using
  -Dnative_windows_loaders=true.
 
 Use --backend=vs if using the Visual Studio 2010, 2015 or 2017 IDE is
 desired.
 
-2) Build GDK-Pixbuf using Ninja or the generated solution files.
+2) Build CDK-Pixbuf using Ninja or the generated solution files.
 
 3) Test and/or install the build using the "test" and  "install"
    targets respectively.
@@ -69,6 +69,6 @@ desired.
    DLLs and EXEs so that they can be usable.
 
 See the following GNOME Live! page for a more detailed description of building
-GDK-Pixbuf's dependencies with Visual Studio:
+CDK-Pixbuf's dependencies with Visual Studio:
 
 https://wiki.gnome.org/Projects/CTK/Win32/MSVCCompilationOfCTKStack

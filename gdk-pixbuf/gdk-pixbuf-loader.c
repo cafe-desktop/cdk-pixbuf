@@ -241,7 +241,7 @@ cdk_pixbuf_loader_finalize (GObject *object)
         GdkPixbufLoader *loader;
         GdkPixbufLoaderPrivate *priv = NULL;
   
-        loader = GDK_PIXBUF_LOADER (object);
+        loader = CDK_PIXBUF_LOADER (object);
         priv = loader->priv;
 
         if (!priv->closed) {
@@ -281,10 +281,10 @@ cdk_pixbuf_loader_set_size (GdkPixbufLoader *loader,
 {
         GdkPixbufLoaderPrivate *priv;
 
-        g_return_if_fail (GDK_IS_PIXBUF_LOADER (loader));
+        g_return_if_fail (CDK_IS_PIXBUF_LOADER (loader));
         g_return_if_fail (width >= 0 && height >= 0);
 
-        priv = GDK_PIXBUF_LOADER (loader)->priv;
+        priv = CDK_PIXBUF_LOADER (loader)->priv;
 
         if (!priv->size_fixed) 
                 {
@@ -296,7 +296,7 @@ cdk_pixbuf_loader_set_size (GdkPixbufLoader *loader,
 static void
 cdk_pixbuf_loader_size_func (gint *width, gint *height, gpointer loader)
 {
-        GdkPixbufLoaderPrivate *priv = GDK_PIXBUF_LOADER (loader)->priv;
+        GdkPixbufLoaderPrivate *priv = CDK_PIXBUF_LOADER (loader)->priv;
 
         priv->original_width = *width;
         priv->original_height = *height;
@@ -320,7 +320,7 @@ cdk_pixbuf_loader_prepare (GdkPixbuf          *pixbuf,
                            GdkPixbufAnimation *anim,
 			   gpointer            loader)
 {
-        GdkPixbufLoaderPrivate *priv = GDK_PIXBUF_LOADER (loader)->priv;
+        GdkPixbufLoaderPrivate *priv = CDK_PIXBUF_LOADER (loader)->priv;
         gint width, height;
         g_return_if_fail (pixbuf != NULL);
 
@@ -372,7 +372,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 	if (priv->needs_scale && width != 0 && height != 0) {
-		priv->animation  = GDK_PIXBUF_ANIMATION (_cdk_pixbuf_scaled_anim_new (anim,
+		priv->animation  = CDK_PIXBUF_ANIMATION (_cdk_pixbuf_scaled_anim_new (anim,
                                          (double) priv->width / width,
                                          (double) priv->height / height,
 					  1.0));
@@ -394,7 +394,7 @@ cdk_pixbuf_loader_update (GdkPixbuf *pixbuf,
 			  gint       height,
 			  gpointer   loader)
 {
-        GdkPixbufLoaderPrivate *priv = GDK_PIXBUF_LOADER (loader)->priv;
+        GdkPixbufLoaderPrivate *priv = CDK_PIXBUF_LOADER (loader)->priv;
   
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
         if (!priv->needs_scale)
@@ -421,8 +421,8 @@ cdk_pixbuf_loader_ensure_error (GdkPixbufLoader *loader,
         g_warning ("Bug! loader '%s' didn't set an error on failure",
                    priv->image_module->module_name);
         g_set_error (error,
-                     GDK_PIXBUF_ERROR,
-                     GDK_PIXBUF_ERROR_FAILED,
+                     CDK_PIXBUF_ERROR,
+                     CDK_PIXBUF_ERROR_FAILED,
                      _("Internal error: Image loader module “%s” failed to"
                        " complete an operation, but didn’t give a reason for"
                        " the failure"),
@@ -463,8 +463,8 @@ cdk_pixbuf_loader_load_module (GdkPixbufLoader *loader,
             (priv->image_module->load_increment == NULL))
                 {
                         g_set_error (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_UNSUPPORTED_OPERATION,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_UNSUPPORTED_OPERATION,
                                      _("Incremental loading of image type “%s” is not supported"),
                                      priv->image_module->module_name);
 
@@ -533,7 +533,7 @@ cdk_pixbuf_loader_write (GdkPixbufLoader *loader,
 {
         GdkPixbufLoaderPrivate *priv;
   
-        g_return_val_if_fail (GDK_IS_PIXBUF_LOADER (loader), FALSE);
+        g_return_val_if_fail (CDK_IS_PIXBUF_LOADER (loader), FALSE);
   
         g_return_val_if_fail (buf != NULL, FALSE);
         g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
@@ -592,7 +592,7 @@ cdk_pixbuf_loader_write_bytes (GdkPixbufLoader *loader,
                                GBytes          *buffer,
                                GError         **error)
 {
-        g_return_val_if_fail (GDK_IS_PIXBUF_LOADER (loader), FALSE);
+        g_return_val_if_fail (CDK_IS_PIXBUF_LOADER (loader), FALSE);
 
         g_return_val_if_fail (buffer != NULL, FALSE);
         g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
@@ -613,7 +613,7 @@ cdk_pixbuf_loader_write_bytes (GdkPixbufLoader *loader,
 GdkPixbufLoader *
 cdk_pixbuf_loader_new (void)
 {
-        return g_object_new (GDK_TYPE_PIXBUF_LOADER, NULL);
+        return g_object_new (CDK_TYPE_PIXBUF_LOADER, NULL);
 }
 
 /**
@@ -646,7 +646,7 @@ cdk_pixbuf_loader_new_with_type (const char *image_type,
         GError *tmp;
         g_return_val_if_fail (error == NULL || *error == NULL, NULL);
   
-        retval = g_object_new (GDK_TYPE_PIXBUF_LOADER, NULL);
+        retval = g_object_new (CDK_TYPE_PIXBUF_LOADER, NULL);
 
         tmp = NULL;
         cdk_pixbuf_loader_load_module (retval, image_type, &tmp);
@@ -716,7 +716,7 @@ cdk_pixbuf_loader_new_with_mime_type (const char *mime_type,
 
         g_slist_free (formats);
 
-        retval = g_object_new (GDK_TYPE_PIXBUF_LOADER, NULL);
+        retval = g_object_new (CDK_TYPE_PIXBUF_LOADER, NULL);
 
         tmp = NULL;
         cdk_pixbuf_loader_load_module (retval, image_type, &tmp);
@@ -737,7 +737,7 @@ _cdk_pixbuf_loader_new_with_filename (const char *filename)
 	GdkPixbufLoader *retval;
         GdkPixbufLoaderPrivate *priv;
 
-        retval = g_object_new (GDK_TYPE_PIXBUF_LOADER, NULL);
+        retval = g_object_new (CDK_TYPE_PIXBUF_LOADER, NULL);
 	priv = retval->priv;
 	priv->filename = g_strdup (filename);
 
@@ -772,7 +772,7 @@ cdk_pixbuf_loader_get_pixbuf (GdkPixbufLoader *loader)
 {
         GdkPixbufLoaderPrivate *priv;
   
-        g_return_val_if_fail (GDK_IS_PIXBUF_LOADER (loader), NULL);
+        g_return_val_if_fail (CDK_IS_PIXBUF_LOADER (loader), NULL);
   
         priv = loader->priv;
 
@@ -805,7 +805,7 @@ cdk_pixbuf_loader_get_animation (GdkPixbufLoader *loader)
 {
         GdkPixbufLoaderPrivate *priv;
   
-        g_return_val_if_fail (GDK_IS_PIXBUF_LOADER (loader), NULL);
+        g_return_val_if_fail (CDK_IS_PIXBUF_LOADER (loader), NULL);
   
         priv = loader->priv;
   
@@ -825,7 +825,7 @@ cdk_pixbuf_loader_get_animation (GdkPixbufLoader *loader)
  * if the remaining data is partial or corrupt, an error will be returned.
  *
  * If `FALSE` is returned, `error` will be set to an error from the
- * `GDK_PIXBUF_ERROR` or `G_FILE_ERROR` domains.
+ * `CDK_PIXBUF_ERROR` or `G_FILE_ERROR` domains.
  *
  * If you're just cancelling a load rather than expecting it to be finished,
  * passing `NULL` for `error` to ignore it is reasonable.
@@ -843,7 +843,7 @@ cdk_pixbuf_loader_close (GdkPixbufLoader *loader,
         GdkPixbufLoaderPrivate *priv;
         gboolean retval = TRUE;
   
-        g_return_val_if_fail (GDK_IS_PIXBUF_LOADER (loader), TRUE);
+        g_return_val_if_fail (CDK_IS_PIXBUF_LOADER (loader), TRUE);
         g_return_val_if_fail (error == NULL || *error == NULL, TRUE);
   
         priv = loader->priv;
@@ -916,7 +916,7 @@ cdk_pixbuf_loader_get_format (GdkPixbufLoader *loader)
 {
         GdkPixbufLoaderPrivate *priv;
   
-        g_return_val_if_fail (GDK_IS_PIXBUF_LOADER (loader), NULL);
+        g_return_val_if_fail (CDK_IS_PIXBUF_LOADER (loader), NULL);
   
         priv = loader->priv;
 

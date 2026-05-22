@@ -179,7 +179,7 @@ print_blurb (FILE    *bout,
   if (!print_help)
     {
       g_fprintf (bout, "%s version ", PRG_NAME);
-      g_fprintf (bout, "%s", GDK_PIXBUF_VERSION);
+      g_fprintf (bout, "%s", CDK_PIXBUF_VERSION);
       g_fprintf (bout, "\n");
       g_fprintf (bout, "%s comes with ABSOLUTELY NO WARRANTY.\n", PRG_NAME);
       g_fprintf (bout, "You may redistribute copies of %s under the terms of\n", PRG_NAME);

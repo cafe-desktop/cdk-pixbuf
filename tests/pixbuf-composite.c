@@ -26,10 +26,10 @@ test_composite1 (void)
 {
   GdkPixbuf *red, *green, *out, *ref, *sub;
 
-  red = cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, 24, 24);
+  red = cdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8, 24, 24);
   cdk_pixbuf_fill (red, 0xff000000);
 
-  green = cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, 12, 12);
+  green = cdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8, 12, 12);
   cdk_pixbuf_fill (green, 0x00ff0000);
 
   out = cdk_pixbuf_copy (red);
@@ -37,7 +37,7 @@ test_composite1 (void)
   cdk_pixbuf_composite (green, out,
                         0, 0, 12, 12,
                         0, 0, 1.0, 1.0,
-                        GDK_INTERP_NEAREST,
+                        CDK_INTERP_NEAREST,
                         255);
 
   ref = cdk_pixbuf_copy (red);
@@ -74,7 +74,7 @@ test_composite2 (void)
   src = cdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "test-image.png", NULL), NULL);
 
   {
-    GdkPixbuf *tmp = cdk_pixbuf_new (GDK_COLORSPACE_RGB,
+    GdkPixbuf *tmp = cdk_pixbuf_new (CDK_COLORSPACE_RGB,
                                      TRUE,
                                      cdk_pixbuf_get_bits_per_sample (src),
                                      cdk_pixbuf_get_width (src),
@@ -83,7 +83,7 @@ test_composite2 (void)
     cdk_pixbuf_composite (src, tmp,
                           0, 0, cdk_pixbuf_get_width (tmp), cdk_pixbuf_get_height (tmp),
                           0., 0., 1., 1.,
-                          GDK_INTERP_NEAREST, 255);
+                          CDK_INTERP_NEAREST, 255);
     g_object_unref (src);
     src = tmp;
   }
@@ -98,7 +98,7 @@ test_composite2 (void)
   p[1] = 0xff;
   p[2] = 0x00;
 
-  dest = cdk_pixbuf_new (GDK_COLORSPACE_RGB,
+  dest = cdk_pixbuf_new (CDK_COLORSPACE_RGB,
                          TRUE,
                          cdk_pixbuf_get_bits_per_sample (src),
                          cdk_pixbuf_get_width (src) + 80,
@@ -107,7 +107,7 @@ test_composite2 (void)
   cdk_pixbuf_composite (src, dest,
                         0, 0, cdk_pixbuf_get_width (dest), cdk_pixbuf_get_height (dest),
                         10.0, 10.0, 1.0, 1.0,
-                        GDK_INTERP_NEAREST, 255);
+                        CDK_INTERP_NEAREST, 255);
 
   pixels = cdk_pixbuf_get_pixels (dest);
   p = pixels;
@@ -122,7 +122,7 @@ test_composite2 (void)
   g_object_unref (dest);
 
   /* now try compositing into a pixbuf that is 1px less in width and height */
-  dest = cdk_pixbuf_new (GDK_COLORSPACE_RGB,
+  dest = cdk_pixbuf_new (CDK_COLORSPACE_RGB,
                          TRUE,
                          cdk_pixbuf_get_bits_per_sample (src),
                          cdk_pixbuf_get_width (src) - 1,
@@ -131,7 +131,7 @@ test_composite2 (void)
   cdk_pixbuf_composite (src, dest,
                         0, 0, cdk_pixbuf_get_width (dest), cdk_pixbuf_get_height (dest),
                         -1.0, -2.0, 1.0, 1.0,
-                        GDK_INTERP_NEAREST, 255);
+                        CDK_INTERP_NEAREST, 255);
 
   pixels = cdk_pixbuf_get_pixels (dest);
   p = pixels + (gsize)((cdk_pixbuf_get_height (dest) - 2) * cdk_pixbuf_get_rowstride (dest)) + (gsize)((cdk_pixbuf_get_width (dest) - 1) * cdk_pixbuf_get_n_channels (dest));

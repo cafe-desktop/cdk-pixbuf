@@ -242,8 +242,8 @@ pnm_read_next_value (PnmIOBuffer *inbuf, gint max_length, guint *value, GError *
 	result = strtol ((gchar *)buf, &endptr, 10);
 	if (*endptr != '\0' || result < 0 || result > G_MAXUINT) {
 		g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("PNM loader expected to find an integer, but didn’t"));
 		return PNM_FATAL_ERR;
 	}
@@ -274,8 +274,8 @@ pnm_read_header (PnmLoaderContext *context)
 		
 		if (*inbuf->byte != 'P') {
 			g_set_error_literal (context->error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              _("PNM file has an incorrect initial byte"));
 			return PNM_FATAL_ERR;
 		}
@@ -304,8 +304,8 @@ pnm_read_header (PnmLoaderContext *context)
 			break;
 		default:
 			g_set_error_literal (context->error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              _("PNM file is not in a recognized PNM subformat"));
 			return PNM_FATAL_ERR;
 		}
@@ -329,16 +329,16 @@ pnm_read_header (PnmLoaderContext *context)
 
 		if (width > G_MAXINT) {
 			g_set_error_literal (context->error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              _("PNM file has an invalid width"));
 			return PNM_FATAL_ERR;
 		}
 
 		if (!width) {
 			g_set_error_literal (context->error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              _("PNM file has an image width of 0"));
 			return PNM_FATAL_ERR;
 		}
@@ -358,16 +358,16 @@ pnm_read_header (PnmLoaderContext *context)
 
 		if (height > G_MAXINT) {
 			g_set_error_literal (context->error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              _("PNM file has an invalid height"));
 			return PNM_FATAL_ERR;
 		}
 
 		if (!height) {
 			g_set_error_literal (context->error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              _("PNM file has an image height of 0"));
 			return PNM_FATAL_ERR;
 		}
@@ -389,16 +389,16 @@ pnm_read_header (PnmLoaderContext *context)
 			
 			if (context->maxval == 0) {
 				g_set_error_literal (context->error,
-                                                     GDK_PIXBUF_ERROR,
-                                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                                     CDK_PIXBUF_ERROR,
+                                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                                      _("Maximum color value in PNM file is 0"));
 				return PNM_FATAL_ERR;
 			}
 
 			if (context->maxval > 65535) {
 				g_set_error_literal (context->error,
-                                                     GDK_PIXBUF_ERROR,
-                                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                                     CDK_PIXBUF_ERROR,
+                                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                                      _("Maximum color value in PNM file is too large"));
 				return PNM_FATAL_ERR;
 			}
@@ -437,8 +437,8 @@ pnm_read_raw_scanline (PnmLoaderContext *context)
 		break;
 	default:
 		g_set_error_literal (context->error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("Raw PNM image type is invalid"));
 		return PNM_FATAL_ERR;
 	}
@@ -467,8 +467,8 @@ pnm_read_raw_scanline (PnmLoaderContext *context)
 		break;
 	default:
 		g_set_error_literal (context->error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("Raw PNM image type is invalid"));
 		return PNM_FATAL_ERR;
 	}
@@ -512,8 +512,8 @@ pnm_read_raw_scanline (PnmLoaderContext *context)
 		break;
 	default:
 		g_set_error_literal (context->error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("Raw PNM image type is invalid"));
 		return PNM_FATAL_ERR;
 	}
@@ -662,8 +662,8 @@ pnm_read_scanline (PnmLoaderContext *context)
 		break;
 	default:
 		g_set_error_literal (context->error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_UNKNOWN_TYPE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_UNKNOWN_TYPE,
                                      _("PNM image loader does not support this PNM subformat"));
 
 		return PNM_FATAL_ERR;
@@ -717,8 +717,8 @@ cdk_pixbuf__pnm_image_load (FILE *f, GError **error)
 			if (context.pixbuf)
 				g_object_unref (context.pixbuf);
 			g_set_error_literal (error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              _("Premature end-of-file encountered"));
 			return NULL;
 		}
@@ -749,8 +749,8 @@ cdk_pixbuf__pnm_image_load (FILE *f, GError **error)
 				if (!g_ascii_isspace(*(inbuf->byte))) 
 					{
 						g_set_error_literal (error,
-                                                                     GDK_PIXBUF_ERROR,
-                                                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                                                     CDK_PIXBUF_ERROR,
+                                                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                                                      _("Raw PNM formats require exactly one whitespace before sample data"));
 						return NULL;
 					}
@@ -770,14 +770,14 @@ cdk_pixbuf__pnm_image_load (FILE *f, GError **error)
 			context.output_row = 0;
 			context.output_col = 0;
 			
-			context.pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8,
+			context.pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8,
 							 context.width, context.height);
 			
 			if (!context.pixbuf) {
 				/* Failed to allocate memory */
 				g_set_error_literal (error,
-                                                     GDK_PIXBUF_ERROR,
-                                                     GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                                     CDK_PIXBUF_ERROR,
+                                                     CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                                      _("Cannot allocate memory for loading PNM image"));
 				return NULL;
 			}
@@ -830,8 +830,8 @@ cdk_pixbuf__pnm_image_begin_load (GdkPixbufModuleSizeFunc size_func,
 
 	context = g_try_malloc (sizeof (PnmLoaderContext));
 	if (!context) {
-		g_set_error_literal (error, GDK_PIXBUF_ERROR, 
-                                     GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+		g_set_error_literal (error, CDK_PIXBUF_ERROR, 
+                                     CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                      _("Insufficient memory to load PNM context struct"));
 		return NULL;
 	}
@@ -874,8 +874,8 @@ cdk_pixbuf__pnm_image_stop_load (gpointer data,
 	if (context->pixbuf)
 		g_object_unref (context->pixbuf);
 	else {
-		g_set_error_literal (error, GDK_PIXBUF_ERROR,
-				     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+		g_set_error_literal (error, CDK_PIXBUF_ERROR,
+				     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
 				     _("Premature end-of-file encountered"));
 		retval = FALSE;
 	}
@@ -887,8 +887,8 @@ cdk_pixbuf__pnm_image_stop_load (gpointer data,
 	*/
 	if (context->inbuf.nbytes > 0) {
 		g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("Unexpected end of PNM image data"));
 		retval = FALSE;
 	}
@@ -986,8 +986,8 @@ cdk_pixbuf__pnm_image_load_increment (gpointer data,
 				if (!g_ascii_isspace(*(inbuf->byte)))
 					{
 						g_set_error_literal (error,
-                                                                     GDK_PIXBUF_ERROR,
-                                                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                                                     CDK_PIXBUF_ERROR,
+                                                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                                                      _("Raw PNM formats require exactly one whitespace before sample data"));
 						return FALSE;
 					}
@@ -1007,7 +1007,7 @@ cdk_pixbuf__pnm_image_load_increment (gpointer data,
 			context->output_row = 0;
 			context->output_col = 0;
 			
-			context->pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, 
+			context->pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, 
 							  FALSE,
 							  8, 
 							  context->width,
@@ -1015,8 +1015,8 @@ cdk_pixbuf__pnm_image_load_increment (gpointer data,
 			
 			if (context->pixbuf == NULL) {
 				g_set_error_literal (error,
-                                                     GDK_PIXBUF_ERROR,
-                                                     GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                                     CDK_PIXBUF_ERROR,
+                                                     CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                                      _("Insufficient memory to load PNM file"));
 				return FALSE;
 			}
@@ -1103,6 +1103,6 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
 	info->description = NC_("image format", "PNM/PBM/PGM/PPM");
 	info->mime_types = (gchar **) mime_types;
 	info->extensions = (gchar **) extensions;
-	info->flags = GDK_PIXBUF_FORMAT_THREADSAFE;
+	info->flags = CDK_PIXBUF_FORMAT_THREADSAFE;
 	info->license = "LGPL";
 }

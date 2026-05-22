@@ -44,8 +44,8 @@ filter_keys (char    **keys,
           if (icc_length < 127)
             {
               g_set_error (error,
-                           GDK_PIXBUF_ERROR,
-                           GDK_PIXBUF_ERROR_BAD_OPTION,
+                           CDK_PIXBUF_ERROR,
+                           CDK_PIXBUF_ERROR_BAD_OPTION,
                            "Color profile has invalid length %lu",
                            icc_length);
               g_free (icc_data);
@@ -60,8 +60,8 @@ filter_keys (char    **keys,
           if ((endp && *endp != '\0') || *quality < 0 || *quality > 100)
             {
               g_set_error (error,
-                           GDK_PIXBUF_ERROR,
-                           GDK_PIXBUF_ERROR_BAD_OPTION,
+                           CDK_PIXBUF_ERROR,
+                           CDK_PIXBUF_ERROR_BAD_OPTION,
                            "JPEG quality must be a value between 0 and 100; “%s” could not be parsed.", values[i]);
               g_free (icc_data);
               return FALSE;
@@ -179,6 +179,6 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
   info->description = "JPEG";
   info->mime_types = (gchar **) mime_types;
   info->extensions = (gchar **) extensions;
-  info->flags = GDK_PIXBUF_FORMAT_WRITABLE | GDK_PIXBUF_FORMAT_THREADSAFE;
+  info->flags = CDK_PIXBUF_FORMAT_WRITABLE | CDK_PIXBUF_FORMAT_THREADSAFE;
   info->license = "LGPL";
 }
