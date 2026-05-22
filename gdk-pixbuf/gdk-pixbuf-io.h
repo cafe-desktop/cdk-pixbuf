@@ -1,6 +1,6 @@
-/* GdkPixbuf library - Io handling.  This is an internal header for 
- * GdkPixbuf. You should never use it unless you are doing development for 
- * GdkPixbuf itself.
+/* CdkPixbuf library - Io handling.  This is an internal header for 
+ * CdkPixbuf. You should never use it unless you are doing development for 
+ * CdkPixbuf itself.
  *
  * Copyright (C) 1999 The Free Software Foundation
  *
@@ -39,7 +39,7 @@
 
 G_BEGIN_DECLS
 
-typedef struct _GdkPixbufFormat GdkPixbufFormat;
+typedef struct _CdkPixbufFormat CdkPixbufFormat;
 
 CDK_PIXBUF_AVAILABLE_IN_2_40
 gboolean cdk_pixbuf_init_modules (const char  *path,
@@ -51,30 +51,30 @@ GType cdk_pixbuf_format_get_type (void) G_GNUC_CONST;
 CDK_PIXBUF_AVAILABLE_IN_ALL
 GSList    *cdk_pixbuf_get_formats            (void);
 CDK_PIXBUF_AVAILABLE_IN_2_2
-gchar     *cdk_pixbuf_format_get_name        (GdkPixbufFormat *format);
+gchar     *cdk_pixbuf_format_get_name        (CdkPixbufFormat *format);
 CDK_PIXBUF_AVAILABLE_IN_2_2
-gchar     *cdk_pixbuf_format_get_description (GdkPixbufFormat *format);
+gchar     *cdk_pixbuf_format_get_description (CdkPixbufFormat *format);
 CDK_PIXBUF_AVAILABLE_IN_2_2
-gchar    **cdk_pixbuf_format_get_mime_types  (GdkPixbufFormat *format);
+gchar    **cdk_pixbuf_format_get_mime_types  (CdkPixbufFormat *format);
 CDK_PIXBUF_AVAILABLE_IN_2_2
-gchar    **cdk_pixbuf_format_get_extensions  (GdkPixbufFormat *format);
+gchar    **cdk_pixbuf_format_get_extensions  (CdkPixbufFormat *format);
 CDK_PIXBUF_AVAILABLE_IN_2_36
-gboolean   cdk_pixbuf_format_is_save_option_supported (GdkPixbufFormat *format,
+gboolean   cdk_pixbuf_format_is_save_option_supported (CdkPixbufFormat *format,
                                                        const gchar     *option_key);
 CDK_PIXBUF_AVAILABLE_IN_2_2
-gboolean   cdk_pixbuf_format_is_writable     (GdkPixbufFormat *format);
+gboolean   cdk_pixbuf_format_is_writable     (CdkPixbufFormat *format);
 CDK_PIXBUF_AVAILABLE_IN_2_6
-gboolean   cdk_pixbuf_format_is_scalable     (GdkPixbufFormat *format);
+gboolean   cdk_pixbuf_format_is_scalable     (CdkPixbufFormat *format);
 CDK_PIXBUF_AVAILABLE_IN_2_6
-gboolean   cdk_pixbuf_format_is_disabled     (GdkPixbufFormat *format);
+gboolean   cdk_pixbuf_format_is_disabled     (CdkPixbufFormat *format);
 CDK_PIXBUF_AVAILABLE_IN_2_6
-void       cdk_pixbuf_format_set_disabled    (GdkPixbufFormat *format,
+void       cdk_pixbuf_format_set_disabled    (CdkPixbufFormat *format,
 					      gboolean         disabled);
 CDK_PIXBUF_AVAILABLE_IN_2_6
-gchar     *cdk_pixbuf_format_get_license     (GdkPixbufFormat *format);
+gchar     *cdk_pixbuf_format_get_license     (CdkPixbufFormat *format);
 
 CDK_PIXBUF_AVAILABLE_IN_2_4
-GdkPixbufFormat *cdk_pixbuf_get_file_info    (const gchar     *filename,
+CdkPixbufFormat *cdk_pixbuf_get_file_info    (const gchar     *filename,
 					      gint            *width, 
 					      gint            *height);
 CDK_PIXBUF_AVAILABLE_IN_2_32
@@ -83,22 +83,22 @@ void             cdk_pixbuf_get_file_info_async  (const gchar          *filename
 						  GAsyncReadyCallback   callback,
 						  gpointer              user_data);
 CDK_PIXBUF_AVAILABLE_IN_2_32
-GdkPixbufFormat *cdk_pixbuf_get_file_info_finish (GAsyncResult         *async_result,
+CdkPixbufFormat *cdk_pixbuf_get_file_info_finish (GAsyncResult         *async_result,
 						  gint                 *width,
 						  gint                 *height,
 						  GError              **error);
 
 CDK_PIXBUF_AVAILABLE_IN_ALL
-GdkPixbufFormat *cdk_pixbuf_format_copy (const GdkPixbufFormat *format);
+CdkPixbufFormat *cdk_pixbuf_format_copy (const CdkPixbufFormat *format);
 CDK_PIXBUF_AVAILABLE_IN_ALL
-void             cdk_pixbuf_format_free (GdkPixbufFormat       *format);
+void             cdk_pixbuf_format_free (CdkPixbufFormat       *format);
 
 #ifdef CDK_PIXBUF_ENABLE_BACKEND
 
 
 
 /**
- * GdkPixbufModuleSizeFunc:
+ * CdkPixbufModuleSizeFunc:
  * @width: pointer to a location containing the current image width
  * @height: pointer to a location containing the current image height
  * @user_data: the loader.
@@ -119,32 +119,32 @@ void             cdk_pixbuf_format_free (GdkPixbufFormat       *format);
  * 
  * Since: 2.2
  */
-typedef void (* GdkPixbufModuleSizeFunc)           (gint *width, 
+typedef void (* CdkPixbufModuleSizeFunc)           (gint *width, 
 						    gint *height, 
 						    gpointer user_data);
 
 /**
- * GdkPixbufModulePreparedFunc:
- * @pixbuf: the #GdkPixbuf that is currently being loaded.
- * @anim: if an animation is being loaded, the #GdkPixbufAnimation, else %NULL.
+ * CdkPixbufModulePreparedFunc:
+ * @pixbuf: the #CdkPixbuf that is currently being loaded.
+ * @anim: if an animation is being loaded, the #CdkPixbufAnimation, else %NULL.
  * @user_data: the loader.
  * 
  * Defines the type of the function that gets called once the initial 
  * setup of @pixbuf is done.
  * 
- * #GdkPixbufLoader uses a function of this type to emit the 
- * "<link linkend="GdkPixbufLoader-area-prepared">area_prepared</link>"
+ * #CdkPixbufLoader uses a function of this type to emit the 
+ * "<link linkend="CdkPixbufLoader-area-prepared">area_prepared</link>"
  * signal.
  * 
  * Since: 2.2
  */
-typedef void (* GdkPixbufModulePreparedFunc) (GdkPixbuf          *pixbuf,
-					      GdkPixbufAnimation *anim,
+typedef void (* CdkPixbufModulePreparedFunc) (CdkPixbuf          *pixbuf,
+					      CdkPixbufAnimation *anim,
 					      gpointer            user_data);
 
 /**
- * GdkPixbufModuleUpdatedFunc:
- * @pixbuf: the #GdkPixbuf that is currently being loaded.
+ * CdkPixbufModuleUpdatedFunc:
+ * @pixbuf: the #CdkPixbuf that is currently being loaded.
  * @x: the X origin of the updated area.
  * @y: the Y origin of the updated area.
  * @width: the width of the updated area.
@@ -154,13 +154,13 @@ typedef void (* GdkPixbufModulePreparedFunc) (GdkPixbuf          *pixbuf,
  * Defines the type of the function that gets called every time a region
  * of @pixbuf is updated.
  * 
- * #GdkPixbufLoader uses a function of this type to emit the 
- * "<link linkend="GdkPixbufLoader-area-updated">area_updated</link>"
+ * #CdkPixbufLoader uses a function of this type to emit the 
+ * "<link linkend="CdkPixbufLoader-area-updated">area_updated</link>"
  * signal.
  * 
  * Since: 2.2
  */
-typedef void (* GdkPixbufModuleUpdatedFunc)  (GdkPixbuf *pixbuf,
+typedef void (* CdkPixbufModuleUpdatedFunc)  (CdkPixbuf *pixbuf,
 					      int        x,
 					      int        y,
 					      int        width,
@@ -168,7 +168,7 @@ typedef void (* GdkPixbufModuleUpdatedFunc)  (GdkPixbuf *pixbuf,
 					      gpointer   user_data);
 
 /**
- * GdkPixbufModulePattern:
+ * CdkPixbufModulePattern:
  * @prefix: the prefix for this pattern
  * @mask: mask containing bytes which modify how the prefix is matched against
  *  test data
@@ -191,11 +191,11 @@ typedef void (* GdkPixbufModuleUpdatedFunc)  (GdkPixbuf *pixbuf,
  * like an 'x'.
  * 
  * The signature of a module is stored as an array of 
- * `GdkPixbufModulePatterns`. The array is terminated by a pattern
+ * `CdkPixbufModulePatterns`. The array is terminated by a pattern
  * where the `prefix` is `NULL`.
  * 
  * ```c
- * GdkPixbufModulePattern *signature[] = {
+ * CdkPixbufModulePattern *signature[] = {
  *   { "abcdx", " !x z", 100 },
  *   { "bla", NULL,  90 },
  *   { NULL, NULL, 0 }
@@ -207,53 +207,53 @@ typedef void (* GdkPixbufModuleUpdatedFunc)  (GdkPixbuf *pixbuf,
  * 
  * Since: 2.2
  */
-typedef struct _GdkPixbufModulePattern GdkPixbufModulePattern;
-struct _GdkPixbufModulePattern {
+typedef struct _CdkPixbufModulePattern CdkPixbufModulePattern;
+struct _CdkPixbufModulePattern {
 	char *prefix;
 	char *mask;
 	int relevance;
 };
 
 /**
- * GdkPixbufModuleLoadFunc:
+ * CdkPixbufModuleLoadFunc:
  * @f: the file stream from which the image should be loaded
  * @error: return location for a loading error
  *
- * Loads a file from a standard C file stream into a new `GdkPixbuf`.
+ * Loads a file from a standard C file stream into a new `CdkPixbuf`.
  *
  * In case of error, this function should return `NULL` and set the `error` argument.
  *
- * Returns: (transfer full): a newly created `GdkPixbuf` for the contents of the file
+ * Returns: (transfer full): a newly created `CdkPixbuf` for the contents of the file
  */
-typedef GdkPixbuf *(* GdkPixbufModuleLoadFunc) (FILE *f,
+typedef CdkPixbuf *(* CdkPixbufModuleLoadFunc) (FILE *f,
                                                 GError **error);
 
 /**
- * GdkPixbufModuleLoadXpmDataFunc:
+ * CdkPixbufModuleLoadXpmDataFunc:
  * @data: (array zero-terminated=1): the XPM data
  *
- * Loads XPM data into a new `GdkPixbuf`.
+ * Loads XPM data into a new `CdkPixbuf`.
  *
- * Returns: (transfer full): a newly created `GdkPixbuf` for the XPM data
+ * Returns: (transfer full): a newly created `CdkPixbuf` for the XPM data
  */
-typedef GdkPixbuf *(* GdkPixbufModuleLoadXpmDataFunc) (const char **data);
+typedef CdkPixbuf *(* CdkPixbufModuleLoadXpmDataFunc) (const char **data);
 
 /**
- * GdkPixbufModuleLoadAnimationFunc:
+ * CdkPixbufModuleLoadAnimationFunc:
  * @f: the file stream from which the image should be loaded
  * @error: return location for a loading error
  *
- * Loads a file from a standard C file stream into a new `GdkPixbufAnimation`.
+ * Loads a file from a standard C file stream into a new `CdkPixbufAnimation`.
  *
  * In case of error, this function should return `NULL` and set the `error` argument.
  *
- * Returns: (transfer full): a newly created `GdkPixbufAnimation` for the contents of the file
+ * Returns: (transfer full): a newly created `CdkPixbufAnimation` for the contents of the file
  */
-typedef GdkPixbufAnimation *(* GdkPixbufModuleLoadAnimationFunc) (FILE *f,
+typedef CdkPixbufAnimation *(* CdkPixbufModuleLoadAnimationFunc) (FILE *f,
                                                                   GError **error);
 
 /**
- * GdkPixbufModuleBeginLoadFunc:
+ * CdkPixbufModuleBeginLoadFunc:
  * @size_func: the function to be called when the size is known
  * @prepared_func: the function to be called when the data has been prepared
  * @updated_func: the function to be called when the data has been updated
@@ -267,22 +267,22 @@ typedef GdkPixbufAnimation *(* GdkPixbufModuleLoadAnimationFunc) (FILE *f,
  *
  * The image loader should set up an internal state object, and return it
  * from this function; the state object will then be updated from the
- * [callback@GdkPixbuf.PixbufModuleIncrementLoadFunc] callback, and will be freed
- * by [callback@GdkPixbuf.PixbufModuleStopLoadFunc] callback.
+ * [callback@CdkPixbuf.PixbufModuleIncrementLoadFunc] callback, and will be freed
+ * by [callback@CdkPixbuf.PixbufModuleStopLoadFunc] callback.
  *
  * Returns: (transfer full): the data to be passed to
- *   [callback@GdkPixbuf.PixbufModuleIncrementLoadFunc]
- *   and [callback@GdkPixbuf.PixbufModuleStopLoadFunc], or `NULL` in case of error
+ *   [callback@CdkPixbuf.PixbufModuleIncrementLoadFunc]
+ *   and [callback@CdkPixbuf.PixbufModuleStopLoadFunc], or `NULL` in case of error
  */
-typedef gpointer (* GdkPixbufModuleBeginLoadFunc) (GdkPixbufModuleSizeFunc size_func,
-                                                   GdkPixbufModulePreparedFunc prepared_func,
-                                                   GdkPixbufModuleUpdatedFunc updated_func,
+typedef gpointer (* CdkPixbufModuleBeginLoadFunc) (CdkPixbufModuleSizeFunc size_func,
+                                                   CdkPixbufModulePreparedFunc prepared_func,
+                                                   CdkPixbufModuleUpdatedFunc updated_func,
                                                    gpointer user_data,
                                                    GError **error);
 
 /**
- * GdkPixbufModuleStopLoadFunc:
- * @context: (transfer full): the state object created by [callback@GdkPixbuf.PixbufModuleBeginLoadFunc]
+ * CdkPixbufModuleStopLoadFunc:
+ * @context: (transfer full): the state object created by [callback@CdkPixbuf.PixbufModuleBeginLoadFunc]
  * @error: return location for a loading error
  *
  * Finalizes the image loading state.
@@ -291,12 +291,12 @@ typedef gpointer (* GdkPixbufModuleBeginLoadFunc) (GdkPixbufModuleSizeFunc size_
  *
  * Returns: `TRUE` if the loading operation was successful
  */
-typedef gboolean (* GdkPixbufModuleStopLoadFunc) (gpointer context,
+typedef gboolean (* CdkPixbufModuleStopLoadFunc) (gpointer context,
                                                   GError **error);
 
 /**
- * GdkPixbufModuleIncrementLoadFunc:
- * @context: (transfer none): the state object created by [callback@GdkPixbuf.PixbufModuleBeginLoadFunc]
+ * CdkPixbufModuleIncrementLoadFunc:
+ * @context: (transfer none): the state object created by [callback@CdkPixbuf.PixbufModuleBeginLoadFunc]
  * @buf: (array length=size) (element-type guint8): the data to load
  * @size: the length of the data to load
  * @error: return location for a loading error
@@ -305,20 +305,20 @@ typedef gboolean (* GdkPixbufModuleStopLoadFunc) (gpointer context,
  *
  * Returns: `TRUE` if the incremental load was successful
  */
-typedef gboolean (* GdkPixbufModuleIncrementLoadFunc) (gpointer context,
+typedef gboolean (* CdkPixbufModuleIncrementLoadFunc) (gpointer context,
                                                        const guchar *buf,
                                                        guint size,
                                                        GError **error);
 
 /**
- * GdkPixbufModuleSaveFunc:
+ * CdkPixbufModuleSaveFunc:
  * @f: the file stream into which the image should be saved
  * @pixbuf: the image to save
  * @param_keys: (nullable) (array zero-terminated=1): parameter keys to save
  * @param_values: (nullable) (array zero-terminated=1): parameter values to save
  * @error: return location for a saving error
  *
- * Saves a `GdkPixbuf` into a standard C file stream.
+ * Saves a `CdkPixbuf` into a standard C file stream.
  *
  * The optional `param_keys` and `param_values` arrays contain the keys and
  * values (in the same order) for attributes to be saved alongside the image
@@ -327,22 +327,22 @@ typedef gboolean (* GdkPixbufModuleIncrementLoadFunc) (gpointer context,
  * Returns: `TRUE` on success; in case of failure, `FALSE` is returned and
  *   the `error` is set
  */
-typedef gboolean (* GdkPixbufModuleSaveFunc) (FILE *f,
-                                              GdkPixbuf *pixbuf,
+typedef gboolean (* CdkPixbufModuleSaveFunc) (FILE *f,
+                                              CdkPixbuf *pixbuf,
                                               gchar **param_keys,
                                               gchar **param_values,
                                               GError **error);
 
 /**
- * GdkPixbufModuleSaveCallbackFunc:
+ * CdkPixbufModuleSaveCallbackFunc:
  * @save_func: the function to call when saving
  * @user_data: (closure): the data to pass to @save_func
- * @pixbuf: the `GdkPixbuf` to save
+ * @pixbuf: the `CdkPixbuf` to save
  * @option_keys: (nullable) (array zero-terminated=1): an array of option names
  * @option_values: (nullable) (array zero-terminated=1): an array of option values
  * @error: return location for a save error
  *
- * Saves a `GdkPixbuf` by calling the provided function.
+ * Saves a `CdkPixbuf` by calling the provided function.
  *
  * The optional `option_keys` and `option_values` arrays contain the keys and
  * values (in the same order) for attributes to be saved alongside the image
@@ -351,46 +351,46 @@ typedef gboolean (* GdkPixbufModuleSaveFunc) (FILE *f,
  * Returns: `TRUE` on success; in case of failure, `FALSE` is returned and
  *   the `error` is set
  */
-typedef gboolean (* GdkPixbufModuleSaveCallbackFunc) (GdkPixbufSaveFunc save_func,
+typedef gboolean (* CdkPixbufModuleSaveCallbackFunc) (CdkPixbufSaveFunc save_func,
                                                       gpointer user_data,
-                                                      GdkPixbuf *pixbuf,
+                                                      CdkPixbuf *pixbuf,
                                                       gchar **option_keys,
                                                       gchar **option_values,
                                                       GError **error);
 
 /**
- * GdkPixbufModuleSaveOptionSupportedFunc:
+ * CdkPixbufModuleSaveOptionSupportedFunc:
  * @option_key: the option key to check
  *
  * Checks whether the given `option_key` is supported when saving.
  *
  * Returns: `TRUE` if the option is supported
  */
-typedef gboolean (* GdkPixbufModuleSaveOptionSupportedFunc) (const gchar *option_key);
+typedef gboolean (* CdkPixbufModuleSaveOptionSupportedFunc) (const gchar *option_key);
 
-typedef struct _GdkPixbufModule GdkPixbufModule;
-struct _GdkPixbufModule {
+typedef struct _CdkPixbufModule CdkPixbufModule;
+struct _CdkPixbufModule {
 	char *module_name;
 	char *module_path;
 	GModule *module;
-	GdkPixbufFormat *info;
+	CdkPixbufFormat *info;
 
         /* Atomic loading */
-        GdkPixbufModuleLoadFunc load;
-        GdkPixbufModuleLoadXpmDataFunc load_xpm_data;
+        CdkPixbufModuleLoadFunc load;
+        CdkPixbufModuleLoadXpmDataFunc load_xpm_data;
 
         /* Incremental loading */
-        GdkPixbufModuleBeginLoadFunc begin_load;
-        GdkPixbufModuleStopLoadFunc stop_load;
-        GdkPixbufModuleIncrementLoadFunc load_increment;
+        CdkPixbufModuleBeginLoadFunc begin_load;
+        CdkPixbufModuleStopLoadFunc stop_load;
+        CdkPixbufModuleIncrementLoadFunc load_increment;
 
 	/* Animation loading */
-        GdkPixbufModuleLoadAnimationFunc load_animation;
+        CdkPixbufModuleLoadAnimationFunc load_animation;
 
         /* Saving */
-        GdkPixbufModuleSaveFunc save;
-        GdkPixbufModuleSaveCallbackFunc save_to_callback;
-        GdkPixbufModuleSaveOptionSupportedFunc is_save_option_supported;
+        CdkPixbufModuleSaveFunc save;
+        CdkPixbufModuleSaveCallbackFunc save_to_callback;
+        CdkPixbufModuleSaveOptionSupportedFunc is_save_option_supported;
 
         /*< private >*/
         void (*_reserved1) (void);
@@ -400,29 +400,29 @@ struct _GdkPixbufModule {
 };
 
 /**
- * GdkPixbufModuleFillVtableFunc:
- * @module: a #GdkPixbufModule.
+ * CdkPixbufModuleFillVtableFunc:
+ * @module: a #CdkPixbufModule.
  * 
  * Defines the type of the function used to set the vtable of a 
- * #GdkPixbufModule when it is loaded. 
+ * #CdkPixbufModule when it is loaded. 
  * 
  * Since: 2.2
  */
-typedef void (* GdkPixbufModuleFillVtableFunc) (GdkPixbufModule *module);
+typedef void (* CdkPixbufModuleFillVtableFunc) (CdkPixbufModule *module);
 
 /**
- * GdkPixbufModuleFillInfoFunc:
- * @info: a #GdkPixbufFormat.
+ * CdkPixbufModuleFillInfoFunc:
+ * @info: a #CdkPixbufFormat.
  * 
  * Defines the type of the function used to fill a 
- * #GdkPixbufFormat structure with information about a module.
+ * #CdkPixbufFormat structure with information about a module.
  * 
  * Since: 2.2
  */
-typedef void (* GdkPixbufModuleFillInfoFunc) (GdkPixbufFormat *info);
+typedef void (* CdkPixbufModuleFillInfoFunc) (CdkPixbufFormat *info);
 
 /**
- * GdkPixbufFormatFlags:
+ * CdkPixbufFormatFlags:
  * @CDK_PIXBUF_FORMAT_WRITABLE: the module can write out images in the format.
  * @CDK_PIXBUF_FORMAT_SCALABLE: the image format is scalable
  * @CDK_PIXBUF_FORMAT_THREADSAFE: the module is threadsafe. cdk-pixbuf
@@ -438,10 +438,10 @@ typedef enum /*< skip >*/
   CDK_PIXBUF_FORMAT_WRITABLE = 1 << 0,
   CDK_PIXBUF_FORMAT_SCALABLE = 1 << 1,
   CDK_PIXBUF_FORMAT_THREADSAFE = 1 << 2
-} GdkPixbufFormatFlags;
+} CdkPixbufFormatFlags;
 
 /**
- * GdkPixbufFormat:
+ * CdkPixbufFormat:
  * @name: the name of the image format
  * @signature: the signature of the module
  * @domain: the message domain for the `description`
@@ -449,12 +449,12 @@ typedef enum /*< skip >*/
  * @mime_types: (array zero-terminated=1): the MIME types for the image format
  * @extensions: (array zero-terminated=1): typical filename extensions for the
  *   image format
- * @flags: a combination of `GdkPixbufFormatFlags`
+ * @flags: a combination of `CdkPixbufFormatFlags`
  * @disabled: a boolean determining whether the loader is disabled`
  * @license: a string containing license information, typically set to 
  *   shorthands like "GPL", "LGPL", etc.
  * 
- * A `GdkPixbufFormat` contains information about the image format accepted
+ * A `CdkPixbufFormat` contains information about the image format accepted
  * by a module.
  *
  * Only modules should access the fields directly, applications should
@@ -462,9 +462,9 @@ typedef enum /*< skip >*/
  * 
  * Since: 2.2
  */
-struct _GdkPixbufFormat {
+struct _CdkPixbufFormat {
   gchar *name;
-  GdkPixbufModulePattern *signature;
+  CdkPixbufModulePattern *signature;
   gchar *domain;
   gchar *description;
   gchar **mime_types;

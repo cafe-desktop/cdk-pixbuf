@@ -1,4 +1,4 @@
-/* GdkPixbuf library
+/* CdkPixbuf library
  * Copyright (C) 2003-2006 David Schleef <ds@schleef.org>
  *		 2005-2006 Eric Anholt <eric@anholt.net>
  *		 2006-2007 Benjamin Otte <otte@gnome.org>
@@ -23,7 +23,7 @@
 
 #include <string.h>
 
-struct _GdkPixbufBufferQueue
+struct _CdkPixbufBufferQueue
 {
   GSList *	first_buffer;		/* pointer to first buffer */
   GSList *	last_buffer;		/* pointer to last buffer (for fast appending) */
@@ -34,9 +34,9 @@ struct _GdkPixbufBufferQueue
 };
 
 /**
- * GdkPixbufBufferQueue:
+ * CdkPixbufBufferQueue:
  *
- * A #GdkPixbufBufferQueue is a queue of continuous buffers that allows reading
+ * A #CdkPixbufBufferQueue is a queue of continuous buffers that allows reading
  * its data in chunks of pre-defined sizes. It is used to transform a data 
  * stream that was provided by buffers of random sizes to buffers of the right
  * size.
@@ -49,12 +49,12 @@ struct _GdkPixbufBufferQueue
  *
  * Returns: a new buffer queue. Use cdk_pixbuf_buffer_queue_unref () to free it.
  **/
-GdkPixbufBufferQueue *
+CdkPixbufBufferQueue *
 cdk_pixbuf_buffer_queue_new (void)
 {
-  GdkPixbufBufferQueue *buffer_queue;
+  CdkPixbufBufferQueue *buffer_queue;
 
-  buffer_queue = g_new0 (GdkPixbufBufferQueue, 1);
+  buffer_queue = g_new0 (CdkPixbufBufferQueue, 1);
   buffer_queue->ref_count = 1;
 
   return buffer_queue;
@@ -62,14 +62,14 @@ cdk_pixbuf_buffer_queue_new (void)
 
 /**
  * cdk_pixbuf_buffer_queue_get_size:
- * @queue: a #GdkPixbufBufferQueue
+ * @queue: a #CdkPixbufBufferQueue
  *
  * Returns the number of bytes currently in @queue.
  *
  * Returns: amount of bytes in @queue.
  **/
 gsize
-cdk_pixbuf_buffer_queue_get_size (GdkPixbufBufferQueue *queue)
+cdk_pixbuf_buffer_queue_get_size (CdkPixbufBufferQueue *queue)
 {
   g_return_val_if_fail (queue != NULL, 0);
 
@@ -78,7 +78,7 @@ cdk_pixbuf_buffer_queue_get_size (GdkPixbufBufferQueue *queue)
 
 /**
  * cdk_pixbuf_buffer_queue_get_offset:
- * @queue: a #GdkPixbufBufferQueue
+ * @queue: a #CdkPixbufBufferQueue
  *
  * Queries the amount of bytes that has already been pulled out of
  * @queue using functions like cdk_pixbuf_buffer_queue_pull().
@@ -86,7 +86,7 @@ cdk_pixbuf_buffer_queue_get_size (GdkPixbufBufferQueue *queue)
  * Returns: Number of bytes that were already pulled from this queue.
  **/
 gsize
-cdk_pixbuf_buffer_queue_get_offset (GdkPixbufBufferQueue * queue)
+cdk_pixbuf_buffer_queue_get_offset (CdkPixbufBufferQueue * queue)
 {
   g_return_val_if_fail (queue != NULL, 0);
 
@@ -95,13 +95,13 @@ cdk_pixbuf_buffer_queue_get_offset (GdkPixbufBufferQueue * queue)
 
 /**
  * cdk_pixbuf_buffer_queue_flush:
- * @queue: a #GdkPixbufBufferQueue
+ * @queue: a #CdkPixbufBufferQueue
  * @n_bytes: amount of bytes to flush from the queue
  *
  * Removes the first @n_bytes bytes from the queue.
  */
 void
-cdk_pixbuf_buffer_queue_flush (GdkPixbufBufferQueue *queue, gsize n_bytes)
+cdk_pixbuf_buffer_queue_flush (CdkPixbufBufferQueue *queue, gsize n_bytes)
 {
   g_return_if_fail (queue != NULL);
   g_return_if_fail (n_bytes <= queue->size);
@@ -138,13 +138,13 @@ cdk_pixbuf_buffer_queue_flush (GdkPixbufBufferQueue *queue, gsize n_bytes)
 
 /**
  * cdk_pixbuf_buffer_queue_clear:
- * @queue: a #GdkPixbufBufferQueue
+ * @queue: a #CdkPixbufBufferQueue
  *
  * Resets @queue into to initial state. All buffers it contains will be 
  * released and the offset will be reset to 0.
  **/
 void
-cdk_pixbuf_buffer_queue_clear (GdkPixbufBufferQueue *queue)
+cdk_pixbuf_buffer_queue_clear (CdkPixbufBufferQueue *queue)
 {
   g_return_if_fail (queue != NULL);
 
@@ -157,7 +157,7 @@ cdk_pixbuf_buffer_queue_clear (GdkPixbufBufferQueue *queue)
 
 /**
  * cdk_pixbuf_buffer_queue_push:
- * @queue: a #GdkPixbufBufferQueue
+ * @queue: a #CdkPixbufBufferQueue
  * @bytes: #GBytes to append to @queue
  *
  * Appends the given @bytes to the buffers already in @queue. This function
@@ -165,7 +165,7 @@ cdk_pixbuf_buffer_queue_clear (GdkPixbufBufferQueue *queue)
  * calling this function to keep a reference.
  **/
 void
-cdk_pixbuf_buffer_queue_push (GdkPixbufBufferQueue *queue,
+cdk_pixbuf_buffer_queue_push (CdkPixbufBufferQueue *queue,
                               GBytes               *bytes)
 {
   gsize size;
@@ -191,7 +191,7 @@ cdk_pixbuf_buffer_queue_push (GdkPixbufBufferQueue *queue,
 
 /**
  * cdk_pixbuf_buffer_queue_peek:
- * @queue: a #GdkPixbufBufferQueue to read from
+ * @queue: a #CdkPixbufBufferQueue to read from
  * @length: amount of bytes to peek
  *
  * Creates a new buffer with the first @length bytes from @queue, but unlike 
@@ -201,7 +201,7 @@ cdk_pixbuf_buffer_queue_push (GdkPixbufBufferQueue *queue,
  *          #GBytes. Use g_bytes_unref() after use.
  **/
 GBytes *
-cdk_pixbuf_buffer_queue_peek (GdkPixbufBufferQueue *queue,
+cdk_pixbuf_buffer_queue_peek (CdkPixbufBufferQueue *queue,
                               gsize                 length)
 {
   GSList *g;
@@ -249,7 +249,7 @@ cdk_pixbuf_buffer_queue_peek (GdkPixbufBufferQueue *queue,
 
 /**
  * cdk_pixbuf_buffer_queue_pull:
- * @queue: a #GdkPixbufBufferQueue
+ * @queue: a #CdkPixbufBufferQueue
  * @length: amount of bytes to pull
  *
  * If enough data is still available in @queue, the first @length bytes are 
@@ -260,7 +260,7 @@ cdk_pixbuf_buffer_queue_peek (GdkPixbufBufferQueue *queue,
  * Returns: a new #GBytes or %NULL
  **/
 GBytes *
-cdk_pixbuf_buffer_queue_pull (GdkPixbufBufferQueue * queue, gsize length)
+cdk_pixbuf_buffer_queue_pull (CdkPixbufBufferQueue * queue, gsize length)
 {
   GBytes *result;
 
@@ -277,7 +277,7 @@ cdk_pixbuf_buffer_queue_pull (GdkPixbufBufferQueue * queue, gsize length)
 
 /**
  * cdk_pixbuf_buffer_queue_peek_buffer:
- * @queue: a #GdkPixbufBufferQueue
+ * @queue: a #CdkPixbufBufferQueue
  *
  * Gets the first buffer out of @queue and returns it. This function is 
  * equivalent to calling cdk_pixbuf_buffer_queue_peek() with the size of the
@@ -287,7 +287,7 @@ cdk_pixbuf_buffer_queue_pull (GdkPixbufBufferQueue * queue, gsize length)
  *          g_bytes_unref() after use.
  **/
 GBytes *
-cdk_pixbuf_buffer_queue_peek_buffer (GdkPixbufBufferQueue * queue)
+cdk_pixbuf_buffer_queue_peek_buffer (CdkPixbufBufferQueue * queue)
 {
   GBytes *bytes;
 
@@ -303,7 +303,7 @@ cdk_pixbuf_buffer_queue_peek_buffer (GdkPixbufBufferQueue * queue)
 
 /**
  * cdk_pixbuf_buffer_queue_pull_buffer:
- * @queue: a #GdkPixbufBufferQueue
+ * @queue: a #CdkPixbufBufferQueue
  *
  * Pulls the first buffer out of @queue and returns it. This function is 
  * equivalent to calling cdk_pixbuf_buffer_queue_pull() with the size of the
@@ -312,7 +312,7 @@ cdk_pixbuf_buffer_queue_peek_buffer (GdkPixbufBufferQueue * queue)
  * Returns: The first buffer in @queue or %NULL if @queue is empty.
  **/
 GBytes *
-cdk_pixbuf_buffer_queue_pull_buffer (GdkPixbufBufferQueue *queue)
+cdk_pixbuf_buffer_queue_pull_buffer (CdkPixbufBufferQueue *queue)
 {
   GBytes *bytes;
 
@@ -327,14 +327,14 @@ cdk_pixbuf_buffer_queue_pull_buffer (GdkPixbufBufferQueue *queue)
 
 /**
  * cdk_pixbuf_buffer_queue_ref:
- * @queue: a #GdkPixbufBufferQueue
+ * @queue: a #CdkPixbufBufferQueue
  *
  * increases the reference count of @queue by one.
  *
  * Returns: The passed in @queue.
  **/
-GdkPixbufBufferQueue *
-cdk_pixbuf_buffer_queue_ref (GdkPixbufBufferQueue * queue)
+CdkPixbufBufferQueue *
+cdk_pixbuf_buffer_queue_ref (CdkPixbufBufferQueue * queue)
 {
   g_return_val_if_fail (queue != NULL, NULL);
   g_return_val_if_fail (queue->ref_count > 0, NULL);
@@ -345,14 +345,14 @@ cdk_pixbuf_buffer_queue_ref (GdkPixbufBufferQueue * queue)
 
 /**
  * cdk_pixbuf_buffer_queue_unref:
- * @queue: a #GdkPixbufBufferQueue
+ * @queue: a #CdkPixbufBufferQueue
  *
  * Decreases the reference count of @queue by one. If no reference 
  * to this buffer exists anymore, the buffer and the memory 
  * it manages are freed.
  **/
 void
-cdk_pixbuf_buffer_queue_unref (GdkPixbufBufferQueue * queue)
+cdk_pixbuf_buffer_queue_unref (CdkPixbufBufferQueue * queue)
 {
   g_return_if_fail (queue != NULL);
   g_return_if_fail (queue->ref_count > 0);

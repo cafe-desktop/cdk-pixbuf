@@ -1,5 +1,5 @@
 /* -*- Mode: C; c-basic-offset: 2; -*- */
-/* GdkPixbuf library - test loaders
+/* CdkPixbuf library - test loaders
  *
  * Copyright (C) 2013 Red Hat, Inc.
  *
@@ -30,8 +30,8 @@ static void
 test_pixdata_deserialize (gconstpointer data)
 {
   const gchar *filename = data;
-  GdkPixbuf *pixbuf;
-  GdkPixdata pixdata;
+  CdkPixbuf *pixbuf;
+  CdkPixdata pixdata;
   GError *error = NULL;
   gchar *contents;
   gsize size;
@@ -58,10 +58,10 @@ static void
 test_pixdata_success (void)
 {
   const gchar *path;
-  GdkPixbuf *pixbuf;
-  GdkPixdata pixdata1, pixdata2;
+  CdkPixbuf *pixbuf;
+  CdkPixdata pixdata1, pixdata2;
   GError *error = NULL;
-  GdkPixbuf *ref;
+  CdkPixbuf *ref;
   gchar *contents;
   gsize size;
 
@@ -101,7 +101,7 @@ test_pixdata (void)
 {
   const gchar *path;
   GError *error = NULL;
-  GdkPixbuf *ref;
+  CdkPixbuf *ref;
 
   ref = cdk_pixbuf_new_from_resource ("/test/resource/icc-profile.pixdata", &error);
   g_assert_no_error (error);

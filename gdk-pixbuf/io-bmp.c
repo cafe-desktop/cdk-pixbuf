@@ -1,5 +1,5 @@
 /* -*- mode: C; c-file-style: "linux" -*- */
-/* GdkPixbuf library - Windows Bitmap image loader
+/* CdkPixbuf library - Windows Bitmap image loader
  *
  * Copyright (C) 1999 The Free Software Foundation
  *
@@ -148,9 +148,9 @@ struct bmp_compression_state {
 /* Progressive loading */
 
 struct bmp_progressive_state {
-	GdkPixbufModuleSizeFunc size_func;
-	GdkPixbufModulePreparedFunc prepared_func;
-	GdkPixbufModuleUpdatedFunc updated_func;
+	CdkPixbufModuleSizeFunc size_func;
+	CdkPixbufModulePreparedFunc prepared_func;
+	CdkPixbufModuleUpdatedFunc updated_func;
 	gpointer user_data;
 
 	ReadState read_state;
@@ -185,13 +185,13 @@ struct bmp_progressive_state {
 	unsigned int b_mask, b_shift, b_bits;
 	unsigned int a_mask, a_shift, a_bits;
 
-	GdkPixbuf *pixbuf;	/* Our "target" */
+	CdkPixbuf *pixbuf;	/* Our "target" */
 };
 
 static gpointer
-cdk_pixbuf__bmp_image_begin_load(GdkPixbufModuleSizeFunc size_func,
-                                 GdkPixbufModulePreparedFunc prepared_func,
-				 GdkPixbufModuleUpdatedFunc updated_func,
+cdk_pixbuf__bmp_image_begin_load(CdkPixbufModuleSizeFunc size_func,
+                                 CdkPixbufModulePreparedFunc prepared_func,
+				 CdkPixbufModuleUpdatedFunc updated_func,
                                  gpointer user_data,
                                  GError **error);
 
@@ -743,9 +743,9 @@ decode_bitmasks (unsigned char *buf,
  */
 
 static gpointer
-cdk_pixbuf__bmp_image_begin_load(GdkPixbufModuleSizeFunc size_func,
-                                 GdkPixbufModulePreparedFunc prepared_func,
-				 GdkPixbufModuleUpdatedFunc updated_func,
+cdk_pixbuf__bmp_image_begin_load(CdkPixbufModuleSizeFunc size_func,
+                                 CdkPixbufModulePreparedFunc prepared_func,
+				 CdkPixbufModuleUpdatedFunc updated_func,
                                  gpointer user_data,
                                  GError **error)
 {
@@ -1377,9 +1377,9 @@ cdk_pixbuf__bmp_image_load_increment(gpointer data,
 			  buf += 4; }
 
 static gboolean
-cdk_pixbuf__bmp_image_save_to_callback (GdkPixbufSaveFunc   save_func,
+cdk_pixbuf__bmp_image_save_to_callback (CdkPixbufSaveFunc   save_func,
 					gpointer            user_data,
-					GdkPixbuf          *pixbuf, 
+					CdkPixbuf          *pixbuf, 
 					gchar             **keys,
 					gchar             **values,
 					GError            **error)
@@ -1495,7 +1495,7 @@ save_to_file_cb (const gchar *buf,
 
 static gboolean
 cdk_pixbuf__bmp_image_save (FILE          *f, 
-                            GdkPixbuf     *pixbuf, 
+                            CdkPixbuf     *pixbuf, 
                             gchar        **keys,
                             gchar        **values,
                             GError       **error)
@@ -1511,7 +1511,7 @@ cdk_pixbuf__bmp_image_save (FILE          *f,
 #define MODULE_ENTRY(function) void _cdk_pixbuf__bmp_ ## function
 #endif
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
 	module->begin_load = cdk_pixbuf__bmp_image_begin_load;
 	module->stop_load = cdk_pixbuf__bmp_image_stop_load;
@@ -1520,9 +1520,9 @@ MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
 	module->save_to_callback = cdk_pixbuf__bmp_image_save_to_callback;
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-	static const GdkPixbufModulePattern signature[] = {
+	static const CdkPixbufModulePattern signature[] = {
 		{ "BM", NULL, 100 },
 		{ NULL, NULL, 0 }
 	};
@@ -1538,7 +1538,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
 	};
 
 	info->name = "bmp";
-	info->signature = (GdkPixbufModulePattern *) signature;
+	info->signature = (CdkPixbufModulePattern *) signature;
 	info->description = NC_("image format", "BMP");
 	info->mime_types = (gchar **) mime_types;
 	info->extensions = (gchar **) extensions;

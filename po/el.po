@@ -821,8 +821,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Αδυναμία διάθεσης μνήμης για τη δομή περιεχομένων του QTIF."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Αποτυχία δημιουργίας αντικειμένου GdkPixbufLoader."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Αποτυχία δημιουργίας αντικειμένου CdkPixbufLoader."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -1073,8 +1073,8 @@ msgstr "XPM"
 #~ msgstr "Το μετασχηματισμένο pixbuf έχει μηδενικό ύψος ή πλάτος."
 
 #~ msgctxt "image format"
-#~ msgid "GdkPixdata"
-#~ msgstr "GdkPixdata"
+#~ msgid "CdkPixdata"
+#~ msgstr "CdkPixdata"
 
 #~ msgid "Couldn't allocate memory for header"
 #~ msgstr "Αδυναμία διάθεσης μνήμης για την κεφαλίδα"

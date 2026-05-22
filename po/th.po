@@ -719,8 +719,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "จัดสรรหน่วยความจำสำหรับโครงสร้าง QTIF context ไม่สำเร็จ"
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "สร้างอ็อบเจกต์ GdkPixbufLoader ไม่สำเร็จ"
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "สร้างอ็อบเจกต์ CdkPixbufLoader ไม่สำเร็จ"
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -1014,8 +1014,8 @@ msgstr "XPM"
 #~ msgid "Transformed pixbuf has zero width or height."
 #~ msgstr "พิกซ์บัฟที่แปลงมามีความกว้างหรือความสูงเป็นศูนย์"
 
-#~ msgid "The GdkPixdata format"
-#~ msgstr "รูปแบบ GdkPixdata"
+#~ msgid "The CdkPixdata format"
+#~ msgstr "รูปแบบ CdkPixdata"
 
 #, c-format
 #~ msgid "PNG compression level must be a value between 0 and 9; value '%s' could not be parsed."

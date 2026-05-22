@@ -804,8 +804,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Не вдалося виділити пам'ять для структури контексту формату QTIF"
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Неможливо створити об'єкт GdkPixbufLoader."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Неможливо створити об'єкт CdkPixbufLoader."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."

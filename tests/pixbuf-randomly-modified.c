@@ -1,5 +1,5 @@
 /* -*- Mode: C; c-basic-offset: 2; -*- */
-/* GdkPixbuf library - test loaders
+/* CdkPixbuf library - test loaders
  *
  * Copyright (C) 2001 Søren Sandmann (sandmann@daimi.au.dk)
  *
@@ -48,7 +48,7 @@ randomly_modify (const gchar *image, guint size)
   for (i = 0; i < n; i++)
     {
       FILE *f;
-      GdkPixbufLoader *loader;
+      CdkPixbufLoader *loader;
       
       guint index = g_test_rand_int_range (0, size);
       guchar byte = g_test_rand_int_range (0, 256);

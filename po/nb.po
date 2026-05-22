@@ -763,8 +763,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Klarte ikke å allokere QTIF-kontekststruktur."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Klarte ikke å lage GdkPixbufLoader-objekt."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Klarte ikke å lage CdkPixbufLoader-objekt."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."

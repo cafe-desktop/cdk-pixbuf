@@ -795,7 +795,7 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Не могу да доделим структуру КуТИФ садржаја."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
+msgid "Failed to create CdkPixbufLoader object."
 msgstr "Не могу да створим објекат Гдк учитавача сличице."
 
 #: cdk-pixbuf/io-qtif.c:424
@@ -1046,7 +1046,7 @@ msgstr "ИксПМ"
 #~ msgstr "Преиначена сличица има висину или ширину нула."
 
 #~ msgctxt "image format"
-#~ msgid "GdkPixdata"
+#~ msgid "CdkPixdata"
 #~ msgstr "Гдк Пиксдата"
 
 #~ msgid "Couldn't allocate memory for header"

@@ -1,4 +1,4 @@
-/* GdkPixbuf library - GdkPixbuf data structure
+/* CdkPixbuf library - CdkPixbuf data structure
  *
  * Copyright (C) 2003 The Free Software Foundation
  *
@@ -37,7 +37,7 @@
 G_BEGIN_DECLS
 
 /**
- * GdkPixbufAlphaMode:
+ * CdkPixbufAlphaMode:
  * @CDK_PIXBUF_ALPHA_BILEVEL: A bilevel clipping mask (black and white)
  *  will be created and used to draw the image.  Pixels below 0.5 opacity
  *  will be considered fully transparent, and all others will be
@@ -58,7 +58,7 @@ G_BEGIN_DECLS
  * it will be possible to do full alpha compositing onto arbitrary drawables.
  * For now both cases fall back to a bilevel clipping mask.
  *
- * Deprecated: 2.42: There is no user of GdkPixbufAlphaMode in GdkPixbuf,
+ * Deprecated: 2.42: There is no user of CdkPixbufAlphaMode in CdkPixbuf,
  *   and the Xlib utility functions have been split out to their own
  *   library, cdk-pixbuf-xlib
  */
@@ -66,10 +66,10 @@ typedef enum
 {
         CDK_PIXBUF_ALPHA_BILEVEL,
         CDK_PIXBUF_ALPHA_FULL
-} GdkPixbufAlphaMode;
+} CdkPixbufAlphaMode;
 
 /**
- * GdkColorspace:
+ * CdkColorspace:
  * @CDK_COLORSPACE_RGB: Indicates a red/green/blue additive color space.
  * 
  * This enumeration defines the color spaces that are supported by
@@ -82,19 +82,19 @@ typedef enum
  */
 typedef enum {
 	CDK_COLORSPACE_RGB
-} GdkColorspace;
+} CdkColorspace;
 
 /* All of these are opaque structures */
 
-typedef struct _GdkPixbuf GdkPixbuf;
+typedef struct _CdkPixbuf CdkPixbuf;
 
 #define CDK_TYPE_PIXBUF              (cdk_pixbuf_get_type ())
-#define CDK_PIXBUF(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF, GdkPixbuf))
+#define CDK_PIXBUF(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF, CdkPixbuf))
 #define CDK_IS_PIXBUF(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), CDK_TYPE_PIXBUF))
 
 
 /**
- * GdkPixbufDestroyNotify:
+ * CdkPixbufDestroyNotify:
  * @pixels: (array) (element-type guint8): The pixel array of the pixbuf
  *   that is being finalized.
  * @data: (closure): User closure data.
@@ -104,24 +104,24 @@ typedef struct _GdkPixbuf GdkPixbuf;
  *
  * The cdk_pixbuf_new_from_data() function lets you pass in a pre-allocated
  * pixel array so that a pixbuf can be created from it; in this case you
- * will need to pass in a function of type `GdkPixbufDestroyNotify` so that
+ * will need to pass in a function of type `CdkPixbufDestroyNotify` so that
  * the pixel data can be freed when the pixbuf is finalized.
  */
-typedef void (* GdkPixbufDestroyNotify) (guchar *pixels, gpointer data);
+typedef void (* CdkPixbufDestroyNotify) (guchar *pixels, gpointer data);
 
 /**
  * CDK_PIXBUF_ERROR:
  * 
  * Error domain used for pixbuf operations.
  *
- * Indicates that the error code will be in the `GdkPixbufError` enumeration.
+ * Indicates that the error code will be in the `CdkPixbufError` enumeration.
  *
  * See the `GError` for information on error domains and error codes.
  */
 #define CDK_PIXBUF_ERROR cdk_pixbuf_error_quark ()
 
 /**
- * GdkPixbufError:
+ * CdkPixbufError:
  * @CDK_PIXBUF_ERROR_CORRUPT_IMAGE: An image file was broken somehow.
  * @CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY: Not enough memory.
  * @CDK_PIXBUF_ERROR_BAD_OPTION: A bad option was passed to a pixbuf save module.
@@ -149,7 +149,7 @@ typedef enum {
         CDK_PIXBUF_ERROR_UNSUPPORTED_OPERATION,
         CDK_PIXBUF_ERROR_FAILED,
         CDK_PIXBUF_ERROR_INCOMPLETE_ANIMATION
-} GdkPixbufError;
+} CdkPixbufError;
 
 CDK_PIXBUF_AVAILABLE_IN_ALL
 GQuark cdk_pixbuf_error_quark (void);
@@ -162,50 +162,50 @@ GType cdk_pixbuf_get_type (void) G_GNUC_CONST;
 /* Reference counting */
 
 CDK_PIXBUF_DEPRECATED_IN_2_0_FOR(g_object_ref)
-GdkPixbuf *cdk_pixbuf_ref      (GdkPixbuf *pixbuf);
+CdkPixbuf *cdk_pixbuf_ref      (CdkPixbuf *pixbuf);
 CDK_PIXBUF_DEPRECATED_IN_2_0_FOR(g_object_unref)
-void       cdk_pixbuf_unref    (GdkPixbuf *pixbuf);
+void       cdk_pixbuf_unref    (CdkPixbuf *pixbuf);
 
-/* GdkPixbuf accessors */
+/* CdkPixbuf accessors */
 
 CDK_PIXBUF_AVAILABLE_IN_ALL
-GdkColorspace cdk_pixbuf_get_colorspace      (const GdkPixbuf *pixbuf);
+CdkColorspace cdk_pixbuf_get_colorspace      (const CdkPixbuf *pixbuf);
 CDK_PIXBUF_AVAILABLE_IN_ALL
-int           cdk_pixbuf_get_n_channels      (const GdkPixbuf *pixbuf);
+int           cdk_pixbuf_get_n_channels      (const CdkPixbuf *pixbuf);
 CDK_PIXBUF_AVAILABLE_IN_ALL
-gboolean      cdk_pixbuf_get_has_alpha       (const GdkPixbuf *pixbuf);
+gboolean      cdk_pixbuf_get_has_alpha       (const CdkPixbuf *pixbuf);
 CDK_PIXBUF_AVAILABLE_IN_ALL
-int           cdk_pixbuf_get_bits_per_sample (const GdkPixbuf *pixbuf);
+int           cdk_pixbuf_get_bits_per_sample (const CdkPixbuf *pixbuf);
 CDK_PIXBUF_AVAILABLE_IN_ALL
-guchar       *cdk_pixbuf_get_pixels          (const GdkPixbuf *pixbuf);
+guchar       *cdk_pixbuf_get_pixels          (const CdkPixbuf *pixbuf);
 CDK_PIXBUF_AVAILABLE_IN_ALL
-int           cdk_pixbuf_get_width           (const GdkPixbuf *pixbuf);
+int           cdk_pixbuf_get_width           (const CdkPixbuf *pixbuf);
 CDK_PIXBUF_AVAILABLE_IN_ALL
-int           cdk_pixbuf_get_height          (const GdkPixbuf *pixbuf);
+int           cdk_pixbuf_get_height          (const CdkPixbuf *pixbuf);
 CDK_PIXBUF_AVAILABLE_IN_ALL
-int           cdk_pixbuf_get_rowstride       (const GdkPixbuf *pixbuf);
+int           cdk_pixbuf_get_rowstride       (const CdkPixbuf *pixbuf);
 CDK_PIXBUF_AVAILABLE_IN_2_26
-gsize         cdk_pixbuf_get_byte_length     (const GdkPixbuf *pixbuf);
+gsize         cdk_pixbuf_get_byte_length     (const CdkPixbuf *pixbuf);
 
 CDK_PIXBUF_AVAILABLE_IN_2_26
-guchar       *cdk_pixbuf_get_pixels_with_length (const GdkPixbuf *pixbuf,
+guchar       *cdk_pixbuf_get_pixels_with_length (const CdkPixbuf *pixbuf,
                                                  guint           *length);
 
 CDK_PIXBUF_AVAILABLE_IN_2_32
-const guint8* cdk_pixbuf_read_pixels         (const GdkPixbuf  *pixbuf);
+const guint8* cdk_pixbuf_read_pixels         (const CdkPixbuf  *pixbuf);
 CDK_PIXBUF_AVAILABLE_IN_2_32
-GBytes *      cdk_pixbuf_read_pixel_bytes    (const GdkPixbuf  *pixbuf);
+GBytes *      cdk_pixbuf_read_pixel_bytes    (const CdkPixbuf  *pixbuf);
 
 
 
 /* Create a blank pixbuf with an optimal rowstride and a new buffer */
 
 CDK_PIXBUF_AVAILABLE_IN_ALL
-GdkPixbuf *cdk_pixbuf_new (GdkColorspace colorspace, gboolean has_alpha, int bits_per_sample,
+CdkPixbuf *cdk_pixbuf_new (CdkColorspace colorspace, gboolean has_alpha, int bits_per_sample,
 			   int width, int height);
 
 CDK_PIXBUF_AVAILABLE_IN_2_36
-gint cdk_pixbuf_calculate_rowstride (GdkColorspace colorspace,
+gint cdk_pixbuf_calculate_rowstride (CdkColorspace colorspace,
 				     gboolean      has_alpha,
 				     int           bits_per_sample,
 				     int           width,
@@ -213,11 +213,11 @@ gint cdk_pixbuf_calculate_rowstride (GdkColorspace colorspace,
 
 /* Copy a pixbuf */
 CDK_PIXBUF_AVAILABLE_IN_ALL
-GdkPixbuf *cdk_pixbuf_copy (const GdkPixbuf *pixbuf);
+CdkPixbuf *cdk_pixbuf_copy (const CdkPixbuf *pixbuf);
 
 /* Create a pixbuf which points to the pixels of another pixbuf */
 CDK_PIXBUF_AVAILABLE_IN_ALL
-GdkPixbuf *cdk_pixbuf_new_subpixbuf (GdkPixbuf *src_pixbuf,
+CdkPixbuf *cdk_pixbuf_new_subpixbuf (CdkPixbuf *src_pixbuf,
                                      int        src_x,
                                      int        src_y,
                                      int        width,
@@ -231,15 +231,15 @@ GdkPixbuf *cdk_pixbuf_new_subpixbuf (GdkPixbuf *src_pixbuf,
  */
 
 CDK_PIXBUF_AVAILABLE_IN_ALL
-GdkPixbuf *cdk_pixbuf_new_from_file_utf8 (const char *filename,
+CdkPixbuf *cdk_pixbuf_new_from_file_utf8 (const char *filename,
                                           GError    **error);
 CDK_PIXBUF_AVAILABLE_IN_2_4
-GdkPixbuf *cdk_pixbuf_new_from_file_at_size_utf8 (const char *filename,
+CdkPixbuf *cdk_pixbuf_new_from_file_at_size_utf8 (const char *filename,
                                                   int         width,
                                                   int         height,
                                                   GError    **error);
 CDK_PIXBUF_AVAILABLE_IN_2_6
-GdkPixbuf *cdk_pixbuf_new_from_file_at_scale_utf8 (const char *filename,
+CdkPixbuf *cdk_pixbuf_new_from_file_at_scale_utf8 (const char *filename,
                                                    int         width,
                                                    int         height,
                                                    gboolean    preserve_aspect_ratio,
@@ -247,58 +247,58 @@ GdkPixbuf *cdk_pixbuf_new_from_file_at_scale_utf8 (const char *filename,
 #endif
 
 CDK_PIXBUF_AVAILABLE_IN_ALL
-GdkPixbuf *cdk_pixbuf_new_from_file (const char *filename,
+CdkPixbuf *cdk_pixbuf_new_from_file (const char *filename,
                                      GError    **error);
 CDK_PIXBUF_AVAILABLE_IN_2_4
-GdkPixbuf *cdk_pixbuf_new_from_file_at_size (const char *filename,
+CdkPixbuf *cdk_pixbuf_new_from_file_at_size (const char *filename,
 					     int         width, 
 					     int         height,
 					     GError    **error);
 CDK_PIXBUF_AVAILABLE_IN_2_6
-GdkPixbuf *cdk_pixbuf_new_from_file_at_scale (const char *filename,
+CdkPixbuf *cdk_pixbuf_new_from_file_at_scale (const char *filename,
 					      int         width, 
 					      int         height,
 					      gboolean    preserve_aspect_ratio,
 					      GError    **error);
 CDK_PIXBUF_AVAILABLE_IN_2_26
-GdkPixbuf *cdk_pixbuf_new_from_resource (const char *resource_path,
+CdkPixbuf *cdk_pixbuf_new_from_resource (const char *resource_path,
 					 GError    **error);
 CDK_PIXBUF_AVAILABLE_IN_2_26
-GdkPixbuf *cdk_pixbuf_new_from_resource_at_scale (const char *resource_path,
+CdkPixbuf *cdk_pixbuf_new_from_resource_at_scale (const char *resource_path,
 						  int         width,
 						  int         height,
 						  gboolean    preserve_aspect_ratio,
 						  GError    **error);
 
 CDK_PIXBUF_AVAILABLE_IN_ALL
-GdkPixbuf *cdk_pixbuf_new_from_data (const guchar *data,
-				     GdkColorspace colorspace,
+CdkPixbuf *cdk_pixbuf_new_from_data (const guchar *data,
+				     CdkColorspace colorspace,
 				     gboolean has_alpha,
 				     int bits_per_sample,
 				     int width, int height,
 				     int rowstride,
-				     GdkPixbufDestroyNotify destroy_fn,
+				     CdkPixbufDestroyNotify destroy_fn,
 				     gpointer destroy_fn_data);
 
 CDK_PIXBUF_AVAILABLE_IN_2_32
-GdkPixbuf *cdk_pixbuf_new_from_bytes (GBytes *data,
-				      GdkColorspace colorspace,
+CdkPixbuf *cdk_pixbuf_new_from_bytes (GBytes *data,
+				      CdkColorspace colorspace,
 				      gboolean has_alpha,
 				      int bits_per_sample,
 				      int width, int height,
 				      int rowstride);
 
 CDK_PIXBUF_DEPRECATED_IN_2_44
-GdkPixbuf *cdk_pixbuf_new_from_xpm_data (const char **data);
+CdkPixbuf *cdk_pixbuf_new_from_xpm_data (const char **data);
 
 CDK_PIXBUF_DEPRECATED_IN_2_32
-GdkPixbuf* cdk_pixbuf_new_from_inline	(gint          data_length,
+CdkPixbuf* cdk_pixbuf_new_from_inline	(gint          data_length,
 					 const guint8 *data,
 					 gboolean      copy_pixels,
 					 GError      **error);
 /* Mutations */
 CDK_PIXBUF_AVAILABLE_IN_ALL
-void       cdk_pixbuf_fill              (GdkPixbuf    *pixbuf,
+void       cdk_pixbuf_fill              (CdkPixbuf    *pixbuf,
                                          guint32       pixel);
 
 /* Saving */
@@ -311,14 +311,14 @@ void       cdk_pixbuf_fill              (GdkPixbuf    *pixbuf,
 #endif
 
 CDK_PIXBUF_AVAILABLE_IN_ALL
-gboolean cdk_pixbuf_save           (GdkPixbuf  *pixbuf, 
+gboolean cdk_pixbuf_save           (CdkPixbuf  *pixbuf, 
                                     const char *filename, 
                                     const char *type, 
                                     GError    **error,
                                     ...) G_GNUC_NULL_TERMINATED;
 
 CDK_PIXBUF_AVAILABLE_IN_ALL
-gboolean cdk_pixbuf_savev          (GdkPixbuf  *pixbuf, 
+gboolean cdk_pixbuf_savev          (CdkPixbuf  *pixbuf, 
                                     const char *filename, 
                                     const char *type,
                                     char      **option_keys,
@@ -327,7 +327,7 @@ gboolean cdk_pixbuf_savev          (GdkPixbuf  *pixbuf,
 
 #ifdef G_OS_WIN32
 CDK_PIXBUF_AVAILABLE_IN_ALL
-gboolean cdk_pixbuf_savev_utf8     (GdkPixbuf  *pixbuf,
+gboolean cdk_pixbuf_savev_utf8     (CdkPixbuf  *pixbuf,
                                     const char *filename,
                                     const char *type,
                                     char      **option_keys,
@@ -339,13 +339,13 @@ gboolean cdk_pixbuf_savev_utf8     (GdkPixbuf  *pixbuf,
 
 
 /**
- * GdkPixbufSaveFunc:
+ * CdkPixbufSaveFunc:
  * @buf: (array length=count) (element-type guint8): bytes to be written.
  * @count: number of bytes in @buf. 
  * @error: (out): A location to return an error.
  * @data: (closure): user data passed to cdk_pixbuf_save_to_callback(). 
  * 
- * Save functions used by [method@GdkPixbuf.Pixbuf.save_to_callback].
+ * Save functions used by [method@CdkPixbuf.Pixbuf.save_to_callback].
  *
  * This function is called once for each block of bytes that is "written"
  * by `cdk_pixbuf_save_to_callback()`.
@@ -359,22 +359,22 @@ gboolean cdk_pixbuf_savev_utf8     (GdkPixbuf  *pixbuf,
  * Since: 2.4
  */
 
-typedef gboolean (*GdkPixbufSaveFunc)   (const gchar *buf,
+typedef gboolean (*CdkPixbufSaveFunc)   (const gchar *buf,
 					 gsize count,
 					 GError **error,
 					 gpointer data);
 
 CDK_PIXBUF_AVAILABLE_IN_2_4
-gboolean cdk_pixbuf_save_to_callback    (GdkPixbuf  *pixbuf,
-					 GdkPixbufSaveFunc save_func,
+gboolean cdk_pixbuf_save_to_callback    (CdkPixbuf  *pixbuf,
+					 CdkPixbufSaveFunc save_func,
 					 gpointer user_data,
 					 const char *type, 
 					 GError    **error,
 					 ...) G_GNUC_NULL_TERMINATED;
 
 CDK_PIXBUF_AVAILABLE_IN_2_4
-gboolean cdk_pixbuf_save_to_callbackv   (GdkPixbuf  *pixbuf, 
-					 GdkPixbufSaveFunc save_func,
+gboolean cdk_pixbuf_save_to_callbackv   (CdkPixbuf  *pixbuf, 
+					 CdkPixbufSaveFunc save_func,
 					 gpointer user_data,
 					 const char *type,
 					 char      **option_keys,
@@ -384,7 +384,7 @@ gboolean cdk_pixbuf_save_to_callbackv   (GdkPixbuf  *pixbuf,
 /* Saving into a newly allocated char array */
 
 CDK_PIXBUF_AVAILABLE_IN_2_4
-gboolean cdk_pixbuf_save_to_buffer      (GdkPixbuf  *pixbuf,
+gboolean cdk_pixbuf_save_to_buffer      (CdkPixbuf  *pixbuf,
 					 gchar     **buffer,
 					 gsize      *buffer_size,
 					 const char *type, 
@@ -392,7 +392,7 @@ gboolean cdk_pixbuf_save_to_buffer      (GdkPixbuf  *pixbuf,
 					 ...) G_GNUC_NULL_TERMINATED;
 
 CDK_PIXBUF_AVAILABLE_IN_2_4
-gboolean cdk_pixbuf_save_to_bufferv     (GdkPixbuf  *pixbuf,
+gboolean cdk_pixbuf_save_to_bufferv     (CdkPixbuf  *pixbuf,
 					 gchar     **buffer,
 					 gsize      *buffer_size,
 					 const char *type, 
@@ -401,7 +401,7 @@ gboolean cdk_pixbuf_save_to_bufferv     (GdkPixbuf  *pixbuf,
 					 GError    **error);
 
 CDK_PIXBUF_AVAILABLE_IN_2_14
-GdkPixbuf *cdk_pixbuf_new_from_stream   (GInputStream   *stream,
+CdkPixbuf *cdk_pixbuf_new_from_stream   (GInputStream   *stream,
 					 GCancellable   *cancellable,
                                          GError        **error);
 
@@ -412,11 +412,11 @@ void cdk_pixbuf_new_from_stream_async (GInputStream        *stream,
 				       gpointer             user_data);
 
 CDK_PIXBUF_AVAILABLE_IN_ALL
-GdkPixbuf *cdk_pixbuf_new_from_stream_finish (GAsyncResult  *async_result,
+CdkPixbuf *cdk_pixbuf_new_from_stream_finish (GAsyncResult  *async_result,
 					      GError       **error);
 
 CDK_PIXBUF_AVAILABLE_IN_2_14
-GdkPixbuf *cdk_pixbuf_new_from_stream_at_scale   (GInputStream   *stream,
+CdkPixbuf *cdk_pixbuf_new_from_stream_at_scale   (GInputStream   *stream,
                                                   gint            width,
                                                   gint            height,
                                                   gboolean        preserve_aspect_ratio,
@@ -433,7 +433,7 @@ void cdk_pixbuf_new_from_stream_at_scale_async (GInputStream        *stream,
 						gpointer             user_data);
 
 CDK_PIXBUF_AVAILABLE_IN_2_14
-gboolean   cdk_pixbuf_save_to_stream    (GdkPixbuf      *pixbuf,
+gboolean   cdk_pixbuf_save_to_stream    (CdkPixbuf      *pixbuf,
                                          GOutputStream  *stream,
                                          const char     *type,
 					 GCancellable   *cancellable,
@@ -441,7 +441,7 @@ gboolean   cdk_pixbuf_save_to_stream    (GdkPixbuf      *pixbuf,
                                          ...);
 
 CDK_PIXBUF_AVAILABLE_IN_ALL
-void cdk_pixbuf_save_to_stream_async (GdkPixbuf           *pixbuf,
+void cdk_pixbuf_save_to_stream_async (CdkPixbuf           *pixbuf,
 				      GOutputStream       *stream,
 				      const gchar         *type,
 				      GCancellable        *cancellable,
@@ -454,7 +454,7 @@ gboolean cdk_pixbuf_save_to_stream_finish (GAsyncResult  *async_result,
 					   GError       **error);
 
 CDK_PIXBUF_AVAILABLE_IN_2_36
-void cdk_pixbuf_save_to_streamv_async (GdkPixbuf           *pixbuf,
+void cdk_pixbuf_save_to_streamv_async (CdkPixbuf           *pixbuf,
                                        GOutputStream       *stream,
                                        const gchar         *type,
                                        gchar              **option_keys,
@@ -464,7 +464,7 @@ void cdk_pixbuf_save_to_streamv_async (GdkPixbuf           *pixbuf,
                                        gpointer             user_data);
 
 CDK_PIXBUF_AVAILABLE_IN_2_36
-gboolean cdk_pixbuf_save_to_streamv (GdkPixbuf      *pixbuf,
+gboolean cdk_pixbuf_save_to_streamv (CdkPixbuf      *pixbuf,
                                      GOutputStream  *stream,
                                      const char     *type,
                                      char          **option_keys,
@@ -474,47 +474,47 @@ gboolean cdk_pixbuf_save_to_streamv (GdkPixbuf      *pixbuf,
 
 /* Adding an alpha channel */
 CDK_PIXBUF_AVAILABLE_IN_ALL
-GdkPixbuf *cdk_pixbuf_add_alpha (const GdkPixbuf *pixbuf, gboolean substitute_color,
+CdkPixbuf *cdk_pixbuf_add_alpha (const CdkPixbuf *pixbuf, gboolean substitute_color,
 				 guchar r, guchar g, guchar b);
 
 /* Copy an area of a pixbuf onto another one */
 CDK_PIXBUF_AVAILABLE_IN_ALL
-void cdk_pixbuf_copy_area (const GdkPixbuf *src_pixbuf,
+void cdk_pixbuf_copy_area (const CdkPixbuf *src_pixbuf,
 			   int src_x, int src_y,
 			   int width, int height,
-			   GdkPixbuf *dest_pixbuf,
+			   CdkPixbuf *dest_pixbuf,
 			   int dest_x, int dest_y);
 
 /* Brighten/darken and optionally make it pixelated-looking */
 CDK_PIXBUF_AVAILABLE_IN_ALL
-void cdk_pixbuf_saturate_and_pixelate (const GdkPixbuf *src,
-                                       GdkPixbuf       *dest,
+void cdk_pixbuf_saturate_and_pixelate (const CdkPixbuf *src,
+                                       CdkPixbuf       *dest,
                                        gfloat           saturation,
                                        gboolean         pixelate);
 
 /* Transform an image to agree with its embedded orientation option / tag */
 CDK_PIXBUF_AVAILABLE_IN_2_12
-GdkPixbuf *cdk_pixbuf_apply_embedded_orientation (GdkPixbuf *src);
+CdkPixbuf *cdk_pixbuf_apply_embedded_orientation (CdkPixbuf *src);
 
 /*  key/value pairs that can be attached by the pixbuf loader  */
 CDK_PIXBUF_AVAILABLE_IN_ALL
-gboolean cdk_pixbuf_set_option  (GdkPixbuf   *pixbuf,
+gboolean cdk_pixbuf_set_option  (CdkPixbuf   *pixbuf,
                                  const gchar *key,
                                  const gchar *value);
 CDK_PIXBUF_AVAILABLE_IN_ALL
-const gchar * cdk_pixbuf_get_option (GdkPixbuf   *pixbuf,
+const gchar * cdk_pixbuf_get_option (CdkPixbuf   *pixbuf,
                                               const gchar *key);
 CDK_PIXBUF_AVAILABLE_IN_2_36
-gboolean cdk_pixbuf_remove_option (GdkPixbuf   *pixbuf,
+gboolean cdk_pixbuf_remove_option (CdkPixbuf   *pixbuf,
                                    const gchar *key);
 CDK_PIXBUF_AVAILABLE_IN_2_32
-GHashTable * cdk_pixbuf_get_options (GdkPixbuf   *pixbuf);
+GHashTable * cdk_pixbuf_get_options (CdkPixbuf   *pixbuf);
 CDK_PIXBUF_AVAILABLE_IN_2_36
-gboolean cdk_pixbuf_copy_options (GdkPixbuf *src_pixbuf,
-                                  GdkPixbuf *dest_pixbuf);
+gboolean cdk_pixbuf_copy_options (CdkPixbuf *src_pixbuf,
+                                  CdkPixbuf *dest_pixbuf);
 
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkPixbuf, g_object_unref)
+G_DEFINE_AUTOPTR_CLEANUP_FUNC(CdkPixbuf, g_object_unref)
 
 G_END_DECLS
 

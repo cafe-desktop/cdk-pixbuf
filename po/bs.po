@@ -642,8 +642,8 @@ msgstr "Transformisani pixbuf ima nultu širinu ili visinu."
 
 #: ../cdk-pixbuf/io-pixdata.c:184
 msgctxt "image format"
-msgid "GdkPixdata"
-msgstr "Gdk Piksdata"
+msgid "CdkPixdata"
+msgstr "Cdk Piksdata"
 
 #: ../cdk-pixbuf/io-png.c:54
 msgid "Bits per channel of PNG image is invalid."
@@ -858,8 +858,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Ne mogu da obezbjedim QTIF strukturu za  kontekst."
 
 #: ../cdk-pixbuf/io-qtif.c:325
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Ne mogu da obrazujem GdkPixbufLoader objekat."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Ne mogu da obrazujem CdkPixbufLoader objekat."
 
 #: ../cdk-pixbuf/io-qtif.c:429
 msgid "Failed to find an image data atom."

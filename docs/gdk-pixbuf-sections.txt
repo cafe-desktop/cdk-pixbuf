@@ -104,11 +104,11 @@ CDK_PIXBUF_DEPRECATED_IN_2_36_FOR
 
 <SECTION>
 <FILE>cdk-pixbuf</FILE>
-GdkPixbufError
+CdkPixbufError
 CDK_PIXBUF_ERROR
-GdkColorspace
-GdkPixbufAlphaMode
-GdkPixbuf
+CdkColorspace
+CdkPixbufAlphaMode
+CdkPixbuf
 cdk_pixbuf_get_colorspace
 cdk_pixbuf_get_n_channels
 cdk_pixbuf_get_has_alpha
@@ -149,7 +149,7 @@ cdk_pixbuf_error_get_type
 <FILE>refcounting</FILE>
 cdk_pixbuf_ref
 cdk_pixbuf_unref
-GdkPixbufDestroyNotify
+CdkPixbufDestroyNotify
 </SECTION>
 
 <SECTION>
@@ -177,7 +177,7 @@ cdk_pixbuf_new_from_file_utf8
 <FILE>file-saving</FILE>
 cdk_pixbuf_savev
 cdk_pixbuf_save
-GdkPixbufSaveFunc
+CdkPixbufSaveFunc
 cdk_pixbuf_save_to_callback
 cdk_pixbuf_save_to_callbackv
 cdk_pixbuf_save_to_buffer
@@ -205,9 +205,9 @@ cdk_pixbuf_copy
 <SECTION>
 <INCLUDE>cdk-pixbuf/cdk-pixdata.h</INCLUDE>
 <FILE>inline</FILE>
-GdkPixdata
-GdkPixdataType
-GdkPixdataDumpType
+CdkPixdata
+CdkPixdataType
+CdkPixdataDumpType
 CDK_PIXBUF_MAGIC_NUMBER
 CDK_PIXDATA_HEADER_LENGTH
 cdk_pixdata_from_pixbuf
@@ -228,8 +228,8 @@ cdk_pixbuf_fill
 
 <SECTION>
 <FILE>animation</FILE>
-GdkPixbufAnimation
-GdkPixbufAnimationIter
+CdkPixbufAnimation
+CdkPixbufAnimationIter
 cdk_pixbuf_animation_new_from_file
 cdk_pixbuf_animation_new_from_resource
 cdk_pixbuf_animation_new_from_stream
@@ -248,7 +248,7 @@ cdk_pixbuf_animation_iter_on_currently_loading_frame
 cdk_pixbuf_animation_iter_get_pixbuf
 
 <SUBSECTION>
-GdkPixbufSimpleAnim
+CdkPixbufSimpleAnim
 cdk_pixbuf_simple_anim_new
 cdk_pixbuf_simple_anim_add_frame
 cdk_pixbuf_simple_anim_set_loop
@@ -279,23 +279,23 @@ cdk_pixbuf_animation_iter_get_type
 
 cdk_pixbuf_simple_anim_get_type
 cdk_pixbuf_simple_anim_iter_get_type
-GdkPixbufSimpleAnimClass
+CdkPixbufSimpleAnimClass
 cdk_pixbuf_scaled_anim_get_type
 cdk_pixbuf_scaled_anim_iter_get_type
-GdkPixbufScaledAnimClass
-GdkPixbufScaledAnim
+CdkPixbufScaledAnimClass
+CdkPixbufScaledAnim
 cdk_pixbuf_animation_new_from_file_utf8
 </SECTION>
 
 <SECTION>
 <FILE>scaling</FILE>
-GdkInterpType
+CdkInterpType
 cdk_pixbuf_scale_simple
 cdk_pixbuf_scale
 cdk_pixbuf_composite_color_simple
 cdk_pixbuf_composite
 cdk_pixbuf_composite_color
-GdkPixbufRotation
+CdkPixbufRotation
 cdk_pixbuf_rotate_simple
 cdk_pixbuf_flip
 
@@ -310,8 +310,8 @@ cdk_pixbuf_rotation_get_type
 
 <SECTION>
 <FILE>cdk-pixbuf-loader</FILE>
-<TITLE>GdkPixbufLoader</TITLE>
-GdkPixbufLoader
+<TITLE>CdkPixbufLoader</TITLE>
+CdkPixbufLoader
 cdk_pixbuf_loader_new
 cdk_pixbuf_loader_new_with_type
 cdk_pixbuf_loader_new_with_mime_type
@@ -330,7 +330,7 @@ CDK_IS_PIXBUF_LOADER
 CDK_PIXBUF_LOADER_CLASS
 CDK_IS_PIXBUF_LOADER_CLASS
 <SUBSECTION Private>
-GdkPixbufLoaderClass
+CdkPixbufLoaderClass
 cdk_pixbuf_loader_get_type
 </SECTION>
 
@@ -351,19 +351,19 @@ cdk_pixbuf_format_is_scalable
 cdk_pixbuf_format_is_disabled
 cdk_pixbuf_format_set_disabled
 cdk_pixbuf_format_get_license
-GdkPixbufFormat
-GdkPixbufFormatFlags
-GdkPixbufModulePattern
-GdkPixbufModuleFillVtableFunc
-GdkPixbufModuleFillInfoFunc
-GdkPixbufModuleSizeFunc
-GdkPixbufModulePreparedFunc
-GdkPixbufModuleUpdatedFunc
-GdkPixbufModule
+CdkPixbufFormat
+CdkPixbufFormatFlags
+CdkPixbufModulePattern
+CdkPixbufModuleFillVtableFunc
+CdkPixbufModuleFillInfoFunc
+CdkPixbufModuleSizeFunc
+CdkPixbufModulePreparedFunc
+CdkPixbufModuleUpdatedFunc
+CdkPixbufModule
 
 <SUBSECTION Animation>
-GdkPixbufAnimationClass
-GdkPixbufAnimationIterClass
+CdkPixbufAnimationClass
+CdkPixbufAnimationIterClass
 
 <SUBSECTION Standard>
 CDK_PIXBUF_ANIMATION_GET_CLASS

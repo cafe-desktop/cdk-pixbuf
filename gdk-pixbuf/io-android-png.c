@@ -1,4 +1,4 @@
-/* GdkPixbuf library - Android image loader
+/* CdkPixbuf library - Android image loader
  *
  * Copyright (C) 2025  Florian Leander Singer <sp1rit@disroot.org>
  *
@@ -26,8 +26,8 @@
 #define MODULE_ENTRY(function) void _cdk_pixbuf__android_png_ ## function
 
 static gboolean
-cdk_pixbuf__android_save_image_png (GdkPixbufSaveFunc save_func, gpointer user_data,
-                                    GdkPixbuf *pixbuf,
+cdk_pixbuf__android_save_image_png (CdkPixbufSaveFunc save_func, gpointer user_data,
+                                    CdkPixbuf *pixbuf,
                                     gchar **option_keys, gchar **option_values,
                                     GError **error)
 {
@@ -36,16 +36,16 @@ cdk_pixbuf__android_save_image_png (GdkPixbufSaveFunc save_func, gpointer user_d
                                          error);
 }
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
   cdk_pixbuf__android_fill_vtable (module);
 
   module->save_to_callback = cdk_pixbuf__android_save_image_png;
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-  static const GdkPixbufModulePattern signature[] = {
+  static const CdkPixbufModulePattern signature[] = {
     { "\x89PNG\r\n\x1a\x0a", NULL, 100 },
     { NULL, NULL, 0 }
   };
@@ -59,7 +59,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
   };
 
   info->name = "png";
-  info->signature = (GdkPixbufModulePattern *) signature;
+  info->signature = (CdkPixbufModulePattern *) signature;
   info->description = "PNG";
   info->mime_types = (gchar **) mime_types;
   info->extensions = (gchar **) extensions;

@@ -1,5 +1,5 @@
 /* -*- Mode: C; c-basic-offset: 2; -*- */
-/* GdkPixbuf library - test loaders
+/* CdkPixbuf library - test loaders
  *
  * Copyright (C) 2004 Matthias Clasen <mclasen@redhat.com>
  *
@@ -31,7 +31,7 @@ load_image (gpointer data,
   FILE *file;
   int nbytes;
   guchar buffer[1024];
-  GdkPixbufLoader *loader;
+  CdkPixbufLoader *loader;
   GError *error = NULL;
 
   loader = cdk_pixbuf_loader_new ();

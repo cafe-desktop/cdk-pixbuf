@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-/* GdkPixbuf library - Win32 GDI+ Pixbuf Loader
+/* CdkPixbuf library - Win32 GDI+ Pixbuf Loader
  *
  * Copyright (C) 2007 Google (Evan Stade)
  * Copyright (C) 2008 Alberto Ruiz <aruiz@gnome.org>

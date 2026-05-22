@@ -559,7 +559,7 @@ msgstr "Getransformeerde PNG haet nöl breide of huugde."
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "'t GIF-besjtandjsformaat"
 
 #: cdk-pixbuf/io-png.c:54
@@ -758,7 +758,7 @@ msgstr "Allokasie van ónthaud veur TGA-conteks struct mislök"
 
 #: cdk-pixbuf/io-qtif.c:330
 #, fuzzy
-msgid "Failed to create GdkPixbufLoader object."
+msgid "Failed to create CdkPixbufLoader object."
 msgstr ""
 "Neet mäögelik om nao tiedelik besjtandj te sjrieve bie 't laje van XBM-"
 "aafbiljing"

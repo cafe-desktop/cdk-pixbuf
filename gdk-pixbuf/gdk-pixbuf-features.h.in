@@ -28,7 +28,7 @@
 /**
  * CDK_PIXBUF_VERSION:
  * 
- * Contains the full version of GdkPixbuf as a string.
+ * Contains the full version of CdkPixbuf as a string.
  *
  * This is the version being compiled against; contrast with
  * `cdk_pixbuf_version`.

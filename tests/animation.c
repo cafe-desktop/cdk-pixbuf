@@ -9,7 +9,7 @@ static void
 test_animation (const gchar *filename)
 {
   GError *error = NULL;
-  GdkPixbufAnimation* result = NULL;
+  CdkPixbufAnimation* result = NULL;
 
   if (!format_supported (filename))
     {

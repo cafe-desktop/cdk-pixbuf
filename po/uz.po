@@ -778,8 +778,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "QTIF kontekst tuzilishini ajratib bo‘lmadi."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "GdkPixbufLoader obyektini yaratib bo‘lmadi."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "CdkPixbufLoader obyektini yaratib bo‘lmadi."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -977,7 +977,7 @@ msgstr "XPM"
 #~ msgstr "WMF rasm formati"
 
 #, fuzzy
-#~ msgid "The GdkPixdata format"
+#~ msgid "The CdkPixdata format"
 #~ msgstr "XPM rasm formati"
 
 #, fuzzy

@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-/* GdkPixbuf library - Basic memory management
+/* CdkPixbuf library - Basic memory management
  *
  * Copyright (C) 1999 The Free Software Foundation
  *
@@ -22,30 +22,30 @@
  */
 
 /**
- * GdkPixbuf:
+ * CdkPixbuf:
  *
  * A pixel buffer.
  *
- * `GdkPixbuf` contains information about an image's pixel data,
+ * `CdkPixbuf` contains information about an image's pixel data,
  * its color space, bits per sample, width and height, and the
  * rowstride (the number of bytes between the start of one row
  * and the start of the next).
  *
- * ## Creating new `GdkPixbuf`
+ * ## Creating new `CdkPixbuf`
  * 
  * The most basic way to create a pixbuf is to wrap an existing pixel
- * buffer with a [class@GdkPixbuf.Pixbuf] instance. You can use the
- * [`ctor@GdkPixbuf.Pixbuf.new_from_data`] function to do this.
+ * buffer with a [class@CdkPixbuf.Pixbuf] instance. You can use the
+ * [`ctor@CdkPixbuf.Pixbuf.new_from_data`] function to do this.
  * 
- * Every time you create a new `GdkPixbuf` instance for some data, you
+ * Every time you create a new `CdkPixbuf` instance for some data, you
  * will need to specify the destroy notification function that will be
  * called when the data buffer needs to be freed; this will happen when
- * a `GdkPixbuf` is finalized by the reference counting functions. If
+ * a `CdkPixbuf` is finalized by the reference counting functions. If
  * you have a chunk of static data compiled into your application, you
  * can pass in `NULL` as the destroy notification function so that the
  * data will not be freed.
  * 
- * The [`ctor@GdkPixbuf.Pixbuf.new`] constructor function can be used
+ * The [`ctor@CdkPixbuf.Pixbuf.new`] constructor function can be used
  * as a convenience to create a pixbuf with an empty buffer; this is
  * equivalent to allocating a data buffer using `malloc()` and then
  * wrapping it with `cdk_pixbuf_new_from_data()`. The `cdk_pixbuf_new()`
@@ -60,14 +60,14 @@
  *
  * ## Reference counting
  * 
- * `GdkPixbuf` structures are reference counted. This means that an
+ * `CdkPixbuf` structures are reference counted. This means that an
  * application can share a single pixbuf among many parts of the
  * code. When a piece of the program needs to use a pixbuf, it should
  * acquire a reference to it by calling `g_object_ref()`; when it no
  * longer needs the pixbuf, it should release the reference it acquired
  * by calling `g_object_unref()`. The resources associated with a
- * `GdkPixbuf` will be freed when its reference count drops to zero.
- * Newly-created `GdkPixbuf` instances start with a reference count
+ * `CdkPixbuf` will be freed when its reference count drops to zero.
+ * Newly-created `CdkPixbuf` instances start with a reference count
  * of one.
  *
  * ## Image Data
@@ -78,21 +78,21 @@
  *
  * There may be padding at the end of a row.
  *
- * The "rowstride" value of a pixbuf, as returned by [`method@GdkPixbuf.Pixbuf.get_rowstride`],
+ * The "rowstride" value of a pixbuf, as returned by [`method@CdkPixbuf.Pixbuf.get_rowstride`],
  * indicates the number of bytes between rows.
  *
  * **NOTE**: If you are copying raw pixbuf data with `memcpy()` note that the
  * last row in the pixbuf may not be as wide as the full rowstride, but rather
  * just as wide as the pixel data needs to be; that is: it is unsafe to do
  * `memcpy (dest, pixels, rowstride * height)` to copy a whole pixbuf. Use
- * [method@GdkPixbuf.Pixbuf.copy] instead, or compute the width in bytes of the
+ * [method@CdkPixbuf.Pixbuf.copy] instead, or compute the width in bytes of the
  * last row as:
  *
  * ```c
  * last_row = width * ((n_channels * bits_per_sample + 7) / 8);
  * ```
  *
- * The same rule applies when iterating over each row of a `GdkPixbuf` pixels
+ * The same rule applies when iterating over each row of a `CdkPixbuf` pixels
  * array.
  *
  * The following code illustrates a simple `put_pixel()`
@@ -101,7 +101,7 @@
  *
  * ```c
  * static void
- * put_pixel (GdkPixbuf *pixbuf,
+ * put_pixel (CdkPixbuf *pixbuf,
  *            int x,
  * 	   int y,
  * 	   guchar red,
@@ -126,7 +126,7 @@
  *
  *   int rowstride = cdk_pixbuf_get_rowstride (pixbuf);
  *
- *   // The pixel buffer in the GdkPixbuf instance
+ *   // The pixel buffer in the CdkPixbuf instance
  *   guchar *pixels = cdk_pixbuf_get_pixels (pixbuf);
  *
  *   // The pixel we wish to modify
@@ -140,20 +140,20 @@
  *
  * ## Loading images
  *
- * The `GdkPixBuf` class provides a simple mechanism for loading
+ * The `CdkPixBuf` class provides a simple mechanism for loading
  * an image from a file in synchronous and asynchronous fashion.
  *
  * For GUI applications, it is recommended to use the asynchronous
  * stream API to avoid blocking the control flow of the application.
  *
- * Additionally, `GdkPixbuf` provides the [class@GdkPixbuf.PixbufLoader`]
+ * Additionally, `CdkPixbuf` provides the [class@CdkPixbuf.PixbufLoader`]
  * API for progressive image loading.
  *
  * ## Saving images
  *
- * The `GdkPixbuf` class provides methods for saving image data in
+ * The `CdkPixbuf` class provides methods for saving image data in
  * a number of file formats. The formatted data can be written to a
- * file or to a memory buffer. `GdkPixbuf` can also call a user-defined
+ * file or to a memory buffer. `CdkPixbuf` can also call a user-defined
  * callback on the data, which allows to e.g. write the image
  * to a socket or store it in a database.
  */
@@ -203,12 +203,12 @@ enum
 static void cdk_pixbuf_icon_iface_init (GIconIface *iface);
 static void cdk_pixbuf_loadable_icon_iface_init (GLoadableIconIface *iface);
 
-G_DEFINE_TYPE_WITH_CODE (GdkPixbuf, cdk_pixbuf, G_TYPE_OBJECT,
+G_DEFINE_TYPE_WITH_CODE (CdkPixbuf, cdk_pixbuf, G_TYPE_OBJECT,
                          G_IMPLEMENT_INTERFACE (G_TYPE_ICON, cdk_pixbuf_icon_iface_init)
                          G_IMPLEMENT_INTERFACE (G_TYPE_LOADABLE_ICON, cdk_pixbuf_loadable_icon_iface_init))
 
 static void 
-cdk_pixbuf_init (GdkPixbuf *pixbuf)
+cdk_pixbuf_init (CdkPixbuf *pixbuf)
 {
   pixbuf->colorspace = CDK_COLORSPACE_RGB;
   pixbuf->n_channels = 3;
@@ -218,7 +218,7 @@ cdk_pixbuf_init (GdkPixbuf *pixbuf)
 }
 
 static void
-cdk_pixbuf_class_init (GdkPixbufClass *klass)
+cdk_pixbuf_class_init (CdkPixbufClass *klass)
 {
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
@@ -236,7 +236,7 @@ cdk_pixbuf_class_init (GdkPixbufClass *klass)
                                 G_PARAM_STATIC_NICK | \
                                 G_PARAM_STATIC_BLURB)
         /**
-         * GdkPixbuf:n-channels:
+         * CdkPixbuf:n-channels:
          *
          * The number of samples per pixel.
          *
@@ -252,7 +252,7 @@ cdk_pixbuf_class_init (GdkPixbufClass *klass)
                                                            3,
                                                            PIXBUF_PARAM_FLAGS));
         /**
-         * GdkPixbuf:colorspace:
+         * CdkPixbuf:colorspace:
          *
          * The color space of the pixbuf.
          *
@@ -267,7 +267,7 @@ cdk_pixbuf_class_init (GdkPixbufClass *klass)
                                                             CDK_COLORSPACE_RGB,
                                                             PIXBUF_PARAM_FLAGS));
         /**
-         * GdkPixbuf:has-alpha:
+         * CdkPixbuf:has-alpha:
          *
          * Whether the pixbuf has an alpha channel.
          */
@@ -279,7 +279,7 @@ cdk_pixbuf_class_init (GdkPixbufClass *klass)
                                                                FALSE,
                                                                PIXBUF_PARAM_FLAGS));
         /**
-         * GdkPixbuf:bits-per-sample:
+         * CdkPixbuf:bits-per-sample:
          *
          * The number of bits per sample. 
          *
@@ -295,7 +295,7 @@ cdk_pixbuf_class_init (GdkPixbufClass *klass)
                                                            8,
                                                            PIXBUF_PARAM_FLAGS));
         /**
-         * GdkPixbuf:width:
+         * CdkPixbuf:width:
          *
          * The number of columns of the pixbuf.
          */
@@ -309,7 +309,7 @@ cdk_pixbuf_class_init (GdkPixbufClass *klass)
                                                            1,
                                                            PIXBUF_PARAM_FLAGS));
         /**
-         * GdkPixbuf:height:
+         * CdkPixbuf:height:
          *
          * The number of rows of the pixbuf.
          */
@@ -323,7 +323,7 @@ cdk_pixbuf_class_init (GdkPixbufClass *klass)
                                                            1,
                                                            PIXBUF_PARAM_FLAGS));
         /**
-         * GdkPixbuf:rowstride:
+         * CdkPixbuf:rowstride:
          *
          * The number of bytes between the start of a row and 
          * the start of the next row.
@@ -341,7 +341,7 @@ cdk_pixbuf_class_init (GdkPixbufClass *klass)
                                                            1,
                                                            PIXBUF_PARAM_FLAGS));
         /**
-         * GdkPixbuf:pixels:
+         * CdkPixbuf:pixels:
          *
          * A pointer to the pixel data of the pixbuf.
          */
@@ -352,11 +352,11 @@ cdk_pixbuf_class_init (GdkPixbufClass *klass)
                                                                _("A pointer to the pixel data of the pixbuf"),
                                                                PIXBUF_PARAM_FLAGS));
         /**
-         * GdkPixbuf::pixel-bytes:
+         * CdkPixbuf::pixel-bytes:
          *
          * If set, this pixbuf was created from read-only #GBytes.
          *
-         * Replaces GdkPixbuf::pixels.
+         * Replaces CdkPixbuf::pixels.
          * 
          * Since: 2.32
          */
@@ -370,7 +370,7 @@ cdk_pixbuf_class_init (GdkPixbufClass *klass)
 }
 
 static void
-free_pixels (GdkPixbuf *pixbuf)
+free_pixels (CdkPixbuf *pixbuf)
 {
         g_assert (pixbuf->storage == STORAGE_PIXELS);
 
@@ -382,7 +382,7 @@ free_pixels (GdkPixbuf *pixbuf)
 }
 
 static void
-free_bytes (GdkPixbuf *pixbuf)
+free_bytes (CdkPixbuf *pixbuf)
 {
         g_assert (pixbuf->storage == STORAGE_BYTES);
 
@@ -392,7 +392,7 @@ free_bytes (GdkPixbuf *pixbuf)
 static void
 cdk_pixbuf_finalize (GObject *object)
 {
-        GdkPixbuf *pixbuf = CDK_PIXBUF (object);
+        CdkPixbuf *pixbuf = CDK_PIXBUF (object);
 
         switch (pixbuf->storage) {
         case STORAGE_PIXELS:
@@ -421,10 +421,10 @@ cdk_pixbuf_finalize (GObject *object)
  *
  * Deprecated: 2.0: Use g_object_ref().
  **/
-GdkPixbuf *
-cdk_pixbuf_ref (GdkPixbuf *pixbuf)
+CdkPixbuf *
+cdk_pixbuf_ref (CdkPixbuf *pixbuf)
 {
-        return (GdkPixbuf *) g_object_ref (pixbuf);
+        return (CdkPixbuf *) g_object_ref (pixbuf);
 }
 
 /**
@@ -436,13 +436,13 @@ cdk_pixbuf_ref (GdkPixbuf *pixbuf)
  * Deprecated: 2.0: Use g_object_unref().
  **/
 void
-cdk_pixbuf_unref (GdkPixbuf *pixbuf)
+cdk_pixbuf_unref (CdkPixbuf *pixbuf)
 {
         g_object_unref (pixbuf);
 }
 
 static GBytes *
-cdk_pixbuf_make_bytes (GdkPixbuf  *pixbuf,
+cdk_pixbuf_make_bytes (CdkPixbuf  *pixbuf,
                        GError    **error)
 {
   gchar *buffer;
@@ -464,7 +464,7 @@ cdk_pixbuf_serialize (GIcon *icon)
   bytes = cdk_pixbuf_make_bytes (CDK_PIXBUF (icon), &error);
   if (!bytes)
     {
-      g_critical ("Unable to serialise GdkPixbuf to png (via g_icon_serialize()): %s", error->message);
+      g_critical ("Unable to serialise CdkPixbuf to png (via g_icon_serialize()): %s", error->message);
       g_error_free (error);
       return NULL;
     }
@@ -566,14 +566,14 @@ free_buffer (guchar *pixels, gpointer data)
  * have.
  *
  * This function is useful for front-ends and backends that want to check
- * image values without needing to create a `GdkPixbuf`.
+ * image values without needing to create a `CdkPixbuf`.
  *
  * Return value: the rowstride for the given values, or -1 in case of error.
  *
  * Since: 2.36.8
  */
 gint
-cdk_pixbuf_calculate_rowstride (GdkColorspace colorspace,
+cdk_pixbuf_calculate_rowstride (CdkColorspace colorspace,
 				gboolean      has_alpha,
 				int           bits_per_sample,
 				int           width,
@@ -604,7 +604,7 @@ cdk_pixbuf_calculate_rowstride (GdkColorspace colorspace,
  * @width: Width of image in pixels, must be > 0
  * @height: Height of image in pixels, must be > 0
  *
- * Creates a new `GdkPixbuf` structure and allocates a buffer for it.
+ * Creates a new `CdkPixbuf` structure and allocates a buffer for it.
  *
  * If the allocation of the buffer failed, this function will return `NULL`.
  *
@@ -613,8 +613,8 @@ cdk_pixbuf_calculate_rowstride (GdkColorspace colorspace,
  *
  * Return value: (transfer full) (nullable): A newly-created pixel buffer
  **/
-GdkPixbuf *
-cdk_pixbuf_new (GdkColorspace colorspace, 
+CdkPixbuf *
+cdk_pixbuf_new (CdkColorspace colorspace, 
                 gboolean      has_alpha,
                 int           bits_per_sample,
                 int           width,
@@ -644,16 +644,16 @@ cdk_pixbuf_new (GdkColorspace colorspace,
  * cdk_pixbuf_copy:
  * @pixbuf: A pixbuf.
  * 
- * Creates a new `GdkPixbuf` with a copy of the information in the specified
+ * Creates a new `CdkPixbuf` with a copy of the information in the specified
  * `pixbuf`.
  *
- * Note that this does not copy the options set on the original `GdkPixbuf`,
+ * Note that this does not copy the options set on the original `CdkPixbuf`,
  * use cdk_pixbuf_copy_options() for this.
  * 
  * Return value: (nullable) (transfer full): A newly-created pixbuf
  **/
-GdkPixbuf *
-cdk_pixbuf_copy (const GdkPixbuf *pixbuf)
+CdkPixbuf *
+cdk_pixbuf_copy (const CdkPixbuf *pixbuf)
 {
 	guchar *buf;
 	int size;
@@ -684,7 +684,7 @@ cdk_pixbuf_copy (const GdkPixbuf *pixbuf)
 
 /**
  * cdk_pixbuf_new_subpixbuf:
- * @src_pixbuf: a `GdkPixbuf`
+ * @src_pixbuf: a `CdkPixbuf`
  * @src_x: X coord in @src_pixbuf
  * @src_y: Y coord in @src_pixbuf
  * @width: width of region in @src_pixbuf
@@ -702,15 +702,15 @@ cdk_pixbuf_copy (const GdkPixbuf *pixbuf)
  *
  * Return value: (transfer full): a new pixbuf 
  **/
-GdkPixbuf*
-cdk_pixbuf_new_subpixbuf (GdkPixbuf *src_pixbuf,
+CdkPixbuf*
+cdk_pixbuf_new_subpixbuf (CdkPixbuf *src_pixbuf,
                           int        src_x,
                           int        src_y,
                           int        width,
                           int        height)
 {
         guchar *pixels;
-        GdkPixbuf *sub;
+        CdkPixbuf *sub;
 
         g_return_val_if_fail (CDK_IS_PIXBUF (src_pixbuf), NULL);
         g_return_val_if_fail (src_x >= 0 && src_x + width <= src_pixbuf->width, NULL);
@@ -752,8 +752,8 @@ cdk_pixbuf_new_subpixbuf (GdkPixbuf *src_pixbuf,
  *
  * Return value: Color space.
  **/
-GdkColorspace
-cdk_pixbuf_get_colorspace (const GdkPixbuf *pixbuf)
+CdkColorspace
+cdk_pixbuf_get_colorspace (const CdkPixbuf *pixbuf)
 {
 	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), CDK_COLORSPACE_RGB);
 
@@ -769,7 +769,7 @@ cdk_pixbuf_get_colorspace (const GdkPixbuf *pixbuf)
  * Return value: Number of channels.
  **/
 int
-cdk_pixbuf_get_n_channels (const GdkPixbuf *pixbuf)
+cdk_pixbuf_get_n_channels (const CdkPixbuf *pixbuf)
 {
 	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), -1);
 
@@ -785,7 +785,7 @@ cdk_pixbuf_get_n_channels (const GdkPixbuf *pixbuf)
  * Return value: `TRUE` if it has an alpha channel, `FALSE` otherwise.
  **/
 gboolean
-cdk_pixbuf_get_has_alpha (const GdkPixbuf *pixbuf)
+cdk_pixbuf_get_has_alpha (const CdkPixbuf *pixbuf)
 {
 	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), FALSE);
 
@@ -801,7 +801,7 @@ cdk_pixbuf_get_has_alpha (const GdkPixbuf *pixbuf)
  * Return value: Number of bits per color sample.
  **/
 int
-cdk_pixbuf_get_bits_per_sample (const GdkPixbuf *pixbuf)
+cdk_pixbuf_get_bits_per_sample (const CdkPixbuf *pixbuf)
 {
 	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), -1);
 
@@ -823,20 +823,20 @@ cdk_pixbuf_get_bits_per_sample (const GdkPixbuf *pixbuf)
  * Return value: (array): A pointer to the pixbuf's pixel data.
  **/
 guchar *
-cdk_pixbuf_get_pixels (const GdkPixbuf *pixbuf)
+cdk_pixbuf_get_pixels (const CdkPixbuf *pixbuf)
 {
         return cdk_pixbuf_get_pixels_with_length (pixbuf, NULL);
 }
 
 static void
-downgrade_to_pixels (const GdkPixbuf *pixbuf)
+downgrade_to_pixels (const CdkPixbuf *pixbuf)
 {
         switch (pixbuf->storage) {
         case STORAGE_PIXELS:
                 return;
 
         case STORAGE_BYTES: {
-                GdkPixbuf *mut_pixbuf = (GdkPixbuf *) pixbuf;
+                CdkPixbuf *mut_pixbuf = (CdkPixbuf *) pixbuf;
                 gsize len;
                 Pixels pixels;
 
@@ -873,7 +873,7 @@ downgrade_to_pixels (const GdkPixbuf *pixbuf)
  * Since: 2.26
  */
 guchar *
-cdk_pixbuf_get_pixels_with_length (const GdkPixbuf *pixbuf,
+cdk_pixbuf_get_pixels_with_length (const CdkPixbuf *pixbuf,
                                    guint           *length)
 {
 	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), NULL);
@@ -901,7 +901,7 @@ cdk_pixbuf_get_pixels_with_length (const GdkPixbuf *pixbuf,
  * Since: 2.32
  */
 const guint8*
-cdk_pixbuf_read_pixels (const GdkPixbuf  *pixbuf)
+cdk_pixbuf_read_pixels (const CdkPixbuf  *pixbuf)
 {
 	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), NULL);
 
@@ -939,7 +939,7 @@ cdk_pixbuf_read_pixels (const GdkPixbuf  *pixbuf)
  * Since: 2.32
  */
 GBytes *
-cdk_pixbuf_read_pixel_bytes (const GdkPixbuf  *pixbuf)
+cdk_pixbuf_read_pixel_bytes (const CdkPixbuf  *pixbuf)
 {
         g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), NULL);
 
@@ -965,7 +965,7 @@ cdk_pixbuf_read_pixel_bytes (const GdkPixbuf  *pixbuf)
  * Return value: Width in pixels.
  **/
 int
-cdk_pixbuf_get_width (const GdkPixbuf *pixbuf)
+cdk_pixbuf_get_width (const CdkPixbuf *pixbuf)
 {
 	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), -1);
 
@@ -981,7 +981,7 @@ cdk_pixbuf_get_width (const GdkPixbuf *pixbuf)
  * Return value: Height in pixels.
  **/
 int
-cdk_pixbuf_get_height (const GdkPixbuf *pixbuf)
+cdk_pixbuf_get_height (const CdkPixbuf *pixbuf)
 {
 	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), -1);
 
@@ -998,7 +998,7 @@ cdk_pixbuf_get_height (const GdkPixbuf *pixbuf)
  * Return value: Distance between row starts.
  **/
 int
-cdk_pixbuf_get_rowstride (const GdkPixbuf *pixbuf)
+cdk_pixbuf_get_rowstride (const CdkPixbuf *pixbuf)
 {
 	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), -1);
 
@@ -1016,7 +1016,7 @@ cdk_pixbuf_get_rowstride (const GdkPixbuf *pixbuf)
  * Since: 2.26
  */
 gsize
-cdk_pixbuf_get_byte_length (const GdkPixbuf *pixbuf)
+cdk_pixbuf_get_byte_length (const CdkPixbuf *pixbuf)
 {
 	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), -1);
 
@@ -1042,7 +1042,7 @@ cdk_pixbuf_error_quark (void)
 
 /**
  * cdk_pixbuf_fill:
- * @pixbuf: a `GdkPixbuf`
+ * @pixbuf: a `CdkPixbuf`
  * @pixel: RGBA pixel to used to clear (`0xffffffff` is opaque white,
  *   `0x00000000` transparent black)
  *
@@ -1053,7 +1053,7 @@ cdk_pixbuf_error_quark (void)
  * channel.
  */
 void
-cdk_pixbuf_fill (GdkPixbuf *pixbuf,
+cdk_pixbuf_fill (CdkPixbuf *pixbuf,
                  guint32    pixel)
 {
         guchar *pixels;
@@ -1110,7 +1110,7 @@ cdk_pixbuf_fill (GdkPixbuf *pixbuf,
 
 /**
  * cdk_pixbuf_get_option:
- * @pixbuf: a `GdkPixbuf`
+ * @pixbuf: a `CdkPixbuf`
  * @key: a nul-terminated string.
  * 
  * Looks up @key in the list of options that may have been attached to the
@@ -1132,7 +1132,7 @@ cdk_pixbuf_fill (GdkPixbuf *pixbuf,
  * Return value: (transfer none) (nullable): the value associated with `key`
  **/
 const gchar *
-cdk_pixbuf_get_option (GdkPixbuf   *pixbuf,
+cdk_pixbuf_get_option (CdkPixbuf   *pixbuf,
                        const gchar *key)
 {
         gchar **options;
@@ -1155,11 +1155,11 @@ cdk_pixbuf_get_option (GdkPixbuf   *pixbuf,
 
 /**
  * cdk_pixbuf_get_options:
- * @pixbuf: a `GdkPixbuf`
+ * @pixbuf: a `CdkPixbuf`
  *
  * Returns a `GHashTable` with a list of all the options that may have been
  * attached to the `pixbuf` when it was loaded, or that may have been
- * attached by another function using [method@GdkPixbuf.Pixbuf.set_option].
+ * attached by another function using [method@CdkPixbuf.Pixbuf.set_option].
  *
  * Return value: (transfer container) (element-type utf8 utf8): a #GHashTable
  *   of key/values pairs
@@ -1167,7 +1167,7 @@ cdk_pixbuf_get_option (GdkPixbuf   *pixbuf,
  * Since: 2.32
  **/
 GHashTable *
-cdk_pixbuf_get_options (GdkPixbuf *pixbuf)
+cdk_pixbuf_get_options (CdkPixbuf *pixbuf)
 {
         GHashTable *ht;
         gchar **options;
@@ -1190,17 +1190,17 @@ cdk_pixbuf_get_options (GdkPixbuf *pixbuf)
 
 /**
  * cdk_pixbuf_remove_option:
- * @pixbuf: a `GdkPixbuf`
+ * @pixbuf: a `CdkPixbuf`
  * @key: a nul-terminated string representing the key to remove.
  *
- * Removes the key/value pair option attached to a `GdkPixbuf`.
+ * Removes the key/value pair option attached to a `CdkPixbuf`.
  *
  * Return value: `TRUE` if an option was removed, `FALSE` if not.
  *
  * Since: 2.36
  **/
 gboolean
-cdk_pixbuf_remove_option (GdkPixbuf   *pixbuf,
+cdk_pixbuf_remove_option (CdkPixbuf   *pixbuf,
                           const gchar *key)
 {
         GQuark  quark;
@@ -1256,11 +1256,11 @@ cdk_pixbuf_remove_option (GdkPixbuf   *pixbuf,
 
 /**
  * cdk_pixbuf_set_option:
- * @pixbuf: a `GdkPixbuf`
+ * @pixbuf: a `CdkPixbuf`
  * @key: a nul-terminated string.
  * @value: a nul-terminated string.
  * 
- * Attaches a key/value pair as an option to a `GdkPixbuf`.
+ * Attaches a key/value pair as an option to a `CdkPixbuf`.
  *
  * If `key` already exists in the list of options attached to the `pixbuf`,
  * the new value is ignored and `FALSE` is returned.
@@ -1270,7 +1270,7 @@ cdk_pixbuf_remove_option (GdkPixbuf   *pixbuf,
  * Since: 2.2
  **/
 gboolean
-cdk_pixbuf_set_option (GdkPixbuf   *pixbuf,
+cdk_pixbuf_set_option (CdkPixbuf   *pixbuf,
                        const gchar *key,
                        const gchar *value)
 {
@@ -1313,8 +1313,8 @@ cdk_pixbuf_set_option (GdkPixbuf   *pixbuf,
  * @src_pixbuf: the source pixbuf
  * @dest_pixbuf: the destination pixbuf
  *
- * Copies the key/value pair options attached to a `GdkPixbuf` to another
- * `GdkPixbuf`.
+ * Copies the key/value pair options attached to a `CdkPixbuf` to another
+ * `CdkPixbuf`.
  *
  * This is useful to keep original metadata after having manipulated
  * a file. However be careful to remove metadata which you've already
@@ -1325,8 +1325,8 @@ cdk_pixbuf_set_option (GdkPixbuf   *pixbuf,
  * Since: 2.36
  **/
 gboolean
-cdk_pixbuf_copy_options (GdkPixbuf *src_pixbuf,
-                         GdkPixbuf *dest_pixbuf)
+cdk_pixbuf_copy_options (CdkPixbuf *src_pixbuf,
+                         CdkPixbuf *dest_pixbuf)
 {
         GQuark  quark;
         gchar **options;
@@ -1356,7 +1356,7 @@ cdk_pixbuf_set_property (GObject         *object,
 			 const GValue    *value,
 			 GParamSpec      *pspec)
 {
-        GdkPixbuf *pixbuf = CDK_PIXBUF (object);
+        CdkPixbuf *pixbuf = CDK_PIXBUF (object);
         gboolean notify = TRUE;
 
         switch (prop_id) {
@@ -1442,7 +1442,7 @@ cdk_pixbuf_get_property (GObject         *object,
 			 GValue          *value,
 			 GParamSpec      *pspec)
 {
-        GdkPixbuf *pixbuf = CDK_PIXBUF (object);
+        CdkPixbuf *pixbuf = CDK_PIXBUF (object);
   
         switch (prop_id) {
         case PROP_COLORSPACE:
@@ -1479,7 +1479,7 @@ cdk_pixbuf_get_property (GObject         *object,
 }
 
 static void
-make_storage_invalid (GdkPixbuf *pixbuf)
+make_storage_invalid (CdkPixbuf *pixbuf)
 {
         char *buf;
         gsize bufsize = 3;
@@ -1501,7 +1501,7 @@ make_storage_invalid (GdkPixbuf *pixbuf)
 static void
 cdk_pixbuf_constructed (GObject *object)
 {
-        GdkPixbuf *pixbuf = CDK_PIXBUF (object);
+        CdkPixbuf *pixbuf = CDK_PIXBUF (object);
 
         G_OBJECT_CLASS (cdk_pixbuf_parent_class)->constructed (object);
 

@@ -53,7 +53,7 @@ output_bool (FILE *outfile, gboolean val, const char *comment)
 void
 output_pixbuf (FILE *outfile, gboolean ext_symbols,
                const char *varname,
-               GdkPixbuf *pixbuf)
+               CdkPixbuf *pixbuf)
 {
   const char *modifier;
   const guchar *p;
@@ -189,7 +189,7 @@ main (int argc, char **argv)
   
   while (i < argc)
     {
-      GdkPixbuf *pixbuf = NULL;
+      CdkPixbuf *pixbuf = NULL;
       GError *error;
       gchar *infilename;
       

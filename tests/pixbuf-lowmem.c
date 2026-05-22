@@ -1,5 +1,5 @@
 /* -*- Mode: C; c-basic-offset: 2; -*- */
-/* GdkPixbuf library - test loaders
+/* CdkPixbuf library - test loaders
  *
  * Copyright (C) 2001 Søren Sandmann (sandmann@daimi.au.dk)
  *
@@ -120,7 +120,7 @@ mem_test (const gchar *bytes, gsize len)
 {
   gboolean did_fail = FALSE;
   GError *err = NULL;
-  GdkPixbufLoader *loader;
+  CdkPixbufLoader *loader;
   GList *loaders = NULL;
   GList *i;
 

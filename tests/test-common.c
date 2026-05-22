@@ -1,5 +1,5 @@
 /* -*- Mode: C; c-basic-offset: 2; -*- */
-/* GdkPixbuf library - test loaders
+/* CdkPixbuf library - test loaders
  *
  * Copyright (C) 2014 Red Hat, Inc.
  *
@@ -28,10 +28,10 @@
 
 /* Checkerboard of black and white pxels (actually (1,1,1) and (255,255,255)
  * so they average to (128,128,128)) */
-GdkPixbuf *
+CdkPixbuf *
 make_checkerboard (int width, int height)
 {
-  GdkPixbuf *checkerboard;
+  CdkPixbuf *checkerboard;
   guint x, y;
   guchar *row;   /* Pointer to start of row of pixels within the image */
   guchar *pixel; /* Pointer to current pixel data in row */
@@ -55,10 +55,10 @@ make_checkerboard (int width, int height)
 }
 
 /* Image where all the pixels have different colours */
-GdkPixbuf *
+CdkPixbuf *
 make_rg (int width, int height)
 {
-  GdkPixbuf *pixbuf;
+  CdkPixbuf *pixbuf;
   guint x, y;
   guchar *row;   /* Pointer to start of row of pixels within the image */
   guchar *pixel; /* Pointer to current pixel data in row */
@@ -94,7 +94,7 @@ find_format (const gchar *filename, gchar **found_format)
   formats = cdk_pixbuf_get_formats ();
   for (l = formats; l; l = l->next)
     {
-      GdkPixbufFormat *format = l->data;
+      CdkPixbufFormat *format = l->data;
       char **extensions = cdk_pixbuf_format_get_extensions (format);
       gint i;
 
@@ -154,8 +154,8 @@ skip_if_insufficient_memory (GError **err)
 }
 
 gboolean
-pixdata_equal (GdkPixbuf  *test,
-               GdkPixbuf  *ref,
+pixdata_equal (CdkPixbuf  *test,
+               CdkPixbuf  *ref,
                GError    **error)
 {
   if (cdk_pixbuf_get_colorspace (test) != cdk_pixbuf_get_colorspace (ref))

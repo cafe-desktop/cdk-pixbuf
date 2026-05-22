@@ -1,4 +1,4 @@
-/* GdkPixbuf library - Android image loader
+/* CdkPixbuf library - Android image loader
  *
  * Copyright (C) 2025  Florian Leander Singer <sp1rit@disroot.org>
  *
@@ -26,8 +26,8 @@
 #define MODULE_ENTRY(function) void _cdk_pixbuf__android_webp_ ## function
 
 static gboolean
-cdk_pixbuf__android_save_image_webp (GdkPixbufSaveFunc save_func, gpointer user_data,
-                                     GdkPixbuf *pixbuf,
+cdk_pixbuf__android_save_image_webp (CdkPixbufSaveFunc save_func, gpointer user_data,
+                                     CdkPixbuf *pixbuf,
                                      gchar **option_keys, gchar **option_values,
                                      GError **error)
 {
@@ -36,16 +36,16 @@ cdk_pixbuf__android_save_image_webp (GdkPixbufSaveFunc save_func, gpointer user_
                                          error);
 }
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
   cdk_pixbuf__android_fill_vtable (module);
 
   module->save_to_callback = cdk_pixbuf__android_save_image_webp;
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-  static const GdkPixbufModulePattern signature[] = {
+  static const CdkPixbufModulePattern signature[] = {
     { NULL, NULL, 0 }
   };
   static const gchar *mime_types[] = {
@@ -58,7 +58,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
   };
 
   info->name = "webp";
-  info->signature = (GdkPixbufModulePattern *) signature;
+  info->signature = (CdkPixbufModulePattern *) signature;
   info->description = "WEBP";
   info->mime_types = (gchar **) mime_types;
   info->extensions = (gchar **) extensions;

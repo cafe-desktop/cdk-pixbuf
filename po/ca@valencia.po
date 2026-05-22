@@ -871,8 +871,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "No s'ha pogut obtindre memòria per al context de l'estructura QTIF."
 
 #: cdk-pixbuf/io-qtif.c:325
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "No s'ha pogut crear l'objecte GdkPixbufLoader."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "No s'ha pogut crear l'objecte CdkPixbufLoader."
 
 #: cdk-pixbuf/io-qtif.c:429
 msgid "Failed to find an image data atom."
@@ -1085,8 +1085,8 @@ msgstr "XPM"
 #~ msgstr "La memòria de píxels transformada té amplada o alçada zero."
 
 #~ msgctxt "image format"
-#~ msgid "GdkPixdata"
-#~ msgstr "GdkPixdata"
+#~ msgid "CdkPixdata"
+#~ msgstr "CdkPixdata"
 
 #~ msgid "RAS image has bogus header data"
 #~ msgstr "La imatge RAS té dades de capçalera erronis"

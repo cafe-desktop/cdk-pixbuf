@@ -10,7 +10,7 @@
 
 - glycin: Make svgz work
 - glycin: Support saving avif
-- docs: Add deprecation tags for GdkPixbufAnimation
+- docs: Add deprecation tags for CdkPixbufAnimation
 - bmp: Fix loading of bottom-up images
 
 2.44.3
@@ -69,7 +69,7 @@
 - Use glycin for saving. The following formats are supported:
   png, jpeg, tiff, webp, ico, bmp. For png, jpeg and tiff, the most
   common options are supported when saving.
-- Fix introspection annotations for loading and saving GdkPixbuf
+- Fix introspection annotations for loading and saving CdkPixbuf
   from and to streams asynchronously
 
 2.43.2 (development)
@@ -141,7 +141,7 @@
 ===
 
 - Clear the pixbuf's memory buffer to avoid returning uninitialized memory [#199]
-- Turn GdkPixbufModule functions into typed callbacks [!123]
+- Turn CdkPixbufModule functions into typed callbacks [!123]
 - tiff: Use non-deprecated C99 integer types [!124]
 - gif: Check for overflow when compositing or clearing frames [#190]
 - Change png/jpeg/tiff build options from boolean to feature [!118]
@@ -170,7 +170,7 @@
  - Fix GIF initialization [Simon McVittie]
  - Always run GIF loader tests [Simon McVittie]
  - Fix leaks discovered via ASan [Simon McVittie]
- - Expose GdkPixbufLoader API via introspection [Paolo Borelli]
+ - Expose CdkPixbufLoader API via introspection [Paolo Borelli]
  - Fix revert-to-previous first frame behaviour for GIF files [Robert Ancell, #166]
  - Link to libintl if needed [Fabrice Fontaine]
  - Improve support for using cdk-pixbuf as a subproject [Xavier Claessens]
@@ -213,13 +213,13 @@
 2.40.0 (stable)
 ===
 
- - Allow creating a GdkPixbuf instance without any property [Federico Mena
+ - Allow creating a CdkPixbuf instance without any property [Federico Mena
    Quintero, #91]
 
 2.39.2 (development)
 ===
 
- - Add cdk_pixbuf_init_modules() for applications with GdkPixbuf loader
+ - Add cdk_pixbuf_init_modules() for applications with CdkPixbuf loader
    modules in a separate directory [Bastien Nocera, bgo#786035]
  - Add subproject fallback for dependencies [Nirbheek Chauhan]
  - Handle large XPM without crashing [Bastien Nocera, #95]
@@ -236,7 +236,7 @@
 
 2.37.92 (release candidate)
 ===
- - Ensure that GdkPixbuf's storage is safely handled [Federico Mena Quintero]
+ - Ensure that CdkPixbuf's storage is safely handled [Federico Mena Quintero]
  - Add test case for buffer overflow in pixdata loader [Bastien Nocera, #57]
 
 2.37.0 (development)
@@ -250,10 +250,10 @@
  - Fix OOB error when dithering [Bert Pauline, #748211]
  - Drop the MMX assembly optimizations for pixops [Emmanuele Bassi]
  - Improve compatibility for the post-install script [Brendan L, #795705]
- - Expose the dimensions of the original image from GdkPixbufLoader [Debarshi Ray, #778517]
+ - Expose the dimensions of the original image from CdkPixbufLoader [Debarshi Ray, #778517]
  - Improve thumbnailer implementation [Debarshi Ray, #778517]
  - Make X11 a dependency if the `x11` build option is enabled [Emmanuele Bassi, #77]
- - Generate separate introspection data for GdkPixdata API [Emmanuele Bassi, #72]
+ - Generate separate introspection data for CdkPixdata API [Emmanuele Bassi, #72]
  - Deprecate CDK_INTERP_HYPER [Emmanuele Bassi, #3]
  - Avoid a deprecation warning with recent libjasper [Emmanuele Bassi, #73]
  - Fix build on macOS [Emmanuele Bassi, !5]
@@ -511,7 +511,7 @@
 ======
 
 * API changes:
-- Deprecate GdkPixdata
+- Deprecate CdkPixdata
 - Add cdk_pixbuf_get_options() helper to list set options
 - Annotations fixes for various functions
 - Remove incorrect info about area-prepared signal
@@ -880,7 +880,7 @@
   cdk_pixbuf_new_from_resource_at_scale
 
 * cdk-pixbuf-pixdata is a new program that generates
-  raw binary GdkPixdata files, and there is a new
+  raw binary CdkPixdata files, and there is a new
   loader for these.
 
 * Translation updates:
@@ -1049,7 +1049,7 @@
 2.22.1
 ======
 
-* Make GdkPixbuf implement the GIcon interface
+* Make CdkPixbuf implement the GIcon interface
 
 * Fix loader.cache detection on Windows
 
@@ -1141,7 +1141,7 @@
 
 * Add binary version and module dir as variables in the .pc file
 
-* Add a boxed type for GdkPixbufFormat
+* Add a boxed type for CdkPixbufFormat
 
 
 2.21.3

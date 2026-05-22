@@ -1,16 +1,16 @@
-Contributing to GdkPixbuf
+Contributing to CdkPixbuf
 =========================
 
-Thank you for considering contributing to GdkPixbuf!
+Thank you for considering contributing to CdkPixbuf!
 
 These guidelines are meant for new contributors, regardless of their level
-of proficiency; following them allows the core developers of GdkPixbuf to
+of proficiency; following them allows the core developers of CdkPixbuf to
 more effectively evaluate your contribution, and provide prompt feedback to
 you. Additionally, by following these guidelines you clearly communicate
-that you respect the time and effort that the people developing GdkPixbuf
+that you respect the time and effort that the people developing CdkPixbuf
 put into managing the project.
 
-GdkPixbuf is a free software utility library, and it would not exist without
+CdkPixbuf is a free software utility library, and it would not exist without
 contributions from the free and open source software community. There are
 many things that we value:
 
@@ -21,18 +21,18 @@ many things that we value:
  - new features
 
 Please, do not use the issue tracker for support questions. If you have
-questions on how to use GdkPixbuf effectively, you can use:
+questions on how to use CdkPixbuf effectively, you can use:
 
  - the Matrix Room: #cafe-desktop:matrix.org
 
 The issue tracker is meant to be used for actionable issues only.
 
-GdkPixbuf is a library with a long history, and it has been incrementally
+CdkPixbuf is a library with a long history, and it has been incrementally
 modified over years, so it may retain some older coding practices alongside
 newer ones.
 
 As it deals with loading image data into user processes, it's also important
-to note that GdkPixbuf must always deal with potential security issues.
+to note that CdkPixbuf must always deal with potential security issues.
 
 ## How to report bugs
 
@@ -40,7 +40,7 @@ to note that GdkPixbuf must always deal with potential security issues.
 
 If you’re reporting a bug make sure to list:
 
- 1. which version of GdkPixbuf (and its dependencies) are you using?
+ 1. which version of CdkPixbuf (and its dependencies) are you using?
  2. which operating system are you using?
  3. the necessary steps to reproduce the issue
  4. the expected outcome
@@ -72,7 +72,7 @@ already, you should directly open a pull request instead of filing a new issue.
 
 ### Requirements
 
-If you wish to contribute to GdkPixbuf you will need to install the
+If you wish to contribute to CdkPixbuf you will need to install the
 appropriate development tools for your operating system, including:
 
  - Python 3.x
@@ -90,7 +90,7 @@ $ git clone https://gitlab.gnome.org/GNOME/cdk-pixbuf.git
 $ cd cdk-pixbuf
 ```
 
-Then you should build GdkPixbuf locally:
+Then you should build CdkPixbuf locally:
 
 ```sh
 $ meson _build .
@@ -98,7 +98,7 @@ $ cd _build
 $ ninja
 ```
 
-Once you built GdkPixbuf, you should create a new branch in order
+Once you built CdkPixbuf, you should create a new branch in order
 to work on your bug fix, or your feature, undisturbed:
 
 ```sh
@@ -118,7 +118,7 @@ $ meson test
 
 When introducing a new feature or new API, you should document it using the
 [gtk-doc](https://developer.gnome.org/gtk-doc-manual/stable/) format. You
-can build the GdkPixbuf API reference locally by enabling the `docs`
+can build the CdkPixbuf API reference locally by enabling the `docs`
 configuration option and building the `cdk-pixbuf-doc` target:
 
 ```sh
@@ -179,10 +179,10 @@ Closes https://github.com/cafe-desktop/cdk-pixbuf/issues/numberissue
 ### Submitting your contribution for review
 
 Once you're done with your work, you should commit it, push it to a remote
-repository, and open a Pull Request against the GdkPixbuf upstream
+repository, and open a Pull Request against the CdkPixbuf upstream
 repository.
 
-Once you opened a Pull Request, the GdkPixbuf maintainers will review your
+Once you opened a Pull Request, the CdkPixbuf maintainers will review your
 contribution.
 
 ## Project layout
@@ -203,26 +203,26 @@ contribution.
 └── thumbnailer
 ```
 
- - `build-aux`: Ancillary files, necessary to build GdkPixbuf
- - `docs`: The GdkPixbuf API reference
- - `cdk-pixbuf`: The core GdkPixbuf source
+ - `build-aux`: Ancillary files, necessary to build CdkPixbuf
+ - `docs`: The CdkPixbuf API reference
+ - `cdk-pixbuf`: The core CdkPixbuf source
   - `pixops`: Platform-specific code for pixel operations
  - `po`: Localization files
  - `tests`: Test suite
   - `test-images`: Reference images for the test suite
- - `thumbnailer`: Helper binary for generating thumbnails with GdkPixbuf
+ - `thumbnailer`: Helper binary for generating thumbnails with CdkPixbuf
 
 ### Architecture
 
-GdkPixbuf is divided into logical sections:
+CdkPixbuf is divided into logical sections:
 
- - Core: the GdkPixbuf object and its properties
- - Construction: creating a new GdkPixbuf instance from a buffer
+ - Core: the CdkPixbuf object and its properties
+ - Construction: creating a new CdkPixbuf instance from a buffer
  - I/O: Loading and Saving image data in different formats
  - Image transformations: Scaling and compositing image
-   data inside GdkPixbuf instances
- - The GdkPixbuf loaderAPI, for incremental
-   asynchronous loading of image data in a GdkPixbuf
+   data inside CdkPixbuf instances
+ - The CdkPixbuf loaderAPI, for incremental
+   asynchronous loading of image data in a CdkPixbuf
  - The loadable module interface for writing out of
    tree image loaders
  - The animated image API, for image formats

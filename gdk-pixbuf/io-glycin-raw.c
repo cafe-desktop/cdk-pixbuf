@@ -1,4 +1,4 @@
-/* GdkPixbuf library - Glycin image loader
+/* CdkPixbuf library - Glycin image loader
  *
  * Copyright (C) 2024 Red Hat, Inc.
  *
@@ -29,14 +29,14 @@
 #define MODULE_ENTRY(function) void _cdk_pixbuf__glycin_raw_ ## function
 #endif
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
   glycin_fill_vtable (module);
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-  static const GdkPixbufModulePattern signature[] = {
+  static const CdkPixbufModulePattern signature[] = {
     { NULL, NULL, 0 }
   };
   static const gchar *mime_types[] = {
@@ -49,7 +49,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
   };
 
   info->name = "raw";
-  info->signature = (GdkPixbufModulePattern *) signature;
+  info->signature = (CdkPixbufModulePattern *) signature;
   info->description = "RAW";
   info->mime_types = (gchar **) mime_types;
   info->extensions = (gchar **) extensions;

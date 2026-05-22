@@ -556,7 +556,7 @@ msgstr "PNG e fetotšwego e na bophara goba bophagamo bja lefeela."
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "Sebopego sa seswantšho sa GIF"
 
 #: cdk-pixbuf/io-png.c:54
@@ -762,7 +762,7 @@ msgstr "Ga e kgone go šupa kgopolo bakeng sa struct sa dikagare sa TGA"
 
 #: cdk-pixbuf/io-qtif.c:330
 #, fuzzy
-msgid "Failed to create GdkPixbufLoader object."
+msgid "Failed to create CdkPixbufLoader object."
 msgstr "E paletšwe go bala go tšwa faeleng ya motšwa-o-swere"
 
 #: cdk-pixbuf/io-qtif.c:434

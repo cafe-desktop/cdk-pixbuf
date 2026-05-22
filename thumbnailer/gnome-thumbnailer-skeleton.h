@@ -25,7 +25,7 @@
 #ifdef THUMBNAILER_RETURNS_DATA
 #error "Only one of THUMBNAILER_RETURNS_PIXBUF or THUMBNAILER_RETURNS_DATA must be set"
 #else
-GdkPixbuf * file_to_pixbuf (const char  *path,
+CdkPixbuf * file_to_pixbuf (const char  *path,
 			    guint        destination_size,
 			    GError     **error);
 #endif

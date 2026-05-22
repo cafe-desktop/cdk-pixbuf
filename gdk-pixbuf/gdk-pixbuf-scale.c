@@ -1,4 +1,4 @@
-/* GdkPixbuf library - Scaling and compositing functions
+/* CdkPixbuf library - Scaling and compositing functions
  *
  * Copyright (C) 1999 The Free Software Foundation
  *
@@ -27,8 +27,8 @@
 
 /**
  * cdk_pixbuf_scale:
- * @src: a #GdkPixbuf
- * @dest: the #GdkPixbuf into which to render the results
+ * @src: a #CdkPixbuf
+ * @dest: the #CdkPixbuf into which to render the results
  * @dest_x: the left coordinate for region to render
  * @dest_y: the top coordinate for region to render
  * @dest_width: the width of the region to render
@@ -54,8 +54,8 @@
  * results in rendering artifacts.
  **/
 void
-cdk_pixbuf_scale (const GdkPixbuf *src,
-		  GdkPixbuf       *dest,
+cdk_pixbuf_scale (const CdkPixbuf *src,
+		  CdkPixbuf       *dest,
 		  int              dest_x,
 		  int              dest_y,
 		  int              dest_width,
@@ -64,7 +64,7 @@ cdk_pixbuf_scale (const GdkPixbuf *src,
 		  double           offset_y,
 		  double           scale_x,
 		  double           scale_y,
-		  GdkInterpType    interp_type)
+		  CdkInterpType    interp_type)
 {
   const guint8 *src_pixels;
   guint8 *dest_pixels;
@@ -90,8 +90,8 @@ cdk_pixbuf_scale (const GdkPixbuf *src,
 
 /**
  * cdk_pixbuf_composite:
- * @src: a #GdkPixbuf
- * @dest: the #GdkPixbuf into which to render the results
+ * @src: a #CdkPixbuf
+ * @dest: the #CdkPixbuf into which to render the results
  * @dest_x: the left coordinate for region to render
  * @dest_y: the top coordinate for region to render
  * @dest_width: the width of the region to render
@@ -118,8 +118,8 @@ cdk_pixbuf_scale (const GdkPixbuf *src,
  * ![](composite.png)
  */
 void
-cdk_pixbuf_composite (const GdkPixbuf *src,
-		      GdkPixbuf       *dest,
+cdk_pixbuf_composite (const CdkPixbuf *src,
+		      CdkPixbuf       *dest,
 		      int              dest_x,
 		      int              dest_y,
 		      int              dest_width,
@@ -128,7 +128,7 @@ cdk_pixbuf_composite (const GdkPixbuf *src,
 		      double           offset_y,
 		      double           scale_x,
 		      double           scale_y,
-		      GdkInterpType    interp_type,
+		      CdkInterpType    interp_type,
 		      int              overall_alpha)
 {
   const guint8 *src_pixels;
@@ -157,8 +157,8 @@ cdk_pixbuf_composite (const GdkPixbuf *src,
 
 /**
  * cdk_pixbuf_composite_color:
- * @src: a #GdkPixbuf
- * @dest: the #GdkPixbuf into which to render the results
+ * @src: a #CdkPixbuf
+ * @dest: the #CdkPixbuf into which to render the results
  * @dest_x: the left coordinate for region to render
  * @dest_y: the top coordinate for region to render
  * @dest_width: the width of the region to render
@@ -189,8 +189,8 @@ cdk_pixbuf_composite (const GdkPixbuf *src,
  * function suitable for many tasks.
  **/
 void
-cdk_pixbuf_composite_color (const GdkPixbuf *src,
-			    GdkPixbuf       *dest,
+cdk_pixbuf_composite_color (const CdkPixbuf *src,
+			    CdkPixbuf       *dest,
 			    int              dest_x,
 			    int              dest_y,
 			    int              dest_width,
@@ -199,7 +199,7 @@ cdk_pixbuf_composite_color (const GdkPixbuf *src,
 			    double           offset_y,
 			    double           scale_x,
 			    double           scale_y,
-			    GdkInterpType    interp_type,
+			    CdkInterpType    interp_type,
 			    int              overall_alpha,
 			    int              check_x,
 			    int              check_y,
@@ -235,7 +235,7 @@ cdk_pixbuf_composite_color (const GdkPixbuf *src,
 
 /**
  * cdk_pixbuf_scale_simple:
- * @src: a #GdkPixbuf
+ * @src: a #CdkPixbuf
  * @dest_width: the width of destination image
  * @dest_height: the height of destination image
  * @interp_type: the interpolation type for the transformation.
@@ -251,23 +251,23 @@ cdk_pixbuf_composite_color (const GdkPixbuf *src,
  * offers reasonable quality and speed.
  *
  * You can scale a sub-portion of `src` by creating a sub-pixbuf
- * pointing into `src`; see [method@GdkPixbuf.Pixbuf.new_subpixbuf].
+ * pointing into `src`; see [method@CdkPixbuf.Pixbuf.new_subpixbuf].
  *
  * If `dest_width` and `dest_height` are equal to the width and height of
  * `src`, this function will return an unscaled copy of `src`.
  *
- * For more complicated scaling/alpha blending see [method@GdkPixbuf.Pixbuf.scale]
- * and [method@GdkPixbuf.Pixbuf.composite].
+ * For more complicated scaling/alpha blending see [method@CdkPixbuf.Pixbuf.scale]
+ * and [method@CdkPixbuf.Pixbuf.composite].
  * 
  * Return value: (nullable) (transfer full): the new pixbuf
  **/
-GdkPixbuf *
-cdk_pixbuf_scale_simple (const GdkPixbuf *src,
+CdkPixbuf *
+cdk_pixbuf_scale_simple (const CdkPixbuf *src,
 			 int              dest_width,
 			 int              dest_height,
-			 GdkInterpType    interp_type)
+			 CdkInterpType    interp_type)
 {
-  GdkPixbuf *dest;
+  CdkPixbuf *dest;
 
   g_return_val_if_fail (CDK_IS_PIXBUF (src), NULL);
   g_return_val_if_fail (dest_width > 0, NULL);
@@ -291,7 +291,7 @@ cdk_pixbuf_scale_simple (const GdkPixbuf *src,
 
 /**
  * cdk_pixbuf_composite_color_simple:
- * @src: a #GdkPixbuf
+ * @src: a #CdkPixbuf
  * @dest_width: the width of destination image
  * @dest_height: the height of destination image
  * @interp_type: the interpolation type for the transformation.
@@ -306,17 +306,17 @@ cdk_pixbuf_scale_simple (const GdkPixbuf *src,
  * 
  * Return value: (nullable) (transfer full): the new pixbuf
  **/
-GdkPixbuf *
-cdk_pixbuf_composite_color_simple (const GdkPixbuf *src,
+CdkPixbuf *
+cdk_pixbuf_composite_color_simple (const CdkPixbuf *src,
 				   int              dest_width,
 				   int              dest_height,
-				   GdkInterpType    interp_type,
+				   CdkInterpType    interp_type,
 				   int              overall_alpha,
 				   int              check_size,
 				   guint32          color1,
 				   guint32          color2)
 {
-  GdkPixbuf *dest;
+  CdkPixbuf *dest;
 
   g_return_val_if_fail (CDK_IS_PIXBUF (src), NULL);
   g_return_val_if_fail (dest_width > 0, NULL);
@@ -339,7 +339,7 @@ cdk_pixbuf_composite_color_simple (const GdkPixbuf *src,
 
 /**
  * cdk_pixbuf_rotate_simple:
- * @src: a #GdkPixbuf
+ * @src: a #CdkPixbuf
  * @angle: the angle to rotate by
  *
  * Rotates a pixbuf by a multiple of 90 degrees, and returns the
@@ -351,13 +351,13 @@ cdk_pixbuf_composite_color_simple (const GdkPixbuf *src,
  *
  * Since: 2.6
  */
-GdkPixbuf *
-cdk_pixbuf_rotate_simple (const GdkPixbuf   *src,
-			  GdkPixbufRotation  angle)
+CdkPixbuf *
+cdk_pixbuf_rotate_simple (const CdkPixbuf   *src,
+			  CdkPixbufRotation  angle)
 {
   const guint8 *src_pixels;
   guint8 *dest_pixels;
-  GdkPixbuf *dest;
+  CdkPixbuf *dest;
   const guchar *p;
   guchar *q;
   gint x, y;
@@ -445,7 +445,7 @@ cdk_pixbuf_rotate_simple (const GdkPixbuf   *src,
 
 /**
  * cdk_pixbuf_flip:
- * @src: a #GdkPixbuf
+ * @src: a #CdkPixbuf
  * @horizontal: `TRUE` to flip horizontally, `FALSE` to flip vertically
  *
  * Flips a pixbuf horizontally or vertically and returns the
@@ -455,13 +455,13 @@ cdk_pixbuf_rotate_simple (const GdkPixbuf   *src,
  *
  * Since: 2.6
  */
-GdkPixbuf *
-cdk_pixbuf_flip (const GdkPixbuf *src,
+CdkPixbuf *
+cdk_pixbuf_flip (const CdkPixbuf *src,
 		 gboolean         horizontal)
 {
   const guint8 *src_pixels;
   guint8 *dest_pixels;
-  GdkPixbuf *dest;
+  CdkPixbuf *dest;
   const guchar *p;
   guchar *q;
   gint x, y;

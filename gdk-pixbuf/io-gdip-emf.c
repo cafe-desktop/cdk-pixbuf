@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
-/* GdkPixbuf library - Win32 GDI+ Pixbuf Loader
+/* CdkPixbuf library - Win32 GDI+ Pixbuf Loader
  *
  * Copyright (C) 2008 Dominic Lachowicz
  * Copyright (C) 2008 Alberto Ruiz
@@ -30,14 +30,14 @@
 #define MODULE_ENTRY(function) void _cdk_pixbuf__gdip_emf_ ## function
 #endif
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
   gdip_fill_vector_vtable (module);
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-  static const GdkPixbufModulePattern signature[] = {
+  static const CdkPixbufModulePattern signature[] = {
     { "\x01\x00\x00\x00", NULL, 100 }, /* EMF */
     { NULL, NULL, 0 }
   };
@@ -57,7 +57,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
   };
 
   info->name        = "emf";
-  info->signature   = (GdkPixbufModulePattern *) signature;
+  info->signature   = (CdkPixbufModulePattern *) signature;
   info->description = NC_("image format", "EMF");
   info->mime_types  = (gchar **) mime_types;
   info->extensions  = (gchar **) extensions;

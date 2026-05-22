@@ -170,7 +170,7 @@ msgstr "छवि फाइल में लिखने में त्रु�
 #: cdk-pixbuf/cdk-pixbuf-io.c:2287 cdk-pixbuf/cdk-pixbuf-io.c:2408
 #, c-format
 msgid "This build of cdk-pixbuf does not support saving the image format: %s"
-msgstr "Gdk-pixbuf का यह निर्माण छवि प्रारूप को सहेजने का समर्थन नहीं करता है: %s"
+msgstr "Cdk-pixbuf का यह निर्माण छवि प्रारूप को सहेजने का समर्थन नहीं करता है: %s"
 
 #: cdk-pixbuf/cdk-pixbuf-io.c:2318
 msgid "Insufficient memory to save image to callback"
@@ -767,8 +767,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "QTIF संदर्भित संरचना हेतु आबंटित करने में विफल।"
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "GdkPixbufLoader वस्तु बनाने में विफल।"
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "CdkPixbufLoader वस्तु बनाने में विफल।"
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -1059,8 +1059,8 @@ msgstr "XPM"
 #~ msgid "Transformed pixbuf has zero width or height."
 #~ msgstr "परिवर्तित pixbuf की ऊँचाई या चौड़ाई शून्य है"
 
-#~ msgid "The GdkPixdata format"
-#~ msgstr "GdkPixdata फ़ॉर्मेट"
+#~ msgid "The CdkPixdata format"
+#~ msgstr "CdkPixdata फ़ॉर्मेट"
 
 #, c-format
 #~ msgid ""

@@ -1,4 +1,4 @@
-/* Gdk-Pixbuf-CSource - GdkPixbuf based image CSource generator
+/* Cdk-Pixbuf-CSource - CdkPixbuf based image CSource generator
  * Copyright (C) 1999, 2001 Tim Janik
  *
  * This library is free software; you can redistribute it and/or
@@ -25,7 +25,7 @@
 
 /* --- defines --- */
 #undef	G_LOG_DOMAIN
-#define	G_LOG_DOMAIN	"Gdk-Pixbuf-CSource"
+#define	G_LOG_DOMAIN	"Cdk-Pixbuf-CSource"
 #define PRG_NAME        "cdk-pixbuf-csource-3.0"
 #define PKG_NAME        "cdk-pixbuf"
 #define PKG_HTTP_HOME   "https://github.com/cafe-desktop/ctk"
@@ -50,10 +50,10 @@ static gboolean	build_list = FALSE;
 /* --- functions --- */
 static void
 print_csource (FILE *f_out,
-	       GdkPixbuf *pixbuf)
+	       CdkPixbuf *pixbuf)
 {
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-  GdkPixdata pixdata;
+  CdkPixdata pixdata;
   gpointer free_me;
   GString *gstring;
 
@@ -73,7 +73,7 @@ int
 main (int   argc,
       char *argv[])
 {
-  GdkPixbuf *pixbuf;
+  CdkPixbuf *pixbuf;
   GError *error = NULL;
   gchar *infilename;
 
@@ -284,7 +284,7 @@ print_blurb (FILE    *bout,
       g_fprintf (bout, "Usage: %s [options] [image]\n", PRG_NAME);
       g_fprintf (bout, "       %s [options] --build-list [[name image]...]\n", PRG_NAME);
       g_fprintf (bout, "  --stream                   generate pixbuf data stream\n");
-      g_fprintf (bout, "  --struct                   generate GdkPixdata structure\n");
+      g_fprintf (bout, "  --struct                   generate CdkPixdata structure\n");
       g_fprintf (bout, "  --macros                   generate image size/pixel macros\n");
       g_fprintf (bout, "  --rle                      use one byte run-length-encoding\n");
       g_fprintf (bout, "  --raw                      provide raw image data copy\n");

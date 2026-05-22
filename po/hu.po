@@ -792,8 +792,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Nem sikerült lefoglalni a QTIF kontextusstruktúrát."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "A GdkPixbufLoader objektum létrehozása meghiúsult."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "A CdkPixbufLoader objektum létrehozása meghiúsult."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."

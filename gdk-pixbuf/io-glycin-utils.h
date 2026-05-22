@@ -2,13 +2,13 @@
 
 #include "cdk-pixbuf-io.h"
 
-void glycin_fill_vtable (GdkPixbufModule *module);
+void glycin_fill_vtable (CdkPixbufModule *module);
 
 gboolean glycin_image_save (const char         *mimetype,
                             FILE               *f,
-                            GdkPixbufSaveFunc   save_func,
+                            CdkPixbufSaveFunc   save_func,
                             gpointer            user_data,
-                            GdkPixbuf          *pixbuf,
+                            CdkPixbuf          *pixbuf,
                             char              **keys,
                             char              **values,
                             GBytes             *icc_profile,

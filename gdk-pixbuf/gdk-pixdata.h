@@ -1,4 +1,4 @@
-/* GdkPixbuf library - GdkPixdata - functions for inlined pixbuf handling
+/* CdkPixbuf library - CdkPixdata - functions for inlined pixbuf handling
  * Copyright (C) 1999, 2001 Tim Janik
  *
  * This library is free software; you can redistribute it and/or
@@ -24,12 +24,12 @@ G_BEGIN_DECLS
 /**
  * CDK_PIXBUF_MAGIC_NUMBER:
  *
- * Magic number for #GdkPixdata structures.
+ * Magic number for #CdkPixdata structures.
  **/
-#define CDK_PIXBUF_MAGIC_NUMBER (0x47646b50)    /* 'GdkP' */
+#define CDK_PIXBUF_MAGIC_NUMBER (0x47646b50)    /* 'CdkP' */
 
 /**
- * GdkPixdataType:
+ * CdkPixdataType:
  * @CDK_PIXDATA_COLOR_TYPE_RGB:  each pixel has red, green and blue samples.
  * @CDK_PIXDATA_COLOR_TYPE_RGBA: each pixel has red, green and blue samples 
  *    and an alpha value.
@@ -44,7 +44,7 @@ G_BEGIN_DECLS
  *    which must be repeated. 
  * @CDK_PIXDATA_ENCODING_MASK: mask for the encoding flags of the enum.
  *
- * An enumeration containing three sets of flags for a #GdkPixdata struct: 
+ * An enumeration containing three sets of flags for a #CdkPixdata struct: 
  * one for the used colorspace, one for the width of the samples and one 
  * for the encoding of the pixel data.
  *
@@ -63,16 +63,16 @@ typedef enum
   CDK_PIXDATA_ENCODING_RAW      = 0x01 << 24,
   CDK_PIXDATA_ENCODING_RLE      = 0x02 << 24,
   CDK_PIXDATA_ENCODING_MASK     = 0x0f << 24
-} GdkPixdataType;
+} CdkPixdataType;
 
-typedef struct _GdkPixdata GdkPixdata;
-struct _GdkPixdata
+typedef struct _CdkPixdata CdkPixdata;
+struct _CdkPixdata
 {
   guint32 magic;        /* CDK_PIXBUF_MAGIC_NUMBER */
   gint32  length;       /* <1 to disable length checks, otherwise:
 			 * CDK_PIXDATA_HEADER_LENGTH + pixel_data length
 			 */
-  guint32 pixdata_type; /* GdkPixdataType */
+  guint32 pixdata_type; /* CdkPixdataType */
   guint32 rowstride;
   guint32 width;
   guint32 height;
@@ -82,36 +82,36 @@ struct _GdkPixdata
 /**
  * CDK_PIXDATA_HEADER_LENGTH:
  *
- * The length of a #GdkPixdata structure without the @pixel_data pointer.
+ * The length of a #CdkPixdata structure without the @pixel_data pointer.
  *
  * Deprecated: 2.32
  **/
 #define	CDK_PIXDATA_HEADER_LENGTH	(4 + 4 + 4 + 4 + 4 + 4)
 
-/* the returned stream is plain htonl of GdkPixdata members + pixel_data */
+/* the returned stream is plain htonl of CdkPixdata members + pixel_data */
 CDK_PIXBUF_DEPRECATED_IN_2_32
-guint8*		cdk_pixdata_serialize	(const GdkPixdata	*pixdata,
+guint8*		cdk_pixdata_serialize	(const CdkPixdata	*pixdata,
 					 guint			*stream_length_p);
 CDK_PIXBUF_DEPRECATED_IN_2_32
-gboolean	cdk_pixdata_deserialize	(GdkPixdata		*pixdata,
+gboolean	cdk_pixdata_deserialize	(CdkPixdata		*pixdata,
 					 guint			 stream_length,
 					 const guint8		*stream,
 					 GError		       **error);
 CDK_PIXBUF_DEPRECATED_IN_2_32
-gpointer	cdk_pixdata_from_pixbuf	(GdkPixdata		*pixdata,
-					 const GdkPixbuf	*pixbuf,
+gpointer	cdk_pixdata_from_pixbuf	(CdkPixdata		*pixdata,
+					 const CdkPixbuf	*pixbuf,
 					 gboolean		 use_rle);
 CDK_PIXBUF_DEPRECATED_IN_2_32
-GdkPixbuf*	cdk_pixbuf_from_pixdata	(const GdkPixdata	*pixdata,
+CdkPixbuf*	cdk_pixbuf_from_pixdata	(const CdkPixdata	*pixdata,
 					 gboolean		 copy_pixels,
 					 GError		       **error);
 /** 
- * GdkPixdataDumpType:
+ * CdkPixdataDumpType:
  * @CDK_PIXDATA_DUMP_PIXDATA_STREAM: Generate pixbuf data stream (a single 
- *    string containing a serialized #GdkPixdata structure in network byte 
+ *    string containing a serialized #CdkPixdata structure in network byte 
  *    order).
- * @CDK_PIXDATA_DUMP_PIXDATA_STRUCT: Generate #GdkPixdata structure (needs 
- *    the #GdkPixdata structure definition from cdk-pixdata.h).
+ * @CDK_PIXDATA_DUMP_PIXDATA_STRUCT: Generate #CdkPixdata structure (needs 
+ *    the #CdkPixdata structure definition from cdk-pixdata.h).
  * @CDK_PIXDATA_DUMP_MACROS: Generate <function>*_ROWSTRIDE</function>,     
  *    <function>*_WIDTH</function>, <function>*_HEIGHT</function>,
  *    <function>*_BYTES_PER_PIXEL</function> and 
@@ -148,13 +148,13 @@ typedef enum
   CDK_PIXDATA_DUMP_CONST		= 1 << 10,
   /* save RLE decoder macro? */
   CDK_PIXDATA_DUMP_RLE_DECODER		= 1 << 16
-} GdkPixdataDumpType;
+} CdkPixdataDumpType;
   
 
 CDK_PIXBUF_DEPRECATED_IN_2_32
-GString*	cdk_pixdata_to_csource	(GdkPixdata		*pixdata,
+GString*	cdk_pixdata_to_csource	(CdkPixdata		*pixdata,
 					 const gchar		*name,
-					 GdkPixdataDumpType	 dump_type);
+					 CdkPixdataDumpType	 dump_type);
 
 
 G_END_DECLS

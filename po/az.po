@@ -549,7 +549,7 @@ msgstr "Çevirilmiş PNG-nin eni ya da hündürlüyü sıfırdır."
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "GIF rəsm formatı"
 
 #: cdk-pixbuf/io-png.c:54
@@ -749,7 +749,7 @@ msgstr "TGA məzmun quruluşu üçün yaddaş ayrıla bilir"
 
 #: cdk-pixbuf/io-qtif.c:330
 #, fuzzy
-msgid "Failed to create GdkPixbufLoader object."
+msgid "Failed to create CdkPixbufLoader object."
 msgstr "Müvəqqəti fayl oxuna bilmədi"
 
 #: cdk-pixbuf/io-qtif.c:434

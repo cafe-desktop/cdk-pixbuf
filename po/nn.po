@@ -526,7 +526,7 @@ msgstr "Transformert PNG har null breidde eller høgde."
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "GIF-bileteformatet"
 
 #: cdk-pixbuf/io-png.c:54
@@ -722,7 +722,7 @@ msgstr "Kan ikkje tildela minne for TGA-kontekststruktur"
 
 #: cdk-pixbuf/io-qtif.c:330
 #, fuzzy
-msgid "Failed to create GdkPixbufLoader object."
+msgid "Failed to create CdkPixbufLoader object."
 msgstr "Klarte ikkje skriva mappeindeks\n"
 
 #: cdk-pixbuf/io-qtif.c:434

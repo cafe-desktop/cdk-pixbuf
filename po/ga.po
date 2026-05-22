@@ -531,7 +531,7 @@ msgstr "Tá leithead nó airde nialais ag PNG trasfhoirmithe."
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "An fhormáid íomhá GIF"
 
 #: cdk-pixbuf/io-png.c:54
@@ -728,8 +728,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Theip ar dháileadh struchtúir comhthéacs QTIF."
 
 #: cdk-pixbuf/io-qtif.c:330
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Theip ar chruthú réada GdkPixbufLoader."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Theip ar chruthú réada CdkPixbufLoader."
 
 #: cdk-pixbuf/io-qtif.c:434
 msgid "Failed to find an image data atom."

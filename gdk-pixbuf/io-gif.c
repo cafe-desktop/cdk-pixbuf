@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-/* GdkPixbuf library - GIF image loader
+/* CdkPixbuf library - GIF image loader
  *
  * Copyright (C) 1999 Mark Crichton
  * Copyright (C) 1999 The Free Software Foundation
@@ -105,8 +105,8 @@ struct _GifContext
         gint frame_colormap_size;
         unsigned int frame_bit_pixel;
 
-	GdkPixbufGifAnim *animation;
-	GdkPixbufFrame *frame;
+	CdkPixbufGifAnim *animation;
+	CdkPixbufFrame *frame;
 	int transparent_index;
 	int delay_time;
 	int disposal;
@@ -122,9 +122,9 @@ struct _GifContext
 	FILE *file;
 
 	/* progressive read, only. */
-	GdkPixbufModuleSizeFunc size_func;
-	GdkPixbufModulePreparedFunc prepared_func;
-	GdkPixbufModuleUpdatedFunc updated_func;
+	CdkPixbufModuleSizeFunc size_func;
+	CdkPixbufModulePreparedFunc prepared_func;
+	CdkPixbufModuleUpdatedFunc updated_func;
 	gpointer user_data;
 	GByteArray *buf;
 
@@ -384,7 +384,7 @@ gif_get_lzw (GifContext *context)
                         return -2;
                 }
 
-                context->frame = g_new0 (GdkPixbufFrame, 1);
+                context->frame = g_new0 (CdkPixbufFrame, 1);
 
                 context->frame->lzw_data = g_byte_array_new ();
                 context->frame->lzw_code_size = context->lzw_set_code_size;
@@ -450,7 +450,7 @@ gif_get_lzw (GifContext *context)
 
 		/* Notify when have first frame */
 		if (context->animation->frames->next == NULL) {
-			GdkPixbuf *pixbuf = cdk_pixbuf_animation_get_static_image (CDK_PIXBUF_ANIMATION (context->animation));
+			CdkPixbuf *pixbuf = cdk_pixbuf_animation_get_static_image (CDK_PIXBUF_ANIMATION (context->animation));
 			if (pixbuf != NULL)
 				(* context->prepared_func) (pixbuf,
                                                             CDK_PIXBUF_ANIMATION (context->animation),
@@ -466,7 +466,7 @@ gif_get_lzw (GifContext *context)
 
 		/* Notify frame update */
 		if ((retval != 0 || empty_block) && context->animation->frames->next == NULL) {
-			GdkPixbuf *pixbuf = cdk_pixbuf_animation_get_static_image (CDK_PIXBUF_ANIMATION (context->animation));
+			CdkPixbuf *pixbuf = cdk_pixbuf_animation_get_static_image (CDK_PIXBUF_ANIMATION (context->animation));
 			if (pixbuf)
 				(* context->updated_func) (pixbuf,
                                                            0, 0, context->frame->width, context->frame->height,
@@ -768,9 +768,9 @@ gif_main_loop (GifContext *context)
 }
 
 static GifContext *
-new_context (GdkPixbufModuleSizeFunc size_func,
-             GdkPixbufModulePreparedFunc prepared_func,
-             GdkPixbufModuleUpdatedFunc updated_func,
+new_context (CdkPixbufModuleSizeFunc size_func,
+             CdkPixbufModulePreparedFunc prepared_func,
+             CdkPixbufModuleUpdatedFunc updated_func,
              gpointer user_data)
 {
 	GifContext *context;
@@ -809,14 +809,14 @@ noop_size_notify (gint     *width,
 }
 
 static void
-noop_prepared_notify (GdkPixbuf *pixbuf,
-                      GdkPixbufAnimation *anim,
+noop_prepared_notify (CdkPixbuf *pixbuf,
+                      CdkPixbufAnimation *anim,
                       gpointer user_data)
 {
 }
 
 static void
-noop_updated_notify (GdkPixbuf *pixbuf,
+noop_updated_notify (CdkPixbuf *pixbuf,
 		     int        x,
 		     int        y,
 		     int        width,
@@ -832,11 +832,11 @@ new_context_without_callbacks (void)
 }
 
 /* Shared library entry point */
-static GdkPixbuf *
+static CdkPixbuf *
 cdk_pixbuf__gif_image_load (FILE *file, GError **error)
 {
 	GifContext *context;
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
         gint retval;
 
 	g_return_val_if_fail (file != NULL, NULL);
@@ -882,9 +882,9 @@ out:
 }
 
 static gpointer
-cdk_pixbuf__gif_image_begin_load (GdkPixbufModuleSizeFunc size_func,
-                                  GdkPixbufModulePreparedFunc prepared_func,
-				  GdkPixbufModuleUpdatedFunc updated_func,
+cdk_pixbuf__gif_image_begin_load (CdkPixbufModuleSizeFunc size_func,
+                                  CdkPixbufModulePreparedFunc prepared_func,
+				  CdkPixbufModuleUpdatedFunc updated_func,
 				  gpointer user_data,
                                   GError **error)
 {
@@ -958,12 +958,12 @@ cdk_pixbuf__gif_image_load_increment (gpointer data,
 	return TRUE;
 }
 
-static GdkPixbufAnimation *
+static CdkPixbufAnimation *
 cdk_pixbuf__gif_image_load_animation (FILE *file,
                                       GError **error)
 {
 	GifContext *context;
-	GdkPixbufAnimation *animation;
+	CdkPixbufAnimation *animation;
 
 	g_return_val_if_fail (file != NULL, NULL);
 
@@ -1010,7 +1010,7 @@ cdk_pixbuf__gif_image_load_animation (FILE *file,
 #define MODULE_ENTRY(function) void _cdk_pixbuf__gif_ ## function
 #endif
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
         module->load = cdk_pixbuf__gif_image_load;
         module->begin_load = cdk_pixbuf__gif_image_begin_load;
@@ -1019,9 +1019,9 @@ MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
         module->load_animation = cdk_pixbuf__gif_image_load_animation;
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-        static const GdkPixbufModulePattern signature[] = {
+        static const CdkPixbufModulePattern signature[] = {
                 { "GIF8", NULL, 100 },
                 { NULL, NULL, 0 }
         };
@@ -1035,7 +1035,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
 	};
 
 	info->name = "gif";
-        info->signature = (GdkPixbufModulePattern *) signature;
+        info->signature = (CdkPixbufModulePattern *) signature;
 	info->description = NC_("image format", "GIF");
 	info->mime_types = (gchar **) mime_types;
 	info->extensions = (gchar **) extensions;

@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
-/* GdkPixbuf library - PNM image loader
+/* CdkPixbuf library - PNM image loader
  *
  * Copyright (C) 1999 Red Hat, Inc.
  *
@@ -50,12 +50,12 @@ typedef struct {
 } PnmIOBuffer;
 
 typedef struct {
-	GdkPixbufModuleUpdatedFunc updated_func;
-	GdkPixbufModulePreparedFunc prepared_func;
-	GdkPixbufModuleSizeFunc size_func;
+	CdkPixbufModuleUpdatedFunc updated_func;
+	CdkPixbufModulePreparedFunc prepared_func;
+	CdkPixbufModuleSizeFunc size_func;
 	gpointer user_data;
 	
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 	guchar *pixels;        /* incoming pixel data buffer */
 	guchar *dptr;          /* current position in pixbuf */
 	
@@ -78,10 +78,10 @@ typedef struct {
 	
 } PnmLoaderContext;
 
-static GdkPixbuf   *cdk_pixbuf__pnm_image_load          (FILE *f, GError **error);
-static gpointer    cdk_pixbuf__pnm_image_begin_load     (GdkPixbufModuleSizeFunc size_func, 
-                                                         GdkPixbufModulePreparedFunc func, 
-							 GdkPixbufModuleUpdatedFunc func2,
+static CdkPixbuf   *cdk_pixbuf__pnm_image_load          (FILE *f, GError **error);
+static gpointer    cdk_pixbuf__pnm_image_begin_load     (CdkPixbufModuleSizeFunc size_func, 
+                                                         CdkPixbufModulePreparedFunc func, 
+							 CdkPixbufModuleUpdatedFunc func2,
 							 gpointer user_data,
 							 GError **error);
 static gboolean    cdk_pixbuf__pnm_image_stop_load      (gpointer context, GError **error);
@@ -673,7 +673,7 @@ pnm_read_scanline (PnmLoaderContext *context)
 }
 
 /* Shared library entry point */
-static GdkPixbuf *
+static CdkPixbuf *
 cdk_pixbuf__pnm_image_load (FILE *f, GError **error)
 {
 	PnmLoaderContext context;
@@ -816,9 +816,9 @@ cdk_pixbuf__pnm_image_load (FILE *f, GError **error)
  */
 
 static gpointer
-cdk_pixbuf__pnm_image_begin_load (GdkPixbufModuleSizeFunc size_func, 
-                                  GdkPixbufModulePreparedFunc prepared_func, 
-				  GdkPixbufModuleUpdatedFunc  updated_func,
+cdk_pixbuf__pnm_image_begin_load (CdkPixbufModuleSizeFunc size_func, 
+                                  CdkPixbufModulePreparedFunc prepared_func, 
+				  CdkPixbufModuleUpdatedFunc  updated_func,
 				  gpointer user_data,
 				  GError **error)
 {
@@ -1064,7 +1064,7 @@ cdk_pixbuf__pnm_image_load_increment (gpointer data,
 #define MODULE_ENTRY(function) void _cdk_pixbuf__pnm_ ## function
 #endif
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
 	module->load = cdk_pixbuf__pnm_image_load;
 	module->begin_load = cdk_pixbuf__pnm_image_begin_load;
@@ -1072,9 +1072,9 @@ MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
 	module->load_increment = cdk_pixbuf__pnm_image_load_increment;
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-	static const GdkPixbufModulePattern signature[] = {
+	static const CdkPixbufModulePattern signature[] = {
 		{ "P1", NULL, 100 },
 		{ "P2", NULL, 100 },
 		{ "P3", NULL, 100 },
@@ -1099,7 +1099,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
 	};
 
 	info->name = "pnm";
-	info->signature = (GdkPixbufModulePattern *) signature;
+	info->signature = (CdkPixbufModulePattern *) signature;
 	info->description = NC_("image format", "PNM/PBM/PGM/PPM");
 	info->mime_types = (gchar **) mime_types;
 	info->extensions = (gchar **) extensions;

@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
-/* GdkPixbuf library - Win32 GDI+ Pixbuf Loader
+/* CdkPixbuf library - Win32 GDI+ Pixbuf Loader
  *
  * Copyright (C) 2008 Dominic Lachowicz
  * Copyright (C) 2008 Alberto Ruiz
@@ -30,14 +30,14 @@
 #define MODULE_ENTRY(function) void _cdk_pixbuf__gdip_wmf_ ## function
 #endif
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
   gdip_fill_vector_vtable (module);
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-  static const GdkPixbufModulePattern signature[] = {
+  static const CdkPixbufModulePattern signature[] = {
     { "\xd7\xcd\xc6\x9a", NULL, 100 }, /* WMF */
     { "\x01\x00\x09\x00", NULL, 100 }, /* WMF */
     { NULL, NULL, 0 }
@@ -56,7 +56,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
   };
 
   info->name        = "wmf";
-  info->signature   = (GdkPixbufModulePattern *) signature;
+  info->signature   = (CdkPixbufModulePattern *) signature;
   info->description = NC_("image format", "WMF");
   info->mime_types  = (gchar **) mime_types;
   info->extensions  = (gchar **) extensions;

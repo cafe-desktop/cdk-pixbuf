@@ -846,8 +846,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Не ўдалося выдзеліць структуру кантэксту QTIF."
 
 #: cdk-pixbuf/io-qtif.c:325
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Не ўдалося стварыць аб'ект GdkPixbufLoader."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Не ўдалося стварыць аб'ект CdkPixbufLoader."
 
 #: cdk-pixbuf/io-qtif.c:429
 msgid "Failed to find an image data atom."
@@ -1090,8 +1090,8 @@ msgstr "XPM"
 #~ msgid "Transformed pixbuf has zero width or height."
 #~ msgstr "Трансфармаваны растравы буфер мае нулявую шырыню ці вышыню."
 
-#~ msgid "The GdkPixdata format"
-#~ msgstr "Фармат GdkPixdata"
+#~ msgid "The CdkPixdata format"
+#~ msgstr "Фармат CdkPixdata"
 
 #~ msgid "The PNG image format"
 #~ msgstr "Фармат выяў PNG"

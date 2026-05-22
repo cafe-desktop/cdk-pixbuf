@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-/* GdkPixbuf library - Win32 GDI+ Pixbuf Loader
+/* CdkPixbuf library - Win32 GDI+ Pixbuf Loader
  *
  * Copyright (C) 2008 Dominic Lachowicz
  * Copyright (C) 2008 Alberto Ruiz
@@ -33,16 +33,16 @@ gdip_save_to_file_callback (const gchar *buf,
                             gpointer     data);
 
 void
-gdip_fill_vtable (GdkPixbufModule *module);
+gdip_fill_vtable (CdkPixbufModule *module);
 
 void
-gdip_fill_vector_vtable (GdkPixbufModule *module);
+gdip_fill_vector_vtable (CdkPixbufModule *module);
 
 gboolean
-gdip_save_pixbuf (GdkPixbuf *pixbuf,
+gdip_save_pixbuf (CdkPixbuf *pixbuf,
                   const WCHAR *format,
                   const EncoderParameters *encoder_params,
-                  GdkPixbufSaveFunc save_func,
+                  CdkPixbufSaveFunc save_func,
                   gpointer user_data,
                   GError **error);
 

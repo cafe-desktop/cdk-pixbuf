@@ -506,7 +506,7 @@ msgstr ""
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "XPM расм формати"
 
 #: cdk-pixbuf/io-png.c:54
@@ -692,7 +692,7 @@ msgstr ""
 
 #: cdk-pixbuf/io-qtif.c:330
 #, fuzzy
-msgid "Failed to create GdkPixbufLoader object."
+msgid "Failed to create CdkPixbufLoader object."
 msgstr "Жилд индексини ёзишда хатолик юз берди\n"
 
 #: cdk-pixbuf/io-qtif.c:434

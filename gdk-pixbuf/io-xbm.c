@@ -1,5 +1,5 @@
 /* -*- mode: C; c-file-style: "linux" -*- */
-/* GdkPixbuf library - XBM image loader
+/* CdkPixbuf library - XBM image loader
  *
  * Copyright (C) 1999 Mark Crichton
  * Copyright (C) 1999 The Free Software Foundation
@@ -46,8 +46,8 @@
 typedef struct _XBMData XBMData;
 struct _XBMData
 {
-	GdkPixbufModulePreparedFunc prepared_func;
-	GdkPixbufModuleUpdatedFunc updated_func;
+	CdkPixbufModulePreparedFunc prepared_func;
+	CdkPixbufModuleUpdatedFunc updated_func;
 	gpointer user_data;
 
 	gchar *tempname;
@@ -297,7 +297,7 @@ read_bitmap_file_data (FILE    *fstream,
 
 
 
-static GdkPixbuf *
+static CdkPixbuf *
 cdk_pixbuf__xbm_image_load_real (FILE     *f, 
 				 XBMData  *context, 
 				 GError  **error)
@@ -311,7 +311,7 @@ cdk_pixbuf__xbm_image_load_real (FILE     *f,
 	int reg = 0; /* Quiet compiler */
 	int bits;
 
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 
 	if (!read_bitmap_file_data (f, &w, &h, &data, &x_hot, &y_hot)) {
                 g_set_error_literal (error,
@@ -381,7 +381,7 @@ cdk_pixbuf__xbm_image_load_real (FILE     *f,
 
 /* Static loader */
 
-static GdkPixbuf *
+static CdkPixbuf *
 cdk_pixbuf__xbm_image_load (FILE    *f, 
 			    GError **error)
 {
@@ -397,9 +397,9 @@ cdk_pixbuf__xbm_image_load (FILE    *f,
  */
 
 static gpointer
-cdk_pixbuf__xbm_image_begin_load (GdkPixbufModuleSizeFunc       size_func,
-                                  GdkPixbufModulePreparedFunc   prepared_func,
-				  GdkPixbufModuleUpdatedFunc    updated_func,
+cdk_pixbuf__xbm_image_begin_load (CdkPixbufModuleSizeFunc       size_func,
+                                  CdkPixbufModulePreparedFunc   prepared_func,
+				  CdkPixbufModuleUpdatedFunc    updated_func,
 				  gpointer                      user_data,
 				  GError                      **error)
 {
@@ -445,7 +445,7 @@ cdk_pixbuf__xbm_image_stop_load (gpointer   data,
 	fflush (context->file);
 	rewind (context->file);
 	if (context->all_okay) {
-                GdkPixbuf *pixbuf;
+                CdkPixbuf *pixbuf;
                 pixbuf = cdk_pixbuf__xbm_image_load_real (context->file, 
 							  context,
                                                           error);
@@ -492,7 +492,7 @@ cdk_pixbuf__xbm_image_load_increment (gpointer       data,
 #define MODULE_ENTRY(function) void _cdk_pixbuf__xbm_ ## function
 #endif
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
 	module->load = cdk_pixbuf__xbm_image_load;
 	module->begin_load = cdk_pixbuf__xbm_image_begin_load;
@@ -500,9 +500,9 @@ MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
 	module->load_increment = cdk_pixbuf__xbm_image_load_increment;
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-	static const GdkPixbufModulePattern signature[] = {
+	static const CdkPixbufModulePattern signature[] = {
 		{ "#define ", NULL, 100 },
 		{ "/*", NULL, 50 },
 		{ NULL, NULL, 0 }
@@ -517,7 +517,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
 	};
 
 	info->name = "xbm";
-	info->signature = (GdkPixbufModulePattern *) signature;
+	info->signature = (CdkPixbufModulePattern *) signature;
 	info->description = NC_("image format", "XBM");
 	info->mime_types = (gchar **) mime_types;
 	info->extensions = (gchar **) extensions;

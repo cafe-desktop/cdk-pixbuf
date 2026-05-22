@@ -526,7 +526,7 @@ msgstr "Figura e transformuar në PNG ka gjerësi apo lartësi zero."
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "Formati GIF"
 
 #: cdk-pixbuf/io-png.c:54
@@ -730,7 +730,7 @@ msgstr "I pamundur sigurimi i kujtesës për strukturën kontekste TGA"
 
 #: cdk-pixbuf/io-qtif.c:330
 #, fuzzy
-msgid "Failed to create GdkPixbufLoader object."
+msgid "Failed to create CdkPixbufLoader object."
 msgstr "Shkrimi i treguesit të kartelës dështoi\n"
 
 #: cdk-pixbuf/io-qtif.c:434

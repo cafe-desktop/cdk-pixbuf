@@ -29,7 +29,7 @@ int main (int argc, char **argv)
 
 	formats = cdk_pixbuf_get_formats ();
 	for (GSList *l = formats; l != NULL; l = l->next) {
-		GdkPixbufFormat *format = l->data;
+		CdkPixbufFormat *format = l->data;
 		char **mime_types;
 
 		mime_types = cdk_pixbuf_format_get_mime_types (format);

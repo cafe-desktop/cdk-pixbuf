@@ -64,7 +64,7 @@ cdk_pixbuf_inc = include_directories('.')
 
 cdk_pixbuf_cflags = [
   '-DG_LOG_STRUCTURED=1',
-  '-DG_LOG_DOMAIN="GdkPixbuf"',
+  '-DG_LOG_DOMAIN="CdkPixbuf"',
   '-DCDK_PIXBUF_COMPILATION',
   '-DCDK_PIXBUF_PREFIX="@0@"'.format(cdk_pixbuf_prefix),
   '-DCDK_PIXBUF_LOCALEDIR="@0@"'.format(cdk_pixbuf_localedir),
@@ -302,9 +302,9 @@ if build_gir
       cdkpixdata_sources,
       cdk_pixbuf_features_h,
     ],
-    namespace: 'GdkPixbuf',
+    namespace: 'CdkPixbuf',
     nsversion: cdk_pixbuf_api_version,
-    identifier_prefix: 'Gdk',
+    identifier_prefix: 'Cdk',
     symbol_prefix: 'cdk',
     export_packages: 'cdk-pixbuf-2.0',
     includes: [ 'GModule-2.0', 'Gio-2.0', ],
@@ -316,9 +316,9 @@ if build_gir
   cdkpixdata_gir = gnome.generate_gir(
     cdkpixbuf,
     sources: cdkpixdata_sources + ['cdk-pixdata.h'],
-    namespace: 'GdkPixdata',
+    namespace: 'CdkPixdata',
     nsversion: cdk_pixbuf_api_version,
-    identifier_prefix: 'Gdk',
+    identifier_prefix: 'Cdk',
     symbol_prefix: 'cdk',
     export_packages: 'cdk-pixbuf-2.0',
     includes: [ cdkpixbuf_gir[0] ],
@@ -436,7 +436,7 @@ endif
 pkgconfig = import('pkgconfig')
 pkgconfig.generate(
   cdkpixbuf,
-  name: 'GdkPixbuf',
+  name: 'CdkPixbuf',
   description: 'Image loading and scaling',
   variables: [
     'cdk_pixbuf_binary_version=@0@'.format(cdk_pixbuf_binary_version),

@@ -546,7 +546,7 @@ msgstr "Трансформираната PNG има нула широчина и
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "Форматот GIF"
 
 #: cdk-pixbuf/io-png.c:54
@@ -746,7 +746,7 @@ msgstr "Не можам да алоцирам меморија во TGA конт
 
 #: cdk-pixbuf/io-qtif.c:330
 #, fuzzy
-msgid "Failed to create GdkPixbufLoader object."
+msgid "Failed to create CdkPixbufLoader object."
 msgstr "Не успеав да го запишам индексирањето на папката\n"
 
 #: cdk-pixbuf/io-qtif.c:434

@@ -1,4 +1,4 @@
-/* GdkPixbuf library - GdkPixbuf Macros
+/* CdkPixbuf library - CdkPixbuf Macros
  *
  * Copyright (C) 2016 Chun-wei Fan
  *
@@ -35,9 +35,9 @@
  * @minor: minor version (e.g. 34 for version 2.34.0)
  * @micro: micro version (e.g. 0 for version 2.34.0)
  *
- * Macro to test the version of GdkPixbuf being compiled against.
+ * Macro to test the version of CdkPixbuf being compiled against.
  *
- * Returns: %TRUE if the version of the GdkPixbuf header files
+ * Returns: %TRUE if the version of the CdkPixbuf header files
  * is the same as or newer than the passed-in version.
  *
  * Since: 2.36
@@ -51,7 +51,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_0:
  *
- * A macro that evaluates to the 2.0 version of GdkPixbuf,
+ * A macro that evaluates to the 2.0 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.36
@@ -61,7 +61,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_2:
  *
- * A macro that evaluates to the 2.2 version of GdkPixbuf,
+ * A macro that evaluates to the 2.2 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.36
@@ -71,7 +71,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_4:
  *
- * A macro that evaluates to the 2.4 version of GdkPixbuf,
+ * A macro that evaluates to the 2.4 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.36
@@ -81,7 +81,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_6:
  *
- * A macro that evaluates to the 2.6 version of GdkPixbuf,
+ * A macro that evaluates to the 2.6 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.36
@@ -91,7 +91,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_8:
  *
- * A macro that evaluates to the 2.8 version of GdkPixbuf,
+ * A macro that evaluates to the 2.8 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.36
@@ -101,7 +101,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_10:
  *
- * A macro that evaluates to the 2.10 version of GdkPixbuf,
+ * A macro that evaluates to the 2.10 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.36
@@ -111,7 +111,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_12:
  *
- * A macro that evaluates to the 2.12 version of GdkPixbuf,
+ * A macro that evaluates to the 2.12 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.36
@@ -121,7 +121,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_14:
  *
- * A macro that evaluates to the 2.14 version of GdkPixbuf,
+ * A macro that evaluates to the 2.14 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.36
@@ -131,7 +131,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_16:
  *
- * A macro that evaluates to the 2.16 version of GdkPixbuf,
+ * A macro that evaluates to the 2.16 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.36
@@ -141,7 +141,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_18:
  *
- * A macro that evaluates to the 2.18 version of GdkPixbuf,
+ * A macro that evaluates to the 2.18 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.36
@@ -151,7 +151,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_20:
  *
- * A macro that evaluates to the 2.20 version of GdkPixbuf,
+ * A macro that evaluates to the 2.20 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.36
@@ -161,7 +161,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_22:
  *
- * A macro that evaluates to the 2.22 version of GdkPixbuf,
+ * A macro that evaluates to the 2.22 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.36
@@ -171,7 +171,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_24:
  *
- * A macro that evaluates to the 2.24 version of GdkPixbuf,
+ * A macro that evaluates to the 2.24 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.36
@@ -181,7 +181,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_26:
  *
- * A macro that evaluates to the 2.26 version of GdkPixbuf,
+ * A macro that evaluates to the 2.26 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.36
@@ -191,7 +191,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_28:
  *
- * A macro that evaluates to the 2.28 version of GdkPixbuf,
+ * A macro that evaluates to the 2.28 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.36
@@ -201,7 +201,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_30:
  *
- * A macro that evaluates to the 2.30 version of GdkPixbuf,
+ * A macro that evaluates to the 2.30 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.36
@@ -211,7 +211,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_32:
  *
- * A macro that evaluates to the 2.32 version of GdkPixbuf,
+ * A macro that evaluates to the 2.32 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.36
@@ -221,7 +221,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_34:
  *
- * A macro that evaluates to the 2.34 version of GdkPixbuf,
+ * A macro that evaluates to the 2.34 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.36
@@ -231,7 +231,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_36:
  *
- * A macro that evaluates to the 2.36 version of GdkPixbuf,
+ * A macro that evaluates to the 2.36 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.36
@@ -241,7 +241,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_38:
  *
- * A macro that evaluates to the 2.38 version of GdkPixbuf,
+ * A macro that evaluates to the 2.38 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.38
@@ -251,7 +251,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_40:
  *
- * A macro that evaluates to the 2.40 version of GdkPixbuf,
+ * A macro that evaluates to the 2.40 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.40
@@ -261,7 +261,7 @@
 /**
  * CDK_PIXBUF_VERSION_2_44:
  *
- * A macro that evaluates to the 2.44 version of GdkPixbuf,
+ * A macro that evaluates to the 2.44 version of CdkPixbuf,
  * in a format that can be used by the C pre-processor.
  *
  * Since: 2.44
@@ -292,9 +292,9 @@
  * The definition should be one of the predefined version
  * macros: %CDK_PIXBUF_VERSION_2_0, %CDK_PIXBUF_VERSION_2_2, ...
  *
- * This macro defines the lower bound for the GdkPixbuf API to use.
+ * This macro defines the lower bound for the CdkPixbuf API to use.
  *
- * If a function has been deprecated in a newer version of GdkPixbuf,
+ * If a function has been deprecated in a newer version of CdkPixbuf,
  * defining this symbol hides the compiler warnings for those functions
  * without disabling warnings for the other deprecated functions.
  *
@@ -317,9 +317,9 @@
  * The definition should be one of the predefined version
  * macros: %CDK_PIXBUF_VERSION_2_0, %CDK_PIXBUF_VERSION_2_2, ...
  *
- * This macro defines the upper bound for the GdkPixbuf API to use.
+ * This macro defines the upper bound for the CdkPixbuf API to use.
  *
- * If a function has been introduced in a newer version of GdkPixbuf,
+ * If a function has been introduced in a newer version of CdkPixbuf,
  * it is possible to use this symbol to get compiler warnings when
  * trying to use that function.
  *

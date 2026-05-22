@@ -1,4 +1,4 @@
-/* GdkPixbuf library - Utilities and miscellaneous convenience functions
+/* CdkPixbuf library - Utilities and miscellaneous convenience functions
  *
  * Copyright (C) 1999 The Free Software Foundation
  *
@@ -28,7 +28,7 @@
 
 /**
  * cdk_pixbuf_add_alpha:
- * @pixbuf: A #GdkPixbuf.
+ * @pixbuf: A #CdkPixbuf.
  * @substitute_color: Whether to set a color to zero opacity.
  * @r: Red value to substitute.
  * @g: Green value to substitute.
@@ -50,14 +50,14 @@
  *
  * Returns: (transfer full) (nullable): A newly-created pixbuf
  **/
-GdkPixbuf *
-cdk_pixbuf_add_alpha (const GdkPixbuf *pixbuf,
+CdkPixbuf *
+cdk_pixbuf_add_alpha (const CdkPixbuf *pixbuf,
                       gboolean substitute_color,
                       guchar r,
                       guchar g,
                       guchar b)
 {
-	GdkPixbuf *new_pixbuf;
+	CdkPixbuf *new_pixbuf;
 	int x, y;
 	const guint8 *src_pixels;
 	guint8 *ret_pixels;
@@ -138,10 +138,10 @@ cdk_pixbuf_add_alpha (const GdkPixbuf *pixbuf,
  * Therefore, you can not use this function to scroll a pixbuf.
  **/
 void
-cdk_pixbuf_copy_area (const GdkPixbuf *src_pixbuf,
+cdk_pixbuf_copy_area (const CdkPixbuf *src_pixbuf,
 		      int src_x, int src_y,
 		      int width, int height,
-		      GdkPixbuf *dest_pixbuf,
+		      CdkPixbuf *dest_pixbuf,
 		      int dest_x, int dest_y)
 {
 	g_return_if_fail (src_pixbuf != NULL);
@@ -193,8 +193,8 @@ cdk_pixbuf_copy_area (const GdkPixbuf *src_pixbuf,
  * 
  **/
 void
-cdk_pixbuf_saturate_and_pixelate (const GdkPixbuf *src,
-                                  GdkPixbuf *dest,
+cdk_pixbuf_saturate_and_pixelate (const CdkPixbuf *src,
+                                  CdkPixbuf *dest,
                                   gfloat saturation,
                                   gboolean pixelate)
 {
@@ -289,13 +289,13 @@ cdk_pixbuf_saturate_and_pixelate (const GdkPixbuf *src,
  *
  * Since: 2.12
  **/
-GdkPixbuf *
-cdk_pixbuf_apply_embedded_orientation (GdkPixbuf *src)
+CdkPixbuf *
+cdk_pixbuf_apply_embedded_orientation (CdkPixbuf *src)
 {
   	const gchar *orientation_string;
 	int          transform = 0;
-	GdkPixbuf   *temp;
-	GdkPixbuf   *dest;
+	CdkPixbuf   *temp;
+	CdkPixbuf   *dest;
 
 	g_return_val_if_fail (CDK_IS_PIXBUF (src), NULL);
 

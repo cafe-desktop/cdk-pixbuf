@@ -540,7 +540,7 @@ msgid "Transformed pixbuf has zero width or height."
 msgstr "మార్పుకు లోనైన పిక్స్ బఫ్ సున్నా వెడల్పు లేదా ఎత్తును కలిగివుంది."
 
 #: ../cdk-pixbuf/io-pixdata.c:186
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "జిడికెపిక్స్ డేటా ఫార్మేటు"
 
 #: ../cdk-pixbuf/io-png.c:54
@@ -737,8 +737,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "QTIF సందర్భ వ్యవస్థను కేటాయించుటలో విఫలమైంది."
 
 #: ../cdk-pixbuf/io-qtif.c:330
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "GdkPixbufLoader ఆబ్జక్టు సృష్టించుటలో విఫలమైంది."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "CdkPixbufLoader ఆబ్జక్టు సృష్టించుటలో విఫలమైంది."
 
 #: ../cdk-pixbuf/io-qtif.c:434
 msgid "Failed to find an image data atom."

@@ -530,7 +530,7 @@ msgstr "மாற்றப்பட்ட PNG ன் அகலம் மற்�
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "GIF உருவ வகை"
 
 #: cdk-pixbuf/io-png.c:54
@@ -718,8 +718,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "QTIF சூழல் அமைப்பை ஒதுக்க முடியவில்லை."
 
 #: cdk-pixbuf/io-qtif.c:330
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "GdkPixbufLoader பொருளை உருவாக்க முடியவில்லை."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "CdkPixbufLoader பொருளை உருவாக்க முடியவில்லை."
 
 #: cdk-pixbuf/io-qtif.c:434
 msgid "Failed to find an image data atom."

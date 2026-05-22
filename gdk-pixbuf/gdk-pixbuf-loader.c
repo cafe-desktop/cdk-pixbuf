@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-/* GdkPixbuf library - Progressive loader object
+/* CdkPixbuf library - Progressive loader object
  *
  * Copyright (C) 1999 The Free Software Foundation
  *
@@ -32,11 +32,11 @@
 #include "cdk-pixbuf-marshal.h"
 
 /**
- * GdkPixbufLoader:
+ * CdkPixbufLoader:
  *
  * Incremental image loader.
  * 
- * `GdkPixbufLoader` provides a way for applications to drive the
+ * `CdkPixbufLoader` provides a way for applications to drive the
  * process of loading an image, by letting them send the image data
  * directly to the loader instead of having the loader read the data
  * from a file. Applications can use this functionality instead of
@@ -45,25 +45,25 @@
  * it should be used when reading an image from a (potentially) slow
  * network connection, or when loading an extremely large file.
  *
- * To use `GdkPixbufLoader` to load an image, create a new instance,
- * and call [method@GdkPixbuf.PixbufLoader.write] to send the data
- * to it. When done, [method@GdkPixbuf.PixbufLoader.close] should be
+ * To use `CdkPixbufLoader` to load an image, create a new instance,
+ * and call [method@CdkPixbuf.PixbufLoader.write] to send the data
+ * to it. When done, [method@CdkPixbuf.PixbufLoader.close] should be
  * called to end the stream and finalize everything.
  *
  * The loader will emit three important signals throughout the process:
  *
- *  - [signal@GdkPixbuf.PixbufLoader::size-prepared] will be emitted as
+ *  - [signal@CdkPixbuf.PixbufLoader::size-prepared] will be emitted as
  *    soon as the image has enough information to determine the size of
  *    the image to be used. If you want to scale the image while loading
- *    it, you can call [method@GdkPixbuf.PixbufLoader.set_size] in
+ *    it, you can call [method@CdkPixbuf.PixbufLoader.set_size] in
  *    response to this signal.
- *  - [signal@GdkPixbuf.PixbufLoader::area-prepared] will be emitted as
+ *  - [signal@CdkPixbuf.PixbufLoader::area-prepared] will be emitted as
  *    soon as the pixbuf of the desired has been allocated. You can obtain
- *    the `GdkPixbuf` instance by calling [method@GdkPixbuf.PixbufLoader.get_pixbuf].
+ *    the `CdkPixbuf` instance by calling [method@CdkPixbuf.PixbufLoader.get_pixbuf].
  *    If you want to use it, simply acquire a reference to it. You can
  *    also call `cdk_pixbuf_loader_get_pixbuf()` later to get the same
  *    pixbuf.
- *  - [signal@GdkPixbuf.PixbufLoader::area-updated] will be emitted every
+ *  - [signal@CdkPixbuf.PixbufLoader::area-updated] will be emitted every
  *    time a region is updated. This way you can update a partially
  *    completed image. Note that you do not know anything about the
  *    completeness of an image from the updated area. For example, in an
@@ -73,11 +73,11 @@
  * ## Loading an animation
  *
  * Loading an animation is almost as easy as loading an image. Once the
- * first [signal@GdkPixbuf.PixbufLoader::area-prepared] signal has been
- * emitted, you can call [method@GdkPixbuf.PixbufLoader.get_animation] to
- * get the [class@GdkPixbuf.PixbufAnimation] instance, and then call
- * and [method@GdkPixbuf.PixbufAnimation.get_iter] to get a
- * [class@GdkPixbuf.PixbufAnimationIter] to retrieve the pixbuf for the
+ * first [signal@CdkPixbuf.PixbufLoader::area-prepared] signal has been
+ * emitted, you can call [method@CdkPixbuf.PixbufLoader.get_animation] to
+ * get the [class@CdkPixbuf.PixbufAnimation] instance, and then call
+ * and [method@CdkPixbuf.PixbufAnimation.get_iter] to get a
+ * [class@CdkPixbuf.PixbufAnimationIter] to retrieve the pixbuf for the
  * desired time stamp.
  */
 
@@ -99,11 +99,11 @@ static guint    pixbuf_loader_signals[LAST_SIGNAL] = { 0 };
 
 typedef struct
 {
-        GdkPixbufAnimation *animation;
+        CdkPixbufAnimation *animation;
         gboolean closed;
         guchar header_buf[SNIFF_BUFFER_SIZE];
         gint header_buf_offset;
-        GdkPixbufModule *image_module;
+        CdkPixbufModule *image_module;
         gpointer context;
         gint original_width;
         gint original_height;
@@ -112,13 +112,13 @@ typedef struct
         gboolean size_fixed;
         gboolean needs_scale;
 	gchar *filename;
-} GdkPixbufLoaderPrivate;
+} CdkPixbufLoaderPrivate;
 
-G_DEFINE_TYPE (GdkPixbufLoader, cdk_pixbuf_loader, G_TYPE_OBJECT)
+G_DEFINE_TYPE (CdkPixbufLoader, cdk_pixbuf_loader, G_TYPE_OBJECT)
 
 
 static void
-cdk_pixbuf_loader_class_init (GdkPixbufLoaderClass *class)
+cdk_pixbuf_loader_class_init (CdkPixbufLoaderClass *class)
 {
         GObjectClass *object_class;
   
@@ -127,7 +127,7 @@ cdk_pixbuf_loader_class_init (GdkPixbufLoaderClass *class)
         object_class->finalize = cdk_pixbuf_loader_finalize;
 
         /**
-         * GdkPixbufLoader::size-prepared:
+         * CdkPixbufLoader::size-prepared:
          * @loader: the object which received the signal.
          * @width: the original width of the image
          * @height: the original height of the image
@@ -144,7 +144,7 @@ cdk_pixbuf_loader_class_init (GdkPixbufLoaderClass *class)
                 g_signal_new ("size-prepared",
                               G_TYPE_FROM_CLASS (object_class),
                               G_SIGNAL_RUN_LAST,
-                              G_STRUCT_OFFSET (GdkPixbufLoaderClass, size_prepared),
+                              G_STRUCT_OFFSET (CdkPixbufLoaderClass, size_prepared),
                               NULL, NULL,
                               _cdk_pixbuf_marshal_VOID__INT_INT,
                               G_TYPE_NONE, 2, 
@@ -152,7 +152,7 @@ cdk_pixbuf_loader_class_init (GdkPixbufLoaderClass *class)
                               G_TYPE_INT);
   
         /**
-         * GdkPixbufLoader::area-prepared:
+         * CdkPixbufLoader::area-prepared:
          * @loader: the object which received the signal.
          *
          * This signal is emitted when the pixbuf loader has allocated the 
@@ -166,13 +166,13 @@ cdk_pixbuf_loader_class_init (GdkPixbufLoaderClass *class)
                 g_signal_new ("area-prepared",
                               G_TYPE_FROM_CLASS (object_class),
                               G_SIGNAL_RUN_LAST,
-                              G_STRUCT_OFFSET (GdkPixbufLoaderClass, area_prepared),
+                              G_STRUCT_OFFSET (CdkPixbufLoaderClass, area_prepared),
                               NULL, NULL,
                               _cdk_pixbuf_marshal_VOID__VOID,
                               G_TYPE_NONE, 0);
 
         /**
-         * GdkPixbufLoader::area-updated:
+         * CdkPixbufLoader::area-updated:
          * @loader: the object which received the signal.
          * @x: X offset of upper-left corner of the updated area.
          * @y: Y offset of upper-left corner of the updated area.
@@ -192,7 +192,7 @@ cdk_pixbuf_loader_class_init (GdkPixbufLoaderClass *class)
                 g_signal_new ("area-updated",
                               G_TYPE_FROM_CLASS (object_class),
                               G_SIGNAL_RUN_LAST,
-                              G_STRUCT_OFFSET (GdkPixbufLoaderClass, area_updated),
+                              G_STRUCT_OFFSET (CdkPixbufLoaderClass, area_updated),
                               NULL, NULL,
                               _cdk_pixbuf_marshal_VOID__INT_INT_INT_INT,
                               G_TYPE_NONE, 4,
@@ -202,7 +202,7 @@ cdk_pixbuf_loader_class_init (GdkPixbufLoaderClass *class)
                               G_TYPE_INT);
   
         /**
-         * GdkPixbufLoader::closed:
+         * CdkPixbufLoader::closed:
          * @loader: the object which received the signal.
          *
          * This signal is emitted when cdk_pixbuf_loader_close() is called.
@@ -215,18 +215,18 @@ cdk_pixbuf_loader_class_init (GdkPixbufLoaderClass *class)
                 g_signal_new ("closed",
                               G_TYPE_FROM_CLASS (object_class),
                               G_SIGNAL_RUN_LAST,
-                              G_STRUCT_OFFSET (GdkPixbufLoaderClass, closed),
+                              G_STRUCT_OFFSET (CdkPixbufLoaderClass, closed),
                               NULL, NULL,
                               _cdk_pixbuf_marshal_VOID__VOID,
                               G_TYPE_NONE, 0);
 }
 
 static void
-cdk_pixbuf_loader_init (GdkPixbufLoader *loader)
+cdk_pixbuf_loader_init (CdkPixbufLoader *loader)
 {
-        GdkPixbufLoaderPrivate *priv;
+        CdkPixbufLoaderPrivate *priv;
   
-        priv = g_new0 (GdkPixbufLoaderPrivate, 1);
+        priv = g_new0 (CdkPixbufLoaderPrivate, 1);
         priv->original_width = -1;
         priv->original_height = -1;
         priv->width = -1;
@@ -238,14 +238,14 @@ cdk_pixbuf_loader_init (GdkPixbufLoader *loader)
 static void
 cdk_pixbuf_loader_finalize (GObject *object)
 {
-        GdkPixbufLoader *loader;
-        GdkPixbufLoaderPrivate *priv = NULL;
+        CdkPixbufLoader *loader;
+        CdkPixbufLoaderPrivate *priv = NULL;
   
         loader = CDK_PIXBUF_LOADER (object);
         priv = loader->priv;
 
         if (!priv->closed) {
-                g_warning ("GdkPixbufLoader finalized without calling cdk_pixbuf_loader_close() - this is not allowed. You must explicitly end the data stream to the loader before dropping the last reference.");
+                g_warning ("CdkPixbufLoader finalized without calling cdk_pixbuf_loader_close() - this is not allowed. You must explicitly end the data stream to the loader before dropping the last reference.");
         }
         if (priv->animation)
                 g_object_unref (priv->animation);
@@ -275,11 +275,11 @@ cdk_pixbuf_loader_finalize (GObject *object)
  * Since: 2.2
  */
 void 
-cdk_pixbuf_loader_set_size (GdkPixbufLoader *loader,
+cdk_pixbuf_loader_set_size (CdkPixbufLoader *loader,
 			    gint             width,
 			    gint             height)
 {
-        GdkPixbufLoaderPrivate *priv;
+        CdkPixbufLoaderPrivate *priv;
 
         g_return_if_fail (CDK_IS_PIXBUF_LOADER (loader));
         g_return_if_fail (width >= 0 && height >= 0);
@@ -296,7 +296,7 @@ cdk_pixbuf_loader_set_size (GdkPixbufLoader *loader,
 static void
 cdk_pixbuf_loader_size_func (gint *width, gint *height, gpointer loader)
 {
-        GdkPixbufLoaderPrivate *priv = CDK_PIXBUF_LOADER (loader)->priv;
+        CdkPixbufLoaderPrivate *priv = CDK_PIXBUF_LOADER (loader)->priv;
 
         priv->original_width = *width;
         priv->original_height = *height;
@@ -316,11 +316,11 @@ cdk_pixbuf_loader_size_func (gint *width, gint *height, gpointer loader)
 }
 
 static void
-cdk_pixbuf_loader_prepare (GdkPixbuf          *pixbuf,
-                           GdkPixbufAnimation *anim,
+cdk_pixbuf_loader_prepare (CdkPixbuf          *pixbuf,
+                           CdkPixbufAnimation *anim,
 			   gpointer            loader)
 {
-        GdkPixbufLoaderPrivate *priv = CDK_PIXBUF_LOADER (loader)->priv;
+        CdkPixbufLoaderPrivate *priv = CDK_PIXBUF_LOADER (loader)->priv;
         gint width, height;
         g_return_if_fail (pixbuf != NULL);
 
@@ -387,14 +387,14 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 }
 
 static void
-cdk_pixbuf_loader_update (GdkPixbuf *pixbuf,
+cdk_pixbuf_loader_update (CdkPixbuf *pixbuf,
 			  gint       x,
 			  gint       y,
 			  gint       width,
 			  gint       height,
 			  gpointer   loader)
 {
-        GdkPixbufLoaderPrivate *priv = CDK_PIXBUF_LOADER (loader)->priv;
+        CdkPixbufLoaderPrivate *priv = CDK_PIXBUF_LOADER (loader)->priv;
   
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
         if (!priv->needs_scale)
@@ -410,10 +410,10 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 
 /* Defense against broken loaders; DO NOT take this as a GError example! */
 static void
-cdk_pixbuf_loader_ensure_error (GdkPixbufLoader *loader,
+cdk_pixbuf_loader_ensure_error (CdkPixbufLoader *loader,
                                 GError         **error)
 { 
-        GdkPixbufLoaderPrivate *priv = loader->priv;
+        CdkPixbufLoaderPrivate *priv = loader->priv;
 
         if (error == NULL || *error != NULL)
                 return;
@@ -430,11 +430,11 @@ cdk_pixbuf_loader_ensure_error (GdkPixbufLoader *loader,
 }
 
 static gint
-cdk_pixbuf_loader_load_module (GdkPixbufLoader *loader,
+cdk_pixbuf_loader_load_module (CdkPixbufLoader *loader,
                                const char      *image_type,
                                GError         **error)
 {
-        GdkPixbufLoaderPrivate *priv = loader->priv;
+        CdkPixbufLoaderPrivate *priv = loader->priv;
 
         if (image_type)
                 {
@@ -491,13 +491,13 @@ cdk_pixbuf_loader_load_module (GdkPixbufLoader *loader,
 }
 
 static int
-cdk_pixbuf_loader_eat_header_write (GdkPixbufLoader *loader,
+cdk_pixbuf_loader_eat_header_write (CdkPixbufLoader *loader,
 				    const guchar    *buf,
 				    gsize            count,
                                     GError         **error)
 {
         gint n_bytes;
-        GdkPixbufLoaderPrivate *priv = loader->priv;
+        CdkPixbufLoaderPrivate *priv = loader->priv;
   
         n_bytes = MIN(SNIFF_BUFFER_SIZE - priv->header_buf_offset, count);
         memcpy (priv->header_buf + priv->header_buf_offset, buf, n_bytes);
@@ -526,12 +526,12 @@ cdk_pixbuf_loader_eat_header_write (GdkPixbufLoader *loader,
  *   `FALSE` if the loader cannot parse the buffer
  **/
 gboolean
-cdk_pixbuf_loader_write (GdkPixbufLoader *loader,
+cdk_pixbuf_loader_write (CdkPixbufLoader *loader,
 			 const guchar    *buf,
 			 gsize            count,
                          GError         **error)
 {
-        GdkPixbufLoaderPrivate *priv;
+        CdkPixbufLoaderPrivate *priv;
   
         g_return_val_if_fail (CDK_IS_PIXBUF_LOADER (loader), FALSE);
   
@@ -588,7 +588,7 @@ cdk_pixbuf_loader_write (GdkPixbufLoader *loader,
  * Since: 2.30
  */
 gboolean
-cdk_pixbuf_loader_write_bytes (GdkPixbufLoader *loader,
+cdk_pixbuf_loader_write_bytes (CdkPixbufLoader *loader,
                                GBytes          *buffer,
                                GError         **error)
 {
@@ -610,7 +610,7 @@ cdk_pixbuf_loader_write_bytes (GdkPixbufLoader *loader,
  *
  * Return value: A newly-created pixbuf loader.
  **/
-GdkPixbufLoader *
+CdkPixbufLoader *
 cdk_pixbuf_loader_new (void)
 {
         return g_object_new (CDK_TYPE_PIXBUF_LOADER, NULL);
@@ -634,15 +634,15 @@ cdk_pixbuf_loader_new (void)
  * are installed, but typically "png", "jpeg", "gif", "tiff" and 
  * "xpm" are among the supported formats. To obtain the full list of
  * supported image formats, call cdk_pixbuf_format_get_name() on each 
- * of the #GdkPixbufFormat structs returned by cdk_pixbuf_get_formats().
+ * of the #CdkPixbufFormat structs returned by cdk_pixbuf_get_formats().
  *
  * Return value: A newly-created pixbuf loader.
  **/
-GdkPixbufLoader *
+CdkPixbufLoader *
 cdk_pixbuf_loader_new_with_type (const char *image_type,
                                  GError    **error)
 {
-        GdkPixbufLoader *retval;
+        CdkPixbufLoader *retval;
         GError *tmp;
         g_return_val_if_fail (error == NULL || *error == NULL, NULL);
   
@@ -679,32 +679,32 @@ cdk_pixbuf_loader_new_with_type (const char *image_type,
  * are installed, but typically "image/png", "image/jpeg", "image/gif", 
  * "image/tiff" and "image/x-xpixmap" are among the supported mime types. 
  * To obtain the full list of supported mime types, call 
- * cdk_pixbuf_format_get_mime_types() on each of the #GdkPixbufFormat 
+ * cdk_pixbuf_format_get_mime_types() on each of the #CdkPixbufFormat 
  * structs returned by cdk_pixbuf_get_formats().
  *
  * Return value: A newly-created pixbuf loader.
  *
  * Since: 2.4
  **/
-GdkPixbufLoader *
+CdkPixbufLoader *
 cdk_pixbuf_loader_new_with_mime_type (const char *mime_type,
                                       GError    **error)
 {
         const char * image_type = NULL;
         char ** mimes;
 
-        GdkPixbufLoader *retval;
+        CdkPixbufLoader *retval;
         GError *tmp;
   
         GSList * formats;
-        GdkPixbufFormat *info;
+        CdkPixbufFormat *info;
         int i, j, length;
 
         formats = cdk_pixbuf_get_formats ();
         length = g_slist_length (formats);
 
         for (i = 0; i < length && image_type == NULL; i++) {
-                info = (GdkPixbufFormat *)g_slist_nth_data (formats, i);
+                info = (CdkPixbufFormat *)g_slist_nth_data (formats, i);
                 mimes = info->mime_types;
                 
                 for (j = 0; mimes[j] != NULL; j++)
@@ -731,11 +731,11 @@ cdk_pixbuf_loader_new_with_mime_type (const char *mime_type,
         return retval;
 }
 
-GdkPixbufLoader *
+CdkPixbufLoader *
 _cdk_pixbuf_loader_new_with_filename (const char *filename)
 {
-	GdkPixbufLoader *retval;
-        GdkPixbufLoaderPrivate *priv;
+	CdkPixbufLoader *retval;
+        CdkPixbufLoaderPrivate *priv;
 
         retval = g_object_new (CDK_TYPE_PIXBUF_LOADER, NULL);
 	priv = retval->priv;
@@ -748,10 +748,10 @@ _cdk_pixbuf_loader_new_with_filename (const char *filename)
  * cdk_pixbuf_loader_get_pixbuf:
  * @loader: A pixbuf loader.
  *
- * Queries the #GdkPixbuf that a pixbuf loader is currently creating.
+ * Queries the #CdkPixbuf that a pixbuf loader is currently creating.
  *
  * In general it only makes sense to call this function after the
- * [signal@GdkPixbuf.PixbufLoader::area-prepared] signal has been
+ * [signal@CdkPixbuf.PixbufLoader::area-prepared] signal has been
  * emitted by the loader; this means that enough data has been read
  * to know the size of the image that will be allocated.
  *
@@ -767,10 +767,10 @@ _cdk_pixbuf_loader_new_with_filename (const char *filename)
  * Return value: (transfer none) (nullable): The pixbuf that the loader is
  *   creating
  **/
-GdkPixbuf *
-cdk_pixbuf_loader_get_pixbuf (GdkPixbufLoader *loader)
+CdkPixbuf *
+cdk_pixbuf_loader_get_pixbuf (CdkPixbufLoader *loader)
 {
-        GdkPixbufLoaderPrivate *priv;
+        CdkPixbufLoaderPrivate *priv;
   
         g_return_val_if_fail (CDK_IS_PIXBUF_LOADER (loader), NULL);
   
@@ -788,10 +788,10 @@ G_GNUC_END_IGNORE_DEPRECATIONS
  * cdk_pixbuf_loader_get_animation:
  * @loader: A pixbuf loader
  *
- * Queries the #GdkPixbufAnimation that a pixbuf loader is currently creating.
+ * Queries the #CdkPixbufAnimation that a pixbuf loader is currently creating.
  *
  * In general it only makes sense to call this function after the
- * [signal@GdkPixbuf.PixbufLoader::area-prepared] signal has been emitted by
+ * [signal@CdkPixbuf.PixbufLoader::area-prepared] signal has been emitted by
  * the loader.
  *
  * If the loader doesn't have enough bytes yet, and hasn't emitted the `area-prepared`
@@ -800,10 +800,10 @@ G_GNUC_END_IGNORE_DEPRECATIONS
  * Return value: (transfer none) (nullable): The animation that the loader is
  *   currently loading
  */
-GdkPixbufAnimation *
-cdk_pixbuf_loader_get_animation (GdkPixbufLoader *loader)
+CdkPixbufAnimation *
+cdk_pixbuf_loader_get_animation (CdkPixbufLoader *loader)
 {
-        GdkPixbufLoaderPrivate *priv;
+        CdkPixbufLoaderPrivate *priv;
   
         g_return_val_if_fail (CDK_IS_PIXBUF_LOADER (loader), NULL);
   
@@ -837,10 +837,10 @@ cdk_pixbuf_loader_get_animation (GdkPixbufLoader *loader)
  *   passed out via the update_area signal
  */
 gboolean
-cdk_pixbuf_loader_close (GdkPixbufLoader *loader,
+cdk_pixbuf_loader_close (CdkPixbufLoader *loader,
                          GError         **error)
 {
-        GdkPixbufLoaderPrivate *priv;
+        CdkPixbufLoaderPrivate *priv;
         gboolean retval = TRUE;
   
         g_return_val_if_fail (CDK_IS_PIXBUF_LOADER (loader), TRUE);
@@ -907,14 +907,14 @@ cdk_pixbuf_loader_close (GdkPixbufLoader *loader,
  * Obtains the available information about the format of the 
  * currently loading image file.
  *
- * Returns: (nullable) (transfer none): A #GdkPixbufFormat
+ * Returns: (nullable) (transfer none): A #CdkPixbufFormat
  * 
  * Since: 2.2
  */
-GdkPixbufFormat *
-cdk_pixbuf_loader_get_format (GdkPixbufLoader *loader)
+CdkPixbufFormat *
+cdk_pixbuf_loader_get_format (CdkPixbufLoader *loader)
 {
-        GdkPixbufLoaderPrivate *priv;
+        CdkPixbufLoaderPrivate *priv;
   
         g_return_val_if_fail (CDK_IS_PIXBUF_LOADER (loader), NULL);
   

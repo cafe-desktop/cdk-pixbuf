@@ -807,8 +807,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Falha ao alocar a estrutura de contexto do QTIF."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Falha ao criar o objeto GdkPixbufLoader."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Falha ao criar o objeto CdkPixbufLoader."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -1047,8 +1047,8 @@ msgstr "XPM"
 #~ msgstr "Pixbuf transformado tem altura ou largura igual a zero."
 
 #~ msgctxt "image format"
-#~ msgid "GdkPixdata"
-#~ msgstr "GdkPixdata"
+#~ msgid "CdkPixdata"
+#~ msgstr "CdkPixdata"
 
 #~ msgid "Cannot allocate memory for IOBuffer struct"
 #~ msgstr "Não foi possível alocar memória para a estrutura IOBuffer"

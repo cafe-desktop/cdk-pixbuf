@@ -1,4 +1,4 @@
-/* GdkPixbuf library - Image creation from in-memory buffers
+/* CdkPixbuf library - Image creation from in-memory buffers
  *
  * Copyright (C) 1999 The Free Software Foundation
  *
@@ -41,32 +41,32 @@
  * @destroy_fn_data: (nullable): Closure data to pass to the destroy
  *   notification function
  * 
- * Creates a new #GdkPixbuf out of in-memory image data.
+ * Creates a new #CdkPixbuf out of in-memory image data.
  *
  * Currently only RGB images with 8 bits per sample are supported.
  *
  * Since you are providing a pre-allocated pixel buffer, you must also
  * specify a way to free that data.  This is done with a function of
- * type `GdkPixbufDestroyNotify`.  When a pixbuf created with is
+ * type `CdkPixbufDestroyNotify`.  When a pixbuf created with is
  * finalized, your destroy notification function will be called, and
  * it is its responsibility to free the pixel array.
  *
- * See also: [ctor@GdkPixbuf.Pixbuf.new_from_bytes]
+ * See also: [ctor@CdkPixbuf.Pixbuf.new_from_bytes]
  *
  * Return value: (transfer full): A newly-created pixbuf
  **/
-GdkPixbuf *
+CdkPixbuf *
 cdk_pixbuf_new_from_data (const guchar           *data,
-                          GdkColorspace           colorspace,
+                          CdkColorspace           colorspace,
                           gboolean                has_alpha,
 			  int                     bits_per_sample,
                           int                     width,
                           int                     height,
                           int                     rowstride,
-	                  GdkPixbufDestroyNotify  destroy_fn,
+	                  CdkPixbufDestroyNotify  destroy_fn,
                           gpointer                destroy_fn_data)
 {
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 
 	/* Only 8-bit/sample RGB buffers are supported for now */
 
@@ -103,7 +103,7 @@ cdk_pixbuf_new_from_data (const guchar           *data,
  * @height: Height of the image in pixels, must be > 0
  * @rowstride: Distance in bytes between row starts
  * 
- * Creates a new #GdkPixbuf out of in-memory readonly image data.
+ * Creates a new #CdkPixbuf out of in-memory readonly image data.
  *
  * Currently only RGB images with 8 bits per sample are supported.
  *
@@ -114,9 +114,9 @@ cdk_pixbuf_new_from_data (const guchar           *data,
  *
  * Since: 2.32
  **/
-GdkPixbuf *
+CdkPixbuf *
 cdk_pixbuf_new_from_bytes (GBytes        *data,
-                           GdkColorspace  colorspace,
+                           CdkColorspace  colorspace,
                            gboolean       has_alpha,
 			   int            bits_per_sample,
                            int            width,

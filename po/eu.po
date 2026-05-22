@@ -741,8 +741,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Huts egin du QTIFen testuinguru-egitura esleitzean."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Huts egin du GdkPixbufLoader objektua sortzean."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Huts egin du CdkPixbufLoader objektua sortzean."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -982,8 +982,8 @@ msgstr "XPM"
 #~ msgstr "Bihurtutako pixbuf-en zabalera edo altuera zero da."
 
 #~ msgctxt "image format"
-#~ msgid "GdkPixdata"
-#~ msgstr "GdkPixdata"
+#~ msgid "CdkPixdata"
+#~ msgstr "CdkPixdata"
 
 #~ msgid "Cannot allocate memory for IOBuffer struct"
 #~ msgstr "Ezin zaio IOBuffer-en egiturari memoriarik esleitu"

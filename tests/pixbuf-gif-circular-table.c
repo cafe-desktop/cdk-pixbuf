@@ -7,7 +7,7 @@
 static void
 test_gif_circular_table (void)
 {
-  GdkPixbuf *pixbuf;
+  CdkPixbuf *pixbuf;
   GError *error = NULL;
 
   if (!format_supported ("gif"))

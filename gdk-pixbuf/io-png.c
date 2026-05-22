@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-/* GdkPixbuf library - PNG image loader
+/* CdkPixbuf library - PNG image loader
  *
  * Copyright (C) 1999 Mark Crichton
  * Copyright (C) 1999 The Free Software Foundation
@@ -262,10 +262,10 @@ png_free_callback (png_structp o, png_voidp x)
 
 #ifndef NO_MODULE_ENTRIES
 /* Shared library entry point */
-static GdkPixbuf *
+static CdkPixbuf *
 cdk_pixbuf__png_image_load (FILE *f, GError **error)
 {
-        GdkPixbuf * volatile pixbuf = NULL;
+        CdkPixbuf * volatile pixbuf = NULL;
         gint rowstride;
 	png_structp png_ptr;
 	png_infop info_ptr;
@@ -432,12 +432,12 @@ struct _LoadContext {
         png_structp png_read_ptr;
         png_infop   png_info_ptr;
 
-        GdkPixbufModuleSizeFunc size_func;
-        GdkPixbufModulePreparedFunc prepared_func;
-        GdkPixbufModuleUpdatedFunc updated_func;
+        CdkPixbufModuleSizeFunc size_func;
+        CdkPixbufModulePreparedFunc prepared_func;
+        CdkPixbufModuleUpdatedFunc updated_func;
         gpointer notify_user_data;
 
-        GdkPixbuf* pixbuf;
+        CdkPixbuf* pixbuf;
 
         /* row number of first row seen, or -1 if none yet seen */
 
@@ -462,9 +462,9 @@ struct _LoadContext {
 
 #ifndef NO_MODULE_ENTRIES
 static gpointer
-cdk_pixbuf__png_image_begin_load (GdkPixbufModuleSizeFunc size_func,
-                                  GdkPixbufModulePreparedFunc prepared_func,
-				  GdkPixbufModuleUpdatedFunc updated_func,
+cdk_pixbuf__png_image_begin_load (CdkPixbufModuleSizeFunc size_func,
+                                  CdkPixbufModulePreparedFunc prepared_func,
+				  CdkPixbufModuleUpdatedFunc updated_func,
 				  gpointer user_data,
                                   GError **error)
 {
@@ -895,7 +895,7 @@ png_warning_callback (png_structp png_read_ptr,
 /* Save */
 
 typedef struct {
-        GdkPixbufSaveFunc save_func;
+        CdkPixbufSaveFunc save_func;
         gpointer user_data;
         GError **error;
 } SaveToFunctionIoPtr;
@@ -921,14 +921,14 @@ png_save_to_callback_flush_func (png_structp png_ptr)
 }
 
 static gboolean
-real_save_png (GdkPixbuf        *pixbuf,
+real_save_png (CdkPixbuf        *pixbuf,
                int               n_keys,
                gchar           **keys,
                gchar           **values,
                GError          **error,
                gboolean          to_callback,
                FILE             *f,
-               GdkPixbufSaveFunc save_func,
+               CdkPixbufSaveFunc save_func,
                gpointer          user_data)
 {
         png_structp png_ptr = NULL;
@@ -1206,7 +1206,7 @@ cleanup:
 
 static gboolean
 cdk_pixbuf__png_image_save (FILE          *f, 
-                            GdkPixbuf     *pixbuf, 
+                            CdkPixbuf     *pixbuf, 
                             gchar        **keys,
                             gchar        **values,
                             GError       **error)
@@ -1218,9 +1218,9 @@ cdk_pixbuf__png_image_save (FILE          *f,
 }
 
 static gboolean
-cdk_pixbuf__png_image_save_to_callback (GdkPixbufSaveFunc   save_func,
+cdk_pixbuf__png_image_save_to_callback (CdkPixbufSaveFunc   save_func,
                                         gpointer            user_data,
-                                        GdkPixbuf          *pixbuf, 
+                                        CdkPixbuf          *pixbuf, 
                                         gchar             **keys,
                                         gchar             **values,
                                         GError            **error)
@@ -1252,7 +1252,7 @@ cdk_pixbuf__png_is_save_option_supported (const gchar *option_key)
 #define MODULE_ENTRY(function) void _cdk_pixbuf__png_ ## function
 #endif
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
         module->load = cdk_pixbuf__png_image_load;
         module->begin_load = cdk_pixbuf__png_image_begin_load;
@@ -1263,9 +1263,9 @@ MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
         module->is_save_option_supported = cdk_pixbuf__png_is_save_option_supported;
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-        static const GdkPixbufModulePattern signature[] = {
+        static const CdkPixbufModulePattern signature[] = {
                 { "\x89PNG\r\n\x1a\x0a", NULL, 100 },
                 { NULL, NULL, 0 }
         };
@@ -1279,7 +1279,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
 	};
 
 	info->name = "png";
-        info->signature = (GdkPixbufModulePattern *) signature;
+        info->signature = (CdkPixbufModulePattern *) signature;
 	info->description = NC_("image format", "PNG");
 	info->mime_types = (gchar **) mime_types;
 	info->extensions = (gchar **) extensions;

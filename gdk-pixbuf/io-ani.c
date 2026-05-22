@@ -1,5 +1,5 @@
 /* -*- mode: C; c-file-style: "linux" -*- */
-/* GdkPixbuf library - ANI image loader
+/* CdkPixbuf library - ANI image loader
  *
  * Copyright (C) 2002 The Free Software Foundation
  *
@@ -57,8 +57,8 @@ typedef struct _AniLoaderContext
         guint   n_bytes;
         guint   buffer_size;
         
-        GdkPixbufModulePreparedFunc prepared_func;
-        GdkPixbufModuleUpdatedFunc updated_func;
+        CdkPixbufModulePreparedFunc prepared_func;
+        CdkPixbufModuleUpdatedFunc updated_func;
         gpointer user_data;
         
         guint32 data_size;
@@ -79,8 +79,8 @@ typedef struct _AniLoaderContext
         gchar  *title;
         gchar  *author;
 
-        GdkPixbufAniAnim *animation;
-	GdkPixbufLoader *loader;
+        CdkPixbufAniAnim *animation;
+	CdkPixbufLoader *loader;
 
         int     pos;
 } AniLoaderContext;
@@ -131,7 +131,7 @@ context_free (AniLoaderContext *context)
 }
 
 static void
-prepared_callback (GdkPixbufLoader *loader,
+prepared_callback (CdkPixbufLoader *loader,
                    gpointer data)
 {
 	AniLoaderContext *context = (AniLoaderContext*)data;
@@ -140,7 +140,7 @@ prepared_callback (GdkPixbufLoader *loader,
 	g_print ("%d pixbuf prepared\n", context->pos);
 #endif
 
-	GdkPixbuf *pixbuf = cdk_pixbuf_loader_get_pixbuf (loader);
+	CdkPixbuf *pixbuf = cdk_pixbuf_loader_get_pixbuf (loader);
         if (!pixbuf)
 		return;
 
@@ -170,7 +170,7 @@ prepared_callback (GdkPixbufLoader *loader,
 		   animations because CtkImage ignores 
 		   cdk_pixbuf_animation_iter_on_currently_loading_frame()
 		   and always exposes the full frame */
-		GdkPixbuf *last = context->animation->pixbufs[context->pos - 1];
+		CdkPixbuf *last = context->animation->pixbufs[context->pos - 1];
 		gint width = MIN (cdk_pixbuf_get_width (last), cdk_pixbuf_get_width (pixbuf));
 		gint height = MIN (cdk_pixbuf_get_height (last), cdk_pixbuf_get_height (pixbuf));
 		cdk_pixbuf_copy_area (last, 0, 0, width, height, pixbuf, 0, 0);
@@ -180,13 +180,13 @@ prepared_callback (GdkPixbufLoader *loader,
 }
 
 static void
-updated_callback (GdkPixbufLoader* loader,
+updated_callback (CdkPixbufLoader* loader,
 		  gint x, gint y, gint width, gint height,
 		  gpointer data)
 {
 	AniLoaderContext *context = (AniLoaderContext*)data;
 
-	GdkPixbuf *pixbuf = cdk_pixbuf_loader_get_pixbuf (loader);
+	CdkPixbuf *pixbuf = cdk_pixbuf_loader_get_pixbuf (loader);
 	
 	(* context->updated_func) (pixbuf, 
 				   x, y, width, height,
@@ -372,7 +372,7 @@ ani_load_chunk (AniLoaderContext *context, GError **error)
 		context->animation->width = 0;
 		context->animation->height = 0;
 
-		context->animation->pixbufs = g_try_new0 (GdkPixbuf*, context->NumFrames);
+		context->animation->pixbufs = g_try_new0 (CdkPixbuf*, context->NumFrames);
 		context->animation->delay = g_try_new (gint, context->NumSteps);
 		context->animation->sequence = g_try_new (gint, context->NumSteps);
 
@@ -593,9 +593,9 @@ cdk_pixbuf__ani_image_load_increment (gpointer data,
 }
 
 static gpointer
-cdk_pixbuf__ani_image_begin_load (GdkPixbufModuleSizeFunc size_func, 
-                                  GdkPixbufModulePreparedFunc prepared_func, 
-				  GdkPixbufModuleUpdatedFunc  updated_func,
+cdk_pixbuf__ani_image_begin_load (CdkPixbufModuleSizeFunc size_func, 
+                                  CdkPixbufModulePreparedFunc prepared_func, 
+				  CdkPixbufModuleUpdatedFunc  updated_func,
 				  gpointer user_data,
 				  GError **error)
 {
@@ -660,16 +660,16 @@ cdk_pixbuf__ani_image_stop_load (gpointer data,
 #define MODULE_ENTRY(function) void _cdk_pixbuf__ani_ ## function
 #endif
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
         module->begin_load = cdk_pixbuf__ani_image_begin_load;
         module->stop_load = cdk_pixbuf__ani_image_stop_load;
         module->load_increment = cdk_pixbuf__ani_image_load_increment;
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-	static const GdkPixbufModulePattern signature[] = {
+	static const CdkPixbufModulePattern signature[] = {
 		{ "RIFF    ACON", "    xxxx    ", 100 },
 		{ NULL, NULL, 0 }
 	};
@@ -683,7 +683,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
 	};
 	
 	info->name = "ani";
-	info->signature = (GdkPixbufModulePattern *) signature;
+	info->signature = (CdkPixbufModulePattern *) signature;
 	info->description = NC_("image format", "Windows animated cursor");
 	info->mime_types = (gchar **) mime_types;
 	info->extensions = (gchar **) extensions;

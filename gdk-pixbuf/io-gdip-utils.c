@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
-/* GdkPixbuf library - Win32 GDI+ Pixbuf Loader
+/* CdkPixbuf library - Win32 GDI+ Pixbuf Loader
  *
  * Copyright (C) 2008 Dominic Lachowicz
  * Copyright (C) 2008 Alberto Ruiz
@@ -33,9 +33,9 @@
 #define LOAD_BUFFER_SIZE 65536
 
 struct _GdipContext {
-  GdkPixbufModuleUpdatedFunc  updated_func;
-  GdkPixbufModulePreparedFunc prepared_func;
-  GdkPixbufModuleSizeFunc     size_func;
+  CdkPixbufModuleUpdatedFunc  updated_func;
+  CdkPixbufModulePreparedFunc prepared_func;
+  CdkPixbufModuleSizeFunc     size_func;
 
   gpointer                    user_data;
   GByteArray                 *buffer;
@@ -165,7 +165,7 @@ static gboolean
 gdip_save_bitmap_to_callback (GpBitmap *bitmap,
                               const CLSID *format,
                               const EncoderParameters *encoder_params,
-                              GdkPixbufSaveFunc save_func,
+                              CdkPixbufSaveFunc save_func,
                               gpointer user_data,
                               GError **error)
 {
@@ -220,7 +220,7 @@ gdip_save_bitmap_to_callback (GpBitmap *bitmap,
 }                     
 
 static GpBitmap *
-gdip_pixbuf_to_bitmap (GdkPixbuf *pixbuf)
+gdip_pixbuf_to_bitmap (CdkPixbuf *pixbuf)
 {
   GpBitmap *bitmap = NULL;
 
@@ -549,7 +549,7 @@ destroy_gdipcontext (GdipContext *context)
 }
 
 static void
-emit_updated (GdipContext *context, GdkPixbuf *pixbuf)
+emit_updated (GdipContext *context, CdkPixbuf *pixbuf)
 {
   (*context->updated_func) (pixbuf,
                             0, 0,
@@ -559,15 +559,15 @@ emit_updated (GdipContext *context, GdkPixbuf *pixbuf)
 }
 
 static void
-emit_prepared (GdipContext *context, GdkPixbuf *pixbuf, GdkPixbufAnimation *anim)
+emit_prepared (GdipContext *context, CdkPixbuf *pixbuf, CdkPixbufAnimation *anim)
 {
   (*context->prepared_func) (pixbuf, anim, context->user_data);
 }
 
 static gpointer
-cdk_pixbuf__gdip_image_begin_load (GdkPixbufModuleSizeFunc size_func,
-                                   GdkPixbufModulePreparedFunc prepared_func,
-                                   GdkPixbufModuleUpdatedFunc  updated_func,
+cdk_pixbuf__gdip_image_begin_load (CdkPixbufModuleSizeFunc size_func,
+                                   CdkPixbufModulePreparedFunc prepared_func,
+                                   CdkPixbufModuleUpdatedFunc  updated_func,
                                    gpointer user_data,
                                    GError **error)
 {
@@ -599,10 +599,10 @@ cdk_pixbuf__gdip_image_load_increment (gpointer data,
   return TRUE;
 }
 
-static GdkPixbuf *
+static CdkPixbuf *
 gdip_bitmap_to_pixbuf (GpBitmap *bitmap, GError **error)
 {
-  GdkPixbuf *pixbuf = NULL;
+  CdkPixbuf *pixbuf = NULL;
   guchar *cursor = NULL;
   gint rowstride;
   gboolean has_alpha = FALSE;
@@ -668,13 +668,13 @@ static gboolean
 stop_load (GpBitmap *bitmap, GdipContext *context, GError **error)
 {
   guint       n_frames = 1, i;
-  GdkPixbufGdipAnim *animation = NULL;
+  CdkPixbufGdipAnim *animation = NULL;
 
   gdip_bitmap_get_n_frames (bitmap, &n_frames, TRUE);
 
   for (i = 0; i < n_frames; i++) {
-    GdkPixbuf *pixbuf = NULL;
-    GdkPixbufFrame *frame;
+    CdkPixbuf *pixbuf = NULL;
+    CdkPixbufFrame *frame;
     guint frame_delay = 0;
 
     gdip_bitmap_select_frame (bitmap, i, TRUE);
@@ -698,7 +698,7 @@ stop_load (GpBitmap *bitmap, GdipContext *context, GError **error)
       animation->loop = n_loops;
     }
 
-    frame = g_new (GdkPixbufFrame, 1);
+    frame = g_new (CdkPixbufFrame, 1);
     frame->pixbuf = pixbuf;
 
     gdip_bitmap_get_frame_delay (bitmap, i, &frame_delay);
@@ -846,7 +846,7 @@ gdip_save_to_file_callback (const gchar *buf,
 }
 
 void
-gdip_fill_vtable (GdkPixbufModule *module)
+gdip_fill_vtable (CdkPixbufModule *module)
 {
   if (gdip_init ()) {
     module->begin_load     = cdk_pixbuf__gdip_image_begin_load;
@@ -856,7 +856,7 @@ gdip_fill_vtable (GdkPixbufModule *module)
 }
 
 void
-gdip_fill_vector_vtable (GdkPixbufModule *module)
+gdip_fill_vector_vtable (CdkPixbufModule *module)
 {
   if (gdip_init ()) {
     module->begin_load     = cdk_pixbuf__gdip_image_begin_load;
@@ -866,10 +866,10 @@ gdip_fill_vector_vtable (GdkPixbufModule *module)
 }
 
 gboolean
-gdip_save_pixbuf (GdkPixbuf *pixbuf,
+gdip_save_pixbuf (CdkPixbuf *pixbuf,
                   const WCHAR *format,
                   const EncoderParameters *encoder_params,
-                  GdkPixbufSaveFunc save_func,
+                  CdkPixbufSaveFunc save_func,
                   gpointer user_data,
                   GError **error)
 {

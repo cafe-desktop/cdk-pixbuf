@@ -741,8 +741,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "YEcceḍ usideg n tɣessa n usatal QTIF."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Tecceḍ tmerna n tɣawsa n GdkPixbufLoader ."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Tecceḍ tmerna n tɣawsa n CdkPixbufLoader ."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."

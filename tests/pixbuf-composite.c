@@ -1,4 +1,4 @@
-/* GdkPixbuf library - test compositing
+/* CdkPixbuf library - test compositing
  *
  * Copyright (C) 2015 Red Hat, Inc.
  *
@@ -24,7 +24,7 @@
 static void
 test_composite1 (void)
 {
-  GdkPixbuf *red, *green, *out, *ref, *sub;
+  CdkPixbuf *red, *green, *out, *ref, *sub;
 
   red = cdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8, 24, 24);
   cdk_pixbuf_fill (red, 0xff000000);
@@ -61,7 +61,7 @@ test_composite1 (void)
 static void
 test_composite2 (void)
 {
-  GdkPixbuf *src, *dest;
+  CdkPixbuf *src, *dest;
   guchar *pixels, *p;
 
   char *filename = g_test_get_filename (G_TEST_DIST, "test-image.png", NULL);
@@ -74,7 +74,7 @@ test_composite2 (void)
   src = cdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "test-image.png", NULL), NULL);
 
   {
-    GdkPixbuf *tmp = cdk_pixbuf_new (CDK_COLORSPACE_RGB,
+    CdkPixbuf *tmp = cdk_pixbuf_new (CDK_COLORSPACE_RGB,
                                      TRUE,
                                      cdk_pixbuf_get_bits_per_sample (src),
                                      cdk_pixbuf_get_width (src),

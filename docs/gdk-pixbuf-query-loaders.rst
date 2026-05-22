@@ -5,7 +5,7 @@ cdk-pixbuf-query-loaders
 ========================
 
 -------------------------------------
-GdkPixbuf loader registration utility
+CdkPixbuf loader registration utility
 -------------------------------------
 
 SYNOPSIS

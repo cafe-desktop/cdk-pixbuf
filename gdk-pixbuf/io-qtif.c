@@ -1,5 +1,5 @@
 /* -*- mode: C; c-file-style: "linux" -*- */
-/* GdkPixbuf library - QTIF image loader
+/* CdkPixbuf library - QTIF image loader
  *
  * This module extracts image data from QTIF format and uses
  * other CDK pixbuf modules to decode the image data.
@@ -67,7 +67,7 @@ typedef struct {
 
 /* QTIF loader context */
 typedef struct {
-    GdkPixbufLoader *loader;
+    CdkPixbufLoader *loader;
     gpointer        user_data;
     QTIFState       state;
     guint32         run_length;
@@ -75,9 +75,9 @@ typedef struct {
 
     guchar          header_buffer[sizeof(QtHeader)];
 
-    GdkPixbufModuleSizeFunc     size_func;
-    GdkPixbufModulePreparedFunc prepared_func;
-    GdkPixbufModuleUpdatedFunc  updated_func;
+    CdkPixbufModuleSizeFunc     size_func;
+    CdkPixbufModulePreparedFunc prepared_func;
+    CdkPixbufModuleUpdatedFunc  updated_func;
     gint            cb_prepare_count;
     gint            cb_update_count;
 } QTIFContext;
@@ -85,10 +85,10 @@ typedef struct {
 /***
  * Local function prototypes
  */
-static GdkPixbuf *cdk_pixbuf__qtif_image_load (FILE *f, GError **error);
-static gpointer cdk_pixbuf__qtif_image_begin_load (GdkPixbufModuleSizeFunc size_func,
-                                                   GdkPixbufModulePreparedFunc prepared_func,
-                                                   GdkPixbufModuleUpdatedFunc updated_func,
+static CdkPixbuf *cdk_pixbuf__qtif_image_load (FILE *f, GError **error);
+static gpointer cdk_pixbuf__qtif_image_begin_load (CdkPixbufModuleSizeFunc size_func,
+                                                   CdkPixbufModulePreparedFunc prepared_func,
+                                                   CdkPixbufModuleUpdatedFunc updated_func,
                                                    gpointer user_data,
                                                    GError **error);
 static gboolean cdk_pixbuf__qtif_image_stop_load (gpointer context, GError **error);
@@ -98,12 +98,12 @@ static gboolean cdk_pixbuf__qtif_image_load_increment(gpointer context,
 static gboolean cdk_pixbuf__qtif_image_create_loader (QTIFContext *context, GError **error);
 static gboolean cdk_pixbuf__qtif_image_free_loader (QTIFContext *context, GError **error);
 
-static void cdk_pixbuf__qtif_cb_size_prepared(GdkPixbufLoader *loader,
+static void cdk_pixbuf__qtif_cb_size_prepared(CdkPixbufLoader *loader,
                                               gint width,
                                               gint height,
                                               gpointer user_data);
-static void cdk_pixbuf__qtif_cb_area_prepared(GdkPixbufLoader *loader, gpointer user_data);
-static void cdk_pixbuf__qtif_cb_area_updated(GdkPixbufLoader *loader,
+static void cdk_pixbuf__qtif_cb_area_prepared(CdkPixbufLoader *loader, gpointer user_data);
+static void cdk_pixbuf__qtif_cb_area_updated(CdkPixbufLoader *loader,
                                              gint x,
                                              gint y,
                                              gint width,
@@ -115,7 +115,7 @@ static void cdk_pixbuf__qtif_cb_area_updated(GdkPixbufLoader *loader,
  */
 
 /* Load QTIF from a file handler. */
-static GdkPixbuf *cdk_pixbuf__qtif_image_load (FILE *f, GError **error)
+static CdkPixbuf *cdk_pixbuf__qtif_image_load (FILE *f, GError **error)
 {
     guint count;
 
@@ -158,10 +158,10 @@ static GdkPixbuf *cdk_pixbuf__qtif_image_load (FILE *f, GError **error)
         {
         case QTIF_TAG_IDATA: /* "idat" data atom. */
             {
-                /* Load image using GdkPixbufLoader. */
+                /* Load image using CdkPixbufLoader. */
                 guchar *buf;
-                GdkPixbufLoader *loader;
-                GdkPixbuf *pixbuf = NULL;
+                CdkPixbufLoader *loader;
+                CdkPixbuf *pixbuf = NULL;
                 GError *tmp = NULL;
 
                 /* Allocate read buffer. */
@@ -178,7 +178,7 @@ static GdkPixbuf *cdk_pixbuf__qtif_image_load (FILE *f, GError **error)
                     return NULL;
                 }
 
-                /* Create GdkPixbufLoader. */
+                /* Create CdkPixbufLoader. */
                 loader = cdk_pixbuf_loader_new();
                 if(loader == NULL)
                 {
@@ -248,9 +248,9 @@ clean_up:
 }
 
 /* Incremental load begin. */
-static gpointer cdk_pixbuf__qtif_image_begin_load (GdkPixbufModuleSizeFunc size_func,
-                                                   GdkPixbufModulePreparedFunc prepared_func,
-                                                   GdkPixbufModuleUpdatedFunc updated_func,
+static gpointer cdk_pixbuf__qtif_image_begin_load (CdkPixbufModuleSizeFunc size_func,
+                                                   CdkPixbufModulePreparedFunc prepared_func,
+                                                   CdkPixbufModuleUpdatedFunc updated_func,
                                                    gpointer user_data,
                                                    GError **error)
 {
@@ -304,7 +304,7 @@ static gboolean cdk_pixbuf__qtif_image_stop_load (gpointer data, GError **error)
     return ret;
 }
 
-/* Create a new GdkPixbufLoader and connect to its signals. */
+/* Create a new CdkPixbufLoader and connect to its signals. */
 static gboolean cdk_pixbuf__qtif_image_create_loader (QTIFContext *context, GError **error)
 {
     GError *tmp = NULL;
@@ -320,13 +320,13 @@ static gboolean cdk_pixbuf__qtif_image_create_loader (QTIFContext *context, GErr
         cdk_pixbuf__qtif_image_free_loader(context, &tmp);
     }
 
-    /* Create GdkPixbufLoader object. */
+    /* Create CdkPixbufLoader object. */
     context->loader = cdk_pixbuf_loader_new();
     if(context->loader == NULL)
     {
         g_set_error_literal (error, CDK_PIXBUF_ERROR,
                              CDK_PIXBUF_ERROR_FAILED,
-                             _("Failed to create GdkPixbufLoader object."));
+                             _("Failed to create CdkPixbufLoader object."));
         return FALSE;
     }
 
@@ -345,10 +345,10 @@ static gboolean cdk_pixbuf__qtif_image_create_loader (QTIFContext *context, GErr
     return TRUE;
 }
 
-/* Free the GdkPixbufLoader and perform callback if haven't done so. */
+/* Free the CdkPixbufLoader and perform callback if haven't done so. */
 static gboolean cdk_pixbuf__qtif_image_free_loader (QTIFContext *context, GError **error)
 {
-    GdkPixbuf *pixbuf;
+    CdkPixbuf *pixbuf;
     GError *tmp = NULL;
     gboolean ret;
 
@@ -357,7 +357,7 @@ static gboolean cdk_pixbuf__qtif_image_free_loader (QTIFContext *context, GError
         return FALSE;
     }
 
-    /* Close GdkPixbufLoader. */
+    /* Close CdkPixbufLoader. */
     ret = cdk_pixbuf_loader_close(context->loader, &tmp);
     if(!ret)
     {
@@ -365,14 +365,14 @@ static gboolean cdk_pixbuf__qtif_image_free_loader (QTIFContext *context, GError
     }
 
 
-    /* Get GdkPixbuf from GdkPixbufLoader. */
+    /* Get CdkPixbuf from CdkPixbufLoader. */
     pixbuf = cdk_pixbuf_loader_get_pixbuf(context->loader);
     if(pixbuf != NULL)
     {
         g_object_ref(pixbuf);
     }
 
-    /* Free GdkPixbufLoader. */
+    /* Free CdkPixbufLoader. */
     g_object_ref(context->loader);
     context->loader = NULL;
 
@@ -394,7 +394,7 @@ static gboolean cdk_pixbuf__qtif_image_free_loader (QTIFContext *context, GError
             (context->updated_func)(pixbuf, 0, 0, width, height, context->user_data);
         }
 
-        /* Free GdkPixbuf (callback function should ref it). */
+        /* Free CdkPixbuf (callback function should ref it). */
         g_object_ref(pixbuf);
     }
 
@@ -460,7 +460,7 @@ static gboolean cdk_pixbuf__qtif_image_load_increment (gpointer data,
 
                     context->state = STATE_DATA;
 
-                    /* Create GdkPixbufLoader for this image data. */
+                    /* Create CdkPixbufLoader for this image data. */
                     ret = cdk_pixbuf__qtif_image_create_loader(context, &tmp);
                     if(!ret)
                     {
@@ -478,7 +478,7 @@ static gboolean cdk_pixbuf__qtif_image_load_increment (gpointer data,
             /* Check for atom boundary. */
             if(context->run_length > size)
             {
-                /* Supply image data to GdkPixbufLoader if in STATE_DATA. */
+                /* Supply image data to CdkPixbufLoader if in STATE_DATA. */
                 if(context->state == STATE_DATA)
                 {
                     tmp = NULL;
@@ -493,7 +493,7 @@ static gboolean cdk_pixbuf__qtif_image_load_increment (gpointer data,
             }
             else
             {
-                /* Supply image data to GdkPixbufLoader if in STATE_DATA. */
+                /* Supply image data to CdkPixbufLoader if in STATE_DATA. */
                 if(context->state == STATE_DATA)
                 {
                     gboolean r;
@@ -506,7 +506,7 @@ static gboolean cdk_pixbuf__qtif_image_load_increment (gpointer data,
                         g_propagate_error (error, tmp);
                     }
 
-                    /* Free GdkPixbufLoader and handle callback. */
+                    /* Free CdkPixbufLoader and handle callback. */
                     tmp = NULL;
                     r = cdk_pixbuf__qtif_image_free_loader(context, &tmp);
                     if(!r)
@@ -531,7 +531,7 @@ static gboolean cdk_pixbuf__qtif_image_load_increment (gpointer data,
 }
 
 /* Event handlers */
-static void cdk_pixbuf__qtif_cb_size_prepared(GdkPixbufLoader *loader,
+static void cdk_pixbuf__qtif_cb_size_prepared(CdkPixbufLoader *loader,
                                               gint width,
                                               gint height,
                                               gpointer user_data)
@@ -541,15 +541,15 @@ static void cdk_pixbuf__qtif_cb_size_prepared(GdkPixbufLoader *loader,
     context->cb_prepare_count++;
 }
 
-static void cdk_pixbuf__qtif_cb_area_prepared(GdkPixbufLoader *loader, gpointer user_data)
+static void cdk_pixbuf__qtif_cb_area_prepared(CdkPixbufLoader *loader, gpointer user_data)
 {
     QTIFContext *context = (QTIFContext *)user_data;
-    GdkPixbuf *pixbuf = cdk_pixbuf_loader_get_pixbuf(context->loader);
+    CdkPixbuf *pixbuf = cdk_pixbuf_loader_get_pixbuf(context->loader);
     (context->prepared_func)(pixbuf, NULL, context->user_data);
     context->cb_update_count++;
 }
 
-static void cdk_pixbuf__qtif_cb_area_updated(GdkPixbufLoader *loader,
+static void cdk_pixbuf__qtif_cb_area_updated(CdkPixbufLoader *loader,
                                              gint x,
                                              gint y,
                                              gint width,
@@ -557,7 +557,7 @@ static void cdk_pixbuf__qtif_cb_area_updated(GdkPixbufLoader *loader,
                                              gpointer user_data)
 {
     QTIFContext *context = (QTIFContext *)user_data;
-    GdkPixbuf *pixbuf = cdk_pixbuf_loader_get_pixbuf(context->loader);
+    CdkPixbuf *pixbuf = cdk_pixbuf_loader_get_pixbuf(context->loader);
     (context->updated_func)(pixbuf, x, y, width, height, context->user_data);
 }
 
@@ -568,7 +568,7 @@ static void cdk_pixbuf__qtif_cb_area_updated(GdkPixbufLoader *loader,
 #define MODULE_ENTRY(function) void _cdk_pixbuf__qtif_ ## function
 #endif
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
     module->load = cdk_pixbuf__qtif_image_load;
     module->begin_load = cdk_pixbuf__qtif_image_begin_load;
@@ -576,9 +576,9 @@ MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
     module->load_increment = cdk_pixbuf__qtif_image_load_increment;
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-    static const GdkPixbufModulePattern signature[] = {
+    static const CdkPixbufModulePattern signature[] = {
         { "abcdidsc", "xxxx    ", 100 },
         { "abcdidat", "xxxx    ", 100 },
         { NULL, NULL, 0 }
@@ -595,7 +595,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
     };
 
     info->name = "qtif";
-    info->signature = (GdkPixbufModulePattern *) signature;
+    info->signature = (CdkPixbufModulePattern *) signature;
     info->description = NC_("image format", "QuickTime");
     info->mime_types = (gchar **) mime_types;
     info->extensions = (gchar **) extensions;

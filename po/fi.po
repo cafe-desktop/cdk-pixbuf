@@ -811,7 +811,7 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Ei voi varata muistia QTIF-kontekstirakenteelle."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
+msgid "Failed to create CdkPixbufLoader object."
 msgstr "GdbPixbufLoader-olion luominen epäonnistui."
 
 #: cdk-pixbuf/io-qtif.c:424
@@ -1112,7 +1112,7 @@ msgstr "XPM"
 
 #, fuzzy
 #~ msgctxt "image format"
-#~ msgid "GdkPixdata"
+#~ msgid "CdkPixdata"
 #~ msgstr "GIF-kuvamuoto"
 
 #~ msgid "RAS image has bogus header data"

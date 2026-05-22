@@ -1,5 +1,5 @@
 /* -*- Mode: C; c-basic-offset: 2; -*- */
-/* GdkPixbuf library - test loaders
+/* CdkPixbuf library - test loaders
  *
  * Copyright (C) 2015 Red Hat, Inc.
  *
@@ -29,7 +29,7 @@ static void
 test_fail_size (GFile *file,
 		guint  chunk_size)
 {
-  GdkPixbufLoader *loader;
+  CdkPixbufLoader *loader;
   GError *error = NULL;
   guchar *contents;
   gsize i, contents_length;

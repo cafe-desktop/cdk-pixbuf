@@ -510,7 +510,7 @@ msgstr ""
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "GIF-sürät tözeleşendä"
 
 #: cdk-pixbuf/io-png.c:54
@@ -693,7 +693,7 @@ msgstr ""
 
 #: cdk-pixbuf/io-qtif.c:330
 #, fuzzy
-msgid "Failed to create GdkPixbufLoader object."
+msgid "Failed to create CdkPixbufLoader object."
 msgstr "Çaqlı biremnän uqıp bulmadı"
 
 #: cdk-pixbuf/io-qtif.c:434

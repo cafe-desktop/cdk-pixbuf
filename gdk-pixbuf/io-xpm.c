@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
-/* GdkPixbuf library - XPM image loader
+/* CdkPixbuf library - XPM image loader
  *
  * Copyright (C) 1999 Mark Crichton
  * Copyright (C) 1999 The Free Software Foundation
@@ -446,7 +446,7 @@ mem_buffer (enum buf_op op, gpointer handle)
 }
 
 /* This function does all the work. */
-static GdkPixbuf *
+static CdkPixbuf *
 pixbuf_create_from_xpm (const gchar * (*get_buf) (enum buf_op op, gpointer handle), gpointer handle,
                         GError **error)
 {
@@ -459,7 +459,7 @@ pixbuf_create_from_xpm (const gchar * (*get_buf) (enum buf_op op, gpointer handl
 	GHashTable *color_hash;
 	XPMColor *colors, *color, *fallbackcolor;
 	guchar *pixtmp;
-	GdkPixbuf *pixbuf = NULL;
+	CdkPixbuf *pixbuf = NULL;
 	gint rowstride;
 
 	fallbackcolor = NULL;
@@ -657,11 +657,11 @@ out:
 }
 
 /* Shared library entry point for file loading */
-static GdkPixbuf *
+static CdkPixbuf *
 cdk_pixbuf__xpm_image_load (FILE *f,
                             GError **error)
 {
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 	struct file_handle h;
 
 	memset (&h, 0, sizeof (h));
@@ -673,10 +673,10 @@ cdk_pixbuf__xpm_image_load (FILE *f,
 }
 
 /* Shared library entry point for memory loading */
-static GdkPixbuf *
+static CdkPixbuf *
 cdk_pixbuf__xpm_image_load_xpm_data (const gchar **data)
 {
-        GdkPixbuf *pixbuf;
+        CdkPixbuf *pixbuf;
         struct mem_handle h;
         GError *error = NULL;
         
@@ -698,8 +698,8 @@ cdk_pixbuf__xpm_image_load_xpm_data (const gchar **data)
 typedef struct _XPMContext XPMContext;
 struct _XPMContext
 {
-       GdkPixbufModulePreparedFunc prepared_func;
-       GdkPixbufModuleUpdatedFunc updated_func;
+       CdkPixbufModulePreparedFunc prepared_func;
+       CdkPixbufModuleUpdatedFunc updated_func;
        gpointer user_data;
 
        gchar *tempname;
@@ -714,9 +714,9 @@ struct _XPMContext
  * in the future.
  */
 static gpointer
-cdk_pixbuf__xpm_image_begin_load (GdkPixbufModuleSizeFunc size_func,
-                                  GdkPixbufModulePreparedFunc prepared_func,
-                                  GdkPixbufModuleUpdatedFunc updated_func,
+cdk_pixbuf__xpm_image_begin_load (CdkPixbufModuleSizeFunc size_func,
+                                  CdkPixbufModulePreparedFunc prepared_func,
+                                  CdkPixbufModuleUpdatedFunc updated_func,
                                   gpointer user_data,
                                   GError **error)
 {
@@ -754,7 +754,7 @@ cdk_pixbuf__xpm_image_stop_load (gpointer data,
                                  GError **error)
 {
        XPMContext *context = (XPMContext*) data;
-       GdkPixbuf *pixbuf;
+       CdkPixbuf *pixbuf;
        gboolean retval = FALSE;
        
        g_return_val_if_fail (data != NULL, FALSE);
@@ -816,7 +816,7 @@ cdk_pixbuf__xpm_image_load_increment (gpointer data,
 #define MODULE_ENTRY(function) void _cdk_pixbuf__xpm_ ## function
 #endif
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
 	module->load = cdk_pixbuf__xpm_image_load;
 	module->load_xpm_data = cdk_pixbuf__xpm_image_load_xpm_data;
@@ -825,9 +825,9 @@ MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
 	module->load_increment = cdk_pixbuf__xpm_image_load_increment;
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-	static const GdkPixbufModulePattern signature[] = {
+	static const CdkPixbufModulePattern signature[] = {
 		{ "/* XPM */", NULL, 100 },
 		{ NULL, NULL, 0 }
 	};
@@ -841,7 +841,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
 	};
 
 	info->name = "xpm";
-	info->signature = (GdkPixbufModulePattern *) signature;
+	info->signature = (CdkPixbufModulePattern *) signature;
 	info->description = NC_("image format", "XPM");
 	info->mime_types = (gchar **) mime_types;
 	info->extensions = (gchar **) extensions;

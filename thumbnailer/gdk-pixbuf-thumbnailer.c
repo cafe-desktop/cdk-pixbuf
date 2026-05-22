@@ -24,12 +24,12 @@
 
 #include "gnome-thumbnailer-skeleton.h"
 
-GdkPixbuf *
+CdkPixbuf *
 file_to_pixbuf (const char  *path,
 		guint        destination_size,
 	        GError     **error)
 {
-	GdkPixbuf *pixbuf, *tmp_pixbuf;
+	CdkPixbuf *pixbuf, *tmp_pixbuf;
 	const char *original_width_str, *original_height_str;
 
 	pixbuf = cdk_pixbuf_new_from_file_at_size (path, destination_size, destination_size, error);

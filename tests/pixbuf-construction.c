@@ -1,5 +1,5 @@
 /* -*- Mode: C; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
-/* GdkPixbuf library - tests for GdkPixbuf constructors
+/* CdkPixbuf library - tests for CdkPixbuf constructors
  *
  * Copyright (C) 2018 Federico Mena Quintero
  *
@@ -23,7 +23,7 @@
 static void
 test_no_construct_properties (void)
 {
-  GdkPixbuf *pixbuf = g_object_new (CDK_TYPE_PIXBUF, NULL);
+  CdkPixbuf *pixbuf = g_object_new (CDK_TYPE_PIXBUF, NULL);
   GBytes *bytes;
   guchar *pixels;
 
@@ -50,7 +50,7 @@ test_pixels (void)
 {
   guchar *pixels = g_new0 (guchar, BUFFER_SIZE);
 
-  GdkPixbuf *pixbuf = g_object_new (CDK_TYPE_PIXBUF,
+  CdkPixbuf *pixbuf = g_object_new (CDK_TYPE_PIXBUF,
 				    "width", WIDTH,
 				    "height", HEIGHT,
 				    "rowstride", ROWSTRIDE,
@@ -74,7 +74,7 @@ test_bytes (void)
 {
   guchar *pixels = g_new0 (guchar, BUFFER_SIZE);
   GBytes *bytes = g_bytes_new_take (pixels, BUFFER_SIZE);
-  GdkPixbuf *pixbuf = g_object_new (CDK_TYPE_PIXBUF,
+  CdkPixbuf *pixbuf = g_object_new (CDK_TYPE_PIXBUF,
 				    "width", WIDTH,
 				    "height", HEIGHT,
 				    "rowstride", ROWSTRIDE,

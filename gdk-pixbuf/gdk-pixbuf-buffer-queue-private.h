@@ -1,4 +1,4 @@
-/* GdkPixbuf library
+/* CdkPixbuf library
  * Copyright (C) 2003-2006 David Schleef <ds@schleef.org>
  *		 2005-2006 Eric Anholt <eric@anholt.net>
  *		 2006-2007 Benjamin Otte <otte@gnome.org>
@@ -24,27 +24,27 @@
 
 G_BEGIN_DECLS
 
-typedef struct _GdkPixbufBufferQueue GdkPixbufBufferQueue;
+typedef struct _CdkPixbufBufferQueue CdkPixbufBufferQueue;
 
-GdkPixbufBufferQueue *  cdk_pixbuf_buffer_queue_new             (void);
+CdkPixbufBufferQueue *  cdk_pixbuf_buffer_queue_new             (void);
 
-GdkPixbufBufferQueue *  cdk_pixbuf_buffer_queue_ref             (GdkPixbufBufferQueue   *queue);
-void                    cdk_pixbuf_buffer_queue_unref           (GdkPixbufBufferQueue   *queue);
+CdkPixbufBufferQueue *  cdk_pixbuf_buffer_queue_ref             (CdkPixbufBufferQueue   *queue);
+void                    cdk_pixbuf_buffer_queue_unref           (CdkPixbufBufferQueue   *queue);
 
-gsize                   cdk_pixbuf_buffer_queue_get_size        (GdkPixbufBufferQueue   *queue);
-gsize                   cdk_pixbuf_buffer_queue_get_offset      (GdkPixbufBufferQueue   *queue);
+gsize                   cdk_pixbuf_buffer_queue_get_size        (CdkPixbufBufferQueue   *queue);
+gsize                   cdk_pixbuf_buffer_queue_get_offset      (CdkPixbufBufferQueue   *queue);
 
-void                    cdk_pixbuf_buffer_queue_flush           (GdkPixbufBufferQueue   *queue,
+void                    cdk_pixbuf_buffer_queue_flush           (CdkPixbufBufferQueue   *queue,
                                                                  gsize                   n_bytes);
-void                    cdk_pixbuf_buffer_queue_clear           (GdkPixbufBufferQueue   *queue);
-void                    cdk_pixbuf_buffer_queue_push            (GdkPixbufBufferQueue   *queue,
+void                    cdk_pixbuf_buffer_queue_clear           (CdkPixbufBufferQueue   *queue);
+void                    cdk_pixbuf_buffer_queue_push            (CdkPixbufBufferQueue   *queue,
                                                                  GBytes                 *buffer);
-GBytes *                cdk_pixbuf_buffer_queue_pull            (GdkPixbufBufferQueue   *queue,
+GBytes *                cdk_pixbuf_buffer_queue_pull            (CdkPixbufBufferQueue   *queue,
                                                                  gsize                   length);
-GBytes *                cdk_pixbuf_buffer_queue_pull_buffer     (GdkPixbufBufferQueue   *queue);
-GBytes *                cdk_pixbuf_buffer_queue_peek            (GdkPixbufBufferQueue   *queue,
+GBytes *                cdk_pixbuf_buffer_queue_pull_buffer     (CdkPixbufBufferQueue   *queue);
+GBytes *                cdk_pixbuf_buffer_queue_peek            (CdkPixbufBufferQueue   *queue,
                                                                  gsize                   length);
-GBytes *                cdk_pixbuf_buffer_queue_peek_buffer     (GdkPixbufBufferQueue   *queue);
+GBytes *                cdk_pixbuf_buffer_queue_peek_buffer     (CdkPixbufBufferQueue   *queue);
 
 G_END_DECLS
 #endif

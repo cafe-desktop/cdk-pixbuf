@@ -8,8 +8,8 @@ static void
 test_serialize (void)
 {
   GError *error = NULL;
-  GdkPixbuf *pixbuf;
-  GdkPixbuf *pixbuf2;
+  CdkPixbuf *pixbuf;
+  CdkPixbuf *pixbuf2;
   GVariant *data;
   GIcon *icon;
   GInputStream *stream;
@@ -27,7 +27,7 @@ test_serialize (void)
   /* turn it into a GVariant */
   data = g_icon_serialize (G_ICON (pixbuf));
 
-  /* back to a GIcon, but this will be a GBytesIcon, not GdkPixbuf */
+  /* back to a GIcon, but this will be a GBytesIcon, not CdkPixbuf */
   icon = g_icon_deserialize (data);
   g_assert (G_IS_BYTES_ICON (icon));
 

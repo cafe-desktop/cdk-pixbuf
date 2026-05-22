@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-/* GdkPixbuf library - Simple frame-based animations
+/* CdkPixbuf library - Simple frame-based animations
  *
  * Copyright (C) 2004 Dom Lachowicz
  *
@@ -31,20 +31,20 @@
 G_BEGIN_DECLS
 
 /**
- * GdkPixbufSimpleAnim:
+ * CdkPixbufSimpleAnim:
  * 
  * An opaque struct representing a simple animation.
  */
-typedef struct _GdkPixbufSimpleAnim GdkPixbufSimpleAnim;
-typedef struct _GdkPixbufSimpleAnimClass GdkPixbufSimpleAnimClass;
+typedef struct _CdkPixbufSimpleAnim CdkPixbufSimpleAnim;
+typedef struct _CdkPixbufSimpleAnimClass CdkPixbufSimpleAnimClass;
 
 #define CDK_TYPE_PIXBUF_SIMPLE_ANIM              (cdk_pixbuf_simple_anim_get_type ())
-#define CDK_PIXBUF_SIMPLE_ANIM(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF_SIMPLE_ANIM, GdkPixbufSimpleAnim))
+#define CDK_PIXBUF_SIMPLE_ANIM(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF_SIMPLE_ANIM, CdkPixbufSimpleAnim))
 #define CDK_IS_PIXBUF_SIMPLE_ANIM(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), CDK_TYPE_PIXBUF_SIMPLE_ANIM))
 
-#define CDK_PIXBUF_SIMPLE_ANIM_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_SIMPLE_ANIM, GdkPixbufSimpleAnimClass))
+#define CDK_PIXBUF_SIMPLE_ANIM_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_SIMPLE_ANIM, CdkPixbufSimpleAnimClass))
 #define CDK_IS_PIXBUF_SIMPLE_ANIM_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), CDK_TYPE_PIXBUF_SIMPLE_ANIM))
-#define CDK_PIXBUF_SIMPLE_ANIM_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_SIMPLE_ANIM, GdkPixbufSimpleAnimClass))
+#define CDK_PIXBUF_SIMPLE_ANIM_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_SIMPLE_ANIM, CdkPixbufSimpleAnimClass))
 
 CDK_PIXBUF_AVAILABLE_IN_ALL
 GType cdk_pixbuf_simple_anim_get_type (void) G_GNUC_CONST;
@@ -52,20 +52,20 @@ CDK_PIXBUF_AVAILABLE_IN_ALL
 GType cdk_pixbuf_simple_anim_iter_get_type (void) G_GNUC_CONST;
 
 CDK_PIXBUF_DEPRECATED_IN_2_44
-GdkPixbufSimpleAnim *cdk_pixbuf_simple_anim_new           (gint   width, 
+CdkPixbufSimpleAnim *cdk_pixbuf_simple_anim_new           (gint   width, 
                                                            gint   height,
                                                            gfloat rate);
 
 CDK_PIXBUF_DEPRECATED_IN_2_44
-void                 cdk_pixbuf_simple_anim_add_frame     (GdkPixbufSimpleAnim *animation,
-                                                           GdkPixbuf           *pixbuf);
+void                 cdk_pixbuf_simple_anim_add_frame     (CdkPixbufSimpleAnim *animation,
+                                                           CdkPixbuf           *pixbuf);
 CDK_PIXBUF_DEPRECATED_IN_2_44
-void                 cdk_pixbuf_simple_anim_set_loop      (GdkPixbufSimpleAnim *animation,
+void                 cdk_pixbuf_simple_anim_set_loop      (CdkPixbufSimpleAnim *animation,
                                                            gboolean             loop);
 CDK_PIXBUF_DEPRECATED_IN_2_44
-gboolean             cdk_pixbuf_simple_anim_get_loop      (GdkPixbufSimpleAnim *animation);
+gboolean             cdk_pixbuf_simple_anim_get_loop      (CdkPixbufSimpleAnim *animation);
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC (GdkPixbufSimpleAnim, g_object_unref)
+G_DEFINE_AUTOPTR_CLEANUP_FUNC (CdkPixbufSimpleAnim, g_object_unref)
 
 G_END_DECLS
 
