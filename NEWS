@@ -254,7 +254,7 @@
  - Improve thumbnailer implementation [Debarshi Ray, #778517]
  - Make X11 a dependency if the `x11` build option is enabled [Emmanuele Bassi, #77]
  - Generate separate introspection data for GdkPixdata API [Emmanuele Bassi, #72]
- - Deprecate GDK_INTERP_HYPER [Emmanuele Bassi, #3]
+ - Deprecate CDK_INTERP_HYPER [Emmanuele Bassi, #3]
  - Avoid a deprecation warning with recent libjasper [Emmanuele Bassi, #73]
  - Fix build on macOS [Emmanuele Bassi, !5]
  - Fix build with Visual Studio [Chun-wei Fan, !8]
@@ -987,8 +987,8 @@
 ======
 
 * Win32:
- - Use dynamically constructed GDK_PIXBUF_LIBDIR for locating modules
- - Use dynamically constructed GDK_PIXBUF_LOCALEDIR to find translations
+ - Use dynamically constructed CDK_PIXBUF_LIBDIR for locating modules
+ - Use dynamically constructed CDK_PIXBUF_LOCALEDIR to find translations
  - Use GDI+ loader by default
 
 * Introspection:

@@ -44,7 +44,7 @@ load_and_save (const char *filename, GError **error)
 
   if (!cdk_pixbuf_loader_close (loader, error))
     {
-      if (!g_error_matches (*error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_INCOMPLETE_ANIMATION))
+      if (!g_error_matches (*error, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_INCOMPLETE_ANIMATION))
         {
           ret = FALSE;
           goto out;

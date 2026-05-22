@@ -342,7 +342,7 @@ static gboolean fill_in_context(TGAContext *ctx, GError **err)
                 LE16(ctx->hdr->cmap_n_colors);
         ctx->cmap = colormap_new (LE16(ctx->hdr->cmap_n_colors));
 	if (!ctx->cmap) {
-		g_set_error_literal(err, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+		g_set_error_literal(err, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                     _("Cannot allocate colormap"));
 		return FALSE;
 	}
@@ -364,10 +364,10 @@ static gboolean fill_in_context(TGAContext *ctx, GError **err)
 			return FALSE;
 	}
 
-	ctx->pbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, alpha, 8, w, h);
+	ctx->pbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, alpha, 8, w, h);
 
 	if (!ctx->pbuf) {
-		g_set_error_literal(err, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+		g_set_error_literal(err, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                     _("Cannot allocate new pixbuf"));
 		return FALSE;
 	}
@@ -514,8 +514,8 @@ tga_load_colormap (TGAContext  *ctx,
             }
           else
             {
-              g_set_error_literal (err, GDK_PIXBUF_ERROR, 
-                                   GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+              g_set_error_literal (err, CDK_PIXBUF_ERROR, 
+                                   CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                    _("Unexpected bitdepth for colormap entries"));
               g_bytes_unref (bytes);
               return FALSE;
@@ -530,8 +530,8 @@ tga_load_colormap (TGAContext  *ctx,
       if ((ctx->hdr->type == TGA_TYPE_PSEUDOCOLOR)
           || (ctx->hdr->type == TGA_TYPE_RLE_PSEUDOCOLOR))
         {
-          g_set_error_literal (err, GDK_PIXBUF_ERROR, 
-                               GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+          g_set_error_literal (err, CDK_PIXBUF_ERROR, 
+                               CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                _("Pseudocolor image does not contain a colormap"));
           return FALSE;
         }
@@ -573,8 +573,8 @@ tga_load_header (TGAContext  *ctx,
   ctx->hdr = g_try_malloc (sizeof (TGAHeader));
   if (!ctx->hdr)
     {
-      g_set_error_literal (err, GDK_PIXBUF_ERROR,
-                           GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+      g_set_error_literal (err, CDK_PIXBUF_ERROR,
+                           CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                            _("Cannot allocate TGA header memory"));
       return FALSE;
   }
@@ -604,21 +604,21 @@ tga_load_header (TGAContext  *ctx,
 #endif
   if (LE16(ctx->hdr->width) == 0 || 
       LE16(ctx->hdr->height) == 0) {
-          g_set_error_literal(err, GDK_PIXBUF_ERROR,
-                              GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+          g_set_error_literal(err, CDK_PIXBUF_ERROR,
+                              CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                               _("TGA image has invalid dimensions"));
           return FALSE;
   }
   if ((ctx->hdr->flags & TGA_INTERLEAVE_MASK) != TGA_INTERLEAVE_NONE) {
-          g_set_error_literal(err, GDK_PIXBUF_ERROR, 
-                              GDK_PIXBUF_ERROR_UNKNOWN_TYPE,
+          g_set_error_literal(err, CDK_PIXBUF_ERROR, 
+                              CDK_PIXBUF_ERROR_UNKNOWN_TYPE,
                               _("TGA image type not supported"));
           return FALSE;
   }
   if (!tga_format_supported (ctx->hdr->type, ctx->hdr->bpp))
     {
-      g_set_error_literal(err, GDK_PIXBUF_ERROR,
-                          GDK_PIXBUF_ERROR_UNKNOWN_TYPE,
+      g_set_error_literal(err, CDK_PIXBUF_ERROR,
+                          CDK_PIXBUF_ERROR_UNKNOWN_TYPE,
                           _("TGA image type not supported"));
       return FALSE;
     }
@@ -645,8 +645,8 @@ static gpointer cdk_pixbuf__tga_begin_load(GdkPixbufModuleSizeFunc size_func,
 
 	ctx = g_try_malloc(sizeof(TGAContext));
 	if (!ctx) {
-		g_set_error_literal(err, GDK_PIXBUF_ERROR, 
-                                    GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+		g_set_error_literal(err, CDK_PIXBUF_ERROR, 
+                                    CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                     _("Cannot allocate memory for TGA context struct"));
 		return NULL;
 	}
@@ -707,8 +707,8 @@ static gboolean cdk_pixbuf__tga_stop_load(gpointer data, GError **err)
         if (ctx->pbuf == NULL || tga_pixels_remaining (ctx))
           {
             g_set_error_literal (err,
-                                 GDK_PIXBUF_ERROR,
-                                 GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                 CDK_PIXBUF_ERROR,
+                                 CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                  _("TGA image was truncated or incomplete."));
 
             result = FALSE;
@@ -764,6 +764,6 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
 	info->description = NC_("image format", "Targa");
 	info->mime_types = (gchar **) mime_types;
 	info->extensions = (gchar **) extensions;
-	info->flags = GDK_PIXBUF_FORMAT_THREADSAFE;
+	info->flags = CDK_PIXBUF_FORMAT_THREADSAFE;
 	info->license = "LGPL";
 }

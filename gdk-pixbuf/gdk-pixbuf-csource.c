@@ -39,8 +39,8 @@ static void	print_blurb	(FILE    *bout,
 
 
 /* --- variables --- */
-static guint    gen_type = GDK_PIXDATA_DUMP_PIXDATA_STREAM;
-static guint    gen_ctype = GDK_PIXDATA_DUMP_GTYPES | GDK_PIXDATA_DUMP_STATIC | GDK_PIXDATA_DUMP_CONST;
+static guint    gen_type = CDK_PIXDATA_DUMP_PIXDATA_STREAM;
+static guint    gen_ctype = CDK_PIXDATA_DUMP_GTYPES | CDK_PIXDATA_DUMP_STATIC | CDK_PIXDATA_DUMP_CONST;
 static gboolean use_rle = TRUE;
 static gboolean with_decoder = FALSE;
 static gchar   *image_name = "my_pixbuf";
@@ -60,7 +60,7 @@ G_GNUC_BEGIN_IGNORE_DEPRECATIONS
   free_me = cdk_pixdata_from_pixbuf (&pixdata, pixbuf, use_rle);
   gstring = cdk_pixdata_to_csource (&pixdata, image_name,
 				    gen_type | gen_ctype |
-				    (with_decoder ? GDK_PIXDATA_DUMP_RLE_DECODER : 0));
+				    (with_decoder ? CDK_PIXDATA_DUMP_RLE_DECODER : 0));
 
   g_fprintf (f_out, "%s\n", gstring->str);
 
@@ -162,17 +162,17 @@ parse_args (gint    *argc_p,
     {
       if (strcmp ("--macros", argv[i]) == 0)
 	{
-	  gen_type = GDK_PIXDATA_DUMP_MACROS;
+	  gen_type = CDK_PIXDATA_DUMP_MACROS;
 	  argv[i] = NULL;
 	}
       else if (strcmp ("--struct", argv[i]) == 0)
 	{
-	  gen_type = GDK_PIXDATA_DUMP_PIXDATA_STRUCT;
+	  gen_type = CDK_PIXDATA_DUMP_PIXDATA_STRUCT;
 	  argv[i] = NULL;
 	}
       else if (strcmp ("--stream", argv[i]) == 0)
 	{
-	  gen_type = GDK_PIXDATA_DUMP_PIXDATA_STREAM;
+	  gen_type = CDK_PIXDATA_DUMP_PIXDATA_STREAM;
 	  argv[i] = NULL;
 	}
       else if (strcmp ("--rle", argv[i]) == 0)
@@ -187,12 +187,12 @@ parse_args (gint    *argc_p,
 	}
       else if (strcmp ("--extern", argv[i]) == 0)
 	{
-	  gen_ctype &= ~GDK_PIXDATA_DUMP_STATIC;
+	  gen_ctype &= ~CDK_PIXDATA_DUMP_STATIC;
 	  argv[i] = NULL;
 	}
       else if (strcmp ("--static", argv[i]) == 0)
 	{
-	  gen_ctype |= GDK_PIXDATA_DUMP_STATIC;
+	  gen_ctype |= CDK_PIXDATA_DUMP_STATIC;
 	  argv[i] = NULL;
 	}
       else if (strcmp ("--decoder", argv[i]) == 0)
@@ -271,7 +271,7 @@ print_blurb (FILE    *bout,
   if (!print_help)
     {
       g_fprintf (bout, "%s version ", PRG_NAME);
-      g_fprintf (bout, "%s", GDK_PIXBUF_VERSION);
+      g_fprintf (bout, "%s", CDK_PIXBUF_VERSION);
       g_fprintf (bout, "\n");
       g_fprintf (bout, "%s comes with ABSOLUTELY NO WARRANTY.\n", PRG_NAME);
       g_fprintf (bout, "You may redistribute copies of %s under the terms of\n", PRG_NAME);

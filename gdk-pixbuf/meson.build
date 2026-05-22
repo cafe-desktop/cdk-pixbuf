@@ -65,12 +65,12 @@ cdk_pixbuf_inc = include_directories('.')
 cdk_pixbuf_cflags = [
   '-DG_LOG_STRUCTURED=1',
   '-DG_LOG_DOMAIN="GdkPixbuf"',
-  '-DGDK_PIXBUF_COMPILATION',
-  '-DGDK_PIXBUF_PREFIX="@0@"'.format(cdk_pixbuf_prefix),
-  '-DGDK_PIXBUF_LOCALEDIR="@0@"'.format(cdk_pixbuf_localedir),
-  '-DGDK_PIXBUF_LIBDIR="@0@"'.format(cdk_pixbuf_libdir),
-  '-DGDK_PIXBUF_BINARY_VERSION="@0@"'.format(cdk_pixbuf_binary_version),
-  '-DGDK_PIXBUF_ENABLE_BACKEND',
+  '-DCDK_PIXBUF_COMPILATION',
+  '-DCDK_PIXBUF_PREFIX="@0@"'.format(cdk_pixbuf_prefix),
+  '-DCDK_PIXBUF_LOCALEDIR="@0@"'.format(cdk_pixbuf_localedir),
+  '-DCDK_PIXBUF_LIBDIR="@0@"'.format(cdk_pixbuf_libdir),
+  '-DCDK_PIXBUF_BINARY_VERSION="@0@"'.format(cdk_pixbuf_binary_version),
+  '-DCDK_PIXBUF_ENABLE_BACKEND',
   '-DPIXBUF_LIBDIR="@0@"'.format(cdk_pixbuf_loaderdir),
   '-DBUILT_MODULES_DIR="@0@"'.format(meson.current_build_dir()),
 ]
@@ -78,11 +78,11 @@ cdk_pixbuf_cflags = [
 cdk_pixbuf_api_path = join_paths(cdk_pixbuf_api_name, 'cdk-pixbuf')
 
 cdkpixbuf_features_conf = configuration_data()
-cdkpixbuf_features_conf.set('GDK_PIXBUF_MAJOR', cdk_pixbuf_version_major)
-cdkpixbuf_features_conf.set('GDK_PIXBUF_MINOR', cdk_pixbuf_version_minor)
-cdkpixbuf_features_conf.set('GDK_PIXBUF_MICRO', cdk_pixbuf_version_micro)
-cdkpixbuf_features_conf.set('GDK_PIXBUF_VERSION', meson.project_version())
-cdkpixbuf_features_conf.set('GDK_PIXBUF_API_VERSION', cdk_pixbuf_api_version)
+cdkpixbuf_features_conf.set('CDK_PIXBUF_MAJOR', cdk_pixbuf_version_major)
+cdkpixbuf_features_conf.set('CDK_PIXBUF_MINOR', cdk_pixbuf_version_minor)
+cdkpixbuf_features_conf.set('CDK_PIXBUF_MICRO', cdk_pixbuf_version_micro)
+cdkpixbuf_features_conf.set('CDK_PIXBUF_VERSION', meson.project_version())
+cdkpixbuf_features_conf.set('CDK_PIXBUF_API_VERSION', cdk_pixbuf_api_version)
 cdkpixbuf_features_conf.set('LT_CURRENT_MINUS_AGE', current_minus_age)
 
 cdk_pixbuf_features_h = configure_file(input: 'cdk-pixbuf-features.h.in',
@@ -289,8 +289,8 @@ build_gir = gir.found() and (not meson.is_cross_build() or get_option('introspec
 if build_gir
   gir_args = [
     '--quiet',
-    '-DGDK_PIXBUF_COMPILATION',
-    '-DGDK_PIXBUF_ENABLE_BACKEND',
+    '-DCDK_PIXBUF_COMPILATION',
+    '-DCDK_PIXBUF_ENABLE_BACKEND',
   ]
 
   cdkpixbuf_gir = gnome.generate_gir(

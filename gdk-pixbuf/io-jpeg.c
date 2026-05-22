@@ -124,10 +124,10 @@ fatal_error_handler (j_common_ptr cinfo)
          */
         if (errmgr->error && *errmgr->error == NULL) {
                 g_set_error (errmgr->error,
-                             GDK_PIXBUF_ERROR,
+                             CDK_PIXBUF_ERROR,
                              cinfo->err->msg_code == JERR_OUT_OF_MEMORY 
-			     ? GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY 
-			     : GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+			     ? CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY 
+			     : CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                              _("Error interpreting JPEG image file (%s)"),
                              buffer);
         }
@@ -630,7 +630,7 @@ cdk_pixbuf__real_jpeg_image_load (FILE *f, struct jpeg_decompress_struct *cinfo,
 	cinfo->do_fancy_upsampling = FALSE;
 	cinfo->do_block_smoothing = FALSE;
 
-	pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, 
+	pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, 
 				 cinfo->out_color_components == 4 ? TRUE : FALSE, 
 				 8,
                                  cinfo->output_width,
@@ -642,8 +642,8 @@ cdk_pixbuf__real_jpeg_image_load (FILE *f, struct jpeg_decompress_struct *cinfo,
                  */
                 if (error && *error == NULL) {
                         g_set_error_literal (error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                              _("Insufficient memory to load image, try exiting some applications to free memory"));
                 }
                
@@ -715,8 +715,8 @@ cdk_pixbuf__real_jpeg_image_load (FILE *f, struct jpeg_decompress_struct *cinfo,
 		    default:
 		      g_clear_object (&pixbuf);
                       g_set_error (error,
-                                   GDK_PIXBUF_ERROR,
-				   GDK_PIXBUF_ERROR_UNKNOWN_TYPE,
+                                   CDK_PIXBUF_ERROR,
+				   CDK_PIXBUF_ERROR_UNKNOWN_TYPE,
 				   _("Unsupported JPEG color space (%s)"),
 				   colorspace_name (cinfo->out_color_space));
 		      goto out;
@@ -840,8 +840,8 @@ cdk_pixbuf__jpeg_image_begin_load (GdkPixbufModuleSizeFunc size_func,
 	context->cinfo.src = (struct jpeg_source_mgr *) g_try_malloc (sizeof (my_source_mgr));
 	if (!context->cinfo.src) {
 		g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                      _("Couldn’t allocate memory for loading JPEG file"));
 		return NULL;
 	}
@@ -965,8 +965,8 @@ cdk_pixbuf__jpeg_image_load_lines (JpegProgContext  *context,
                         break;
                 default:
                         g_set_error (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_UNKNOWN_TYPE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_UNKNOWN_TYPE,
                                      _("Unsupported JPEG color space (%s)"),
                                      colorspace_name (cinfo->out_color_space));
 
@@ -1122,8 +1122,8 @@ cdk_pixbuf__jpeg_image_load_increment (gpointer data,
 			(* context->size_func) (&width, &height, context->user_data);
 			if (width == 0 || height == 0) {
 				g_set_error_literal (error,
-						     GDK_PIXBUF_ERROR,
-						     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+						     CDK_PIXBUF_ERROR,
+						     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
 						     _("Transformed JPEG has zero width or height."));
 				retval = FALSE;
 				goto out;
@@ -1148,15 +1148,15 @@ cdk_pixbuf__jpeg_image_load_increment (gpointer data,
 				has_alpha = FALSE;
 			} else {
 				g_set_error (error,
-					     GDK_PIXBUF_ERROR,
-					     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+					     CDK_PIXBUF_ERROR,
+					     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
 					     _("Unsupported number of color components (%d)"),
 					     cinfo->output_components);
 				retval = FALSE;
 				goto out;
 			}
 
-			context->pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB,
+			context->pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB,
 							  has_alpha,
 							  8,
 							  cinfo->output_width,
@@ -1164,8 +1164,8 @@ cdk_pixbuf__jpeg_image_load_increment (gpointer data,
 
 			if (context->pixbuf == NULL) {
                                 g_set_error_literal (error,
-                                                     GDK_PIXBUF_ERROR,
-                                                     GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                                     CDK_PIXBUF_ERROR,
+                                                     CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                                      _("Couldn’t allocate memory for loading JPEG file"));
                                 retval = FALSE;
 				goto out;
@@ -1330,8 +1330,8 @@ to_callback_do_write (j_compress_ptr cinfo, gsize length)
 		 */
 		if (errmgr->error && *errmgr->error == NULL) {
 			g_set_error_literal (errmgr->error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              "write function failed");
 		}
 		siglongjmp (errmgr->setjmp_buffer, 1);
@@ -1404,8 +1404,8 @@ real_save_jpeg (GdkPixbuf          *pixbuf,
 
                                if (endptr == *viter) {
                                        g_set_error (error,
-                                                    GDK_PIXBUF_ERROR,
-                                                    GDK_PIXBUF_ERROR_BAD_OPTION,
+                                                    CDK_PIXBUF_ERROR,
+                                                    CDK_PIXBUF_ERROR_BAD_OPTION,
                                                     _("JPEG quality must be a value between 0 and 100; value “%s” could not be parsed."),
                                                     *viter);
 
@@ -1420,8 +1420,8 @@ real_save_jpeg (GdkPixbuf          *pixbuf,
                                         * in their app.
                                         */
                                        g_set_error (error,
-                                                    GDK_PIXBUF_ERROR,
-                                                    GDK_PIXBUF_ERROR_BAD_OPTION,
+                                                    CDK_PIXBUF_ERROR,
+                                                    CDK_PIXBUF_ERROR_BAD_OPTION,
                                                     _("JPEG quality must be a value between 0 and 100; value “%d” is not allowed."),
                                                     quality);
 
@@ -1441,8 +1441,8 @@ real_save_jpeg (GdkPixbuf          *pixbuf,
                                         * in their app.
                                         */
                                        g_set_error (error,
-                                                    GDK_PIXBUF_ERROR,
-                                                    GDK_PIXBUF_ERROR_BAD_OPTION,
+                                                    CDK_PIXBUF_ERROR,
+                                                    CDK_PIXBUF_ERROR_BAD_OPTION,
                                                     _("JPEG x-dpi must be a value between 1 and 65535; value “%s” is not allowed."),
                                                     *viter);
 
@@ -1462,8 +1462,8 @@ real_save_jpeg (GdkPixbuf          *pixbuf,
                                         * in their app.
                                         */
                                        g_set_error (error,
-                                                    GDK_PIXBUF_ERROR,
-                                                    GDK_PIXBUF_ERROR_BAD_OPTION,
+                                                    CDK_PIXBUF_ERROR,
+                                                    CDK_PIXBUF_ERROR_BAD_OPTION,
                                                     _("JPEG y-dpi must be a value between 1 and 65535; value “%s” is not allowed."),
                                                     *viter);
 
@@ -1476,8 +1476,8 @@ real_save_jpeg (GdkPixbuf          *pixbuf,
                                if (icc_profile_size < 127) {
                                        /* This is a user-visible error */
                                        g_set_error (error,
-                                                    GDK_PIXBUF_ERROR,
-                                                    GDK_PIXBUF_ERROR_BAD_OPTION,
+                                                    CDK_PIXBUF_ERROR,
+                                                    CDK_PIXBUF_ERROR_BAD_OPTION,
                                                     _("Color profile has invalid length “%u”."),
                                                     (guint) icc_profile_size);
                                        retval = FALSE;
@@ -1511,8 +1511,8 @@ real_save_jpeg (GdkPixbuf          *pixbuf,
        buf = g_try_malloc (w * 3 * sizeof (guchar));
        if (!buf) {
 	       g_set_error_literal (error,
-                                    GDK_PIXBUF_ERROR,
-                                    GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                    CDK_PIXBUF_ERROR,
+                                    CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                     _("Couldn’t allocate memory for loading JPEG file"));
 	       retval = FALSE;
 	       goto cleanup;
@@ -1521,8 +1521,8 @@ real_save_jpeg (GdkPixbuf          *pixbuf,
 	       to_callback_destmgr.buffer = g_try_malloc (TO_FUNCTION_BUF_SIZE);
 	       if (!to_callback_destmgr.buffer) {
 		       g_set_error_literal (error,
-                                            GDK_PIXBUF_ERROR,
-                                            GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                            CDK_PIXBUF_ERROR,
+                                            CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                             _("Couldn’t allocate memory for loading JPEG file"));
 		       retval = FALSE;
 		       goto cleanup;
@@ -1710,7 +1710,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
 	info->description = NC_("image format", "JPEG");
 	info->mime_types = (gchar **) mime_types;
 	info->extensions = (gchar **) extensions;
-	info->flags = GDK_PIXBUF_FORMAT_WRITABLE | GDK_PIXBUF_FORMAT_THREADSAFE;
+	info->flags = CDK_PIXBUF_FORMAT_WRITABLE | CDK_PIXBUF_FORMAT_THREADSAFE;
 	info->license = "LGPL";
 }
 

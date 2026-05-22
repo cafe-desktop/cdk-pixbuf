@@ -15,8 +15,8 @@
  * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef GDK_PIXBUF_LZW_H
-#define GDK_PIXBUF_LZW_H
+#ifndef CDK_PIXBUF_LZW_H
+#define CDK_PIXBUF_LZW_H
 
 #include <glib-object.h>
 

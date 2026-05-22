@@ -161,7 +161,7 @@ test_args = [ '-k' ]
 test_env = environment()
 test_env.set('G_TEST_SRCDIR', meson.current_source_dir())
 test_env.set('G_TEST_BUILDDIR', meson.current_build_dir())
-test_env.set('GDK_PIXBUF_MODULE_FILE', loaders_cache.full_path())
+test_env.set('CDK_PIXBUF_MODULE_FILE', loaders_cache.full_path())
 
 foreach test_name, test_data: installed_tests
   test_sources = [ test_name + '.c', 'test-common.c' ]

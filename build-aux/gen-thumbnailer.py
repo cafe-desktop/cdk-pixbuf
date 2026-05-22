@@ -20,8 +20,8 @@ argparser.add_argument('output', help='Output file')
 args = argparser.parse_args()
 
 newenv = os.environ.copy()
-newenv['GDK_PIXBUF_PIXDATA'] = args.pixdata
-newenv['GDK_PIXBUF_MODULE_FILE'] = args.loaders
+newenv['CDK_PIXBUF_PIXDATA'] = args.pixdata
+newenv['CDK_PIXBUF_MODULE_FILE'] = args.loaders
 # 'nt': NT-based Windows, see https://docs.python.org/3/library/os.html
 if os.name == 'nt':
     cdk_pixbuf_dll_buildpath = os.path.dirname(args.pixdata)

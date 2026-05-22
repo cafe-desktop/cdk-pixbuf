@@ -38,7 +38,7 @@ cmd += [args.resource]
 cmd += ['--target', args.output]
 
 newenv = os.environ.copy()
-newenv['GDK_PIXBUF_PIXDATA'] = args.pixdata
-newenv['GDK_PIXBUF_MODULE_FILE'] = args.loaders
+newenv['CDK_PIXBUF_PIXDATA'] = args.pixdata
+newenv['CDK_PIXBUF_MODULE_FILE'] = args.loaders
 
 os.execvpe(cmd[0], cmd, newenv)

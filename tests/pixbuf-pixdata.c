@@ -43,12 +43,12 @@ test_pixdata_deserialize (gconstpointer data)
   g_assert_no_error (error);
 
   pixbuf = cdk_pixbuf_from_pixdata (&pixdata, TRUE, &error);
-  g_assert_error (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_CORRUPT_IMAGE);
+  g_assert_error (error, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_CORRUPT_IMAGE);
   g_clear_error (&error);
   g_free (contents);
 
   pixbuf = cdk_pixbuf_from_pixdata (&pixdata, FALSE, &error);
-  g_assert_error (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_CORRUPT_IMAGE);
+  g_assert_error (error, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_CORRUPT_IMAGE);
   g_clear_error (&error);
 
   g_clear_object (&pixbuf);
@@ -113,7 +113,7 @@ test_pixdata (void)
 
   path = g_test_get_filename (G_TEST_DIST, "test-image.pixdata", NULL);
   ref = cdk_pixbuf_new_from_file (path, &error);
-  g_assert_error (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_UNKNOWN_TYPE);
+  g_assert_error (error, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_UNKNOWN_TYPE);
   g_clear_error (&error);
   g_clear_object (&ref);
 }

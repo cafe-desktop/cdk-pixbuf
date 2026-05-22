@@ -114,7 +114,7 @@ run_gif_test (gconstpointer data)
 
   cdk_pixbuf_loader_close (loader, &error);
   if (width == 0 || height == 0) {
-    g_assert_error (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_CORRUPT_IMAGE);
+    g_assert_error (error, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_CORRUPT_IMAGE);
     g_clear_error (&error);
   }
   else {
@@ -172,7 +172,7 @@ run_gif_test (gconstpointer data)
       g_clear_object (&pixels_file);
       g_assert_no_error (error);
 
-      g_assert_cmpint (cdk_pixbuf_get_colorspace (pixbuf), ==, GDK_COLORSPACE_RGB);
+      g_assert_cmpint (cdk_pixbuf_get_colorspace (pixbuf), ==, CDK_COLORSPACE_RGB);
       g_assert_cmpint (cdk_pixbuf_get_n_channels (pixbuf), ==, 4);
       g_assert_true (cdk_pixbuf_get_has_alpha (pixbuf));
       g_assert_cmpint (cdk_pixbuf_get_rowstride (pixbuf), ==, width * 4);

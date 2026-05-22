@@ -107,7 +107,7 @@ convert_glycin_frame_to_pixbuf (GlyFrame *frame)
   format = gly_frame_get_memory_format (frame);
 
   return cdk_pixbuf_new_from_bytes (bytes,
-                                    GDK_COLORSPACE_RGB,
+                                    CDK_COLORSPACE_RGB,
                                     gly_memory_format_has_alpha (format),
                                     8,
                                     gly_frame_get_width (frame),
@@ -137,10 +137,10 @@ cdk_pixbuf_glycin_frame_clear (GdkPixbufGlycinFrame *frame)
   g_object_unref (frame->pixbuf);
 }
 
-#define GDK_PIXBUF_TYPE_GLYCIN_ANIMATION (cdk_pixbuf_glycin_animation_get_type ())
-#define GDK_PIXBUF_TYPE_GLYCIN_ANIMATION_ITER (cdk_pixbuf_glycin_animation_iter_get_type ())
-G_DECLARE_FINAL_TYPE (GdkPixbufGlycinAnimation, cdk_pixbuf_glycin_animation, GDK_PIXBUF, GLYCIN_ANIMATION, GdkPixbufAnimation)
-G_DECLARE_FINAL_TYPE (GdkPixbufGlycinAnimationIter, cdk_pixbuf_glycin_animation_iter, GDK_PIXBUF, GLYCIN_ANIMATION_ITER, GdkPixbufAnimationIter)
+#define CDK_PIXBUF_TYPE_GLYCIN_ANIMATION (cdk_pixbuf_glycin_animation_get_type ())
+#define CDK_PIXBUF_TYPE_GLYCIN_ANIMATION_ITER (cdk_pixbuf_glycin_animation_iter_get_type ())
+G_DECLARE_FINAL_TYPE (GdkPixbufGlycinAnimation, cdk_pixbuf_glycin_animation, CDK_PIXBUF, GLYCIN_ANIMATION, GdkPixbufAnimation)
+G_DECLARE_FINAL_TYPE (GdkPixbufGlycinAnimationIter, cdk_pixbuf_glycin_animation_iter, CDK_PIXBUF, GLYCIN_ANIMATION_ITER, GdkPixbufAnimationIter)
 
 struct _GdkPixbufGlycinAnimation
 {
@@ -160,8 +160,8 @@ struct _GdkPixbufGlycinAnimationIter
   gint64 time;
 };
 
-G_DEFINE_FINAL_TYPE (GdkPixbufGlycinAnimation, cdk_pixbuf_glycin_animation, GDK_TYPE_PIXBUF_ANIMATION)
-G_DEFINE_FINAL_TYPE (GdkPixbufGlycinAnimationIter, cdk_pixbuf_glycin_animation_iter, GDK_TYPE_PIXBUF_ANIMATION_ITER)
+G_DEFINE_FINAL_TYPE (GdkPixbufGlycinAnimation, cdk_pixbuf_glycin_animation, CDK_TYPE_PIXBUF_ANIMATION)
+G_DEFINE_FINAL_TYPE (GdkPixbufGlycinAnimationIter, cdk_pixbuf_glycin_animation_iter, CDK_TYPE_PIXBUF_ANIMATION_ITER)
 
 static void
 cdk_pixbuf_glycin_animation_finalize (GObject *object)
@@ -213,7 +213,7 @@ cdk_pixbuf_glycin_animation_get_iter (GdkPixbufAnimation *animation,
 
   if (self->decoded->len > 0)
     {
-      iter = g_object_new (GDK_PIXBUF_TYPE_GLYCIN_ANIMATION_ITER, NULL);
+      iter = g_object_new (CDK_PIXBUF_TYPE_GLYCIN_ANIMATION_ITER, NULL);
       iter->animation = g_object_ref (self);
       iter->idx = 0;
       iter->time = timeval_to_usec (start_time);
@@ -395,7 +395,7 @@ cdk_pixbuf_glycin_animation_new (GlyImage *image,
 {
   GdkPixbufGlycinAnimation *self;
 
-  self = g_object_new (GDK_PIXBUF_TYPE_GLYCIN_ANIMATION, NULL);
+  self = g_object_new (CDK_PIXBUF_TYPE_GLYCIN_ANIMATION, NULL);
   self->width = width;
   self->height = height;
   self->image = g_object_ref (image);
@@ -500,14 +500,14 @@ done:
 
   if (g_error_matches (local_error, GLY_LOADER_ERROR, GLY_LOADER_ERROR_FAILED))
     {
-      g_set_error_literal (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+      g_set_error_literal (error, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                            local_error->message);
       g_clear_error (&local_error);
     }
   else if (g_error_matches (local_error, GLY_LOADER_ERROR, GLY_LOADER_ERROR_UNKNOWN_IMAGE_FORMAT))
     {
       /* glycins message for this error is excessive */
-      g_set_error_literal (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_UNKNOWN_TYPE,
+      g_set_error_literal (error, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_UNKNOWN_TYPE,
                            "Unsupported image format");
       g_clear_error (&local_error);
     }

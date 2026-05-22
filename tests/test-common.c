@@ -36,7 +36,7 @@ make_checkerboard (int width, int height)
   guchar *row;   /* Pointer to start of row of pixels within the image */
   guchar *pixel; /* Pointer to current pixel data in row */
 
-  checkerboard = cdk_pixbuf_new (GDK_COLORSPACE_RGB, 0, 8, width, height);
+  checkerboard = cdk_pixbuf_new (CDK_COLORSPACE_RGB, 0, 8, width, height);
   g_assert_nonnull (checkerboard);
 
   for (y = 0, row = cdk_pixbuf_get_pixels (checkerboard);
@@ -64,7 +64,7 @@ make_rg (int width, int height)
   guchar *pixel; /* Pointer to current pixel data in row */
 
   /* Make a source image whose pixels are all of different colors */
-  pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, 0, 8, width, height);
+  pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, 0, 8, width, height);
   g_assert_nonnull (pixbuf);
 
   for (y = 0, row = cdk_pixbuf_get_pixels (pixbuf);
@@ -142,7 +142,7 @@ file_supported (GFile *file)
 gboolean
 skip_if_insufficient_memory (GError **err)
 {
-  if (*err && g_error_matches (*err, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY))
+  if (*err && g_error_matches (*err, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY))
   {
       g_test_skip ((*err)->message);
       g_error_free (*err);
@@ -160,14 +160,14 @@ pixdata_equal (GdkPixbuf  *test,
 {
   if (cdk_pixbuf_get_colorspace (test) != cdk_pixbuf_get_colorspace (ref))
     {
-      g_set_error (error, GDK_PIXBUF_ERROR, 0, "Image colorspace is %d but should be %d",
+      g_set_error (error, CDK_PIXBUF_ERROR, 0, "Image colorspace is %d but should be %d",
                    cdk_pixbuf_get_colorspace (test), cdk_pixbuf_get_colorspace (ref));
       return FALSE;
     }
 
   if (cdk_pixbuf_get_n_channels (test) != cdk_pixbuf_get_n_channels (ref))
     {
-      g_set_error (error, GDK_PIXBUF_ERROR, 0,
+      g_set_error (error, CDK_PIXBUF_ERROR, 0,
                    "has %u channels but should have %u",
                    cdk_pixbuf_get_n_channels (test), cdk_pixbuf_get_n_channels (ref));
       return FALSE;
@@ -175,7 +175,7 @@ pixdata_equal (GdkPixbuf  *test,
 
   if (cdk_pixbuf_get_bits_per_sample (test) != cdk_pixbuf_get_bits_per_sample (ref))
     {
-      g_set_error (error, GDK_PIXBUF_ERROR, 0,
+      g_set_error (error, CDK_PIXBUF_ERROR, 0,
                    "Image is %u bits per sample but should be %u bits per sample",
                    cdk_pixbuf_get_bits_per_sample (test), cdk_pixbuf_get_bits_per_sample (ref));
       return FALSE;
@@ -184,7 +184,7 @@ pixdata_equal (GdkPixbuf  *test,
   if (cdk_pixbuf_get_width (test) != cdk_pixbuf_get_width (ref) ||
       cdk_pixbuf_get_height (test) != cdk_pixbuf_get_height (ref))
     {
-      g_set_error (error, GDK_PIXBUF_ERROR, 0,
+      g_set_error (error, CDK_PIXBUF_ERROR, 0,
                    "Image size is %dx%d but should be %dx%d",
                    cdk_pixbuf_get_width (test), cdk_pixbuf_get_height (test),
                    cdk_pixbuf_get_width (ref), cdk_pixbuf_get_height (ref));
@@ -193,7 +193,7 @@ pixdata_equal (GdkPixbuf  *test,
 
   if (cdk_pixbuf_get_rowstride (test) != cdk_pixbuf_get_rowstride (ref))
     {
-      g_set_error (error, GDK_PIXBUF_ERROR, 0,
+      g_set_error (error, CDK_PIXBUF_ERROR, 0,
                    "Image rowstrides is %u bytes but should be %u bytes",
                    cdk_pixbuf_get_rowstride (test), cdk_pixbuf_get_rowstride (ref));
       return FALSE;
@@ -235,21 +235,21 @@ pixdata_equal (GdkPixbuf  *test,
                 {
                   if (n_channels == 4)
                     {
-                      g_set_error (error, GDK_PIXBUF_ERROR, 0, "Image data at %ux%u is #%02X%02X%02X%02X, but should be #%02X%02X%02X%02X",
+                      g_set_error (error, CDK_PIXBUF_ERROR, 0, "Image data at %ux%u is #%02X%02X%02X%02X, but should be #%02X%02X%02X%02X",
                                    x, y,
                                    test_pixels[x * n_channels + 0], test_pixels[x * n_channels + 1], test_pixels[x * n_channels + 2], test_pixels[x * n_channels + 3],
                                    ref_pixels[x * n_channels + 0], ref_pixels[x * n_channels + 1], ref_pixels[x * n_channels + 2], ref_pixels[x * n_channels + 3]);
                     }
                   else if (n_channels == 3)
                     {
-                      g_set_error (error, GDK_PIXBUF_ERROR, 0, "Image data at %ux%u is #%02X%02X%02X, but should be #%02X%02X%02X",
+                      g_set_error (error, CDK_PIXBUF_ERROR, 0, "Image data at %ux%u is #%02X%02X%02X, but should be #%02X%02X%02X",
                                    x, y,
                                    test_pixels[x * n_channels + 0], test_pixels[x * n_channels + 1], test_pixels[x * n_channels + 2],
                                    ref_pixels[x * n_channels + 0], ref_pixels[x * n_channels + 1], ref_pixels[x * n_channels + 2]);
                     }
                   else
                     {
-                      g_set_error (error, GDK_PIXBUF_ERROR, 0, "Image data differ at %ux%u", x, y);
+                      g_set_error (error, CDK_PIXBUF_ERROR, 0, "Image data differ at %ux%u", x, y);
                     }
                   return FALSE;
                 }

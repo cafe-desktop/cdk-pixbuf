@@ -64,8 +64,8 @@ cdk_pixbuf_add_alpha (const GdkPixbuf *pixbuf,
 	const guchar *src;
 	guchar *dest;
 
-	g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), NULL);
-	g_return_val_if_fail (pixbuf->colorspace == GDK_COLORSPACE_RGB, NULL);
+	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), NULL);
+	g_return_val_if_fail (pixbuf->colorspace == CDK_COLORSPACE_RGB, NULL);
 	g_return_val_if_fail (pixbuf->n_channels == 3 || pixbuf->n_channels == 4, NULL);
 	g_return_val_if_fail (pixbuf->bits_per_sample == 8, NULL);
 
@@ -79,7 +79,7 @@ cdk_pixbuf_add_alpha (const GdkPixbuf *pixbuf,
                 if (!substitute_color)
                         return new_pixbuf;
 	} else {
-                new_pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, pixbuf->width, pixbuf->height);
+                new_pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, TRUE, 8, pixbuf->width, pixbuf->height);
         }
 
 	if (!new_pixbuf)
@@ -164,7 +164,7 @@ cdk_pixbuf_copy_area (const GdkPixbuf *src_pixbuf,
 			  (double) (dest_x - src_x),
 			  (double) (dest_y - src_y),
 			  1.0, 1.0,
-			  GDK_INTERP_NEAREST);
+			  CDK_INTERP_NEAREST);
 }
 
 
@@ -200,8 +200,8 @@ cdk_pixbuf_saturate_and_pixelate (const GdkPixbuf *src,
 {
         /* NOTE that src and dest MAY be the same pixbuf! */
   
-        g_return_if_fail (GDK_IS_PIXBUF (src));
-        g_return_if_fail (GDK_IS_PIXBUF (dest));
+        g_return_if_fail (CDK_IS_PIXBUF (src));
+        g_return_if_fail (CDK_IS_PIXBUF (dest));
         g_return_if_fail (cdk_pixbuf_get_height (src) == cdk_pixbuf_get_height (dest));
         g_return_if_fail (cdk_pixbuf_get_width (src) == cdk_pixbuf_get_width (dest));
         g_return_if_fail (cdk_pixbuf_get_has_alpha (src) == cdk_pixbuf_get_has_alpha (dest));
@@ -297,7 +297,7 @@ cdk_pixbuf_apply_embedded_orientation (GdkPixbuf *src)
 	GdkPixbuf   *temp;
 	GdkPixbuf   *dest;
 
-	g_return_val_if_fail (GDK_IS_PIXBUF (src), NULL);
+	g_return_val_if_fail (CDK_IS_PIXBUF (src), NULL);
 
 	/* Read the orientation option associated with the pixbuf */
 	orientation_string = cdk_pixbuf_get_option (src, "orientation");	
@@ -320,26 +320,26 @@ cdk_pixbuf_apply_embedded_orientation (GdkPixbuf *src)
                 dest = cdk_pixbuf_flip (src, TRUE);
                 break;
         case 3:
-                dest = cdk_pixbuf_rotate_simple (src, GDK_PIXBUF_ROTATE_UPSIDEDOWN);
+                dest = cdk_pixbuf_rotate_simple (src, CDK_PIXBUF_ROTATE_UPSIDEDOWN);
                 break;
         case 4:
                 dest = cdk_pixbuf_flip (src, FALSE);
                 break;
         case 5:
-                temp = cdk_pixbuf_rotate_simple (src, GDK_PIXBUF_ROTATE_CLOCKWISE);
+                temp = cdk_pixbuf_rotate_simple (src, CDK_PIXBUF_ROTATE_CLOCKWISE);
                 dest = cdk_pixbuf_flip (temp, TRUE);
                 g_object_unref (temp);
                 break;
         case 6:
-                dest = cdk_pixbuf_rotate_simple (src, GDK_PIXBUF_ROTATE_CLOCKWISE);
+                dest = cdk_pixbuf_rotate_simple (src, CDK_PIXBUF_ROTATE_CLOCKWISE);
                 break;
         case 7:
-                temp = cdk_pixbuf_rotate_simple (src, GDK_PIXBUF_ROTATE_CLOCKWISE);
+                temp = cdk_pixbuf_rotate_simple (src, CDK_PIXBUF_ROTATE_CLOCKWISE);
                 dest = cdk_pixbuf_flip (temp, FALSE);
                 g_object_unref (temp);
                 break;
         case 8:
-                dest = cdk_pixbuf_rotate_simple (src, GDK_PIXBUF_ROTATE_COUNTERCLOCKWISE);
+                dest = cdk_pixbuf_rotate_simple (src, CDK_PIXBUF_ROTATE_COUNTERCLOCKWISE);
                 break;
         default:
 		/* if no orientation tag was present */
@@ -351,7 +351,7 @@ cdk_pixbuf_apply_embedded_orientation (GdkPixbuf *src)
         return dest;
 }
 
-#ifdef GDK_PIXBUF_RELOCATABLE
+#ifdef CDK_PIXBUF_RELOCATABLE
 
 static const gchar *
 get_localedir (void)
@@ -375,8 +375,8 @@ get_localedir (void)
 #endif
 }
 
-#undef GDK_PIXBUF_LOCALEDIR
-#define GDK_PIXBUF_LOCALEDIR get_localedir ()
+#undef CDK_PIXBUF_LOCALEDIR
+#define CDK_PIXBUF_LOCALEDIR get_localedir ()
 
 #endif
 
@@ -386,7 +386,7 @@ _cdk_pixbuf_init_gettext (void)
         static gsize gettext_initialized = FALSE;
 
         if (G_UNLIKELY (g_once_init_enter (&gettext_initialized))) {
-                bindtextdomain (GETTEXT_PACKAGE, GDK_PIXBUF_LOCALEDIR);
+                bindtextdomain (GETTEXT_PACKAGE, CDK_PIXBUF_LOCALEDIR);
 #ifdef HAVE_BIND_TEXTDOMAIN_CODESET
                 bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 #endif

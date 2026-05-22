@@ -162,7 +162,7 @@ prepared_callback (GdkPixbufLoader *loader,
 	if (context->pos == 0) 
 	{
 		(* context->prepared_func) (pixbuf, 
-					    GDK_PIXBUF_ANIMATION (context->animation), 
+					    CDK_PIXBUF_ANIMATION (context->animation), 
 					    context->user_data);
 	}
 	else {
@@ -234,8 +234,8 @@ ani_load_chunk (AniLoaderContext *context, GError **error)
 			if (context->pos >= context->NumFrames) 
 			{
 				g_set_error_literal (error,
-                                                     GDK_PIXBUF_ERROR,
-                                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                                     CDK_PIXBUF_ERROR,
+                                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                                      _("Unexpected icon chunk in animation"));
 				return FALSE; 
 			}
@@ -298,16 +298,16 @@ ani_load_chunk (AniLoaderContext *context, GError **error)
 		if (context->chunk_size < 36)
 		{
 			g_set_error_literal (error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              _("Malformed chunk in animation"));
 			return FALSE;
 		}
 		if (context->animation)
 		{
 			g_set_error_literal (error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              _("Invalid header in animation"));
 			return FALSE;
 		}
@@ -349,18 +349,18 @@ ani_load_chunk (AniLoaderContext *context, GError **error)
 		    context->NumSteps >= 1024) 
 		{
 			g_set_error_literal (error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              _("Invalid header in animation"));
 			return FALSE;
 		}
       
-		context->animation = g_object_new (GDK_TYPE_PIXBUF_ANI_ANIM, NULL);        
+		context->animation = g_object_new (CDK_TYPE_PIXBUF_ANI_ANIM, NULL);        
 		if (!context->animation) 
 		{
 			g_set_error_literal (error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                              _("Not enough memory to load animation"));
 			return FALSE;
 		}
@@ -381,8 +381,8 @@ ani_load_chunk (AniLoaderContext *context, GError **error)
 		    !context->animation->sequence) 
 		{
 			g_set_error_literal (error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                              _("Not enough memory to load animation"));
 			return FALSE;
 		}
@@ -399,16 +399,16 @@ ani_load_chunk (AniLoaderContext *context, GError **error)
 		if (context->chunk_size != 4 * context->NumSteps) 
 		{
 			g_set_error_literal (error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              _("Malformed chunk in animation"));
 			return FALSE; 
 		}
 		if (!context->animation) 
 		{
 			g_set_error_literal (error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              _("Invalid header in animation"));
 			return FALSE;
 		}
@@ -425,16 +425,16 @@ ani_load_chunk (AniLoaderContext *context, GError **error)
 		if (context->chunk_size != 4 * context->NumSteps) 
 		{
 			g_set_error_literal (error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              _("Malformed chunk in animation"));
 			return FALSE; 
 		}
 		if (!context->animation) 
 		{
 			g_set_error_literal (error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              _("Invalid header in animation"));
 			return FALSE;
 		}
@@ -444,8 +444,8 @@ ani_load_chunk (AniLoaderContext *context, GError **error)
 			if (context->animation->sequence[i] >= context->NumFrames) 
 			{
 				g_set_error_literal (error,
-                                                     GDK_PIXBUF_ERROR,
-                                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                                     CDK_PIXBUF_ERROR,
+                                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                                      _("Malformed chunk in animation"));
 				return FALSE; 
 			}
@@ -456,8 +456,8 @@ ani_load_chunk (AniLoaderContext *context, GError **error)
 		if (!context->animation || context->title)
 		{
 			g_set_error_literal (error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              _("Invalid header in animation"));
 			return FALSE;
 		}
@@ -465,8 +465,8 @@ ani_load_chunk (AniLoaderContext *context, GError **error)
 		if (!context->title) 
 		{
 			g_set_error_literal (error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                              _("Not enough memory to load animation"));
 			return FALSE;
 		}
@@ -483,8 +483,8 @@ ani_load_chunk (AniLoaderContext *context, GError **error)
 		if (!context->animation || context->author)
 		{
 			g_set_error_literal (error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              _("Invalid header in animation"));
 			return FALSE;
 		}
@@ -492,8 +492,8 @@ ani_load_chunk (AniLoaderContext *context, GError **error)
 		if (!context->author) 
 		{
 			g_set_error_literal (error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                              _("Not enough memory to load animation"));
 			return FALSE;
 		}
@@ -543,8 +543,8 @@ cdk_pixbuf__ani_image_load_increment (gpointer data,
                         if (!tmp) 
 			{
 				g_set_error_literal (error,
-                                                     GDK_PIXBUF_ERROR,
-                                                     GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                                     CDK_PIXBUF_ERROR,
+                                                     CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                                      _("Not enough memory to load animation"));
 				return FALSE;
 			}
@@ -570,8 +570,8 @@ cdk_pixbuf__ani_image_load_increment (gpointer data,
 		    chunk_id != TAG_ACON) 
 		{
 			g_set_error_literal (error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              _("Invalid header in animation"));
 			return FALSE; 
 		}
@@ -619,8 +619,8 @@ cdk_pixbuf__ani_image_begin_load (GdkPixbufModuleSizeFunc size_func,
 	{
 		context_free (context);
 		g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                      _("Not enough memory to load animation"));
 		return NULL;
 	}
@@ -641,8 +641,8 @@ cdk_pixbuf__ani_image_stop_load (gpointer data,
 	g_return_val_if_fail (context != NULL, TRUE);
         if (!context->animation) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("ANI image was truncated or incomplete."));
                 retval = FALSE;
         }
@@ -687,7 +687,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
 	info->description = NC_("image format", "Windows animated cursor");
 	info->mime_types = (gchar **) mime_types;
 	info->extensions = (gchar **) extensions;
-	info->flags = GDK_PIXBUF_FORMAT_THREADSAFE;
+	info->flags = CDK_PIXBUF_FORMAT_THREADSAFE;
 	info->license = "LGPL";
 }
 

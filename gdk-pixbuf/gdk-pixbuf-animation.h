@@ -22,10 +22,10 @@
  * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef GDK_PIXBUF_ANIMATION_H
-#define GDK_PIXBUF_ANIMATION_H
+#ifndef CDK_PIXBUF_ANIMATION_H
+#define CDK_PIXBUF_ANIMATION_H
 
-#if defined(GDK_PIXBUF_DISABLE_SINGLE_INCLUDES) && !defined (GDK_PIXBUF_H_INSIDE) && !defined (GDK_PIXBUF_COMPILATION)
+#if defined(CDK_PIXBUF_DISABLE_SINGLE_INCLUDES) && !defined (CDK_PIXBUF_H_INSIDE) && !defined (CDK_PIXBUF_COMPILATION)
 #error "Only <cdk-pixbuf/cdk-pixbuf.h> can be included directly."
 #endif
 
@@ -41,79 +41,79 @@ typedef struct _GdkPixbufAnimation GdkPixbufAnimation;
 
 typedef struct _GdkPixbufAnimationIter GdkPixbufAnimationIter;
 
-#define GDK_TYPE_PIXBUF_ANIMATION              (cdk_pixbuf_animation_get_type ())
-#define GDK_PIXBUF_ANIMATION(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_PIXBUF_ANIMATION, GdkPixbufAnimation))
-#define GDK_IS_PIXBUF_ANIMATION(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_PIXBUF_ANIMATION))
+#define CDK_TYPE_PIXBUF_ANIMATION              (cdk_pixbuf_animation_get_type ())
+#define CDK_PIXBUF_ANIMATION(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF_ANIMATION, GdkPixbufAnimation))
+#define CDK_IS_PIXBUF_ANIMATION(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), CDK_TYPE_PIXBUF_ANIMATION))
 
-#define GDK_TYPE_PIXBUF_ANIMATION_ITER              (cdk_pixbuf_animation_iter_get_type ())
-#define GDK_PIXBUF_ANIMATION_ITER(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_PIXBUF_ANIMATION_ITER, GdkPixbufAnimationIter))
-#define GDK_IS_PIXBUF_ANIMATION_ITER(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_PIXBUF_ANIMATION_ITER))
+#define CDK_TYPE_PIXBUF_ANIMATION_ITER              (cdk_pixbuf_animation_iter_get_type ())
+#define CDK_PIXBUF_ANIMATION_ITER(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF_ANIMATION_ITER, GdkPixbufAnimationIter))
+#define CDK_IS_PIXBUF_ANIMATION_ITER(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), CDK_TYPE_PIXBUF_ANIMATION_ITER))
 
-GDK_PIXBUF_AVAILABLE_IN_ALL
+CDK_PIXBUF_AVAILABLE_IN_ALL
 GType               cdk_pixbuf_animation_get_type        (void) G_GNUC_CONST;
 
 #ifdef G_OS_WIN32
 /* API/ABI compat, see cdk-pixbuf-core.h for details */
-GDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_DEPRECATED_IN_2_44
 GdkPixbufAnimation *cdk_pixbuf_animation_new_from_file_utf8   (const char         *filename,
                                                                GError            **error);
 #endif
 
-GDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_DEPRECATED_IN_2_44
 GdkPixbufAnimation *cdk_pixbuf_animation_new_from_file   (const char         *filename,
                                                           GError            **error);
-GDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_DEPRECATED_IN_2_44
 GdkPixbufAnimation *cdk_pixbuf_animation_new_from_stream (GInputStream       *stream,
                                                           GCancellable       *cancellable,
                                                           GError            **error);
-GDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_DEPRECATED_IN_2_44
 void                cdk_pixbuf_animation_new_from_stream_async (GInputStream *stream,
                                                           GCancellable       *cancellable,
                                                           GAsyncReadyCallback callback,
                                                           gpointer            user_data);
-GDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_DEPRECATED_IN_2_44
 GdkPixbufAnimation *cdk_pixbuf_animation_new_from_stream_finish (GAsyncResult*async_result,
                                                           GError            **error);
-GDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_DEPRECATED_IN_2_44
 GdkPixbufAnimation *cdk_pixbuf_animation_new_from_resource(const char        *resource_path,
                                                           GError            **error);
 
-GDK_PIXBUF_DEPRECATED_IN_2_0_FOR(g_object_ref)
+CDK_PIXBUF_DEPRECATED_IN_2_0_FOR(g_object_ref)
 GdkPixbufAnimation *cdk_pixbuf_animation_ref             (GdkPixbufAnimation *animation);
-GDK_PIXBUF_DEPRECATED_IN_2_0_FOR(g_object_unref)
+CDK_PIXBUF_DEPRECATED_IN_2_0_FOR(g_object_unref)
 void                cdk_pixbuf_animation_unref           (GdkPixbufAnimation *animation);
 
-GDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_DEPRECATED_IN_2_44
 int                 cdk_pixbuf_animation_get_width       (GdkPixbufAnimation *animation);
-GDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_DEPRECATED_IN_2_44
 int                 cdk_pixbuf_animation_get_height      (GdkPixbufAnimation *animation);
-GDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_DEPRECATED_IN_2_44
 gboolean            cdk_pixbuf_animation_is_static_image  (GdkPixbufAnimation *animation);
-GDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_DEPRECATED_IN_2_44
 GdkPixbuf          *cdk_pixbuf_animation_get_static_image (GdkPixbufAnimation *animation);
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-GDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_DEPRECATED_IN_2_44
 GdkPixbufAnimationIter *cdk_pixbuf_animation_get_iter                        (GdkPixbufAnimation     *animation,
                                                                               const GTimeVal         *start_time);
 G_GNUC_END_IGNORE_DEPRECATIONS
 
-GDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_DEPRECATED_IN_2_44
 GType                   cdk_pixbuf_animation_iter_get_type                   (void) G_GNUC_CONST;
-GDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_DEPRECATED_IN_2_44
 int                     cdk_pixbuf_animation_iter_get_delay_time             (GdkPixbufAnimationIter *iter);
-GDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_DEPRECATED_IN_2_44
 GdkPixbuf              *cdk_pixbuf_animation_iter_get_pixbuf                 (GdkPixbufAnimationIter *iter);
-GDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_DEPRECATED_IN_2_44
 gboolean                cdk_pixbuf_animation_iter_on_currently_loading_frame (GdkPixbufAnimationIter *iter);
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-GDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_DEPRECATED_IN_2_44
 gboolean                cdk_pixbuf_animation_iter_advance                    (GdkPixbufAnimationIter *iter,
                                                                               const GTimeVal         *current_time);
 G_GNUC_END_IGNORE_DEPRECATIONS
 
 
-#ifdef GDK_PIXBUF_ENABLE_BACKEND
+#ifdef CDK_PIXBUF_ENABLE_BACKEND
 
 
 
@@ -133,9 +133,9 @@ G_GNUC_END_IGNORE_DEPRECATIONS
  */
 typedef struct _GdkPixbufAnimationClass GdkPixbufAnimationClass;
 
-#define GDK_PIXBUF_ANIMATION_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GDK_TYPE_PIXBUF_ANIMATION, GdkPixbufAnimationClass))
-#define GDK_IS_PIXBUF_ANIMATION_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GDK_TYPE_PIXBUF_ANIMATION))
-#define GDK_PIXBUF_ANIMATION_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GDK_TYPE_PIXBUF_ANIMATION, GdkPixbufAnimationClass))
+#define CDK_PIXBUF_ANIMATION_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_ANIMATION, GdkPixbufAnimationClass))
+#define CDK_IS_PIXBUF_ANIMATION_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), CDK_TYPE_PIXBUF_ANIMATION))
+#define CDK_PIXBUF_ANIMATION_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_ANIMATION, GdkPixbufAnimationClass))
 
 /* Private part of the GdkPixbufAnimation structure */
 struct _GdkPixbufAnimation {
@@ -183,9 +183,9 @@ G_GNUC_END_IGNORE_DEPRECATIONS
  */
 typedef struct _GdkPixbufAnimationIterClass GdkPixbufAnimationIterClass;
 
-#define GDK_PIXBUF_ANIMATION_ITER_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GDK_TYPE_PIXBUF_ANIMATION_ITER, GdkPixbufAnimationIterClass))
-#define GDK_IS_PIXBUF_ANIMATION_ITER_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GDK_TYPE_PIXBUF_ANIMATION_ITER))
-#define GDK_PIXBUF_ANIMATION_ITER_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GDK_TYPE_PIXBUF_ANIMATION_ITER, GdkPixbufAnimationIterClass))
+#define CDK_PIXBUF_ANIMATION_ITER_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_ANIMATION_ITER, GdkPixbufAnimationIterClass))
+#define CDK_IS_PIXBUF_ANIMATION_ITER_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), CDK_TYPE_PIXBUF_ANIMATION_ITER))
+#define CDK_PIXBUF_ANIMATION_ITER_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_ANIMATION_ITER, GdkPixbufAnimationIterClass))
 
 struct _GdkPixbufAnimationIter {
         GObject parent_instance;
@@ -209,21 +209,21 @@ struct _GdkPixbufAnimationIterClass {
 };
 G_GNUC_END_IGNORE_DEPRECATIONS
 
-#define GDK_TYPE_PIXBUF_NON_ANIM              (cdk_pixbuf_non_anim_get_type ())
-#define GDK_PIXBUF_NON_ANIM(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_PIXBUF_NON_ANIM, GdkPixbufNonAnim))
-#define GDK_IS_PIXBUF_NON_ANIM(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_PIXBUF_NON_ANIM))
+#define CDK_TYPE_PIXBUF_NON_ANIM              (cdk_pixbuf_non_anim_get_type ())
+#define CDK_PIXBUF_NON_ANIM(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF_NON_ANIM, GdkPixbufNonAnim))
+#define CDK_IS_PIXBUF_NON_ANIM(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), CDK_TYPE_PIXBUF_NON_ANIM))
 
 
-GDK_PIXBUF_AVAILABLE_IN_ALL
+CDK_PIXBUF_AVAILABLE_IN_ALL
 GType               cdk_pixbuf_non_anim_get_type (void) G_GNUC_CONST;
-GDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_DEPRECATED_IN_2_44
 GdkPixbufAnimation* cdk_pixbuf_non_anim_new (GdkPixbuf *pixbuf);
 
-#endif /* GDK_PIXBUF_ENABLE_BACKEND */
+#endif /* CDK_PIXBUF_ENABLE_BACKEND */
 
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (GdkPixbufAnimation, g_object_unref)
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (GdkPixbufAnimationIter, g_object_unref)
 
 G_END_DECLS
 
-#endif /* GDK_PIXBUF_ANIMATION_H */
+#endif /* CDK_PIXBUF_ANIMATION_H */

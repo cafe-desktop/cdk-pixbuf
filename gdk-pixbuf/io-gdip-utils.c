@@ -55,7 +55,7 @@ gdip_set_error_from_hresult (GError **error, gint code, HRESULT hr, const char *
   msg = g_win32_error_message (hr);
   
   if (msg) {
-    g_set_error (error, GDK_PIXBUF_ERROR, code, format, msg);
+    g_set_error (error, CDK_PIXBUF_ERROR, code, format, msg);
     g_free (msg);
   }
 }
@@ -92,7 +92,7 @@ gdip_set_error_from_gpstatus (GError **error, gint code, GpStatus status)
     default:
       msg = "Unknown error";
     }
-  g_set_error_literal (error, GDK_PIXBUF_ERROR, code, msg);
+  g_set_error_literal (error, CDK_PIXBUF_ERROR, code, msg);
 }
 
 static gboolean
@@ -152,7 +152,7 @@ gdip_buffer_to_hglobal (const gchar *buffer, size_t size, GError **error)
   hg = GlobalAlloc (GPTR, size);
 
   if (!hg) {
-    gdip_set_error_from_hresult (error, GDK_PIXBUF_ERROR_FAILED, GetLastError (), _("Could not allocate memory: %s"));
+    gdip_set_error_from_hresult (error, CDK_PIXBUF_ERROR_FAILED, GetLastError (), _("Could not allocate memory: %s"));
     return NULL;
   }
 
@@ -177,13 +177,13 @@ gdip_save_bitmap_to_callback (GpBitmap *bitmap,
 
   hr = CreateStreamOnHGlobal (NULL, TRUE, &streamOut);
   if (!SUCCEEDED (hr)) {
-    gdip_set_error_from_hresult (error, GDK_PIXBUF_ERROR_FAILED, hr, _("Could not create stream: %s"));
+    gdip_set_error_from_hresult (error, CDK_PIXBUF_ERROR_FAILED, hr, _("Could not create stream: %s"));
     return FALSE;
   }
 
   status = GdipSaveImageToStream ((GpImage *)bitmap, streamOut, format, encoder_params);
   if (Ok != status) {
-    gdip_set_error_from_gpstatus (error, GDK_PIXBUF_ERROR_FAILED, status);
+    gdip_set_error_from_gpstatus (error, CDK_PIXBUF_ERROR_FAILED, status);
     IStream_Release (streamOut);
     return FALSE;
   }
@@ -191,7 +191,7 @@ gdip_save_bitmap_to_callback (GpBitmap *bitmap,
   /* seek back to the beginning of the stream */
   hr = IStream_Seek (streamOut, *(LARGE_INTEGER *)&zero, STREAM_SEEK_SET, NULL);
   if (!SUCCEEDED (hr)) {
-    gdip_set_error_from_hresult (error, GDK_PIXBUF_ERROR_FAILED, hr, _("Could not seek stream: %s"));
+    gdip_set_error_from_hresult (error, CDK_PIXBUF_ERROR_FAILED, hr, _("Could not seek stream: %s"));
     IStream_Release (streamOut);
     return FALSE;
   }
@@ -203,7 +203,7 @@ gdip_save_bitmap_to_callback (GpBitmap *bitmap,
     hr = IStream_Read (streamOut, buffer, sizeof(buffer), &nread);
     if (!SUCCEEDED (hr))
       {
-        gdip_set_error_from_hresult (error, GDK_PIXBUF_ERROR_FAILED, hr, _("Could not read from stream: %s"));
+        gdip_set_error_from_hresult (error, CDK_PIXBUF_ERROR_FAILED, hr, _("Could not read from stream: %s"));
         break;
       }
     else if (0 == nread) {
@@ -291,7 +291,7 @@ gdip_buffer_to_bitmap (GdipContext *context, GError **error)
   hr = CreateStreamOnHGlobal (hg, FALSE, (LPSTREAM *)&stream);
 
   if (!SUCCEEDED (hr)) {
-    gdip_set_error_from_hresult (error, GDK_PIXBUF_ERROR_FAILED, hr, _("Could not create stream: %s"));
+    gdip_set_error_from_hresult (error, CDK_PIXBUF_ERROR_FAILED, hr, _("Could not create stream: %s"));
     GlobalFree (hg);
     return NULL;
   }
@@ -301,7 +301,7 @@ gdip_buffer_to_bitmap (GdipContext *context, GError **error)
   status = GdipCreateBitmapFromStream (stream, &bitmap);
 
   if (Ok != status) {
-    gdip_set_error_from_gpstatus (error, GDK_PIXBUF_ERROR_FAILED, status);
+    gdip_set_error_from_gpstatus (error, CDK_PIXBUF_ERROR_FAILED, status);
     IStream_Release (stream);
     GlobalFree (hg);
     return NULL;
@@ -331,7 +331,7 @@ gdip_buffer_to_image (GdipContext *context, GError **error)
   hr = CreateStreamOnHGlobal (hg, FALSE, (LPSTREAM *)&stream);
 
   if (!SUCCEEDED (hr)) {
-    gdip_set_error_from_hresult (error, GDK_PIXBUF_ERROR_FAILED, hr, _("Could not create stream: %s"));
+    gdip_set_error_from_hresult (error, CDK_PIXBUF_ERROR_FAILED, hr, _("Could not create stream: %s"));
     GlobalFree (hg);
     return NULL;
   }
@@ -340,7 +340,7 @@ gdip_buffer_to_image (GdipContext *context, GError **error)
   status = GdipLoadImageFromStream (stream, &image);
 
   if (Ok != status) {
-    gdip_set_error_from_gpstatus (error, GDK_PIXBUF_ERROR_FAILED, status);
+    gdip_set_error_from_gpstatus (error, CDK_PIXBUF_ERROR_FAILED, status);
     IStream_Release (stream);
     GlobalFree (hg);
     return NULL;
@@ -614,10 +614,10 @@ gdip_bitmap_to_pixbuf (GpBitmap *bitmap, GError **error)
   gdip_bitmap_get_size (bitmap, &width, &height);
   gdip_bitmap_get_has_alpha (bitmap, &has_alpha);
 
-  pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, has_alpha, 8, width, height);
+  pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, has_alpha, 8, width, height);
 
   if (!pixbuf) {
-    g_set_error_literal (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY, _("Couldn’t load bitmap"));
+    g_set_error_literal (error, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY, _("Couldn’t load bitmap"));
     return NULL;
   }
 
@@ -632,7 +632,7 @@ gdip_bitmap_to_pixbuf (GpBitmap *bitmap, GError **error)
       guchar *b = cursor + (y * rowstride + (x * n_channels));
       
       if (Ok != (status = GdipBitmapGetPixel (bitmap, x, y, &pixel))) {
-        gdip_set_error_from_gpstatus (error, GDK_PIXBUF_ERROR_FAILED, status);
+        gdip_set_error_from_gpstatus (error, CDK_PIXBUF_ERROR_FAILED, status);
         g_object_unref (pixbuf);
         return NULL;
       }
@@ -693,7 +693,7 @@ stop_load (GpBitmap *bitmap, GdipContext *context, GError **error)
     if (animation == NULL) {
       guint n_loops = 1;
 
-      animation = g_object_new (GDK_TYPE_PIXBUF_GDIP_ANIM, NULL);
+      animation = g_object_new (CDK_TYPE_PIXBUF_GDIP_ANIM, NULL);
       gdip_bitmap_get_n_loops (bitmap, &n_loops);
       animation->loop = n_loops;
     }
@@ -728,7 +728,7 @@ stop_load (GpBitmap *bitmap, GdipContext *context, GError **error)
     animation->total_time += frame->delay_time;
 
     if (i == 0)
-      emit_prepared (context, pixbuf, GDK_PIXBUF_ANIMATION (animation));
+      emit_prepared (context, pixbuf, CDK_PIXBUF_ANIMATION (animation));
 
     emit_updated (context, pixbuf);
   }
@@ -773,7 +773,7 @@ cdk_pixbuf__gdip_image_stop_vector_load (gpointer data, GError **error)
   metafile = gdip_buffer_to_image (context, error);
   if (!metafile) {
     destroy_gdipcontext (context);
-    g_set_error_literal (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_CORRUPT_IMAGE, _("Couldn’t load metafile"));
+    g_set_error_literal (error, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_CORRUPT_IMAGE, _("Couldn’t load metafile"));
     return FALSE;
   }
 
@@ -782,7 +782,7 @@ cdk_pixbuf__gdip_image_stop_vector_load (gpointer data, GError **error)
 
   status = GdipCreateBitmapFromScan0 (width, height, 0, PixelFormat32bppARGB, NULL, &bitmap);
   if (Ok != status) {
-    gdip_set_error_from_gpstatus (error, GDK_PIXBUF_ERROR_FAILED, status);
+    gdip_set_error_from_gpstatus (error, CDK_PIXBUF_ERROR_FAILED, status);
     GdipDisposeImage (metafile);
     
     return FALSE;
@@ -794,7 +794,7 @@ cdk_pixbuf__gdip_image_stop_vector_load (gpointer data, GError **error)
 
   status = GdipGetImageGraphicsContext ((GpImage *)bitmap, &graphics);
   if (Ok != status) {
-    gdip_set_error_from_gpstatus (error, GDK_PIXBUF_ERROR_FAILED, status);
+    gdip_set_error_from_gpstatus (error, CDK_PIXBUF_ERROR_FAILED, status);
     GdipDisposeImage ((GpImage *)bitmap);
     GdipDisposeImage (metafile);
     
@@ -806,7 +806,7 @@ cdk_pixbuf__gdip_image_stop_vector_load (gpointer data, GError **error)
   
   status = GdipDrawImageI (graphics, metafile, 0, 0);
   if (Ok != status) {
-    gdip_set_error_from_gpstatus (error, GDK_PIXBUF_ERROR_FAILED, status);
+    gdip_set_error_from_gpstatus (error, CDK_PIXBUF_ERROR_FAILED, status);
     GdipDeleteGraphics (graphics);
     GdipDisposeImage ((GpImage *)bitmap);
     GdipDisposeImage (metafile);
@@ -878,14 +878,14 @@ gdip_save_pixbuf (GdkPixbuf *pixbuf,
   gboolean success;
 
   if (!GetEncoderClsid (format, &clsid)) {
-    g_set_error_literal (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_FAILED, _("Unsupported image format for GDI+"));
+    g_set_error_literal (error, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_FAILED, _("Unsupported image format for GDI+"));
     return FALSE;
   }
   
   image = gdip_pixbuf_to_bitmap (pixbuf);
 
   if (image == NULL) {
-    g_set_error_literal (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_FAILED, _("Couldn’t save"));
+    g_set_error_literal (error, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_FAILED, _("Couldn’t save"));
     return FALSE;
   }
   

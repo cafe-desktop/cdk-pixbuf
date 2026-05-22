@@ -77,8 +77,8 @@ output_pixbuf (FILE *outfile, gboolean ext_symbols,
   /* Sync the order of writing with the order of reading in
    * cdk-pixbuf-data.c
    */
-  output_int (outfile, GDK_PIXBUF_INLINE_MAGIC_NUMBER, "File magic");
-  output_int (outfile, GDK_PIXBUF_INLINE_RAW, "Format of following stuff");
+  output_int (outfile, CDK_PIXBUF_INLINE_MAGIC_NUMBER, "File magic");
+  output_int (outfile, CDK_PIXBUF_INLINE_RAW, "Format of following stuff");
   output_int (outfile, cdk_pixbuf_get_rowstride (pixbuf), "Rowstride");
   output_int (outfile, cdk_pixbuf_get_width (pixbuf), "Width");
   output_int (outfile, cdk_pixbuf_get_height (pixbuf), "Height");

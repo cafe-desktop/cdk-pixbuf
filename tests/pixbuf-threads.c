@@ -53,7 +53,7 @@ load_image (gpointer data,
 
   cdk_pixbuf_loader_close (loader, &error);
 
-  if (g_error_matches (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_UNKNOWN_TYPE))
+  if (g_error_matches (error, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_UNKNOWN_TYPE))
     {
       g_test_message ("Unsupported format");
       g_clear_error (&error);

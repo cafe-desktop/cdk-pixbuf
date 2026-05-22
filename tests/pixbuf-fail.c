@@ -48,7 +48,7 @@ test_fail_size (GFile *file,
   g_assert_no_error (error);
   g_assert_true (success);
 
-#ifdef GDK_PIXBUF_USE_GIO_MIME
+#ifdef CDK_PIXBUF_USE_GIO_MIME
   {
     char *mime_type, *content_type;
 

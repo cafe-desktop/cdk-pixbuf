@@ -36,7 +36,7 @@ loader_size_prepared (GdkPixbufLoader  *loader,
 {
   g_assert (*pixbuf == NULL);
 
-  *pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, w, h);
+  *pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8, w, h);
   g_assert (*pixbuf != NULL);
   /* likely!! */
   cdk_pixbuf_fill (*pixbuf, DEFAULT_FILL_COLOR);
@@ -171,7 +171,7 @@ test_reftest (gconstpointer data)
   g_assert_no_error (error);
   g_assert (success);
 
-#ifdef GDK_PIXBUF_USE_GIO_MIME
+#ifdef CDK_PIXBUF_USE_GIO_MIME
   {
     char *mime_type, *content_type;
 

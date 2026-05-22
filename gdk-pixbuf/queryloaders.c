@@ -105,7 +105,7 @@ loader_sanity_check (const char *path, GdkPixbufFormat *info, GdkPixbufModule *v
                 goto error;
         }
 
-        if ((info->flags & GDK_PIXBUF_FORMAT_WRITABLE) && !(vtable->save || vtable->save_to_callback))
+        if ((info->flags & CDK_PIXBUF_FORMAT_WRITABLE) && !(vtable->save || vtable->save_to_callback))
         {
                 error = "loader claims to support saving but doesn't implement save";
                 goto error;
@@ -120,7 +120,7 @@ loader_sanity_check (const char *path, GdkPixbufFormat *info, GdkPixbufModule *v
         return 0;
 }
 
-#ifdef GDK_PIXBUF_RELOCATABLE
+#ifdef CDK_PIXBUF_RELOCATABLE
 
 /* Based on cdk_pixbuf_get_toplevel () */
 static gchar *
@@ -171,7 +171,7 @@ get_relative_path (const gchar *parent, const gchar *descendant)
         return relative_path;
 }
 
-#endif  /* GDK_PIXBUF_RELOCATABLE */
+#endif  /* CDK_PIXBUF_RELOCATABLE */
 
 static void
 write_loader_info (GString *contents, const char *path, GdkPixbufFormat *info)
@@ -181,7 +181,7 @@ write_loader_info (GString *contents, const char *path, GdkPixbufFormat *info)
         char **ext;
         gchar *module_path = NULL, *escaped_path;
 
-#ifdef GDK_PIXBUF_RELOCATABLE
+#ifdef CDK_PIXBUF_RELOCATABLE
         module_path = get_relative_path (get_toplevel (), path);
 #endif
 
@@ -280,7 +280,7 @@ query_module (GString *contents, const char *dir, const char *file)
         g_free (path);
 }
 
-#if defined(G_OS_WIN32) && defined(GDK_PIXBUF_RELOCATABLE)
+#if defined(G_OS_WIN32) && defined(CDK_PIXBUF_RELOCATABLE)
 
 static char *
 get_libdir (void)
@@ -293,18 +293,18 @@ get_libdir (void)
   return libdir;
 }
 
-#undef GDK_PIXBUF_LIBDIR
-#define GDK_PIXBUF_LIBDIR get_libdir()
+#undef CDK_PIXBUF_LIBDIR
+#define CDK_PIXBUF_LIBDIR get_libdir()
 
 #endif
 
 static gchar *
 cdk_pixbuf_get_module_file (void)
 {
-        gchar *result = g_strdup (g_getenv ("GDK_PIXBUF_MODULE_FILE"));
+        gchar *result = g_strdup (g_getenv ("CDK_PIXBUF_MODULE_FILE"));
 
         if (!result)
-                result = g_build_filename (GDK_PIXBUF_LIBDIR, "cdk-pixbuf-2.0", GDK_PIXBUF_BINARY_VERSION, "loaders.cache", NULL);
+                result = g_build_filename (CDK_PIXBUF_LIBDIR, "cdk-pixbuf-2.0", CDK_PIXBUF_BINARY_VERSION, "loaders.cache", NULL);
 
         return result;
 }
@@ -333,7 +333,7 @@ int main (int argc, char **argv)
         g_object_unref (pixbuf_libdir_file);
 
 #ifdef G_OS_WIN32
-        pixbuf_prefix_file = g_file_new_for_path (GDK_PIXBUF_PREFIX);
+        pixbuf_prefix_file = g_file_new_for_path (CDK_PIXBUF_PREFIX);
         pixbuf_prefix = g_file_get_path (pixbuf_prefix_file);
         g_object_unref (pixbuf_prefix_file);
 
@@ -414,7 +414,7 @@ int main (int argc, char **argv)
                                 "# Created by %s from cdk-pixbuf-%s\n"
                                 "#\n",
                                 (prgname ? prgname : "cdk-pixbuf-query-loaders"),
-                                GDK_PIXBUF_VERSION);
+                                CDK_PIXBUF_VERSION);
 
         if (argc == first_file) {
 #ifdef USE_GMODULE
@@ -422,7 +422,7 @@ int main (int argc, char **argv)
                 GDir *dir;
                 GList *l, *modules;
 
-                moduledir = g_strdup (g_getenv ("GDK_PIXBUF_MODULEDIR"));
+                moduledir = g_strdup (g_getenv ("CDK_PIXBUF_MODULEDIR"));
 #ifdef G_OS_WIN32
                 if (moduledir != NULL && *moduledir != '\0') {
                         gchar *path;

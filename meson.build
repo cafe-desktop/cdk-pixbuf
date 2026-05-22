@@ -86,7 +86,7 @@ endforeach
 # Look for the math library first, since we use it to test for round() and lrint()
 mathlib_dep = cc.find_library('m', required: false)
 
-# XXX: Remove the checks for round() and lrint() once GDK-Pixbuf is declared C99
+# XXX: Remove the checks for round() and lrint() once CDK-Pixbuf is declared C99
 if cc.has_function('round', dependencies: mathlib_dep)
   cdk_pixbuf_conf.set('HAVE_ROUND', 1)
 endif
@@ -175,12 +175,12 @@ endif
 if get_option('default_library') != 'static'
   if host_system == 'windows'
     cdk_pixbuf_conf.set('DLL_EXPORT', true)
-    cdk_pixbuf_conf.set('_GDK_PIXBUF_EXTERN', '__declspec(dllexport) extern')
+    cdk_pixbuf_conf.set('_CDK_PIXBUF_EXTERN', '__declspec(dllexport) extern')
     if cc.get_id() != 'msvc'
       test_cflags += ['-fvisibility=hidden']
     endif
   else
-    cdk_pixbuf_conf.set('_GDK_PIXBUF_EXTERN', '__attribute__((visibility("default"))) extern')
+    cdk_pixbuf_conf.set('_CDK_PIXBUF_EXTERN', '__attribute__((visibility("default"))) extern')
     test_cflags += ['-fvisibility=hidden']
   endif
 endif
@@ -207,7 +207,7 @@ shared_mime_dep = []
 use_gio_mime = false
 if get_option('gio_sniffing') and host_system not in ['windows', 'darwin', 'android']
   shared_mime_dep += dependency('shared-mime-info')
-  cdk_pixbuf_conf.set('GDK_PIXBUF_USE_GIO_MIME', 1)
+  cdk_pixbuf_conf.set('CDK_PIXBUF_USE_GIO_MIME', 1)
   use_gio_mime = true
 endif
 
@@ -403,7 +403,7 @@ else
 endif
 
 if relocatable
-  add_project_arguments([ '-DGDK_PIXBUF_RELOCATABLE' ], language: 'c')
+  add_project_arguments([ '-DCDK_PIXBUF_RELOCATABLE' ], language: 'c')
 endif
 
 cdk_pixbuf_conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())

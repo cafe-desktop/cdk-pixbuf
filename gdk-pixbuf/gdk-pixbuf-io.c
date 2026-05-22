@@ -79,7 +79,7 @@ G_GNUC_BEGIN_IGNORE_DEPRECATIONS
  * `cdk-pixbuf-io.h` (and `cdk-pixbuf-animation.h` if the module supports
  * animations). They are not covered by the same stability guarantees as the
  * regular GdkPixbuf API. To underline this fact, they are protected by the
- * `GDK_PIXBUF_ENABLE_BACKEND` pre-processor symbol.
+ * `CDK_PIXBUF_ENABLE_BACKEND` pre-processor symbol.
  *
  * Each loadable module must contain a `GdkPixbufModuleFillVtableFunc` function
  * named `fill_vtable`, which will get called when the module
@@ -107,10 +107,10 @@ G_GNUC_BEGIN_IGNORE_DEPRECATIONS
  *
  *  - copy the module file(s) to the loader directory (normally
  *    `$libdir/cdk-pixbuf-2.0/$version/loaders`, unless overridden by the
- *    environment variable `GDK_PIXBUF_MODULEDIR`)
+ *    environment variable `CDK_PIXBUF_MODULEDIR`)
  *  - call `cdk-pixbuf-query-loaders` to update the module file (normally
  *    `$libdir/cdk-pixbuf-2.0/$version/loaders.cache`, unless overridden
- *    by the environment variable `GDK_PIXBUF_MODULE_FILE`)
+ *    by the environment variable `CDK_PIXBUF_MODULE_FILE`)
  */
 
 static gint 
@@ -184,7 +184,7 @@ get_file_formats (void)
         return file_formats;
 }
 
-#ifdef GDK_PIXBUF_RELOCATABLE // implies that cdk-pixbuf is built as a dll on windows
+#ifdef CDK_PIXBUF_RELOCATABLE // implies that cdk-pixbuf is built as a dll on windows
 
 #ifdef G_OS_WIN32
 
@@ -239,7 +239,7 @@ cdk_pixbuf_get_toplevel (void)
   return toplevel;
 }
 
-#endif  /* GDK_PIXBUF_RELOCATABLE */
+#endif  /* CDK_PIXBUF_RELOCATABLE */
 
 
 #ifdef USE_GMODULE 
@@ -323,7 +323,7 @@ skip_space (const char **pos)
         return !(*p == '\0');
 }
 
-#ifdef GDK_PIXBUF_RELOCATABLE
+#ifdef CDK_PIXBUF_RELOCATABLE
 
 static char *
 get_libdir (void)
@@ -336,17 +336,17 @@ get_libdir (void)
   return libdir;
 }
 
-#undef GDK_PIXBUF_LIBDIR
-#define GDK_PIXBUF_LIBDIR get_libdir()
+#undef CDK_PIXBUF_LIBDIR
+#define CDK_PIXBUF_LIBDIR get_libdir()
 
-#endif  /* GDK_PIXBUF_RELOCATABLE */
+#endif  /* CDK_PIXBUF_RELOCATABLE */
 
 /* In case we have a relative module path in the loaders cache
  * prepend the toplevel dir */
 static gchar *
 build_module_path (const gchar *path)
 {
-#ifdef GDK_PIXBUF_RELOCATABLE
+#ifdef CDK_PIXBUF_RELOCATABLE
         if (g_path_is_absolute (path)) {
                 return g_strdup (path);
         } else {
@@ -360,10 +360,10 @@ build_module_path (const gchar *path)
 static gchar *
 cdk_pixbuf_get_module_file (void)
 {
-  gchar *result = g_strdup (g_getenv ("GDK_PIXBUF_MODULE_FILE"));
+  gchar *result = g_strdup (g_getenv ("CDK_PIXBUF_MODULE_FILE"));
 
   if (!result)
-          result = g_build_filename (GDK_PIXBUF_LIBDIR, "cdk-pixbuf-2.0", GDK_PIXBUF_BINARY_VERSION, "loaders.cache", NULL);
+          result = g_build_filename (CDK_PIXBUF_LIBDIR, "cdk-pixbuf-2.0", CDK_PIXBUF_BINARY_VERSION, "loaders.cache", NULL);
 
   return result;
 }
@@ -896,8 +896,8 @@ cdk_pixbuf_load_module_unlocked (GdkPixbufModule *image_module,
                 if (!module) {
                         char *path_utf8 = g_filename_display_name (path);
                         g_set_error (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_FAILED,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_FAILED,
                                      _("Unable to load image-loading module: %s: %s"),
                                      path_utf8, g_module_error ());
                         g_free (path_utf8);
@@ -914,8 +914,8 @@ cdk_pixbuf_load_module_unlocked (GdkPixbufModule *image_module,
                 } else {
                         char *path_utf8 = g_filename_display_name (path);
                         g_set_error (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_FAILED,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_FAILED,
                                      _("Image-loading module %s does not export the proper interface; perhaps it’s from a different cdk-pixbuf version?"),
                                      path_utf8);
                         g_free (path_utf8);
@@ -924,8 +924,8 @@ cdk_pixbuf_load_module_unlocked (GdkPixbufModule *image_module,
         }
 #else
         g_set_error (error,
-                     GDK_PIXBUF_ERROR,
-                     GDK_PIXBUF_ERROR_UNKNOWN_TYPE,
+                     CDK_PIXBUF_ERROR,
+                     CDK_PIXBUF_ERROR_UNKNOWN_TYPE,
                      _("Image type “%s” is not supported"),
                      image_module->module_name);
         return FALSE;
@@ -967,8 +967,8 @@ _cdk_pixbuf_get_named_module (const char *name,
         }
 
         g_set_error (error,
-                     GDK_PIXBUF_ERROR,
-                     GDK_PIXBUF_ERROR_UNKNOWN_TYPE,
+                     CDK_PIXBUF_ERROR,
+                     CDK_PIXBUF_ERROR_UNKNOWN_TYPE,
                      _("Image type “%s” is not supported"),
                      name);
         
@@ -984,7 +984,7 @@ _cdk_pixbuf_get_module (guchar *buffer, guint size,
 
         GdkPixbufModule *selected = NULL;
         gchar *display_name = NULL;
-#ifdef GDK_PIXBUF_USE_GIO_MIME
+#ifdef CDK_PIXBUF_USE_GIO_MIME
         gchar *mime_type;
         gchar **mimes;
         gchar *type;
@@ -1052,16 +1052,16 @@ _cdk_pixbuf_get_module (guchar *buffer, guint size,
         {
                 display_name = g_filename_display_name (filename);
                 g_set_error (error,
-                             GDK_PIXBUF_ERROR,
-                             GDK_PIXBUF_ERROR_UNKNOWN_TYPE,
+                             CDK_PIXBUF_ERROR,
+                             CDK_PIXBUF_ERROR_UNKNOWN_TYPE,
                              _("Couldn’t recognize the image file format for file “%s”"),
                              display_name);
                 g_free (display_name);
         }
         else
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_UNKNOWN_TYPE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_UNKNOWN_TYPE,
                                      _("Unrecognized image file format"));
 
 
@@ -1080,8 +1080,8 @@ _cdk_pixbuf_get_module_for_file (FILE *f, const gchar *filename, GError **error)
 		gchar *display_name;
         	display_name = g_filename_display_name (filename);      
                 g_set_error (error,
-                             GDK_PIXBUF_ERROR,
-                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                             CDK_PIXBUF_ERROR,
+                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                              _("Image file “%s” contains no data"),
                              display_name);
                 g_free (display_name);
@@ -1198,7 +1198,7 @@ _cdk_pixbuf_generic_image_load (GdkPixbufModule *module, FILE *f, GError **error
  *  - there is not enough memory to allocate the image buffer
  *  - the image buffer contains invalid data
  *
- * The error domains are `GDK_PIXBUF_ERROR` and `G_FILE_ERROR`.
+ * The error domains are `CDK_PIXBUF_ERROR` and `G_FILE_ERROR`.
  *
  * Returns: (nullable): A newly-created pixbuf
  */
@@ -1255,8 +1255,8 @@ cdk_pixbuf_new_from_file (const char *filename,
         	display_name = g_filename_display_name (filename);      
                 g_warning ("Bug! cdk-pixbuf loader '%s' didn't set an error on failure.", image_module->module_name);
                 g_set_error (error,
-                             GDK_PIXBUF_ERROR,
-                             GDK_PIXBUF_ERROR_FAILED,
+                             CDK_PIXBUF_ERROR,
+                             CDK_PIXBUF_ERROR_FAILED,
                              _("Failed to load image “%s”: reason not known, probably a corrupt image file"),
                              display_name);
 		g_free (display_name);
@@ -1321,7 +1321,7 @@ cdk_pixbuf_new_from_file_utf8 (const char *filename,
  *  - there is not enough memory to allocate the image buffer
  *  - the image buffer contains invalid data
  *
- * The error domains are `GDK_PIXBUF_ERROR` and `G_FILE_ERROR`.
+ * The error domains are `CDK_PIXBUF_ERROR` and `G_FILE_ERROR`.
  *
  * The image will be scaled to fit in the requested size, preserving
  * the image's aspect ratio. Note that the returned pixbuf may be smaller
@@ -1449,7 +1449,7 @@ at_scale_size_prepared_cb (GdkPixbufLoader *loader,
  *  - there is not enough memory to allocate the image buffer
  *  - the image buffer contains invalid data
  *
- * The error domains are `GDK_PIXBUF_ERROR` and `G_FILE_ERROR`.
+ * The error domains are `CDK_PIXBUF_ERROR` and `G_FILE_ERROR`.
  *
  * The image will be scaled to fit in the requested size, optionally preserving
  * the image's aspect ratio. 
@@ -1544,8 +1544,8 @@ cdk_pixbuf_new_from_file_at_scale (const char *filename,
                 gchar *display_name = g_filename_display_name (filename);
                 g_object_unref (loader);
                 g_set_error (error,
-                             GDK_PIXBUF_ERROR,
-                             GDK_PIXBUF_ERROR_FAILED,
+                             CDK_PIXBUF_ERROR,
+                             CDK_PIXBUF_ERROR_FAILED,
                              _("Failed to load image “%s”: reason not known, probably a corrupt image file"),
                              display_name);
                 g_free (display_name);
@@ -1650,7 +1650,7 @@ load_from_stream (GdkPixbufLoader  *loader,
  * @error will be set. The @cancellable can be used to abort the operation
  * from another thread. If the operation was cancelled, the error 
  * `G_IO_ERROR_CANCELLED` will be returned. Other possible errors are in
- * the `GDK_PIXBUF_ERROR` and `G_IO_ERROR` domains.
+ * the `CDK_PIXBUF_ERROR` and `G_IO_ERROR` domains.
  *
  * The image will be scaled to fit in the requested size, optionally 
  * preserving the image's aspect ratio.
@@ -1823,7 +1823,7 @@ cdk_pixbuf_new_from_stream_at_scale_async (GInputStream        *stream,
  *
  * The `cancellable` can be used to abort the operation from another thread.
  * If the operation was cancelled, the error `G_IO_ERROR_CANCELLED` will be
- * returned. Other possible errors are in the `GDK_PIXBUF_ERROR` and
+ * returned. Other possible errors are in the `CDK_PIXBUF_ERROR` and
  * `G_IO_ERROR` domains.
  *
  * The stream is not closed.
@@ -1870,7 +1870,7 @@ G_GNUC_BEGIN_IGNORE_DEPRECATIONS
                       + ((guint32) stream[1] << 16)
                       + ((guint32) stream[2] << 8)
                       +  (guint32) stream[3];
-		if (magic == GDK_PIXBUF_MAGIC_NUMBER &&
+		if (magic == CDK_PIXBUF_MAGIC_NUMBER &&
 		    cdk_pixdata_deserialize (&pixdata, data_size, stream, NULL)) {
 			pixbuf = cdk_pixbuf_from_pixdata (&pixdata, FALSE, NULL);
 		}
@@ -2147,8 +2147,8 @@ get_file_info_thread (GTask                *task,
         format = cdk_pixbuf_get_file_info (data->filename, &data->width, &data->height);
         if (format == NULL) {
                 g_task_return_new_error (task,
-                                         GDK_PIXBUF_ERROR,
-                                         GDK_PIXBUF_ERROR_UNKNOWN_TYPE,
+                                         CDK_PIXBUF_ERROR,
+                                         CDK_PIXBUF_ERROR_UNKNOWN_TYPE,
                                          "Failed to recognize image format");
         } else {
                 g_task_return_pointer (task,
@@ -2383,8 +2383,8 @@ cdk_pixbuf_real_save (GdkPixbuf     *pixbuf,
         } else {
                 /* can't save */
                 g_set_error (error,
-                             GDK_PIXBUF_ERROR,
-                             GDK_PIXBUF_ERROR_UNSUPPORTED_OPERATION,
+                             CDK_PIXBUF_ERROR,
+                             CDK_PIXBUF_ERROR_UNSUPPORTED_OPERATION,
                              _("This build of cdk-pixbuf does not support saving the image format: %s"),
                              type);
                 ret = FALSE;
@@ -2414,8 +2414,8 @@ save_to_callback_with_tmp_file (GdkPixbufModule   *image_module,
         buf = g_try_malloc (TMP_FILE_BUF_SIZE);
         if (buf == NULL) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                      _("Insufficient memory to save image to callback"));
                 goto end;
         }
@@ -2504,8 +2504,8 @@ cdk_pixbuf_real_save_to_callback (GdkPixbuf         *pixbuf,
         } else {
                 /* can't save */
                 g_set_error (error,
-                             GDK_PIXBUF_ERROR,
-                             GDK_PIXBUF_ERROR_UNSUPPORTED_OPERATION,
+                             CDK_PIXBUF_ERROR,
+                             CDK_PIXBUF_ERROR_UNSUPPORTED_OPERATION,
                              _("This build of cdk-pixbuf does not support saving the image format: %s"),
                              type);
                 ret = FALSE;
@@ -2542,7 +2542,7 @@ cdk_pixbuf_real_save_to_callback (GdkPixbuf         *pixbuf,
  * ```
  *
  * If `error` is set, `FALSE` will be returned. Possible errors include
- * those in the `GDK_PIXBUF_ERROR` domain and those in the `G_FILE_ERROR`
+ * those in the `CDK_PIXBUF_ERROR` domain and those in the `G_FILE_ERROR`
  * domain.
  *
  * The variable argument list should be `NULL`-terminated; if not empty,
@@ -2658,7 +2658,7 @@ cdk_pixbuf_savev (GdkPixbuf  *pixbuf,
         FILE *f = NULL;
         gboolean result;
        
-        g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), FALSE);
+        g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), FALSE);
         g_return_val_if_fail (cdk_pixbuf_get_width (pixbuf) >= 0, FALSE);
         g_return_val_if_fail (cdk_pixbuf_get_height (pixbuf) >= 0, FALSE);
         g_return_val_if_fail (cdk_pixbuf_get_n_channels (pixbuf) >= 0, FALSE);
@@ -2756,7 +2756,7 @@ cdk_pixbuf_savev_utf8 (GdkPixbuf  *pixbuf,
  * other than a file, such as an in-memory buffer or a socket.
  *
  * If @error is set, `FALSE` will be returned. Possible errors
- * include those in the `GDK_PIXBUF_ERROR` domain and whatever the save
+ * include those in the `CDK_PIXBUF_ERROR` domain and whatever the save
  * function generates.
  *
  * See [method@GdkPixbuf.Pixbuf.save] for more details.
@@ -2831,7 +2831,7 @@ cdk_pixbuf_save_to_callbackv   (GdkPixbuf  *pixbuf,
 {
         gboolean result;
         
-        g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), FALSE);
+        g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), FALSE);
         g_return_val_if_fail (cdk_pixbuf_get_width (pixbuf) >= 0, FALSE);
         g_return_val_if_fail (cdk_pixbuf_get_height (pixbuf) >= 0, FALSE);
         g_return_val_if_fail (cdk_pixbuf_get_n_channels (pixbuf) >= 0, FALSE);
@@ -2872,7 +2872,7 @@ cdk_pixbuf_save_to_callbackv   (GdkPixbuf  *pixbuf,
  * characters.
  *
  * If @error is set, `FALSE` will be returned and @buffer will be set to
- * `NULL`. Possible errors include those in the `GDK_PIXBUF_ERROR`
+ * `NULL`. Possible errors include those in the `CDK_PIXBUF_ERROR`
  * domain.
  *
  * See `cdk_pixbuf_save()` for more details.
@@ -2932,8 +2932,8 @@ save_to_buffer_callback (const gchar *data,
                 new_buffer = g_try_realloc (sdata->buffer, new_max);
                 if (!new_buffer) {
                         g_set_error_literal (error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                              _("Insufficient memory to save image into a buffer"));
                         return FALSE;
                 }
@@ -2987,8 +2987,8 @@ cdk_pixbuf_save_to_bufferv     (GdkPixbuf  *pixbuf,
         sdata.len = 0;
         if (!sdata.buffer) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                      _("Insufficient memory to save image into a buffer"));
                 return FALSE;
         }
@@ -3105,7 +3105,7 @@ cdk_pixbuf_save_to_streamv (GdkPixbuf      *pixbuf,
  *
  * The `cancellable` can be used to abort the operation from another
  * thread. If the operation was cancelled, the error `G_IO_ERROR_CANCELLED`
- * will be returned. Other possible errors are in the `GDK_PIXBUF_ERROR`
+ * will be returned. Other possible errors are in the `CDK_PIXBUF_ERROR`
  * and `G_IO_ERROR` domains.
  *
  * The stream is not closed at the end of this call.
@@ -3221,7 +3221,7 @@ cdk_pixbuf_save_to_streamv_async (GdkPixbuf           *pixbuf,
         GTask *task;
         SaveToStreamAsyncData *data;
 
-        g_return_if_fail (GDK_IS_PIXBUF (pixbuf));
+        g_return_if_fail (CDK_IS_PIXBUF (pixbuf));
         g_return_if_fail (cdk_pixbuf_get_width (pixbuf) >= 0);
         g_return_if_fail (cdk_pixbuf_get_height (pixbuf) >= 0);
         g_return_if_fail (cdk_pixbuf_get_n_channels (pixbuf) >= 0);
@@ -3278,7 +3278,7 @@ cdk_pixbuf_save_to_stream_async (GdkPixbuf           *pixbuf,
         gchar **values = NULL;
         va_list args;
 
-        g_return_if_fail (GDK_IS_PIXBUF (pixbuf));
+        g_return_if_fail (CDK_IS_PIXBUF (pixbuf));
         g_return_if_fail (cdk_pixbuf_get_width (pixbuf) >= 0);
         g_return_if_fail (cdk_pixbuf_get_height (pixbuf) >= 0);
         g_return_if_fail (cdk_pixbuf_get_n_channels (pixbuf) >= 0);
@@ -3427,7 +3427,7 @@ cdk_pixbuf_format_is_writable (GdkPixbufFormat *format)
 {
         g_return_val_if_fail (format != NULL, FALSE);
 
-        return (format->flags & GDK_PIXBUF_FORMAT_WRITABLE) != 0;
+        return (format->flags & CDK_PIXBUF_FORMAT_WRITABLE) != 0;
 }
 
 /**
@@ -3449,7 +3449,7 @@ cdk_pixbuf_format_is_scalable (GdkPixbufFormat *format)
 {
         g_return_val_if_fail (format != NULL, FALSE);
 
-        return (format->flags & GDK_PIXBUF_FORMAT_SCALABLE) != 0;
+        return (format->flags & CDK_PIXBUF_FORMAT_SCALABLE) != 0;
 }
 
 /**

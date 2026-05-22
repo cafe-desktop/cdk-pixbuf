@@ -314,7 +314,7 @@ load_icon (unsigned size, IN gpointer data, gsize datalen)
   for (i = 0; i < size * size; i++)	/* copy mask to alpha channel */
     image[i * 4 + 3] = mask[i];
 
-  return cdk_pixbuf_new_from_data ((guchar *) image, GDK_COLORSPACE_RGB,	/* RGB image */
+  return cdk_pixbuf_new_from_data ((guchar *) image, CDK_COLORSPACE_RGB,	/* RGB image */
 				   TRUE,	/* with alpha channel */
 				   8,	/* 8 bits per sample */
 				   size,	/* width */
@@ -375,8 +375,8 @@ icns_image_load (FILE *f, GError ** error)
   g_byte_array_free (data, TRUE);
 
   if (!pixbuf)
-    g_set_error_literal (error, GDK_PIXBUF_ERROR,
-                         GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+    g_set_error_literal (error, CDK_PIXBUF_ERROR,
+                         CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                          _("Could not decode ICNS file"));
 
   return pixbuf;
@@ -456,8 +456,8 @@ cdk_pixbuf__icns_image_load_increment (gpointer       data,
 
   if (!context->pixbuf)
     {
-      g_set_error_literal (error, GDK_PIXBUF_ERROR,
-                           GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+      g_set_error_literal (error, CDK_PIXBUF_ERROR,
+                           CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                            _("Could not decode ICNS file"));
       return FALSE;
     }
@@ -517,7 +517,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat * info)
   info->description = NC_("image format", "MacOS X icon");
   info->mime_types = (gchar **) mime_types;
   info->extensions = (gchar **) extensions;
-  info->flags = GDK_PIXBUF_FORMAT_THREADSAFE;
+  info->flags = CDK_PIXBUF_FORMAT_THREADSAFE;
   info->license = "GPL";
   info->disabled = FALSE;
 }

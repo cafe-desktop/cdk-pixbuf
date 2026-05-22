@@ -104,7 +104,7 @@ test_load_first_frame (void)
     g_io_channel_unref (channel);
 
     cdk_pixbuf_loader_close (loader, &error);
-    g_assert_error (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_INCOMPLETE_ANIMATION);
+    g_assert_error (error, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_INCOMPLETE_ANIMATION);
     g_clear_error (&error);
     pixbuf = cdk_pixbuf_loader_get_pixbuf (loader);
     g_assert (pixbuf);

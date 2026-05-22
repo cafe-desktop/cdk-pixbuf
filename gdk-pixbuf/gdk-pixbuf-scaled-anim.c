@@ -69,7 +69,7 @@ _cdk_pixbuf_scaled_anim_new (GdkPixbufAnimation *anim,
 {
 	GdkPixbufScaledAnim *scaled;
 
-	scaled = g_object_new (GDK_TYPE_PIXBUF_SCALED_ANIM, NULL);
+	scaled = g_object_new (CDK_TYPE_PIXBUF_SCALED_ANIM, NULL);
 
 	scaled->anim = g_object_ref (anim);
 	scaled->xscale = xscale;
@@ -79,7 +79,7 @@ _cdk_pixbuf_scaled_anim_new (GdkPixbufAnimation *anim,
 	return scaled;
 }
 
-G_DEFINE_TYPE (GdkPixbufScaledAnim, cdk_pixbuf_scaled_anim, GDK_TYPE_PIXBUF_ANIMATION);
+G_DEFINE_TYPE (GdkPixbufScaledAnim, cdk_pixbuf_scaled_anim, CDK_TYPE_PIXBUF_ANIMATION);
 
 static void
 cdk_pixbuf_scaled_anim_init (GdkPixbufScaledAnim *scaled)
@@ -139,7 +139,7 @@ get_scaled_pixbuf (GdkPixbufScaledAnim *scaled,
 	scaled->current  = cdk_pixbuf_scale_simple (pixbuf, 
                         MAX((int) ((gdouble) cdk_pixbuf_get_width (pixbuf) * scaled->xscale + .5), 1),
                         MAX((int) ((gdouble) cdk_pixbuf_get_height (pixbuf) * scaled->yscale + .5), 1),
-			GDK_INTERP_BILINEAR);
+			CDK_INTERP_BILINEAR);
 
 	/* Copy the original pixbuf options to the scaled pixbuf */
         if (options && scaled->current)
@@ -166,7 +166,7 @@ get_size (GdkPixbufAnimation *anim,
 {
 	GdkPixbufScaledAnim *scaled = (GdkPixbufScaledAnim *)anim;
 
-        GDK_PIXBUF_ANIMATION_GET_CLASS (scaled->anim)->get_size (scaled->anim, width, height);
+        CDK_PIXBUF_ANIMATION_GET_CLASS (scaled->anim)->get_size (scaled->anim, width, height);
 	if (width) 
 		*width = (int)(*width * scaled->xscale + .5);
 	if (height)
@@ -181,7 +181,7 @@ get_iter (GdkPixbufAnimation *anim,
 	GdkPixbufScaledAnim *scaled = (GdkPixbufScaledAnim *)anim;
 	GdkPixbufScaledAnimIter *iter;
 
-	iter = g_object_new (GDK_TYPE_PIXBUF_SCALED_ANIM_ITER, NULL);
+	iter = g_object_new (CDK_TYPE_PIXBUF_SCALED_ANIM_ITER, NULL);
 
 	iter->scaled = g_object_ref (scaled);
 	iter->iter = cdk_pixbuf_animation_get_iter (scaled->anim, start_time);
@@ -197,7 +197,7 @@ cdk_pixbuf_scaled_anim_class_init (GdkPixbufScaledAnimClass *klass)
         GdkPixbufAnimationClass *anim_class;
 
         object_class = G_OBJECT_CLASS (klass);
-        anim_class = GDK_PIXBUF_ANIMATION_CLASS (klass);
+        anim_class = CDK_PIXBUF_ANIMATION_CLASS (klass);
         
         object_class->finalize = cdk_pixbuf_scaled_anim_finalize;
         
@@ -208,7 +208,7 @@ cdk_pixbuf_scaled_anim_class_init (GdkPixbufScaledAnimClass *klass)
 }
 
 
-G_DEFINE_TYPE (GdkPixbufScaledAnimIter, cdk_pixbuf_scaled_anim_iter, GDK_TYPE_PIXBUF_ANIMATION_ITER);
+G_DEFINE_TYPE (GdkPixbufScaledAnimIter, cdk_pixbuf_scaled_anim_iter, CDK_TYPE_PIXBUF_ANIMATION_ITER);
 
 static void
 cdk_pixbuf_scaled_anim_iter_init (GdkPixbufScaledAnimIter *iter)
@@ -274,7 +274,7 @@ cdk_pixbuf_scaled_anim_iter_class_init (GdkPixbufScaledAnimIterClass *klass)
         GdkPixbufAnimationIterClass *anim_iter_class;
 
         object_class = G_OBJECT_CLASS (klass);
-        anim_iter_class = GDK_PIXBUF_ANIMATION_ITER_CLASS (klass);
+        anim_iter_class = CDK_PIXBUF_ANIMATION_ITER_CLASS (klass);
         
         object_class->finalize = cdk_pixbuf_scaled_anim_iter_finalize;
         

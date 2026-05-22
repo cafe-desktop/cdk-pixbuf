@@ -2,7 +2,7 @@
 /* GdkPixbuf library - QTIF image loader
  *
  * This module extracts image data from QTIF format and uses
- * other GDK pixbuf modules to decode the image data.
+ * other CDK pixbuf modules to decode the image data.
  *
  * Copyright (C) 2008 Kevin Peng
  *
@@ -121,8 +121,8 @@ static GdkPixbuf *cdk_pixbuf__qtif_image_load (FILE *f, GError **error)
 
     if(f == NULL)
     {
-        g_set_error_literal (error, GDK_PIXBUF_ERROR,
-                             GDK_PIXBUF_ERROR_BAD_OPTION,
+        g_set_error_literal (error, CDK_PIXBUF_ERROR,
+                             CDK_PIXBUF_ERROR_BAD_OPTION,
                              _("Input file descriptor is NULL."));
         return NULL;
     }
@@ -136,8 +136,8 @@ static GdkPixbuf *cdk_pixbuf__qtif_image_load (FILE *f, GError **error)
         rd = fread(&hdr, 1, sizeof(QtHeader), f);
         if(rd != sizeof(QtHeader))
         {
-            g_set_error_literal(error, GDK_PIXBUF_ERROR,
-                                GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+            g_set_error_literal(error, CDK_PIXBUF_ERROR,
+                                CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                 _("Failed to read QTIF header"));
             return NULL;
         }
@@ -145,8 +145,8 @@ static GdkPixbuf *cdk_pixbuf__qtif_image_load (FILE *f, GError **error)
         hdr.length = GUINT32_FROM_BE(hdr.length) - sizeof(QtHeader);
         if(hdr.length > ATOM_SIZE_MAX)
         {
-            g_set_error(error, GDK_PIXBUF_ERROR,
-                        GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+            g_set_error(error, CDK_PIXBUF_ERROR,
+                        CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                         ngettext (  "QTIF atom size too large (%d byte)",
                                     "QTIF atom size too large (%d bytes)",
                                     hdr.length),
@@ -168,8 +168,8 @@ static GdkPixbuf *cdk_pixbuf__qtif_image_load (FILE *f, GError **error)
                 buf = g_try_malloc(READ_BUFFER_SIZE);
                 if(buf == NULL)
                 {
-                    g_set_error(error, GDK_PIXBUF_ERROR,
-                                GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                    g_set_error(error, CDK_PIXBUF_ERROR,
+                                CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                 ngettext ( "Failed to allocate %d byte for file read buffer",
                                            "Failed to allocate %d bytes for file read buffer",
                                            READ_BUFFER_SIZE
@@ -182,8 +182,8 @@ static GdkPixbuf *cdk_pixbuf__qtif_image_load (FILE *f, GError **error)
                 loader = cdk_pixbuf_loader_new();
                 if(loader == NULL)
                 {
-                    g_set_error(error, GDK_PIXBUF_ERROR,
-                                GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                    g_set_error(error, CDK_PIXBUF_ERROR,
+                                CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                 ngettext (  "QTIF atom size too large (%d byte)",
                                             "QTIF atom size too large (%d bytes)",
                                             hdr.length),
@@ -196,8 +196,8 @@ static GdkPixbuf *cdk_pixbuf__qtif_image_load (FILE *f, GError **error)
                 {
                     if(fread(buf, 1, rd, f) != rd)
                     {
-                        g_set_error(error, GDK_PIXBUF_ERROR,
-                                    GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                        g_set_error(error, CDK_PIXBUF_ERROR,
+                                    CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                     _("File error when reading QTIF atom: %s"), g_strerror(errno));
                         break;
                     }
@@ -233,8 +233,8 @@ clean_up:
             /* Skip any other types of atom. */
             if(!fseek(f, hdr.length, SEEK_CUR))
             {
-                g_set_error(error, GDK_PIXBUF_ERROR,
-                            GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                g_set_error(error, CDK_PIXBUF_ERROR,
+                            CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                             ngettext (  "Failed to skip the next %d byte with seek().",
                                         "Failed to skip the next %d bytes with seek().",
                                         hdr.length),
@@ -264,8 +264,8 @@ static gpointer cdk_pixbuf__qtif_image_begin_load (GdkPixbufModuleSizeFunc size_
     context = g_new0(QTIFContext, 1);
     if(context == NULL)
     {
-        g_set_error_literal (error, GDK_PIXBUF_ERROR,
-                             GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+        g_set_error_literal (error, CDK_PIXBUF_ERROR,
+                             CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                              _("Failed to allocate QTIF context structure."));
         return NULL;
     }
@@ -324,8 +324,8 @@ static gboolean cdk_pixbuf__qtif_image_create_loader (QTIFContext *context, GErr
     context->loader = cdk_pixbuf_loader_new();
     if(context->loader == NULL)
     {
-        g_set_error_literal (error, GDK_PIXBUF_ERROR,
-                             GDK_PIXBUF_ERROR_FAILED,
+        g_set_error_literal (error, CDK_PIXBUF_ERROR,
+                             CDK_PIXBUF_ERROR_FAILED,
                              _("Failed to create GdkPixbufLoader object."));
         return FALSE;
     }
@@ -419,8 +419,8 @@ static gboolean cdk_pixbuf__qtif_image_load_increment (gpointer data,
             /* Abort if we have seen too many atoms. */
             if(context->atom_count == 0u)
             {
-                g_set_error_literal (error, GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                g_set_error_literal (error, CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("Failed to find an image data atom."));
                 return FALSE;
             }
@@ -444,8 +444,8 @@ static gboolean cdk_pixbuf__qtif_image_load_increment (gpointer data,
                 /* Atom max size check. */
                 if(context->run_length > ATOM_SIZE_MAX)
                 {
-                    g_set_error(error, GDK_PIXBUF_ERROR,
-                                       GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                    g_set_error(error, CDK_PIXBUF_ERROR,
+                                       CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                        ngettext (  "QTIF atom size too large (%d byte)",
                                                    "QTIF atom size too large (%d bytes)",
                                                     hdr->length),
@@ -599,7 +599,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
     info->description = NC_("image format", "QuickTime");
     info->mime_types = (gchar **) mime_types;
     info->extensions = (gchar **) extensions;
-    info->flags = GDK_PIXBUF_FORMAT_THREADSAFE;
+    info->flags = CDK_PIXBUF_FORMAT_THREADSAFE;
     info->license = "LGPL";
 }
 

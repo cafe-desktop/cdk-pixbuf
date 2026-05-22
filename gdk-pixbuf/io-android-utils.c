@@ -52,12 +52,12 @@ cdk_pixbuf__android_allocate_pixbuf (gint32 width, gint32 height, GError **error
   GdkPixbuf *pixbuf;
   g_return_val_if_fail (width >= 0 && height >= 0, NULL);
 
-  pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, width, height);
+  pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, TRUE, 8, width, height);
   if (!pixbuf)
     {
       g_set_error_literal (error,
-                           GDK_PIXBUF_ERROR,
-                           GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                           CDK_PIXBUF_ERROR,
+                           CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                            "Insufficient memory to allocate image");
       return NULL;
     }
@@ -108,10 +108,10 @@ cdk_pixbuf__android_frame_clear (GdkPixbufAndroidFrame *self)
 #undef _GLIB_DEFINE_AUTOPTR_CHAINUP
 #define _GLIB_DEFINE_AUTOPTR_CHAINUP(ModuleObjName, ParentName)
 
-#define GDK_PIXBUF_TYPE_ANDROID_ANIMATION (cdk_pixbuf__android_animation_get_type ())
-#define GDK_PIXBUF_TYPE_ANDROID_ANIMATION_ITER (cdk_pixbuf__android_animation_iter_get_type ())
-G_DECLARE_FINAL_TYPE (GdkPixbufAndroidAnimation, cdk_pixbuf__android_animation, GDK_PIXBUF, ANDROID_ANIMATION, GdkPixbufAnimation)
-G_DECLARE_FINAL_TYPE (GdkPixbufAndroidAnimationIter, cdk_pixbuf__android_animation_iter, GDK_PIXBUF, ANDROID_ANIMATION_ITER, GdkPixbufAnimationIter)
+#define CDK_PIXBUF_TYPE_ANDROID_ANIMATION (cdk_pixbuf__android_animation_get_type ())
+#define CDK_PIXBUF_TYPE_ANDROID_ANIMATION_ITER (cdk_pixbuf__android_animation_iter_get_type ())
+G_DECLARE_FINAL_TYPE (GdkPixbufAndroidAnimation, cdk_pixbuf__android_animation, CDK_PIXBUF, ANDROID_ANIMATION, GdkPixbufAnimation)
+G_DECLARE_FINAL_TYPE (GdkPixbufAndroidAnimationIter, cdk_pixbuf__android_animation_iter, CDK_PIXBUF, ANDROID_ANIMATION_ITER, GdkPixbufAnimationIter)
 
 struct _GdkPixbufAndroidAnimation
 {
@@ -134,8 +134,8 @@ struct _GdkPixbufAndroidAnimationIter {
   gboolean on_last_frame;
 };
 
-G_DEFINE_FINAL_TYPE (GdkPixbufAndroidAnimation, cdk_pixbuf__android_animation, GDK_TYPE_PIXBUF_ANIMATION)
-G_DEFINE_FINAL_TYPE (GdkPixbufAndroidAnimationIter, cdk_pixbuf__android_animation_iter, GDK_TYPE_PIXBUF_ANIMATION_ITER)
+G_DEFINE_FINAL_TYPE (GdkPixbufAndroidAnimation, cdk_pixbuf__android_animation, CDK_TYPE_PIXBUF_ANIMATION)
+G_DEFINE_FINAL_TYPE (GdkPixbufAndroidAnimationIter, cdk_pixbuf__android_animation_iter, CDK_TYPE_PIXBUF_ANIMATION_ITER)
 
 static void
 cdk_pixbuf__android_animation_finalize (GObject *object)
@@ -190,7 +190,7 @@ cdk_pixbuf__android_animation_get_iter (GdkPixbufAnimation* animation, const GTi
   g_mutex_lock (&self->lock);
   if (self->decoded->len > 0)
     {
-      iter = g_object_new (GDK_PIXBUF_TYPE_ANDROID_ANIMATION_ITER, NULL);
+      iter = g_object_new (CDK_PIXBUF_TYPE_ANDROID_ANIMATION_ITER, NULL);
       iter->animation = g_object_ref (self);
       iter->idx = 0;
       iter->repeat_count = AImageDecoder_getRepeatCount (self->decoder);
@@ -396,7 +396,7 @@ cdk_pixbuf__android_get_animation (GBytes *imgdata /* takes ownership */,
   GdkPixbufAndroidAnimation *self;
   g_assert (AImageDecoder_isAnimated (decoder)); // may only be called for animated images
 
-  self = g_object_new (GDK_PIXBUF_TYPE_ANDROID_ANIMATION, NULL);
+  self = g_object_new (CDK_PIXBUF_TYPE_ANDROID_ANIMATION, NULL);
   self->imgdata = imgdata;
   self->width = width;
   self->height = height;
@@ -677,16 +677,16 @@ cdk_pixbuf__android_save_image (GdkPixbufSaveFunc save_func, gpointer user_data,
   switch (rc)
     {
       case ANDROID_BITMAP_RESULT_BAD_PARAMETER:
-        g_set_error_literal (error, G_IO_ERROR, GDK_PIXBUF_ERROR_FAILED, "Bad parameter");
+        g_set_error_literal (error, G_IO_ERROR, CDK_PIXBUF_ERROR_FAILED, "Bad parameter");
         break;
       case ANDROID_BITMAP_RESULT_JNI_EXCEPTION:
-        g_set_error_literal (error, G_IO_ERROR, GDK_PIXBUF_ERROR_FAILED, "JNI exception occured");
+        g_set_error_literal (error, G_IO_ERROR, CDK_PIXBUF_ERROR_FAILED, "JNI exception occured");
         break;
       case ANDROID_BITMAP_RESULT_ALLOCATION_FAILED:
-        g_set_error_literal (error, G_IO_ERROR, GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY, "Allocation failed");
+        g_set_error_literal (error, G_IO_ERROR, CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY, "Allocation failed");
         break;
       default:
-        g_set_error_literal (error, G_IO_ERROR, GDK_PIXBUF_ERROR_FAILED, "Unknown error");
+        g_set_error_literal (error, G_IO_ERROR, CDK_PIXBUF_ERROR_FAILED, "Unknown error");
     }
   return FALSE;
 }

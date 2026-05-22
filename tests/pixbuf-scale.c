@@ -36,7 +36,7 @@ test_scale (gconstpointer data)
   path = g_test_get_filename (G_TEST_DIST, filename, NULL);
   ref = cdk_pixbuf_new_from_file (path, &error);
 
-  if (g_error_matches (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_UNKNOWN_TYPE))
+  if (g_error_matches (error, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_UNKNOWN_TYPE))
     {
       g_clear_error (&error);
       g_test_skip ("format not supported");
@@ -49,7 +49,7 @@ test_scale (gconstpointer data)
   height = cdk_pixbuf_get_height (ref);
 
   pixbuf = cdk_pixbuf_new_from_file_at_scale (path, 2 * width, 3 * height, FALSE, &error);
-  if (g_error_matches (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_UNKNOWN_TYPE))
+  if (g_error_matches (error, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_UNKNOWN_TYPE))
     {
       g_clear_error (&error);
       g_test_skip ("format not supported");
@@ -87,7 +87,7 @@ test_scale_down (gconstpointer data)
   path = g_test_get_filename (G_TEST_DIST, filename, NULL);
   ref = cdk_pixbuf_new_from_file (path, &error);
 
-  if (g_error_matches (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_UNKNOWN_TYPE))
+  if (g_error_matches (error, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_UNKNOWN_TYPE))
     {
       g_clear_error (&error);
       g_test_skip ("format not supported");
@@ -101,7 +101,7 @@ test_scale_down (gconstpointer data)
   width = cdk_pixbuf_get_width (ref);
   height = cdk_pixbuf_get_height (ref);
 
-  pixbuf = cdk_pixbuf_scale_simple (ref, width / 10, height / 10, GDK_INTERP_BILINEAR);
+  pixbuf = cdk_pixbuf_scale_simple (ref, width / 10, height / 10, CDK_INTERP_BILINEAR);
   g_assert (pixbuf != NULL);
 
   g_object_unref (ref);
@@ -119,7 +119,7 @@ test_add_alpha (gconstpointer data)
   path = g_test_get_filename (G_TEST_DIST, filename, NULL);
   ref = cdk_pixbuf_new_from_file (path, &error);
 
-  if (g_error_matches (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_UNKNOWN_TYPE))
+  if (g_error_matches (error, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_UNKNOWN_TYPE))
     {
       g_clear_error (&error);
       g_test_skip ("format not supported");
@@ -160,7 +160,7 @@ test_rotate (gconstpointer data)
   path = g_test_get_filename (G_TEST_DIST, filename, NULL);
   ref = cdk_pixbuf_new_from_file (path, &error);
 
-  if (g_error_matches (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_UNKNOWN_TYPE))
+  if (g_error_matches (error, CDK_PIXBUF_ERROR, CDK_PIXBUF_ERROR_UNKNOWN_TYPE))
     {
       g_clear_error (&error);
       g_test_skip ("format not supported");
@@ -171,7 +171,7 @@ test_rotate (gconstpointer data)
     return;
   g_assert_no_error (error);
 
-  pixbuf = cdk_pixbuf_rotate_simple (ref, GDK_PIXBUF_ROTATE_COUNTERCLOCKWISE);
+  pixbuf = cdk_pixbuf_rotate_simple (ref, CDK_PIXBUF_ROTATE_COUNTERCLOCKWISE);
 
   if (pixbuf == NULL)
     g_test_skip ("Couldn't rotate the image - your system probably lacks sufficient memory.");
@@ -198,7 +198,7 @@ test_halve_checkerboard (gconstpointer data)
   guint x, y;
   guchar expected;                      /* Expected color of all pixels */
 
-  expected = (interp_type == GDK_INTERP_NEAREST) ? 255 : 128;
+  expected = (interp_type == CDK_INTERP_NEAREST) ? 255 : 128;
 
   source = make_checkerboard (width, height);
 
@@ -221,7 +221,7 @@ test_halve_checkerboard (gconstpointer data)
             {
               /* Expected failure: HYPER has a different opinion about the color
                * of the corner pixels: (126,126,126) and (130,130,130) */
-              if (interp_type == GDK_INTERP_HYPER &&
+              if (interp_type == CDK_INTERP_HYPER &&
                   (x == 0 || x == scaled_width - 1) &&
                   (y == 0 || y == scaled_height - 1))
                 {
@@ -255,7 +255,7 @@ crop_n_compare (const GdkPixbuf *source,
   cropped = cdk_pixbuf_new_subpixbuf ((GdkPixbuf *)source, offset_x, offset_y, width, height);
   g_assert_nonnull (cropped);
 
-  scaled = cdk_pixbuf_new (GDK_COLORSPACE_RGB, 0, 8, width, height);
+  scaled = cdk_pixbuf_new (CDK_COLORSPACE_RGB, 0, 8, width, height);
   g_assert_nonnull (scaled);
   cdk_pixbuf_scale (source, scaled,
                     0, 0,                             /* dest_[xy] */
@@ -286,7 +286,7 @@ crop_n_compare (const GdkPixbuf *source,
             {
               /* Expected failure: HYPER has a different opinion about the
                * colors of the edge pixels */
-              if (interp_type == GDK_INTERP_HYPER &&
+              if (interp_type == CDK_INTERP_HYPER &&
                   ((x == 0 || x == scaled_width - 1) ||
                    (y == 0 || y == scaled_height - 1)))
                 {
@@ -348,7 +348,7 @@ test_dest (gconstpointer data)
 
   source = make_rg (width, height);
 
-  copy = cdk_pixbuf_new (GDK_COLORSPACE_RGB, 0, 8, width, height);
+  copy = cdk_pixbuf_new (CDK_COLORSPACE_RGB, 0, 8, width, height);
   g_assert_nonnull (copy);
 
   /* Copy the four quadrants with a no-op scale */
@@ -405,10 +405,10 @@ test_dest (gconstpointer data)
 int
 main (int argc, char **argv)
 {
-  GdkInterpType nearest = GDK_INTERP_NEAREST;
-  GdkInterpType tiles = GDK_INTERP_TILES;
-  GdkInterpType bilinear = GDK_INTERP_BILINEAR;
-  GdkInterpType hyper = GDK_INTERP_HYPER;
+  GdkInterpType nearest = CDK_INTERP_NEAREST;
+  GdkInterpType tiles = CDK_INTERP_TILES;
+  GdkInterpType bilinear = CDK_INTERP_BILINEAR;
+  GdkInterpType hyper = CDK_INTERP_HYPER;
 
   g_test_init (&argc, &argv, NULL);
 

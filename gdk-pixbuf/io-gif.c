@@ -369,7 +369,7 @@ gif_get_lzw (GifContext *context)
                 int rowstride;
                 guint64 len;
 
-                rowstride = cdk_pixbuf_calculate_rowstride (GDK_COLORSPACE_RGB,
+                rowstride = cdk_pixbuf_calculate_rowstride (CDK_COLORSPACE_RGB,
                                                             TRUE,
                                                             8,
                                                             context->frame_len,
@@ -378,8 +378,8 @@ gif_get_lzw (GifContext *context)
                     !g_uint64_checked_mul (&len, rowstride, context->frame_height) ||
                     len >= G_MAXINT) {
                         g_set_error_literal (context->error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                              _("Not enough memory to load GIF file"));
                         return -2;
                 }
@@ -433,16 +433,16 @@ gif_get_lzw (GifContext *context)
                 switch (context->disposal) {
                 case 0:
                 case 1:
-                        context->frame->action = GDK_PIXBUF_FRAME_RETAIN;
+                        context->frame->action = CDK_PIXBUF_FRAME_RETAIN;
                         break;
                 case 2:
-                        context->frame->action = GDK_PIXBUF_FRAME_DISPOSE;
+                        context->frame->action = CDK_PIXBUF_FRAME_DISPOSE;
                         break;
                 case 3:
-                        context->frame->action = GDK_PIXBUF_FRAME_REVERT;
+                        context->frame->action = CDK_PIXBUF_FRAME_REVERT;
                         break;
                 default:
-                        context->frame->action = GDK_PIXBUF_FRAME_RETAIN;
+                        context->frame->action = CDK_PIXBUF_FRAME_RETAIN;
                         break;
                 }
 
@@ -450,10 +450,10 @@ gif_get_lzw (GifContext *context)
 
 		/* Notify when have first frame */
 		if (context->animation->frames->next == NULL) {
-			GdkPixbuf *pixbuf = cdk_pixbuf_animation_get_static_image (GDK_PIXBUF_ANIMATION (context->animation));
+			GdkPixbuf *pixbuf = cdk_pixbuf_animation_get_static_image (CDK_PIXBUF_ANIMATION (context->animation));
 			if (pixbuf != NULL)
 				(* context->prepared_func) (pixbuf,
-                                                            GDK_PIXBUF_ANIMATION (context->animation),
+                                                            CDK_PIXBUF_ANIMATION (context->animation),
                                                             context->user_data);
 		}
         }
@@ -466,7 +466,7 @@ gif_get_lzw (GifContext *context)
 
 		/* Notify frame update */
 		if ((retval != 0 || empty_block) && context->animation->frames->next == NULL) {
-			GdkPixbuf *pixbuf = cdk_pixbuf_animation_get_static_image (GDK_PIXBUF_ANIMATION (context->animation));
+			GdkPixbuf *pixbuf = cdk_pixbuf_animation_get_static_image (CDK_PIXBUF_ANIMATION (context->animation));
 			if (pixbuf)
 				(* context->updated_func) (pixbuf,
                                                            0, 0, context->frame->width, context->frame->height,
@@ -504,8 +504,8 @@ gif_prepare_lzw (GifContext *context)
 
         if (context->lzw_set_code_size >= 12) {
                 g_set_error_literal (context->error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("GIF image is corrupt (incorrect LZW compression)"));
                 return -2;
         }
@@ -540,8 +540,8 @@ gif_init (GifContext *context)
 	if (strncmp ((char *) buf, "GIF", 3) != 0) {
 		/* Not a GIF file */
                 g_set_error_literal (context->error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("File does not appear to be a GIF file"));
 		return -2;
 	}
@@ -555,8 +555,8 @@ gif_init (GifContext *context)
 		/* bad version number, not '87a' or '89a' */
 		escaped_version = g_strescape (version, NULL);
                 g_set_error (context->error,
-                             GDK_PIXBUF_ERROR,
-                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                             CDK_PIXBUF_ERROR,
+                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                              _("Version %s of the GIF file format is not supported"),
                              escaped_version);
 		g_free (escaped_version);
@@ -584,8 +584,8 @@ gif_init (GifContext *context)
 
         if (width == 0 || height == 0) {
                 g_set_error_literal (context->error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("Resulting GIF image has zero size"));
                 return -2;
         }
@@ -654,8 +654,8 @@ gif_get_frame_info (GifContext *context)
                 context->state = GIF_DONE;
                 
                 g_set_error_literal (context->error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("GIF image has no global colormap, and a frame inside it has no local colormap."));
                 
 		return -2;
@@ -785,7 +785,7 @@ new_context (GdkPixbufModuleSizeFunc size_func,
 
         memset (context, 0, sizeof (GifContext));
         
-        context->animation = g_object_new (GDK_TYPE_PIXBUF_GIF_ANIM, NULL);
+        context->animation = g_object_new (CDK_TYPE_PIXBUF_GIF_ANIM, NULL);
 	context->frame = NULL;
 	context->transparent_index = -1;
 	context->file = NULL;
@@ -845,8 +845,8 @@ cdk_pixbuf__gif_image_load (FILE *file, GError **error)
 
         if (context == NULL) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                      _("Not enough memory to load GIF file"));
                 return NULL;
         }
@@ -858,8 +858,8 @@ cdk_pixbuf__gif_image_load (FILE *file, GError **error)
 	if (retval == -1 || context->animation->frames == NULL) {
                 if (context->error && *(context->error) == NULL)
                         g_set_error_literal (context->error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              _("GIF file was missing some data (perhaps it was truncated somehow?)"));
         }
         else if (retval == -2) {
@@ -867,7 +867,7 @@ cdk_pixbuf__gif_image_load (FILE *file, GError **error)
                 goto out;
         }
         
-        pixbuf = cdk_pixbuf_animation_get_static_image (GDK_PIXBUF_ANIMATION (context->animation));
+        pixbuf = cdk_pixbuf_animation_get_static_image (CDK_PIXBUF_ANIMATION (context->animation));
 
         if (pixbuf)
                 g_object_ref (pixbuf);
@@ -898,8 +898,8 @@ cdk_pixbuf__gif_image_begin_load (GdkPixbufModuleSizeFunc size_func,
 
         if (context == NULL) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                      _("Not enough memory to load GIF file"));
                 return NULL;
         }
@@ -917,15 +917,15 @@ cdk_pixbuf__gif_image_stop_load (gpointer data, GError **error)
         
         if (context->animation->frames == NULL) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("GIF image was truncated or incomplete."));
 
                 retval = FALSE;
         } else if (context->state != GIF_DONE) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_INCOMPLETE_ANIMATION,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_INCOMPLETE_ANIMATION,
                                      _("Not all frames of the GIF image were loaded."));
 
                 retval = FALSE;
@@ -971,8 +971,8 @@ cdk_pixbuf__gif_image_load_animation (FILE *file,
 
         if (context == NULL) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                      _("Not enough memory to load GIF file"));
                 return NULL;
         }
@@ -983,8 +983,8 @@ cdk_pixbuf__gif_image_load_animation (FILE *file,
 	if (gif_main_loop (context) == -1 || context->animation->frames == NULL) {
                 if (context->error && *(context->error) == NULL)
                         g_set_error_literal (context->error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                              _("GIF file was missing some data (perhaps it was truncated somehow?)"));
 
                 g_object_unref (context->animation);
@@ -992,7 +992,7 @@ cdk_pixbuf__gif_image_load_animation (FILE *file,
         }
 
         if (context->animation)
-                animation = GDK_PIXBUF_ANIMATION (context->animation);
+                animation = CDK_PIXBUF_ANIMATION (context->animation);
         else
                 animation = NULL;
 
@@ -1039,6 +1039,6 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
 	info->description = NC_("image format", "GIF");
 	info->mime_types = (gchar **) mime_types;
 	info->extensions = (gchar **) extensions;
-	info->flags = GDK_PIXBUF_FORMAT_THREADSAFE;
+	info->flags = CDK_PIXBUF_FORMAT_THREADSAFE;
 	info->license = "LGPL";
 }

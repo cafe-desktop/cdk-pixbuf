@@ -59,8 +59,8 @@ setup_png_transformations(png_structp png_read_ptr, png_infop png_info_ptr,
         bit_depth = png_get_bit_depth (png_read_ptr, png_info_ptr);
         if (bit_depth < 1 || bit_depth > 16) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("Bits per channel of PNG image is invalid."));
                 return FALSE;
         }
@@ -140,16 +140,16 @@ setup_png_transformations(png_structp png_read_ptr, png_infop png_info_ptr,
         
         if (width == 0 || height == 0) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("Transformed PNG has zero width or height."));
                 return FALSE;
         }
 
         if (bit_depth != 8) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("Bits per channel of transformed PNG is not 8."));
                 return FALSE;
         }
@@ -157,8 +157,8 @@ setup_png_transformations(png_structp png_read_ptr, png_infop png_info_ptr,
         if ( ! (color_type == PNG_COLOR_TYPE_RGB ||
                 color_type == PNG_COLOR_TYPE_RGB_ALPHA) ) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("Transformed PNG not RGB or RGBA."));
                 return FALSE;
         }
@@ -166,8 +166,8 @@ setup_png_transformations(png_structp png_read_ptr, png_infop png_info_ptr,
         channels = png_get_channels(png_read_ptr, png_info_ptr);
         if ( ! (channels == 3 || channels == 4) ) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("Transformed PNG has unsupported number of channels, must be 3 or 4."));
                 return FALSE;
         }
@@ -188,8 +188,8 @@ png_simple_error_callback(png_structp png_save_ptr,
          */
         if (error && *error == NULL) {
                 g_set_error (error,
-                             GDK_PIXBUF_ERROR,
-                             GDK_PIXBUF_ERROR_FAILED,
+                             CDK_PIXBUF_ERROR,
+                             CDK_PIXBUF_ERROR_FAILED,
                              _("Fatal error in PNG image file: %s"),
                              error_msg);
         }
@@ -329,12 +329,12 @@ cdk_pixbuf__png_image_load (FILE *f, GError **error)
                 return NULL;
         }
         
-        pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, ctype & PNG_COLOR_MASK_ALPHA, 8, w, h);
+        pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, ctype & PNG_COLOR_MASK_ALPHA, 8, w, h);
 
 	if (!pixbuf) {
                 g_set_error_literal (error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                      _("Insufficient memory to load PNG file"));
 
 		png_destroy_read_struct (&png_ptr, &info_ptr, NULL);
@@ -514,8 +514,8 @@ cdk_pixbuf__png_image_begin_load (GdkPixbufModuleSizeFunc size_func,
                  */
                 if (error && *error == NULL) {
                         g_set_error_literal (error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                              _("Couldn’t allocate memory for loading PNG"));
                 }
 
@@ -535,8 +535,8 @@ cdk_pixbuf__png_image_begin_load (GdkPixbufModuleSizeFunc size_func,
                  */
                 if (error && *error == NULL) {
                         g_set_error_literal (error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                                              _("Couldn’t allocate memory for loading PNG"));
                 }
 
@@ -582,8 +582,8 @@ cdk_pixbuf__png_image_stop_load (gpointer context, GError **error)
         if (lc->pixbuf)
                 g_object_unref (lc->pixbuf);
         else {
-                g_set_error_literal (error, GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                g_set_error_literal (error, CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("Premature end-of-file encountered"));
                 retval = FALSE;
 	}
@@ -725,21 +725,21 @@ png_info_callback   (png_structp png_read_ptr,
                 if (w == 0 || h == 0) {
                         lc->fatal_error_occurred = TRUE;
                         g_set_error_literal (lc->error,
-                                             GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_FAILED,
+                                             CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_FAILED,
                                              _("Transformed PNG has zero width or height."));
                         return;
                 }
         }
 
-        lc->pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, have_alpha, 8, width, height);
+        lc->pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, have_alpha, 8, width, height);
 
         if (lc->pixbuf == NULL) {
                 /* Failed to allocate memory */
                 lc->fatal_error_occurred = TRUE;
                 g_set_error (lc->error,
-                             GDK_PIXBUF_ERROR,
-                             GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+                             CDK_PIXBUF_ERROR,
+                             CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
                              _("Insufficient memory to store a %lu by %lu image; try exiting some applications to reduce memory usage"),
                              (gulong) width, (gulong) height);
                 return;
@@ -815,8 +815,8 @@ png_row_callback   (png_structp png_read_ptr,
         if (row_num >= cdk_pixbuf_get_height (lc->pixbuf)) {
                 lc->fatal_error_occurred = TRUE;
                 g_set_error_literal (lc->error,
-                                     GDK_PIXBUF_ERROR,
-                                     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                                     CDK_PIXBUF_ERROR,
+                                     CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                                      _("Fatal error reading PNG image file"));
                 return;
         }
@@ -868,8 +868,8 @@ png_error_callback(png_structp png_read_ptr,
          */
         if (lc->error && *lc->error == NULL) {
                 g_set_error (lc->error,
-                             GDK_PIXBUF_ERROR,
-                             GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+                             CDK_PIXBUF_ERROR,
+                             CDK_PIXBUF_ERROR_CORRUPT_IMAGE,
                              _("Fatal error reading PNG image file: %s"),
                              error_msg);
         }
@@ -967,8 +967,8 @@ real_save_png (GdkPixbuf        *pixbuf,
                                 /* Translators notice: '%s' is the name of the
                                  * PNG text key
                                  */
-                                g_set_error (error, GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_BAD_OPTION,
+                                g_set_error (error, CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_BAD_OPTION,
                                              _("Invalid key “%s”. Keys for PNG text chunks must have at least 1 and at most 79 characters."),
                                              unprefixed_key);
                                 success = FALSE;
@@ -980,8 +980,8 @@ real_save_png (GdkPixbuf        *pixbuf,
                                         /* Translators notice: '%s' is the name of
                                          * the PNG text key
                                          */
-                                        g_set_error (error, GDK_PIXBUF_ERROR,
-                                                     GDK_PIXBUF_ERROR_BAD_OPTION,
+                                        g_set_error (error, CDK_PIXBUF_ERROR,
+                                                     CDK_PIXBUF_ERROR_BAD_OPTION,
                                                      _("Invalid key “%s”. Keys for PNG text chunks must be ASCII characters."),
                                                      unprefixed_key);
                                         success = FALSE;
@@ -1010,8 +1010,8 @@ real_save_png (GdkPixbuf        *pixbuf,
 
                         if (text.text == NULL) {
                                 g_set_error (error,
-                                            GDK_PIXBUF_ERROR,
-                                            GDK_PIXBUF_ERROR_BAD_OPTION,
+                                            CDK_PIXBUF_ERROR,
+                                            CDK_PIXBUF_ERROR_BAD_OPTION,
                                             _("Value for PNG text chunk '%s' cannot be converted to ISO-8859-1 encoding."), unprefixed_key);
                                 success = FALSE;
                                 goto cleanup;
@@ -1022,8 +1022,8 @@ real_save_png (GdkPixbuf        *pixbuf,
                         icc_profile = g_base64_decode (value, &icc_profile_size);
 
                         if (icc_profile_size < 127) {
-                                g_set_error (error, GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_BAD_OPTION,
+                                g_set_error (error, CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_BAD_OPTION,
                                              _("Color profile has invalid length %d"),
                                              (int) icc_profile_size);
                                 success = FALSE;
@@ -1034,8 +1034,8 @@ real_save_png (GdkPixbuf        *pixbuf,
 
                         compression = strtol (value, &endptr, 10);
                         if (endptr == value || (compression < 0 || compression > 9)) {
-                                g_set_error (error, GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_BAD_OPTION,
+                                g_set_error (error, CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_BAD_OPTION,
                                              _("PNG compression level must be a value between 0 and 9; value “%s” is invalid"),
                                              value);
                                 success = FALSE;
@@ -1048,8 +1048,8 @@ real_save_png (GdkPixbuf        *pixbuf,
                         int dpi = strtol (value, &endptr, 10);
 
                         if (endptr == value || dpi <= 0) {
-                                g_set_error (error, GDK_PIXBUF_ERROR,
-                                             GDK_PIXBUF_ERROR_BAD_OPTION,
+                                g_set_error (error, CDK_PIXBUF_ERROR,
+                                             CDK_PIXBUF_ERROR_BAD_OPTION,
                                              _("PNG %s must be greater than zero; value “%s” is not allowed"),
                                              is_horizontal ? "x-dpi" : "y-dpi",
                                              value);
@@ -1283,7 +1283,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
 	info->description = NC_("image format", "PNG");
 	info->mime_types = (gchar **) mime_types;
 	info->extensions = (gchar **) extensions;
-	info->flags = GDK_PIXBUF_FORMAT_WRITABLE | GDK_PIXBUF_FORMAT_THREADSAFE;
+	info->flags = CDK_PIXBUF_FORMAT_WRITABLE | CDK_PIXBUF_FORMAT_THREADSAFE;
 	info->license = "LGPL";
 }
 
