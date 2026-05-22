@@ -25,11 +25,11 @@
 #define GDK_PIXBUF_TRANSFORM_H
 
 #if defined(GDK_PIXBUF_DISABLE_SINGLE_INCLUDES) && !defined (GDK_PIXBUF_H_INSIDE) && !defined (GDK_PIXBUF_COMPILATION)
-#error "Only <gdk-pixbuf/gdk-pixbuf.h> can be included directly."
+#error "Only <cdk-pixbuf/cdk-pixbuf.h> can be included directly."
 #endif
 
 #include <glib.h>
-#include <gdk-pixbuf/gdk-pixbuf-core.h>
+#include <cdk-pixbuf/cdk-pixbuf-core.h>
 
 
 G_BEGIN_DECLS
@@ -84,7 +84,7 @@ typedef enum {
  * @GDK_PIXBUF_ROTATE_UPSIDEDOWN: Rotate by 180 degrees.
  * @GDK_PIXBUF_ROTATE_CLOCKWISE: Rotate by 270 degrees.
  * 
- * The possible rotations which can be passed to gdk_pixbuf_rotate_simple().
+ * The possible rotations which can be passed to cdk_pixbuf_rotate_simple().
  *
  * To make them easier to use, their numerical values are the actual degrees.
  */
@@ -96,7 +96,7 @@ typedef enum {
 } GdkPixbufRotation;
 
 GDK_PIXBUF_AVAILABLE_IN_ALL
-void gdk_pixbuf_scale           (const GdkPixbuf *src,
+void cdk_pixbuf_scale           (const GdkPixbuf *src,
 				 GdkPixbuf       *dest,
 				 int              dest_x,
 				 int              dest_y,
@@ -108,7 +108,7 @@ void gdk_pixbuf_scale           (const GdkPixbuf *src,
 				 double           scale_y,
 				 GdkInterpType    interp_type);
 GDK_PIXBUF_AVAILABLE_IN_ALL
-void gdk_pixbuf_composite       (const GdkPixbuf *src,
+void cdk_pixbuf_composite       (const GdkPixbuf *src,
 				 GdkPixbuf       *dest,
 				 int              dest_x,
 				 int              dest_y,
@@ -121,7 +121,7 @@ void gdk_pixbuf_composite       (const GdkPixbuf *src,
 				 GdkInterpType    interp_type,
 				 int              overall_alpha);
 GDK_PIXBUF_AVAILABLE_IN_ALL
-void gdk_pixbuf_composite_color (const GdkPixbuf *src,
+void cdk_pixbuf_composite_color (const GdkPixbuf *src,
 				 GdkPixbuf       *dest,
 				 int              dest_x,
 				 int              dest_y,
@@ -140,13 +140,13 @@ void gdk_pixbuf_composite_color (const GdkPixbuf *src,
 				 guint32          color2);
 
 GDK_PIXBUF_AVAILABLE_IN_ALL
-GdkPixbuf *gdk_pixbuf_scale_simple           (const GdkPixbuf *src,
+GdkPixbuf *cdk_pixbuf_scale_simple           (const GdkPixbuf *src,
 					      int              dest_width,
 					      int              dest_height,
 					      GdkInterpType    interp_type);
 
 GDK_PIXBUF_AVAILABLE_IN_ALL
-GdkPixbuf *gdk_pixbuf_composite_color_simple (const GdkPixbuf *src,
+GdkPixbuf *cdk_pixbuf_composite_color_simple (const GdkPixbuf *src,
 					      int              dest_width,
 					      int              dest_height,
 					      GdkInterpType    interp_type,
@@ -156,10 +156,10 @@ GdkPixbuf *gdk_pixbuf_composite_color_simple (const GdkPixbuf *src,
 					      guint32          color2);
 
 GDK_PIXBUF_AVAILABLE_IN_2_6
-GdkPixbuf *gdk_pixbuf_rotate_simple          (const GdkPixbuf   *src,
+GdkPixbuf *cdk_pixbuf_rotate_simple          (const GdkPixbuf   *src,
 				              GdkPixbufRotation  angle);
 GDK_PIXBUF_AVAILABLE_IN_2_6
-GdkPixbuf *gdk_pixbuf_flip                   (const GdkPixbuf   *src,
+GdkPixbuf *cdk_pixbuf_flip                   (const GdkPixbuf   *src,
 				              gboolean           horizontal);
 				     
 G_END_DECLS

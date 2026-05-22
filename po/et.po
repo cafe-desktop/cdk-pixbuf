@@ -13,9 +13,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gdk-pixbuf MASTER\n"
+"Project-Id-Version: cdk-pixbuf MASTER\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=ctk"
-"%2b&keywords=I18N+L10N&component=gdk\n"
+"%2b&keywords=I18N+L10N&component=cdk\n"
 "POT-Creation-Date: 2013-09-11 19:46+0000\n"
 "PO-Revision-Date: 2013-09-11 23:20+0300\n"
 "Last-Translator: Mattias Põldaru <mahfiaz@gmail.com>\n"
@@ -57,10 +57,10 @@ msgstr "Piltide laadimise moodulit pole võimalik laadida: %s: %s"
 #, c-format
 msgid ""
 "Image-loading module %s does not export the proper interface; perhaps it's "
-"from a different gdk-pixbuf version?"
+"from a different cdk-pixbuf version?"
 msgstr ""
 "Pildilaadimismoodul '%s' ei väljasta korralikku liidest. Võib-olla on "
-"tegemist erinevate gdk-pixbuf versioonidega?"
+"tegemist erinevate cdk-pixbuf versioonidega?"
 
 #, c-format
 msgid "Image type '%s' is not supported"
@@ -82,8 +82,8 @@ msgid "Error writing to image file: %s"
 msgstr "Viga pildifaili kirjutamisel: %s"
 
 #, c-format
-msgid "This build of gdk-pixbuf does not support saving the image format: %s"
-msgstr "See gdk-pixbuf'i variant ei toeta %s pildivormingu salvestamist"
+msgid "This build of cdk-pixbuf does not support saving the image format: %s"
+msgstr "See cdk-pixbuf'i variant ei toeta %s pildivormingu salvestamist"
 
 msgid "Insufficient memory to save image to callback"
 msgstr "Pildi väljakutsesse salvestamiseks pole piisavalt mälu"

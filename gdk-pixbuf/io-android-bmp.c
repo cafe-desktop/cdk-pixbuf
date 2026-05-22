@@ -23,11 +23,11 @@
 #include "io-android-utils.h"
 
 
-#define MODULE_ENTRY(function) void _gdk_pixbuf__android_bmp_ ## function
+#define MODULE_ENTRY(function) void _cdk_pixbuf__android_bmp_ ## function
 
 MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
 {
-  gdk_pixbuf__android_fill_vtable (module);
+  cdk_pixbuf__android_fill_vtable (module);
 }
 
 MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)

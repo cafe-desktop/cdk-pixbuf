@@ -20,8 +20,8 @@
  */
 
 #include "config.h"
-#include "gdk-pixbuf/gdk-pixbuf.h"
-#include "gdk-pixbuf/gdk-pixdata.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixdata.h"
 #include "test-common.h"
 #include <string.h>
 
@@ -39,15 +39,15 @@ test_pixdata_deserialize (gconstpointer data)
   g_file_get_contents (g_test_get_filename (G_TEST_DIST, filename, NULL), &contents, &size, &error);
   g_assert_no_error (error);
 
-  gdk_pixdata_deserialize (&pixdata, size, (const guint8 *) contents, &error);
+  cdk_pixdata_deserialize (&pixdata, size, (const guint8 *) contents, &error);
   g_assert_no_error (error);
 
-  pixbuf = gdk_pixbuf_from_pixdata (&pixdata, TRUE, &error);
+  pixbuf = cdk_pixbuf_from_pixdata (&pixdata, TRUE, &error);
   g_assert_error (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_CORRUPT_IMAGE);
   g_clear_error (&error);
   g_free (contents);
 
-  pixbuf = gdk_pixbuf_from_pixdata (&pixdata, FALSE, &error);
+  pixbuf = cdk_pixbuf_from_pixdata (&pixdata, FALSE, &error);
   g_assert_error (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_CORRUPT_IMAGE);
   g_clear_error (&error);
 
@@ -66,14 +66,14 @@ test_pixdata_success (void)
   gsize size;
 
   path = g_test_get_filename (G_TEST_DIST, "test-image.png", NULL);
-  ref = gdk_pixbuf_new_from_file (path, &error);
+  ref = cdk_pixbuf_new_from_file (path, &error);
   g_assert_no_error (error);
 
   g_file_get_contents (g_test_get_filename (G_TEST_DIST, "test-image.pixdata", NULL), &contents, &size, &error);
   g_assert_no_error (error);
-  gdk_pixdata_deserialize (&pixdata1, size, (const guint8 *) contents, &error);
+  cdk_pixdata_deserialize (&pixdata1, size, (const guint8 *) contents, &error);
   g_assert_no_error (error);
-  pixbuf = gdk_pixbuf_from_pixdata (&pixdata1, FALSE, &error);
+  pixbuf = cdk_pixbuf_from_pixdata (&pixdata1, FALSE, &error);
   g_assert_no_error (error);
 
   pixdata_equal (ref, pixbuf, &error);
@@ -83,9 +83,9 @@ test_pixdata_success (void)
 
   g_file_get_contents (g_test_get_filename (G_TEST_DIST, "test-image-rle.pixdata", NULL), &contents, &size, &error);
   g_assert_no_error (error);
-  gdk_pixdata_deserialize (&pixdata2, size, (const guint8 *) contents, &error);
+  cdk_pixdata_deserialize (&pixdata2, size, (const guint8 *) contents, &error);
   g_assert_no_error (error);
-  pixbuf = gdk_pixbuf_from_pixdata (&pixdata2, FALSE, &error);
+  pixbuf = cdk_pixbuf_from_pixdata (&pixdata2, FALSE, &error);
   g_assert_no_error (error);
 
   pixdata_equal (ref, pixbuf, &error);
@@ -103,16 +103,16 @@ test_pixdata (void)
   GError *error = NULL;
   GdkPixbuf *ref;
 
-  ref = gdk_pixbuf_new_from_resource ("/test/resource/icc-profile.pixdata", &error);
+  ref = cdk_pixbuf_new_from_resource ("/test/resource/icc-profile.pixdata", &error);
   g_assert_no_error (error);
   g_object_unref (ref);
 
-  ref = gdk_pixbuf_new_from_resource ("/test/resource/icc-profile-compressed.pixdata", &error);
+  ref = cdk_pixbuf_new_from_resource ("/test/resource/icc-profile-compressed.pixdata", &error);
   g_assert_no_error (error);
   g_object_unref (ref);
 
   path = g_test_get_filename (G_TEST_DIST, "test-image.pixdata", NULL);
-  ref = gdk_pixbuf_new_from_file (path, &error);
+  ref = cdk_pixbuf_new_from_file (path, &error);
   g_assert_error (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_UNKNOWN_TYPE);
   g_clear_error (&error);
   g_clear_object (&ref);

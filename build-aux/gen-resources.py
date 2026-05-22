@@ -9,7 +9,7 @@ import os
 
 argparser = argparse.ArgumentParser(description='Compile resources')
 argparser.add_argument('--glib-compile-resources', metavar='PATH', help='Path to glib-compile-resources')
-argparser.add_argument('--pixdata', metavar='PATH', help='Path to gdk-pixbuf-pixdata')
+argparser.add_argument('--pixdata', metavar='PATH', help='Path to cdk-pixbuf-pixdata')
 argparser.add_argument('--loaders', metavar='PATH', help='Path to the loaders.cache file')
 argparser.add_argument('--sourcedir', metavar='PATH', help='Path to the source directory')
 argparser.add_argument('resource', help='GResource XML file')

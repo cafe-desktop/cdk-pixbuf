@@ -22,9 +22,9 @@
 
 #include <glib.h>
 
-#include "gdk-pixbuf.h"
-#include "gdk-pixbuf-io.h"
-#include "gdk-pixbuf-scaled-anim.h"
+#include "cdk-pixbuf.h"
+#include "cdk-pixbuf-io.h"
+#include "cdk-pixbuf-scaled-anim.h"
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 
@@ -62,7 +62,7 @@ typedef struct _GdkPixbufScaledAnimIter GdkPixbufScaledAnimIter;
 typedef struct _GdkPixbufScaledAnimIterClass GdkPixbufScaledAnimIterClass;
 
 GdkPixbufScaledAnim *
-_gdk_pixbuf_scaled_anim_new (GdkPixbufAnimation *anim,
+_cdk_pixbuf_scaled_anim_new (GdkPixbufAnimation *anim,
                              gdouble             xscale,
                              gdouble             yscale,
                              gdouble             tscale)
@@ -79,10 +79,10 @@ _gdk_pixbuf_scaled_anim_new (GdkPixbufAnimation *anim,
 	return scaled;
 }
 
-G_DEFINE_TYPE (GdkPixbufScaledAnim, gdk_pixbuf_scaled_anim, GDK_TYPE_PIXBUF_ANIMATION);
+G_DEFINE_TYPE (GdkPixbufScaledAnim, cdk_pixbuf_scaled_anim, GDK_TYPE_PIXBUF_ANIMATION);
 
 static void
-gdk_pixbuf_scaled_anim_init (GdkPixbufScaledAnim *scaled)
+cdk_pixbuf_scaled_anim_init (GdkPixbufScaledAnim *scaled)
 {
 	scaled->xscale = 1.0;
 	scaled->yscale = 1.0;
@@ -90,7 +90,7 @@ gdk_pixbuf_scaled_anim_init (GdkPixbufScaledAnim *scaled)
 }
 
 static void
-gdk_pixbuf_scaled_anim_finalize (GObject *object)
+cdk_pixbuf_scaled_anim_finalize (GObject *object)
 {
 	GdkPixbufScaledAnim *scaled = (GdkPixbufScaledAnim *)object;
 
@@ -104,7 +104,7 @@ gdk_pixbuf_scaled_anim_finalize (GObject *object)
 		scaled->current = NULL;
 	}
 
-	G_OBJECT_CLASS (gdk_pixbuf_scaled_anim_parent_class)->finalize (object);
+	G_OBJECT_CLASS (cdk_pixbuf_scaled_anim_parent_class)->finalize (object);
 }
 
 static gboolean
@@ -112,7 +112,7 @@ is_static_image (GdkPixbufAnimation *anim)
 {
 	GdkPixbufScaledAnim *scaled = (GdkPixbufScaledAnim *)anim;
 
-	return gdk_pixbuf_animation_is_static_image (scaled->anim);
+	return cdk_pixbuf_animation_is_static_image (scaled->anim);
 }	
 
 static GdkPixbuf *
@@ -128,17 +128,17 @@ get_scaled_pixbuf (GdkPixbufScaledAnim *scaled,
 	/* Preserve the options associated with the original pixbuf 
 	   (if present), mostly so that client programs can use the
 	   "orientation" option (if present) to rotate the image 
-	   appropriately. gdk_pixbuf_scale_simple (and most other
-           gdk transform operations) does not preserve the attached
+	   appropriately. cdk_pixbuf_scale_simple (and most other
+           cdk transform operations) does not preserve the attached
            options when returning a new pixbuf. */
 
-	quark = g_quark_from_static_string ("gdk_pixbuf_options");
+	quark = g_quark_from_static_string ("cdk_pixbuf_options");
 	options = g_object_get_qdata (G_OBJECT (pixbuf), quark);
 
 	/* Get a new scaled pixbuf */
-	scaled->current  = gdk_pixbuf_scale_simple (pixbuf, 
-                        MAX((int) ((gdouble) gdk_pixbuf_get_width (pixbuf) * scaled->xscale + .5), 1),
-                        MAX((int) ((gdouble) gdk_pixbuf_get_height (pixbuf) * scaled->yscale + .5), 1),
+	scaled->current  = cdk_pixbuf_scale_simple (pixbuf, 
+                        MAX((int) ((gdouble) cdk_pixbuf_get_width (pixbuf) * scaled->xscale + .5), 1),
+                        MAX((int) ((gdouble) cdk_pixbuf_get_height (pixbuf) * scaled->yscale + .5), 1),
 			GDK_INTERP_BILINEAR);
 
 	/* Copy the original pixbuf options to the scaled pixbuf */
@@ -155,7 +155,7 @@ get_static_image (GdkPixbufAnimation *anim)
 	GdkPixbufScaledAnim *scaled = (GdkPixbufScaledAnim *)anim;
 	GdkPixbuf *pixbuf;
 	
-	pixbuf = gdk_pixbuf_animation_get_static_image (scaled->anim);
+	pixbuf = cdk_pixbuf_animation_get_static_image (scaled->anim);
 	return get_scaled_pixbuf (scaled, pixbuf);
 }
 
@@ -184,14 +184,14 @@ get_iter (GdkPixbufAnimation *anim,
 	iter = g_object_new (GDK_TYPE_PIXBUF_SCALED_ANIM_ITER, NULL);
 
 	iter->scaled = g_object_ref (scaled);
-	iter->iter = gdk_pixbuf_animation_get_iter (scaled->anim, start_time);
+	iter->iter = cdk_pixbuf_animation_get_iter (scaled->anim, start_time);
 	
 	return (GdkPixbufAnimationIter*)iter;
 }
 G_GNUC_END_IGNORE_DEPRECATIONS
 
 static void
-gdk_pixbuf_scaled_anim_class_init (GdkPixbufScaledAnimClass *klass)
+cdk_pixbuf_scaled_anim_class_init (GdkPixbufScaledAnimClass *klass)
 {
         GObjectClass *object_class;
         GdkPixbufAnimationClass *anim_class;
@@ -199,7 +199,7 @@ gdk_pixbuf_scaled_anim_class_init (GdkPixbufScaledAnimClass *klass)
         object_class = G_OBJECT_CLASS (klass);
         anim_class = GDK_PIXBUF_ANIMATION_CLASS (klass);
         
-        object_class->finalize = gdk_pixbuf_scaled_anim_finalize;
+        object_class->finalize = cdk_pixbuf_scaled_anim_finalize;
         
         anim_class->is_static_image = is_static_image;
         anim_class->get_static_image = get_static_image;
@@ -208,10 +208,10 @@ gdk_pixbuf_scaled_anim_class_init (GdkPixbufScaledAnimClass *klass)
 }
 
 
-G_DEFINE_TYPE (GdkPixbufScaledAnimIter, gdk_pixbuf_scaled_anim_iter, GDK_TYPE_PIXBUF_ANIMATION_ITER);
+G_DEFINE_TYPE (GdkPixbufScaledAnimIter, cdk_pixbuf_scaled_anim_iter, GDK_TYPE_PIXBUF_ANIMATION_ITER);
 
 static void
-gdk_pixbuf_scaled_anim_iter_init (GdkPixbufScaledAnimIter *iter)
+cdk_pixbuf_scaled_anim_iter_init (GdkPixbufScaledAnimIter *iter)
 {
 }
 
@@ -221,7 +221,7 @@ get_delay_time (GdkPixbufAnimationIter *iter)
 	GdkPixbufScaledAnimIter *scaled = (GdkPixbufScaledAnimIter *)iter;
 	int delay;
 
-	delay = gdk_pixbuf_animation_iter_get_delay_time (scaled->iter);
+	delay = cdk_pixbuf_animation_iter_get_delay_time (scaled->iter);
 	delay = (int)(delay * scaled->scaled->tscale);
 
 	return delay;
@@ -233,7 +233,7 @@ get_pixbuf (GdkPixbufAnimationIter *iter)
 	GdkPixbufScaledAnimIter *scaled = (GdkPixbufScaledAnimIter *)iter;
 	GdkPixbuf *pixbuf;
 
-	pixbuf = gdk_pixbuf_animation_iter_get_pixbuf (scaled->iter);
+	pixbuf = cdk_pixbuf_animation_iter_get_pixbuf (scaled->iter);
 	return get_scaled_pixbuf (scaled->scaled, pixbuf);
 }
 
@@ -242,7 +242,7 @@ on_currently_loading_frame (GdkPixbufAnimationIter *iter)
 {
 	GdkPixbufScaledAnimIter *scaled = (GdkPixbufScaledAnimIter *)iter;
 
-	return gdk_pixbuf_animation_iter_on_currently_loading_frame (scaled->iter);
+	return cdk_pixbuf_animation_iter_on_currently_loading_frame (scaled->iter);
 }
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
@@ -252,23 +252,23 @@ advance (GdkPixbufAnimationIter *iter,
 {
 	GdkPixbufScaledAnimIter *scaled = (GdkPixbufScaledAnimIter *)iter;
 
-	return gdk_pixbuf_animation_iter_advance (scaled->iter, current_time);
+	return cdk_pixbuf_animation_iter_advance (scaled->iter, current_time);
 }
 G_GNUC_END_IGNORE_DEPRECATIONS
 
 static void
-gdk_pixbuf_scaled_anim_iter_finalize (GObject *object)
+cdk_pixbuf_scaled_anim_iter_finalize (GObject *object)
 {
         GdkPixbufScaledAnimIter *iter = (GdkPixbufScaledAnimIter *)object;
         
 	g_object_unref (iter->iter);
    	g_object_unref (iter->scaled);
 
-	G_OBJECT_CLASS (gdk_pixbuf_scaled_anim_iter_parent_class)->finalize (object);
+	G_OBJECT_CLASS (cdk_pixbuf_scaled_anim_iter_parent_class)->finalize (object);
 }
 
 static void
-gdk_pixbuf_scaled_anim_iter_class_init (GdkPixbufScaledAnimIterClass *klass)
+cdk_pixbuf_scaled_anim_iter_class_init (GdkPixbufScaledAnimIterClass *klass)
 {
         GObjectClass *object_class;
         GdkPixbufAnimationIterClass *anim_iter_class;
@@ -276,7 +276,7 @@ gdk_pixbuf_scaled_anim_iter_class_init (GdkPixbufScaledAnimIterClass *klass)
         object_class = G_OBJECT_CLASS (klass);
         anim_iter_class = GDK_PIXBUF_ANIMATION_ITER_CLASS (klass);
         
-        object_class->finalize = gdk_pixbuf_scaled_anim_iter_finalize;
+        object_class->finalize = cdk_pixbuf_scaled_anim_iter_finalize;
         
         anim_iter_class->get_delay_time = get_delay_time;
         anim_iter_class->get_pixbuf = get_pixbuf;

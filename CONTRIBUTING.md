@@ -86,8 +86,8 @@ appropriate development tools for your operating system, including:
 You can start by cloning the Git repository:
 
 ```sh
-$ git clone https://gitlab.gnome.org/GNOME/gdk-pixbuf.git
-$ cd gdk-pixbuf
+$ git clone https://gitlab.gnome.org/GNOME/cdk-pixbuf.git
+$ cd cdk-pixbuf
 ```
 
 Then you should build GdkPixbuf locally:
@@ -119,13 +119,13 @@ $ meson test
 When introducing a new feature or new API, you should document it using the
 [gtk-doc](https://developer.gnome.org/gtk-doc-manual/stable/) format. You
 can build the GdkPixbuf API reference locally by enabling the `docs`
-configuration option and building the `gdk-pixbuf-doc` target:
+configuration option and building the `cdk-pixbuf-doc` target:
 
 ```sh
 $ cd _build
 $ meson configure -Ddocs=true
 $ ninja
-$ ninja gdk-pixbuf-doc
+$ ninja cdk-pixbuf-doc
 ```
 
 ### Commit messages
@@ -190,7 +190,7 @@ contribution.
 ```
 ├── build-aux
 ├── docs
-├── gdk-pixbuf
+├── cdk-pixbuf
 │   └── pixops
 ├── m4
 ├── po
@@ -205,7 +205,7 @@ contribution.
 
  - `build-aux`: Ancillary files, necessary to build GdkPixbuf
  - `docs`: The GdkPixbuf API reference
- - `gdk-pixbuf`: The core GdkPixbuf source
+ - `cdk-pixbuf`: The core GdkPixbuf source
   - `pixops`: Platform-specific code for pixel operations
  - `po`: Localization files
  - `tests`: Test suite

@@ -29,9 +29,9 @@
 #include <glib-object.h>
 #include <glib/gi18n-lib.h>
 
-#include "gdk-pixbuf-core.h"
-#include "gdk-pixbuf-io.h"
-#include "gdk-pixbuf-loader.h"
+#include "cdk-pixbuf-core.h"
+#include "cdk-pixbuf-io.h"
+#include "cdk-pixbuf-loader.h"
 
 G_MODULE_EXPORT void fill_vtable (GdkPixbufModule * module);
 G_MODULE_EXPORT void fill_info (GdkPixbufFormat * info);
@@ -263,15 +263,15 @@ load_icon (unsigned size, IN gpointer data, gsize datalen)
       GdkPixbufLoader *loader;
       GdkPixbuf *pixbuf;
 
-      loader = gdk_pixbuf_loader_new ();
-      if (!gdk_pixbuf_loader_write (loader, icon, isize, NULL)
-	  || !gdk_pixbuf_loader_close (loader, NULL))
+      loader = cdk_pixbuf_loader_new ();
+      if (!cdk_pixbuf_loader_write (loader, icon, isize, NULL)
+	  || !cdk_pixbuf_loader_close (loader, NULL))
         {
           g_object_unref (loader);
           return NULL;
 	}
 
-      pixbuf = gdk_pixbuf_loader_get_pixbuf (loader);
+      pixbuf = cdk_pixbuf_loader_get_pixbuf (loader);
       g_object_ref (pixbuf);
       g_object_unref (loader);
 
@@ -314,7 +314,7 @@ load_icon (unsigned size, IN gpointer data, gsize datalen)
   for (i = 0; i < size * size; i++)	/* copy mask to alpha channel */
     image[i * 4 + 3] = mask[i];
 
-  return gdk_pixbuf_new_from_data ((guchar *) image, GDK_COLORSPACE_RGB,	/* RGB image */
+  return cdk_pixbuf_new_from_data ((guchar *) image, GDK_COLORSPACE_RGB,	/* RGB image */
 				   TRUE,	/* with alpha channel */
 				   8,	/* 8 bits per sample */
 				   size,	/* width */
@@ -391,7 +391,7 @@ context_free (IcnsProgressiveState *context)
 }
 
 static gpointer
-gdk_pixbuf__icns_image_begin_load (GdkPixbufModuleSizeFunc      size_func,
+cdk_pixbuf__icns_image_begin_load (GdkPixbufModuleSizeFunc      size_func,
 				   GdkPixbufModulePreparedFunc  prepared_func,
 				   GdkPixbufModuleUpdatedFunc   updated_func,
 				   gpointer                     user_data,
@@ -414,7 +414,7 @@ gdk_pixbuf__icns_image_begin_load (GdkPixbufModuleSizeFunc      size_func,
 }
 
 static gboolean
-gdk_pixbuf__icns_image_stop_load (gpointer   data,
+cdk_pixbuf__icns_image_stop_load (gpointer   data,
                                   GError   **error)
 {
   IcnsProgressiveState *context = data;
@@ -426,7 +426,7 @@ gdk_pixbuf__icns_image_stop_load (gpointer   data,
 }
 
 static gboolean
-gdk_pixbuf__icns_image_load_increment (gpointer       data,
+cdk_pixbuf__icns_image_load_increment (gpointer       data,
                                        const guchar  *buf,
                                        guint          size,
                                        GError       **error)
@@ -462,8 +462,8 @@ gdk_pixbuf__icns_image_load_increment (gpointer       data,
       return FALSE;
     }
 
-  w = gdk_pixbuf_get_width (context->pixbuf);
-  h = gdk_pixbuf_get_height (context->pixbuf);
+  w = cdk_pixbuf_get_width (context->pixbuf);
+  h = cdk_pixbuf_get_height (context->pixbuf);
 
   (*context->size_func) (&w,
 			 &h,
@@ -476,8 +476,8 @@ gdk_pixbuf__icns_image_load_increment (gpointer       data,
   (*context->updated_func) (context->pixbuf,
 			    0,
 			    0,
-			    gdk_pixbuf_get_width (context->pixbuf),
-			    gdk_pixbuf_get_height (context->pixbuf),
+			    cdk_pixbuf_get_width (context->pixbuf),
+			    cdk_pixbuf_get_height (context->pixbuf),
 			    context->user_data);
 
   return TRUE;
@@ -486,15 +486,15 @@ gdk_pixbuf__icns_image_load_increment (gpointer       data,
 #ifndef INCLUDE_icns
 #define MODULE_ENTRY(function) G_MODULE_EXPORT void function
 #else
-#define MODULE_ENTRY(function) void _gdk_pixbuf__icns_ ## function
+#define MODULE_ENTRY(function) void _cdk_pixbuf__icns_ ## function
 #endif
 
 MODULE_ENTRY (fill_vtable) (GdkPixbufModule * module)
 {
   module->load = icns_image_load;
-  module->begin_load = gdk_pixbuf__icns_image_begin_load;
-  module->stop_load = gdk_pixbuf__icns_image_stop_load;
-  module->load_increment = gdk_pixbuf__icns_image_load_increment;
+  module->begin_load = cdk_pixbuf__icns_image_begin_load;
+  module->stop_load = cdk_pixbuf__icns_image_stop_load;
+  module->load_increment = cdk_pixbuf__icns_image_load_increment;
 }
 
 MODULE_ENTRY (fill_info) (GdkPixbufFormat * info)

@@ -1,29 +1,29 @@
-bin = executable('gdk-pixbuf-thumbnailer',
-           [ 'gdk-pixbuf-thumbnailer.c', 'gnome-thumbnailer-skeleton.c' ],
+bin = executable('cdk-pixbuf-thumbnailer',
+           [ 'cdk-pixbuf-thumbnailer.c', 'gnome-thumbnailer-skeleton.c' ],
            c_args: common_cflags + [
              '-DTHUMBNAILER_RETURNS_PIXBUF',
              '-DTHUMBNAILER_USAGE="Thumbnail images"',
            ],
-           dependencies: gdk_pixbuf_deps + [ gdkpixbuf_dep ],
+           dependencies: cdk_pixbuf_deps + [ cdkpixbuf_dep ],
            install: true)
-meson.override_find_program('gdk-pixbuf-thumbnailer', bin)
+meson.override_find_program('cdk-pixbuf-thumbnailer', bin)
 
-gdk_pixbuf_print_mime_types = executable('gdk-pixbuf-print-mime-types',
-                                         'gdk-pixbuf-print-mime-types.c',
+cdk_pixbuf_print_mime_types = executable('cdk-pixbuf-print-mime-types',
+                                         'cdk-pixbuf-print-mime-types.c',
                                          c_args: common_cflags,
-                                         dependencies: gdk_pixbuf_deps + [ gdkpixbuf_dep ])
+                                         dependencies: cdk_pixbuf_deps + [ cdkpixbuf_dep ])
 
 custom_target('thumbnailer',
-              input: 'gdk-pixbuf-thumbnailer.thumbnailer.in',
-              output: 'gdk-pixbuf-thumbnailer.thumbnailer',
+              input: 'cdk-pixbuf-thumbnailer.thumbnailer.in',
+              output: 'cdk-pixbuf-thumbnailer.thumbnailer',
               command: [
                 gen_thumbnailer,
-                '--printer', gdk_pixbuf_print_mime_types,
-                '--pixdata', gdk_pixbuf_pixdata,
+                '--printer', cdk_pixbuf_print_mime_types,
+                '--pixdata', cdk_pixbuf_pixdata,
                 '--loaders', loaders_cache,
-                '--bindir', gdk_pixbuf_bindir,
+                '--bindir', cdk_pixbuf_bindir,
                 '@INPUT@',
                 '@OUTPUT@',
               ],
               install: true,
-              install_dir: join_paths(gdk_pixbuf_datadir, 'thumbnailers'))
+              install_dir: join_paths(cdk_pixbuf_datadir, 'thumbnailers'))

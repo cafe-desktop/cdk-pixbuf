@@ -2,7 +2,7 @@
 #define __GDK_PIXBUF_FEATURES_H__
 
 #if defined(GDK_PIXBUF_DISABLE_SINGLE_INCLUDES) && !defined (GDK_PIXBUF_H_INSIDE) && !defined (GDK_PIXBUF_COMPILATION)
-#error "Only <gdk-pixbuf/gdk-pixbuf.h> can be included directly."
+#error "Only <cdk-pixbuf/cdk-pixbuf.h> can be included directly."
 #endif
 
 #include <glib.h>
@@ -10,19 +10,19 @@
 /**
  * GDK_PIXBUF_MAJOR:
  * 
- * Major version of gdk-pixbuf library, that is the "0" in
+ * Major version of cdk-pixbuf library, that is the "0" in
  * "0.8.2" for example.
  */
 /**
  * GDK_PIXBUF_MINOR:
  * 
- * Minor version of gdk-pixbuf library, that is the "8" in
+ * Minor version of cdk-pixbuf library, that is the "8" in
  * "0.8.2" for example.
  */
 /**
  * GDK_PIXBUF_MICRO:
  * 
- * Micro version of gdk-pixbuf library, that is the "2" in
+ * Micro version of cdk-pixbuf library, that is the "2" in
  * "0.8.2" for example.
  */
 /**
@@ -31,7 +31,7 @@
  * Contains the full version of GdkPixbuf as a string.
  *
  * This is the version being compiled against; contrast with
- * `gdk_pixbuf_version`.
+ * `cdk_pixbuf_version`.
  */
 
 #define GDK_PIXBUF_MAJOR (@GDK_PIXBUF_MAJOR@)
@@ -65,51 +65,51 @@
 #endif /* !G_PLATFORM_WIN32 */
 
 /**
- * gdk_pixbuf_major_version:
+ * cdk_pixbuf_major_version:
  * 
- * The major version number of the gdk-pixbuf library.  (e.g. in 
- * gdk-pixbuf version 1.2.5 this is 1.) 
+ * The major version number of the cdk-pixbuf library.  (e.g. in 
+ * cdk-pixbuf version 1.2.5 this is 1.) 
  * 
  * 
  * This variable is in the library, so represents the
- * gdk-pixbuf library you have linked against. Contrast with the
+ * cdk-pixbuf library you have linked against. Contrast with the
  * `GDK_PIXBUF_MAJOR` macro, which represents the major version of the
- * gdk-pixbuf headers you have included.
+ * cdk-pixbuf headers you have included.
  */
 /**
- * gdk_pixbuf_minor_version:
+ * cdk_pixbuf_minor_version:
  * 
- * The minor version number of the gdk-pixbuf library.  (e.g. in 
- * gdk-pixbuf version 1.2.5 this is 2.) 
+ * The minor version number of the cdk-pixbuf library.  (e.g. in 
+ * cdk-pixbuf version 1.2.5 this is 2.) 
  * 
  * 
  * This variable is in the library, so represents the
- * gdk-pixbuf library you have linked against. Contrast with the
+ * cdk-pixbuf library you have linked against. Contrast with the
  * `GDK_PIXBUF_MINOR` macro, which represents the minor version of the
- * gdk-pixbuf headers you have included.
+ * cdk-pixbuf headers you have included.
  */
 /**
- * gdk_pixbuf_micro_version:
+ * cdk_pixbuf_micro_version:
  * 
- * The micro version number of the gdk-pixbuf library.  (e.g. in 
- * gdk-pixbuf version 1.2.5 this is 5.) 
+ * The micro version number of the cdk-pixbuf library.  (e.g. in 
+ * cdk-pixbuf version 1.2.5 this is 5.) 
  * 
  * 
  * This variable is in the library, so represents the
- * gdk-pixbuf library you have linked against. Contrast with the
+ * cdk-pixbuf library you have linked against. Contrast with the
  * `GDK_PIXBUF_MICRO` macro, which represents the micro version of the
- * gdk-pixbuf headers you have included.
+ * cdk-pixbuf headers you have included.
  */
 /**
- * gdk_pixbuf_version:
+ * cdk_pixbuf_version:
  * 
- * Contains the full version of the gdk-pixbuf library as a string.
+ * Contains the full version of the cdk-pixbuf library as a string.
  * This is the version currently in use by a running program.
  */
 
-GDK_PIXBUF_VAR const guint gdk_pixbuf_major_version;
-GDK_PIXBUF_VAR const guint gdk_pixbuf_minor_version;
-GDK_PIXBUF_VAR const guint gdk_pixbuf_micro_version;
-GDK_PIXBUF_VAR const char *gdk_pixbuf_version;
+GDK_PIXBUF_VAR const guint cdk_pixbuf_major_version;
+GDK_PIXBUF_VAR const guint cdk_pixbuf_minor_version;
+GDK_PIXBUF_VAR const guint cdk_pixbuf_micro_version;
+GDK_PIXBUF_VAR const char *cdk_pixbuf_version;
 
 #endif /* __GDK_PIXBUF_FEATURES_H__ */

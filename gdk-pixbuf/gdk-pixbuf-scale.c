@@ -21,12 +21,12 @@
 #include "config.h"
 #include <math.h>
 #include <string.h>
-#include "gdk-pixbuf-transform.h"
-#include "gdk-pixbuf-private.h"
+#include "cdk-pixbuf-transform.h"
+#include "cdk-pixbuf-private.h"
 #include "pixops/pixops.h"
 
 /**
- * gdk_pixbuf_scale:
+ * cdk_pixbuf_scale:
  * @src: a #GdkPixbuf
  * @dest: the #GdkPixbuf into which to render the results
  * @dest_x: the left coordinate for region to render
@@ -45,16 +45,16 @@
  * @dest_height) of the resulting image onto the destination image
  * replacing the previous contents.
  *
- * Try to use gdk_pixbuf_scale_simple() first; this function is
+ * Try to use cdk_pixbuf_scale_simple() first; this function is
  * the industrial-strength power tool you can fall back to, if
- * gdk_pixbuf_scale_simple() isn't powerful enough.
+ * cdk_pixbuf_scale_simple() isn't powerful enough.
  *
  * If the source rectangle overlaps the destination rectangle on the
  * same pixbuf, it will be overwritten during the scaling which
  * results in rendering artifacts.
  **/
 void
-gdk_pixbuf_scale (const GdkPixbuf *src,
+cdk_pixbuf_scale (const GdkPixbuf *src,
 		  GdkPixbuf       *dest,
 		  int              dest_x,
 		  int              dest_y,
@@ -78,8 +78,8 @@ gdk_pixbuf_scale (const GdkPixbuf *src,
   offset_y = floor (offset_y + 0.5);
 
   /* Force an implicit copy */
-  dest_pixels = gdk_pixbuf_get_pixels (dest);
-  src_pixels = gdk_pixbuf_read_pixels (src);
+  dest_pixels = cdk_pixbuf_get_pixels (dest);
+  src_pixels = cdk_pixbuf_read_pixels (src);
 
   _pixops_scale (dest_pixels, dest->width, dest->height, dest->rowstride,
                  dest->n_channels, dest->has_alpha, src_pixels, src->width,
@@ -89,7 +89,7 @@ gdk_pixbuf_scale (const GdkPixbuf *src,
 }
 
 /**
- * gdk_pixbuf_composite:
+ * cdk_pixbuf_composite:
  * @src: a #GdkPixbuf
  * @dest: the #GdkPixbuf into which to render the results
  * @dest_x: the left coordinate for region to render
@@ -118,7 +118,7 @@ gdk_pixbuf_scale (const GdkPixbuf *src,
  * ![](composite.png)
  */
 void
-gdk_pixbuf_composite (const GdkPixbuf *src,
+cdk_pixbuf_composite (const GdkPixbuf *src,
 		      GdkPixbuf       *dest,
 		      int              dest_x,
 		      int              dest_y,
@@ -144,8 +144,8 @@ gdk_pixbuf_composite (const GdkPixbuf *src,
   offset_y = floor (offset_y + 0.5);
 
   /* Force an implicit copy */
-  dest_pixels = gdk_pixbuf_get_pixels (dest);
-  src_pixels = gdk_pixbuf_read_pixels (src);
+  dest_pixels = cdk_pixbuf_get_pixels (dest);
+  src_pixels = cdk_pixbuf_read_pixels (src);
 
   _pixops_composite (dest_pixels, dest->width, dest->height, dest->rowstride,
                      dest->n_channels, dest->has_alpha, src_pixels,
@@ -156,7 +156,7 @@ gdk_pixbuf_composite (const GdkPixbuf *src,
 }
 
 /**
- * gdk_pixbuf_composite_color:
+ * cdk_pixbuf_composite_color:
  * @src: a #GdkPixbuf
  * @dest: the #GdkPixbuf into which to render the results
  * @dest_x: the left coordinate for region to render
@@ -185,11 +185,11 @@ gdk_pixbuf_composite (const GdkPixbuf *src,
  * If the source image has no alpha channel, and @overall_alpha is 255, a fast
  * path is used which omits the alpha blending and just performs the scaling.
  *
- * See gdk_pixbuf_composite_color_simple() for a simpler variant of this
+ * See cdk_pixbuf_composite_color_simple() for a simpler variant of this
  * function suitable for many tasks.
  **/
 void
-gdk_pixbuf_composite_color (const GdkPixbuf *src,
+cdk_pixbuf_composite_color (const GdkPixbuf *src,
 			    GdkPixbuf       *dest,
 			    int              dest_x,
 			    int              dest_y,
@@ -220,8 +220,8 @@ gdk_pixbuf_composite_color (const GdkPixbuf *src,
   offset_y = floor (offset_y + 0.5);
   
   /* Force an implicit copy */
-  dest_pixels = gdk_pixbuf_get_pixels (dest);
-  src_pixels = gdk_pixbuf_read_pixels (src);
+  dest_pixels = cdk_pixbuf_get_pixels (dest);
+  src_pixels = cdk_pixbuf_read_pixels (src);
 
   _pixops_composite_color (dest_pixels, dest_width, dest_height,
 			   dest->rowstride, dest->n_channels, dest->has_alpha,
@@ -234,7 +234,7 @@ gdk_pixbuf_composite_color (const GdkPixbuf *src,
 }
 
 /**
- * gdk_pixbuf_scale_simple:
+ * cdk_pixbuf_scale_simple:
  * @src: a #GdkPixbuf
  * @dest_width: the width of destination image
  * @dest_height: the height of destination image
@@ -262,7 +262,7 @@ gdk_pixbuf_composite_color (const GdkPixbuf *src,
  * Return value: (nullable) (transfer full): the new pixbuf
  **/
 GdkPixbuf *
-gdk_pixbuf_scale_simple (const GdkPixbuf *src,
+cdk_pixbuf_scale_simple (const GdkPixbuf *src,
 			 int              dest_width,
 			 int              dest_height,
 			 GdkInterpType    interp_type)
@@ -275,13 +275,13 @@ gdk_pixbuf_scale_simple (const GdkPixbuf *src,
 
   /* Fast path. */
   if (dest_width == src->width && dest_height == src->height)
-    return gdk_pixbuf_copy (src);
+    return cdk_pixbuf_copy (src);
 
-  dest = gdk_pixbuf_new (GDK_COLORSPACE_RGB, src->has_alpha, 8, dest_width, dest_height);
+  dest = cdk_pixbuf_new (GDK_COLORSPACE_RGB, src->has_alpha, 8, dest_width, dest_height);
   if (!dest)
     return NULL;
 
-  gdk_pixbuf_scale (src, dest,  0, 0, dest_width, dest_height, 0, 0,
+  cdk_pixbuf_scale (src, dest,  0, 0, dest_width, dest_height, 0, 0,
 		    (double) dest_width / src->width,
 		    (double) dest_height / src->height,
 		    interp_type);
@@ -290,7 +290,7 @@ gdk_pixbuf_scale_simple (const GdkPixbuf *src,
 }
 
 /**
- * gdk_pixbuf_composite_color_simple:
+ * cdk_pixbuf_composite_color_simple:
  * @src: a #GdkPixbuf
  * @dest_width: the width of destination image
  * @dest_height: the height of destination image
@@ -307,7 +307,7 @@ gdk_pixbuf_scale_simple (const GdkPixbuf *src,
  * Return value: (nullable) (transfer full): the new pixbuf
  **/
 GdkPixbuf *
-gdk_pixbuf_composite_color_simple (const GdkPixbuf *src,
+cdk_pixbuf_composite_color_simple (const GdkPixbuf *src,
 				   int              dest_width,
 				   int              dest_height,
 				   GdkInterpType    interp_type,
@@ -323,11 +323,11 @@ gdk_pixbuf_composite_color_simple (const GdkPixbuf *src,
   g_return_val_if_fail (dest_height > 0, NULL);
   g_return_val_if_fail (overall_alpha >= 0 && overall_alpha <= 255, NULL);
 
-  dest = gdk_pixbuf_new (GDK_COLORSPACE_RGB, src->has_alpha, 8, dest_width, dest_height);
+  dest = cdk_pixbuf_new (GDK_COLORSPACE_RGB, src->has_alpha, 8, dest_width, dest_height);
   if (!dest)
     return NULL;
 
-  gdk_pixbuf_composite_color (src, dest, 0, 0, dest_width, dest_height, 0, 0,
+  cdk_pixbuf_composite_color (src, dest, 0, 0, dest_width, dest_height, 0, 0,
 			      (double) dest_width / src->width,
 			      (double) dest_height / src->height,
 			      interp_type, overall_alpha, 0, 0, check_size, color1, color2);
@@ -338,7 +338,7 @@ gdk_pixbuf_composite_color_simple (const GdkPixbuf *src,
 #define OFFSET(pb, x, y) ((x) * (pb)->n_channels + (gsize)(y) * (pb)->rowstride)
 
 /**
- * gdk_pixbuf_rotate_simple:
+ * cdk_pixbuf_rotate_simple:
  * @src: a #GdkPixbuf
  * @angle: the angle to rotate by
  *
@@ -352,7 +352,7 @@ gdk_pixbuf_composite_color_simple (const GdkPixbuf *src,
  * Since: 2.6
  */
 GdkPixbuf *
-gdk_pixbuf_rotate_simple (const GdkPixbuf   *src,
+cdk_pixbuf_rotate_simple (const GdkPixbuf   *src,
 			  GdkPixbufRotation  angle)
 {
   const guint8 *src_pixels;
@@ -363,15 +363,15 @@ gdk_pixbuf_rotate_simple (const GdkPixbuf   *src,
   gint x, y;
 
   g_return_val_if_fail (GDK_IS_PIXBUF (src), NULL);
-  src_pixels = gdk_pixbuf_read_pixels (src);
+  src_pixels = cdk_pixbuf_read_pixels (src);
 
   switch (angle % 360)
     {
     case 0:
-      dest = gdk_pixbuf_copy (src);
+      dest = cdk_pixbuf_copy (src);
       break;
     case 90:
-      dest = gdk_pixbuf_new (src->colorspace, 
+      dest = cdk_pixbuf_new (src->colorspace, 
 			     src->has_alpha, 
 			     src->bits_per_sample, 
 			     src->height, 
@@ -379,7 +379,7 @@ gdk_pixbuf_rotate_simple (const GdkPixbuf   *src,
       if (!dest)
 	return NULL;
 
-      dest_pixels = gdk_pixbuf_get_pixels (dest);
+      dest_pixels = cdk_pixbuf_get_pixels (dest);
 
       for (y = 0; y < src->height; y++) 
 	{ 
@@ -392,7 +392,7 @@ gdk_pixbuf_rotate_simple (const GdkPixbuf   *src,
 	} 
       break;
     case 180:
-      dest = gdk_pixbuf_new (src->colorspace, 
+      dest = cdk_pixbuf_new (src->colorspace, 
 			     src->has_alpha, 
 			     src->bits_per_sample, 
 			     src->width, 
@@ -400,7 +400,7 @@ gdk_pixbuf_rotate_simple (const GdkPixbuf   *src,
       if (!dest)
 	return NULL;
 
-      dest_pixels = gdk_pixbuf_get_pixels (dest);
+      dest_pixels = cdk_pixbuf_get_pixels (dest);
 
       for (y = 0; y < src->height; y++) 
 	{ 
@@ -413,7 +413,7 @@ gdk_pixbuf_rotate_simple (const GdkPixbuf   *src,
 	} 
       break;
     case 270:
-      dest = gdk_pixbuf_new (src->colorspace, 
+      dest = cdk_pixbuf_new (src->colorspace, 
 			     src->has_alpha, 
 			     src->bits_per_sample, 
 			     src->height, 
@@ -421,7 +421,7 @@ gdk_pixbuf_rotate_simple (const GdkPixbuf   *src,
       if (!dest)
 	return NULL;
 
-      dest_pixels = gdk_pixbuf_get_pixels (dest);
+      dest_pixels = cdk_pixbuf_get_pixels (dest);
 
       for (y = 0; y < src->height; y++) 
 	{ 
@@ -435,7 +435,7 @@ gdk_pixbuf_rotate_simple (const GdkPixbuf   *src,
       break;
     default:
       dest = NULL;
-      g_warning ("gdk_pixbuf_rotate_simple() can only rotate "
+      g_warning ("cdk_pixbuf_rotate_simple() can only rotate "
 		 "by multiples of 90 degrees");
       g_assert_not_reached ();
   } 
@@ -444,7 +444,7 @@ gdk_pixbuf_rotate_simple (const GdkPixbuf   *src,
 }
 
 /**
- * gdk_pixbuf_flip:
+ * cdk_pixbuf_flip:
  * @src: a #GdkPixbuf
  * @horizontal: `TRUE` to flip horizontally, `FALSE` to flip vertically
  *
@@ -456,7 +456,7 @@ gdk_pixbuf_rotate_simple (const GdkPixbuf   *src,
  * Since: 2.6
  */
 GdkPixbuf *
-gdk_pixbuf_flip (const GdkPixbuf *src,
+cdk_pixbuf_flip (const GdkPixbuf *src,
 		 gboolean         horizontal)
 {
   const guint8 *src_pixels;
@@ -467,7 +467,7 @@ gdk_pixbuf_flip (const GdkPixbuf *src,
   gint x, y;
 
   g_return_val_if_fail (GDK_IS_PIXBUF (src), NULL);
-  dest = gdk_pixbuf_new (src->colorspace, 
+  dest = cdk_pixbuf_new (src->colorspace, 
 			 src->has_alpha, 
 			 src->bits_per_sample, 
 			 src->width, 
@@ -475,8 +475,8 @@ gdk_pixbuf_flip (const GdkPixbuf *src,
   if (!dest)
     return NULL;
 
-  dest_pixels = gdk_pixbuf_get_pixels (dest);
-  src_pixels = gdk_pixbuf_read_pixels (src);
+  dest_pixels = cdk_pixbuf_get_pixels (dest);
+  src_pixels = cdk_pixbuf_read_pixels (src);
 
   if (!horizontal) /* flip vertical */
     {

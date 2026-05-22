@@ -28,7 +28,7 @@
 DEFINE_GUID(EncoderQuality, 0x1d5be4b5,0xfa4a,0x452d,0x9c,0xdd,0x5d,0xb3,0x51,0x05,0xe7,0xeb);
 
 static gboolean
-gdk_pixbuf__gdip_image_save_JPEG_to_callback (GdkPixbufSaveFunc   save_func,
+cdk_pixbuf__gdip_image_save_JPEG_to_callback (GdkPixbufSaveFunc   save_func,
                                               gpointer            user_data,
                                               GdkPixbuf          *pixbuf,
                                               gchar             **keys,
@@ -90,17 +90,17 @@ gdk_pixbuf__gdip_image_save_JPEG_to_callback (GdkPixbufSaveFunc   save_func,
 }
 
 static gboolean
-gdk_pixbuf__gdip_image_save_JPEG (FILE         *f,
+cdk_pixbuf__gdip_image_save_JPEG (FILE         *f,
                                  GdkPixbuf     *pixbuf,
                                  gchar        **keys,
                                  gchar        **values,
                                  GError       **error)
 {
-  return gdk_pixbuf__gdip_image_save_JPEG_to_callback (gdip_save_to_file_callback, f, pixbuf, keys, values, error);
+  return cdk_pixbuf__gdip_image_save_JPEG_to_callback (gdip_save_to_file_callback, f, pixbuf, keys, values, error);
 }
 
 static gboolean
-gdk_pixbuf__gdip_is_save_option_supported_JPEG (const gchar *option_key)
+cdk_pixbuf__gdip_is_save_option_supported_JPEG (const gchar *option_key)
 {
   if (g_strcmp0 (option_key, "quality") == 0)
     return TRUE;
@@ -111,16 +111,16 @@ gdk_pixbuf__gdip_is_save_option_supported_JPEG (const gchar *option_key)
 #ifndef INCLUDE_gdiplus
 #define MODULE_ENTRY(function) G_MODULE_EXPORT void function
 #else
-#define MODULE_ENTRY(function) void _gdk_pixbuf__gdip_jpeg_ ## function
+#define MODULE_ENTRY(function) void _cdk_pixbuf__gdip_jpeg_ ## function
 #endif
 
 MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
 {
   gdip_fill_vtable (module);
 
-  module->save_to_callback = gdk_pixbuf__gdip_image_save_JPEG_to_callback;
-  module->save = gdk_pixbuf__gdip_image_save_JPEG; /* for ctk < 2.14, you need to implement both. otherwise gdk-pixbuf-queryloaders fails */
-  module->is_save_option_supported = gdk_pixbuf__gdip_is_save_option_supported_JPEG;
+  module->save_to_callback = cdk_pixbuf__gdip_image_save_JPEG_to_callback;
+  module->save = cdk_pixbuf__gdip_image_save_JPEG; /* for ctk < 2.14, you need to implement both. otherwise cdk-pixbuf-queryloaders fails */
+  module->is_save_option_supported = cdk_pixbuf__gdip_is_save_option_supported_JPEG;
 }
 
 MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)

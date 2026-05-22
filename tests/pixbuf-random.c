@@ -18,7 +18,7 @@
  */
 
 #include "config.h"
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -45,9 +45,9 @@ assault (const guchar *header, gsize header_size, int n_images)
 	  exit (EXIT_FAILURE);
 	}
   
-      loader = gdk_pixbuf_loader_new ();
+      loader = cdk_pixbuf_loader_new ();
       
-      gdk_pixbuf_loader_write (loader, header, header_size, &err);
+      cdk_pixbuf_loader_write (loader, header, header_size, &err);
       if (err)
 	{
 	  g_error_free (err);
@@ -67,7 +67,7 @@ assault (const guchar *header, gsize header_size, int n_images)
 	      exit (EXIT_FAILURE);
 	    }
 	  
-	  gdk_pixbuf_loader_write (loader, (guchar *)&r, sizeof (r), &err);
+	  cdk_pixbuf_loader_write (loader, (guchar *)&r, sizeof (r), &err);
 	  if (err)
 	    {
 	      g_error_free (err);
@@ -78,7 +78,7 @@ assault (const guchar *header, gsize header_size, int n_images)
       
       fclose (f);
       
-      gdk_pixbuf_loader_close (loader, &err);
+      cdk_pixbuf_loader_close (loader, &err);
       if (err)
 	{
 	  g_error_free (err);

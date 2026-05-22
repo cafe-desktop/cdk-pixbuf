@@ -1772,8 +1772,8 @@ prescale (const guchar     **src_bufp,
   tmp_width = lrint (src_width * prescale_x);
   tmp_height = lrint (src_height * prescale_y);
 
-  /* We are below the gdk_ interface, so create the temp image manually.
-   * Code copied from gdk_pixbuf_new() */
+  /* We are below the cdk_ interface, so create the temp image manually.
+   * Code copied from cdk_pixbuf_new() */
   tmp_channels = src_channels;
   tmp_has_alpha = src_has_alpha;
   tmp_rowstride = ((tmp_width * tmp_channels) + 3) & ~3;

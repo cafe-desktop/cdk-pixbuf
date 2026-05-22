@@ -17,7 +17,7 @@
  * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 #include "test-common.h"
 #include <errno.h>
 #include <string.h>
@@ -55,7 +55,7 @@ get_readonly_pixbuf (void)
   GBytes *bytes;
   GError *error = NULL;
 
-  reference = gdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "test-image.png", NULL), &error);
+  reference = cdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "test-image.png", NULL), &error);
   g_assert_no_error (error);
   
 #ifdef G_OS_UNIX
@@ -71,7 +71,7 @@ get_readonly_pixbuf (void)
     pagesize = sysconf (_SC_PAGESIZE);
     g_assert_cmpint (pagesize, >, 0);
 
-    pixlen = gdk_pixbuf_get_byte_length (reference);
+    pixlen = cdk_pixbuf_get_byte_length (reference);
     pages = pixlen / pagesize + 1;
 
     buf = g_new0 (MappedBuf, 1);
@@ -85,7 +85,7 @@ get_readonly_pixbuf (void)
     errno = saved_errno;
     close(zero_fd);
 
-    memcpy (buf->buf, gdk_pixbuf_get_pixels (reference), pixlen);
+    memcpy (buf->buf, cdk_pixbuf_get_pixels (reference), pixlen);
 
     r = mprotect (buf->buf, buf->len, PROT_READ);
     g_assert_cmpint (r, ==, 0);
@@ -93,16 +93,16 @@ get_readonly_pixbuf (void)
     bytes = g_bytes_new_with_free_func (buf->buf, buf->len, destroy_buf_unmap, buf);
   }
 #else
-  bytes = g_bytes_new (gdk_pixbuf_get_pixels (reference), gdk_pixbuf_get_byte_length (reference));
+  bytes = g_bytes_new (cdk_pixbuf_get_pixels (reference), cdk_pixbuf_get_byte_length (reference));
 #endif
 
-  result = gdk_pixbuf_new_from_bytes (bytes,
-				      gdk_pixbuf_get_colorspace (reference),
-				      gdk_pixbuf_get_has_alpha (reference),
-				      gdk_pixbuf_get_bits_per_sample (reference),
-				      gdk_pixbuf_get_width (reference),
-				      gdk_pixbuf_get_height (reference),
-				      gdk_pixbuf_get_rowstride (reference));
+  result = cdk_pixbuf_new_from_bytes (bytes,
+				      cdk_pixbuf_get_colorspace (reference),
+				      cdk_pixbuf_get_has_alpha (reference),
+				      cdk_pixbuf_get_bits_per_sample (reference),
+				      cdk_pixbuf_get_width (reference),
+				      cdk_pixbuf_get_height (reference),
+				      cdk_pixbuf_get_rowstride (reference));
   g_object_unref (reference);
   g_bytes_unref (bytes);
 
@@ -122,25 +122,25 @@ test_mutate_readonly (void)
     }
   
   src = get_readonly_pixbuf ();
-  gdk_pixbuf_scale (src, src,
+  cdk_pixbuf_scale (src, src,
 		    0, 0, 
-		    gdk_pixbuf_get_width (src) / 4, 
-		    gdk_pixbuf_get_height (src) / 4,
+		    cdk_pixbuf_get_width (src) / 4, 
+		    cdk_pixbuf_get_height (src) / 4,
 		    0, 0, 0.5, 0.5,
 		    GDK_INTERP_NEAREST);
   g_object_unref (src);
 
   src = get_readonly_pixbuf ();
 		    
-  dest = gdk_pixbuf_scale_simple (src,
-				  gdk_pixbuf_get_width (src) / 4, 
-				  gdk_pixbuf_get_height (src) / 4,
+  dest = cdk_pixbuf_scale_simple (src,
+				  cdk_pixbuf_get_width (src) / 4, 
+				  cdk_pixbuf_get_height (src) / 4,
 				  GDK_INTERP_NEAREST);
   g_object_unref (dest);
 
-  dest = gdk_pixbuf_composite_color_simple (src,
-					    gdk_pixbuf_get_width (src) / 4, 
-					    gdk_pixbuf_get_height (src) / 4,
+  dest = cdk_pixbuf_composite_color_simple (src,
+					    cdk_pixbuf_get_width (src) / 4, 
+					    cdk_pixbuf_get_height (src) / 4,
 					    GDK_INTERP_NEAREST,
 					    128,
 					    8,
@@ -148,12 +148,12 @@ test_mutate_readonly (void)
 					    G_MAXUINT32/2);
   g_object_unref (dest);
 
-  dest = gdk_pixbuf_rotate_simple (src, 180);
+  dest = cdk_pixbuf_rotate_simple (src, 180);
   g_object_unref (dest);
 
-  dest = gdk_pixbuf_flip (src, TRUE);
+  dest = cdk_pixbuf_flip (src, TRUE);
   g_object_unref (dest);
-  dest = gdk_pixbuf_flip (src, FALSE);
+  dest = cdk_pixbuf_flip (src, FALSE);
   g_object_unref (dest);
 
   g_object_unref (src);
@@ -172,14 +172,14 @@ test_read_pixel_bytes (void)
     }
   
   src = get_readonly_pixbuf ();
-  bytes = gdk_pixbuf_read_pixel_bytes (src);
+  bytes = cdk_pixbuf_read_pixel_bytes (src);
   g_object_unref (src);
   g_bytes_unref (bytes);
 
   src = get_readonly_pixbuf ();
   /* Force a mutable conversion */
-  (void) gdk_pixbuf_get_pixels (src);
-  bytes = gdk_pixbuf_read_pixel_bytes (src);
+  (void) cdk_pixbuf_get_pixels (src);
+  bytes = cdk_pixbuf_read_pixel_bytes (src);
   g_object_unref (src);
   g_bytes_unref (bytes);
 }

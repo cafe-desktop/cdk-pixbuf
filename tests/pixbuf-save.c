@@ -19,13 +19,13 @@
  * Author: Matthias Clasen
  */
 
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 #include "test-common.h"
 #include <string.h>
 #include <glib/gstdio.h>
 
 #define compare_option(p1, p2, key) \
-  g_strcmp0 (gdk_pixbuf_get_option (p1, key), gdk_pixbuf_get_option (p2, key))
+  g_strcmp0 (cdk_pixbuf_get_option (p1, key), cdk_pixbuf_get_option (p2, key))
 
 static gboolean
 pixbuf_equal (GdkPixbuf *p1, GdkPixbuf *p2)
@@ -61,13 +61,13 @@ test_save_roundtrip (void)
       return;
     }
 
-  ref = gdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "test-image.png", NULL), &error);
+  ref = cdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "test-image.png", NULL), &error);
   g_assert_no_error (error);
 
-  gdk_pixbuf_save (ref, "pixbuf-save-roundtrip", "png", &error, NULL);
+  cdk_pixbuf_save (ref, "pixbuf-save-roundtrip", "png", &error, NULL);
   g_assert_no_error (error);
 
-  pixbuf = gdk_pixbuf_new_from_file ("pixbuf-save-roundtrip", &error);
+  pixbuf = cdk_pixbuf_new_from_file ("pixbuf-save-roundtrip", &error);
   g_assert_no_error (error);
 
   g_assert (pixbuf_equal (pixbuf, ref));
@@ -91,17 +91,17 @@ test_save_ico (void)
       return;
     }
 
-  ref = gdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "test-image.png", NULL), &error);
+  ref = cdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "test-image.png", NULL), &error);
   g_assert_no_error (error);
 
-  ref2 = gdk_pixbuf_scale_simple (ref, 256, 256, GDK_INTERP_NEAREST);
+  ref2 = cdk_pixbuf_scale_simple (ref, 256, 256, GDK_INTERP_NEAREST);
   g_object_unref (ref);
   ref = ref2;
 
-  gdk_pixbuf_save (ref, "pixbuf-save-roundtrip", "ico", &error, NULL);
+  cdk_pixbuf_save (ref, "pixbuf-save-roundtrip", "ico", &error, NULL);
   g_assert_no_error (error);
 
-  pixbuf = gdk_pixbuf_new_from_file ("pixbuf-save-roundtrip", &error);
+  pixbuf = cdk_pixbuf_new_from_file ("pixbuf-save-roundtrip", &error);
   g_assert_no_error (error);
 
   g_assert (pixdata_equal (pixbuf, ref, NULL));
@@ -125,10 +125,10 @@ test_save_options (void)
       return;
     }
 
-  ref = gdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, 10, 10);
-  gdk_pixbuf_fill (ref, 0xff00ff00);
+  ref = cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, 10, 10);
+  cdk_pixbuf_fill (ref, 0xff00ff00);
 
-  gdk_pixbuf_save (ref, "pixbuf-save-options", "png", &error,
+  cdk_pixbuf_save (ref, "pixbuf-save-options", "png", &error,
                    "tEXt::option1", "Some text to transport via option",
                    "tEXt::long-option-name123456789123456789123456789", "",
 #ifdef PNG_iTXt_SUPPORTED
@@ -137,27 +137,27 @@ test_save_options (void)
                    NULL);
   g_assert_no_error (error);
 
-  pixbuf = gdk_pixbuf_new_from_file ("pixbuf-save-options", &error);
+  pixbuf = cdk_pixbuf_new_from_file ("pixbuf-save-options", &error);
   g_assert_no_error (error);
 
-  g_assert_cmpstr (gdk_pixbuf_get_option (pixbuf, "tEXt::option1"), ==, "Some text to transport via option");
-  g_assert_cmpstr (gdk_pixbuf_get_option (pixbuf, "tEXt::long-option-name123456789123456789123456789"), ==, "");
+  g_assert_cmpstr (cdk_pixbuf_get_option (pixbuf, "tEXt::option1"), ==, "Some text to transport via option");
+  g_assert_cmpstr (cdk_pixbuf_get_option (pixbuf, "tEXt::long-option-name123456789123456789123456789"), ==, "");
 #ifdef PNG_iTXt_SUPPORTED
-  g_assert_cmpstr (gdk_pixbuf_get_option (pixbuf, "tEXt::3"), ==, "αβγδ");
+  g_assert_cmpstr (cdk_pixbuf_get_option (pixbuf, "tEXt::3"), ==, "αβγδ");
 #endif
 
-  pixbuf2 = gdk_pixbuf_copy (pixbuf);
-  g_assert_null (gdk_pixbuf_get_option (pixbuf2, "tEXt::option1"));
-  gdk_pixbuf_copy_options (pixbuf, pixbuf2);
-  g_assert_cmpstr (gdk_pixbuf_get_option (pixbuf2, "tEXt::option1"), ==, "Some text to transport via option");
-  g_assert_true (gdk_pixbuf_remove_option (pixbuf2, "tEXt::option1"));
-  g_assert_null (gdk_pixbuf_get_option (pixbuf2, "tEXt::option1"));
-  g_assert_false (gdk_pixbuf_remove_option (pixbuf2, "tEXt::option1"));
+  pixbuf2 = cdk_pixbuf_copy (pixbuf);
+  g_assert_null (cdk_pixbuf_get_option (pixbuf2, "tEXt::option1"));
+  cdk_pixbuf_copy_options (pixbuf, pixbuf2);
+  g_assert_cmpstr (cdk_pixbuf_get_option (pixbuf2, "tEXt::option1"), ==, "Some text to transport via option");
+  g_assert_true (cdk_pixbuf_remove_option (pixbuf2, "tEXt::option1"));
+  g_assert_null (cdk_pixbuf_get_option (pixbuf2, "tEXt::option1"));
+  g_assert_false (cdk_pixbuf_remove_option (pixbuf2, "tEXt::option1"));
 #ifdef PNG_iTXt_SUPPORTED
-  gdk_pixbuf_remove_option (pixbuf2, "tEXt::3");
+  cdk_pixbuf_remove_option (pixbuf2, "tEXt::3");
 #endif
-  gdk_pixbuf_remove_option (pixbuf2, "tEXt::long-option-name123456789123456789123456789");
-  g_assert_false (gdk_pixbuf_remove_option (pixbuf2, "tEXt::option1"));
+  cdk_pixbuf_remove_option (pixbuf2, "tEXt::long-option-name123456789123456789123456789");
+  g_assert_false (cdk_pixbuf_remove_option (pixbuf2, "tEXt::option1"));
 
   g_object_unref (pixbuf2);
   g_object_unref (pixbuf);

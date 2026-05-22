@@ -25,7 +25,7 @@
 #ifndef GDK_PIXBUF_GIF_H
 #define GDK_PIXBUF_GIF_H
 
-#include "gdk-pixbuf-animation.h"
+#include "cdk-pixbuf-animation.h"
 
 typedef enum {
         /* Keep this frame and composite next frame over it */
@@ -47,7 +47,7 @@ typedef struct _GdkPixbufGifAnim GdkPixbufGifAnim;
 typedef struct _GdkPixbufGifAnimClass GdkPixbufGifAnimClass;
 typedef struct _GdkPixbufFrame GdkPixbufFrame;
 
-#define GDK_TYPE_PIXBUF_GIF_ANIM              (gdk_pixbuf_gif_anim_get_type ())
+#define GDK_TYPE_PIXBUF_GIF_ANIM              (cdk_pixbuf_gif_anim_get_type ())
 #define GDK_PIXBUF_GIF_ANIM(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_PIXBUF_GIF_ANIM, GdkPixbufGifAnim))
 #define GDK_IS_PIXBUF_GIF_ANIM(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_PIXBUF_GIF_ANIM))
 
@@ -84,7 +84,7 @@ struct _GdkPixbufGifAnimClass {
         
 };
 
-GType gdk_pixbuf_gif_anim_get_type (void) G_GNUC_CONST;
+GType cdk_pixbuf_gif_anim_get_type (void) G_GNUC_CONST;
 
 
 
@@ -92,7 +92,7 @@ typedef struct _GdkPixbufGifAnimIter GdkPixbufGifAnimIter;
 typedef struct _GdkPixbufGifAnimIterClass GdkPixbufGifAnimIterClass;
 
 
-#define GDK_TYPE_PIXBUF_GIF_ANIM_ITER              (gdk_pixbuf_gif_anim_iter_get_type ())
+#define GDK_TYPE_PIXBUF_GIF_ANIM_ITER              (cdk_pixbuf_gif_anim_iter_get_type ())
 #define GDK_PIXBUF_GIF_ANIM_ITER(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_PIXBUF_GIF_ANIM_ITER, GdkPixbufGifAnimIter))
 #define GDK_IS_PIXBUF_GIF_ANIM_ITER(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_PIXBUF_GIF_ANIM_ITER))
 
@@ -123,7 +123,7 @@ struct _GdkPixbufGifAnimIterClass {
 
 };
 
-GType gdk_pixbuf_gif_anim_iter_get_type (void) G_GNUC_CONST;
+GType cdk_pixbuf_gif_anim_iter_get_type (void) G_GNUC_CONST;
 
 
 

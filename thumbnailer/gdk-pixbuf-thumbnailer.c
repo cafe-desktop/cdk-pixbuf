@@ -32,32 +32,32 @@ file_to_pixbuf (const char  *path,
 	GdkPixbuf *pixbuf, *tmp_pixbuf;
 	const char *original_width_str, *original_height_str;
 
-	pixbuf = gdk_pixbuf_new_from_file_at_size (path, destination_size, destination_size, error);
+	pixbuf = cdk_pixbuf_new_from_file_at_size (path, destination_size, destination_size, error);
 	if (pixbuf == NULL)
 		return NULL;
 
 	/* The GIF codec throws GDK_PIXBUF_ERROR_INCOMPLETE_ANIMATION
 	 * if it's closed without decoding all the frames. Since
-	 * gdk_pixbuf_new_from_file_at_size only decodes the first
+	 * cdk_pixbuf_new_from_file_at_size only decodes the first
 	 * frame, this specific error needs to be ignored.
 	 */
 	if (error != NULL && g_error_matches (*error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_INCOMPLETE_ANIMATION))
 		g_clear_error (error);
 
-	tmp_pixbuf = gdk_pixbuf_apply_embedded_orientation (pixbuf);
-	gdk_pixbuf_copy_options (pixbuf, tmp_pixbuf);
-	gdk_pixbuf_remove_option (tmp_pixbuf, "orientation");
+	tmp_pixbuf = cdk_pixbuf_apply_embedded_orientation (pixbuf);
+	cdk_pixbuf_copy_options (pixbuf, tmp_pixbuf);
+	cdk_pixbuf_remove_option (tmp_pixbuf, "orientation");
 	g_object_unref (pixbuf);
 	pixbuf = tmp_pixbuf;
 
-	original_width_str = gdk_pixbuf_get_option (pixbuf, "original-width");
-	original_height_str = gdk_pixbuf_get_option (pixbuf, "original-height");
+	original_width_str = cdk_pixbuf_get_option (pixbuf, "original-width");
+	original_height_str = cdk_pixbuf_get_option (pixbuf, "original-height");
 
 	if (original_width_str != NULL)
-		gdk_pixbuf_set_option (pixbuf, "tEXt::Thumb::Image::Width", original_width_str);
+		cdk_pixbuf_set_option (pixbuf, "tEXt::Thumb::Image::Width", original_width_str);
 
 	if (original_height_str != NULL)
-		gdk_pixbuf_set_option (pixbuf, "tEXt::Thumb::Image::Height", original_height_str);
+		cdk_pixbuf_set_option (pixbuf, "tEXt::Thumb::Image::Height", original_height_str);
 
 	return pixbuf;
 }

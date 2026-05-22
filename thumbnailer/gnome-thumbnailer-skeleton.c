@@ -22,7 +22,7 @@
 #include <string.h>
 #include <glib.h>
 #include <gio/gio.h>
-#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <cdk-pixbuf/cdk-pixbuf.h>
 
 #include <locale.h>
 #include <math.h>
@@ -46,7 +46,7 @@ static char **filenames = NULL;
  * @dest_height: the desired new height
  *
  * Scales the pixbuf to the desired size. This function
- * is a lot faster than gdk-pixbuf when scaling down by
+ * is a lot faster than cdk-pixbuf when scaling down by
  * large amounts.
  *
  * Return value: (transfer full): a scaled pixbuf
@@ -76,8 +76,8 @@ gnome_desktop_thumbnail_scale_down_pixbuf (GdkPixbuf *pixbuf,
 		return NULL;
 	}
 	
-	source_width = gdk_pixbuf_get_width (pixbuf);
-	source_height = gdk_pixbuf_get_height (pixbuf);
+	source_width = cdk_pixbuf_get_width (pixbuf);
+	source_height = cdk_pixbuf_get_height (pixbuf);
 
 	g_assert (source_width >= dest_width);
 	g_assert (source_height >= dest_height);
@@ -93,14 +93,14 @@ gnome_desktop_thumbnail_scale_down_pixbuf (GdkPixbuf *pixbuf,
 	g_assert (dx >= 1);
 	g_assert (dy >= 1);
 
-	has_alpha = gdk_pixbuf_get_has_alpha (pixbuf);
-	source_rowstride = gdk_pixbuf_get_rowstride (pixbuf);
-	src_pixels = gdk_pixbuf_get_pixels (pixbuf);
+	has_alpha = cdk_pixbuf_get_has_alpha (pixbuf);
+	source_rowstride = cdk_pixbuf_get_rowstride (pixbuf);
+	src_pixels = cdk_pixbuf_get_pixels (pixbuf);
 
-	dest_pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, has_alpha, 8,
+	dest_pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, has_alpha, 8,
 				      dest_width, dest_height);
-	dest = gdk_pixbuf_get_pixels (dest_pixbuf);
-	dest_rowstride = gdk_pixbuf_get_rowstride (dest_pixbuf);
+	dest = cdk_pixbuf_get_pixels (dest_pixbuf);
+	dest_rowstride = cdk_pixbuf_get_rowstride (dest_pixbuf);
 
 	pixel_stride = (has_alpha)?4:3;
 	
@@ -288,8 +288,8 @@ int main (int argc, char **argv)
 	if (pixbuf != NULL) {
 		int width, height;
 
-		width = gdk_pixbuf_get_width (pixbuf);
-		height = gdk_pixbuf_get_height (pixbuf);
+		width = cdk_pixbuf_get_width (pixbuf);
+		height = cdk_pixbuf_get_height (pixbuf);
 
 		/* Handle naive thumbnailers that don't resize */
 		if (output_size != 0 &&
@@ -304,12 +304,12 @@ int main (int argc, char **argv)
 									    floor (width * scale + 0.5),
 									    floor (height * scale + 0.5));
 #else
-			scaled = gdk_pixbuf_scale_simple (pixbuf,
+			scaled = cdk_pixbuf_scale_simple (pixbuf,
 							  floor (width * scale + 0.5),
 							  floor (height * scale + 0.5),
 							  GDK_INTERP_BILINEAR);
 #endif
-			gdk_pixbuf_copy_options (pixbuf, scaled);
+			cdk_pixbuf_copy_options (pixbuf, scaled);
 			g_object_unref (pixbuf);
 			pixbuf = scaled;
 		}
@@ -320,7 +320,7 @@ int main (int argc, char **argv)
 		GInputStream *mem_stream;
 
 		mem_stream = g_memory_input_stream_new_from_data (data, length, g_free);
-		pixbuf = gdk_pixbuf_new_from_stream_at_scale (mem_stream, output_size, -1, TRUE, NULL, &error);
+		pixbuf = cdk_pixbuf_new_from_stream_at_scale (mem_stream, output_size, -1, TRUE, NULL, &error);
 		g_object_unref (mem_stream);
 	} else {
 		pixbuf = NULL;
@@ -338,7 +338,7 @@ int main (int argc, char **argv)
 		return 1;
 	}
 
-	if (gdk_pixbuf_save (pixbuf, output, "png", &error, NULL) == FALSE) {
+	if (cdk_pixbuf_save (pixbuf, output, "png", &error, NULL) == FALSE) {
 		g_warning ("Couldn't save the thumbnail '%s' for file '%s': %s", output, filenames[0], error->message);
 		g_error_free (error);
 		return 1;

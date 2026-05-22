@@ -18,7 +18,7 @@
  */
 
 #include "config.h"
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -125,15 +125,15 @@ mem_test (const gchar *bytes, gsize len)
   GList *i;
 
   do {
-    loader = gdk_pixbuf_loader_new ();
-    gdk_pixbuf_loader_write (loader, (guchar *) bytes, len, &err);
+    loader = cdk_pixbuf_loader_new ();
+    cdk_pixbuf_loader_write (loader, (guchar *) bytes, len, &err);
     if (err)
       {
 	g_error_free (err);
 	err = NULL;
 	did_fail = TRUE;
       }
-    gdk_pixbuf_loader_close (loader, &err);
+    cdk_pixbuf_loader_close (loader, &err);
     if (err)
       {
 	g_error_free (err);

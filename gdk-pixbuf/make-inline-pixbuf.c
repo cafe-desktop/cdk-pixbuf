@@ -19,7 +19,7 @@
  */
 
 #include "config.h"
-#include "gdk-pixbuf-private.h"
+#include "cdk-pixbuf-private.h"
 #include <glib/gstdio.h>
 #include <errno.h>
 #include <string.h>
@@ -70,26 +70,26 @@ output_pixbuf (FILE *outfile, gboolean ext_symbols,
   fputs ("[] =\n", outfile);
   fputs ("{\n", outfile);
 
-  p = gdk_pixbuf_get_pixels (pixbuf);
-  end = p + gdk_pixbuf_get_rowstride (pixbuf) * gdk_pixbuf_get_height (pixbuf);
-  has_alpha = gdk_pixbuf_get_has_alpha (pixbuf);
+  p = cdk_pixbuf_get_pixels (pixbuf);
+  end = p + cdk_pixbuf_get_rowstride (pixbuf) * cdk_pixbuf_get_height (pixbuf);
+  has_alpha = cdk_pixbuf_get_has_alpha (pixbuf);
 
   /* Sync the order of writing with the order of reading in
-   * gdk-pixbuf-data.c
+   * cdk-pixbuf-data.c
    */
   output_int (outfile, GDK_PIXBUF_INLINE_MAGIC_NUMBER, "File magic");
   output_int (outfile, GDK_PIXBUF_INLINE_RAW, "Format of following stuff");
-  output_int (outfile, gdk_pixbuf_get_rowstride (pixbuf), "Rowstride");
-  output_int (outfile, gdk_pixbuf_get_width (pixbuf), "Width");
-  output_int (outfile, gdk_pixbuf_get_height (pixbuf), "Height");
+  output_int (outfile, cdk_pixbuf_get_rowstride (pixbuf), "Rowstride");
+  output_int (outfile, cdk_pixbuf_get_width (pixbuf), "Width");
+  output_int (outfile, cdk_pixbuf_get_height (pixbuf), "Height");
 
   output_bool (outfile, has_alpha, "Has an alpha channel");
 
-  output_int (outfile, gdk_pixbuf_get_colorspace (pixbuf), "Colorspace (0 == RGB, no other options implemented)");
+  output_int (outfile, cdk_pixbuf_get_colorspace (pixbuf), "Colorspace (0 == RGB, no other options implemented)");
 
-  output_int (outfile, gdk_pixbuf_get_n_channels (pixbuf), "Number of channels");
+  output_int (outfile, cdk_pixbuf_get_n_channels (pixbuf), "Number of channels");
 
-  output_int (outfile, gdk_pixbuf_get_bits_per_sample (pixbuf), "Bits per sample");
+  output_int (outfile, cdk_pixbuf_get_bits_per_sample (pixbuf), "Bits per sample");
 
   fputs ("  /* Image data */\n", outfile);
   
@@ -202,7 +202,7 @@ main (int argc, char **argv)
       infilename = argv[i+1];
 #endif
       if (infilename)
-	pixbuf = gdk_pixbuf_new_from_file (infilename, &error);
+	pixbuf = cdk_pixbuf_new_from_file (infilename, &error);
 
       if (pixbuf == NULL)
         {

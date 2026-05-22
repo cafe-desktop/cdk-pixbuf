@@ -25,7 +25,7 @@
 #include "io-gdip-utils.h"
 
 static gboolean
-gdk_pixbuf__gdip_image_save_BMP_to_callback (GdkPixbufSaveFunc   save_func,
+cdk_pixbuf__gdip_image_save_BMP_to_callback (GdkPixbufSaveFunc   save_func,
                                              gpointer            user_data,
                                              GdkPixbuf          *pixbuf,
                                              gchar             **keys,
@@ -36,27 +36,27 @@ gdk_pixbuf__gdip_image_save_BMP_to_callback (GdkPixbufSaveFunc   save_func,
 }
 
 static gboolean
-gdk_pixbuf__gdip_image_save_BMP (FILE          *f,
+cdk_pixbuf__gdip_image_save_BMP (FILE          *f,
                                  GdkPixbuf     *pixbuf,
                                  gchar        **keys,
                                  gchar        **values,
                                  GError       **error)
 {
-  return gdk_pixbuf__gdip_image_save_BMP_to_callback (gdip_save_to_file_callback, f, pixbuf, keys, values, error);
+  return cdk_pixbuf__gdip_image_save_BMP_to_callback (gdip_save_to_file_callback, f, pixbuf, keys, values, error);
 }
 
 #ifndef INCLUDE_gdiplus
 #define MODULE_ENTRY(function) G_MODULE_EXPORT void function
 #else
-#define MODULE_ENTRY(function) void _gdk_pixbuf__gdip_bmp_ ## function
+#define MODULE_ENTRY(function) void _cdk_pixbuf__gdip_bmp_ ## function
 #endif
 
 MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
 {
   gdip_fill_vtable (module);
 
-  module->save_to_callback = gdk_pixbuf__gdip_image_save_BMP_to_callback;
-  module->save = gdk_pixbuf__gdip_image_save_BMP; /* for ctk < 2.14, you need to implement both. otherwise gdk-pixbuf-queryloaders fails */
+  module->save_to_callback = cdk_pixbuf__gdip_image_save_BMP_to_callback;
+  module->save = cdk_pixbuf__gdip_image_save_BMP; /* for ctk < 2.14, you need to implement both. otherwise cdk-pixbuf-queryloaders fails */
 }
 
 MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)

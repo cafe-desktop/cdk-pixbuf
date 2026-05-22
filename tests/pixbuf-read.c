@@ -18,7 +18,7 @@
  */
 
 #include "config.h"
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -27,12 +27,12 @@ test_loader (const guchar *bytes, gsize len, GError **err)
 {
   GdkPixbufLoader *loader;
 
-  loader = gdk_pixbuf_loader_new ();
-  gdk_pixbuf_loader_write (loader, bytes, len, err);
+  loader = cdk_pixbuf_loader_new ();
+  cdk_pixbuf_loader_write (loader, bytes, len, err);
   if (*err)
       return FALSE;
   
-  gdk_pixbuf_loader_close (loader, err);
+  cdk_pixbuf_loader_close (loader, err);
   if (*err)
     return FALSE;
 

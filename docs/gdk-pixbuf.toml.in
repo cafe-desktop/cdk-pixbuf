@@ -3,10 +3,10 @@
 # SPDX-License-Identifier: CC0-1.0
 
 [library]
-name = "gdk-pixbuf"
+name = "cdk-pixbuf"
 version = "@VERSION@"
-browse_url = "https://gitlab.gnome.org/GNOME/gdk-pixbuf/"
-repository_url = "https://gitlab.gnome.org/GNOME/gdk-pixbuf.git"
+browse_url = "https://gitlab.gnome.org/GNOME/cdk-pixbuf/"
+repository_url = "https://gitlab.gnome.org/GNOME/cdk-pixbuf.git"
 website_url = "https://github.com/cafe-desktop/ctk"
 authors = "CTK Development Team"
 license = "GPL-2.1-or-later"
@@ -30,7 +30,7 @@ name = "basic"
 show_index_summary = true
 
 [source-location]
-base_url = "https://gitlab.gnome.org/GNOME/gdk-pixbuf/-/blob/master/"
+base_url = "https://gitlab.gnome.org/GNOME/cdk-pixbuf/-/blob/master/"
 
 [extra]
 urlmap_file = "urlmap.js"

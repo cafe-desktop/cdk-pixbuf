@@ -17,8 +17,8 @@
  */
 #include "config.h"
 
-#include "gdk-pixbuf.h"
-#include "gdk-pixdata.h"
+#include "cdk-pixbuf.h"
+#include "cdk-pixdata.h"
 #include <glib/gprintf.h>
 #include <stdlib.h>
 #include <string.h>
@@ -27,8 +27,8 @@
 /* --- defines --- */
 #undef	G_LOG_DOMAIN
 #define	G_LOG_DOMAIN	"Gdk-Pixbuf-Pixdata"
-#define PRG_NAME        "gdk-pixbuf-pixdata-3.0"
-#define PKG_NAME        "gdk-pixbuf"
+#define PRG_NAME        "cdk-pixbuf-pixdata-3.0"
+#define PKG_NAME        "cdk-pixbuf"
 #define PKG_HTTP_HOME   "https://github.com/cafe-desktop/ctk"
 
 static gboolean use_rle = FALSE;
@@ -53,7 +53,7 @@ main (int   argc,
   guint8 *data;
   guint data_len;
 
-  g_set_prgname ("gdk-pixbuf-pixdata");
+  g_set_prgname ("cdk-pixbuf-pixdata");
 
   /* parse args and do fast exits */
   parse_args (&argc, &argv);
@@ -76,7 +76,7 @@ main (int   argc,
   outfilename = argv[2];
 #endif
 
-  pixbuf = gdk_pixbuf_new_from_file (infilename, &error);
+  pixbuf = cdk_pixbuf_new_from_file (infilename, &error);
   if (error != NULL)
     {
       g_printerr ("failed to load \"%s\": %s\n",
@@ -87,8 +87,8 @@ main (int   argc,
     }
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-  free_me = gdk_pixdata_from_pixbuf (&pixdata, pixbuf, use_rle);
-  data = gdk_pixdata_serialize (&pixdata, &data_len);
+  free_me = cdk_pixdata_from_pixbuf (&pixdata, pixbuf, use_rle);
+  data = cdk_pixdata_serialize (&pixdata, &data_len);
 G_GNUC_END_IGNORE_DEPRECATIONS
   if (data == NULL)
     {

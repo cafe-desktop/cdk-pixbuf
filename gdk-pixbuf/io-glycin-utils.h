@@ -1,6 +1,6 @@
 #pragma once
 
-#include "gdk-pixbuf-io.h"
+#include "cdk-pixbuf-io.h"
 
 void glycin_fill_vtable (GdkPixbufModule *module);
 

@@ -20,7 +20,7 @@
  */
 
 #include "config.h"
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 #include "test-common.h"
 
 static void
@@ -34,7 +34,7 @@ test_scale (gconstpointer data)
   gint width, height;
 
   path = g_test_get_filename (G_TEST_DIST, filename, NULL);
-  ref = gdk_pixbuf_new_from_file (path, &error);
+  ref = cdk_pixbuf_new_from_file (path, &error);
 
   if (g_error_matches (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_UNKNOWN_TYPE))
     {
@@ -45,10 +45,10 @@ test_scale (gconstpointer data)
 
   g_assert_no_error (error);
 
-  width = gdk_pixbuf_get_width (ref);
-  height = gdk_pixbuf_get_height (ref);
+  width = cdk_pixbuf_get_width (ref);
+  height = cdk_pixbuf_get_height (ref);
 
-  pixbuf = gdk_pixbuf_new_from_file_at_scale (path, 2 * width, 3 * height, FALSE, &error);
+  pixbuf = cdk_pixbuf_new_from_file_at_scale (path, 2 * width, 3 * height, FALSE, &error);
   if (g_error_matches (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_UNKNOWN_TYPE))
     {
       g_clear_error (&error);
@@ -58,16 +58,16 @@ test_scale (gconstpointer data)
 
   g_assert_no_error (error);
 
-  g_assert_cmpint (gdk_pixbuf_get_width (pixbuf), ==, 2 * width);
-  g_assert_cmpint (gdk_pixbuf_get_height (pixbuf), ==, 3 * height);
+  g_assert_cmpint (cdk_pixbuf_get_width (pixbuf), ==, 2 * width);
+  g_assert_cmpint (cdk_pixbuf_get_height (pixbuf), ==, 3 * height);
   
   g_object_unref (pixbuf);
 
-  pixbuf = gdk_pixbuf_new_from_file_at_scale (path, 4 * width, 2 * height, TRUE, &error);
+  pixbuf = cdk_pixbuf_new_from_file_at_scale (path, 4 * width, 2 * height, TRUE, &error);
   g_assert_no_error (error);
 
-  g_assert_cmpint (gdk_pixbuf_get_width (pixbuf), ==, 2 * width);
-  g_assert_cmpint (gdk_pixbuf_get_height (pixbuf), ==, 2 * height);
+  g_assert_cmpint (cdk_pixbuf_get_width (pixbuf), ==, 2 * width);
+  g_assert_cmpint (cdk_pixbuf_get_height (pixbuf), ==, 2 * height);
   
   g_object_unref (pixbuf);
 
@@ -85,7 +85,7 @@ test_scale_down (gconstpointer data)
   gint width, height;
 
   path = g_test_get_filename (G_TEST_DIST, filename, NULL);
-  ref = gdk_pixbuf_new_from_file (path, &error);
+  ref = cdk_pixbuf_new_from_file (path, &error);
 
   if (g_error_matches (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_UNKNOWN_TYPE))
     {
@@ -98,10 +98,10 @@ test_scale_down (gconstpointer data)
     return;
   g_assert_no_error (error);
 
-  width = gdk_pixbuf_get_width (ref);
-  height = gdk_pixbuf_get_height (ref);
+  width = cdk_pixbuf_get_width (ref);
+  height = cdk_pixbuf_get_height (ref);
 
-  pixbuf = gdk_pixbuf_scale_simple (ref, width / 10, height / 10, GDK_INTERP_BILINEAR);
+  pixbuf = cdk_pixbuf_scale_simple (ref, width / 10, height / 10, GDK_INTERP_BILINEAR);
   g_assert (pixbuf != NULL);
 
   g_object_unref (ref);
@@ -117,7 +117,7 @@ test_add_alpha (gconstpointer data)
   GdkPixbuf *pixbuf;
 
   path = g_test_get_filename (G_TEST_DIST, filename, NULL);
-  ref = gdk_pixbuf_new_from_file (path, &error);
+  ref = cdk_pixbuf_new_from_file (path, &error);
 
   if (g_error_matches (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_UNKNOWN_TYPE))
     {
@@ -130,7 +130,7 @@ test_add_alpha (gconstpointer data)
     return;
   g_assert_no_error (error);
 
-  pixbuf = gdk_pixbuf_add_alpha (ref, FALSE, 0, 0, 0);
+  pixbuf = cdk_pixbuf_add_alpha (ref, FALSE, 0, 0, 0);
 
   if (pixbuf == NULL)
     {
@@ -141,7 +141,7 @@ test_add_alpha (gconstpointer data)
 
   g_object_unref (pixbuf);
 
-  pixbuf = gdk_pixbuf_add_alpha (ref, TRUE, 0, 0, 255);
+  pixbuf = cdk_pixbuf_add_alpha (ref, TRUE, 0, 0, 255);
   g_assert (pixbuf != NULL);
   g_object_unref (pixbuf);
 
@@ -158,7 +158,7 @@ test_rotate (gconstpointer data)
   GdkPixbuf *pixbuf;
 
   path = g_test_get_filename (G_TEST_DIST, filename, NULL);
-  ref = gdk_pixbuf_new_from_file (path, &error);
+  ref = cdk_pixbuf_new_from_file (path, &error);
 
   if (g_error_matches (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_UNKNOWN_TYPE))
     {
@@ -171,7 +171,7 @@ test_rotate (gconstpointer data)
     return;
   g_assert_no_error (error);
 
-  pixbuf = gdk_pixbuf_rotate_simple (ref, GDK_PIXBUF_ROTATE_COUNTERCLOCKWISE);
+  pixbuf = cdk_pixbuf_rotate_simple (ref, GDK_PIXBUF_ROTATE_COUNTERCLOCKWISE);
 
   if (pixbuf == NULL)
     g_test_skip ("Couldn't rotate the image - your system probably lacks sufficient memory.");
@@ -202,20 +202,20 @@ test_halve_checkerboard (gconstpointer data)
 
   source = make_checkerboard (width, height);
 
-  scaled = gdk_pixbuf_scale_simple (source, width / 2, height / 2, interp_type);
-  scaled_width = gdk_pixbuf_get_width (scaled);
-  scaled_height = gdk_pixbuf_get_height (scaled);
+  scaled = cdk_pixbuf_scale_simple (source, width / 2, height / 2, interp_type);
+  scaled_width = cdk_pixbuf_get_width (scaled);
+  scaled_height = cdk_pixbuf_get_height (scaled);
   g_assert_cmpint (scaled_width, >, 0);
   g_assert_cmpint (scaled_height, >, 0);
 
   /* Check that the result is all gray (or all white in the case of NEAREST) */
-  for (y = 0, row = gdk_pixbuf_get_pixels (scaled);
+  for (y = 0, row = cdk_pixbuf_get_pixels (scaled);
        y < (guint) scaled_height;
-       y++, row += gdk_pixbuf_get_rowstride (scaled))
+       y++, row += cdk_pixbuf_get_rowstride (scaled))
     {
       for (x = 0, pixel = row;
            x < (guint) scaled_width;
-           x++, pixel += gdk_pixbuf_get_n_channels (scaled))
+           x++, pixel += cdk_pixbuf_get_n_channels (scaled))
         {
           if (!(pixel[0] == expected && pixel[1] == expected && pixel[2] == expected))
             {
@@ -252,33 +252,33 @@ crop_n_compare (const GdkPixbuf *source,
   guint x, y;
   gint scaled_width, scaled_height;     /* Size of scaled image */
 
-  cropped = gdk_pixbuf_new_subpixbuf ((GdkPixbuf *)source, offset_x, offset_y, width, height);
+  cropped = cdk_pixbuf_new_subpixbuf ((GdkPixbuf *)source, offset_x, offset_y, width, height);
   g_assert_nonnull (cropped);
 
-  scaled = gdk_pixbuf_new (GDK_COLORSPACE_RGB, 0, 8, width, height);
+  scaled = cdk_pixbuf_new (GDK_COLORSPACE_RGB, 0, 8, width, height);
   g_assert_nonnull (scaled);
-  gdk_pixbuf_scale (source, scaled,
+  cdk_pixbuf_scale (source, scaled,
                     0, 0,                             /* dest_[xy] */
                     width, height,                    /* dest_width/height */
                     -1.0 * offset_x, -1.0 * offset_y, /* offset_[xy] */
                     1.0, 1.0,                         /* scale_[xy] */
                     interp_type);
 
-  scaled_width = gdk_pixbuf_get_width (scaled);
-  scaled_height = gdk_pixbuf_get_height (scaled);
+  scaled_width = cdk_pixbuf_get_width (scaled);
+  scaled_height = cdk_pixbuf_get_height (scaled);
   g_assert_cmpint (scaled_width, >, 0);
   g_assert_cmpint (scaled_height, >, 0);
 
-  for (y = 0, crow = gdk_pixbuf_get_pixels (cropped),
-              srow = gdk_pixbuf_get_pixels (scaled);
+  for (y = 0, crow = cdk_pixbuf_get_pixels (cropped),
+              srow = cdk_pixbuf_get_pixels (scaled);
        y < scaled_height;
-       y++, crow += gdk_pixbuf_get_rowstride (cropped),
-            srow += gdk_pixbuf_get_rowstride (scaled))
+       y++, crow += cdk_pixbuf_get_rowstride (cropped),
+            srow += cdk_pixbuf_get_rowstride (scaled))
     {
       for (x = 0, cpixel = crow, spixel = srow;
            x < scaled_width;
-           x++, cpixel += gdk_pixbuf_get_n_channels (cropped),
-                spixel += gdk_pixbuf_get_n_channels (scaled))
+           x++, cpixel += cdk_pixbuf_get_n_channels (cropped),
+                spixel += cdk_pixbuf_get_n_channels (scaled))
         {
           if (!(spixel[0] == cpixel[0] &&
                 spixel[1] == cpixel[1] &&
@@ -334,7 +334,7 @@ test_offset (gconstpointer data)
  * 3) a region of size dest_width x dest-height starting at (dest_x,dest_y)
  *    in the scaled-and-offset image is copied to (dest_x,dest_y) in the
  *    destination image. See the illustration at
- *    https://developer.gnome.org/gdk-pixbuf/2.22/gdk-pixbuf-scaling.html#gdk-pixbuf-composite */
+ *    https://developer.gnome.org/cdk-pixbuf/2.22/cdk-pixbuf-scaling.html#cdk-pixbuf-composite */
 static void
 test_dest (gconstpointer data)
 {
@@ -348,29 +348,29 @@ test_dest (gconstpointer data)
 
   source = make_rg (width, height);
 
-  copy = gdk_pixbuf_new (GDK_COLORSPACE_RGB, 0, 8, width, height);
+  copy = cdk_pixbuf_new (GDK_COLORSPACE_RGB, 0, 8, width, height);
   g_assert_nonnull (copy);
 
   /* Copy the four quadrants with a no-op scale */
-  gdk_pixbuf_scale ((const GdkPixbuf *)source, copy,
+  cdk_pixbuf_scale ((const GdkPixbuf *)source, copy,
                     0, 0,                  /* dest_[xy] */
                     width / 2, height / 2, /* dest_width/height */
                     0.0, 0.0,              /* offset_[xy] */
                     1.0, 1.0,              /* scale_[xy] */
                     interp_type);
-  gdk_pixbuf_scale ((const GdkPixbuf *)source, copy,
+  cdk_pixbuf_scale ((const GdkPixbuf *)source, copy,
                     width / 2, 0,          /* dest_[xy] */
                     width / 2, height / 2, /* dest_width/height */
                     0.0, 0.0,              /* offset_[xy] */
                     1.0, 1.0,              /* scale_[xy] */
                     interp_type);
-  gdk_pixbuf_scale ((const GdkPixbuf *)source, copy,
+  cdk_pixbuf_scale ((const GdkPixbuf *)source, copy,
                     0, height / 2,         /* dest_[xy] */
                     width / 2, height / 2, /* dest_width/height */
                     0.0, 0.0,              /* offset_[xy] */
                     1.0, 1.0,              /* scale_[xy] */
                     interp_type);
-  gdk_pixbuf_scale ((const GdkPixbuf *)source, copy,
+  cdk_pixbuf_scale ((const GdkPixbuf *)source, copy,
                     width / 2, height / 2, /* dest_[xy] */
                     width / 2, height / 2, /* dest_width/height */
                     0.0, 0.0,              /* offset_[xy] */
@@ -378,16 +378,16 @@ test_dest (gconstpointer data)
                     interp_type);
 
   /* Compare the original and the copy */
-  for (y = 0, srow = gdk_pixbuf_get_pixels (source),
-              crow = gdk_pixbuf_get_pixels (copy);
-       y < gdk_pixbuf_get_height (source);
-       y++, srow += gdk_pixbuf_get_rowstride (source),
-            crow += gdk_pixbuf_get_rowstride (copy))
+  for (y = 0, srow = cdk_pixbuf_get_pixels (source),
+              crow = cdk_pixbuf_get_pixels (copy);
+       y < cdk_pixbuf_get_height (source);
+       y++, srow += cdk_pixbuf_get_rowstride (source),
+            crow += cdk_pixbuf_get_rowstride (copy))
     {
       for (x = 0, spixel = srow, cpixel = crow;
-           x < gdk_pixbuf_get_width (source);
-           x++, spixel += gdk_pixbuf_get_n_channels (source),
-                cpixel += gdk_pixbuf_get_n_channels (copy))
+           x < cdk_pixbuf_get_width (source);
+           x++, spixel += cdk_pixbuf_get_n_channels (source),
+                cpixel += cdk_pixbuf_get_n_channels (copy))
         {
           if (!(spixel[0] == cpixel[0] &&
                 spixel[1] == cpixel[1] &&

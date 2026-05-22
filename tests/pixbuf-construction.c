@@ -17,7 +17,7 @@
  * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 #include "config.h"
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 #include "test-common.h"
 
 static void
@@ -27,8 +27,8 @@ test_no_construct_properties (void)
   GBytes *bytes;
   guchar *pixels;
 
-  g_assert_cmpint (gdk_pixbuf_get_width (pixbuf), ==, 1);
-  g_assert_cmpint (gdk_pixbuf_get_height (pixbuf), ==, 1);
+  g_assert_cmpint (cdk_pixbuf_get_width (pixbuf), ==, 1);
+  g_assert_cmpint (cdk_pixbuf_get_height (pixbuf), ==, 1);
 
   g_object_get (pixbuf, "pixel-bytes", &bytes, NULL);
   g_assert_nonnull (bytes);
@@ -60,10 +60,10 @@ test_pixels (void)
 				    "pixels", pixels,
 				    NULL);
 
-  g_assert (gdk_pixbuf_get_pixels (pixbuf) == pixels);
-  g_assert_cmpint (gdk_pixbuf_get_width (pixbuf), ==, WIDTH);
-  g_assert_cmpint (gdk_pixbuf_get_height (pixbuf), ==, HEIGHT);
-  g_assert_cmpint (gdk_pixbuf_get_rowstride (pixbuf), ==, ROWSTRIDE);
+  g_assert (cdk_pixbuf_get_pixels (pixbuf) == pixels);
+  g_assert_cmpint (cdk_pixbuf_get_width (pixbuf), ==, WIDTH);
+  g_assert_cmpint (cdk_pixbuf_get_height (pixbuf), ==, HEIGHT);
+  g_assert_cmpint (cdk_pixbuf_get_rowstride (pixbuf), ==, ROWSTRIDE);
 
   g_object_unref (pixbuf);
   g_free (pixels);
@@ -84,12 +84,12 @@ test_bytes (void)
 				    "pixel-bytes", bytes,
 				    NULL);
 
-  GBytes *read_bytes = gdk_pixbuf_read_pixel_bytes (pixbuf);
+  GBytes *read_bytes = cdk_pixbuf_read_pixel_bytes (pixbuf);
 
   g_assert (read_bytes == bytes);
-  g_assert_cmpint (gdk_pixbuf_get_width (pixbuf), ==, WIDTH);
-  g_assert_cmpint (gdk_pixbuf_get_height (pixbuf), ==, HEIGHT);
-  g_assert_cmpint (gdk_pixbuf_get_rowstride (pixbuf), ==, ROWSTRIDE);
+  g_assert_cmpint (cdk_pixbuf_get_width (pixbuf), ==, WIDTH);
+  g_assert_cmpint (cdk_pixbuf_get_height (pixbuf), ==, HEIGHT);
+  g_assert_cmpint (cdk_pixbuf_get_rowstride (pixbuf), ==, ROWSTRIDE);
 
   g_bytes_unref (read_bytes);
   g_object_unref (pixbuf);

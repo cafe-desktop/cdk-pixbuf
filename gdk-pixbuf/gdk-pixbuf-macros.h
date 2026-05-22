@@ -19,7 +19,7 @@
  */
 
 #if defined(GDK_PIXBUF_DISABLE_SINGLE_INCLUDES) && !defined (GDK_PIXBUF_H_INSIDE) && !defined (GDK_PIXBUF_COMPILATION)
-#error "Only <gdk-pixbuf/gdk-pixbuf.h> can be included directly."
+#error "Only <cdk-pixbuf/cdk-pixbuf.h> can be included directly."
 #endif
 
 #ifndef GDK_PIXBUF_MACROS_H
@@ -27,7 +27,7 @@
 
 #include <glib.h>
 
-#include <gdk-pixbuf/gdk-pixbuf-features.h>
+#include <cdk-pixbuf/cdk-pixbuf-features.h>
 
 /**
  * GDK_PIXBUF_CHECK_VERSION:
@@ -288,7 +288,7 @@
  * GDK_PIXBUF_VERSION_MIN_REQUIRED:
  *
  * A macro that should be defined by the user prior to including
- * the gdk-pixbuf.h header.
+ * the cdk-pixbuf.h header.
  * The definition should be one of the predefined version
  * macros: %GDK_PIXBUF_VERSION_2_0, %GDK_PIXBUF_VERSION_2_2, ...
  *
@@ -313,7 +313,7 @@
  * GDK_PIXBUF_VERSION_MAX_ALLOWED:
  *
  * A macro that should be defined by the user prior to including
- * the gdk-pixbuf.h header.
+ * the cdk-pixbuf.h header.
  * The definition should be one of the predefined version
  * macros: %GDK_PIXBUF_VERSION_2_0, %GDK_PIXBUF_VERSION_2_2, ...
  *

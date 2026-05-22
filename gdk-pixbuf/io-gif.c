@@ -56,7 +56,7 @@
 #include <string.h>
 #include <errno.h>
 #include <glib/gi18n-lib.h>
-#include "gdk-pixbuf-io.h"
+#include "cdk-pixbuf-io.h"
 #include "io-gif-animation.h"
 
 
@@ -369,7 +369,7 @@ gif_get_lzw (GifContext *context)
                 int rowstride;
                 guint64 len;
 
-                rowstride = gdk_pixbuf_calculate_rowstride (GDK_COLORSPACE_RGB,
+                rowstride = cdk_pixbuf_calculate_rowstride (GDK_COLORSPACE_RGB,
                                                             TRUE,
                                                             8,
                                                             context->frame_len,
@@ -450,7 +450,7 @@ gif_get_lzw (GifContext *context)
 
 		/* Notify when have first frame */
 		if (context->animation->frames->next == NULL) {
-			GdkPixbuf *pixbuf = gdk_pixbuf_animation_get_static_image (GDK_PIXBUF_ANIMATION (context->animation));
+			GdkPixbuf *pixbuf = cdk_pixbuf_animation_get_static_image (GDK_PIXBUF_ANIMATION (context->animation));
 			if (pixbuf != NULL)
 				(* context->prepared_func) (pixbuf,
                                                             GDK_PIXBUF_ANIMATION (context->animation),
@@ -466,7 +466,7 @@ gif_get_lzw (GifContext *context)
 
 		/* Notify frame update */
 		if ((retval != 0 || empty_block) && context->animation->frames->next == NULL) {
-			GdkPixbuf *pixbuf = gdk_pixbuf_animation_get_static_image (GDK_PIXBUF_ANIMATION (context->animation));
+			GdkPixbuf *pixbuf = cdk_pixbuf_animation_get_static_image (GDK_PIXBUF_ANIMATION (context->animation));
 			if (pixbuf)
 				(* context->updated_func) (pixbuf,
                                                            0, 0, context->frame->width, context->frame->height,
@@ -833,7 +833,7 @@ new_context_without_callbacks (void)
 
 /* Shared library entry point */
 static GdkPixbuf *
-gdk_pixbuf__gif_image_load (FILE *file, GError **error)
+cdk_pixbuf__gif_image_load (FILE *file, GError **error)
 {
 	GifContext *context;
 	GdkPixbuf *pixbuf;
@@ -867,7 +867,7 @@ gdk_pixbuf__gif_image_load (FILE *file, GError **error)
                 goto out;
         }
         
-        pixbuf = gdk_pixbuf_animation_get_static_image (GDK_PIXBUF_ANIMATION (context->animation));
+        pixbuf = cdk_pixbuf_animation_get_static_image (GDK_PIXBUF_ANIMATION (context->animation));
 
         if (pixbuf)
                 g_object_ref (pixbuf);
@@ -882,7 +882,7 @@ out:
 }
 
 static gpointer
-gdk_pixbuf__gif_image_begin_load (GdkPixbufModuleSizeFunc size_func,
+cdk_pixbuf__gif_image_begin_load (GdkPixbufModuleSizeFunc size_func,
                                   GdkPixbufModulePreparedFunc prepared_func,
 				  GdkPixbufModuleUpdatedFunc updated_func,
 				  gpointer user_data,
@@ -910,7 +910,7 @@ gdk_pixbuf__gif_image_begin_load (GdkPixbufModuleSizeFunc size_func,
 }
 
 static gboolean
-gdk_pixbuf__gif_image_stop_load (gpointer data, GError **error)
+cdk_pixbuf__gif_image_stop_load (gpointer data, GError **error)
 {
 	GifContext *context = (GifContext *) data;
         gboolean retval = TRUE;
@@ -940,7 +940,7 @@ gdk_pixbuf__gif_image_stop_load (gpointer data, GError **error)
 }
 
 static gboolean
-gdk_pixbuf__gif_image_load_increment (gpointer data,
+cdk_pixbuf__gif_image_load_increment (gpointer data,
                                       const guchar *buf, guint size,
                                       GError **error)
 {
@@ -959,7 +959,7 @@ gdk_pixbuf__gif_image_load_increment (gpointer data,
 }
 
 static GdkPixbufAnimation *
-gdk_pixbuf__gif_image_load_animation (FILE *file,
+cdk_pixbuf__gif_image_load_animation (FILE *file,
                                       GError **error)
 {
 	GifContext *context;
@@ -1007,16 +1007,16 @@ gdk_pixbuf__gif_image_load_animation (FILE *file,
 #ifndef INCLUDE_gif
 #define MODULE_ENTRY(function) G_MODULE_EXPORT void function
 #else
-#define MODULE_ENTRY(function) void _gdk_pixbuf__gif_ ## function
+#define MODULE_ENTRY(function) void _cdk_pixbuf__gif_ ## function
 #endif
 
 MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
 {
-        module->load = gdk_pixbuf__gif_image_load;
-        module->begin_load = gdk_pixbuf__gif_image_begin_load;
-        module->stop_load = gdk_pixbuf__gif_image_stop_load;
-        module->load_increment = gdk_pixbuf__gif_image_load_increment;
-        module->load_animation = gdk_pixbuf__gif_image_load_animation;
+        module->load = cdk_pixbuf__gif_image_load;
+        module->begin_load = cdk_pixbuf__gif_image_begin_load;
+        module->stop_load = cdk_pixbuf__gif_image_stop_load;
+        module->load_increment = cdk_pixbuf__gif_image_load_increment;
+        module->load_animation = cdk_pixbuf__gif_image_load_animation;
 }
 
 MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)

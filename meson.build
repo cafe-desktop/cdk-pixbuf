@@ -1,4 +1,4 @@
-project('gdk-pixbuf', 'c',
+project('cdk-pixbuf', 'c',
   version: '2.44.5',
   license: 'LGPL-2.1-or-later',
   default_options: [
@@ -15,47 +15,47 @@ cc = meson.get_compiler('c')
 host_system = host_machine.system()
 
 # Versioning
-gdk_pixbuf_version = meson.project_version()
-version_arr = gdk_pixbuf_version.split('.')
-gdk_pixbuf_version_major = version_arr[0].to_int()
-gdk_pixbuf_version_minor = version_arr[1].to_int()
-gdk_pixbuf_version_micro = version_arr[2].to_int()
+cdk_pixbuf_version = meson.project_version()
+version_arr = cdk_pixbuf_version.split('.')
+cdk_pixbuf_version_major = version_arr[0].to_int()
+cdk_pixbuf_version_minor = version_arr[1].to_int()
+cdk_pixbuf_version_micro = version_arr[2].to_int()
 
-gdk_pixbuf_api_version = '2.0'
-gdk_pixbuf_binary_version = '2.10.0'
+cdk_pixbuf_api_version = '2.0'
+cdk_pixbuf_binary_version = '2.10.0'
 
-gdk_pixbuf_api_name = '@0@-@1@'.format(meson.project_name(), gdk_pixbuf_api_version)
+cdk_pixbuf_api_name = '@0@-@1@'.format(meson.project_name(), cdk_pixbuf_api_version)
 
-if gdk_pixbuf_version_minor.is_odd()
-  gdk_pixbuf_interface_age = 0
+if cdk_pixbuf_version_minor.is_odd()
+  cdk_pixbuf_interface_age = 0
 else
-  gdk_pixbuf_interface_age = gdk_pixbuf_version_micro
+  cdk_pixbuf_interface_age = cdk_pixbuf_version_micro
 endif
 
-gdk_pixbuf_binary_age = 100 * gdk_pixbuf_version_minor + gdk_pixbuf_version_micro
+cdk_pixbuf_binary_age = 100 * cdk_pixbuf_version_minor + cdk_pixbuf_version_micro
 
 # maintaining compatibility with the previous libtool versioning
 # current = binary - interface
 # revision = interface
 soversion = 0
-current = gdk_pixbuf_binary_age - gdk_pixbuf_interface_age
-revision = gdk_pixbuf_interface_age
+current = cdk_pixbuf_binary_age - cdk_pixbuf_interface_age
+revision = cdk_pixbuf_interface_age
 libversion = '@0@.@1@.@2@'.format(soversion, current, revision)
-age = gdk_pixbuf_binary_age - gdk_pixbuf_interface_age
+age = cdk_pixbuf_binary_age - cdk_pixbuf_interface_age
 current_minus_age = current - age
-darwin_versions = ['@0@'.format(current + 1), '@0@.@1@'.format(current + 1, gdk_pixbuf_interface_age)]
+darwin_versions = ['@0@'.format(current + 1), '@0@.@1@'.format(current + 1, cdk_pixbuf_interface_age)]
 
 # Paths
-gdk_pixbuf_prefix = get_option('prefix')
-gdk_pixbuf_libdir = gdk_pixbuf_prefix / get_option('libdir')
-gdk_pixbuf_bindir = gdk_pixbuf_prefix / get_option('bindir')
-gdk_pixbuf_includedir = gdk_pixbuf_prefix / get_option('includedir')
-gdk_pixbuf_datadir = gdk_pixbuf_prefix / get_option('datadir')
-gdk_pixbuf_mandir = gdk_pixbuf_prefix / get_option('mandir')
-gdk_pixbuf_localedir = gdk_pixbuf_prefix / get_option('localedir')
-gdk_pixbuf_libexecdir = gdk_pixbuf_prefix / get_option('libexecdir')
-gdk_pixbuf_loaderdir = gdk_pixbuf_libdir / 'gdk-pixbuf-@0@/@1@/loaders'.format(gdk_pixbuf_api_version, gdk_pixbuf_binary_version)
-gdk_pixbuf_docsdir = gdk_pixbuf_datadir / 'doc'
+cdk_pixbuf_prefix = get_option('prefix')
+cdk_pixbuf_libdir = cdk_pixbuf_prefix / get_option('libdir')
+cdk_pixbuf_bindir = cdk_pixbuf_prefix / get_option('bindir')
+cdk_pixbuf_includedir = cdk_pixbuf_prefix / get_option('includedir')
+cdk_pixbuf_datadir = cdk_pixbuf_prefix / get_option('datadir')
+cdk_pixbuf_mandir = cdk_pixbuf_prefix / get_option('mandir')
+cdk_pixbuf_localedir = cdk_pixbuf_prefix / get_option('localedir')
+cdk_pixbuf_libexecdir = cdk_pixbuf_prefix / get_option('libexecdir')
+cdk_pixbuf_loaderdir = cdk_pixbuf_libdir / 'cdk-pixbuf-@0@/@1@/loaders'.format(cdk_pixbuf_api_version, cdk_pixbuf_binary_version)
+cdk_pixbuf_docsdir = cdk_pixbuf_datadir / 'doc'
 
 # Dependencies
 glib_req_version = '>= 2.56.0'
@@ -69,7 +69,7 @@ gio_dep = dependency('gio-2.0', version: glib_req_version,
                      fallback : ['glib', 'libgio_dep'])
 
 # Configurations
-gdk_pixbuf_conf = configuration_data()
+cdk_pixbuf_conf = configuration_data()
 
 check_headers = [
   'unistd.h',
@@ -79,7 +79,7 @@ check_headers = [
 
 foreach h: check_headers
   if cc.has_header(h)
-    gdk_pixbuf_conf.set('HAVE_' + h.underscorify().to_upper(), 1)
+    cdk_pixbuf_conf.set('HAVE_' + h.underscorify().to_upper(), 1)
   endif
 endforeach
 
@@ -88,28 +88,28 @@ mathlib_dep = cc.find_library('m', required: false)
 
 # XXX: Remove the checks for round() and lrint() once GDK-Pixbuf is declared C99
 if cc.has_function('round', dependencies: mathlib_dep)
-  gdk_pixbuf_conf.set('HAVE_ROUND', 1)
+  cdk_pixbuf_conf.set('HAVE_ROUND', 1)
 endif
 
 if cc.has_function('lrint', dependencies: mathlib_dep)
-  gdk_pixbuf_conf.set('HAVE_LRINT', 1)
+  cdk_pixbuf_conf.set('HAVE_LRINT', 1)
 endif
 
 intl_dep = cc.find_library('intl', required: false)
 if cc.has_function('bind_textdomain_codeset', prefix: '#include <libintl.h>', dependencies: intl_dep)
-  gdk_pixbuf_conf.set('HAVE_BIND_TEXTDOMAIN_CODESET', 1)
+  cdk_pixbuf_conf.set('HAVE_BIND_TEXTDOMAIN_CODESET', 1)
 endif
 
 if cc.has_function('setrlimit', prefix: '#include <sys/time.h>\n#include <sys/resource.h>')
-  gdk_pixbuf_conf.set('HAVE_SETRLIMIT', 1)
+  cdk_pixbuf_conf.set('HAVE_SETRLIMIT', 1)
 endif
 
 if cc.has_function('readlink', prefix: '#include <unistd.h>')
-  gdk_pixbuf_conf.set('HAVE_READLINK', 1)
+  cdk_pixbuf_conf.set('HAVE_READLINK', 1)
 endif
 
 # We use links() because sigsetjmp() is often a macro hidden behind other macros
-gdk_pixbuf_conf.set('HAVE_SIGSETJMP',
+cdk_pixbuf_conf.set('HAVE_SIGSETJMP',
   cc.links('''#define _POSIX_SOURCE
               #include <setjmp.h>
               int main (void) {
@@ -174,13 +174,13 @@ endif
 # Symbol visibility
 if get_option('default_library') != 'static'
   if host_system == 'windows'
-    gdk_pixbuf_conf.set('DLL_EXPORT', true)
-    gdk_pixbuf_conf.set('_GDK_PIXBUF_EXTERN', '__declspec(dllexport) extern')
+    cdk_pixbuf_conf.set('DLL_EXPORT', true)
+    cdk_pixbuf_conf.set('_GDK_PIXBUF_EXTERN', '__declspec(dllexport) extern')
     if cc.get_id() != 'msvc'
       test_cflags += ['-fvisibility=hidden']
     endif
   else
-    gdk_pixbuf_conf.set('_GDK_PIXBUF_EXTERN', '__attribute__((visibility("default"))) extern')
+    cdk_pixbuf_conf.set('_GDK_PIXBUF_EXTERN', '__attribute__((visibility("default"))) extern')
     test_cflags += ['-fvisibility=hidden']
   endif
 endif
@@ -191,11 +191,11 @@ if host_machine.system() == 'linux'
   # Additional linker flags
   test_ldflags = ['-Wl,-Bsymbolic', '-Wl,-z,relro', '-Wl,-z,now']
   common_ldflags += cc.get_supported_link_arguments(test_ldflags)
-  gdk_pixbuf_conf.set('OS_LINUX', 1)
+  cdk_pixbuf_conf.set('OS_LINUX', 1)
 endif
 
 if host_machine.system() == 'darwin'
-  gdk_pixbuf_conf.set('OS_DARWIN', 1)
+  cdk_pixbuf_conf.set('OS_DARWIN', 1)
 endif
 
 android_opt = get_option('android').disable_auto_if(host_system != 'android')
@@ -207,7 +207,7 @@ shared_mime_dep = []
 use_gio_mime = false
 if get_option('gio_sniffing') and host_system not in ['windows', 'darwin', 'android']
   shared_mime_dep += dependency('shared-mime-info')
-  gdk_pixbuf_conf.set('GDK_PIXBUF_USE_GIO_MIME', 1)
+  cdk_pixbuf_conf.set('GDK_PIXBUF_USE_GIO_MIME', 1)
   use_gio_mime = true
 endif
 
@@ -216,10 +216,10 @@ use_medialib = false
 medialib_dep = cc.find_library('mlib', required: false)
 if medialib_dep.found()
   if cc.has_function('mlib_ImageSetStruct', dependencies: medialib_dep)
-    gdk_pixbuf_conf.set('USE_MEDIALIB', 1)
+    cdk_pixbuf_conf.set('USE_MEDIALIB', 1)
 
     if cc.has_function('mlib_VideoColorRGBint_to_BGRAint', dependencies: medialib_dep)
-      gdk_pixbuf_conf.set('USE_MEDIALIB25', 1)
+      cdk_pixbuf_conf.set('USE_MEDIALIB25', 1)
     endif
 
     use_medialib = true
@@ -228,7 +228,7 @@ if medialib_dep.found()
   endif
 endif
 
-gdk_pixbuf_deps = [
+cdk_pixbuf_deps = [
   mathlib_dep,
   glib_dep,
   gobject_dep,
@@ -245,7 +245,7 @@ if gmodule_dep.type_name() == 'pkgconfig'
 else
   build_modules = subproject('glib').get_variable('g_module_impl') != '0'
 endif
-gdk_pixbuf_conf.set('USE_GMODULE', build_modules)
+cdk_pixbuf_conf.set('USE_GMODULE', build_modules)
 
 # Loader dependencies
 enabled_loaders = []
@@ -263,7 +263,7 @@ else
   glycin_dep = dependency('glycin-2', version: '>= 2.0.1', required: glycin_opt)
 endif
 
-# Check which loaders should be built into gdk-pixbuf
+# Check which loaders should be built into cdk-pixbuf
 builtin_loaders = get_option('builtin_loaders')
 if builtin_loaders.contains('default')
   if glycin_dep.found()
@@ -276,7 +276,7 @@ if builtin_loaders.contains('default')
 endif
 
 # If 'all' is specified for builtin_loaders, build all
-# buildable loaders into gdk-pixbuf
+# buildable loaders into cdk-pixbuf
 builtin_all_loaders = false
 if builtin_loaders.contains('all')
   builtin_all_loaders = true
@@ -376,7 +376,7 @@ if not jpeg_opt.disabled() and not native_windows_loaders
     endif
 
     if has_destroy_decompress and has_simple_progression
-      gdk_pixbuf_conf.set('HAVE_PROGRESSIVE_JPEG', has_simple_progression)
+      cdk_pixbuf_conf.set('HAVE_PROGRESSIVE_JPEG', has_simple_progression)
     endif
   endif
 endif
@@ -406,9 +406,9 @@ if relocatable
   add_project_arguments([ '-DGDK_PIXBUF_RELOCATABLE' ], language: 'c')
 endif
 
-gdk_pixbuf_conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
+cdk_pixbuf_conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
 
-configure_file(output: 'config.h', configuration: gdk_pixbuf_conf)
+configure_file(output: 'config.h', configuration: cdk_pixbuf_conf)
 add_project_arguments([ '-DHAVE_CONFIG_H=1' ], language: 'c')
 
 root_inc = include_directories('.')
@@ -423,7 +423,7 @@ glib_compile_resources = find_program('glib-compile-resources')
 
 gnome = import('gnome')
 
-subdir('gdk-pixbuf')
+subdir('cdk-pixbuf')
 
 # i18n
 subdir('po')
@@ -445,9 +445,9 @@ subdir('docs')
 
 if not meson.is_cross_build()
   meson.add_install_script('build-aux/post-install.py',
-    gdk_pixbuf_bindir,
-    gdk_pixbuf_libdir,
-    gdk_pixbuf_binary_version,
+    cdk_pixbuf_bindir,
+    cdk_pixbuf_libdir,
+    cdk_pixbuf_binary_version,
   )
 endif
 
@@ -456,11 +456,11 @@ if not meson.is_subproject()
 endif
 
 summary({
-    'prefix': gdk_pixbuf_prefix,
-    'libdir': gdk_pixbuf_libdir,
-    'datadir': gdk_pixbuf_datadir,
-    'libexecdir': gdk_pixbuf_libdir,
-    'docdir': gdk_pixbuf_docsdir,
+    'prefix': cdk_pixbuf_prefix,
+    'libdir': cdk_pixbuf_libdir,
+    'datadir': cdk_pixbuf_datadir,
+    'libexecdir': cdk_pixbuf_libdir,
+    'docdir': cdk_pixbuf_docsdir,
   },
   section: 'Directories',
 )

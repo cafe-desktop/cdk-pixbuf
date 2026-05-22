@@ -18,7 +18,7 @@
  */
 
 #include "config.h"
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 #include "glib.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -60,9 +60,9 @@ randomly_modify (const gchar *image, guint size)
       g_assert (!ferror (f));
       fclose (f);
 
-      loader = gdk_pixbuf_loader_new ();
-      gdk_pixbuf_loader_write (loader, img_copy, size, NULL);
-      gdk_pixbuf_loader_close (loader, NULL);
+      loader = cdk_pixbuf_loader_new ();
+      cdk_pixbuf_loader_write (loader, img_copy, size, NULL);
+      cdk_pixbuf_loader_close (loader, NULL);
       g_object_unref (loader);
     }
   g_free (img_copy);

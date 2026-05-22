@@ -1,5 +1,5 @@
 #include "config.h"
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 #include "test-common.h"
 #include <string.h>
 #include <glib.h>
@@ -20,7 +20,7 @@ test_serialize (void)
       return;
     }
 
-  pixbuf = gdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "test-image.png", NULL), &error);
+  pixbuf = cdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "test-image.png", NULL), &error);
   g_assert_no_error (error);
   g_assert (pixbuf != NULL);
 
@@ -34,7 +34,7 @@ test_serialize (void)
   /* but since that is a GLoadableIcon, we can load it again */
   stream = g_loadable_icon_load (G_LOADABLE_ICON (icon), 0, NULL, NULL, &error);
   g_assert_no_error (error);
-  pixbuf2 = gdk_pixbuf_new_from_stream (stream, NULL, &error);
+  pixbuf2 = cdk_pixbuf_new_from_stream (stream, NULL, &error);
   g_assert_no_error (error);
 
   /* make sure that the pixels are the same.
@@ -43,8 +43,8 @@ test_serialize (void)
   {
     guchar *pixels_a, *pixels_b;
     guint len_a, len_b;
-    pixels_a = gdk_pixbuf_get_pixels_with_length (pixbuf, &len_a);
-    pixels_b = gdk_pixbuf_get_pixels_with_length (pixbuf2, &len_b);
+    pixels_a = cdk_pixbuf_get_pixels_with_length (pixbuf, &len_a);
+    pixels_b = cdk_pixbuf_get_pixels_with_length (pixbuf2, &len_b);
     g_assert (len_a == len_b);
     g_assert (memcmp (pixels_a, pixels_b, len_a) == 0);
   }

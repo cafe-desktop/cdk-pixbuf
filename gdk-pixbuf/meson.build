@@ -47,7 +47,7 @@ loaders = {
     'enabled': enabled_loaders.contains('xbm'),
   },
   'tga': {
-    'sources': [ 'io-tga.c', 'gdk-pixbuf-buffer-queue.c' ],
+    'sources': [ 'io-tga.c', 'cdk-pixbuf-buffer-queue.c' ],
     'enabled': enabled_loaders.contains('tga'),
   },
   'icns': {
@@ -60,87 +60,87 @@ loaders = {
   },
 }
 
-gdk_pixbuf_inc = include_directories('.')
+cdk_pixbuf_inc = include_directories('.')
 
-gdk_pixbuf_cflags = [
+cdk_pixbuf_cflags = [
   '-DG_LOG_STRUCTURED=1',
   '-DG_LOG_DOMAIN="GdkPixbuf"',
   '-DGDK_PIXBUF_COMPILATION',
-  '-DGDK_PIXBUF_PREFIX="@0@"'.format(gdk_pixbuf_prefix),
-  '-DGDK_PIXBUF_LOCALEDIR="@0@"'.format(gdk_pixbuf_localedir),
-  '-DGDK_PIXBUF_LIBDIR="@0@"'.format(gdk_pixbuf_libdir),
-  '-DGDK_PIXBUF_BINARY_VERSION="@0@"'.format(gdk_pixbuf_binary_version),
+  '-DGDK_PIXBUF_PREFIX="@0@"'.format(cdk_pixbuf_prefix),
+  '-DGDK_PIXBUF_LOCALEDIR="@0@"'.format(cdk_pixbuf_localedir),
+  '-DGDK_PIXBUF_LIBDIR="@0@"'.format(cdk_pixbuf_libdir),
+  '-DGDK_PIXBUF_BINARY_VERSION="@0@"'.format(cdk_pixbuf_binary_version),
   '-DGDK_PIXBUF_ENABLE_BACKEND',
-  '-DPIXBUF_LIBDIR="@0@"'.format(gdk_pixbuf_loaderdir),
+  '-DPIXBUF_LIBDIR="@0@"'.format(cdk_pixbuf_loaderdir),
   '-DBUILT_MODULES_DIR="@0@"'.format(meson.current_build_dir()),
 ]
 
-gdk_pixbuf_api_path = join_paths(gdk_pixbuf_api_name, 'gdk-pixbuf')
+cdk_pixbuf_api_path = join_paths(cdk_pixbuf_api_name, 'cdk-pixbuf')
 
-gdkpixbuf_features_conf = configuration_data()
-gdkpixbuf_features_conf.set('GDK_PIXBUF_MAJOR', gdk_pixbuf_version_major)
-gdkpixbuf_features_conf.set('GDK_PIXBUF_MINOR', gdk_pixbuf_version_minor)
-gdkpixbuf_features_conf.set('GDK_PIXBUF_MICRO', gdk_pixbuf_version_micro)
-gdkpixbuf_features_conf.set('GDK_PIXBUF_VERSION', meson.project_version())
-gdkpixbuf_features_conf.set('GDK_PIXBUF_API_VERSION', gdk_pixbuf_api_version)
-gdkpixbuf_features_conf.set('LT_CURRENT_MINUS_AGE', current_minus_age)
+cdkpixbuf_features_conf = configuration_data()
+cdkpixbuf_features_conf.set('GDK_PIXBUF_MAJOR', cdk_pixbuf_version_major)
+cdkpixbuf_features_conf.set('GDK_PIXBUF_MINOR', cdk_pixbuf_version_minor)
+cdkpixbuf_features_conf.set('GDK_PIXBUF_MICRO', cdk_pixbuf_version_micro)
+cdkpixbuf_features_conf.set('GDK_PIXBUF_VERSION', meson.project_version())
+cdkpixbuf_features_conf.set('GDK_PIXBUF_API_VERSION', cdk_pixbuf_api_version)
+cdkpixbuf_features_conf.set('LT_CURRENT_MINUS_AGE', current_minus_age)
 
-gdk_pixbuf_features_h = configure_file(input: 'gdk-pixbuf-features.h.in',
-                                       output: 'gdk-pixbuf-features.h',
-                                       configuration: gdkpixbuf_features_conf,
-                                       install_dir: join_paths(gdk_pixbuf_includedir, gdk_pixbuf_api_path))
+cdk_pixbuf_features_h = configure_file(input: 'cdk-pixbuf-features.h.in',
+                                       output: 'cdk-pixbuf-features.h',
+                                       configuration: cdkpixbuf_features_conf,
+                                       install_dir: join_paths(cdk_pixbuf_includedir, cdk_pixbuf_api_path))
 
-gdkpixbuf_headers = [
-  'gdk-pixbuf.h',
-  'gdk-pixbuf-animation.h',
-  'gdk-pixbuf-core.h',
-  'gdk-pixbuf-io.h',
-  'gdk-pixbuf-loader.h',
-  'gdk-pixbuf-macros.h',
-  'gdk-pixbuf-simple-anim.h',
-  'gdk-pixbuf-transform.h',
+cdkpixbuf_headers = [
+  'cdk-pixbuf.h',
+  'cdk-pixbuf-animation.h',
+  'cdk-pixbuf-core.h',
+  'cdk-pixbuf-io.h',
+  'cdk-pixbuf-loader.h',
+  'cdk-pixbuf-macros.h',
+  'cdk-pixbuf-simple-anim.h',
+  'cdk-pixbuf-transform.h',
 ]
 
-install_headers(gdkpixbuf_headers + [ 'gdk-pixdata.h' ], subdir: gdk_pixbuf_api_path)
+install_headers(cdkpixbuf_headers + [ 'cdk-pixdata.h' ], subdir: cdk_pixbuf_api_path)
 
-gdkpixbuf_sources = [
-  'gdk-pixbuf.c',
-  'gdk-pixbuf-animation.c',
-  'gdk-pixbuf-data.c',
-  'gdk-pixbuf-io.c',
-  'gdk-pixbuf-loader.c',
-  'gdk-pixbuf-scale.c',
-  'gdk-pixbuf-simple-anim.c',
-  'gdk-pixbuf-scaled-anim.c',
-  'gdk-pixbuf-util.c',
+cdkpixbuf_sources = [
+  'cdk-pixbuf.c',
+  'cdk-pixbuf-animation.c',
+  'cdk-pixbuf-data.c',
+  'cdk-pixbuf-io.c',
+  'cdk-pixbuf-loader.c',
+  'cdk-pixbuf-scale.c',
+  'cdk-pixbuf-simple-anim.c',
+  'cdk-pixbuf-scaled-anim.c',
+  'cdk-pixbuf-util.c',
 ]
 
-gdkpixdata_sources = [
-  'gdk-pixdata.c',
+cdkpixdata_sources = [
+  'cdk-pixdata.c',
 ]
 
-gdkpixbuf_marshals = gnome.genmarshal('gdk-pixbuf-marshal',
-                                      sources: 'gdk-pixbuf-marshal.list',
-                                      prefix: '_gdk_pixbuf_marshal',
+cdkpixbuf_marshals = gnome.genmarshal('cdk-pixbuf-marshal',
+                                      sources: 'cdk-pixbuf-marshal.list',
+                                      prefix: '_cdk_pixbuf_marshal',
                                       install_header: true,
-                                      install_dir: join_paths(gdk_pixbuf_includedir, gdk_pixbuf_api_path))
+                                      install_dir: join_paths(cdk_pixbuf_includedir, cdk_pixbuf_api_path))
 
-gdkpixbuf_enums = gnome.mkenums('gdk-pixbuf-enum-types',
-                                sources: gdkpixbuf_headers,
-                                c_template: 'gdk-pixbuf-enum-types.c.template',
-                                h_template: 'gdk-pixbuf-enum-types.h.template',
+cdkpixbuf_enums = gnome.mkenums('cdk-pixbuf-enum-types',
+                                sources: cdkpixbuf_headers,
+                                c_template: 'cdk-pixbuf-enum-types.c.template',
+                                h_template: 'cdk-pixbuf-enum-types.h.template',
                                 install_header: true,
-                                install_dir: join_paths(gdk_pixbuf_includedir, gdk_pixbuf_api_path))
-gdkpixbuf_enum_h = gdkpixbuf_enums[1]
+                                install_dir: join_paths(cdk_pixbuf_includedir, cdk_pixbuf_api_path))
+cdkpixbuf_enum_h = cdkpixbuf_enums[1]
 
 if host_system == 'windows'
-  gdk_pixbuf_win_rc = configure_file(
-    input: 'gdk_pixbuf.rc.in',
-    output: 'gdk_pixbuf.rc',
-    configuration: gdkpixbuf_features_conf,
+  cdk_pixbuf_win_rc = configure_file(
+    input: 'cdk_pixbuf.rc.in',
+    output: 'cdk_pixbuf.rc',
+    configuration: cdkpixbuf_features_conf,
   )
-  gdk_pixbuf_win_res = import('windows').compile_resources(gdk_pixbuf_win_rc)
-  gdkpixbuf_sources += gdk_pixbuf_win_res
+  cdk_pixbuf_win_res = import('windows').compile_resources(cdk_pixbuf_win_rc)
+  cdkpixbuf_sources += cdk_pixbuf_win_res
 endif
 
 # Check if we need to build loaders as built-in functionality
@@ -158,10 +158,10 @@ foreach name, loader: loaders
 
     mod = static_library('staticpixbufloader-@0@'.format(name),
                          sources,
-                         gdkpixbuf_enum_h,
-                         dependencies: loaders_deps + gdk_pixbuf_deps,
-                         include_directories: [ root_inc, gdk_pixbuf_inc ],
-                         c_args: common_cflags + gdk_pixbuf_cflags + cflags + cflag_for_included_loader)
+                         cdkpixbuf_enum_h,
+                         dependencies: loaders_deps + cdk_pixbuf_deps,
+                         include_directories: [ root_inc, cdk_pixbuf_inc ],
+                         c_args: common_cflags + cdk_pixbuf_cflags + cflags + cflag_for_included_loader)
 
     included_loaders_deps += declare_dependency(link_with: mod)
   endif
@@ -183,10 +183,10 @@ if native_windows_loaders
 
     mod = static_library('staticpixbufloader-gdiplus',
                          win_loader_sources,
-                         gdkpixbuf_enum_h,
-                         dependencies: loaders_deps + gdk_pixbuf_deps,
-                         include_directories: [ root_inc, gdk_pixbuf_inc ],
-                         c_args: common_cflags + gdk_pixbuf_cflags + cflag_for_included_loader)
+                         cdkpixbuf_enum_h,
+                         dependencies: loaders_deps + cdk_pixbuf_deps,
+                         include_directories: [ root_inc, cdk_pixbuf_inc ],
+                         c_args: common_cflags + cdk_pixbuf_cflags + cflag_for_included_loader)
 
     included_loaders_deps += declare_dependency(link_with: mod)
   endif
@@ -206,10 +206,10 @@ if enabled_loaders.contains('android')
 
   mod = static_library('staticpixbufloader-android',
                        android_loader_sources,
-                       gdkpixbuf_enum_h,
-                       dependencies: loaders_deps + gdk_pixbuf_deps,
-                       include_directories: [ root_inc, gdk_pixbuf_inc ],
-                       c_args: common_cflags + gdk_pixbuf_cflags)
+                       cdkpixbuf_enum_h,
+                       dependencies: loaders_deps + cdk_pixbuf_deps,
+                       include_directories: [ root_inc, cdk_pixbuf_inc ],
+                       c_args: common_cflags + cdk_pixbuf_cflags)
 
   included_loaders_deps += declare_dependency(link_with: mod)
 endif
@@ -250,35 +250,35 @@ if enabled_loaders.contains('glycin')
 
     mod = static_library('staticpixbufloader-glycin',
                          glycin_loader_sources,
-                         gdkpixbuf_enum_h,
-                         dependencies: loaders_deps + gdk_pixbuf_deps,
-                         include_directories: [ root_inc, gdk_pixbuf_inc ],
-                         c_args: common_cflags + gdk_pixbuf_cflags + cflag_for_included_loader)
+                         cdkpixbuf_enum_h,
+                         dependencies: loaders_deps + cdk_pixbuf_deps,
+                         include_directories: [ root_inc, cdk_pixbuf_inc ],
+                         c_args: common_cflags + cdk_pixbuf_cflags + cflag_for_included_loader)
 
     included_loaders_deps += declare_dependency(link_with: mod)
   endif
 endif
 
-# The main gdk-pixbuf shared library
-gdkpixbuf = library('gdk_pixbuf-2.0',
+# The main cdk-pixbuf shared library
+cdkpixbuf = library('cdk_pixbuf-2.0',
                     sources: [
-                      gdkpixbuf_sources,
+                      cdkpixbuf_sources,
                       pixops_sources,
-                      gdkpixbuf_enums,
-                      gdkpixbuf_marshals,
-                      gdkpixdata_sources,
+                      cdkpixbuf_enums,
+                      cdkpixbuf_marshals,
+                      cdkpixdata_sources,
                     ],
                     soversion: soversion,
                     version: libversion,
 		    darwin_versions: darwin_versions,
-                    c_args: common_cflags + gdk_pixbuf_cflags + included_loaders_cflags,
+                    c_args: common_cflags + cdk_pixbuf_cflags + included_loaders_cflags,
                     link_args: common_ldflags,
                     include_directories: [
                       root_inc,
                       include_directories('pixops'),
                     ],
                     dependencies: [
-                      gdk_pixbuf_deps,
+                      cdk_pixbuf_deps,
                       included_loaders_deps,
                     ],
                     install: true)
@@ -293,55 +293,55 @@ if build_gir
     '-DGDK_PIXBUF_ENABLE_BACKEND',
   ]
 
-  gdkpixbuf_gir = gnome.generate_gir(
-    gdkpixbuf,
+  cdkpixbuf_gir = gnome.generate_gir(
+    cdkpixbuf,
     sources: [
-      gdkpixbuf_sources,
-      gdkpixbuf_headers,
-      gdkpixbuf_enums,
-      gdkpixdata_sources,
-      gdk_pixbuf_features_h,
+      cdkpixbuf_sources,
+      cdkpixbuf_headers,
+      cdkpixbuf_enums,
+      cdkpixdata_sources,
+      cdk_pixbuf_features_h,
     ],
     namespace: 'GdkPixbuf',
-    nsversion: gdk_pixbuf_api_version,
+    nsversion: cdk_pixbuf_api_version,
     identifier_prefix: 'Gdk',
-    symbol_prefix: 'gdk',
-    export_packages: 'gdk-pixbuf-2.0',
+    symbol_prefix: 'cdk',
+    export_packages: 'cdk-pixbuf-2.0',
     includes: [ 'GModule-2.0', 'Gio-2.0', ],
-    header: 'gdk-pixbuf/gdk-pixbuf.h',
+    header: 'cdk-pixbuf/cdk-pixbuf.h',
     install: true,
     extra_args: gir_args,
   )
 
-  gdkpixdata_gir = gnome.generate_gir(
-    gdkpixbuf,
-    sources: gdkpixdata_sources + ['gdk-pixdata.h'],
+  cdkpixdata_gir = gnome.generate_gir(
+    cdkpixbuf,
+    sources: cdkpixdata_sources + ['cdk-pixdata.h'],
     namespace: 'GdkPixdata',
-    nsversion: gdk_pixbuf_api_version,
+    nsversion: cdk_pixbuf_api_version,
     identifier_prefix: 'Gdk',
-    symbol_prefix: 'gdk',
-    export_packages: 'gdk-pixbuf-2.0',
-    includes: [ gdkpixbuf_gir[0] ],
-    header: 'gdk-pixbuf/gdk-pixdata.h',
+    symbol_prefix: 'cdk',
+    export_packages: 'cdk-pixbuf-2.0',
+    includes: [ cdkpixbuf_gir[0] ],
+    header: 'cdk-pixbuf/cdk-pixdata.h',
     install: true,
     extra_args: gir_args,
   )
 
-  built_girs = [ gdkpixbuf_gir, gdkpixdata_gir ]
+  built_girs = [ cdkpixbuf_gir, cdkpixdata_gir ]
 else
   built_girs = []
 endif
 
-gdkpixbuf_dep = declare_dependency(
-  link_with: gdkpixbuf,
+cdkpixbuf_dep = declare_dependency(
+  link_with: cdkpixbuf,
   include_directories: root_inc,
-  dependencies: [ gdk_pixbuf_deps, included_loaders_deps ],
-  sources: [ gdkpixbuf_enum_h, built_girs ],
+  dependencies: [ cdk_pixbuf_deps, included_loaders_deps ],
+  sources: [ cdkpixbuf_enum_h, built_girs ],
 )
-meson.override_dependency('gdk-pixbuf-2.0', gdkpixbuf_dep)
+meson.override_dependency('cdk-pixbuf-2.0', cdkpixbuf_dep)
 
 # Now check if we are building loaders as installed shared modules
-# We do this here because shared modules depend on libgdk-pixbuf
+# We do this here because shared modules depend on libcdk-pixbuf
 dynamic_loaders = []
 dynamic_loaders_dep = []
 
@@ -359,13 +359,13 @@ foreach name, loader: loaders
   if cond and not (builtin_loaders.contains(name) or builtin_all_loaders)
     mod = shared_module('pixbufloader-@0@'.format(name),
                         sources,
-                        gdkpixbuf_enum_h,
-                        dependencies: loaders_deps + gdk_pixbuf_deps + [ gdkpixbuf_dep ],
-                        include_directories: [ root_inc, gdk_pixbuf_inc ],
-                        c_args: common_cflags + gdk_pixbuf_cflags + cflags,
+                        cdkpixbuf_enum_h,
+                        dependencies: loaders_deps + cdk_pixbuf_deps + [ cdkpixbuf_dep ],
+                        include_directories: [ root_inc, cdk_pixbuf_inc ],
+                        c_args: common_cflags + cdk_pixbuf_cflags + cflags,
                         name_suffix: name_suffix,
                         install: true,
-                        install_dir: gdk_pixbuf_loaderdir)
+                        install_dir: cdk_pixbuf_loaderdir)
 
     # We need the path to build loaders.cache for tests
     dynamic_loaders += mod.full_path()
@@ -381,33 +381,33 @@ if native_windows_loaders
 
       mod = shared_module('pixbufloader-gdip-@0@'.format(loader),
                           loader_sources,
-                          gdkpixbuf_enum_h,
-                          dependencies: loaders_deps + gdk_pixbuf_deps + [ gdkpixbuf_dep ],
-                          include_directories: [ root_inc, gdk_pixbuf_inc ],
-                          c_args: common_cflags + gdk_pixbuf_cflags + cflags,
+                          cdkpixbuf_enum_h,
+                          dependencies: loaders_deps + cdk_pixbuf_deps + [ cdkpixbuf_dep ],
+                          include_directories: [ root_inc, cdk_pixbuf_inc ],
+                          c_args: common_cflags + cdk_pixbuf_cflags + cflags,
                           install: true,
-                          install_dir: gdk_pixbuf_loaderdir)
+                          install_dir: cdk_pixbuf_loaderdir)
       dynamic_loaders += mod.full_path()
       dynamic_loaders_dep = mod
     endforeach
   endif
 endif
 
-gdkpixbuf_bin = [
-  [ 'gdk-pixbuf-csource' ],
-  [ 'gdk-pixbuf-pixdata' ],
-  [ 'gdk-pixbuf-query-loaders', [ 'queryloaders.c' ] ],
+cdkpixbuf_bin = [
+  [ 'cdk-pixbuf-csource' ],
+  [ 'cdk-pixbuf-pixdata' ],
+  [ 'cdk-pixbuf-query-loaders', [ 'queryloaders.c' ] ],
 ]
 
-foreach bin: gdkpixbuf_bin
+foreach bin: cdkpixbuf_bin
   bin_name = bin[0]
   bin_source = bin.get(1, bin_name + '.c')
 
   bin = executable(bin_name, bin_source,
-                   gdkpixbuf_enum_h,
-                   dependencies: gdkpixbuf_dep,
-                   include_directories: [ root_inc, gdk_pixbuf_inc ],
-                   c_args: common_cflags + gdk_pixbuf_cflags,
+                   cdkpixbuf_enum_h,
+                   dependencies: cdkpixbuf_dep,
+                   include_directories: [ root_inc, cdk_pixbuf_inc ],
+                   c_args: common_cflags + cdk_pixbuf_cflags,
                    install: true)
   meson.override_find_program(bin_name, bin)
 
@@ -422,7 +422,7 @@ if not meson.is_cross_build()
                                 output: 'loaders.cache',
                                 capture: true,
                                 command: [
-                                  gdk_pixbuf_query_loaders,
+                                  cdk_pixbuf_query_loaders,
                                   dynamic_loaders,
                                 ],
                                 depends: dynamic_loaders_dep,
@@ -435,19 +435,19 @@ endif
 
 pkgconfig = import('pkgconfig')
 pkgconfig.generate(
-  gdkpixbuf,
+  cdkpixbuf,
   name: 'GdkPixbuf',
   description: 'Image loading and scaling',
   variables: [
-    'gdk_pixbuf_binary_version=@0@'.format(gdk_pixbuf_binary_version),
-    'gdk_pixbuf_binarydir=${libdir}/@0@/@1@'.format(gdk_pixbuf_api_name, gdk_pixbuf_binary_version),
-    'gdk_pixbuf_moduledir=${gdk_pixbuf_binarydir}/loaders',
-    'gdk_pixbuf_cache_file=${gdk_pixbuf_binarydir}/loaders.cache',
-    'gdk_pixbuf_csource=${bindir}/gdk-pixbuf-csource',
-    'gdk_pixbuf_pixdata=${bindir}/gdk-pixbuf-pixdata',
-    'gdk_pixbuf_query_loaders=${bindir}/gdk-pixbuf-query-loaders',
+    'cdk_pixbuf_binary_version=@0@'.format(cdk_pixbuf_binary_version),
+    'cdk_pixbuf_binarydir=${libdir}/@0@/@1@'.format(cdk_pixbuf_api_name, cdk_pixbuf_binary_version),
+    'cdk_pixbuf_moduledir=${cdk_pixbuf_binarydir}/loaders',
+    'cdk_pixbuf_cache_file=${cdk_pixbuf_binarydir}/loaders.cache',
+    'cdk_pixbuf_csource=${bindir}/cdk-pixbuf-csource',
+    'cdk_pixbuf_pixdata=${bindir}/cdk-pixbuf-pixdata',
+    'cdk_pixbuf_query_loaders=${bindir}/cdk-pixbuf-query-loaders',
   ],
   requires: 'gobject-2.0',
-  subdirs: gdk_pixbuf_api_name,
-  filebase: gdk_pixbuf_api_name,
+  subdirs: cdk_pixbuf_api_name,
+  filebase: cdk_pixbuf_api_name,
 )

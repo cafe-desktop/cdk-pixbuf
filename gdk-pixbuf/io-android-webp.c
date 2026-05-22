@@ -23,24 +23,24 @@
 #include "io-android-utils.h"
 
 
-#define MODULE_ENTRY(function) void _gdk_pixbuf__android_webp_ ## function
+#define MODULE_ENTRY(function) void _cdk_pixbuf__android_webp_ ## function
 
 static gboolean
-gdk_pixbuf__android_save_image_webp (GdkPixbufSaveFunc save_func, gpointer user_data,
+cdk_pixbuf__android_save_image_webp (GdkPixbufSaveFunc save_func, gpointer user_data,
                                      GdkPixbuf *pixbuf,
                                      gchar **option_keys, gchar **option_values,
                                      GError **error)
 {
-  return gdk_pixbuf__android_save_image (save_func, user_data,
+  return cdk_pixbuf__android_save_image (save_func, user_data,
                                          pixbuf, ANDROID_BITMAP_COMPRESS_FORMAT_WEBP_LOSSY,
                                          error);
 }
 
 MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
 {
-  gdk_pixbuf__android_fill_vtable (module);
+  cdk_pixbuf__android_fill_vtable (module);
 
-  module->save_to_callback = gdk_pixbuf__android_save_image_webp;
+  module->save_to_callback = cdk_pixbuf__android_save_image_webp;
 }
 
 MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)

@@ -19,15 +19,15 @@
  */
 
 #include "config.h"
-#include "gdk-pixbuf.h"
-#include "gdk-pixbuf-private.h"
+#include "cdk-pixbuf.h"
+#include "cdk-pixbuf-private.h"
 #include <stdlib.h>
 #include <string.h>
 
 
 
 /**
- * gdk_pixbuf_new_from_data:
+ * cdk_pixbuf_new_from_data:
  * @data: (array): Image data in 8-bit/sample packed format
  * @colorspace: Colorspace for the image data
  * @has_alpha: Whether the data has an opacity channel
@@ -56,7 +56,7 @@
  * Return value: (transfer full): A newly-created pixbuf
  **/
 GdkPixbuf *
-gdk_pixbuf_new_from_data (const guchar           *data,
+cdk_pixbuf_new_from_data (const guchar           *data,
                           GdkColorspace           colorspace,
                           gboolean                has_alpha,
 			  int                     bits_per_sample,
@@ -94,7 +94,7 @@ gdk_pixbuf_new_from_data (const guchar           *data,
 }
 
 /**
- * gdk_pixbuf_new_from_bytes:
+ * cdk_pixbuf_new_from_bytes:
  * @data: Image data in 8-bit/sample packed format inside a #GBytes
  * @colorspace: Colorspace for the image data
  * @has_alpha: Whether the data has an opacity channel
@@ -107,7 +107,7 @@ gdk_pixbuf_new_from_data (const guchar           *data,
  *
  * Currently only RGB images with 8 bits per sample are supported.
  *
- * This is the `GBytes` variant of gdk_pixbuf_new_from_data(), useful
+ * This is the `GBytes` variant of cdk_pixbuf_new_from_data(), useful
  * for language bindings.
  *
  * Return value: (transfer full): A newly-created pixbuf
@@ -115,7 +115,7 @@ gdk_pixbuf_new_from_data (const guchar           *data,
  * Since: 2.32
  **/
 GdkPixbuf *
-gdk_pixbuf_new_from_bytes (GBytes        *data,
+cdk_pixbuf_new_from_bytes (GBytes        *data,
                            GdkColorspace  colorspace,
                            gboolean       has_alpha,
 			   int            bits_per_sample,

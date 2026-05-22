@@ -23,11 +23,11 @@
 
 #include <android/bitmap.h>
 
-#include "gdk-pixbuf-io.h"
-#include "gdk-pixbuf-animation.h"
+#include "cdk-pixbuf-io.h"
+#include "cdk-pixbuf-animation.h"
 
-void gdk_pixbuf__android_fill_vtable (GdkPixbufModule *module);
+void cdk_pixbuf__android_fill_vtable (GdkPixbufModule *module);
 
-gboolean gdk_pixbuf__android_save_image (GdkPixbufSaveFunc save_func, gpointer user_data, GdkPixbuf *pixbuf, gint32 format, GError **error);
+gboolean cdk_pixbuf__android_save_image (GdkPixbufSaveFunc save_func, gpointer user_data, GdkPixbuf *pixbuf, gint32 format, GError **error);
 
 #endif // __IO_ANDROID_UTILS_H__

@@ -21,11 +21,11 @@
 
 #include "config.h"
 
-#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <cdk-pixbuf/cdk-pixbuf.h>
 
 #include "test-common.h"
 
-/* As defined in gdk-pixbuf-private.h */
+/* As defined in cdk-pixbuf-private.h */
 #define DEFAULT_FILL_COLOR 0x979899ff
 
 static void
@@ -36,10 +36,10 @@ loader_size_prepared (GdkPixbufLoader  *loader,
 {
   g_assert (*pixbuf == NULL);
 
-  *pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, w, h);
+  *pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, w, h);
   g_assert (*pixbuf != NULL);
   /* likely!! */
-  gdk_pixbuf_fill (*pixbuf, DEFAULT_FILL_COLOR);
+  cdk_pixbuf_fill (*pixbuf, DEFAULT_FILL_COLOR);
 }
 
 static void
@@ -48,9 +48,9 @@ loader_area_prepared (GdkPixbufLoader  *loader,
 {
   g_assert (*pixbuf != NULL);
 
-  if (gdk_pixbuf_get_has_alpha (gdk_pixbuf_loader_get_pixbuf (loader)))
+  if (cdk_pixbuf_get_has_alpha (cdk_pixbuf_loader_get_pixbuf (loader)))
     {
-      GdkPixbuf *alpha = gdk_pixbuf_add_alpha (*pixbuf, FALSE, 0, 0, 0);
+      GdkPixbuf *alpha = cdk_pixbuf_add_alpha (*pixbuf, FALSE, 0, 0, 0);
 
       g_object_unref (*pixbuf);
       *pixbuf = alpha;
@@ -67,7 +67,7 @@ loader_area_updated (GdkPixbufLoader  *loader,
                      int               h,
                      GdkPixbuf       **pixbuf)
 {
-  gdk_pixbuf_copy_area (gdk_pixbuf_loader_get_pixbuf (loader),
+  cdk_pixbuf_copy_area (cdk_pixbuf_loader_get_pixbuf (loader),
                         x, y,
                         w, h,
                         *pixbuf,
@@ -162,7 +162,7 @@ test_reftest (gconstpointer data)
   stream = G_INPUT_STREAM (g_file_read (ref_file, NULL, &error));
   g_assert_no_error (error);
   g_assert (stream != NULL);
-  reference = gdk_pixbuf_new_from_stream (stream, NULL, &error);
+  reference = cdk_pixbuf_new_from_stream (stream, NULL, &error);
   g_assert_no_error (error);
   g_assert (reference != NULL);
   g_object_unref (stream);
@@ -178,7 +178,7 @@ test_reftest (gconstpointer data)
     content_type = g_content_type_guess (filename, contents, contents_length, NULL);
     mime_type = g_content_type_get_mime_type (content_type);
     g_assert (mime_type);
-    loader = gdk_pixbuf_loader_new_with_mime_type (mime_type, &error);
+    loader = cdk_pixbuf_loader_new_with_mime_type (mime_type, &error);
     g_free (mime_type);
     g_free (content_type);
   }
@@ -188,7 +188,7 @@ test_reftest (gconstpointer data)
 
     success = find_format (filename, &format);
     g_assert_true (success);
-    loader = gdk_pixbuf_loader_new_with_type (format, &error);
+    loader = cdk_pixbuf_loader_new_with_type (format, &error);
     g_free (format);
   }
 #endif
@@ -201,12 +201,12 @@ test_reftest (gconstpointer data)
 
   for (i = 0; i < contents_length; i++)
     {
-      success = gdk_pixbuf_loader_write (loader, &contents[i], 1, &error);
+      success = cdk_pixbuf_loader_write (loader, &contents[i], 1, &error);
       g_assert_no_error (error);
       g_assert (success);
     }
   
-  success = gdk_pixbuf_loader_close (loader, &error);
+  success = cdk_pixbuf_loader_close (loader, &error);
   g_assert_no_error (error);
   g_assert (success);
 

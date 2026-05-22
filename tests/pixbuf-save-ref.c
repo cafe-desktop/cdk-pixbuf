@@ -18,7 +18,7 @@
  */
 
 #include "config.h"
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -35,14 +35,14 @@ load_and_save (const char *filename, GError **error)
   if (!g_file_get_contents (filename, (char **) &contents, &size, error))
     return FALSE;
 
-  loader = gdk_pixbuf_loader_new ();
-  if (!gdk_pixbuf_loader_write (loader, contents, size, error))
+  loader = cdk_pixbuf_loader_new ();
+  if (!cdk_pixbuf_loader_write (loader, contents, size, error))
     {
       ret = FALSE;
       goto out;
     }
 
-  if (!gdk_pixbuf_loader_close (loader, error))
+  if (!cdk_pixbuf_loader_close (loader, error))
     {
       if (!g_error_matches (*error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_INCOMPLETE_ANIMATION))
         {
@@ -52,14 +52,14 @@ load_and_save (const char *filename, GError **error)
       g_clear_error (error);
     }
 
-  pixbuf = gdk_pixbuf_loader_get_pixbuf (loader);
+  pixbuf = cdk_pixbuf_loader_get_pixbuf (loader);
   g_assert (pixbuf);
   g_object_ref (pixbuf);
 
   g_object_unref (loader);
 
   new_filename = g_strdup_printf ("%s.ref.png", filename);
-  ret = gdk_pixbuf_save (pixbuf, new_filename, "png", error, NULL);
+  ret = cdk_pixbuf_save (pixbuf, new_filename, "png", error, NULL);
 
 out:
   g_free (contents);

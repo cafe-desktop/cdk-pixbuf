@@ -27,17 +27,17 @@
 #define GDK_PIXBUF_H_INSIDE
 
 #include <glib.h>
-#include <gdk-pixbuf/gdk-pixbuf-macros.h>
-#include <gdk-pixbuf/gdk-pixbuf-features.h>
+#include <cdk-pixbuf/cdk-pixbuf-macros.h>
+#include <cdk-pixbuf/cdk-pixbuf-features.h>
 #include <glib-object.h>
 
-#include <gdk-pixbuf/gdk-pixbuf-core.h>
-#include <gdk-pixbuf/gdk-pixbuf-transform.h>
-#include <gdk-pixbuf/gdk-pixbuf-animation.h>
-#include <gdk-pixbuf/gdk-pixbuf-simple-anim.h>
-#include <gdk-pixbuf/gdk-pixbuf-io.h>
-#include <gdk-pixbuf/gdk-pixbuf-loader.h>
-#include <gdk-pixbuf/gdk-pixbuf-enum-types.h>
+#include <cdk-pixbuf/cdk-pixbuf-core.h>
+#include <cdk-pixbuf/cdk-pixbuf-transform.h>
+#include <cdk-pixbuf/cdk-pixbuf-animation.h>
+#include <cdk-pixbuf/cdk-pixbuf-simple-anim.h>
+#include <cdk-pixbuf/cdk-pixbuf-io.h>
+#include <cdk-pixbuf/cdk-pixbuf-loader.h>
+#include <cdk-pixbuf/cdk-pixbuf-enum-types.h>
 
 #undef GDK_PIXBUF_H_INSIDE
 

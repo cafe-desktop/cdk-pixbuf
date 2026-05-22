@@ -19,7 +19,7 @@
  *
  */
 
-#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <cdk-pixbuf/cdk-pixbuf.h>
 
 int main (int argc, char **argv)
 {
@@ -27,12 +27,12 @@ int main (int argc, char **argv)
 	GSList *all_mime_types = NULL;
 	GString *s;
 
-	formats = gdk_pixbuf_get_formats ();
+	formats = cdk_pixbuf_get_formats ();
 	for (GSList *l = formats; l != NULL; l = l->next) {
 		GdkPixbufFormat *format = l->data;
 		char **mime_types;
 
-		mime_types = gdk_pixbuf_format_get_mime_types (format);
+		mime_types = cdk_pixbuf_format_get_mime_types (format);
 		for (guint i = 0; mime_types[i] != NULL; i++)
 			all_mime_types = g_slist_prepend (all_mime_types, g_strdup (mime_types[i]));
 		g_strfreev (mime_types);

@@ -1,4 +1,4 @@
-#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <cdk-pixbuf/cdk-pixbuf.h>
 #include <stdlib.h>
 
 #include "test-common.h"
@@ -17,7 +17,7 @@ test_animation (const gchar *filename)
       return;
     }
 
-  result = gdk_pixbuf_animation_new_from_file (g_test_get_filename (G_TEST_DIST, filename, NULL), &error);
+  result = cdk_pixbuf_animation_new_from_file (g_test_get_filename (G_TEST_DIST, filename, NULL), &error);
   g_assert_no_error (error);
   g_assert (result != NULL);
 

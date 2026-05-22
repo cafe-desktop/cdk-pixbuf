@@ -26,7 +26,7 @@
 #ifndef INCLUDE_glycin
 #define MODULE_ENTRY(function) G_MODULE_EXPORT void function
 #else
-#define MODULE_ENTRY(function) void _gdk_pixbuf__glycin_pnm_ ## function
+#define MODULE_ENTRY(function) void _cdk_pixbuf__glycin_pnm_ ## function
 #endif
 
 MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)

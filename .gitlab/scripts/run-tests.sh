@@ -16,7 +16,7 @@ exit_code=$?
 cd ${builddir}
 
 ${srcdir}/.gitlab/scripts/meson-junit-report.py \
-        --project-name=gdk-pixbuf \
+        --project-name=cdk-pixbuf \
         --job-id="${CI_JOB_NAME}" \
         --output=report-${CI_JOB_NAME}.xml \
         meson-logs/testlog.json
