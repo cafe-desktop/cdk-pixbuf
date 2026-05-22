@@ -745,8 +745,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "شکست در تخصیص ساختار بافتار QTIF."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "شکست در ایجاد شی GdkPixbufLoader."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "شکست در ایجاد شی CdkPixbufLoader."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -1055,7 +1055,7 @@ msgstr "XPM"
 #~ msgstr "عرض یا ارتفاع PNG تبدیل‌شده صفر است."
 
 #, fuzzy
-#~ msgid "The GdkPixdata format"
+#~ msgid "The CdkPixdata format"
 #~ msgstr "قالب تصویر GIF"
 
 #, fuzzy, c-format

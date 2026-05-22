@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-/* GdkPixbuf library - Simple animation support
+/* CdkPixbuf library - Simple animation support
  *
  * Copyright (C) 1999 The Free Software Foundation
  *
@@ -32,11 +32,11 @@
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 
 /**
- * GdkPixbufAnimation:
+ * CdkPixbufAnimation:
  *
  * An opaque object representing an animation.
  *
- * The GdkPixBuf library provides a simple mechanism to load and
+ * The CdkPixBuf library provides a simple mechanism to load and
  * represent animations. An animation is conceptually a series of
  * frames to be displayed over time.
  *
@@ -45,14 +45,14 @@ G_GNUC_BEGIN_IGNORE_DEPRECATIONS
  * instructions for moving the sprite around a background.
  *
  * To display an animation you don't need to understand its
- * representation, however; you just ask `GdkPixbuf` what should
+ * representation, however; you just ask `CdkPixbuf` what should
  * be displayed at a given point in time.
  *
  * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 
 /**
- * GdkPixbufAnimationIter:
+ * CdkPixbufAnimationIter:
  *
  * An opaque object representing an iterator which points to a
  * certain position in an animation.
@@ -60,60 +60,60 @@ G_GNUC_BEGIN_IGNORE_DEPRECATIONS
  * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 
-typedef struct _GdkPixbufNonAnim GdkPixbufNonAnim;
-typedef struct _GdkPixbufNonAnimClass GdkPixbufNonAnimClass;
+typedef struct _CdkPixbufNonAnim CdkPixbufNonAnim;
+typedef struct _CdkPixbufNonAnimClass CdkPixbufNonAnimClass;
 
 
-#define CDK_PIXBUF_NON_ANIM_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_NON_ANIM, GdkPixbufNonAnimClass))
+#define CDK_PIXBUF_NON_ANIM_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_NON_ANIM, CdkPixbufNonAnimClass))
 #define CDK_IS_PIXBUF_NON_ANIM_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), CDK_TYPE_PIXBUF_NON_ANIM))
-#define CDK_PIXBUF_NON_ANIM_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_NON_ANIM, GdkPixbufNonAnimClass))
+#define CDK_PIXBUF_NON_ANIM_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_NON_ANIM, CdkPixbufNonAnimClass))
 
-/* Private part of the GdkPixbufNonAnim structure */
-struct _GdkPixbufNonAnim {
-        GdkPixbufAnimation parent_instance;
+/* Private part of the CdkPixbufNonAnim structure */
+struct _CdkPixbufNonAnim {
+        CdkPixbufAnimation parent_instance;
 
-        GdkPixbuf *pixbuf;
+        CdkPixbuf *pixbuf;
 };
 
-struct _GdkPixbufNonAnimClass {
-        GdkPixbufAnimationClass parent_class;
+struct _CdkPixbufNonAnimClass {
+        CdkPixbufAnimationClass parent_class;
 };
 
 
-typedef struct _GdkPixbufNonAnimIter GdkPixbufNonAnimIter;
-typedef struct _GdkPixbufNonAnimIterClass GdkPixbufNonAnimIterClass;
+typedef struct _CdkPixbufNonAnimIter CdkPixbufNonAnimIter;
+typedef struct _CdkPixbufNonAnimIterClass CdkPixbufNonAnimIterClass;
 
 
 #define CDK_TYPE_PIXBUF_NON_ANIM_ITER              (cdk_pixbuf_non_anim_iter_get_type ())
-#define CDK_PIXBUF_NON_ANIM_ITER(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF_NON_ANIM_ITER, GdkPixbufNonAnimIter))
+#define CDK_PIXBUF_NON_ANIM_ITER(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF_NON_ANIM_ITER, CdkPixbufNonAnimIter))
 #define CDK_IS_PIXBUF_NON_ANIM_ITER(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), CDK_TYPE_PIXBUF_NON_ANIM_ITER))
 
-#define CDK_PIXBUF_NON_ANIM_ITER_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_NON_ANIM_ITER, GdkPixbufNonAnimIterClass))
+#define CDK_PIXBUF_NON_ANIM_ITER_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_NON_ANIM_ITER, CdkPixbufNonAnimIterClass))
 #define CDK_IS_PIXBUF_NON_ANIM_ITER_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), CDK_TYPE_PIXBUF_NON_ANIM_ITER))
-#define CDK_PIXBUF_NON_ANIM_ITER_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_NON_ANIM_ITER, GdkPixbufNonAnimIterClass))
+#define CDK_PIXBUF_NON_ANIM_ITER_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_NON_ANIM_ITER, CdkPixbufNonAnimIterClass))
 
-struct _GdkPixbufNonAnimIter {
-        GdkPixbufAnimationIter parent_instance;
+struct _CdkPixbufNonAnimIter {
+        CdkPixbufAnimationIter parent_instance;
 
-        GdkPixbufNonAnim   *non_anim;
+        CdkPixbufNonAnim   *non_anim;
 };
 
-struct _GdkPixbufNonAnimIterClass {
-        GdkPixbufAnimationIterClass parent_class;
+struct _CdkPixbufNonAnimIterClass {
+        CdkPixbufAnimationIterClass parent_class;
 
 };
 
 static GType cdk_pixbuf_non_anim_iter_get_type (void) G_GNUC_CONST;
 
-G_DEFINE_TYPE (GdkPixbufAnimation, cdk_pixbuf_animation, G_TYPE_OBJECT);
+G_DEFINE_TYPE (CdkPixbufAnimation, cdk_pixbuf_animation, G_TYPE_OBJECT);
 
 static void
-cdk_pixbuf_animation_class_init (GdkPixbufAnimationClass *klass)
+cdk_pixbuf_animation_class_init (CdkPixbufAnimationClass *klass)
 {
 }
 
 static void
-cdk_pixbuf_animation_init (GdkPixbufAnimation *animation)
+cdk_pixbuf_animation_init (CdkPixbufAnimation *animation)
 {
 }
 
@@ -125,8 +125,8 @@ noop_size_notify (gint     *width,
 }
 
 static void
-prepared_notify (GdkPixbuf          *pixbuf,
-                 GdkPixbufAnimation *anim,
+prepared_notify (CdkPixbuf          *pixbuf,
+                 CdkPixbufAnimation *anim,
                  gpointer            user_data)
 {
         if (anim != NULL)
@@ -134,11 +134,11 @@ prepared_notify (GdkPixbuf          *pixbuf,
         else
                 anim = cdk_pixbuf_non_anim_new (pixbuf);
 
-        *((GdkPixbufAnimation **)user_data) = anim;
+        *((CdkPixbufAnimation **)user_data) = anim;
 }
 
 static void
-noop_updated_notify (GdkPixbuf *pixbuf,
+noop_updated_notify (CdkPixbuf *pixbuf,
                      int        x,
                      int        y,
                      int        width,
@@ -166,15 +166,15 @@ noop_updated_notify (GdkPixbuf *pixbuf,
  *
  * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
-GdkPixbufAnimation *
+CdkPixbufAnimation *
 cdk_pixbuf_animation_new_from_file (const gchar  *filename,
                                     GError      **error)
 {
-	GdkPixbufAnimation *animation;
+	CdkPixbufAnimation *animation;
 	int size;
 	FILE *f;
 	guchar buffer[SNIFF_BUFFER_SIZE];
-	GdkPixbufModule *image_module;
+	CdkPixbufModule *image_module;
         gchar *display_name;
 
 	g_return_val_if_fail (filename != NULL, NULL);
@@ -286,7 +286,7 @@ fail_begin_load:
                         }
                 }
 	} else {
-		GdkPixbuf *pixbuf;
+		CdkPixbuf *pixbuf;
 
 		/* Keep this logic in sync with cdk_pixbuf_new_from_file() */
 
@@ -342,7 +342,7 @@ fail_begin_load:
  *
  * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
-GdkPixbufAnimation *
+CdkPixbufAnimation *
 cdk_pixbuf_animation_new_from_file_utf8 (const gchar  *filename,
                                          GError      **error)
 {
@@ -375,13 +375,13 @@ cdk_pixbuf_animation_new_from_file_utf8 (const gchar  *filename,
  *
  * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
-GdkPixbufAnimation *
+CdkPixbufAnimation *
 cdk_pixbuf_animation_new_from_stream (GInputStream  *stream,
                                       GCancellable  *cancellable,
                                       GError       **error)
 {
-        GdkPixbufAnimation *animation;
-        GdkPixbufLoader *loader;
+        CdkPixbufAnimation *animation;
+        CdkPixbufLoader *loader;
         gssize n_read;
         guchar buffer[LOAD_BUFFER_SIZE];
         gboolean res;
@@ -436,7 +436,7 @@ animation_new_from_stream_thread (GTask        *task,
                                   GCancellable *cancellable)
 {
         GInputStream *stream = G_INPUT_STREAM (source_object);
-	GdkPixbufAnimation *animation;
+	CdkPixbufAnimation *animation;
 	GError *error = NULL;
 
 	animation = cdk_pixbuf_animation_new_from_stream (stream, cancellable, &error);
@@ -493,7 +493,7 @@ cdk_pixbuf_animation_new_from_stream_async (GInputStream        *stream,
  * @error: a #GError, or `NULL`
  *
  * Finishes an asynchronous pixbuf animation creation operation started with
- * [func@GdkPixbuf.PixbufAnimation.new_from_stream_async].
+ * [func@CdkPixbuf.PixbufAnimation.new_from_stream_async].
  *
  * Return value: (transfer full) (nullable): the newly created animation
  *
@@ -501,7 +501,7 @@ cdk_pixbuf_animation_new_from_stream_async (GInputStream        *stream,
  *
  * Deprecated: 2.44: Use a different image loading library for animatable assets
  **/
-GdkPixbufAnimation *
+CdkPixbufAnimation *
 cdk_pixbuf_animation_new_from_stream_finish (GAsyncResult  *async_result,
 			              	     GError       **error)
 {
@@ -530,13 +530,13 @@ cdk_pixbuf_animation_new_from_stream_finish (GAsyncResult  *async_result,
  *
  * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
-GdkPixbufAnimation *
+CdkPixbufAnimation *
 cdk_pixbuf_animation_new_from_resource (const gchar  *resource_path,
                                         GError      **error)
 {
 	GInputStream *stream;
-	GdkPixbufAnimation *anim;
-	GdkPixbuf *pixbuf;
+	CdkPixbufAnimation *anim;
+	CdkPixbuf *pixbuf;
 
         pixbuf = _cdk_pixbuf_new_from_resource_try_pixdata (resource_path);
         if (pixbuf) {
@@ -564,10 +564,10 @@ cdk_pixbuf_animation_new_from_resource (const gchar  *resource_path,
  *
  * Deprecated: 2.0: Use g_object_ref().
  */
-GdkPixbufAnimation *
-cdk_pixbuf_animation_ref (GdkPixbufAnimation *animation)
+CdkPixbufAnimation *
+cdk_pixbuf_animation_ref (CdkPixbufAnimation *animation)
 {
-        return (GdkPixbufAnimation*) g_object_ref (animation);
+        return (CdkPixbufAnimation*) g_object_ref (animation);
 }
 
 /**
@@ -579,14 +579,14 @@ cdk_pixbuf_animation_ref (GdkPixbufAnimation *animation)
  * Deprecated: 2.0: Use g_object_unref().
  */
 void
-cdk_pixbuf_animation_unref (GdkPixbufAnimation *animation)
+cdk_pixbuf_animation_unref (CdkPixbufAnimation *animation)
 {
         g_object_unref (animation);
 }
 
 /**
  * cdk_pixbuf_animation_is_static_image:
- * @animation: a #GdkPixbufAnimation
+ * @animation: a #CdkPixbufAnimation
  *
  * Checks whether the animation is a static image.
  *
@@ -600,7 +600,7 @@ cdk_pixbuf_animation_unref (GdkPixbufAnimation *animation)
  * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 gboolean
-cdk_pixbuf_animation_is_static_image (GdkPixbufAnimation *animation)
+cdk_pixbuf_animation_is_static_image (CdkPixbufAnimation *animation)
 {
 	g_return_val_if_fail (CDK_IS_PIXBUF_ANIMATION (animation), FALSE);
 
@@ -609,7 +609,7 @@ cdk_pixbuf_animation_is_static_image (GdkPixbufAnimation *animation)
 
 /**
  * cdk_pixbuf_animation_get_static_image:
- * @animation: a #GdkPixbufAnimation
+ * @animation: a #CdkPixbufAnimation
  *
  * Retrieves a static image for the animation.
  *
@@ -627,8 +627,8 @@ cdk_pixbuf_animation_is_static_image (GdkPixbufAnimation *animation)
  *
  * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
-GdkPixbuf*
-cdk_pixbuf_animation_get_static_image (GdkPixbufAnimation *animation)
+CdkPixbuf*
+cdk_pixbuf_animation_get_static_image (CdkPixbufAnimation *animation)
 {
 	g_return_val_if_fail (CDK_IS_PIXBUF_ANIMATION (animation), NULL);
 
@@ -646,7 +646,7 @@ cdk_pixbuf_animation_get_static_image (GdkPixbufAnimation *animation)
  * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 gint
-cdk_pixbuf_animation_get_width (GdkPixbufAnimation *animation)
+cdk_pixbuf_animation_get_width (CdkPixbufAnimation *animation)
 {
         gint width;
 
@@ -670,7 +670,7 @@ cdk_pixbuf_animation_get_width (GdkPixbufAnimation *animation)
  * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 gint
-cdk_pixbuf_animation_get_height (GdkPixbufAnimation *animation)
+cdk_pixbuf_animation_get_height (CdkPixbufAnimation *animation)
 {
         gint height;
 
@@ -686,7 +686,7 @@ cdk_pixbuf_animation_get_height (GdkPixbufAnimation *animation)
 
 /**
  * cdk_pixbuf_animation_get_iter:
- * @animation: a #GdkPixbufAnimation
+ * @animation: a #CdkPixbufAnimation
  * @start_time: (allow-none): time when the animation starts playing
  *
  * Get an iterator for displaying an animation.
@@ -711,7 +711,7 @@ cdk_pixbuf_animation_get_height (GdkPixbufAnimation *animation)
  * cdk_pixbuf_animation_iter_get_pixbuf() to a new frame of the animation),
  * call cdk_pixbuf_animation_iter_advance().
  *
- * If you're using #GdkPixbufLoader, in addition to updating the image
+ * If you're using #CdkPixbufLoader, in addition to updating the image
  * after the delay time, you should also update it whenever you
  * receive the area_updated signal and
  * cdk_pixbuf_animation_iter_on_currently_loading_frame() returns
@@ -728,8 +728,8 @@ cdk_pixbuf_animation_get_height (GdkPixbufAnimation *animation)
  *
  * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
-GdkPixbufAnimationIter*
-cdk_pixbuf_animation_get_iter (GdkPixbufAnimation *animation,
+CdkPixbufAnimationIter*
+cdk_pixbuf_animation_get_iter (CdkPixbufAnimation *animation,
                                const GTimeVal     *start_time)
 {
         GTimeVal val;
@@ -745,15 +745,15 @@ cdk_pixbuf_animation_get_iter (GdkPixbufAnimation *animation,
         return CDK_PIXBUF_ANIMATION_GET_CLASS (animation)->get_iter (animation, &val);
 }
 
-G_DEFINE_TYPE (GdkPixbufAnimationIter, cdk_pixbuf_animation_iter, G_TYPE_OBJECT);
+G_DEFINE_TYPE (CdkPixbufAnimationIter, cdk_pixbuf_animation_iter, G_TYPE_OBJECT);
 
 static void
-cdk_pixbuf_animation_iter_class_init (GdkPixbufAnimationIterClass *klass)
+cdk_pixbuf_animation_iter_class_init (CdkPixbufAnimationIterClass *klass)
 {
 }
 
 static void
-cdk_pixbuf_animation_iter_init (GdkPixbufAnimationIter *iter)
+cdk_pixbuf_animation_iter_init (CdkPixbufAnimationIter *iter)
 {
 }
 
@@ -776,7 +776,7 @@ cdk_pixbuf_animation_iter_init (GdkPixbufAnimationIter *iter)
  * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 gint
-cdk_pixbuf_animation_iter_get_delay_time (GdkPixbufAnimationIter *iter)
+cdk_pixbuf_animation_iter_get_delay_time (CdkPixbufAnimationIter *iter)
 {
         g_return_val_if_fail (CDK_IS_PIXBUF_ANIMATION_ITER (iter), -1);
         g_return_val_if_fail (CDK_PIXBUF_ANIMATION_ITER_GET_CLASS (iter)->get_delay_time, -1);
@@ -808,8 +808,8 @@ cdk_pixbuf_animation_iter_get_delay_time (GdkPixbufAnimationIter *iter)
  *
  * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
-GdkPixbuf*
-cdk_pixbuf_animation_iter_get_pixbuf (GdkPixbufAnimationIter *iter)
+CdkPixbuf*
+cdk_pixbuf_animation_iter_get_pixbuf (CdkPixbufAnimationIter *iter)
 {
         g_return_val_if_fail (CDK_IS_PIXBUF_ANIMATION_ITER (iter), NULL);
         g_return_val_if_fail (CDK_PIXBUF_ANIMATION_ITER_GET_CLASS (iter)->get_pixbuf, NULL);
@@ -819,10 +819,10 @@ cdk_pixbuf_animation_iter_get_pixbuf (GdkPixbufAnimationIter *iter)
 
 /**
  * cdk_pixbuf_animation_iter_on_currently_loading_frame:
- * @iter: a #GdkPixbufAnimationIter
+ * @iter: a #CdkPixbufAnimationIter
  *
  * Used to determine how to respond to the area_updated signal on
- * #GdkPixbufLoader when loading an animation.
+ * #CdkPixbufLoader when loading an animation.
  *
  * The `::area_updated` signal is emitted for an area of the frame currently
  * streaming in to the loader. So if you're on the currently loading frame,
@@ -833,7 +833,7 @@ cdk_pixbuf_animation_iter_get_pixbuf (GdkPixbufAnimationIter *iter)
  * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 gboolean
-cdk_pixbuf_animation_iter_on_currently_loading_frame (GdkPixbufAnimationIter *iter)
+cdk_pixbuf_animation_iter_on_currently_loading_frame (CdkPixbufAnimationIter *iter)
 {
         g_return_val_if_fail (CDK_IS_PIXBUF_ANIMATION_ITER (iter), FALSE);
         g_return_val_if_fail (CDK_PIXBUF_ANIMATION_ITER_GET_CLASS (iter)->on_currently_loading_frame, FALSE);
@@ -843,7 +843,7 @@ cdk_pixbuf_animation_iter_on_currently_loading_frame (GdkPixbufAnimationIter *it
 
 /**
  * cdk_pixbuf_animation_iter_advance:
- * @iter: a #GdkPixbufAnimationIter
+ * @iter: a #CdkPixbufAnimationIter
  * @current_time: (allow-none): current time
  *
  * Possibly advances an animation to a new frame.
@@ -873,7 +873,7 @@ cdk_pixbuf_animation_iter_on_currently_loading_frame (GdkPixbufAnimationIter *it
  * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 gboolean
-cdk_pixbuf_animation_iter_advance (GdkPixbufAnimationIter *iter,
+cdk_pixbuf_animation_iter_advance (CdkPixbufAnimationIter *iter,
                                    const GTimeVal         *current_time)
 {
         GTimeVal val;
@@ -890,21 +890,21 @@ cdk_pixbuf_animation_iter_advance (GdkPixbufAnimationIter *iter,
 }
 
 static void                    cdk_pixbuf_non_anim_finalize         (GObject            *object);
-static gboolean                cdk_pixbuf_non_anim_is_static_image  (GdkPixbufAnimation *animation);
-static GdkPixbuf*              cdk_pixbuf_non_anim_get_static_image (GdkPixbufAnimation *animation);
-static void                    cdk_pixbuf_non_anim_get_size         (GdkPixbufAnimation *anim,
+static gboolean                cdk_pixbuf_non_anim_is_static_image  (CdkPixbufAnimation *animation);
+static CdkPixbuf*              cdk_pixbuf_non_anim_get_static_image (CdkPixbufAnimation *animation);
+static void                    cdk_pixbuf_non_anim_get_size         (CdkPixbufAnimation *anim,
                                                                      gint               *width,
                                                                      gint               *height);
-static GdkPixbufAnimationIter* cdk_pixbuf_non_anim_get_iter         (GdkPixbufAnimation *anim,
+static CdkPixbufAnimationIter* cdk_pixbuf_non_anim_get_iter         (CdkPixbufAnimation *anim,
                                                                      const GTimeVal     *start_time);
 
-G_DEFINE_TYPE (GdkPixbufNonAnim, cdk_pixbuf_non_anim, CDK_TYPE_PIXBUF_ANIMATION);
+G_DEFINE_TYPE (CdkPixbufNonAnim, cdk_pixbuf_non_anim, CDK_TYPE_PIXBUF_ANIMATION);
 
 static void
-cdk_pixbuf_non_anim_class_init (GdkPixbufNonAnimClass *klass)
+cdk_pixbuf_non_anim_class_init (CdkPixbufNonAnimClass *klass)
 {
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
-        GdkPixbufAnimationClass *anim_class = CDK_PIXBUF_ANIMATION_CLASS (klass);
+        CdkPixbufAnimationClass *anim_class = CDK_PIXBUF_ANIMATION_CLASS (klass);
 
         object_class->finalize = cdk_pixbuf_non_anim_finalize;
 
@@ -915,14 +915,14 @@ cdk_pixbuf_non_anim_class_init (GdkPixbufNonAnimClass *klass)
 }
 
 static void
-cdk_pixbuf_non_anim_init (GdkPixbufNonAnim *non_anim)
+cdk_pixbuf_non_anim_init (CdkPixbufNonAnim *non_anim)
 {
 }
 
 static void
 cdk_pixbuf_non_anim_finalize (GObject *object)
 {
-        GdkPixbufNonAnim *non_anim = CDK_PIXBUF_NON_ANIM (object);
+        CdkPixbufNonAnim *non_anim = CDK_PIXBUF_NON_ANIM (object);
 
         if (non_anim->pixbuf)
                 g_object_unref (non_anim->pixbuf);
@@ -930,10 +930,10 @@ cdk_pixbuf_non_anim_finalize (GObject *object)
         G_OBJECT_CLASS (cdk_pixbuf_non_anim_parent_class)->finalize (object);
 }
 
-GdkPixbufAnimation*
-cdk_pixbuf_non_anim_new (GdkPixbuf *pixbuf)
+CdkPixbufAnimation*
+cdk_pixbuf_non_anim_new (CdkPixbuf *pixbuf)
 {
-        GdkPixbufNonAnim *non_anim;
+        CdkPixbufNonAnim *non_anim;
 
         non_anim = g_object_new (CDK_TYPE_PIXBUF_NON_ANIM, NULL);
 
@@ -946,16 +946,16 @@ cdk_pixbuf_non_anim_new (GdkPixbuf *pixbuf)
 }
 
 static gboolean
-cdk_pixbuf_non_anim_is_static_image (GdkPixbufAnimation *animation)
+cdk_pixbuf_non_anim_is_static_image (CdkPixbufAnimation *animation)
 {
 
         return TRUE;
 }
 
-static GdkPixbuf*
-cdk_pixbuf_non_anim_get_static_image (GdkPixbufAnimation *animation)
+static CdkPixbuf*
+cdk_pixbuf_non_anim_get_static_image (CdkPixbufAnimation *animation)
 {
-        GdkPixbufNonAnim *non_anim;
+        CdkPixbufNonAnim *non_anim;
 
         non_anim = CDK_PIXBUF_NON_ANIM (animation);
 
@@ -963,11 +963,11 @@ cdk_pixbuf_non_anim_get_static_image (GdkPixbufAnimation *animation)
 }
 
 static void
-cdk_pixbuf_non_anim_get_size (GdkPixbufAnimation *anim,
+cdk_pixbuf_non_anim_get_size (CdkPixbufAnimation *anim,
                               gint               *width,
                               gint               *height)
 {
-        GdkPixbufNonAnim *non_anim;
+        CdkPixbufNonAnim *non_anim;
 
         non_anim = CDK_PIXBUF_NON_ANIM (anim);
 
@@ -978,11 +978,11 @@ cdk_pixbuf_non_anim_get_size (GdkPixbufAnimation *anim,
                 *height = cdk_pixbuf_get_height (non_anim->pixbuf);
 }
 
-static GdkPixbufAnimationIter*
-cdk_pixbuf_non_anim_get_iter (GdkPixbufAnimation *anim,
+static CdkPixbufAnimationIter*
+cdk_pixbuf_non_anim_get_iter (CdkPixbufAnimation *anim,
                               const GTimeVal     *start_time)
 {
-        GdkPixbufNonAnimIter *iter;
+        CdkPixbufNonAnimIter *iter;
 
         iter = g_object_new (CDK_TYPE_PIXBUF_NON_ANIM_ITER, NULL);
 
@@ -994,19 +994,19 @@ cdk_pixbuf_non_anim_get_iter (GdkPixbufAnimation *anim,
 }
 
 static void       cdk_pixbuf_non_anim_iter_finalize                   (GObject                *object);
-static gint       cdk_pixbuf_non_anim_iter_get_delay_time             (GdkPixbufAnimationIter *iter);
-static GdkPixbuf* cdk_pixbuf_non_anim_iter_get_pixbuf                 (GdkPixbufAnimationIter *iter);
-static gboolean   cdk_pixbuf_non_anim_iter_on_currently_loading_frame (GdkPixbufAnimationIter *iter);
-static gboolean   cdk_pixbuf_non_anim_iter_advance                    (GdkPixbufAnimationIter *iter,
+static gint       cdk_pixbuf_non_anim_iter_get_delay_time             (CdkPixbufAnimationIter *iter);
+static CdkPixbuf* cdk_pixbuf_non_anim_iter_get_pixbuf                 (CdkPixbufAnimationIter *iter);
+static gboolean   cdk_pixbuf_non_anim_iter_on_currently_loading_frame (CdkPixbufAnimationIter *iter);
+static gboolean   cdk_pixbuf_non_anim_iter_advance                    (CdkPixbufAnimationIter *iter,
                                                                        const GTimeVal         *current_time);
 
-G_DEFINE_TYPE (GdkPixbufNonAnimIter, cdk_pixbuf_non_anim_iter, CDK_TYPE_PIXBUF_ANIMATION_ITER)
+G_DEFINE_TYPE (CdkPixbufNonAnimIter, cdk_pixbuf_non_anim_iter, CDK_TYPE_PIXBUF_ANIMATION_ITER)
 
 static void
-cdk_pixbuf_non_anim_iter_class_init (GdkPixbufNonAnimIterClass *klass)
+cdk_pixbuf_non_anim_iter_class_init (CdkPixbufNonAnimIterClass *klass)
 {
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
-        GdkPixbufAnimationIterClass *anim_iter_class =
+        CdkPixbufAnimationIterClass *anim_iter_class =
                 CDK_PIXBUF_ANIMATION_ITER_CLASS (klass);
 
         object_class->finalize = cdk_pixbuf_non_anim_iter_finalize;
@@ -1018,14 +1018,14 @@ cdk_pixbuf_non_anim_iter_class_init (GdkPixbufNonAnimIterClass *klass)
 }
 
 static void
-cdk_pixbuf_non_anim_iter_init (GdkPixbufNonAnimIter *non_iter)
+cdk_pixbuf_non_anim_iter_init (CdkPixbufNonAnimIter *non_iter)
 {
 }
 
 static void
 cdk_pixbuf_non_anim_iter_finalize (GObject *object)
 {
-        GdkPixbufNonAnimIter *iter = CDK_PIXBUF_NON_ANIM_ITER (object);
+        CdkPixbufNonAnimIter *iter = CDK_PIXBUF_NON_ANIM_ITER (object);
 
         g_object_unref (iter->non_anim);
 
@@ -1033,26 +1033,26 @@ cdk_pixbuf_non_anim_iter_finalize (GObject *object)
 }
 
 static gint
-cdk_pixbuf_non_anim_iter_get_delay_time (GdkPixbufAnimationIter *iter)
+cdk_pixbuf_non_anim_iter_get_delay_time (CdkPixbufAnimationIter *iter)
 {
         return -1; /* show only frame forever */
 }
 
-static GdkPixbuf*
-cdk_pixbuf_non_anim_iter_get_pixbuf (GdkPixbufAnimationIter *iter)
+static CdkPixbuf*
+cdk_pixbuf_non_anim_iter_get_pixbuf (CdkPixbufAnimationIter *iter)
 {
         return CDK_PIXBUF_NON_ANIM_ITER (iter)->non_anim->pixbuf;
 }
 
 
 static gboolean
-cdk_pixbuf_non_anim_iter_on_currently_loading_frame (GdkPixbufAnimationIter *iter)
+cdk_pixbuf_non_anim_iter_on_currently_loading_frame (CdkPixbufAnimationIter *iter)
 {
         return TRUE;
 }
 
 static gboolean
-cdk_pixbuf_non_anim_iter_advance (GdkPixbufAnimationIter *iter,
+cdk_pixbuf_non_anim_iter_advance (CdkPixbufAnimationIter *iter,
                                   const GTimeVal         *current_time)
 {
 

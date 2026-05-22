@@ -860,8 +860,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Gagal peruntuk struktur konteks QTIF."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Gagal mencipta objek GdkPixbufLoader."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Gagal mencipta objek CdkPixbufLoader."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -1142,7 +1142,7 @@ msgstr "XPM"
 #~ msgstr "Format imej PCX"
 
 #, fuzzy
-#~ msgid "The GdkPixdata format"
+#~ msgid "The CdkPixdata format"
 #~ msgstr "Format imej GIF"
 
 #~ msgid "The PNG image format"

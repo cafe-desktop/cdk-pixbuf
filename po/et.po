@@ -415,8 +415,8 @@ msgstr "PCX-pildivorming"
 msgid "Transformed pixbuf has zero width or height."
 msgstr "Transformeeritud pixbuf'i laius või kõrgus on null."
 
-msgid "The GdkPixdata format"
-msgstr "GdkPixdata vorming"
+msgid "The CdkPixdata format"
+msgstr "CdkPixdata vorming"
 
 msgid "Bits per channel of PNG image is invalid."
 msgstr "Bittide arv PNG-faili kanalis on vigane."
@@ -569,8 +569,8 @@ msgstr[1] "Tõrge seek() abil järgnevast %d baidist ülehüppamisel."
 msgid "Failed to allocate QTIF context structure."
 msgstr "QTIF kontekstistruktuuri jaoks pole võimalik ruumi eraldada."
 
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Tõrge GdkPixbufLoader objekti loomisel."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Tõrge CdkPixbufLoader objekti loomisel."
 
 msgid "Failed to find an image data atom."
 msgstr "Pildi andmeaatomi leidmine nurjus."

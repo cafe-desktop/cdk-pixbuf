@@ -1,4 +1,4 @@
-/* GdkPixbuf library - Main loading interface.
+/* CdkPixbuf library - Main loading interface.
  *
  * Copyright (C) 1999 The Free Software Foundation
  *
@@ -50,55 +50,55 @@
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 
 /**
- * GdkPixbufModule:
+ * CdkPixbufModule:
  * @module_name: the name of the module, usually the same as the
  *  usual file extension for images of this type, eg. "xpm", "jpeg" or "png".
  * @module_path: the path from which the module is loaded.
  * @module: the loaded `GModule`.
- * @info: a `GdkPixbufFormat` holding information about the module.
+ * @info: a `CdkPixbufFormat` holding information about the module.
  * @load: loads an image from a file.
  * @load_xpm_data: loads an image from data in memory.
  * @begin_load: begins an incremental load.
  * @stop_load: stops an incremental load.
  * @load_increment: continues an incremental load.
  * @load_animation: loads an animation from a file.
- * @save: saves a `GdkPixbuf` to a file.
- * @save_to_callback: saves a `GdkPixbuf` by calling the given `GdkPixbufSaveFunc`.
+ * @save: saves a `CdkPixbuf` to a file.
+ * @save_to_callback: saves a `CdkPixbuf` by calling the given `CdkPixbufSaveFunc`.
  * @is_save_option_supported: returns whether a save option key is supported by the module
  * 
- * A `GdkPixbufModule` contains the necessary functions to load and save
+ * A `CdkPixbufModule` contains the necessary functions to load and save
  * images in a certain file format.
  * 
- * If `GdkPixbuf` has been compiled with `GModule` support, it can be extended
+ * If `CdkPixbuf` has been compiled with `GModule` support, it can be extended
  * by modules which can load (and perhaps also save) new image and animation
  * formats.
  *
  * ## Implementing modules
  * 
- * The `GdkPixbuf` interfaces needed for implementing modules are contained in
+ * The `CdkPixbuf` interfaces needed for implementing modules are contained in
  * `cdk-pixbuf-io.h` (and `cdk-pixbuf-animation.h` if the module supports
  * animations). They are not covered by the same stability guarantees as the
- * regular GdkPixbuf API. To underline this fact, they are protected by the
+ * regular CdkPixbuf API. To underline this fact, they are protected by the
  * `CDK_PIXBUF_ENABLE_BACKEND` pre-processor symbol.
  *
- * Each loadable module must contain a `GdkPixbufModuleFillVtableFunc` function
+ * Each loadable module must contain a `CdkPixbufModuleFillVtableFunc` function
  * named `fill_vtable`, which will get called when the module
- * is loaded and must set the function pointers of the `GdkPixbufModule`.
+ * is loaded and must set the function pointers of the `CdkPixbufModule`.
  * 
  * In order to make format-checking work before actually loading the modules
  * (which may require calling `dlopen` to load image libraries), modules export
  * their signatures (and other information) via the `fill_info` function. An
  * external utility, `cdk-pixbuf-query-loaders`, uses this to create a text
  * file containing a list of all available loaders and  their signatures.
- * This file is then read at runtime by `GdkPixbuf` to obtain the list of
+ * This file is then read at runtime by `CdkPixbuf` to obtain the list of
  * available loaders and their signatures. 
  * 
  * Modules may only implement a subset of the functionality available via
- * `GdkPixbufModule`. If a particular functionality is not implemented, the
+ * `CdkPixbufModule`. If a particular functionality is not implemented, the
  * `fill_vtable` function will simply not set the corresponding
- * function pointers of the `GdkPixbufModule` structure. If a module supports
+ * function pointers of the `CdkPixbufModule` structure. If a module supports
  * incremental loading (i.e. provides `begin_load`, `stop_load` and
- * `load_increment`), it doesn't have to implement `load`, since `GdkPixbuf`
+ * `load_increment`), it doesn't have to implement `load`, since `CdkPixbuf`
  * can supply a generic `load` implementation wrapping the incremental loading.
  *
  * ## Installing modules
@@ -114,11 +114,11 @@ G_GNUC_BEGIN_IGNORE_DEPRECATIONS
  */
 
 static gint 
-format_check (GdkPixbufModule *module, guchar *buffer, int size)
+format_check (CdkPixbufModule *module, guchar *buffer, int size)
 {
         int i, j;
         gchar m;
-        GdkPixbufModulePattern *pattern;
+        CdkPixbufModulePattern *pattern;
         gboolean anchored;
         guchar *prefix;
         gchar *mask;
@@ -372,7 +372,7 @@ cdk_pixbuf_get_module_file (void)
 
 
 static gboolean
-cdk_pixbuf_load_module_unlocked (GdkPixbufModule *image_module,
+cdk_pixbuf_load_module_unlocked (CdkPixbufModule *image_module,
                                  GError         **error);
 
 static gboolean
@@ -385,10 +385,10 @@ cdk_pixbuf_io_init_modules (const char  *filename,
         gsize term;
         GString *tmp_buf = g_string_new (NULL);
         gboolean have_error = FALSE;
-        GdkPixbufModule *module = NULL;
+        CdkPixbufModule *module = NULL;
         int flags = 0;
         int n_patterns = 0;
-        GdkPixbufModulePattern *pattern;
+        CdkPixbufModulePattern *pattern;
         GError *local_error = NULL;
         guint num_formats;
 
@@ -434,7 +434,7 @@ cdk_pixbuf_io_init_modules (const char  *filename,
                 
                 if (!module) {
                         /* Read a module location */
-                        module = g_new0 (GdkPixbufModule, 1);
+                        module = g_new0 (CdkPixbufModule, 1);
                         n_patterns = 0;
                         
                         if (!scan_string (&p, tmp_buf)) {
@@ -445,7 +445,7 @@ cdk_pixbuf_io_init_modules (const char  *filename,
                         module->module_path = build_module_path (tmp_buf->str);
                 }
                 else if (!module->module_name) {
-                        module->info = g_new0 (GdkPixbufFormat, 1);
+                        module->info = g_new0 (CdkPixbufFormat, 1);
                         if (!scan_string (&p, tmp_buf)) {
                                 g_warning ("Error parsing loader info in '%s'\n  %s", 
                                            filename, line_buf);
@@ -509,8 +509,8 @@ cdk_pixbuf_io_init_modules (const char  *filename,
                 }
                 else {
                         n_patterns++;
-                        module->info->signature = (GdkPixbufModulePattern *)
-                                g_realloc (module->info->signature, (n_patterns + 1) * sizeof (GdkPixbufModulePattern));
+                        module->info->signature = (CdkPixbufModulePattern *)
+                                g_realloc (module->info->signature, (n_patterns + 1) * sizeof (CdkPixbufModulePattern));
                         pattern = module->info->signature + n_patterns;
                         pattern->prefix = NULL;
                         pattern->mask = NULL;
@@ -551,7 +551,7 @@ cdk_pixbuf_io_init_modules (const char  *filename,
                 g_set_error (error,
                              G_IO_ERROR,
                              G_IO_ERROR_NOT_INITIALIZED,
-                             "No new GdkPixbufModule loaded from '%s'",
+                             "No new CdkPixbufModule loaded from '%s'",
                              filename_utf8);
                 g_free (filename_utf8);
                 return FALSE;
@@ -599,7 +599,7 @@ static void
 cdk_pixbuf_io_init_builtin (void)
 {
 #define load_one_builtin_module(format)                                 G_STMT_START { \
-        GdkPixbufModule *__builtin_module = g_new0 (GdkPixbufModule, 1);               \
+        CdkPixbufModule *__builtin_module = g_new0 (CdkPixbufModule, 1);               \
         __builtin_module->module_name = #format;                                       \
         if (cdk_pixbuf_load_module_unlocked (__builtin_module, NULL))                  \
                 file_formats = g_slist_prepend (file_formats, __builtin_module);       \
@@ -713,8 +713,8 @@ cdk_pixbuf_io_init (void)
 }
 
 #define module(type) \
-  extern void _cdk_pixbuf__##type##_fill_info   (GdkPixbufFormat *info);   \
-  extern void _cdk_pixbuf__##type##_fill_vtable (GdkPixbufModule *module)
+  extern void _cdk_pixbuf__##type##_fill_info   (CdkPixbufFormat *info);   \
+  extern void _cdk_pixbuf__##type##_fill_vtable (CdkPixbufModule *module)
 
 module (png);
 module (jpeg);
@@ -773,11 +773,11 @@ module (android_heif);
 /* reference to the module to load, it doesn't actually load it       */
 /* perhaps these actions should be combined in one function           */
 static gboolean
-cdk_pixbuf_load_module_unlocked (GdkPixbufModule *image_module,
+cdk_pixbuf_load_module_unlocked (CdkPixbufModule *image_module,
                                  GError         **error)
 {
-        GdkPixbufModuleFillInfoFunc fill_info = NULL;
-        GdkPixbufModuleFillVtableFunc fill_vtable = NULL;
+        CdkPixbufModuleFillInfoFunc fill_info = NULL;
+        CdkPixbufModuleFillVtableFunc fill_vtable = NULL;
                 
         if (image_module->module != NULL)
                return TRUE;
@@ -878,7 +878,7 @@ cdk_pixbuf_load_module_unlocked (GdkPixbufModule *image_module,
                 image_module->module = (void *) 1;
                 (* fill_vtable) (image_module);
                 if (image_module->info == NULL) {
-                        image_module->info = g_new0 (GdkPixbufFormat, 1);
+                        image_module->info = g_new0 (CdkPixbufFormat, 1);
                         (* fill_info) (image_module->info);
                 }
                 return TRUE;
@@ -908,7 +908,7 @@ cdk_pixbuf_load_module_unlocked (GdkPixbufModule *image_module,
         
 
                 if (g_module_symbol (module, "fill_vtable", &sym)) {
-                        fill_vtable = (GdkPixbufModuleFillVtableFunc) sym;
+                        fill_vtable = (CdkPixbufModuleFillVtableFunc) sym;
                         (* fill_vtable) (image_module);
                         return TRUE;
                 } else {
@@ -934,7 +934,7 @@ cdk_pixbuf_load_module_unlocked (GdkPixbufModule *image_module,
 
 
 gboolean
-_cdk_pixbuf_load_module (GdkPixbufModule *image_module,
+_cdk_pixbuf_load_module (CdkPixbufModule *image_module,
                          GError         **error)
 {
         gboolean ret;
@@ -950,14 +950,14 @@ _cdk_pixbuf_load_module (GdkPixbufModule *image_module,
 
 
 
-GdkPixbufModule *
+CdkPixbufModule *
 _cdk_pixbuf_get_named_module (const char *name,
                               GError **error)
 {
         GSList *modules;
 
         for (modules = get_file_formats (); modules; modules = g_slist_next (modules)) {
-                GdkPixbufModule *module = (GdkPixbufModule *)modules->data;
+                CdkPixbufModule *module = (CdkPixbufModule *)modules->data;
 
                 if (module->info->disabled)
                         continue;
@@ -975,14 +975,14 @@ _cdk_pixbuf_get_named_module (const char *name,
         return NULL;
 }
 
-GdkPixbufModule *
+CdkPixbufModule *
 _cdk_pixbuf_get_module (guchar *buffer, guint size,
                         const gchar *filename,
                         GError **error)
 {
         GSList *modules;
 
-        GdkPixbufModule *selected = NULL;
+        CdkPixbufModule *selected = NULL;
         gchar *display_name = NULL;
 #ifdef CDK_PIXBUF_USE_GIO_MIME
         gchar *mime_type;
@@ -998,8 +998,8 @@ _cdk_pixbuf_get_module (guchar *buffer, guint size,
         }
 
         for (modules = get_file_formats (); modules; modules = g_slist_next (modules)) {
-                GdkPixbufModule *module = (GdkPixbufModule *)modules->data;
-                GdkPixbufFormat *info = module->info;
+                CdkPixbufModule *module = (CdkPixbufModule *)modules->data;
+                CdkPixbufFormat *info = module->info;
 
                 if (info->disabled)
                         continue;
@@ -1018,8 +1018,8 @@ _cdk_pixbuf_get_module (guchar *buffer, guint size,
                 if (selected != NULL)
                         break;
 
-		/* Make sure the builtin GdkPixdata support works even without mime sniffing */
-		if (strcmp (info->name, "GdkPixdata") == 0 &&
+		/* Make sure the builtin CdkPixdata support works even without mime sniffing */
+		if (strcmp (info->name, "CdkPixdata") == 0 &&
 		    format_check (module, buffer, size) == 100) {
 			selected = module;
 			break;
@@ -1030,7 +1030,7 @@ _cdk_pixbuf_get_module (guchar *buffer, guint size,
         gint score, best = 0;
 
         for (modules = get_file_formats (); modules; modules = g_slist_next (modules)) {
-                GdkPixbufModule *module = (GdkPixbufModule *)modules->data;
+                CdkPixbufModule *module = (CdkPixbufModule *)modules->data;
 
                 if (module->info->disabled)
                         continue;
@@ -1069,7 +1069,7 @@ _cdk_pixbuf_get_module (guchar *buffer, guint size,
 }
 
 static
-GdkPixbufModule *
+CdkPixbufModule *
 _cdk_pixbuf_get_module_for_file (FILE *f, const gchar *filename, GError **error)
 {
         guchar buffer[SNIFF_BUFFER_SIZE];
@@ -1099,17 +1099,17 @@ noop_size_notify (gint     *width,
 }
 
 static void
-prepared_notify (GdkPixbuf *pixbuf, 
-                 GdkPixbufAnimation *anim, 
+prepared_notify (CdkPixbuf *pixbuf, 
+                 CdkPixbufAnimation *anim, 
                  gpointer user_data)
 {
         if (pixbuf != NULL)
                 g_object_ref (pixbuf);
-        *((GdkPixbuf **)user_data) = pixbuf;
+        *((CdkPixbuf **)user_data) = pixbuf;
 }
 
 static void
-noop_updated_notify (GdkPixbuf *pixbuf,
+noop_updated_notify (CdkPixbuf *pixbuf,
 		     int        x,
 		     int        y,
 		     int        width,
@@ -1118,10 +1118,10 @@ noop_updated_notify (GdkPixbuf *pixbuf,
 {
 }
 
-static GdkPixbuf *
-generic_load_incrementally (GdkPixbufModule *module, FILE *f, GError **error)
+static CdkPixbuf *
+generic_load_incrementally (CdkPixbufModule *module, FILE *f, GError **error)
 {
-        GdkPixbuf *pixbuf = NULL;
+        CdkPixbuf *pixbuf = NULL;
 	gpointer context;
 
 	context = module->begin_load (noop_size_notify, prepared_notify, noop_updated_notify, &pixbuf, error);
@@ -1157,17 +1157,17 @@ out:
 	return pixbuf;
 }
 
-GdkPixbuf *
-_cdk_pixbuf_generic_image_load (GdkPixbufModule *module, FILE *f, GError **error)
+CdkPixbuf *
+_cdk_pixbuf_generic_image_load (CdkPixbufModule *module, FILE *f, GError **error)
 {
-        GdkPixbuf *pixbuf = NULL;
+        CdkPixbuf *pixbuf = NULL;
 
         if (module->load != NULL) {
                 pixbuf = (* module->load) (f, error);
         } else if (module->begin_load != NULL) {
         	pixbuf = generic_load_incrementally (module, f, error);
         } else if (module->load_animation != NULL) {
-		GdkPixbufAnimation *animation;
+		CdkPixbufAnimation *animation;
 
                 animation = (* module->load_animation) (f, error);
                 if (animation != NULL) {
@@ -1202,13 +1202,13 @@ _cdk_pixbuf_generic_image_load (GdkPixbufModule *module, FILE *f, GError **error
  *
  * Returns: (nullable): A newly-created pixbuf
  */
-GdkPixbuf *
+CdkPixbuf *
 cdk_pixbuf_new_from_file (const char *filename,
                           GError    **error)
 {
-        GdkPixbuf *pixbuf;
+        CdkPixbuf *pixbuf;
         FILE *f;
-        GdkPixbufModule *image_module;
+        CdkPixbufModule *image_module;
 
         g_return_val_if_fail (filename != NULL, NULL);
         g_return_val_if_fail (error == NULL || *error == NULL, NULL);
@@ -1292,7 +1292,7 @@ cdk_pixbuf_new_from_file (const char *filename,
  * there was no loader for the file's format, there was not enough memory to
  * allocate the image buffer, or the image file contained invalid data.
  **/
-GdkPixbuf *
+CdkPixbuf *
 cdk_pixbuf_new_from_file_utf8 (const char *filename,
                                 GError    **error)
 {
@@ -1327,13 +1327,13 @@ cdk_pixbuf_new_from_file_utf8 (const char *filename,
  * the image's aspect ratio. Note that the returned pixbuf may be smaller
  * than `width` x `height`, if the aspect ratio requires it. To load
  * and image at the requested size, regardless of aspect ratio, use
- * [ctor@GdkPixbuf.Pixbuf.new_from_file_at_scale].
+ * [ctor@CdkPixbuf.Pixbuf.new_from_file_at_scale].
  *
  * Returns: (nullable): A newly-created pixbuf
  *
  * Since: 2.4
  **/
-GdkPixbuf *
+CdkPixbuf *
 cdk_pixbuf_new_from_file_at_size (const char *filename,
                                   int         width, 
                                   int         height,
@@ -1363,7 +1363,7 @@ cdk_pixbuf_new_from_file_at_size (const char *filename,
  *
  * Since: 2.4
  **/
-GdkPixbuf *
+CdkPixbuf *
 cdk_pixbuf_new_from_file_at_size_utf8 (const char *filename,
                                        int         width,
                                        int         height,
@@ -1387,7 +1387,7 @@ at_scale_data_async_data_free (AtScaleData *data)
 }
 
 static void
-at_scale_size_prepared_cb (GdkPixbufLoader *loader, 
+at_scale_size_prepared_cb (CdkPixbufLoader *loader, 
                            int              width,
                            int              height,
                            gpointer         data)
@@ -1465,7 +1465,7 @@ at_scale_size_prepared_cb (GdkPixbufLoader *loader,
  *
  * Since: 2.6
  **/
-GdkPixbuf *
+CdkPixbuf *
 cdk_pixbuf_new_from_file_at_scale (const char *filename,
                                    int         width, 
                                    int         height,
@@ -1473,14 +1473,14 @@ cdk_pixbuf_new_from_file_at_scale (const char *filename,
                                    GError    **error)
 {
 
-        GdkPixbufLoader *loader;
-        GdkPixbuf       *pixbuf;
+        CdkPixbufLoader *loader;
+        CdkPixbuf       *pixbuf;
         guchar buffer[LOAD_BUFFER_SIZE];
         int length;
         FILE *f;
         AtScaleData info;
-        GdkPixbufAnimation *animation;
-        GdkPixbufAnimationIter *iter;
+        CdkPixbufAnimation *animation;
+        CdkPixbufAnimationIter *iter;
         gboolean has_frame;
 
         g_return_val_if_fail (filename != NULL, NULL);
@@ -1578,7 +1578,7 @@ cdk_pixbuf_new_from_file_at_scale (const char *filename,
  *
  * Since: 2.6
  **/
-GdkPixbuf *
+CdkPixbuf *
 cdk_pixbuf_new_from_file_at_scale_utf8 (const char *filename,
                                         int         width,
                                         int         height,
@@ -1591,13 +1591,13 @@ cdk_pixbuf_new_from_file_at_scale_utf8 (const char *filename,
 #endif
 
 
-static GdkPixbuf *
-load_from_stream (GdkPixbufLoader  *loader,
+static CdkPixbuf *
+load_from_stream (CdkPixbufLoader  *loader,
                   GInputStream     *stream,
                   GCancellable     *cancellable,
                   GError          **error)
 {
-        GdkPixbuf *pixbuf;
+        CdkPixbuf *pixbuf;
         gssize n_read;
         guchar buffer[LOAD_BUFFER_SIZE];
 
@@ -1670,7 +1670,7 @@ load_from_stream (GdkPixbufLoader  *loader,
  *
  * Since: 2.14
  */
-GdkPixbuf *
+CdkPixbuf *
 cdk_pixbuf_new_from_stream_at_scale (GInputStream  *stream,
                                      gint           width,
                                      gint           height,
@@ -1678,8 +1678,8 @@ cdk_pixbuf_new_from_stream_at_scale (GInputStream  *stream,
                                      GCancellable  *cancellable,
                                      GError       **error)
 {
-        GdkPixbufLoader *loader;
-        GdkPixbuf *pixbuf;
+        CdkPixbufLoader *loader;
+        CdkPixbuf *pixbuf;
         AtScaleData info;
 
         loader = cdk_pixbuf_loader_new ();
@@ -1703,8 +1703,8 @@ load_from_stream_async_cb (GObject      *stream,
                            gpointer      data)
 {
         GTask *task = data;
-        GdkPixbufLoader *loader;
-        GdkPixbuf *pixbuf;
+        CdkPixbufLoader *loader;
+        CdkPixbuf *pixbuf;
         GError *error = NULL;
         GBytes *bytes = NULL;
 
@@ -1778,7 +1778,7 @@ cdk_pixbuf_new_from_stream_at_scale_async (GInputStream        *stream,
 {
 	GTask *task;
 	AtScaleData *data;
-        GdkPixbufLoader *loader;
+        CdkPixbufLoader *loader;
 
 	g_return_if_fail (G_IS_INPUT_STREAM (stream));
 	g_return_if_fail (callback != NULL);
@@ -1832,13 +1832,13 @@ cdk_pixbuf_new_from_stream_at_scale_async (GInputStream        *stream,
  *
  * Since: 2.14
  **/
-GdkPixbuf *
+CdkPixbuf *
 cdk_pixbuf_new_from_stream (GInputStream  *stream,
                             GCancellable  *cancellable,
                             GError       **error)
 {
-        GdkPixbuf *pixbuf;
-        GdkPixbufLoader *loader;
+        CdkPixbuf *pixbuf;
+        CdkPixbufLoader *loader;
 
         loader = cdk_pixbuf_loader_new ();
         pixbuf = load_from_stream (loader, stream, cancellable, error);
@@ -1847,23 +1847,23 @@ cdk_pixbuf_new_from_stream (GInputStream  *stream,
         return pixbuf;
 }
 
-GdkPixbuf *
+CdkPixbuf *
 _cdk_pixbuf_new_from_resource_try_pixdata (const char *resource_path)
 {
 	gsize data_size;
 	GBytes *bytes;
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-	/* We specialize GdkPixdata files, making these a reference to the
+	/* We specialize CdkPixdata files, making these a reference to the
 	 * compiled-in resource data, whether uncompressed and mmap'ed, or
 	 * compressed, and uncompressed on-the-fly.
          */
 	if (g_resources_get_info  (resource_path, 0, &data_size, NULL, NULL) &&
 	    data_size > sizeof (guint32) &&
 	    (bytes = g_resources_lookup_data (resource_path, 0, NULL)) != NULL) {
-		GdkPixbuf *pixbuf = NULL;
+		CdkPixbuf *pixbuf = NULL;
 		const guint8 *stream = g_bytes_get_data (bytes, NULL);
-		GdkPixdata pixdata;
+		CdkPixdata pixdata;
 		guint32 magic;
 
                 magic = ((guint32) stream[0] << 24)
@@ -1902,12 +1902,12 @@ G_GNUC_END_IGNORE_DEPRECATIONS
  *
  * Since: 2.26
  **/
-GdkPixbuf *
+CdkPixbuf *
 cdk_pixbuf_new_from_resource (const gchar  *resource_path,
 			      GError      **error)
 {
 	GInputStream *stream;
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 
         pixbuf = _cdk_pixbuf_new_from_resource_try_pixdata (resource_path);
         if (pixbuf)
@@ -1948,7 +1948,7 @@ cdk_pixbuf_new_from_resource (const gchar  *resource_path,
  *
  * Since: 2.26
  */
-GdkPixbuf *
+CdkPixbuf *
 cdk_pixbuf_new_from_resource_at_scale (const char *resource_path,
 				       int         width,
 				       int         height,
@@ -1956,7 +1956,7 @@ cdk_pixbuf_new_from_resource_at_scale (const char *resource_path,
 				       GError    **error)
 {
 	GInputStream *stream;
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 
 	stream = g_resources_open_stream (resource_path, 0, error);
 	if (stream == NULL)
@@ -2021,7 +2021,7 @@ cdk_pixbuf_new_from_stream_async (GInputStream        *stream,
  *
  * Since: 2.24
  **/
-GdkPixbuf *
+CdkPixbuf *
 cdk_pixbuf_new_from_stream_finish (GAsyncResult  *async_result,
 				   GError       **error)
 {
@@ -2039,13 +2039,13 @@ cdk_pixbuf_new_from_stream_finish (GAsyncResult  *async_result,
 }
 
 static void
-info_cb (GdkPixbufLoader *loader, 
+info_cb (CdkPixbufLoader *loader, 
          int              width,
          int              height,
          gpointer         data)
 {
         struct {
-                GdkPixbufFormat *format;
+                CdkPixbufFormat *format;
                 int width;
                 int height;
         } *info = data;
@@ -2067,22 +2067,22 @@ info_cb (GdkPixbufLoader *loader,
  * 
  * Parses an image file far enough to determine its format and size.
  * 
- * Returns: (nullable) (transfer none): A `GdkPixbufFormat` describing
+ * Returns: (nullable) (transfer none): A `CdkPixbufFormat` describing
  *   the image format of the file
  *
  * Since: 2.4
  **/
-GdkPixbufFormat *
+CdkPixbufFormat *
 cdk_pixbuf_get_file_info (const gchar  *filename,
                           gint         *width, 
                           gint         *height)
 {
-        GdkPixbufLoader *loader;
+        CdkPixbufLoader *loader;
         guchar buffer[SNIFF_BUFFER_SIZE];
         int length;
         FILE *f;
         struct {
-                GdkPixbufFormat *format;
+                CdkPixbufFormat *format;
                 gint width;
                 gint height;
         } info;
@@ -2142,7 +2142,7 @@ get_file_info_thread (GTask                *task,
                       GetFileInfoAsyncData *data,
                       GCancellable         *cancellable)
 {
-        GdkPixbufFormat *format;
+        CdkPixbufFormat *format;
 
         format = cdk_pixbuf_get_file_info (data->filename, &data->width, &data->height);
         if (format == NULL) {
@@ -2210,12 +2210,12 @@ cdk_pixbuf_get_file_info_async  (const gchar          *filename,
  * Finishes an asynchronous pixbuf parsing operation started with
  * cdk_pixbuf_get_file_info_async().
  *
- * Returns: (transfer none) (nullable): A `GdkPixbufFormat` describing the
+ * Returns: (transfer none) (nullable): A `CdkPixbufFormat` describing the
  *   image format of the file
  *
  * Since: 2.32
  **/
-GdkPixbufFormat *
+CdkPixbufFormat *
 cdk_pixbuf_get_file_info_finish (GAsyncResult         *async_result,
                                  gint                 *width,
                                  gint                 *height,
@@ -2254,17 +2254,17 @@ cdk_pixbuf_get_file_info_finish (GAsyncResult         *async_result,
  *
  * Returns: (nullable): A newly-created pixbuf
  * 
- * Deprecated: 2.44: Use [ctor@GdkPixbuf.Pixbuf.new_from_stream] with
+ * Deprecated: 2.44: Use [ctor@CdkPixbuf.Pixbuf.new_from_stream] with
  *   a [class@Gio.MemoryInputStream], making sure to handle errors in
  *   case the XPM format loader is not available
  **/
-GdkPixbuf *
+CdkPixbuf *
 cdk_pixbuf_new_from_xpm_data (const char **data)
 {
-        GdkPixbuf *(* load_xpm_data) (const char **data);
-        GdkPixbuf *pixbuf;
+        CdkPixbuf *(* load_xpm_data) (const char **data);
+        CdkPixbuf *pixbuf;
         GError *error = NULL;
-        GdkPixbufModule *xpm_module;
+        CdkPixbufModule *xpm_module;
 
         g_return_val_if_fail (data != NULL, NULL);
 
@@ -2351,7 +2351,7 @@ save_to_file_callback (const gchar *buf,
 }
 
 static gboolean
-cdk_pixbuf_real_save (GdkPixbuf     *pixbuf, 
+cdk_pixbuf_real_save (CdkPixbuf     *pixbuf, 
                       FILE          *filehandle, 
                       const char    *type, 
                       gchar        **keys,
@@ -2359,7 +2359,7 @@ cdk_pixbuf_real_save (GdkPixbuf     *pixbuf,
                       GError       **error)
 {
         gboolean ret;
-        GdkPixbufModule *image_module = NULL;       
+        CdkPixbufModule *image_module = NULL;       
 
         image_module = _cdk_pixbuf_get_named_module (type, error);
 
@@ -2396,9 +2396,9 @@ cdk_pixbuf_real_save (GdkPixbuf     *pixbuf,
 #define TMP_FILE_BUF_SIZE 4096
 
 static gboolean
-save_to_callback_with_tmp_file (GdkPixbufModule   *image_module,
-                                GdkPixbuf         *pixbuf,
-                                GdkPixbufSaveFunc  save_func,
+save_to_callback_with_tmp_file (CdkPixbufModule   *image_module,
+                                CdkPixbuf         *pixbuf,
+                                CdkPixbufSaveFunc  save_func,
                                 gpointer           user_data,
                                 gchar            **keys,
                                 gchar            **values,
@@ -2471,8 +2471,8 @@ save_to_callback_with_tmp_file (GdkPixbufModule   *image_module,
 }
 
 static gboolean
-cdk_pixbuf_real_save_to_callback (GdkPixbuf         *pixbuf,
-                                  GdkPixbufSaveFunc  save_func,
+cdk_pixbuf_real_save_to_callback (CdkPixbuf         *pixbuf,
+                                  CdkPixbufSaveFunc  save_func,
                                   gpointer           user_data,
                                   const char        *type, 
                                   gchar            **keys,
@@ -2480,7 +2480,7 @@ cdk_pixbuf_real_save_to_callback (GdkPixbuf         *pixbuf,
                                   GError           **error)
 {
         gboolean ret;
-        GdkPixbufModule *image_module = NULL;       
+        CdkPixbufModule *image_module = NULL;       
 
         image_module = _cdk_pixbuf_get_named_module (type, error);
 
@@ -2517,7 +2517,7 @@ cdk_pixbuf_real_save_to_callback (GdkPixbuf         *pixbuf,
  
 /**
  * cdk_pixbuf_save:
- * @pixbuf: a `GdkPixbuf`.
+ * @pixbuf: a `CdkPixbuf`.
  * @filename: (type filename): name of file to save.
  * @type: name of file format.
  * @error: (nullable): return location for error
@@ -2529,7 +2529,7 @@ cdk_pixbuf_real_save_to_callback (GdkPixbuf         *pixbuf,
  * following way:
  *
  * ```c
- * void add_if_writable (GdkPixbufFormat *data, GSList **list)
+ * void add_if_writable (CdkPixbufFormat *data, GSList **list)
  * {
  *   if (cdk_pixbuf_format_is_writable (data))
  *     *list = g_slist_prepend (*list, data);
@@ -2598,7 +2598,7 @@ cdk_pixbuf_real_save_to_callback (GdkPixbuf         *pixbuf,
  * Returns: `TRUE` on success, and `FALSE` otherwise
  **/
 gboolean
-cdk_pixbuf_save (GdkPixbuf  *pixbuf, 
+cdk_pixbuf_save (CdkPixbuf  *pixbuf, 
                  const char *filename, 
                  const char *type, 
                  GError    **error,
@@ -2629,7 +2629,7 @@ cdk_pixbuf_save (GdkPixbuf  *pixbuf,
 
 /**
  * cdk_pixbuf_savev:
- * @pixbuf: a `GdkPixbuf`.
+ * @pixbuf: a `CdkPixbuf`.
  * @filename: (type filename): name of file to save.
  * @type: name of file format.
  * @option_keys: (array zero-terminated=1) (element-type utf8) (nullable): name of options to set
@@ -2642,13 +2642,13 @@ cdk_pixbuf_save (GdkPixbuf  *pixbuf,
  *
  * If @error is set, `FALSE` will be returned.
  *
- * See [method@GdkPixbuf.Pixbuf.save] for more details.
+ * See [method@CdkPixbuf.Pixbuf.save] for more details.
  *
  * Returns: whether an error was set
  **/
 
 gboolean
-cdk_pixbuf_savev (GdkPixbuf  *pixbuf, 
+cdk_pixbuf_savev (CdkPixbuf  *pixbuf, 
                   const char *filename, 
                   const char *type,
                   char      **option_keys,
@@ -2714,7 +2714,7 @@ cdk_pixbuf_savev (GdkPixbuf  *pixbuf,
 
 /**
  * cdk_pixbuf_savev_utf8:
- * @pixbuf: a `GdkPixbuf`.
+ * @pixbuf: a `CdkPixbuf`.
  * @filename: name of file to save.
  * @type: name of file format.
  * @option_keys: (array zero-terminated=1) (element-type utf8) (nullable): name of options to set
@@ -2726,7 +2726,7 @@ cdk_pixbuf_savev (GdkPixbuf  *pixbuf,
  * Returns: whether an error was set
  **/
 gboolean
-cdk_pixbuf_savev_utf8 (GdkPixbuf  *pixbuf,
+cdk_pixbuf_savev_utf8 (CdkPixbuf  *pixbuf,
                        const char *filename,
                        const char *type,
                        char      **option_keys,
@@ -2741,7 +2741,7 @@ cdk_pixbuf_savev_utf8 (GdkPixbuf  *pixbuf,
 
 /**
  * cdk_pixbuf_save_to_callback:
- * @pixbuf: a `GdkPixbuf`.
+ * @pixbuf: a `CdkPixbuf`.
  * @save_func: (scope call): a function that is called to save each block of data that
  *   the save routine generates.
  * @user_data: user data to pass to the save function.
@@ -2759,15 +2759,15 @@ cdk_pixbuf_savev_utf8 (GdkPixbuf  *pixbuf,
  * include those in the `CDK_PIXBUF_ERROR` domain and whatever the save
  * function generates.
  *
- * See [method@GdkPixbuf.Pixbuf.save] for more details.
+ * See [method@CdkPixbuf.Pixbuf.save] for more details.
  *
  * Returns: whether an error was set
  *
  * Since: 2.4
  **/
 gboolean
-cdk_pixbuf_save_to_callback    (GdkPixbuf  *pixbuf,
-                                GdkPixbufSaveFunc save_func,
+cdk_pixbuf_save_to_callback    (CdkPixbuf  *pixbuf,
+                                CdkPixbufSaveFunc save_func,
                                 gpointer user_data,
                                 const char *type, 
                                 GError    **error,
@@ -2798,7 +2798,7 @@ cdk_pixbuf_save_to_callback    (GdkPixbuf  *pixbuf,
 
 /**
  * cdk_pixbuf_save_to_callbackv:
- * @pixbuf: a `GdkPixbuf`
+ * @pixbuf: a `CdkPixbuf`
  * @save_func: (scope call) (closure user_data): a function that is called to
  *   save each block of data that the save routine generates
  * @user_data: user data to pass to the save function
@@ -2814,15 +2814,15 @@ cdk_pixbuf_save_to_callback    (GdkPixbuf  *pixbuf,
  *
  * If @error is set, `FALSE` will be returned.
  *
- * See [method@GdkPixbuf.Pixbuf.save_to_callback] for more details.
+ * See [method@CdkPixbuf.Pixbuf.save_to_callback] for more details.
  *
  * Returns: whether an error was set
  *
  * Since: 2.4
  **/
 gboolean
-cdk_pixbuf_save_to_callbackv   (GdkPixbuf  *pixbuf, 
-                                GdkPixbufSaveFunc save_func,
+cdk_pixbuf_save_to_callbackv   (CdkPixbuf  *pixbuf, 
+                                CdkPixbufSaveFunc save_func,
                                 gpointer user_data,
                                 const char *type,
                                 char      **option_keys,
@@ -2854,7 +2854,7 @@ cdk_pixbuf_save_to_callbackv   (GdkPixbuf  *pixbuf,
 
 /**
  * cdk_pixbuf_save_to_buffer:
- * @pixbuf: a `GdkPixbuf`.
+ * @pixbuf: a `CdkPixbuf`.
  * @buffer: (array length=buffer_size) (out) (element-type guint8): location to receive a pointer
  *   to the new buffer.
  * @buffer_size: location to receive the size of the new buffer.
@@ -2882,7 +2882,7 @@ cdk_pixbuf_save_to_callbackv   (GdkPixbuf  *pixbuf,
  * Since: 2.4
  **/
 gboolean
-cdk_pixbuf_save_to_buffer      (GdkPixbuf  *pixbuf,
+cdk_pixbuf_save_to_buffer      (CdkPixbuf  *pixbuf,
                                 gchar     **buffer,
                                 gsize      *buffer_size,
                                 const char *type, 
@@ -2947,7 +2947,7 @@ save_to_buffer_callback (const gchar *data,
 
 /**
  * cdk_pixbuf_save_to_bufferv:
- * @pixbuf: a `GdkPixbuf`.
+ * @pixbuf: a `CdkPixbuf`.
  * @buffer: (array length=buffer_size) (out) (element-type guint8):
  *   location to receive a pointer to the new buffer.
  * @buffer_size: location to receive the size of the new buffer.
@@ -2961,14 +2961,14 @@ save_to_buffer_callback (const gchar *data,
  * Saves pixbuf to a new buffer in format @type, which is currently "jpeg",
  * "tiff", "png", "ico" or "bmp".
  *
- * See [method@GdkPixbuf.Pixbuf.save_to_buffer] for more details.
+ * See [method@CdkPixbuf.Pixbuf.save_to_buffer] for more details.
  *
  * Returns: whether an error was set
  *
  * Since: 2.4
  **/
 gboolean
-cdk_pixbuf_save_to_bufferv     (GdkPixbuf  *pixbuf,
+cdk_pixbuf_save_to_bufferv     (CdkPixbuf  *pixbuf,
                                 gchar     **buffer,
                                 gsize      *buffer_size,
                                 const char *type, 
@@ -3049,7 +3049,7 @@ save_to_stream (const gchar  *buffer,
 
 /**
  * cdk_pixbuf_save_to_streamv:
- * @pixbuf: a `GdkPixbuf`
+ * @pixbuf: a `CdkPixbuf`
  * @stream: a `GOutputStream` to save the pixbuf to
  * @type: name of file format
  * @option_keys: (array zero-terminated=1) (element-type utf8) (nullable): name of options to set
@@ -3062,7 +3062,7 @@ save_to_stream (const gchar  *buffer,
  * Supported file formats are currently "jpeg", "tiff", "png", "ico" or
  * "bmp".
  *
- * See [method@GdkPixbuf.Pixbuf.save_to_stream] for more details.
+ * See [method@CdkPixbuf.Pixbuf.save_to_stream] for more details.
  *
  * Returns: `TRUE` if the pixbuf was saved successfully, `FALSE` if an
  *   error was set.
@@ -3070,7 +3070,7 @@ save_to_stream (const gchar  *buffer,
  * Since: 2.36
  */
 gboolean
-cdk_pixbuf_save_to_streamv (GdkPixbuf      *pixbuf,
+cdk_pixbuf_save_to_streamv (CdkPixbuf      *pixbuf,
                             GOutputStream  *stream,
                             const char     *type,
                             char          **option_keys,
@@ -3091,7 +3091,7 @@ cdk_pixbuf_save_to_streamv (GdkPixbuf      *pixbuf,
 
 /**
  * cdk_pixbuf_save_to_stream:
- * @pixbuf: a `GdkPixbuf`
+ * @pixbuf: a `CdkPixbuf`
  * @stream: a `GOutputStream` to save the pixbuf to
  * @type: name of file format
  * @cancellable: (allow-none): optional `GCancellable` object, `NULL` to ignore
@@ -3116,7 +3116,7 @@ cdk_pixbuf_save_to_streamv (GdkPixbuf      *pixbuf,
  * Since: 2.14
  */
 gboolean
-cdk_pixbuf_save_to_stream (GdkPixbuf      *pixbuf,
+cdk_pixbuf_save_to_stream (CdkPixbuf      *pixbuf,
                            GOutputStream  *stream,
                            const char     *type,
                            GCancellable   *cancellable,
@@ -3162,7 +3162,7 @@ save_to_stream_async_data_free (SaveToStreamAsyncData *data)
 
 static void
 save_to_stream_thread (GTask                 *task,
-		       GdkPixbuf             *pixbuf,
+		       CdkPixbuf             *pixbuf,
 		       SaveToStreamAsyncData *data,
 		       GCancellable          *cancellable)
 {
@@ -3187,7 +3187,7 @@ save_to_stream_thread (GTask                 *task,
 
 /**
  * cdk_pixbuf_save_to_streamv_async: (finish-func cdk_pixbuf_save_to_stream_finish)
- * @pixbuf: a `GdkPixbuf`
+ * @pixbuf: a `CdkPixbuf`
  * @stream: a `GOutputStream` to which to save the pixbuf
  * @type: name of file format
  * @option_keys: (array zero-terminated=1) (element-type utf8) (nullable): name of options to set
@@ -3209,7 +3209,7 @@ save_to_stream_thread (GTask                 *task,
  * Since: 2.36
  **/
 void
-cdk_pixbuf_save_to_streamv_async (GdkPixbuf           *pixbuf,
+cdk_pixbuf_save_to_streamv_async (CdkPixbuf           *pixbuf,
                                   GOutputStream       *stream,
                                   const gchar         *type,
                                   gchar              **option_keys,
@@ -3245,7 +3245,7 @@ cdk_pixbuf_save_to_streamv_async (GdkPixbuf           *pixbuf,
 
 /**
  * cdk_pixbuf_save_to_stream_async: (finish-func cdk_pixbuf_save_to_stream_finish)
- * @pixbuf: a `GdkPixbuf`
+ * @pixbuf: a `CdkPixbuf`
  * @stream: a `GOutputStream` to which to save the pixbuf
  * @type: name of file format
  * @cancellable: (allow-none): optional `GCancellable` object, `NULL` to ignore
@@ -3266,7 +3266,7 @@ cdk_pixbuf_save_to_streamv_async (GdkPixbuf           *pixbuf,
  * Since: 2.24
  **/
 void
-cdk_pixbuf_save_to_stream_async (GdkPixbuf           *pixbuf,
+cdk_pixbuf_save_to_stream_async (CdkPixbuf           *pixbuf,
 				 GOutputStream       *stream,
 				 const gchar         *type,
 				 GCancellable        *cancellable,
@@ -3332,7 +3332,7 @@ cdk_pixbuf_save_to_stream_finish (GAsyncResult  *async_result,
 
 /**
  * cdk_pixbuf_format_get_name:
- * @format: a `GdkPixbufFormat`
+ * @format: a `CdkPixbufFormat`
  *
  * Returns the name of the format.
  * 
@@ -3341,7 +3341,7 @@ cdk_pixbuf_save_to_stream_finish (GAsyncResult  *async_result,
  * Since: 2.2
  */
 gchar *
-cdk_pixbuf_format_get_name (GdkPixbufFormat *format)
+cdk_pixbuf_format_get_name (CdkPixbufFormat *format)
 {
         g_return_val_if_fail (format != NULL, NULL);
 
@@ -3350,7 +3350,7 @@ cdk_pixbuf_format_get_name (GdkPixbufFormat *format)
 
 /**
  * cdk_pixbuf_format_get_description:
- * @format: a `GdkPixbufFormat`
+ * @format: a `CdkPixbufFormat`
  *
  * Returns a description of the format.
  * 
@@ -3359,7 +3359,7 @@ cdk_pixbuf_format_get_name (GdkPixbufFormat *format)
  * Since: 2.2
  */
 gchar *
-cdk_pixbuf_format_get_description (GdkPixbufFormat *format)
+cdk_pixbuf_format_get_description (CdkPixbufFormat *format)
 {
         gchar *domain;
         const gchar *description;
@@ -3376,7 +3376,7 @@ cdk_pixbuf_format_get_description (GdkPixbufFormat *format)
 
 /**
  * cdk_pixbuf_format_get_mime_types:
- * @format: a `GdkPixbufFormat`
+ * @format: a `CdkPixbufFormat`
  *
  * Returns the mime types supported by the format.
  * 
@@ -3385,7 +3385,7 @@ cdk_pixbuf_format_get_description (GdkPixbufFormat *format)
  * Since: 2.2
  */
 gchar **
-cdk_pixbuf_format_get_mime_types (GdkPixbufFormat *format)
+cdk_pixbuf_format_get_mime_types (CdkPixbufFormat *format)
 {
         g_return_val_if_fail (format != NULL, NULL);
 
@@ -3394,7 +3394,7 @@ cdk_pixbuf_format_get_mime_types (GdkPixbufFormat *format)
 
 /**
  * cdk_pixbuf_format_get_extensions:
- * @format: a `GdkPixbufFormat`
+ * @format: a `CdkPixbufFormat`
  *
  * Returns the filename extensions typically used for files in the 
  * given format.
@@ -3405,7 +3405,7 @@ cdk_pixbuf_format_get_mime_types (GdkPixbufFormat *format)
  * Since: 2.2
  */
 gchar **
-cdk_pixbuf_format_get_extensions (GdkPixbufFormat *format)
+cdk_pixbuf_format_get_extensions (CdkPixbufFormat *format)
 {
         g_return_val_if_fail (format != NULL, NULL);
 
@@ -3414,7 +3414,7 @@ cdk_pixbuf_format_get_extensions (GdkPixbufFormat *format)
 
 /**
  * cdk_pixbuf_format_is_writable:
- * @format: a `GdkPixbufFormat`
+ * @format: a `CdkPixbufFormat`
  *
  * Returns whether pixbufs can be saved in the given format.
  * 
@@ -3423,7 +3423,7 @@ cdk_pixbuf_format_get_extensions (GdkPixbufFormat *format)
  * Since: 2.2
  */
 gboolean
-cdk_pixbuf_format_is_writable (GdkPixbufFormat *format)
+cdk_pixbuf_format_is_writable (CdkPixbufFormat *format)
 {
         g_return_val_if_fail (format != NULL, FALSE);
 
@@ -3432,7 +3432,7 @@ cdk_pixbuf_format_is_writable (GdkPixbufFormat *format)
 
 /**
  * cdk_pixbuf_format_is_scalable:
- * @format: a `GdkPixbufFormat`
+ * @format: a `CdkPixbufFormat`
  *
  * Returns whether this image format is scalable.
  *
@@ -3445,7 +3445,7 @@ cdk_pixbuf_format_is_writable (GdkPixbufFormat *format)
  * Since: 2.6
  */
 gboolean
-cdk_pixbuf_format_is_scalable (GdkPixbufFormat *format)
+cdk_pixbuf_format_is_scalable (CdkPixbufFormat *format)
 {
         g_return_val_if_fail (format != NULL, FALSE);
 
@@ -3454,7 +3454,7 @@ cdk_pixbuf_format_is_scalable (GdkPixbufFormat *format)
 
 /**
  * cdk_pixbuf_format_is_disabled:
- * @format: a `GdkPixbufFormat`
+ * @format: a `CdkPixbufFormat`
  *
  * Returns whether this image format is disabled.
  *
@@ -3465,7 +3465,7 @@ cdk_pixbuf_format_is_scalable (GdkPixbufFormat *format)
  * Since: 2.6
  */
 gboolean   
-cdk_pixbuf_format_is_disabled (GdkPixbufFormat *format)
+cdk_pixbuf_format_is_disabled (CdkPixbufFormat *format)
 {
         g_return_val_if_fail (format != NULL, FALSE);
 
@@ -3474,12 +3474,12 @@ cdk_pixbuf_format_is_disabled (GdkPixbufFormat *format)
 
 /**
  * cdk_pixbuf_format_set_disabled:
- * @format: a `GdkPixbufFormat`
+ * @format: a `CdkPixbufFormat`
  * @disabled: `TRUE` to disable the format @format
  *
  * Disables or enables an image format.
  *
- * If a format is disabled, GdkPixbuf won't use the image loader for
+ * If a format is disabled, CdkPixbuf won't use the image loader for
  * this format to load images.
  *
  * Applications can use this to avoid using image loaders with an
@@ -3488,7 +3488,7 @@ cdk_pixbuf_format_is_disabled (GdkPixbufFormat *format)
  * Since: 2.6
  */
 void 
-cdk_pixbuf_format_set_disabled (GdkPixbufFormat *format,
+cdk_pixbuf_format_set_disabled (CdkPixbufFormat *format,
                                 gboolean         disabled)
 {
         g_return_if_fail (format != NULL);
@@ -3510,15 +3510,15 @@ cdk_pixbuf_format_set_disabled (GdkPixbufFormat *format,
  * Since: 2.6
  */
 gchar*
-cdk_pixbuf_format_get_license (GdkPixbufFormat *format)
+cdk_pixbuf_format_get_license (CdkPixbufFormat *format)
 {
         g_return_val_if_fail (format != NULL, NULL);
 
         return g_strdup (format->license);
 }
 
-GdkPixbufFormat *
-_cdk_pixbuf_get_format (GdkPixbufModule *module)
+CdkPixbufFormat *
+_cdk_pixbuf_get_format (CdkPixbufModule *module)
 {
         g_return_val_if_fail (module != NULL, NULL);
 
@@ -3529,9 +3529,9 @@ _cdk_pixbuf_get_format (GdkPixbufModule *module)
  * cdk_pixbuf_get_formats:
  *
  * Obtains the available information about the image formats supported
- * by GdkPixbuf.
+ * by CdkPixbuf.
  *
- * Returns: (transfer container) (element-type GdkPixbufFormat): A list of
+ * Returns: (transfer container) (element-type CdkPixbufFormat): A list of
  *   support image formats.
  *
  * Since: 2.2
@@ -3543,8 +3543,8 @@ cdk_pixbuf_get_formats (void)
         GSList *modules;
 
         for (modules = get_file_formats (); modules; modules = g_slist_next (modules)) {
-                GdkPixbufModule *module = (GdkPixbufModule *)modules->data;
-                GdkPixbufFormat *info = _cdk_pixbuf_get_format (module);
+                CdkPixbufModule *module = (CdkPixbufModule *)modules->data;
+                CdkPixbufFormat *info = _cdk_pixbuf_get_format (module);
                 result = g_slist_prepend (result, info);
         }
 
@@ -3557,16 +3557,16 @@ cdk_pixbuf_get_formats (void)
  *
  * Creates a copy of `format`.
  *
- * Returns: (transfer full) (nullable): the newly allocated copy of a `GdkPixbufFormat`. Use
+ * Returns: (transfer full) (nullable): the newly allocated copy of a `CdkPixbufFormat`. Use
  *   cdk_pixbuf_format_free() to free the resources when done
  *
  * Since: 2.22
  */
-GdkPixbufFormat *
-cdk_pixbuf_format_copy (const GdkPixbufFormat *format)
+CdkPixbufFormat *
+cdk_pixbuf_format_copy (const CdkPixbufFormat *format)
 {
         if (G_LIKELY (format != NULL))
-                return g_slice_dup (GdkPixbufFormat, format);
+                return g_slice_dup (CdkPixbufFormat, format);
 
         return NULL;
 }
@@ -3575,16 +3575,16 @@ cdk_pixbuf_format_copy (const GdkPixbufFormat *format)
  * cdk_pixbuf_format_free:
  * @format: a pixbuf format
  *
- * Frees the resources allocated when copying a `GdkPixbufFormat`
+ * Frees the resources allocated when copying a `CdkPixbufFormat`
  * using cdk_pixbuf_format_copy()
  *
  * Since: 2.22
  */
 void
-cdk_pixbuf_format_free (GdkPixbufFormat *format)
+cdk_pixbuf_format_free (CdkPixbufFormat *format)
 {
         if (G_LIKELY (format != NULL))
-                g_slice_free (GdkPixbufFormat, format);
+                g_slice_free (CdkPixbufFormat, format);
 }
 
 /**
@@ -3602,10 +3602,10 @@ cdk_pixbuf_format_free (GdkPixbufFormat *format)
  * Since: 2.36
  */
 gboolean
-cdk_pixbuf_format_is_save_option_supported (GdkPixbufFormat *format,
+cdk_pixbuf_format_is_save_option_supported (CdkPixbufFormat *format,
                                             const gchar *option_key)
 {
-        GdkPixbufModule *module;
+        CdkPixbufModule *module;
 
         g_return_val_if_fail (format != NULL, FALSE);
         g_return_val_if_fail (option_key != NULL, FALSE);
@@ -3623,6 +3623,6 @@ cdk_pixbuf_format_is_save_option_supported (GdkPixbufFormat *format,
         return (* module->is_save_option_supported) (option_key);
 }
 
-G_DEFINE_BOXED_TYPE (GdkPixbufFormat, cdk_pixbuf_format,
+G_DEFINE_BOXED_TYPE (CdkPixbufFormat, cdk_pixbuf_format,
 		     cdk_pixbuf_format_copy,
 		     cdk_pixbuf_format_free)

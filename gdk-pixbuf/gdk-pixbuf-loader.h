@@ -1,4 +1,4 @@
-/* GdkPixbuf library - Progressive loader object
+/* CdkPixbuf library - Progressive loader object
  *
  * Copyright (C) 1999 The Free Software Foundation
  *
@@ -37,14 +37,14 @@
 G_BEGIN_DECLS
 
 #define CDK_TYPE_PIXBUF_LOADER		   (cdk_pixbuf_loader_get_type ())
-#define CDK_PIXBUF_LOADER(obj)		   (G_TYPE_CHECK_INSTANCE_CAST ((obj), CDK_TYPE_PIXBUF_LOADER, GdkPixbufLoader))
-#define CDK_PIXBUF_LOADER_CLASS(klass)	   (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_LOADER, GdkPixbufLoaderClass))
+#define CDK_PIXBUF_LOADER(obj)		   (G_TYPE_CHECK_INSTANCE_CAST ((obj), CDK_TYPE_PIXBUF_LOADER, CdkPixbufLoader))
+#define CDK_PIXBUF_LOADER_CLASS(klass)	   (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_LOADER, CdkPixbufLoaderClass))
 #define CDK_IS_PIXBUF_LOADER(obj)	   (G_TYPE_CHECK_INSTANCE_TYPE ((obj), CDK_TYPE_PIXBUF_LOADER))
 #define CDK_IS_PIXBUF_LOADER_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE ((klass), CDK_TYPE_PIXBUF_LOADER))
-#define CDK_PIXBUF_LOADER_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_LOADER, GdkPixbufLoaderClass))
+#define CDK_PIXBUF_LOADER_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_LOADER, CdkPixbufLoaderClass))
 
-typedef struct _GdkPixbufLoader GdkPixbufLoader;
-struct _GdkPixbufLoader
+typedef struct _CdkPixbufLoader CdkPixbufLoader;
+struct _CdkPixbufLoader
 {
   /*< private >*/
   GObject parent_instance;
@@ -52,61 +52,61 @@ struct _GdkPixbufLoader
   gpointer priv;
 };
 
-typedef struct _GdkPixbufLoaderClass GdkPixbufLoaderClass;
-struct _GdkPixbufLoaderClass
+typedef struct _CdkPixbufLoaderClass CdkPixbufLoaderClass;
+struct _CdkPixbufLoaderClass
 {
   GObjectClass parent_class;
 
-  void (*size_prepared)      (GdkPixbufLoader *loader, 
+  void (*size_prepared)      (CdkPixbufLoader *loader, 
 			      int              width,
 			      int              height);
 
-  void (*area_prepared)      (GdkPixbufLoader *loader);
+  void (*area_prepared)      (CdkPixbufLoader *loader);
 
   /* Last known frame needs a redraw for x, y, width, height */
-  void (*area_updated)       (GdkPixbufLoader *loader,
+  void (*area_updated)       (CdkPixbufLoader *loader,
                               int              x,
                               int              y,
 			      int              width,
 			      int              height);
 
-  void (*closed)             (GdkPixbufLoader *loader);
+  void (*closed)             (CdkPixbufLoader *loader);
 };
 
 CDK_PIXBUF_AVAILABLE_IN_ALL
 GType                cdk_pixbuf_loader_get_type      (void) G_GNUC_CONST;
 CDK_PIXBUF_AVAILABLE_IN_ALL
-GdkPixbufLoader *    cdk_pixbuf_loader_new           (void);
+CdkPixbufLoader *    cdk_pixbuf_loader_new           (void);
 CDK_PIXBUF_AVAILABLE_IN_ALL
-GdkPixbufLoader *    cdk_pixbuf_loader_new_with_type (const char *image_type,
+CdkPixbufLoader *    cdk_pixbuf_loader_new_with_type (const char *image_type,
                                                       GError    **error);
 CDK_PIXBUF_AVAILABLE_IN_2_4
-GdkPixbufLoader *    cdk_pixbuf_loader_new_with_mime_type (const char *mime_type,
+CdkPixbufLoader *    cdk_pixbuf_loader_new_with_mime_type (const char *mime_type,
 							   GError    **error);
 CDK_PIXBUF_AVAILABLE_IN_2_2
-void                 cdk_pixbuf_loader_set_size (GdkPixbufLoader  *loader,
+void                 cdk_pixbuf_loader_set_size (CdkPixbufLoader  *loader,
                                                  int               width,
 						 int               height);
 CDK_PIXBUF_AVAILABLE_IN_ALL
-gboolean             cdk_pixbuf_loader_write         (GdkPixbufLoader *loader,
+gboolean             cdk_pixbuf_loader_write         (CdkPixbufLoader *loader,
 						      const guchar    *buf,
 						      gsize            count,
                                                       GError         **error);
 CDK_PIXBUF_AVAILABLE_IN_2_30
-gboolean             cdk_pixbuf_loader_write_bytes   (GdkPixbufLoader *loader,
+gboolean             cdk_pixbuf_loader_write_bytes   (CdkPixbufLoader *loader,
                                                       GBytes          *buffer,
                                                       GError         **error);
 CDK_PIXBUF_AVAILABLE_IN_ALL
-GdkPixbuf *          cdk_pixbuf_loader_get_pixbuf    (GdkPixbufLoader *loader);
+CdkPixbuf *          cdk_pixbuf_loader_get_pixbuf    (CdkPixbufLoader *loader);
 CDK_PIXBUF_DEPRECATED_IN_2_44
-GdkPixbufAnimation * cdk_pixbuf_loader_get_animation (GdkPixbufLoader *loader);
+CdkPixbufAnimation * cdk_pixbuf_loader_get_animation (CdkPixbufLoader *loader);
 CDK_PIXBUF_AVAILABLE_IN_ALL
-gboolean             cdk_pixbuf_loader_close         (GdkPixbufLoader *loader,
+gboolean             cdk_pixbuf_loader_close         (CdkPixbufLoader *loader,
                                                       GError         **error);
 CDK_PIXBUF_AVAILABLE_IN_2_2
-GdkPixbufFormat     *cdk_pixbuf_loader_get_format    (GdkPixbufLoader *loader);
+CdkPixbufFormat     *cdk_pixbuf_loader_get_format    (CdkPixbufLoader *loader);
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkPixbufLoader, g_object_unref)
+G_DEFINE_AUTOPTR_CLEANUP_FUNC(CdkPixbufLoader, g_object_unref)
 
 G_END_DECLS
 

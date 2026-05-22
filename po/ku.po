@@ -525,7 +525,7 @@ msgstr "Nirxê wêneyê PNG ê sarkirî sifire."
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "Formata wêneya GIF"
 
 #: cdk-pixbuf/io-png.c:54
@@ -721,7 +721,7 @@ msgstr "Nikare bîrekê ji TGA re veqetîne"
 
 #: cdk-pixbuf/io-qtif.c:330
 #, fuzzy
-msgid "Failed to create GdkPixbufLoader object."
+msgid "Failed to create CdkPixbufLoader object."
 msgstr "Nivisîna pêrista peldankê biserneket\n"
 
 #: cdk-pixbuf/io-qtif.c:434

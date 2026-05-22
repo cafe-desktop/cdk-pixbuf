@@ -526,7 +526,7 @@ msgstr "El PNG tresformáu tien un anchu o altor igual a cero"
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "El formatu d'imaxe GIF"
 
 #: cdk-pixbuf/io-png.c:54
@@ -724,8 +724,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Falló al reservar la estructura de contestu de QTIF."
 
 #: cdk-pixbuf/io-qtif.c:330
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Falló al crear l'oxetu GdkPixbufLoader."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Falló al crear l'oxetu CdkPixbufLoader."
 
 #: cdk-pixbuf/io-qtif.c:434
 msgid "Failed to find an image data atom."

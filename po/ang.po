@@ -536,7 +536,7 @@ msgstr ""
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "Þæt GIF onlícnesgesceap"
 
 #: cdk-pixbuf/io-png.c:54
@@ -723,7 +723,7 @@ msgstr ""
 
 #: cdk-pixbuf/io-qtif.c:330
 #, fuzzy
-msgid "Failed to create GdkPixbufLoader object."
+msgid "Failed to create CdkPixbufLoader object."
 msgstr "Tósǽlde tó rǽdenne fram hwílwendne cranic"
 
 #: cdk-pixbuf/io-qtif.c:434

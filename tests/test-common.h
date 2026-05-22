@@ -1,5 +1,5 @@
 /* -*- Mode: C; c-basic-offset: 2; -*- */
-/* GdkPixbuf library - test loaders
+/* CdkPixbuf library - test loaders
  *
  * Copyright (C) 2014 Red Hat, Inc.
  *
@@ -33,9 +33,9 @@ gboolean format_supported (const gchar *filename);
 gboolean file_supported (GFile *file);
 gboolean find_format (const gchar *filename, gchar **found_format);
 gboolean skip_if_insufficient_memory (GError **err);
-gboolean pixdata_equal (GdkPixbuf *test, GdkPixbuf *ref, GError **error);
-GdkPixbuf *make_checkerboard (int width, int height);
-GdkPixbuf *make_rg (int width, int height);
+gboolean pixdata_equal (CdkPixbuf *test, CdkPixbuf *ref, GError **error);
+CdkPixbuf *make_checkerboard (int width, int height);
+CdkPixbuf *make_rg (int width, int height);
 void add_test_for_all_images (const gchar   *prefix,
                               GFile         *base,
                               GFile         *file,

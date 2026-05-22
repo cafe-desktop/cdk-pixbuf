@@ -19,7 +19,7 @@
 
 #include <glib.h>
 
-/* Interpolation modes; must match GdkInterpType */ 
+/* Interpolation modes; must match CdkInterpType */ 
 typedef enum {
 	PIXOPS_INTERP_NEAREST,
 	PIXOPS_INTERP_TILES,

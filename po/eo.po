@@ -776,8 +776,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Malsukcesis atribui QTIF-kunteksto-strukturon."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Malsukcesis krei GdkPixbufLoader-objekton."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Malsukcesis krei CdkPixbufLoader-objekton."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -1090,7 +1090,7 @@ msgstr "XPM"
 #~ msgstr "Transformita PNG havas nulan larĝon aŭ alton."
 
 #, fuzzy
-#~ msgid "The GdkPixdata format"
+#~ msgid "The CdkPixdata format"
 #~ msgstr "La GIF-bildformato"
 
 #~ msgid "The PNG image format"

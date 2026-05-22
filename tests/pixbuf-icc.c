@@ -1,5 +1,5 @@
 /* -*- Mode: C; c-basic-offset: 2; -*- */
-/* GdkPixbuf library - test loaders
+/* CdkPixbuf library - test loaders
  *
  * Copyright (C) 2013 Red Hat, Inc.
  *
@@ -27,8 +27,8 @@ static void
 test_incremental (gconstpointer data)
 {
   const gchar *filename = data;
-  GdkPixbufLoader *loader;
-  GdkPixbuf *pixbuf;
+  CdkPixbufLoader *loader;
+  CdkPixbuf *pixbuf;
   GError *error = NULL;
   const gchar *profile;
   gchar *contents;
@@ -64,7 +64,7 @@ test_nonincremental (gconstpointer data)
 {
   const gchar *filename = data;
   GError *error = NULL;
-  GdkPixbuf *pixbuf;
+  CdkPixbuf *pixbuf;
   const gchar *profile;
 
   if (!format_supported (filename))

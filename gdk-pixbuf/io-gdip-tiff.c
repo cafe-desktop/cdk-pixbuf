@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
-/* GdkPixbuf library - Win32 GDI+ Pixbuf Loader
+/* CdkPixbuf library - Win32 GDI+ Pixbuf Loader
  *
  * Copyright (C) 2008 Dominic Lachowicz
  * Copyright (C) 2008 Alberto Ruiz
@@ -25,9 +25,9 @@
 #include "io-gdip-utils.h"
 
 static gboolean
-cdk_pixbuf__gdip_image_save_TIFF_to_callback (GdkPixbufSaveFunc   save_func,
+cdk_pixbuf__gdip_image_save_TIFF_to_callback (CdkPixbufSaveFunc   save_func,
                                               gpointer            user_data,
-                                              GdkPixbuf          *pixbuf,
+                                              CdkPixbuf          *pixbuf,
                                               gchar             **keys,
                                               gchar             **values,
                                               GError            **error)
@@ -37,7 +37,7 @@ cdk_pixbuf__gdip_image_save_TIFF_to_callback (GdkPixbufSaveFunc   save_func,
 
 static gboolean
 cdk_pixbuf__gdip_image_save_TIFF (FILE         *f,
-                                 GdkPixbuf     *pixbuf,
+                                 CdkPixbuf     *pixbuf,
                                  gchar        **keys,
                                  gchar        **values,
                                  GError       **error)
@@ -51,7 +51,7 @@ cdk_pixbuf__gdip_image_save_TIFF (FILE         *f,
 #define MODULE_ENTRY(function) void _cdk_pixbuf__gdip_tiff_ ## function
 #endif
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
   gdip_fill_vtable (module);
 
@@ -59,9 +59,9 @@ MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
   module->save = cdk_pixbuf__gdip_image_save_TIFF; /* for ctk < 2.14, you need to implement both. otherwise cdk-pixbuf-queryloaders fails */
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-  static const GdkPixbufModulePattern signature[] = {
+  static const CdkPixbufModulePattern signature[] = {
     { "MM \x2a", "  z ", 100 }, /* TIFF */
     { "II\x2a ", "   z", 100 }, /* TIFF */
     { NULL, NULL, 0 }
@@ -79,7 +79,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
   };
 
   info->name        = "tiff";
-  info->signature   = (GdkPixbufModulePattern *) signature;
+  info->signature   = (CdkPixbufModulePattern *) signature;
   info->description = NC_("image format", "TIFF");
   info->mime_types  = (gchar **) mime_types;
   info->extensions  = (gchar **) extensions;

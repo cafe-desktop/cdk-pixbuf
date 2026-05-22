@@ -801,8 +801,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Falló al reservar la estructura de contexto de QTIF."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Falló al crear el objeto GdkPixbufLoader."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Falló al crear el objeto CdkPixbufLoader."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -1045,8 +1045,8 @@ msgstr "XPM"
 #~ msgstr "El búfer de píxeles transformado tiene anchura o altura cero."
 
 #~ msgctxt "image format"
-#~ msgid "GdkPixdata"
-#~ msgstr "GdkPixdata"
+#~ msgid "CdkPixdata"
+#~ msgstr "CdkPixdata"
 
 #~| msgid "Not enough memory to load image"
 #~ msgid "Not enough bytes for header"

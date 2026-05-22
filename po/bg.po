@@ -793,8 +793,8 @@ msgstr ""
 "QTIF."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Неуспешно създаване на обект GdkPixbufLoader."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Неуспешно създаване на обект CdkPixbufLoader."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."

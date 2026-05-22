@@ -729,8 +729,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "QTIF विषयवस्तु संरचना मानाङ्कन गर्न असफल भयो ।"
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "GdkPixbufLoader वस्तु सिर्जना गर्न असफल भयो ।"
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "CdkPixbufLoader वस्तु सिर्जना गर्न असफल भयो ।"
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -1036,7 +1036,7 @@ msgstr "XPM"
 #~ msgstr "बदलिएको PNGसँग शून्य चौडाइ वा उचाइ छ।"
 
 #, fuzzy
-#~ msgid "The GdkPixdata format"
+#~ msgid "The CdkPixdata format"
 #~ msgstr "GIF छवि ढाँचा"
 
 #~ msgid ""

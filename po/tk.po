@@ -517,7 +517,7 @@ msgstr ""
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "GIF resim hili"
 
 #: cdk-pixbuf/io-png.c:54
@@ -703,7 +703,7 @@ msgstr ""
 
 #: cdk-pixbuf/io-qtif.c:330
 #, fuzzy
-msgid "Failed to create GdkPixbufLoader object."
+msgid "Failed to create CdkPixbufLoader object."
 msgstr "Wagtlaýyn faýldan okamakda hata boldy"
 
 #: cdk-pixbuf/io-qtif.c:434

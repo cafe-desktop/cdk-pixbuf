@@ -793,8 +793,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Nepavyko rezervuoti QTIF konteksto struktūros."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Nepavyko sukurti GdkPixbufLoader objekto."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Nepavyko sukurti CdkPixbufLoader objekto."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -1032,8 +1032,8 @@ msgstr "XPM"
 #~ msgstr "Transformuotas pikselių žemėlapis turi nulinį plotį arba aukštį."
 
 #~ msgctxt "image format"
-#~ msgid "GdkPixdata"
-#~ msgstr "GdkPixdata"
+#~ msgid "CdkPixdata"
+#~ msgstr "CdkPixdata"
 
 #~ msgid "Cannot allocate memory for IOBuffer struct"
 #~ msgstr "Nepavyko rezervuoti atminties IOBuffer struktūrai"

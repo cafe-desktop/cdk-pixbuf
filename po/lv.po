@@ -781,8 +781,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Neizdevās piešķirt atmiņu QTIF konteksta struktūrai"
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Neizdevās radīt GdkPixbufLoader objektu."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Neizdevās radīt CdkPixbufLoader objektu."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -1020,5 +1020,5 @@ msgstr "XPM"
 #~ msgstr "Pārveidotais pixbuf ir ar nulles platumu vai augstumu."
 
 #~ msgctxt "image format"
-#~ msgid "GdkPixdata"
-#~ msgstr "GdkPixdata"
+#~ msgid "CdkPixdata"
+#~ msgstr "CdkPixdata"

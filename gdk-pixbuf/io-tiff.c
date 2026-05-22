@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-/* GdkPixbuf library - TIFF image loader
+/* CdkPixbuf library - TIFF image loader
  *
  * Copyright (C) 1999 Mark Crichton
  * Copyright (C) 1999 The Free Software Foundation
@@ -58,9 +58,9 @@
 typedef struct _TiffContext TiffContext;
 struct _TiffContext
 {
-	GdkPixbufModuleSizeFunc size_func;
-	GdkPixbufModulePreparedFunc prepared_func;
-	GdkPixbufModuleUpdatedFunc updated_func;
+	CdkPixbufModuleSizeFunc size_func;
+	CdkPixbufModulePreparedFunc prepared_func;
+	CdkPixbufModuleUpdatedFunc updated_func;
 	gpointer user_data;
         
         guchar *buffer;
@@ -91,12 +91,12 @@ static void free_buffer (guchar *pixels, gpointer data)
 	g_free (pixels);
 }
 
-static GdkPixbuf *
+static CdkPixbuf *
 tiff_image_parse (TIFF *tiff, TiffContext *context, GError **error)
 {
 	guchar *pixels = NULL;
 	gint width, height, rowstride, bytes;
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 	guint16 bits_per_sample = 0;
 	uint16_t orientation = 0;
 	uint16_t transform = 0;
@@ -327,12 +327,12 @@ tiff_image_parse (TIFF *tiff, TiffContext *context, GError **error)
 
 /* Static loader */
 
-static GdkPixbuf *
+static CdkPixbuf *
 cdk_pixbuf__tiff_image_load (FILE *f, GError **error)
 {
         TIFF *tiff = NULL;
         int fd;
-        GdkPixbuf *pixbuf;
+        CdkPixbuf *pixbuf;
         
         g_return_val_if_fail (f != NULL, NULL);
 
@@ -391,9 +391,9 @@ cdk_pixbuf__tiff_image_load (FILE *f, GError **error)
 /* Progressive loader */
 
 static gpointer
-cdk_pixbuf__tiff_image_begin_load (GdkPixbufModuleSizeFunc size_func,
-                                   GdkPixbufModulePreparedFunc prepared_func,
-				   GdkPixbufModuleUpdatedFunc updated_func,
+cdk_pixbuf__tiff_image_begin_load (CdkPixbufModuleSizeFunc size_func,
+                                   CdkPixbufModulePreparedFunc prepared_func,
+				   CdkPixbufModuleUpdatedFunc updated_func,
 				   gpointer user_data,
                                    GError **error)
 {
@@ -515,7 +515,7 @@ cdk_pixbuf__tiff_image_stop_load (gpointer data,
                                      CDK_PIXBUF_ERROR_FAILED,
                                      _("Failed to load TIFF image"));
         } else {
-                GdkPixbuf *pixbuf;
+                CdkPixbuf *pixbuf;
                 
                 pixbuf = tiff_image_parse (tiff, context, error);
                 retval = (pixbuf != NULL);
@@ -721,9 +721,9 @@ copy_gray_row (gint     *dest,
 }
 
 static gboolean
-cdk_pixbuf__tiff_image_save_to_callback (GdkPixbufSaveFunc   save_func,
+cdk_pixbuf__tiff_image_save_to_callback (CdkPixbufSaveFunc   save_func,
                                          gpointer            user_data,
-                                         GdkPixbuf          *pixbuf, 
+                                         CdkPixbuf          *pixbuf, 
                                          gchar             **keys,
                                          gchar             **values,
                                          GError            **error)
@@ -1024,7 +1024,7 @@ save_to_file_cb (const gchar *buf,
 
 static gboolean
 cdk_pixbuf__tiff_image_save (FILE          *f, 
-                             GdkPixbuf     *pixbuf, 
+                             CdkPixbuf     *pixbuf, 
                              gchar        **keys,
                              gchar        **values,
                              GError       **error)
@@ -1053,7 +1053,7 @@ cdk_pixbuf__tiff_is_save_option_supported (const gchar *option_key)
 #define MODULE_ENTRY(function) void _cdk_pixbuf__tiff_ ## function
 #endif
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
         module->load = cdk_pixbuf__tiff_image_load;
         module->begin_load = cdk_pixbuf__tiff_image_begin_load;
@@ -1064,9 +1064,9 @@ MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
         module->is_save_option_supported = cdk_pixbuf__tiff_is_save_option_supported;
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-        static const GdkPixbufModulePattern signature[] = {
+        static const CdkPixbufModulePattern signature[] = {
                 { "MM \x2a", "  z ", 100 },
                 { "II\x2a ", "   z", 100 },
                 { "II* \020   CR\002 ", "   z zzz   z", 0 },
@@ -1083,7 +1083,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
 	};
 
 	info->name = "tiff";
-        info->signature = (GdkPixbufModulePattern *) signature;
+        info->signature = (CdkPixbufModulePattern *) signature;
 	info->description = NC_("image format", "TIFF");
 	info->mime_types = (gchar **) mime_types;
 	info->extensions = (gchar **) extensions;

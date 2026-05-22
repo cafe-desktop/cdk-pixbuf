@@ -1,5 +1,5 @@
 /* -*- Mode: C; c-basic-offset: 2; -*- */
-/* GdkPixbuf library - test loaders
+/* CdkPixbuf library - test loaders
  *
  * Copyright (C) 2014 Red Hat, Inc.
  *
@@ -47,11 +47,11 @@ destroy_buf_unmap (gpointer data)
 }
 #endif
 
-static GdkPixbuf *
+static CdkPixbuf *
 get_readonly_pixbuf (void)
 {
-  GdkPixbuf *reference;
-  GdkPixbuf *result;
+  CdkPixbuf *reference;
+  CdkPixbuf *result;
   GBytes *bytes;
   GError *error = NULL;
 
@@ -112,8 +112,8 @@ get_readonly_pixbuf (void)
 static void
 test_mutate_readonly (void)
 {
-  GdkPixbuf *src;
-  GdkPixbuf *dest;
+  CdkPixbuf *src;
+  CdkPixbuf *dest;
 
   if (!format_supported ("png"))
     {
@@ -162,7 +162,7 @@ test_mutate_readonly (void)
 static void
 test_read_pixel_bytes (void)
 {
-  GdkPixbuf *src;
+  CdkPixbuf *src;
   GBytes *bytes;
   
   if (!format_supported ("png"))

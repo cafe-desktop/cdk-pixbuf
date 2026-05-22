@@ -526,7 +526,7 @@ msgstr "Getransformeerde PNG het zero wydte of hoogte."
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "Die GIF-beeldformaat"
 
 #: cdk-pixbuf/io-png.c:54
@@ -719,7 +719,7 @@ msgid "Failed to allocate QTIF context structure."
 msgstr ""
 
 #: cdk-pixbuf/io-qtif.c:330
-msgid "Failed to create GdkPixbufLoader object."
+msgid "Failed to create CdkPixbufLoader object."
 msgstr ""
 
 #: cdk-pixbuf/io-qtif.c:434

@@ -1,5 +1,5 @@
 /* -*- Mode: C; c-basic-offset: 2; -*- */
-/* GdkPixbuf library - assault loaders with random data
+/* CdkPixbuf library - assault loaders with random data
  *
  * Copyright (C) 2001 Søren Sandmann (sandmann@daimi.au.dk)
  *
@@ -36,7 +36,7 @@ assault (const guchar *header, gsize header_size, int n_images)
     {
       GError *err = NULL;
       int i;
-      GdkPixbufLoader *loader;
+      CdkPixbufLoader *loader;
       
       f = fopen ("pixbuf-random-image", "w");
       if (!f)

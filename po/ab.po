@@ -730,7 +730,7 @@ msgid "Failed to allocate QTIF context structure."
 msgstr ""
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
+msgid "Failed to create CdkPixbufLoader object."
 msgstr ""
 
 #: cdk-pixbuf/io-qtif.c:424

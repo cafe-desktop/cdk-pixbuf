@@ -1,4 +1,4 @@
-/* Gdk-Pixbuf-Pixdata - GdkPixbuf to GdkPixdata
+/* Cdk-Pixbuf-Pixdata - CdkPixbuf to CdkPixdata
  * Copyright (C) 1999, 2001 Tim Janik
  * Copyright (C) 2012 Red Hat, Inc
  *
@@ -26,7 +26,7 @@
 
 /* --- defines --- */
 #undef	G_LOG_DOMAIN
-#define	G_LOG_DOMAIN	"Gdk-Pixbuf-Pixdata"
+#define	G_LOG_DOMAIN	"Cdk-Pixbuf-Pixdata"
 #define PRG_NAME        "cdk-pixbuf-pixdata-3.0"
 #define PKG_NAME        "cdk-pixbuf"
 #define PKG_HTTP_HOME   "https://github.com/cafe-desktop/ctk"
@@ -44,12 +44,12 @@ int
 main (int   argc,
       char *argv[])
 {
-  GdkPixbuf *pixbuf;
+  CdkPixbuf *pixbuf;
   GError *error = NULL;
   gchar *infilename;
   gchar *outfilename;
   gpointer free_me;
-  GdkPixdata pixdata;
+  CdkPixdata pixdata;
   guint8 *data;
   guint data_len;
 

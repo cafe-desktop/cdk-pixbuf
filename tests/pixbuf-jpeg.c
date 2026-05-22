@@ -1,5 +1,5 @@
 /* -*- Mode: C; c-basic-offset: 2; -*- */
-/* GdkPixbuf library - test loaders
+/* CdkPixbuf library - test loaders
  *
  * Copyright (C) 2013 Red Hat, Inc.
  *
@@ -27,7 +27,7 @@ static void
 test_inverted_cmyk_jpeg (void)
 {
   GError *error = NULL;
-  GdkPixbuf *ref, *ref2;
+  CdkPixbuf *ref, *ref2;
 
   if (!format_supported ("jpeg") || !format_supported ("png"))
     {
@@ -49,7 +49,7 @@ static void
 test_bug_775218 (void)
 {
   GError *error = NULL;
-  GdkPixbuf *ref;
+  CdkPixbuf *ref;
 
   if (!format_supported ("jpeg"))
     {
@@ -68,7 +68,7 @@ static void
 test_comment(void)
 {
   GError *error = NULL;
-  GdkPixbuf *ref;
+  CdkPixbuf *ref;
 
   if (!format_supported ("jpeg") || !format_supported ("png"))
     {
@@ -88,7 +88,7 @@ static void
 test_at_size (void)
 {
   GError *error = NULL;
-  GdkPixbuf *ref;
+  CdkPixbuf *ref;
 
   if (!format_supported ("jpeg") || !format_supported ("png"))
     {
@@ -109,8 +109,8 @@ test_at_size (void)
 static void
 test_jpeg_markers (void)
 {
-  GdkPixbufLoader *loader;
-  GdkPixbuf *pixbuf;
+  CdkPixbufLoader *loader;
+  CdkPixbuf *pixbuf;
   GError *error = NULL;
   gchar *contents;
   gsize size;
@@ -143,7 +143,7 @@ test_jpeg_markers (void)
 static void
 test_jpeg_fbfbfbfb (void)
 {
-  GdkPixbufLoader *loader;
+  CdkPixbufLoader *loader;
   GError *error = NULL;
   gchar *contents;
   gsize size;

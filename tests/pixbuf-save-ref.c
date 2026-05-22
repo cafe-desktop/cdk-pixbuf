@@ -1,5 +1,5 @@
 /* -*- Mode: C; c-basic-offset: 2; -*- */
-/* GdkPixbuf library - test loaders
+/* CdkPixbuf library - test loaders
  *
  * Copyright (C) 2001 Søren Sandmann (sandmann@daimi.au.dk)
  *
@@ -25,8 +25,8 @@
 static gboolean
 load_and_save (const char *filename, GError **error)
 {
-  GdkPixbuf *pixbuf = NULL;
-  GdkPixbufLoader *loader;
+  CdkPixbuf *pixbuf = NULL;
+  CdkPixbufLoader *loader;
   guchar *contents;
   char *new_filename = NULL;
   gsize size;

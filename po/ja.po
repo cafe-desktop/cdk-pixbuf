@@ -778,8 +778,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "QTIF コンテキスト構造体用のメモリ確保に失敗しました。"
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "GdkPixbufLoader オブジェクトの生成に失敗しました。"
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "CdkPixbufLoader オブジェクトの生成に失敗しました。"
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -1087,8 +1087,8 @@ msgstr "XPM"
 #~ msgid "Transformed pixbuf has zero width or height."
 #~ msgstr "変換した pixbuf の幅または高さが 0 です。"
 
-#~ msgid "The GdkPixdata format"
-#~ msgstr "GdkPixdata 形式"
+#~ msgid "The CdkPixdata format"
+#~ msgstr "CdkPixdata 形式"
 
 #~ msgid "The PNG image format"
 #~ msgstr "PNG 画像形式"

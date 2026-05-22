@@ -525,7 +525,7 @@ msgstr "ರೂಪಾಂತರಗೊಳಿಸಲಾದ PNGಯು ಶೂನ್ಯ 
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "GIF ಚಿತ್ರ ವಿನ್ಯಾಸ"
 
 #: cdk-pixbuf/io-png.c:54
@@ -722,7 +722,7 @@ msgstr "TGA ಸನ್ನಿವೇಶ ರಚನೆಗೆ ಮೆಮೊರಿಯನ
 
 #: cdk-pixbuf/io-qtif.c:330
 #, fuzzy
-msgid "Failed to create GdkPixbufLoader object."
+msgid "Failed to create CdkPixbufLoader object."
 msgstr "ಕಡತಕೋಶ ಸೂಚಿಗೆ ಬರೆಯುವಲ್ಲಿ ವಿಫಲತೆ\n"
 
 #: cdk-pixbuf/io-qtif.c:434

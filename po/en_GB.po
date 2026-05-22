@@ -777,8 +777,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Failed to allocate QTIF context structure."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Failed to create GdkPixbufLoader object."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Failed to create CdkPixbufLoader object."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -1016,8 +1016,8 @@ msgstr "XPM"
 #~ msgstr "Transformed pixbuf has zero width or height."
 
 #~ msgctxt "image format"
-#~ msgid "GdkPixdata"
-#~ msgstr "GdkPixdata"
+#~ msgid "CdkPixdata"
+#~ msgstr "CdkPixdata"
 
 #~ msgid "The ANI image format"
 #~ msgstr "The ANI image format"

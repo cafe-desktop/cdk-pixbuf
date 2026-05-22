@@ -1,4 +1,4 @@
-/* GdkPixbuf library - Glycin image loader
+/* CdkPixbuf library - Glycin image loader
  *
  * Copyright (C) 2024 Red Hat, Inc.
  *
@@ -29,14 +29,14 @@
 #define MODULE_ENTRY(function) void _cdk_pixbuf__glycin_tga_ ## function
 #endif
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
   glycin_fill_vtable (module);
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-  static const GdkPixbufModulePattern signature[] = {
+  static const CdkPixbufModulePattern signature[] = {
     { " \x1\x1", "x  ", 100 },
     { " \x1\x9", "x  ", 100 },
     { "  \x2", "xz ",  99 }, /* only 99 since .CUR also matches this */
@@ -56,7 +56,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
   };
 
   info->name = "tga";
-  info->signature = (GdkPixbufModulePattern *) signature;
+  info->signature = (CdkPixbufModulePattern *) signature;
   info->description = "Targa";
   info->mime_types = (gchar **) mime_types;
   info->extensions = (gchar **) extensions;

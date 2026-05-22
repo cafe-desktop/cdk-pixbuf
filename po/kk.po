@@ -774,8 +774,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "QTIF контекст құрылымын бөлу сәтсіз аяқталды."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "GdkPixbufLoader объектісін жасау сәтсіз аяқталды."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "CdkPixbufLoader объектісін жасау сәтсіз аяқталды."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -973,8 +973,8 @@ msgstr "XPM"
 #~ msgstr "JPEG 2000"
 
 #~ msgctxt "image format"
-#~ msgid "GdkPixdata"
-#~ msgstr "GdkPixdata"
+#~ msgid "CdkPixdata"
+#~ msgstr "CdkPixdata"
 
 #~ msgctxt "image format"
 #~ msgid "PCX"

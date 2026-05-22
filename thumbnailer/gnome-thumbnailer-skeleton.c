@@ -41,7 +41,7 @@ static char **filenames = NULL;
 #if !CDK_PIXBUF_CHECK_VERSION(2,36,5)
 /**
  * gnome_desktop_thumbnail_scale_down_pixbuf:
- * @pixbuf: a #GdkPixbuf
+ * @pixbuf: a #CdkPixbuf
  * @dest_width: the desired new width
  * @dest_height: the desired new height
  *
@@ -53,8 +53,8 @@ static char **filenames = NULL;
  * 
  * Since: 2.2
  **/
-GdkPixbuf *
-gnome_desktop_thumbnail_scale_down_pixbuf (GdkPixbuf *pixbuf,
+CdkPixbuf *
+gnome_desktop_thumbnail_scale_down_pixbuf (CdkPixbuf *pixbuf,
 					   int dest_width,
 					   int dest_height)
 {
@@ -68,7 +68,7 @@ gnome_desktop_thumbnail_scale_down_pixbuf (GdkPixbuf *pixbuf,
 	int n_pixels;
 	gboolean has_alpha;
 	guchar *dest, *src, *xsrc, *src_pixels;
-	GdkPixbuf *dest_pixbuf;
+	CdkPixbuf *dest_pixbuf;
 	int pixel_stride;
 	int source_rowstride, dest_rowstride;
 
@@ -226,7 +226,7 @@ static const GOptionEntry entries[] = {
 int main (int argc, char **argv)
 {
 	char *input_filename;
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 	GError *error = NULL;
 	GOptionContext *context;
 	GFile *input;
@@ -294,7 +294,7 @@ int main (int argc, char **argv)
 		/* Handle naive thumbnailers that don't resize */
 		if (output_size != 0 &&
 		    (height > output_size || width > output_size)) {
-			GdkPixbuf *scaled;
+			CdkPixbuf *scaled;
 			double scale;
 
 			scale = (double)output_size / MAX (width, height);

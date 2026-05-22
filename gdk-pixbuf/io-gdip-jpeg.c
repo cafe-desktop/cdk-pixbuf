@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
-/* GdkPixbuf library - Win32 GDI+ Pixbuf Loader
+/* CdkPixbuf library - Win32 GDI+ Pixbuf Loader
  *
  * Copyright (C) 2008 Dominic Lachowicz
  * Copyright (C) 2008 Alberto Ruiz
@@ -28,9 +28,9 @@
 DEFINE_GUID(EncoderQuality, 0x1d5be4b5,0xfa4a,0x452d,0x9c,0xdd,0x5d,0xb3,0x51,0x05,0xe7,0xeb);
 
 static gboolean
-cdk_pixbuf__gdip_image_save_JPEG_to_callback (GdkPixbufSaveFunc   save_func,
+cdk_pixbuf__gdip_image_save_JPEG_to_callback (CdkPixbufSaveFunc   save_func,
                                               gpointer            user_data,
-                                              GdkPixbuf          *pixbuf,
+                                              CdkPixbuf          *pixbuf,
                                               gchar             **keys,
                                               gchar             **values,
                                               GError            **error)
@@ -91,7 +91,7 @@ cdk_pixbuf__gdip_image_save_JPEG_to_callback (GdkPixbufSaveFunc   save_func,
 
 static gboolean
 cdk_pixbuf__gdip_image_save_JPEG (FILE         *f,
-                                 GdkPixbuf     *pixbuf,
+                                 CdkPixbuf     *pixbuf,
                                  gchar        **keys,
                                  gchar        **values,
                                  GError       **error)
@@ -114,7 +114,7 @@ cdk_pixbuf__gdip_is_save_option_supported_JPEG (const gchar *option_key)
 #define MODULE_ENTRY(function) void _cdk_pixbuf__gdip_jpeg_ ## function
 #endif
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
   gdip_fill_vtable (module);
 
@@ -123,9 +123,9 @@ MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
   module->is_save_option_supported = cdk_pixbuf__gdip_is_save_option_supported_JPEG;
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-  static const GdkPixbufModulePattern signature[] = {
+  static const CdkPixbufModulePattern signature[] = {
     { "\xff\xd8", NULL, 100 }, /* JPEG */
     { NULL, NULL, 0 }
   };
@@ -143,7 +143,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
   };
 
   info->name        = "jpeg";
-  info->signature   = (GdkPixbufModulePattern *) signature;
+  info->signature   = (CdkPixbufModulePattern *) signature;
   info->description = NC_("image format", "JPEG");
   info->mime_types  = (gchar **) mime_types;
   info->extensions  = (gchar **) extensions;

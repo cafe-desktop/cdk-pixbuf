@@ -1,11 +1,11 @@
-GdkPixbuf: Image loading library
+CdkPixbuf: Image loading library
 ================================
 
-GdkPixbuf is a library that loads image data in various formats and stores
+CdkPixbuf is a library that loads image data in various formats and stores
 it as linear buffers in memory. The buffers can then be scaled, composited,
 modified, saved, or rendered.
 
-GdkPixbuf can load image data encoded in different formats, such as:
+CdkPixbuf can load image data encoded in different formats, such as:
 
  - PNG
  - JPEG
@@ -13,17 +13,17 @@ GdkPixbuf can load image data encoded in different formats, such as:
  - TGA
  - GIF
 
-Additionally, you can write a GdkPixbuf loader module and install it into
+Additionally, you can write a CdkPixbuf loader module and install it into
 a well-known location, in order to load a file format.
 
-GdkPixbuf is used by the [CTK](https://github.com/cafe-desktop/ctk) toolkit
+CdkPixbuf is used by the [CTK](https://github.com/cafe-desktop/ctk) toolkit
 for loading graphical assets.
 
-## Building GdkPixbuf
+## Building CdkPixbuf
 
 ### Requirements
 
-In order to build GdkPixbuf you will need to have installed:
+In order to build CdkPixbuf you will need to have installed:
 
  - [Meson](http://mesonbuild.com)
  - A C99-compliant compiler and toolchain
@@ -44,10 +44,10 @@ Additionally, you may need:
 
 ### Building and installing
 
-You should use Meson to configure GdkPixbuf's build, and depending on the
+You should use Meson to configure CdkPixbuf's build, and depending on the
 platform you will be able to use Ninja, Visual Studio, or XCode to build
 the project; typically, on most platforms, you should be able to use the
-following commands to build and install GdkPixbuf in the default prefix:
+following commands to build and install CdkPixbuf in the default prefix:
 
 ```sh
 $ meson setup _build .
@@ -79,6 +79,6 @@ You can run the test suite by running `meson test -C _build`, where
 
 ## License
 
-GdkPixbuf is released under the terms of the GNU Lesser General Public
+CdkPixbuf is released under the terms of the GNU Lesser General Public
 License version 2.1, or, at your option, any later version. See the
 [COPYING](./COPYING) file for further details.

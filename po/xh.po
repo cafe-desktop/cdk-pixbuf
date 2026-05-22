@@ -556,7 +556,7 @@ msgstr "I-PNG eguqulweyo ayinabubanzi okanye ubude."
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "Ubume bomfanekiso we-GIF"
 
 #: cdk-pixbuf/io-png.c:54
@@ -758,7 +758,7 @@ msgstr "Ayikwazi ukunikezela uvimba wolwazi kwi-TGA context struct"
 
 #: cdk-pixbuf/io-qtif.c:330
 #, fuzzy
-msgid "Failed to create GdkPixbufLoader object."
+msgid "Failed to create CdkPixbufLoader object."
 msgstr "Ayiphumelelanga ukufunda kwifayili yexeshana"
 
 #: cdk-pixbuf/io-qtif.c:434

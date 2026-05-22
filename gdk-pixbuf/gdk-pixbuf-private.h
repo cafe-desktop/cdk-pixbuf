@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-/* GdkPixbuf library - Private declarations
+/* CdkPixbuf library - Private declarations
  *
  * Copyright (C) 1999 The Free Software Foundation
  *
@@ -40,11 +40,11 @@
 
 
 
-typedef struct _GdkPixbufClass GdkPixbufClass;
+typedef struct _CdkPixbufClass CdkPixbufClass;
 
-#define CDK_PIXBUF_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF, GdkPixbufClass))
+#define CDK_PIXBUF_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF, CdkPixbufClass))
 #define CDK_IS_PIXBUF_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), CDK_TYPE_PIXBUF))
-#define CDK_PIXBUF_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF, GdkPixbufClass))
+#define CDK_PIXBUF_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF, CdkPixbufClass))
 
 /* Default fill color */
 #define DEFAULT_FILL_COLOR 0x979899ff
@@ -60,7 +60,7 @@ typedef struct {
         guchar *pixels;
 
         /* Destroy notification function; it is supposed to free the pixel array */
-        GdkPixbufDestroyNotify destroy_fn;
+        CdkPixbufDestroyNotify destroy_fn;
 
         /* User data for the destroy notification function */
         gpointer destroy_fn_data;
@@ -70,12 +70,12 @@ typedef struct {
         GBytes *bytes;
 } Bytes;
 
-/* Private part of the GdkPixbuf structure */
-struct _GdkPixbuf {
+/* Private part of the CdkPixbuf structure */
+struct _CdkPixbuf {
         GObject parent_instance;
 
 	/* Color space */
-	GdkColorspace colorspace;
+	CdkColorspace colorspace;
 
 	/* Number of channels, alpha included */
 	int n_channels;
@@ -100,32 +100,32 @@ struct _GdkPixbuf {
 	guint has_alpha : 1;
 };
 
-struct _GdkPixbufClass {
+struct _CdkPixbufClass {
         GObjectClass parent_class;
 
 };
 
 #ifdef CDK_PIXBUF_ENABLE_BACKEND
 
-GdkPixbufModule *_cdk_pixbuf_get_module (guchar *buffer, guint size,
+CdkPixbufModule *_cdk_pixbuf_get_module (guchar *buffer, guint size,
                                          const gchar *filename,
                                          GError **error);
-GdkPixbufModule *_cdk_pixbuf_get_named_module (const char *name,
+CdkPixbufModule *_cdk_pixbuf_get_named_module (const char *name,
                                                GError **error);
-gboolean _cdk_pixbuf_load_module (GdkPixbufModule *image_module,
+gboolean _cdk_pixbuf_load_module (CdkPixbufModule *image_module,
                                   GError **error);
 
-GdkPixbuf *_cdk_pixbuf_generic_image_load (GdkPixbufModule *image_module,
+CdkPixbuf *_cdk_pixbuf_generic_image_load (CdkPixbufModule *image_module,
 					   FILE *f,
 					   GError **error);
 
-GdkPixbufFormat *_cdk_pixbuf_get_format (GdkPixbufModule *image_module);
+CdkPixbufFormat *_cdk_pixbuf_get_format (CdkPixbufModule *image_module);
 
 
 #endif /* CDK_PIXBUF_ENABLE_BACKEND */
 
-GdkPixbuf * _cdk_pixbuf_new_from_resource_try_pixdata (const char *resource_path);
-GdkPixbufLoader *_cdk_pixbuf_loader_new_with_filename (const char *filename);
+CdkPixbuf * _cdk_pixbuf_new_from_resource_try_pixdata (const char *resource_path);
+CdkPixbufLoader *_cdk_pixbuf_loader_new_with_filename (const char *filename);
 
 void _cdk_pixbuf_init_gettext (void);
 

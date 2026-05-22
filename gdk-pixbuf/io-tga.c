@@ -1,6 +1,6 @@
 /* -*- mode: C; c-file-style: "linux" -*- */
 /* 
- * GdkPixbuf library - TGA image loader
+ * CdkPixbuf library - TGA image loader
  * Copyright (C) 1999 Nicola Girardi <nikke@swlibero.org>
  *
  * This library is free software; you can redistribute it and/or
@@ -120,18 +120,18 @@ struct _TGAContext {
 	TGAColormap *cmap;
 	guint cmap_size;
 
-	GdkPixbuf *pbuf;
+	CdkPixbuf *pbuf;
 	int pbuf_x;
 	int pbuf_y;
 	int pbuf_y_notified;
 
-	GdkPixbufBufferQueue *input;
+	CdkPixbufBufferQueue *input;
 
         TGAProcessFunc process;
 
-	GdkPixbufModuleSizeFunc size_func;
-	GdkPixbufModulePreparedFunc prepared_func;
-	GdkPixbufModuleUpdatedFunc updated_func;
+	CdkPixbufModuleSizeFunc size_func;
+	CdkPixbufModulePreparedFunc prepared_func;
+	CdkPixbufModuleUpdatedFunc updated_func;
 	gpointer user_data;
 };
 
@@ -632,9 +632,9 @@ tga_load_header (TGAContext  *ctx,
   return TRUE;
 }
 
-static gpointer cdk_pixbuf__tga_begin_load(GdkPixbufModuleSizeFunc size_func,
-                                           GdkPixbufModulePreparedFunc prepared_func,
-					   GdkPixbufModuleUpdatedFunc updated_func,
+static gpointer cdk_pixbuf__tga_begin_load(CdkPixbufModuleSizeFunc size_func,
+                                           CdkPixbufModulePreparedFunc prepared_func,
+					   CdkPixbufModuleUpdatedFunc updated_func,
 					   gpointer user_data, GError **err)
 {
 	TGAContext *ctx;
@@ -731,16 +731,16 @@ static gboolean cdk_pixbuf__tga_stop_load(gpointer data, GError **err)
 #define MODULE_ENTRY(function) void _cdk_pixbuf__tga_ ## function
 #endif
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
 	module->begin_load = cdk_pixbuf__tga_begin_load;
 	module->stop_load = cdk_pixbuf__tga_stop_load;
 	module->load_increment = cdk_pixbuf__tga_load_increment;
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-	static const GdkPixbufModulePattern signature[] = {
+	static const CdkPixbufModulePattern signature[] = {
 		{ " \x1\x1", "x  ", 100 },
 		{ " \x1\x9", "x  ", 100 },
 		{ "  \x2", "xz ",  99 }, /* only 99 since .CUR also matches this */
@@ -760,7 +760,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
 	};
 
 	info->name = "tga";
-	info->signature = (GdkPixbufModulePattern *) signature;
+	info->signature = (CdkPixbufModulePattern *) signature;
 	info->description = NC_("image format", "Targa");
 	info->mime_types = (gchar **) mime_types;
 	info->extensions = (gchar **) extensions;

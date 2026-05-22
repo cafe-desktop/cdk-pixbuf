@@ -773,8 +773,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Misslyckades med att allokera QTIF-sammanhangsstruktur."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Misslyckades med att skapa GdkPixbufLoader-objekt."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Misslyckades med att skapa CdkPixbufLoader-objekt."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -1015,8 +1015,8 @@ msgstr "XPM"
 #~ msgstr "Transformerad pixbuf har bredden eller höjden noll."
 
 #~ msgctxt "image format"
-#~ msgid "GdkPixdata"
-#~ msgstr "GdkPixdata"
+#~ msgid "CdkPixdata"
+#~ msgstr "CdkPixdata"
 
 #~ msgid "Couldn't allocate memory for header"
 #~ msgstr "Kunde inte allokera minne för huvud"

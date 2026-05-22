@@ -1,4 +1,4 @@
-/* GdkPixbuf library - Android image loader
+/* CdkPixbuf library - Android image loader
  *
  * Copyright (C) 2025  Florian Leander Singer <sp1rit@disroot.org>
  *
@@ -46,10 +46,10 @@ cdk_pixbuf__android_image_decoder_initial_setup (AImageDecoder *decoder)
   AImageDecoder_setUnpremultipliedRequired (decoder, TRUE);
 }
 
-static GdkPixbuf *
+static CdkPixbuf *
 cdk_pixbuf__android_allocate_pixbuf (gint32 width, gint32 height, GError **error)
 {
-  GdkPixbuf *pixbuf;
+  CdkPixbuf *pixbuf;
   g_return_val_if_fail (width >= 0 && height >= 0, NULL);
 
   pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, TRUE, 8, width, height);
@@ -67,7 +67,7 @@ cdk_pixbuf__android_allocate_pixbuf (gint32 width, gint32 height, GError **error
 static gboolean
 cdk_pixbuf__android_image_decoder_to_pixbuf (AImageDecoder *decoder,
                                              /*gint32 width, gint32 height,*/
-                                             GdkPixbuf *pixbuf,
+                                             CdkPixbuf *pixbuf,
                                              GError **error)
 {
   guint len;
@@ -94,12 +94,12 @@ cdk_pixbuf__android_anomation_iter_timeval_to_usec (const GTimeVal *timeval)
 G_GNUC_END_IGNORE_DEPRECATIONS
 
 typedef struct {
-  GdkPixbuf *pixbuf;
+  CdkPixbuf *pixbuf;
   gint64 delay; // usec
-} GdkPixbufAndroidFrame;
+} CdkPixbufAndroidFrame;
 
 static void
-cdk_pixbuf__android_frame_clear (GdkPixbufAndroidFrame *self)
+cdk_pixbuf__android_frame_clear (CdkPixbufAndroidFrame *self)
 {
   g_object_unref (self->pixbuf);
 }
@@ -110,12 +110,12 @@ cdk_pixbuf__android_frame_clear (GdkPixbufAndroidFrame *self)
 
 #define CDK_PIXBUF_TYPE_ANDROID_ANIMATION (cdk_pixbuf__android_animation_get_type ())
 #define CDK_PIXBUF_TYPE_ANDROID_ANIMATION_ITER (cdk_pixbuf__android_animation_iter_get_type ())
-G_DECLARE_FINAL_TYPE (GdkPixbufAndroidAnimation, cdk_pixbuf__android_animation, CDK_PIXBUF, ANDROID_ANIMATION, GdkPixbufAnimation)
-G_DECLARE_FINAL_TYPE (GdkPixbufAndroidAnimationIter, cdk_pixbuf__android_animation_iter, CDK_PIXBUF, ANDROID_ANIMATION_ITER, GdkPixbufAnimationIter)
+G_DECLARE_FINAL_TYPE (CdkPixbufAndroidAnimation, cdk_pixbuf__android_animation, CDK_PIXBUF, ANDROID_ANIMATION, CdkPixbufAnimation)
+G_DECLARE_FINAL_TYPE (CdkPixbufAndroidAnimationIter, cdk_pixbuf__android_animation_iter, CDK_PIXBUF, ANDROID_ANIMATION_ITER, CdkPixbufAnimationIter)
 
-struct _GdkPixbufAndroidAnimation
+struct _CdkPixbufAndroidAnimation
 {
-  GdkPixbufAnimation parent_instance;
+  CdkPixbufAnimation parent_instance;
   GBytes *imgdata;
   gint32 width,height;
 
@@ -124,23 +124,23 @@ struct _GdkPixbufAndroidAnimation
   GArray *decoded;
 };
 
-struct _GdkPixbufAndroidAnimationIter {
-  GdkPixbufAnimationIter parent_instance;
+struct _CdkPixbufAndroidAnimationIter {
+  CdkPixbufAnimationIter parent_instance;
 
-  GdkPixbufAndroidAnimation *animation;
+  CdkPixbufAndroidAnimation *animation;
   guint idx;
   gint32 repeat_count;
   gint64 timestate;
   gboolean on_last_frame;
 };
 
-G_DEFINE_FINAL_TYPE (GdkPixbufAndroidAnimation, cdk_pixbuf__android_animation, CDK_TYPE_PIXBUF_ANIMATION)
-G_DEFINE_FINAL_TYPE (GdkPixbufAndroidAnimationIter, cdk_pixbuf__android_animation_iter, CDK_TYPE_PIXBUF_ANIMATION_ITER)
+G_DEFINE_FINAL_TYPE (CdkPixbufAndroidAnimation, cdk_pixbuf__android_animation, CDK_TYPE_PIXBUF_ANIMATION)
+G_DEFINE_FINAL_TYPE (CdkPixbufAndroidAnimationIter, cdk_pixbuf__android_animation_iter, CDK_TYPE_PIXBUF_ANIMATION_ITER)
 
 static void
 cdk_pixbuf__android_animation_finalize (GObject *object)
 {
-  GdkPixbufAndroidAnimation *self = (GdkPixbufAndroidAnimation *)object;
+  CdkPixbufAndroidAnimation *self = (CdkPixbufAndroidAnimation *)object;
   AImageDecoder_delete (self->decoder);
   if (self->imgdata)
     g_bytes_unref (self->imgdata);
@@ -150,21 +150,21 @@ cdk_pixbuf__android_animation_finalize (GObject *object)
 }
 
 static gboolean
-cdk_pixbuf__android_animation_is_static_image (G_GNUC_UNUSED GdkPixbufAnimation *animation)
+cdk_pixbuf__android_animation_is_static_image (G_GNUC_UNUSED CdkPixbufAnimation *animation)
 {
   // An animation is never a static image
   return FALSE;
 }
 
-static GdkPixbuf *
-cdk_pixbuf__android_animation_get_static_image (GdkPixbufAnimation *animation)
+static CdkPixbuf *
+cdk_pixbuf__android_animation_get_static_image (CdkPixbufAnimation *animation)
 {
-  GdkPixbuf *ret;
-  GdkPixbufAndroidAnimation *self = (GdkPixbufAndroidAnimation *)animation;
+  CdkPixbuf *ret;
+  CdkPixbufAndroidAnimation *self = (CdkPixbufAndroidAnimation *)animation;
 
   g_mutex_lock (&self->lock);
   if (self->decoded->len >= 1)
-    ret = g_array_index (self->decoded, GdkPixbufAndroidFrame, 0).pixbuf;
+    ret = g_array_index (self->decoded, CdkPixbufAndroidFrame, 0).pixbuf;
   else
     ret = NULL;
   g_mutex_unlock (&self->lock);
@@ -172,9 +172,9 @@ cdk_pixbuf__android_animation_get_static_image (GdkPixbufAnimation *animation)
 }
 
 static void
-cdk_pixbuf__android_animation_get_size (GdkPixbufAnimation *animation, int *width, int *height)
+cdk_pixbuf__android_animation_get_size (CdkPixbufAnimation *animation, int *width, int *height)
 {
-  GdkPixbufAndroidAnimation *self = (GdkPixbufAndroidAnimation *)animation;
+  CdkPixbufAndroidAnimation *self = (CdkPixbufAndroidAnimation *)animation;
   if (width)
     *width = self->width;
   if (height)
@@ -182,11 +182,11 @@ cdk_pixbuf__android_animation_get_size (GdkPixbufAnimation *animation, int *widt
 }
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-static GdkPixbufAnimationIter *
-cdk_pixbuf__android_animation_get_iter (GdkPixbufAnimation* animation, const GTimeVal* start_time)
+static CdkPixbufAnimationIter *
+cdk_pixbuf__android_animation_get_iter (CdkPixbufAnimation* animation, const GTimeVal* start_time)
 {
-  GdkPixbufAndroidAnimationIter *iter;
-  GdkPixbufAndroidAnimation *self = (GdkPixbufAndroidAnimation *)animation;
+  CdkPixbufAndroidAnimationIter *iter;
+  CdkPixbufAndroidAnimation *self = (CdkPixbufAndroidAnimation *)animation;
   g_mutex_lock (&self->lock);
   if (self->decoded->len > 0)
     {
@@ -200,15 +200,15 @@ cdk_pixbuf__android_animation_get_iter (GdkPixbufAnimation* animation, const GTi
   else
     iter = NULL;
   g_mutex_unlock (&self->lock);
-  return (GdkPixbufAnimationIter *)iter;
+  return (CdkPixbufAnimationIter *)iter;
 }
 G_GNUC_END_IGNORE_DEPRECATIONS
 
 static void
-cdk_pixbuf__android_animation_class_init (GdkPixbufAndroidAnimationClass *klass)
+cdk_pixbuf__android_animation_class_init (CdkPixbufAndroidAnimationClass *klass)
 {
   GObjectClass *object_class = (GObjectClass *)klass;
-  GdkPixbufAnimationClass *animation_class = (GdkPixbufAnimationClass *)klass;
+  CdkPixbufAnimationClass *animation_class = (CdkPixbufAnimationClass *)klass;
 
   object_class->finalize = cdk_pixbuf__android_animation_finalize;
   animation_class->is_static_image = cdk_pixbuf__android_animation_is_static_image;
@@ -218,53 +218,53 @@ cdk_pixbuf__android_animation_class_init (GdkPixbufAndroidAnimationClass *klass)
 }
 
 static void
-cdk_pixbuf__android_animation_init (GdkPixbufAndroidAnimation *self)
+cdk_pixbuf__android_animation_init (CdkPixbufAndroidAnimation *self)
 {
   self->imgdata = NULL;
   self->width = -1;
   self->height = -1;
   g_mutex_init (&self->lock);
   self->decoder = NULL;
-  self->decoded = g_array_new (FALSE, FALSE, sizeof (GdkPixbufAndroidFrame));
+  self->decoded = g_array_new (FALSE, FALSE, sizeof (CdkPixbufAndroidFrame));
   g_array_set_clear_func (self->decoded, (GDestroyNotify)cdk_pixbuf__android_frame_clear);
 }
 
 static void
 cdk_pixbuf__android_animation_iter_finalize (GObject *object)
 {
-  GdkPixbufAndroidAnimationIter *self = (GdkPixbufAndroidAnimationIter *)object;
+  CdkPixbufAndroidAnimationIter *self = (CdkPixbufAndroidAnimationIter *)object;
   g_object_unref (self->animation);
   G_OBJECT_CLASS (cdk_pixbuf__android_animation_iter_parent_class)->finalize (object);
 }
 
 static gint
-cdk_pixbuf__android_animation_iter_get_delay_time (GdkPixbufAnimationIter *iter)
+cdk_pixbuf__android_animation_iter_get_delay_time (CdkPixbufAnimationIter *iter)
 {
-  GdkPixbufAndroidAnimationIter *self;
+  CdkPixbufAndroidAnimationIter *self;
   gint delay_time;
-  self = (GdkPixbufAndroidAnimationIter *)iter;
+  self = (CdkPixbufAndroidAnimationIter *)iter;
   if (self->on_last_frame)
     return -1;
   g_mutex_lock (&self->animation->lock);
-  delay_time = g_array_index (self->animation->decoded, GdkPixbufAndroidFrame, self->idx).delay / 1000 /* usec to millis */;
+  delay_time = g_array_index (self->animation->decoded, CdkPixbufAndroidFrame, self->idx).delay / 1000 /* usec to millis */;
   g_mutex_unlock (&self->animation->lock);
   return delay_time;
 }
 
-static GdkPixbuf *
-cdk_pixbuf__android_animation_iter_get_pixbuf (GdkPixbufAnimationIter *iter)
+static CdkPixbuf *
+cdk_pixbuf__android_animation_iter_get_pixbuf (CdkPixbufAnimationIter *iter)
 {
-  GdkPixbufAndroidAnimationIter *self;
-  GdkPixbuf *ret;
-  self = (GdkPixbufAndroidAnimationIter *)iter;
+  CdkPixbufAndroidAnimationIter *self;
+  CdkPixbuf *ret;
+  self = (CdkPixbufAndroidAnimationIter *)iter;
   g_mutex_lock (&self->animation->lock);
-  ret = g_array_index (self->animation->decoded, GdkPixbufAndroidFrame, self->idx).pixbuf;
+  ret = g_array_index (self->animation->decoded, CdkPixbufAndroidFrame, self->idx).pixbuf;
   g_mutex_unlock (&self->animation->lock);
   return ret;
 }
 
 static gboolean
-cdk_pixbuf__android_animation_iter_on_currently_loading_frame (G_GNUC_UNUSED GdkPixbufAnimationIter *iter)
+cdk_pixbuf__android_animation_iter_on_currently_loading_frame (G_GNUC_UNUSED CdkPixbufAnimationIter *iter)
 {
   return FALSE;
 }
@@ -284,32 +284,32 @@ cdk_pixbuf__android_get_delay_for_current_frame (AImageDecoder *decoder)
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 static gboolean
-cdk_pixbuf__android_animation_iter_advance (GdkPixbufAnimationIter *iter, const GTimeVal *current_time)
+cdk_pixbuf__android_animation_iter_advance (CdkPixbufAnimationIter *iter, const GTimeVal *current_time)
 {
-  GdkPixbufAndroidAnimationIter *self;
+  CdkPixbufAndroidAnimationIter *self;
   gint64 new_time;
   gboolean retval;
-  self = (GdkPixbufAndroidAnimationIter *)iter;
+  self = (CdkPixbufAndroidAnimationIter *)iter;
   if (self->on_last_frame)
     return FALSE;
 
   new_time = cdk_pixbuf__android_anomation_iter_timeval_to_usec (current_time);
   g_mutex_lock (&self->animation->lock);
   retval = FALSE;
-  while ((self->timestate + g_array_index (self->animation->decoded, GdkPixbufAndroidFrame, self->idx).delay) < new_time)
+  while ((self->timestate + g_array_index (self->animation->decoded, CdkPixbufAndroidFrame, self->idx).delay) < new_time)
     {
       if (self->animation->decoded->len <= self->idx+1) // currently on last decoded frame
         {
           gint rc;
           GError *error;
-          GdkPixbuf *pixbuf;
-          GdkPixbufAndroidFrame frame;
+          CdkPixbuf *pixbuf;
+          CdkPixbufAndroidFrame frame;
           rc = AImageDecoder_advanceFrame (self->animation->decoder);
           if (rc == ANDROID_IMAGE_DECODER_FINISHED)
             {
               if (self->repeat_count == ANDROID_IMAGE_DECODER_INFINITE)
                 {
-                  self->timestate += g_array_index (self->animation->decoded, GdkPixbufAndroidFrame, self->idx).delay;
+                  self->timestate += g_array_index (self->animation->decoded, CdkPixbufAndroidFrame, self->idx).delay;
                   self->idx = 0;
                   retval = TRUE;
                 }
@@ -317,7 +317,7 @@ cdk_pixbuf__android_animation_iter_advance (GdkPixbufAnimationIter *iter, const 
                 {
                   if (self->repeat_count > 0)
                     {
-                      self->timestate += g_array_index (self->animation->decoded, GdkPixbufAndroidFrame, self->idx).delay;
+                      self->timestate += g_array_index (self->animation->decoded, CdkPixbufAndroidFrame, self->idx).delay;
                       self->idx = 0;
                       retval = TRUE;
                       --self->repeat_count;
@@ -351,7 +351,7 @@ cdk_pixbuf__android_animation_iter_advance (GdkPixbufAnimationIter *iter, const 
           frame.delay = cdk_pixbuf__android_get_delay_for_current_frame (self->animation->decoder);
           g_array_append_val (self->animation->decoded, frame);
         }
-      self->timestate += g_array_index (self->animation->decoded, GdkPixbufAndroidFrame, self->idx).delay;
+      self->timestate += g_array_index (self->animation->decoded, CdkPixbufAndroidFrame, self->idx).delay;
       self->idx++;
       retval = TRUE;
     }
@@ -361,10 +361,10 @@ cdk_pixbuf__android_animation_iter_advance (GdkPixbufAnimationIter *iter, const 
 G_GNUC_END_IGNORE_DEPRECATIONS
 
 static void
-cdk_pixbuf__android_animation_iter_class_init (GdkPixbufAndroidAnimationIterClass *klass)
+cdk_pixbuf__android_animation_iter_class_init (CdkPixbufAndroidAnimationIterClass *klass)
 {
   GObjectClass *object_class = (GObjectClass *)klass;
-  GdkPixbufAnimationIterClass *iter_class = (GdkPixbufAnimationIterClass *)klass;
+  CdkPixbufAnimationIterClass *iter_class = (CdkPixbufAnimationIterClass *)klass;
 
   object_class->finalize = cdk_pixbuf__android_animation_iter_finalize;
   iter_class->get_delay_time = cdk_pixbuf__android_animation_iter_get_delay_time;
@@ -374,7 +374,7 @@ cdk_pixbuf__android_animation_iter_class_init (GdkPixbufAndroidAnimationIterClas
 }
 
 static void
-cdk_pixbuf__android_animation_iter_init (GdkPixbufAndroidAnimationIter *self)
+cdk_pixbuf__android_animation_iter_init (CdkPixbufAndroidAnimationIter *self)
 {
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
   GTimeVal current;
@@ -388,12 +388,12 @@ G_GNUC_END_IGNORE_DEPRECATIONS
   self->on_last_frame = FALSE;
 }
 
-static GdkPixbufAndroidAnimation *
+static CdkPixbufAndroidAnimation *
 cdk_pixbuf__android_get_animation (GBytes *imgdata /* takes ownership */,
                                    AImageDecoder *decoder /* takes ownership */,
                                    gint32 width, gint32 height)
 {
-  GdkPixbufAndroidAnimation *self;
+  CdkPixbufAndroidAnimation *self;
   g_assert (AImageDecoder_isAnimated (decoder)); // may only be called for animated images
 
   self = g_object_new (CDK_PIXBUF_TYPE_ANDROID_ANIMATION, NULL);
@@ -408,14 +408,14 @@ cdk_pixbuf__android_get_animation (GBytes *imgdata /* takes ownership */,
 /* }}} */
 /* {{{ Module implementation */
 
-static GdkPixbuf *
+static CdkPixbuf *
 cdk_pixbuf__android_image_load (FILE *f, GError **error)
 {
   AImageDecoder *decoder;
   gint rc;
   const AImageDecoderHeaderInfo *header;
   gint32 width,height;
-  GdkPixbuf *ret;
+  CdkPixbuf *ret;
 
   rc = AImageDecoder_createFromFd (fileno (f), &decoder);
   if (cdk_pixbuf__android_check_error (rc, error))
@@ -442,22 +442,22 @@ cdk_pixbuf__android_image_load (FILE *f, GError **error)
 
 typedef struct
 {
-  GdkPixbufModuleSizeFunc     size_func;
-  GdkPixbufModulePreparedFunc prepared_func;
-  GdkPixbufModuleUpdatedFunc  updated_func;
+  CdkPixbufModuleSizeFunc     size_func;
+  CdkPixbufModulePreparedFunc prepared_func;
+  CdkPixbufModuleUpdatedFunc  updated_func;
   gpointer                    user_data;
 
   GByteArray *buffer;
-} GdkPixbufAndroidLoaderContext;
+} CdkPixbufAndroidLoaderContext;
 
 static gpointer
-cdk_pixbuf__android_image_begin_load (GdkPixbufModuleSizeFunc       size_func,
-                                      GdkPixbufModulePreparedFunc   prepared_func,
-                                      GdkPixbufModuleUpdatedFunc    updated_func,
+cdk_pixbuf__android_image_begin_load (CdkPixbufModuleSizeFunc       size_func,
+                                      CdkPixbufModulePreparedFunc   prepared_func,
+                                      CdkPixbufModuleUpdatedFunc    updated_func,
                                       gpointer                      user_data,
                                       GError                      **error)
 {
-  GdkPixbufAndroidLoaderContext *context = g_new (GdkPixbufAndroidLoaderContext, 1);
+  CdkPixbufAndroidLoaderContext *context = g_new (CdkPixbufAndroidLoaderContext, 1);
   context->buffer = g_byte_array_new ();
   context->size_func     = size_func;
   context->prepared_func = prepared_func;
@@ -472,7 +472,7 @@ cdk_pixbuf__android_image_load_increment (gpointer       data,
                                           guint          size,
                                           GError       **error)
 {
-  GdkPixbufAndroidLoaderContext *context = (GdkPixbufAndroidLoaderContext *)data;
+  CdkPixbufAndroidLoaderContext *context = (CdkPixbufAndroidLoaderContext *)data;
   g_byte_array_append (context->buffer, buf, size);
   return TRUE;
 }
@@ -484,8 +484,8 @@ cdk_pixbuf__android_image_stop_load (gpointer data, GError **error)
   gint rc;
   const AImageDecoderHeaderInfo *header;
   gint32 width,height,set_width,set_height;
-  GdkPixbuf *pixbuf;
-  GdkPixbufAndroidLoaderContext *context = (GdkPixbufAndroidLoaderContext *)data;
+  CdkPixbuf *pixbuf;
+  CdkPixbufAndroidLoaderContext *context = (CdkPixbufAndroidLoaderContext *)data;
   GBytes *imgdata = g_byte_array_free_to_bytes (context->buffer);
 
   rc = AImageDecoder_createFromBuffer (context->buffer->data, context->buffer->len, &decoder);
@@ -529,8 +529,8 @@ cdk_pixbuf__android_image_stop_load (gpointer data, GError **error)
 
   if (AImageDecoder_isAnimated (decoder))
     {
-      GdkPixbufAndroidAnimation *animation;
-      GdkPixbufAndroidFrame frame;
+      CdkPixbufAndroidAnimation *animation;
+      CdkPixbufAndroidFrame frame;
       animation = cdk_pixbuf__android_get_animation (imgdata, decoder, width, height);
       g_mutex_lock (&animation->lock);
       frame.pixbuf = pixbuf;
@@ -538,7 +538,7 @@ cdk_pixbuf__android_image_stop_load (gpointer data, GError **error)
       g_array_append_val (animation->decoded, frame);
       g_mutex_unlock (&animation->lock);
 
-      (* context->prepared_func) (pixbuf, (GdkPixbufAnimation *)animation, context->user_data);
+      (* context->prepared_func) (pixbuf, (CdkPixbufAnimation *)animation, context->user_data);
       if (!cdk_pixbuf__android_image_decoder_to_pixbuf (animation->decoder, pixbuf, error))
         {
           g_object_unref (animation);
@@ -571,16 +571,16 @@ cdk_pixbuf__android_image_stop_load (gpointer data, GError **error)
     }
 }
 
-static GdkPixbufAnimation *
+static CdkPixbufAnimation *
 cdk_pixbuf__android_image_load_animation (FILE *f, GError **error)
 {
   AImageDecoder *decoder;
   gint rc;
   const AImageDecoderHeaderInfo *header;
   gint32 width,height;
-  GdkPixbuf *initial_frame;
-  GdkPixbufAnimation *animation;
-  GdkPixbufAndroidFrame frame;
+  CdkPixbuf *initial_frame;
+  CdkPixbufAnimation *animation;
+  CdkPixbufAndroidFrame frame;
 
   rc = AImageDecoder_createFromFd (fileno (f), &decoder);
   if (cdk_pixbuf__android_check_error (rc, error))
@@ -612,16 +612,16 @@ cdk_pixbuf__android_image_load_animation (FILE *f, GError **error)
       return animation;
     }
 
-  animation = (GdkPixbufAnimation *)cdk_pixbuf__android_get_animation (NULL, decoder,
+  animation = (CdkPixbufAnimation *)cdk_pixbuf__android_get_animation (NULL, decoder,
                                                                        width, height);
   frame.pixbuf = initial_frame;
-  frame.delay = cdk_pixbuf__android_get_delay_for_current_frame (((GdkPixbufAndroidAnimation *)animation)->decoder);
-  g_array_append_val (((GdkPixbufAndroidAnimation *)animation)->decoded, frame);
+  frame.delay = cdk_pixbuf__android_get_delay_for_current_frame (((CdkPixbufAndroidAnimation *)animation)->decoder);
+  g_array_append_val (((CdkPixbufAndroidAnimation *)animation)->decoded, frame);
   return animation;
 }
 
 void
-cdk_pixbuf__android_fill_vtable (GdkPixbufModule *module)
+cdk_pixbuf__android_fill_vtable (CdkPixbufModule *module)
 {
   module->load = cdk_pixbuf__android_image_load;
   module->begin_load = cdk_pixbuf__android_image_begin_load;
@@ -635,24 +635,24 @@ cdk_pixbuf__android_fill_vtable (GdkPixbufModule *module)
 
 typedef struct
 {
-  GdkPixbufSaveFunc save_func;
+  CdkPixbufSaveFunc save_func;
   gpointer user_data;
 
   GError **error;
-} GdkPixbufAndroidSaveImageData;
+} CdkPixbufAndroidSaveImageData;
 
 static bool
 cdk_pixbuf__android_save_image_cb (gpointer user_data, const void *data, gsize size)
 {
-  GdkPixbufAndroidSaveImageData *save_image_data = (GdkPixbufAndroidSaveImageData *)user_data;
+  CdkPixbufAndroidSaveImageData *save_image_data = (CdkPixbufAndroidSaveImageData *)user_data;
   return save_image_data->save_func (data, size, save_image_data->error, save_image_data->user_data);
 }
 
 gboolean
-cdk_pixbuf__android_save_image (GdkPixbufSaveFunc save_func, gpointer user_data, GdkPixbuf *pixbuf, gint32 format, GError **error)
+cdk_pixbuf__android_save_image (CdkPixbufSaveFunc save_func, gpointer user_data, CdkPixbuf *pixbuf, gint32 format, GError **error)
 {
   AndroidBitmapInfo info;
-  GdkPixbufAndroidSaveImageData data;
+  CdkPixbufAndroidSaveImageData data;
   gint rc;
   info = (AndroidBitmapInfo){
     .width = cdk_pixbuf_get_width (pixbuf),
@@ -661,7 +661,7 @@ cdk_pixbuf__android_save_image (GdkPixbufSaveFunc save_func, gpointer user_data,
     .format = ANDROID_BITMAP_FORMAT_RGBA_8888,
     .flags = ANDROID_BITMAP_FLAGS_ALPHA_UNPREMUL
   };
-  data = (GdkPixbufAndroidSaveImageData){
+  data = (CdkPixbufAndroidSaveImageData){
     .save_func = save_func,
     .user_data = user_data,
     .error = error

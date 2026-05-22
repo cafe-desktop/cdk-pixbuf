@@ -1,5 +1,5 @@
 /* -*- Mode: C; c-basic-offset: 2; -*- */
-/* GdkPixbuf library - test loaders
+/* CdkPixbuf library - test loaders
  *
  * Copyright (C) 2013 Red Hat, Inc.
  *
@@ -28,7 +28,7 @@
   g_strcmp0 (cdk_pixbuf_get_option (p1, key), cdk_pixbuf_get_option (p2, key))
 
 static gboolean
-pixbuf_equal (GdkPixbuf *p1, GdkPixbuf *p2)
+pixbuf_equal (CdkPixbuf *p1, CdkPixbuf *p2)
 {
   if (!pixdata_equal (p1, p2, NULL))
     return FALSE;
@@ -52,8 +52,8 @@ static void
 test_save_roundtrip (void)
 {
   GError *error = NULL;
-  GdkPixbuf *ref;
-  GdkPixbuf *pixbuf;
+  CdkPixbuf *ref;
+  CdkPixbuf *pixbuf;
 
   if (!format_supported ("png"))
     {
@@ -82,8 +82,8 @@ static void
 test_save_ico (void)
 {
   GError *error = NULL;
-  GdkPixbuf *ref, *ref2;
-  GdkPixbuf *pixbuf;
+  CdkPixbuf *ref, *ref2;
+  CdkPixbuf *pixbuf;
 
   if (!format_supported ("ico") || !format_supported ("png"))
     {
@@ -115,8 +115,8 @@ test_save_ico (void)
 static void
 test_save_options (void)
 {
-  GdkPixbuf *ref;
-  GdkPixbuf *pixbuf, *pixbuf2;
+  CdkPixbuf *ref;
+  CdkPixbuf *pixbuf, *pixbuf2;
   GError *error = NULL;
 
   if (!format_supported ("png"))

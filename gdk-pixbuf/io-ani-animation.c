@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-/* GdkPixbuf library - ani support
+/* CdkPixbuf library - ani support
  *
  * Copyright (C) 2002 The Free Software Foundation
  *
@@ -27,30 +27,30 @@ G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 
 static void cdk_pixbuf_ani_anim_finalize   (GObject        *object);
 
-static gboolean                cdk_pixbuf_ani_anim_is_static_image  (GdkPixbufAnimation *animation);
-static GdkPixbuf*              cdk_pixbuf_ani_anim_get_static_image (GdkPixbufAnimation *animation);
-static void                    cdk_pixbuf_ani_anim_get_size (GdkPixbufAnimation *anim,
+static gboolean                cdk_pixbuf_ani_anim_is_static_image  (CdkPixbufAnimation *animation);
+static CdkPixbuf*              cdk_pixbuf_ani_anim_get_static_image (CdkPixbufAnimation *animation);
+static void                    cdk_pixbuf_ani_anim_get_size (CdkPixbufAnimation *anim,
                                                              int                *width,
                                                              int                *height);
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-static GdkPixbufAnimationIter* cdk_pixbuf_ani_anim_get_iter (GdkPixbufAnimation *anim,
+static CdkPixbufAnimationIter* cdk_pixbuf_ani_anim_get_iter (CdkPixbufAnimation *anim,
                                                              const GTimeVal     *start_time);
 G_GNUC_END_IGNORE_DEPRECATIONS
 
 
 
-G_DEFINE_TYPE  (GdkPixbufAniAnim, cdk_pixbuf_ani_anim, CDK_TYPE_PIXBUF_ANIMATION)
+G_DEFINE_TYPE  (CdkPixbufAniAnim, cdk_pixbuf_ani_anim, CDK_TYPE_PIXBUF_ANIMATION)
 
 static void
-cdk_pixbuf_ani_anim_init (GdkPixbufAniAnim *anim)
+cdk_pixbuf_ani_anim_init (CdkPixbufAniAnim *anim)
 {
 }
 
 static void
-cdk_pixbuf_ani_anim_class_init (GdkPixbufAniAnimClass *klass)
+cdk_pixbuf_ani_anim_class_init (CdkPixbufAniAnimClass *klass)
 {
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
-        GdkPixbufAnimationClass *anim_class = CDK_PIXBUF_ANIMATION_CLASS (klass);
+        CdkPixbufAnimationClass *anim_class = CDK_PIXBUF_ANIMATION_CLASS (klass);
 
         object_class->finalize = cdk_pixbuf_ani_anim_finalize;
 
@@ -63,7 +63,7 @@ cdk_pixbuf_ani_anim_class_init (GdkPixbufAniAnimClass *klass)
 static void
 cdk_pixbuf_ani_anim_finalize (GObject *object)
 {
-        GdkPixbufAniAnim *ani_anim = CDK_PIXBUF_ANI_ANIM (object);
+        CdkPixbufAniAnim *ani_anim = CDK_PIXBUF_ANI_ANIM (object);
         gint i;
 
         for (i = 0; i < ani_anim->n_pixbufs; i++) {
@@ -78,19 +78,19 @@ cdk_pixbuf_ani_anim_finalize (GObject *object)
 }
 
 static gboolean
-cdk_pixbuf_ani_anim_is_static_image (GdkPixbufAnimation *animation)
+cdk_pixbuf_ani_anim_is_static_image (CdkPixbufAnimation *animation)
 {
-        GdkPixbufAniAnim *ani_anim;
+        CdkPixbufAniAnim *ani_anim;
 
         ani_anim = CDK_PIXBUF_ANI_ANIM (animation);
 
         return ani_anim->n_frames == 1;
 }
 
-static GdkPixbuf*
-cdk_pixbuf_ani_anim_get_static_image (GdkPixbufAnimation *animation)
+static CdkPixbuf*
+cdk_pixbuf_ani_anim_get_static_image (CdkPixbufAnimation *animation)
 {
-        GdkPixbufAniAnim *ani_anim;
+        CdkPixbufAniAnim *ani_anim;
 
         ani_anim = CDK_PIXBUF_ANI_ANIM (animation);
 
@@ -101,11 +101,11 @@ cdk_pixbuf_ani_anim_get_static_image (GdkPixbufAnimation *animation)
 }
 
 static void
-cdk_pixbuf_ani_anim_get_size (GdkPixbufAnimation *anim,
+cdk_pixbuf_ani_anim_get_size (CdkPixbufAnimation *anim,
                               int                *width,
                               int                *height)
 {
-        GdkPixbufAniAnim *ani_anim;
+        CdkPixbufAniAnim *ani_anim;
 
         ani_anim = CDK_PIXBUF_ANI_ANIM (anim);
 
@@ -118,7 +118,7 @@ cdk_pixbuf_ani_anim_get_size (GdkPixbufAnimation *anim,
 
 
 static void
-iter_restart (GdkPixbufAniAnimIter *iter)
+iter_restart (CdkPixbufAniAnimIter *iter)
 {
         iter->current_frame = 0;
         iter->position = 0;
@@ -126,11 +126,11 @@ iter_restart (GdkPixbufAniAnimIter *iter)
 }
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-static GdkPixbufAnimationIter*
-cdk_pixbuf_ani_anim_get_iter (GdkPixbufAnimation *anim,
+static CdkPixbufAnimationIter*
+cdk_pixbuf_ani_anim_get_iter (CdkPixbufAnimation *anim,
                               const GTimeVal     *start_time)
 {
-        GdkPixbufAniAnimIter *iter;
+        CdkPixbufAniAnimIter *iter;
 
         iter = g_object_new (CDK_TYPE_PIXBUF_ANI_ANIM_ITER, NULL);
 
@@ -151,28 +151,28 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 
 static void cdk_pixbuf_ani_anim_iter_finalize   (GObject                   *object);
 
-static int        cdk_pixbuf_ani_anim_iter_get_delay_time             (GdkPixbufAnimationIter *iter);
-static GdkPixbuf* cdk_pixbuf_ani_anim_iter_get_pixbuf                 (GdkPixbufAnimationIter *iter);
-static gboolean   cdk_pixbuf_ani_anim_iter_on_currently_loading_frame (GdkPixbufAnimationIter *iter);
+static int        cdk_pixbuf_ani_anim_iter_get_delay_time             (CdkPixbufAnimationIter *iter);
+static CdkPixbuf* cdk_pixbuf_ani_anim_iter_get_pixbuf                 (CdkPixbufAnimationIter *iter);
+static gboolean   cdk_pixbuf_ani_anim_iter_on_currently_loading_frame (CdkPixbufAnimationIter *iter);
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-static gboolean   cdk_pixbuf_ani_anim_iter_advance                    (GdkPixbufAnimationIter *iter,
+static gboolean   cdk_pixbuf_ani_anim_iter_advance                    (CdkPixbufAnimationIter *iter,
                                                                        const GTimeVal         *current_time);
 G_GNUC_END_IGNORE_DEPRECATIONS
 
 
 
-G_DEFINE_TYPE (GdkPixbufAniAnimIter, cdk_pixbuf_ani_anim_iter, CDK_TYPE_PIXBUF_ANIMATION_ITER);
+G_DEFINE_TYPE (CdkPixbufAniAnimIter, cdk_pixbuf_ani_anim_iter, CDK_TYPE_PIXBUF_ANIMATION_ITER);
 
 static void
-cdk_pixbuf_ani_anim_iter_init (GdkPixbufAniAnimIter *anim)
+cdk_pixbuf_ani_anim_iter_init (CdkPixbufAniAnimIter *anim)
 {
 }
 
 static void
-cdk_pixbuf_ani_anim_iter_class_init (GdkPixbufAniAnimIterClass *klass)
+cdk_pixbuf_ani_anim_iter_class_init (CdkPixbufAniAnimIterClass *klass)
 {
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
-        GdkPixbufAnimationIterClass *anim_iter_class =
+        CdkPixbufAnimationIterClass *anim_iter_class =
                 CDK_PIXBUF_ANIMATION_ITER_CLASS (klass);
 
         object_class->finalize = cdk_pixbuf_ani_anim_iter_finalize;
@@ -186,7 +186,7 @@ cdk_pixbuf_ani_anim_iter_class_init (GdkPixbufAniAnimIterClass *klass)
 static void
 cdk_pixbuf_ani_anim_iter_finalize (GObject *object)
 {
-        GdkPixbufAniAnimIter *iter = CDK_PIXBUF_ANI_ANIM_ITER (object);
+        CdkPixbufAniAnimIter *iter = CDK_PIXBUF_ANI_ANIM_ITER (object);
 
         g_object_unref (iter->ani_anim);
 
@@ -195,10 +195,10 @@ cdk_pixbuf_ani_anim_iter_finalize (GObject *object)
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 static gboolean
-cdk_pixbuf_ani_anim_iter_advance (GdkPixbufAnimationIter *anim_iter,
+cdk_pixbuf_ani_anim_iter_advance (CdkPixbufAnimationIter *anim_iter,
                                   const GTimeVal         *current_time)
 {
-        GdkPixbufAniAnimIter *iter;
+        CdkPixbufAniAnimIter *iter;
         gint elapsed;
         gint tmp;
         gint old;
@@ -248,19 +248,19 @@ cdk_pixbuf_ani_anim_iter_advance (GdkPixbufAnimationIter *anim_iter,
 G_GNUC_END_IGNORE_DEPRECATIONS
 
 int
-cdk_pixbuf_ani_anim_iter_get_delay_time (GdkPixbufAnimationIter *anim_iter)
+cdk_pixbuf_ani_anim_iter_get_delay_time (CdkPixbufAnimationIter *anim_iter)
 {
-        GdkPixbufAniAnimIter *iter;
+        CdkPixbufAniAnimIter *iter;
 
         iter = CDK_PIXBUF_ANI_ANIM_ITER (anim_iter);
 
         return iter->ani_anim->delay[iter->current_frame] - (iter->position - iter->elapsed);
 }
 
-GdkPixbuf*
-cdk_pixbuf_ani_anim_iter_get_pixbuf (GdkPixbufAnimationIter *anim_iter)
+CdkPixbuf*
+cdk_pixbuf_ani_anim_iter_get_pixbuf (CdkPixbufAnimationIter *anim_iter)
 {
-        GdkPixbufAniAnimIter *iter;
+        CdkPixbufAniAnimIter *iter;
         gint frame;
 
         iter = CDK_PIXBUF_ANI_ANIM_ITER (anim_iter);
@@ -275,9 +275,9 @@ cdk_pixbuf_ani_anim_iter_get_pixbuf (GdkPixbufAnimationIter *anim_iter)
 }
 
 static gboolean
-cdk_pixbuf_ani_anim_iter_on_currently_loading_frame (GdkPixbufAnimationIter *anim_iter)
+cdk_pixbuf_ani_anim_iter_on_currently_loading_frame (CdkPixbufAnimationIter *anim_iter)
 {
-        GdkPixbufAniAnimIter *iter;
+        CdkPixbufAniAnimIter *iter;
         gint frame;
 
         iter = CDK_PIXBUF_ANI_ANIM_ITER (anim_iter);

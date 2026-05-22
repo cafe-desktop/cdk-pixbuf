@@ -26,7 +26,7 @@ search_index = true
   docs_url = "https://developer.gnome.org/gio/stable"
 
   [dependencies."cdk-pixbuf"]
-  name = "GdkPixbuf"
+  name = "CdkPixbuf"
   description = "Image loading library"
   docs_url = "../cdk-pixbuf/index.html"
 

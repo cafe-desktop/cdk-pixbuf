@@ -1,5 +1,5 @@
 /* -*- Mode: C; c-basic-offset: 2; -*- */
-/* GdkPixbuf library - test loaders
+/* CdkPixbuf library - test loaders
  *
  * Copyright (C) 2018 Canonical Ltd.
  *
@@ -73,9 +73,9 @@ run_gif_test (gconstpointer data)
   gint width, height;
   GFile *input_file;
   GBytes *input_bytes;
-  GdkPixbufLoader *loader;
-  GdkPixbufAnimation *animation = NULL;
-  GdkPixbufAnimationIter *iter = NULL;
+  CdkPixbufLoader *loader;
+  CdkPixbufAnimation *animation = NULL;
+  CdkPixbufAnimationIter *iter = NULL;
   GTimeVal animation_time;
   GStrv frames;
   int i;
@@ -130,7 +130,7 @@ run_gif_test (gconstpointer data)
   for (i = 0; frames[i]; i++)
     {
       const gchar *frame = frames[i];
-      GdkPixbuf *pixbuf;
+      CdkPixbuf *pixbuf;
       gint delay_time, expected_delay_time = -1;
       gchar *pixels_filename;
       GFile *pixels_file;

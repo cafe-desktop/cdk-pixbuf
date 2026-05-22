@@ -518,7 +518,7 @@ msgstr "𐑑𐑮𐑨𐑯𐑕𐑓𐑪𐑮𐑥𐑛 PNG 𐑣𐑨𐑟 𐑟𐑽𐑴 �
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "𐑞 GIF 𐑦𐑥𐑦𐑡 𐑓𐑹𐑥𐑨𐑑"
 
 #: cdk-pixbuf/io-png.c:54
@@ -710,8 +710,8 @@ msgstr "𐑓𐑱𐑤𐑛 𐑑 𐑨𐑤𐑴𐑒𐑱𐑑 QTIF 𐑒𐑪𐑯𐑑𐑧
 
 #: cdk-pixbuf/io-qtif.c:330
 #, fuzzy
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "𐑓𐑱𐑤𐑛 𐑑 𐑒𐑮𐑦𐑱𐑑 GdkPixbufLoader 𐑩𐑚𐑡𐑧𐑒𐑑."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "𐑓𐑱𐑤𐑛 𐑑 𐑒𐑮𐑦𐑱𐑑 CdkPixbufLoader 𐑩𐑚𐑡𐑧𐑒𐑑."
 
 #: cdk-pixbuf/io-qtif.c:434
 msgid "Failed to find an image data atom."

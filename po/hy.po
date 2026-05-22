@@ -531,7 +531,7 @@ msgstr "Ձևափոխված PNG–ն ունի զրոյական լայնությո
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "Պատկերի GIF ֆորմատ"
 
 #: cdk-pixbuf/io-png.c:54
@@ -727,8 +727,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Չհաջողվեց հատկացնել QTIF կոնտեքստային կառուցվածք։"
 
 #: cdk-pixbuf/io-qtif.c:330
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Չհաջողվեց ստեղծել GdkPixbufLoader օբյեկտ։"
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Չհաջողվեց ստեղծել CdkPixbufLoader օբյեկտ։"
 
 #: cdk-pixbuf/io-qtif.c:434
 msgid "Failed to find an image data atom."

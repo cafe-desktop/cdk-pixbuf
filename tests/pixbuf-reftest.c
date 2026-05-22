@@ -1,5 +1,5 @@
 /* -*- Mode: C; c-basic-offset: 2; -*- */
-/* GdkPixbuf library - test loaders
+/* CdkPixbuf library - test loaders
  *
  * Copyright (C) 2015 Red Hat, Inc.
  *
@@ -29,10 +29,10 @@
 #define DEFAULT_FILL_COLOR 0x979899ff
 
 static void
-loader_size_prepared (GdkPixbufLoader  *loader,
+loader_size_prepared (CdkPixbufLoader  *loader,
                       int               w,
                       int               h,
-                      GdkPixbuf       **pixbuf)
+                      CdkPixbuf       **pixbuf)
 {
   g_assert (*pixbuf == NULL);
 
@@ -43,14 +43,14 @@ loader_size_prepared (GdkPixbufLoader  *loader,
 }
 
 static void
-loader_area_prepared (GdkPixbufLoader  *loader,
-                      GdkPixbuf       **pixbuf)
+loader_area_prepared (CdkPixbufLoader  *loader,
+                      CdkPixbuf       **pixbuf)
 {
   g_assert (*pixbuf != NULL);
 
   if (cdk_pixbuf_get_has_alpha (cdk_pixbuf_loader_get_pixbuf (loader)))
     {
-      GdkPixbuf *alpha = cdk_pixbuf_add_alpha (*pixbuf, FALSE, 0, 0, 0);
+      CdkPixbuf *alpha = cdk_pixbuf_add_alpha (*pixbuf, FALSE, 0, 0, 0);
 
       g_object_unref (*pixbuf);
       *pixbuf = alpha;
@@ -60,12 +60,12 @@ loader_area_prepared (GdkPixbufLoader  *loader,
 }
 
 static void
-loader_area_updated (GdkPixbufLoader  *loader,
+loader_area_updated (CdkPixbufLoader  *loader,
                      int               x,
                      int               y,
                      int               w,
                      int               h,
-                     GdkPixbuf       **pixbuf)
+                     CdkPixbuf       **pixbuf)
 {
   cdk_pixbuf_copy_area (cdk_pixbuf_loader_get_pixbuf (loader),
                         x, y,
@@ -131,8 +131,8 @@ is_not_ref_image (GFile *file)
 static void
 test_reftest (gconstpointer data)
 {
-  GdkPixbufLoader *loader;
-  GdkPixbuf *reference, *loaded = NULL;
+  CdkPixbufLoader *loader;
+  CdkPixbuf *reference, *loaded = NULL;
   GError *error = NULL;
   GFile *file, *ref_file;
   GInputStream *stream;

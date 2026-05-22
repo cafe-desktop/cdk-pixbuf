@@ -741,8 +741,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "分配 QTIF 脈絡結構失敗。"
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "無法建立 GdkPixbufLoader 物件。"
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "無法建立 CdkPixbufLoader 物件。"
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -980,8 +980,8 @@ msgstr "XPM"
 #~ msgstr "變換後的 pixbuf 寬度及高度均為零。"
 
 #~ msgctxt "image format"
-#~ msgid "GdkPixdata"
-#~ msgstr "GdkPixdata"
+#~ msgid "CdkPixdata"
+#~ msgstr "CdkPixdata"
 
 #~ msgid "Couldn't allocate memory for header"
 #~ msgstr "無法分配影像標頭所需的記憶體"

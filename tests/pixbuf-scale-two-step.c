@@ -1,5 +1,5 @@
 /* -*- Mode: C; c-basic-offset: 2; -*- */
-/* GdkPixbuf library - test loaders
+/* CdkPixbuf library - test loaders
  *
  *  Copyright (C) 2016 Martin Guy <martinwguy@gmail.com>
  *
@@ -55,7 +55,7 @@
 	((a) == (b) || (a) == (b) + 1 || (a) + 1 == (b))
 
 static gboolean
-pixdata_almost_equal (GdkPixbuf *one, GdkPixbuf *two)
+pixdata_almost_equal (CdkPixbuf *one, CdkPixbuf *two)
 {
   guchar *one_row;      /* Pointer to start of row of pixels in one */
   guchar *one_pixel;    /* Pointer to current pixel data in one */
@@ -108,12 +108,12 @@ pixdata_almost_equal (GdkPixbuf *one, GdkPixbuf *two)
 static void
 test_old_and_new (gconstpointer data)
 {
-  GdkInterpType interp_type = *(GdkInterpType *) data;
-  const GdkPixbuf *source;              /* Source image */
+  CdkInterpType interp_type = *(CdkInterpType *) data;
+  const CdkPixbuf *source;              /* Source image */
   gint width = SOURCE_WIDTH;            /* Size of source image */
   gint height = SOURCE_HEIGHT;
-  GdkPixbuf *one;                       /* Version scaled by the old code */
-  GdkPixbuf *two;                       /* Version scaled in two steps */
+  CdkPixbuf *one;                       /* Version scaled by the old code */
+  CdkPixbuf *two;                       /* Version scaled in two steps */
 
   /* Use an extreme source image, checkerboard, to exacerbate any artifacts */
   source = make_checkerboard (width, height);
@@ -148,17 +148,17 @@ test_old_and_new (gconstpointer data)
  * scaled image and by cropping it as part of the scaling, and check that the
  * results are identical. */
 static void
-crop_n_compare(const GdkPixbuf *source,	/* The source image */
+crop_n_compare(const CdkPixbuf *source,	/* The source image */
 	       double           scale_factor,  /* is scaled by this amount */
 	       gint             offset_x,      /* and from this offset in the scaled image */
 	       gint             offset_y,
 	       gint             width,         /* a region of this size is cropped out */
 	       gint             height,
-	       GdkInterpType    interp_type)
+	       CdkInterpType    interp_type)
 {
-  GdkPixbuf *whole_scaled;     /* The whole image scaled but not cropped */
-  GdkPixbuf *cropped;          /* The scaled-then-cropped result */
-  GdkPixbuf *scaled;           /* The cropped-while-scaled result */
+  CdkPixbuf *whole_scaled;     /* The whole image scaled but not cropped */
+  CdkPixbuf *cropped;          /* The scaled-then-cropped result */
+  CdkPixbuf *scaled;           /* The cropped-while-scaled result */
   guint new_width, new_height; /* Size of whole scaled image */
 
   /* First, scale the whole image and crop it */
@@ -238,8 +238,8 @@ crop_n_compare(const GdkPixbuf *source,	/* The source image */
 static void
 test_offset (gconstpointer data)
 {
-  GdkInterpType interp_type = *(GdkInterpType *) data;
-  const GdkPixbuf *source;                     /* Source image */
+  CdkInterpType interp_type = *(CdkInterpType *) data;
+  const CdkPixbuf *source;                     /* Source image */
   gint swidth = SOURCE_WIDTH;                  /* Size of source image */
   gint sheight = SOURCE_HEIGHT;
   gint dwidth = (swidth * SCALE_FACTOR + 0.5); /* Size of scaled image */
@@ -272,10 +272,10 @@ test_offset (gconstpointer data)
 static void
 test_dest (gconstpointer data)
 {
-  GdkInterpType interp_type = *(GdkInterpType *) data;
-  const GdkPixbuf *source;             /* Source image */
-  GdkPixbuf *scaled;                   /* Scaled whole image */
-  GdkPixbuf *copy;                     /* Destination image */
+  CdkInterpType interp_type = *(CdkInterpType *) data;
+  const CdkPixbuf *source;             /* Source image */
+  CdkPixbuf *scaled;                   /* Scaled whole image */
+  CdkPixbuf *copy;                     /* Destination image */
   gint swidth = SOURCE_WIDTH;          /* Size of source image */
   gint sheight = SOURCE_HEIGHT;
   gint dwidth = swidth * SCALE_FACTOR; /* Size of scaled image */
@@ -287,25 +287,25 @@ test_dest (gconstpointer data)
   g_assert_nonnull (copy);
 
   /* Copy the four quadrants separately */
-  cdk_pixbuf_scale ((const GdkPixbuf *) source, copy,
+  cdk_pixbuf_scale ((const CdkPixbuf *) source, copy,
 		    0, 0,                    /* dest_[xy] */
 		    dwidth / 2, dheight / 2, /* dest_width/height */
 		    0.0, 0.0,                /* offset_[xy] */
 		    SCALE_FACTOR,  SCALE_FACTOR,
 		    interp_type);
-  cdk_pixbuf_scale ((const GdkPixbuf *) source, copy,
+  cdk_pixbuf_scale ((const CdkPixbuf *) source, copy,
 		    dwidth / 2, 0,           /* dest_[xy] */
 		    dwidth / 2, dheight / 2, /* dest_width/height */
 		    0.0, 0.0,                /* offset_[xy] */
 		    SCALE_FACTOR,  SCALE_FACTOR,
 		    interp_type);
-  cdk_pixbuf_scale ((const GdkPixbuf *)source, copy,
+  cdk_pixbuf_scale ((const CdkPixbuf *)source, copy,
 		    0, dheight / 2,          /* dest_[xy] */
 		    dwidth / 2, dheight / 2, /* dest_width/height */
 		    0.0, 0.0,                /* offset_[xy] */
 		    SCALE_FACTOR,  SCALE_FACTOR,
 		    interp_type);
-  cdk_pixbuf_scale ((const GdkPixbuf *)source, copy,
+  cdk_pixbuf_scale ((const CdkPixbuf *)source, copy,
 		    dwidth / 2, dheight / 2, /* dest_[xy] */
 		    dwidth / 2, dheight / 2, /* dest_width/height */
 		    0.0, 0.0,                /* offset_[xy] */
@@ -330,9 +330,9 @@ test_dest (gconstpointer data)
 int
 main (int argc, char **argv)
 {
-  GdkInterpType tiles = CDK_INTERP_TILES;
-  GdkInterpType bilinear = CDK_INTERP_BILINEAR;
-  GdkInterpType hyper = CDK_INTERP_HYPER;
+  CdkInterpType tiles = CDK_INTERP_TILES;
+  CdkInterpType bilinear = CDK_INTERP_BILINEAR;
+  CdkInterpType hyper = CDK_INTERP_HYPER;
   g_test_init (&argc, &argv, NULL);
 
   g_test_add_data_func ("/pixbuf/scale/two-step/tiles", &tiles, test_old_and_new);

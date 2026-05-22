@@ -1,4 +1,4 @@
-/* GdkPixbuf library - Main header file
+/* CdkPixbuf library - Main header file
  *
  * Copyright (C) 1999 The Free Software Foundation
  *

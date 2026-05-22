@@ -545,8 +545,8 @@ msgid "Transformed pixbuf has zero width or height."
 msgstr "ପରିବର୍ତ୍ତିତ pixbuf ର ଓସାର ବା ଉଚ୍ଚତା ଶୂନ୍ଯଅଟେ।"
 
 #: ../cdk-pixbuf/io-pixdata.c:186
-msgid "The GdkPixdata format"
-msgstr "GdkPix ତଥ୍ୟ ଶୈଳୀ"
+msgid "The CdkPixdata format"
+msgstr "CdkPix ତଥ୍ୟ ଶୈଳୀ"
 
 #: ../cdk-pixbuf/io-png.c:54
 msgid "Bits per channel of PNG image is invalid."
@@ -740,8 +740,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "QTIF ପ୍ରସଙ୍ଗ ଗଠନ ପାଇଁ ସ୍ମୃତି ବଣ୍ଟନ କରିବାରେ ବିଫଳ।"
 
 #: ../cdk-pixbuf/io-qtif.c:330
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "GdkPixbufLoader ବସ୍ତୁ ନିର୍ମାଣ କରିବାରେ ବିଫଳ।"
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "CdkPixbufLoader ବସ୍ତୁ ନିର୍ମାଣ କରିବାରେ ବିଫଳ।"
 
 #: ../cdk-pixbuf/io-qtif.c:434
 msgid "Failed to find an image data atom."

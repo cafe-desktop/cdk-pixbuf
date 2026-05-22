@@ -869,8 +869,8 @@ msgstr "QTIF bağlam yapısı ayrılamadı."
 
 # cdk-pixbuf/io-xbm.c:429
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "GdkPixbufLoader nesnesi oluşturulamadı."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "CdkPixbufLoader nesnesi oluşturulamadı."
 
 # cdk-pixbuf/io-tiff.c:264
 #: cdk-pixbuf/io-qtif.c:424

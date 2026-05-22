@@ -527,8 +527,8 @@ msgid "Transformed pixbuf has zero width or height."
 msgstr "Pixbuf được chuyển đổi có chiều rộng hoặc chiều cao bằng không."
 
 #: ../cdk-pixbuf/io-pixdata.c:186
-msgid "The GdkPixdata format"
-msgstr "Định dạng GdkPixdata"
+msgid "The CdkPixdata format"
+msgstr "Định dạng CdkPixdata"
 
 #: ../cdk-pixbuf/io-png.c:54
 msgid "Bits per channel of PNG image is invalid."
@@ -719,8 +719,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Không cấp phát được cấu trúc ngữ cảnh QTIF."
 
 #: ../cdk-pixbuf/io-qtif.c:330
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Không tạo được đối tượng kiểu GdkPixbufLoader (nạp vùng đệm điểm ảnh)."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Không tạo được đối tượng kiểu CdkPixbufLoader (nạp vùng đệm điểm ảnh)."
 
 #: ../cdk-pixbuf/io-qtif.c:434
 msgid "Failed to find an image data atom."

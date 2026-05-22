@@ -796,8 +796,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Ne mogu da dodelim strukturu KuTIF sadržaja."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Ne mogu da stvorim objekat Gdk učitavača sličice."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Ne mogu da stvorim objekat Cdk učitavača sličice."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -1047,8 +1047,8 @@ msgstr "IksPM"
 #~ msgstr "Preinačena sličica ima visinu ili širinu nula."
 
 #~ msgctxt "image format"
-#~ msgid "GdkPixdata"
-#~ msgstr "Gdk Piksdata"
+#~ msgid "CdkPixdata"
+#~ msgstr "Cdk Piksdata"
 
 #~ msgid "Couldn't allocate memory for header"
 #~ msgstr "Ne mogu da dodelim memoriju za zaglavlje"

@@ -699,8 +699,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "QTIF تىل مۇھىت قۇرۇلمىسىنى تەقسىملىيەلمىدى."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "GdkPixbufLoader ئوبيېكت قۇرالمىدى."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "CdkPixbufLoader ئوبيېكت قۇرالمىدى."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -991,7 +991,7 @@ msgstr "XPM"
 #~ msgid "Transformed pixbuf has zero width or height."
 #~ msgstr "ئايلاندۇرۇلغان pixbuf نىڭ كەڭلىكى ياكى ئېگىزلىكى نۆل."
 
-#~ msgid "The GdkPixdata format"
+#~ msgid "The CdkPixdata format"
 #~ msgstr "BMP سۈرەت پىچىمى"
 
 #, c-format

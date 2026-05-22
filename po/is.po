@@ -780,8 +780,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Mistókst að úthluta QTIF-samhengisskipan."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Gat ekki útbúið GdkPixbufLoader-hlut."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Gat ekki útbúið CdkPixbufLoader-hlut."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -1072,7 +1072,7 @@ msgstr "XPM"
 
 #, fuzzy
 #~ msgctxt "image format"
-#~ msgid "GdkPixdata"
+#~ msgid "CdkPixdata"
 #~ msgstr "GIF myndsniðið"
 
 #~ msgid "RAS image has bogus header data"

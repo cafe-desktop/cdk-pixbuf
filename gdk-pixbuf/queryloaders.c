@@ -1,5 +1,5 @@
 /* -*- mode: C; c-file-style: "linux" -*- */
-/* GdkPixbuf library
+/* CdkPixbuf library
  * queryloaders.c:
  *
  * Copyright (C) 2002 The Free Software Foundation
@@ -59,9 +59,9 @@ print_escaped (GString *contents, const char *str)
 }
 
 static int
-loader_sanity_check (const char *path, GdkPixbufFormat *info, GdkPixbufModule *vtable)
+loader_sanity_check (const char *path, CdkPixbufFormat *info, CdkPixbufModule *vtable)
 {
-        const GdkPixbufModulePattern *pattern;
+        const CdkPixbufModulePattern *pattern;
         const char *error = NULL;
 
         for (pattern = info->signature; pattern->prefix; pattern++)
@@ -174,9 +174,9 @@ get_relative_path (const gchar *parent, const gchar *descendant)
 #endif  /* CDK_PIXBUF_RELOCATABLE */
 
 static void
-write_loader_info (GString *contents, const char *path, GdkPixbufFormat *info)
+write_loader_info (GString *contents, const char *path, CdkPixbufFormat *info)
 {
-        const GdkPixbufModulePattern *pattern;
+        const CdkPixbufModulePattern *pattern;
         char **mime;
         char **ext;
         gchar *module_path = NULL, *escaped_path;
@@ -221,8 +221,8 @@ query_module (GString *contents, const char *dir, const char *file)
 {
         char *path;
         GModule *module;
-        void                    (*fill_info)     (GdkPixbufFormat *info);
-        void                    (*fill_vtable)   (GdkPixbufModule *module);
+        void                    (*fill_info)     (CdkPixbufFormat *info);
+        void                    (*fill_vtable)   (CdkPixbufModule *module);
         gpointer fill_info_ptr;
         gpointer fill_vtable_ptr;
 
@@ -235,8 +235,8 @@ query_module (GString *contents, const char *dir, const char *file)
         if (module &&
             g_module_symbol (module, "fill_info", &fill_info_ptr) &&
             g_module_symbol (module, "fill_vtable", &fill_vtable_ptr)) {
-                GdkPixbufFormat *info;
-                GdkPixbufModule *vtable;
+                CdkPixbufFormat *info;
+                CdkPixbufModule *vtable;
 
 #ifdef G_OS_WIN32
                 /* Replace backslashes in path with forward slashes, so that
@@ -251,8 +251,8 @@ query_module (GString *contents, const char *dir, const char *file)
                         }
                 }
 #endif
-                info = g_new0 (GdkPixbufFormat, 1);
-                vtable = g_new0 (GdkPixbufModule, 1);
+                info = g_new0 (CdkPixbufFormat, 1);
+                vtable = g_new0 (CdkPixbufModule, 1);
 
                 vtable->module = module;
 
@@ -409,7 +409,7 @@ int main (int argc, char **argv)
 
         prgname = g_get_prgname ();
         g_string_append_printf (contents,
-                                "# GdkPixbuf Image Loader Modules file\n"
+                                "# CdkPixbuf Image Loader Modules file\n"
                                 "# Automatically generated file, do not edit\n"
                                 "# Created by %s from cdk-pixbuf-%s\n"
                                 "#\n",

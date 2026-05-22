@@ -615,8 +615,8 @@ msgstr ""
 
 # cdk-pixbuf/cdk-pixdata.c:150
 #: ../cdk-pixbuf/io-pixdata.c:186
-msgid "The GdkPixdata format"
-msgstr "GdkPixdata formatı"
+msgid "The CdkPixdata format"
+msgstr "CdkPixdata formatı"
 
 # cdk-pixbuf/io-pnm.c:423 cdk-pixbuf/io-pnm.c:451 cdk-pixbuf/io-pnm.c:483
 #: ../cdk-pixbuf/io-png.c:54
@@ -837,8 +837,8 @@ msgstr "QTIF kontekst yapısı tahsis etilamadı"
 
 # cdk-pixbuf/io-xbm.c:429
 #: ../cdk-pixbuf/io-qtif.c:330
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "GdkPixbufLoader nesnesi icat etilamadı."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "CdkPixbufLoader nesnesi icat etilamadı."
 
 # cdk-pixbuf/io-tiff.c:264
 #: ../cdk-pixbuf/io-qtif.c:434

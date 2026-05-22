@@ -12,7 +12,7 @@ G_GNUC_BEGIN_IGNORE_DEPRECATIONS
  * count_bytes = G_MAXSIZE means read as many bytes as possible.
  */
 static gsize
-loader_write_from_channel (GdkPixbufLoader *loader,
+loader_write_from_channel (CdkPixbufLoader *loader,
 			   GIOChannel      *channel,
 			   gsize            count_bytes)
 {
@@ -42,7 +42,7 @@ loader_write_from_channel (GdkPixbufLoader *loader,
 static void
 test_short_gif_write (void)
 {
-    GdkPixbufLoader *loader;
+    CdkPixbufLoader *loader;
     GIOChannel* channel;
 
     if (!format_supported ("gif")) {
@@ -73,8 +73,8 @@ test_load_first_frame (void)
     GIOChannel* channel;
     gboolean has_frame = FALSE;
     GError *error = NULL;
-    GdkPixbuf *pixbuf;
-    GdkPixbufLoader *loader;
+    CdkPixbuf *pixbuf;
+    CdkPixbufLoader *loader;
 
     if (!format_supported ("gif")) {
         g_test_skip ("GIF format not supported");
@@ -89,12 +89,12 @@ test_load_first_frame (void)
     g_assert (loader != NULL);
 
     while (!has_frame) {
-        GdkPixbufAnimation *animation;
+        CdkPixbufAnimation *animation;
 
         loader_write_from_channel (loader, channel, 4096);
         animation = cdk_pixbuf_loader_get_animation (loader);
         if (animation) {
-            GdkPixbufAnimationIter *iter = cdk_pixbuf_animation_get_iter (animation, NULL);
+            CdkPixbufAnimationIter *iter = cdk_pixbuf_animation_get_iter (animation, NULL);
             if (!cdk_pixbuf_animation_iter_on_currently_loading_frame (iter))
                 has_frame = TRUE;
             g_object_unref (iter);

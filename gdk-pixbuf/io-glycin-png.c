@@ -1,4 +1,4 @@
-/* GdkPixbuf library - Glycin image loader
+/* CdkPixbuf library - Glycin image loader
  *
  * Copyright (C) 2024 Red Hat, Inc.
  *
@@ -114,7 +114,7 @@ filter_keys (char    **keys,
 
 static gboolean
 cdk_pixbuf__png_image_save (FILE       *f,
-                            GdkPixbuf  *pixbuf,
+                            CdkPixbuf  *pixbuf,
                             char      **keys,
                             char      **values,
                             GError    **error)
@@ -147,9 +147,9 @@ cdk_pixbuf__png_image_save (FILE       *f,
 }
 
 static gboolean
-cdk_pixbuf__png_image_save_to_callback (GdkPixbufSaveFunc   save_func,
+cdk_pixbuf__png_image_save_to_callback (CdkPixbufSaveFunc   save_func,
                                         gpointer            user_data,
-                                        GdkPixbuf          *pixbuf,
+                                        CdkPixbuf          *pixbuf,
                                         gchar             **keys,
                                         gchar             **values,
                                         GError            **error)
@@ -198,7 +198,7 @@ cdk_pixbuf__png_is_save_option_supported (const gchar *option_key)
 #define MODULE_ENTRY(function) void _cdk_pixbuf__glycin_png_ ## function
 #endif
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
   glycin_fill_vtable (module);
 
@@ -207,9 +207,9 @@ MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
   module->is_save_option_supported = cdk_pixbuf__png_is_save_option_supported;
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-  static const GdkPixbufModulePattern signature[] = {
+  static const CdkPixbufModulePattern signature[] = {
     { "\x89PNG\r\n\x1a\x0a", NULL, 100 },
     { NULL, NULL, 0 }
   };
@@ -223,7 +223,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
   };
 
   info->name = "png";
-  info->signature = (GdkPixbufModulePattern *) signature;
+  info->signature = (CdkPixbufModulePattern *) signature;
   info->description = "PNG";
   info->mime_types = (gchar **) mime_types;
   info->extensions = (gchar **) extensions;

@@ -787,8 +787,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Strukture vsebine QTIF ni mogoče dodeliti."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Predmeta GdkPixbufLoader ni mogoče ustvariti."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Predmeta CdkPixbufLoader ni mogoče ustvariti."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -1032,8 +1032,8 @@ msgstr "XPM"
 #~ msgstr "Preoblikovana sličica ima ničelno višino ali širino."
 
 #~ msgctxt "image format"
-#~ msgid "GdkPixdata"
-#~ msgstr "GdkPixdata"
+#~ msgid "CdkPixdata"
+#~ msgstr "CdkPixdata"
 
 #~ msgid "Cannot allocate memory for IOBuffer struct"
 #~ msgstr "Pomnilnika zgradbi IOBuffer ni mogoče dodeliti"

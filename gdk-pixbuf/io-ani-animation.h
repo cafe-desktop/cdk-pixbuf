@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-/* GdkPixbuf library - ANI loader declarations
+/* CdkPixbuf library - ANI loader declarations
  *
  * Copyright (C) 2002 The Free Software Foundation
  *
@@ -25,20 +25,20 @@
 #include <glib/gi18n-lib.h>
 #include "cdk-pixbuf-animation.h"
 
-typedef struct _GdkPixbufAniAnim GdkPixbufAniAnim;
-typedef struct _GdkPixbufAniAnimClass GdkPixbufAniAnimClass;
+typedef struct _CdkPixbufAniAnim CdkPixbufAniAnim;
+typedef struct _CdkPixbufAniAnimClass CdkPixbufAniAnimClass;
 
 #define CDK_TYPE_PIXBUF_ANI_ANIM              (cdk_pixbuf_ani_anim_get_type ())
-#define CDK_PIXBUF_ANI_ANIM(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF_ANI_ANIM, GdkPixbufAniAnim))
+#define CDK_PIXBUF_ANI_ANIM(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF_ANI_ANIM, CdkPixbufAniAnim))
 #define CDK_IS_PIXBUF_ANI_ANIM(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), CDK_TYPE_PIXBUF_ANI_ANIM))
 
-#define CDK_PIXBUF_ANI_ANIM_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_ANI_ANIM, GdkPixbufAniAnimClass))
+#define CDK_PIXBUF_ANI_ANIM_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_ANI_ANIM, CdkPixbufAniAnimClass))
 #define CDK_IS_PIXBUF_ANI_ANIM_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), CDK_TYPE_PIXBUF_ANI_ANIM))
-#define CDK_PIXBUF_ANI_ANIM_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_ANI_ANIM, GdkPixbufAniAnimClass))
+#define CDK_PIXBUF_ANI_ANIM_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_ANI_ANIM, CdkPixbufAniAnimClass))
 
-/* Private part of the GdkPixbufAniAnim structure */
-struct _GdkPixbufAniAnim {
-        GdkPixbufAnimation parent_instance;
+/* Private part of the CdkPixbufAniAnim structure */
+struct _CdkPixbufAniAnim {
+        CdkPixbufAnimation parent_instance;
 
         /* Total length of animation */
         int total_time;
@@ -49,7 +49,7 @@ struct _GdkPixbufAniAnim {
         /* Number of pixbufs */
         int n_pixbufs;
         
-        GdkPixbuf **pixbufs;
+        CdkPixbuf **pixbufs;
         
         /* Maps frame number to pixbuf */
         int *sequence;
@@ -61,8 +61,8 @@ struct _GdkPixbufAniAnim {
 	int width, height;
 };
 
-struct _GdkPixbufAniAnimClass {
-        GdkPixbufAnimationClass parent_class;
+struct _CdkPixbufAniAnimClass {
+        CdkPixbufAnimationClass parent_class;
         
 };
 
@@ -70,23 +70,23 @@ GType cdk_pixbuf_ani_anim_get_type (void) G_GNUC_CONST;
 
 
 
-typedef struct _GdkPixbufAniAnimIter GdkPixbufAniAnimIter;
-typedef struct _GdkPixbufAniAnimIterClass GdkPixbufAniAnimIterClass;
+typedef struct _CdkPixbufAniAnimIter CdkPixbufAniAnimIter;
+typedef struct _CdkPixbufAniAnimIterClass CdkPixbufAniAnimIterClass;
 
 
 #define CDK_TYPE_PIXBUF_ANI_ANIM_ITER              (cdk_pixbuf_ani_anim_iter_get_type ())
-#define CDK_PIXBUF_ANI_ANIM_ITER(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF_ANI_ANIM_ITER, GdkPixbufAniAnimIter))
+#define CDK_PIXBUF_ANI_ANIM_ITER(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF_ANI_ANIM_ITER, CdkPixbufAniAnimIter))
 #define CDK_IS_PIXBUF_ANI_ANIM_ITER(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), CDK_TYPE_PIXBUF_ANI_ANIM_ITER))
 
-#define CDK_PIXBUF_ANI_ANIM_ITER_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_ANI_ANIM_ITER, GdkPixbufAniAnimIterClass))
+#define CDK_PIXBUF_ANI_ANIM_ITER_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_ANI_ANIM_ITER, CdkPixbufAniAnimIterClass))
 #define CDK_IS_PIXBUF_ANI_ANIM_ITER_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), CDK_TYPE_PIXBUF_ANI_ANIM_ITER))
-#define CDK_PIXBUF_ANI_ANIM_ITER_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_ANI_ANIM_ITER, GdkPixbufAniAnimIterClass))
+#define CDK_PIXBUF_ANI_ANIM_ITER_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_ANI_ANIM_ITER, CdkPixbufAniAnimIterClass))
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-struct _GdkPixbufAniAnimIter {
-        GdkPixbufAnimationIter parent_instance;
+struct _CdkPixbufAniAnimIter {
+        CdkPixbufAnimationIter parent_instance;
         
-        GdkPixbufAniAnim   *ani_anim;
+        CdkPixbufAniAnim   *ani_anim;
 
         GTimeVal            start_time;
         GTimeVal            current_time;
@@ -103,8 +103,8 @@ struct _GdkPixbufAniAnimIter {
 };
 G_GNUC_END_IGNORE_DEPRECATIONS
 
-struct _GdkPixbufAniAnimIterClass {
-        GdkPixbufAnimationIterClass parent_class;
+struct _CdkPixbufAniAnimIterClass {
+        CdkPixbufAnimationIterClass parent_class;
 
 };
 

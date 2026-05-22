@@ -5,7 +5,7 @@ cdk-pixbuf-csource
 ==================
 
 ----------------------------------------------
-C code generation utility for GdkPixbuf images
+C code generation utility for CdkPixbuf images
 ----------------------------------------------
 
 SYNOPSIS
@@ -32,11 +32,11 @@ OPTIONS
 ``--stream``
 
   Generate pixbuf data stream: a single string containing a serialized
-  ``GdkPixdata`` structure in network byte order.
+  ``CdkPixdata`` structure in network byte order.
 
 ``--struct``
 
-  Generate ``GdkPixdata`` structure; your code needs the ``GdkPixdata``
+  Generate ``CdkPixdata`` structure; your code needs the ``CdkPixdata``
   structure definition from ``cdk-pixdata.h``.
 
 ``--macros``
@@ -90,7 +90,7 @@ OPTIONS
 SEE ALSO
 --------
 
-The ``GdkPixbuf`` documentation, shipped by cdk-pixbuf, and also
+The ``CdkPixbuf`` documentation, shipped by cdk-pixbuf, and also
 available online on `docs.ctk.org <https://docs.ctk.org/cdk-pixbuf/>`__.
 
 BUGS

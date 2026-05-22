@@ -1,4 +1,4 @@
-/* GdkPixbuf library - transformations
+/* CdkPixbuf library - transformations
  *
  * Copyright (C) 2003 The Free Software Foundation
  *
@@ -37,7 +37,7 @@ G_BEGIN_DECLS
 /* Scaling */
 
 /**
- * GdkInterpType:
+ * CdkInterpType:
  * @CDK_INTERP_NEAREST: Nearest neighbor sampling; this is the fastest
  *  and lowest quality mode. Quality is normally unacceptable when scaling 
  *  down, but may be OK when scaling up.
@@ -75,10 +75,10 @@ typedef enum {
 	CDK_INTERP_TILES,
 	CDK_INTERP_BILINEAR,
 	CDK_INTERP_HYPER
-} GdkInterpType;
+} CdkInterpType;
 
 /**
- * GdkPixbufRotation:
+ * CdkPixbufRotation:
  * @CDK_PIXBUF_ROTATE_NONE: No rotation.
  * @CDK_PIXBUF_ROTATE_COUNTERCLOCKWISE: Rotate by 90 degrees.
  * @CDK_PIXBUF_ROTATE_UPSIDEDOWN: Rotate by 180 degrees.
@@ -93,11 +93,11 @@ typedef enum {
 	CDK_PIXBUF_ROTATE_COUNTERCLOCKWISE =  90,
 	CDK_PIXBUF_ROTATE_UPSIDEDOWN       = 180,
 	CDK_PIXBUF_ROTATE_CLOCKWISE        = 270
-} GdkPixbufRotation;
+} CdkPixbufRotation;
 
 CDK_PIXBUF_AVAILABLE_IN_ALL
-void cdk_pixbuf_scale           (const GdkPixbuf *src,
-				 GdkPixbuf       *dest,
+void cdk_pixbuf_scale           (const CdkPixbuf *src,
+				 CdkPixbuf       *dest,
 				 int              dest_x,
 				 int              dest_y,
 				 int              dest_width,
@@ -106,10 +106,10 @@ void cdk_pixbuf_scale           (const GdkPixbuf *src,
 				 double           offset_y,
 				 double           scale_x,
 				 double           scale_y,
-				 GdkInterpType    interp_type);
+				 CdkInterpType    interp_type);
 CDK_PIXBUF_AVAILABLE_IN_ALL
-void cdk_pixbuf_composite       (const GdkPixbuf *src,
-				 GdkPixbuf       *dest,
+void cdk_pixbuf_composite       (const CdkPixbuf *src,
+				 CdkPixbuf       *dest,
 				 int              dest_x,
 				 int              dest_y,
 				 int              dest_width,
@@ -118,11 +118,11 @@ void cdk_pixbuf_composite       (const GdkPixbuf *src,
 				 double           offset_y,
 				 double           scale_x,
 				 double           scale_y,
-				 GdkInterpType    interp_type,
+				 CdkInterpType    interp_type,
 				 int              overall_alpha);
 CDK_PIXBUF_AVAILABLE_IN_ALL
-void cdk_pixbuf_composite_color (const GdkPixbuf *src,
-				 GdkPixbuf       *dest,
+void cdk_pixbuf_composite_color (const CdkPixbuf *src,
+				 CdkPixbuf       *dest,
 				 int              dest_x,
 				 int              dest_y,
 				 int              dest_width,
@@ -131,7 +131,7 @@ void cdk_pixbuf_composite_color (const GdkPixbuf *src,
 				 double           offset_y,
 				 double           scale_x,
 				 double           scale_y,
-				 GdkInterpType    interp_type,
+				 CdkInterpType    interp_type,
 				 int              overall_alpha,
 				 int              check_x,
 				 int              check_y,
@@ -140,26 +140,26 @@ void cdk_pixbuf_composite_color (const GdkPixbuf *src,
 				 guint32          color2);
 
 CDK_PIXBUF_AVAILABLE_IN_ALL
-GdkPixbuf *cdk_pixbuf_scale_simple           (const GdkPixbuf *src,
+CdkPixbuf *cdk_pixbuf_scale_simple           (const CdkPixbuf *src,
 					      int              dest_width,
 					      int              dest_height,
-					      GdkInterpType    interp_type);
+					      CdkInterpType    interp_type);
 
 CDK_PIXBUF_AVAILABLE_IN_ALL
-GdkPixbuf *cdk_pixbuf_composite_color_simple (const GdkPixbuf *src,
+CdkPixbuf *cdk_pixbuf_composite_color_simple (const CdkPixbuf *src,
 					      int              dest_width,
 					      int              dest_height,
-					      GdkInterpType    interp_type,
+					      CdkInterpType    interp_type,
 					      int              overall_alpha,
 					      int              check_size,
 					      guint32          color1,
 					      guint32          color2);
 
 CDK_PIXBUF_AVAILABLE_IN_2_6
-GdkPixbuf *cdk_pixbuf_rotate_simple          (const GdkPixbuf   *src,
-				              GdkPixbufRotation  angle);
+CdkPixbuf *cdk_pixbuf_rotate_simple          (const CdkPixbuf   *src,
+				              CdkPixbufRotation  angle);
 CDK_PIXBUF_AVAILABLE_IN_2_6
-GdkPixbuf *cdk_pixbuf_flip                   (const GdkPixbuf   *src,
+CdkPixbuf *cdk_pixbuf_flip                   (const CdkPixbuf   *src,
 				              gboolean           horizontal);
 				     
 G_END_DECLS

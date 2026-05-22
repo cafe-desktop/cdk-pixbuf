@@ -1,5 +1,5 @@
 /* -*- mode: C; c-file-style: "linux" -*- */
-/* GdkPixbuf library - Windows Icon/Cursor image loader
+/* CdkPixbuf library - Windows Icon/Cursor image loader
  *
  * Copyright (C) 1999 The Free Software Foundation
  *
@@ -138,9 +138,9 @@ struct ico_direntry_data {
 };
 
 struct ico_progressive_state {
-	GdkPixbufModuleSizeFunc size_func;
-	GdkPixbufModulePreparedFunc prepared_func;
-	GdkPixbufModuleUpdatedFunc updated_func;
+	CdkPixbufModuleSizeFunc size_func;
+	CdkPixbufModulePreparedFunc prepared_func;
+	CdkPixbufModuleUpdatedFunc updated_func;
 	gpointer user_data;
 
 	gint HeaderSize;	/* The size of the header-part (incl colormap) */
@@ -169,13 +169,13 @@ struct ico_progressive_state {
 	GList *entries;
 	guint			DIBoffset;
 
-	GdkPixbuf *pixbuf;	/* Our "target" */
+	CdkPixbuf *pixbuf;	/* Our "target" */
 };
 
 static gpointer
-cdk_pixbuf__ico_image_begin_load(GdkPixbufModuleSizeFunc size_func,
-                                 GdkPixbufModulePreparedFunc prepared_func,
-				 GdkPixbufModuleUpdatedFunc updated_func,
+cdk_pixbuf__ico_image_begin_load(CdkPixbufModuleSizeFunc size_func,
+                                 CdkPixbufModulePreparedFunc prepared_func,
+				 CdkPixbufModuleUpdatedFunc updated_func,
 				 gpointer user_data,
                                  GError **error);
 static gboolean cdk_pixbuf__ico_image_stop_load(gpointer data, GError **error);
@@ -555,9 +555,9 @@ static void DecodeHeader(guchar *Data, gint Bytes,
  */
 
 static gpointer
-cdk_pixbuf__ico_image_begin_load(GdkPixbufModuleSizeFunc size_func,
-                                 GdkPixbufModulePreparedFunc prepared_func,
-				 GdkPixbufModuleUpdatedFunc updated_func,
+cdk_pixbuf__ico_image_begin_load(CdkPixbufModuleSizeFunc size_func,
+                                 CdkPixbufModulePreparedFunc prepared_func,
+				 CdkPixbufModuleUpdatedFunc updated_func,
 				 gpointer user_data,
                                  GError **error)
 {
@@ -1055,7 +1055,7 @@ struct _IconEntry {
 
 static gboolean
 fill_entry (IconEntry *icon, 
-	    GdkPixbuf *pixbuf, 
+	    CdkPixbuf *pixbuf, 
 	    gint       hot_x, 
 	    gint       hot_y, 
 	    GError   **error) 
@@ -1297,7 +1297,7 @@ ascii_strtoll (const gchar  *str,
 
 static gboolean
 cdk_pixbuf__ico_image_save (FILE          *f, 
-                            GdkPixbuf     *pixbuf, 
+                            CdkPixbuf     *pixbuf, 
                             gchar        **keys,
                             gchar        **values,
                             GError       **error)
@@ -1380,7 +1380,7 @@ cdk_pixbuf__ico_is_save_option_supported (const gchar *option_key)
 #define MODULE_ENTRY(function) void _cdk_pixbuf__ico_ ## function
 #endif
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
 	module->begin_load = cdk_pixbuf__ico_image_begin_load;
 	module->stop_load = cdk_pixbuf__ico_image_stop_load;
@@ -1389,9 +1389,9 @@ MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
         module->is_save_option_supported = cdk_pixbuf__ico_is_save_option_supported;
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-	static const GdkPixbufModulePattern signature[] = {
+	static const CdkPixbufModulePattern signature[] = {
 		{ "  \x1   ", "zz znz", 100 }, 
 		{ "  \x2   ", "zz znz", 100 },
 		{ NULL, NULL, 0 }
@@ -1414,7 +1414,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
 	};
 
 	info->name = "ico";
-	info->signature = (GdkPixbufModulePattern *) signature;
+	info->signature = (CdkPixbufModulePattern *) signature;
 	info->description = NC_("image format", "Windows icon");
 	info->mime_types = (gchar **) mime_types;
 	info->extensions = (gchar **) extensions;

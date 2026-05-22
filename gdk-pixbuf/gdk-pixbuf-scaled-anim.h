@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-/* GdkPixbuf library - Simple transformations of animations
+/* CdkPixbuf library - Simple transformations of animations
  *
  * Copyright (C) 2007 Red Hat, Inc
  *
@@ -29,18 +29,18 @@ G_BEGIN_DECLS
 #define CDK_TYPE_PIXBUF_SCALED_ANIM              (cdk_pixbuf_scaled_anim_get_type ())
 #define CDK_TYPE_PIXBUF_SCALED_ANIM_ITER         (cdk_pixbuf_scaled_anim_iter_get_type ())
 
-typedef struct _GdkPixbufScaledAnim GdkPixbufScaledAnim;
-typedef struct _GdkPixbufScaledAnimClass GdkPixbufScaledAnimClass;
+typedef struct _CdkPixbufScaledAnim CdkPixbufScaledAnim;
+typedef struct _CdkPixbufScaledAnimClass CdkPixbufScaledAnimClass;
 
 GType cdk_pixbuf_scaled_anim_get_type (void) G_GNUC_CONST;
 GType cdk_pixbuf_scaled_anim_iter_get_type (void) G_GNUC_CONST;
 
-GdkPixbufScaledAnim *_cdk_pixbuf_scaled_anim_new (GdkPixbufAnimation *anim,
+CdkPixbufScaledAnim *_cdk_pixbuf_scaled_anim_new (CdkPixbufAnimation *anim,
                                                   gdouble             xscale, 
                                                   gdouble             yscale,
                                                   gdouble             tscale);
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC (GdkPixbufScaledAnim, g_object_unref)
+G_DEFINE_AUTOPTR_CLEANUP_FUNC (CdkPixbufScaledAnim, g_object_unref)
 
 G_END_DECLS
 

@@ -1,5 +1,5 @@
 /* -*- Mode: C; c-basic-offset: 2; -*- */
-/* GdkPixbuf library - test loaders
+/* CdkPixbuf library - test loaders
  *
  * Copyright (C) 2016 Red Hat, Inc.
  *
@@ -35,9 +35,9 @@
  * (no currently loading frames exist).
  */
 typedef struct {
-    GdkPixbufAnimationIter* iter; /* iterator pointed to the frame */
+    CdkPixbufAnimationIter* iter; /* iterator pointed to the frame */
     GTimeVal time; /* time when this frame appears */
-    GdkPixbuf *pixbuf; /* current content of the frame */
+    CdkPixbuf *pixbuf; /* current content of the frame */
 } FrameData;
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
@@ -45,7 +45,7 @@ G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 /* Auxiliary function, returns numeric representation of pixel.
  * For RGB format it is rrggbb(in hex), for RGBA - rrggbbaa. */
 static guint32
-get_pixel (GdkPixbuf *pixbuf, int x, int y)
+get_pixel (CdkPixbuf *pixbuf, int x, int y)
 {
     guchar *colors;
     guint32 pixel;
@@ -63,8 +63,8 @@ get_pixel (GdkPixbuf *pixbuf, int x, int y)
 /* Verify whether all pixels outside the updated area
  * have the same values in pixbuf_old and pixbuf_new. */
 static gboolean
-pixbuf_not_changed_outside_area (GdkPixbuf *pixbuf_new,
-				 GdkPixbuf *pixbuf_old,
+pixbuf_not_changed_outside_area (CdkPixbuf *pixbuf_new,
+				 CdkPixbuf *pixbuf_old,
 				 int        x,
 				 int        y,
 				 int        width,
@@ -107,14 +107,14 @@ pixbuf_not_changed_outside_area (GdkPixbuf *pixbuf_new,
 }
 
 static void
-callback_area_updated (GdkPixbufLoader *loader,
+callback_area_updated (CdkPixbufLoader *loader,
                        int              x,
                        int              y,
                        int              width,
                        int              height,
-                       GdkPixbuf       *pixbuf_old)
+                       CdkPixbuf       *pixbuf_old)
 {
-    GdkPixbuf *pixbuf_new;
+    CdkPixbuf *pixbuf_new;
 
     pixbuf_new = cdk_pixbuf_loader_get_pixbuf (loader);
 
@@ -125,17 +125,17 @@ callback_area_updated (GdkPixbufLoader *loader,
 
 /* free copy of pixbuf used in area-updated callback. */
 static void
-callback_closed (GdkPixbufLoader *loader,
-                 GdkPixbuf       *pixbuf_copy)
+callback_closed (CdkPixbufLoader *loader,
+                 CdkPixbuf       *pixbuf_copy)
 {
     g_object_unref (pixbuf_copy);
 }
 
 /* prepare copy of pixbuf and connect other callbacks */
 static void
-callback_area_prepared (GdkPixbufLoader *loader)
+callback_area_prepared (CdkPixbufLoader *loader)
 {
-    GdkPixbuf *pixbuf_copy;
+    CdkPixbuf *pixbuf_copy;
 
     pixbuf_copy = cdk_pixbuf_copy (cdk_pixbuf_loader_get_pixbuf (loader));
     /* connect callbacks for another signals for not use pointer to pointer in them. */
@@ -149,7 +149,7 @@ callback_area_prepared (GdkPixbufLoader *loader)
  * Returns number of bytes written.
  * count_bytes = G_MAXSIZE means read as many bytes as possible. */
 static gsize
-loader_write_from_channel (GdkPixbufLoader *loader,
+loader_write_from_channel (CdkPixbufLoader *loader,
                            GIOChannel      *channel,
                            gsize            count_bytes)
 {
@@ -181,7 +181,7 @@ test_area_updated_ico (gconstpointer data)
 {
     const char *filename;
     GIOChannel *channel;
-    GdkPixbufLoader *loader;
+    CdkPixbufLoader *loader;
 
     filename = g_test_get_filename (G_TEST_DIST, data, NULL);
     if (!format_supported (filename)) {
@@ -251,14 +251,14 @@ update_currently_loaded_frame (FrameData* frame)
 }
 
 static void
-callback_area_updated_anim (GdkPixbufLoader *loader,
+callback_area_updated_anim (CdkPixbufLoader *loader,
                             int              x,
                             int              y,
                             int              width,
                             int              height,
                             FrameData       *frame_old)
 {
-    GdkPixbuf *pixbuf_new;
+    CdkPixbuf *pixbuf_new;
 
     /* "area-updated" signal was emitted after animation had fully loaded. */
     g_assert_nonnull (frame_old->pixbuf);
@@ -271,7 +271,7 @@ callback_area_updated_anim (GdkPixbufLoader *loader,
 
 /* free resources used in callback_area_updated_anim */
 static void
-callback_closed_anim(GdkPixbufLoader *loader, FrameData *frame_copy)
+callback_closed_anim(CdkPixbufLoader *loader, FrameData *frame_copy)
 {
     g_object_unref (frame_copy->iter);
     if(frame_copy->pixbuf != NULL)
@@ -280,9 +280,9 @@ callback_closed_anim(GdkPixbufLoader *loader, FrameData *frame_copy)
 }
 /* prepare frame information and register other callbacks */
 static void
-callback_area_prepared_anim (GdkPixbufLoader* loader)
+callback_area_prepared_anim (CdkPixbufLoader* loader)
 {
-    GdkPixbufAnimation *anim;
+    CdkPixbufAnimation *anim;
     FrameData* frame_copy = g_new (FrameData, 1);
 
     g_signal_connect (loader, "area-updated",
@@ -303,7 +303,7 @@ test_area_updated_anim (gconstpointer data)
 {
     const char *filename;
     GIOChannel *channel;
-    GdkPixbufLoader *loader;
+    CdkPixbufLoader *loader;
 
     filename = g_test_get_filename (G_TEST_DIST, data, NULL);
     if (!format_supported (filename)) {

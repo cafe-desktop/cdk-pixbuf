@@ -1,4 +1,4 @@
-/* GdkPixbuf library - Android image loader
+/* CdkPixbuf library - Android image loader
  *
  * Copyright (C) 2025  Florian Leander Singer <sp1rit@disroot.org>
  *
@@ -25,14 +25,14 @@
 
 #define MODULE_ENTRY(function) void _cdk_pixbuf__android_wbmp_ ## function
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
   cdk_pixbuf__android_fill_vtable (module);
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-  static const GdkPixbufModulePattern signature[] = {
+  static const CdkPixbufModulePattern signature[] = {
     { NULL, NULL, 0 }
   };
   static const gchar *mime_types[] = {
@@ -46,7 +46,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
   };
 
   info->name = "wbmp";
-  info->signature = (GdkPixbufModulePattern *) signature;
+  info->signature = (CdkPixbufModulePattern *) signature;
   info->description = "WBMP";
   info->mime_types = (gchar **) mime_types;
   info->extensions = (gchar **) extensions;

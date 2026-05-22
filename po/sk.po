@@ -785,8 +785,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Zlyhalo vyhradenie kontextovej štruktúry QTIF."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Zlyhalo vytvorenie objektu GdkPixbufLoader."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Zlyhalo vytvorenie objektu CdkPixbufLoader."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -1032,8 +1032,8 @@ msgstr "XPM"
 #~ msgstr "Transformovaný pixbuf má nulovú výšku alebo šírku."
 
 #~ msgctxt "image format"
-#~ msgid "GdkPixdata"
-#~ msgstr "GdkPixdata"
+#~ msgid "CdkPixdata"
+#~ msgstr "CdkPixdata"
 
 #~ msgid "Couldn't allocate memory for header"
 #~ msgstr "Nepodarilo sa vyhradiť pamäť pre hlavičku"

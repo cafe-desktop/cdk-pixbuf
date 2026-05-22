@@ -558,7 +558,7 @@ msgstr "טראַנספֿאָרמירטע PNG האָט נוליקע ברײט אָ
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "GIF בילד־פֿאָרעם"
 
 #: cdk-pixbuf/io-png.c:54
@@ -754,7 +754,7 @@ msgstr "ניט גענוג זכּרון פֿאַר TGA קאָנטעקסט־סטר
 
 #: cdk-pixbuf/io-qtif.c:330
 #, fuzzy
-msgid "Failed to create GdkPixbufLoader object."
+msgid "Failed to create CdkPixbufLoader object."
 msgstr "דורכפֿאַל אין שרײַבן צײַטװײַליקע טעקע בשעת אַרײַנשטעלן XBM בילד"
 
 #: cdk-pixbuf/io-qtif.c:434

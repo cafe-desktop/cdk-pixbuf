@@ -521,7 +521,7 @@ msgstr "صورة PNG المُحوّلة ذات عرض أو ارتفاع صفري
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "صيغة صور GIF"
 
 #: cdk-pixbuf/io-png.c:54
@@ -722,8 +722,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "تعذّر تحصيص ذاكرة لبنية سياق QTIF."
 
 #: cdk-pixbuf/io-qtif.c:330
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "فشلت إنشاء كائن GdkPixbufLoader."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "فشلت إنشاء كائن CdkPixbufLoader."
 
 #: cdk-pixbuf/io-qtif.c:434
 msgid "Failed to find an image data atom."

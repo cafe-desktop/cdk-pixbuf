@@ -1,5 +1,5 @@
 /* -*- mode: C; c-file-style: "linux" -*- */
-/* GdkPixbuf library - JPEG image loader
+/* CdkPixbuf library - JPEG image loader
  *
  * Copyright (C) 1999 Michael Zucchi
  * Copyright (C) 1999 The Free Software Foundation
@@ -69,12 +69,12 @@ struct error_handler_data {
 
 /* progressive loader context */
 typedef struct {
-        GdkPixbufModuleSizeFunc     size_func;
-	GdkPixbufModuleUpdatedFunc  updated_func;
-	GdkPixbufModulePreparedFunc prepared_func;
+        CdkPixbufModuleSizeFunc     size_func;
+	CdkPixbufModuleUpdatedFunc  updated_func;
+	CdkPixbufModulePreparedFunc prepared_func;
 	gpointer                    user_data;
 	
-	GdkPixbuf                *pixbuf;
+	CdkPixbuf                *pixbuf;
 	guchar                   *dptr;   /* current position in pixbuf */
 
 	gboolean                 did_prescan;  /* are we in image data yet? */
@@ -94,10 +94,10 @@ typedef struct {
 } JpegExifContext;
 
 #ifndef NO_MODULE_ENTRIES
-static GdkPixbuf *cdk_pixbuf__jpeg_image_load (FILE *f, GError **error);
-static gpointer cdk_pixbuf__jpeg_image_begin_load (GdkPixbufModuleSizeFunc           func0,
-                                                   GdkPixbufModulePreparedFunc func1, 
-                                                   GdkPixbufModuleUpdatedFunc func2,
+static CdkPixbuf *cdk_pixbuf__jpeg_image_load (FILE *f, GError **error);
+static gpointer cdk_pixbuf__jpeg_image_begin_load (CdkPixbufModuleSizeFunc           func0,
+                                                   CdkPixbufModulePreparedFunc func1, 
+                                                   CdkPixbufModuleUpdatedFunc func2,
                                                    gpointer user_data,
                                                    GError **error);
 static gboolean cdk_pixbuf__jpeg_image_stop_load (gpointer context, GError **error);
@@ -560,13 +560,13 @@ jpeg_destroy_exif_context (JpegExifContext *context)
 
 #ifndef NO_MODULE_ENTRIES
 /* Shared library entry point */
-static GdkPixbuf *
+static CdkPixbuf *
 cdk_pixbuf__real_jpeg_image_load (FILE *f, struct jpeg_decompress_struct *cinfo, GError **error)
 {
 	gint   i;
 	char   otag_str[5];
 	char  *density_str;
-	GdkPixbuf * volatile pixbuf = NULL;
+	CdkPixbuf * volatile pixbuf = NULL;
 	guchar *dptr;
 	guchar *lines[4]; /* Used to expand rows, via rec_outbuf_height, 
                            * from the header file: 
@@ -733,7 +733,7 @@ out:
 #endif /* !NO_MODULE_ENTRIES */
 
 #ifndef NO_MODULE_ENTRIES
-static GdkPixbuf *
+static CdkPixbuf *
 cdk_pixbuf__jpeg_image_load (FILE *f, GError **error)
 {
         struct jpeg_decompress_struct cinfo;
@@ -796,9 +796,9 @@ skip_input_data (j_decompress_ptr cinfo, long num_bytes)
  * return context (opaque to user)
  */
 static gpointer
-cdk_pixbuf__jpeg_image_begin_load (GdkPixbufModuleSizeFunc size_func,
-				   GdkPixbufModulePreparedFunc prepared_func, 
-				   GdkPixbufModuleUpdatedFunc updated_func,
+cdk_pixbuf__jpeg_image_begin_load (CdkPixbufModuleSizeFunc size_func,
+				   CdkPixbufModulePreparedFunc prepared_func, 
+				   CdkPixbufModuleUpdatedFunc updated_func,
 				   gpointer user_data,
                                    GError **error)
 {
@@ -1297,7 +1297,7 @@ out:
 typedef struct {
 	struct jpeg_destination_mgr pub;
 	JOCTET             *buffer;
-	GdkPixbufSaveFunc   save_func;
+	CdkPixbufSaveFunc   save_func;
 	gpointer            user_data;
 	GError            **error;
 } ToFunctionDestinationManager;
@@ -1361,13 +1361,13 @@ to_callback_terminate (j_compress_ptr cinfo)
 }
 
 static gboolean
-real_save_jpeg (GdkPixbuf          *pixbuf,
+real_save_jpeg (CdkPixbuf          *pixbuf,
 		gchar             **keys,
 		gchar             **values,
 		GError            **error,
 		gboolean            to_callback,
 		FILE               *f,
-		GdkPixbufSaveFunc   save_func,
+		CdkPixbufSaveFunc   save_func,
 		gpointer            user_data)
 {
         /* FIXME error handling is broken */
@@ -1638,7 +1638,7 @@ cleanup:
 
 static gboolean
 cdk_pixbuf__jpeg_image_save (FILE          *f, 
-                             GdkPixbuf     *pixbuf, 
+                             CdkPixbuf     *pixbuf, 
                              gchar        **keys,
                              gchar        **values,
                              GError       **error)
@@ -1648,9 +1648,9 @@ cdk_pixbuf__jpeg_image_save (FILE          *f,
 }
 
 static gboolean
-cdk_pixbuf__jpeg_image_save_to_callback (GdkPixbufSaveFunc   save_func,
+cdk_pixbuf__jpeg_image_save_to_callback (CdkPixbufSaveFunc   save_func,
 					 gpointer            user_data,
-					 GdkPixbuf          *pixbuf, 
+					 CdkPixbuf          *pixbuf, 
 					 gchar             **keys,
 					 gchar             **values,
 					 GError            **error)
@@ -1677,7 +1677,7 @@ cdk_pixbuf__jpeg_is_save_option_supported (const gchar *option_key)
 #define MODULE_ENTRY(function) void _cdk_pixbuf__jpeg_ ## function
 #endif
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule *module)
 {
 	module->load = cdk_pixbuf__jpeg_image_load;
 	module->begin_load = cdk_pixbuf__jpeg_image_begin_load;
@@ -1688,9 +1688,9 @@ MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
         module->is_save_option_supported = cdk_pixbuf__jpeg_is_save_option_supported;
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat *info)
 {
-	static const GdkPixbufModulePattern signature[] = {
+	static const CdkPixbufModulePattern signature[] = {
 		{ "\xff\xd8", NULL, 100 },
 		{ NULL, NULL, 0 }
 	};
@@ -1706,7 +1706,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)
 	};
 
 	info->name = "jpeg";
-	info->signature = (GdkPixbufModulePattern *) signature;
+	info->signature = (CdkPixbufModulePattern *) signature;
 	info->description = NC_("image format", "JPEG");
 	info->mime_types = (gchar **) mime_types;
 	info->extensions = (gchar **) extensions;

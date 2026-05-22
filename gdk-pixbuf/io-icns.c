@@ -33,8 +33,8 @@
 #include "cdk-pixbuf-io.h"
 #include "cdk-pixbuf-loader.h"
 
-G_MODULE_EXPORT void fill_vtable (GdkPixbufModule * module);
-G_MODULE_EXPORT void fill_info (GdkPixbufFormat * info);
+G_MODULE_EXPORT void fill_vtable (CdkPixbufModule * module);
+G_MODULE_EXPORT void fill_info (CdkPixbufFormat * info);
 
 #define IN /**/
 #define OUT /**/
@@ -49,13 +49,13 @@ typedef struct IcnsBlockHeader IcnsBlockHeader;
 
 typedef struct
 {
-  GdkPixbufModuleSizeFunc size_func;
-  GdkPixbufModulePreparedFunc prepared_func;
-  GdkPixbufModuleUpdatedFunc updated_func;
+  CdkPixbufModuleSizeFunc size_func;
+  CdkPixbufModulePreparedFunc prepared_func;
+  CdkPixbufModuleUpdatedFunc updated_func;
   gpointer user_data;
 
   GByteArray *byte_array;
-  GdkPixbuf *pixbuf;      /* Our "target" */
+  CdkPixbuf *pixbuf;      /* Our "target" */
 } IcnsProgressiveState;
 
 /*
@@ -245,7 +245,7 @@ uncompress (unsigned size, INOUT guchar ** source, OUT guchar * target, INOUT gs
   return TRUE;
 }
 
-static GdkPixbuf *
+static CdkPixbuf *
 load_icon (unsigned size, IN gpointer data, gsize datalen)
 {
   guchar *icon = NULL;
@@ -260,8 +260,8 @@ load_icon (unsigned size, IN gpointer data, gsize datalen)
    * They're usually JPEG 2000 images */
   if (size == 256)
     {
-      GdkPixbufLoader *loader;
-      GdkPixbuf *pixbuf;
+      CdkPixbufLoader *loader;
+      CdkPixbuf *pixbuf;
 
       loader = cdk_pixbuf_loader_new ();
       if (!cdk_pixbuf_loader_write (loader, icon, isize, NULL)
@@ -320,7 +320,7 @@ load_icon (unsigned size, IN gpointer data, gsize datalen)
 				   size,	/* width */
 				   size,	/* height */
 				   size * 4,	/* no gap between rows */
-				   (GdkPixbufDestroyNotify)g_free,	/* free() function */
+				   (CdkPixbufDestroyNotify)g_free,	/* free() function */
 				   NULL);	/* param to free() function */
 
 bail:
@@ -337,11 +337,11 @@ static int sizes[] = {
   16   /* used in Mac OS Classic and dialog boxes */
 };
 
-static GdkPixbuf *
+static CdkPixbuf *
 icns_image_load (FILE *f, GError ** error)
 {
   GByteArray *data;
-  GdkPixbuf *pixbuf = NULL;
+  CdkPixbuf *pixbuf = NULL;
   guint i;
 
   data = g_byte_array_new ();
@@ -391,9 +391,9 @@ context_free (IcnsProgressiveState *context)
 }
 
 static gpointer
-cdk_pixbuf__icns_image_begin_load (GdkPixbufModuleSizeFunc      size_func,
-				   GdkPixbufModulePreparedFunc  prepared_func,
-				   GdkPixbufModuleUpdatedFunc   updated_func,
+cdk_pixbuf__icns_image_begin_load (CdkPixbufModuleSizeFunc      size_func,
+				   CdkPixbufModulePreparedFunc  prepared_func,
+				   CdkPixbufModuleUpdatedFunc   updated_func,
 				   gpointer                     user_data,
 				   GError                     **error)
 {
@@ -489,7 +489,7 @@ cdk_pixbuf__icns_image_load_increment (gpointer       data,
 #define MODULE_ENTRY(function) void _cdk_pixbuf__icns_ ## function
 #endif
 
-MODULE_ENTRY (fill_vtable) (GdkPixbufModule * module)
+MODULE_ENTRY (fill_vtable) (CdkPixbufModule * module)
 {
   module->load = icns_image_load;
   module->begin_load = cdk_pixbuf__icns_image_begin_load;
@@ -497,9 +497,9 @@ MODULE_ENTRY (fill_vtable) (GdkPixbufModule * module)
   module->load_increment = cdk_pixbuf__icns_image_load_increment;
 }
 
-MODULE_ENTRY (fill_info) (GdkPixbufFormat * info)
+MODULE_ENTRY (fill_info) (CdkPixbufFormat * info)
 {
-  static const GdkPixbufModulePattern signature[] = {
+  static const CdkPixbufModulePattern signature[] = {
     {"icns", NULL, 100},	/* file begins with 'icns' */
     {NULL, NULL, 0}
   };
@@ -513,7 +513,7 @@ MODULE_ENTRY (fill_info) (GdkPixbufFormat * info)
   };
 
   info->name = "icns";
-  info->signature = (GdkPixbufModulePattern *) signature;
+  info->signature = (CdkPixbufModulePattern *) signature;
   info->description = NC_("image format", "MacOS X icon");
   info->mime_types = (gchar **) mime_types;
   info->extensions = (gchar **) extensions;

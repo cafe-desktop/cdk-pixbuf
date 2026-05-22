@@ -810,8 +810,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "Kon geen geheugen reserveren voor QTIF-contextstructuur."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "Kon GdkPixbufLoader-object niet aanmaken."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "Kon CdkPixbufLoader-object niet aanmaken."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
@@ -1134,7 +1134,7 @@ msgstr "XPM"
 #~ msgstr "Getransformeerde PNG heeft nul breedte of hoogte."
 
 #, fuzzy
-#~ msgid "The GdkPixdata format"
+#~ msgid "The CdkPixdata format"
 #~ msgstr "Het GIF-bestandsformaat"
 
 #~ msgid "The PNG image format"

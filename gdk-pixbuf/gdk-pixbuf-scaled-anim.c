@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-/* GdkPixbuf library - Simple transformations of animations
+/* CdkPixbuf library - Simple transformations of animations
  *
  * Copyright (C) Red Hat, Inc
  *
@@ -28,46 +28,46 @@
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 
-struct _GdkPixbufScaledAnimClass
+struct _CdkPixbufScaledAnimClass
 {
-        GdkPixbufAnimationClass parent_class;
+        CdkPixbufAnimationClass parent_class;
 };
 
-struct _GdkPixbufScaledAnim
+struct _CdkPixbufScaledAnim
 {
- 	GdkPixbufAnimation parent_instance;
+ 	CdkPixbufAnimation parent_instance;
 
-	GdkPixbufAnimation *anim;
+	CdkPixbufAnimation *anim;
 	gdouble xscale;
 	gdouble yscale;
 	gdouble tscale;
 
-	GdkPixbuf *current;
+	CdkPixbuf *current;
 };
 
-struct _GdkPixbufScaledAnimIterClass
+struct _CdkPixbufScaledAnimIterClass
 {
-        GdkPixbufAnimationClass parent_class;
+        CdkPixbufAnimationClass parent_class;
 };
 
-struct _GdkPixbufScaledAnimIter
+struct _CdkPixbufScaledAnimIter
 {
- 	GdkPixbufAnimationIter parent_instance;
+ 	CdkPixbufAnimationIter parent_instance;
 
-	GdkPixbufScaledAnim *scaled;
-        GdkPixbufAnimationIter *iter;
+	CdkPixbufScaledAnim *scaled;
+        CdkPixbufAnimationIter *iter;
 };
 
-typedef struct _GdkPixbufScaledAnimIter GdkPixbufScaledAnimIter;
-typedef struct _GdkPixbufScaledAnimIterClass GdkPixbufScaledAnimIterClass;
+typedef struct _CdkPixbufScaledAnimIter CdkPixbufScaledAnimIter;
+typedef struct _CdkPixbufScaledAnimIterClass CdkPixbufScaledAnimIterClass;
 
-GdkPixbufScaledAnim *
-_cdk_pixbuf_scaled_anim_new (GdkPixbufAnimation *anim,
+CdkPixbufScaledAnim *
+_cdk_pixbuf_scaled_anim_new (CdkPixbufAnimation *anim,
                              gdouble             xscale,
                              gdouble             yscale,
                              gdouble             tscale)
 {
-	GdkPixbufScaledAnim *scaled;
+	CdkPixbufScaledAnim *scaled;
 
 	scaled = g_object_new (CDK_TYPE_PIXBUF_SCALED_ANIM, NULL);
 
@@ -79,10 +79,10 @@ _cdk_pixbuf_scaled_anim_new (GdkPixbufAnimation *anim,
 	return scaled;
 }
 
-G_DEFINE_TYPE (GdkPixbufScaledAnim, cdk_pixbuf_scaled_anim, CDK_TYPE_PIXBUF_ANIMATION);
+G_DEFINE_TYPE (CdkPixbufScaledAnim, cdk_pixbuf_scaled_anim, CDK_TYPE_PIXBUF_ANIMATION);
 
 static void
-cdk_pixbuf_scaled_anim_init (GdkPixbufScaledAnim *scaled)
+cdk_pixbuf_scaled_anim_init (CdkPixbufScaledAnim *scaled)
 {
 	scaled->xscale = 1.0;
 	scaled->yscale = 1.0;
@@ -92,7 +92,7 @@ cdk_pixbuf_scaled_anim_init (GdkPixbufScaledAnim *scaled)
 static void
 cdk_pixbuf_scaled_anim_finalize (GObject *object)
 {
-	GdkPixbufScaledAnim *scaled = (GdkPixbufScaledAnim *)object;
+	CdkPixbufScaledAnim *scaled = (CdkPixbufScaledAnim *)object;
 
 	if (scaled->anim) {
 		g_object_unref (scaled->anim);
@@ -108,16 +108,16 @@ cdk_pixbuf_scaled_anim_finalize (GObject *object)
 }
 
 static gboolean
-is_static_image (GdkPixbufAnimation *anim)
+is_static_image (CdkPixbufAnimation *anim)
 {
-	GdkPixbufScaledAnim *scaled = (GdkPixbufScaledAnim *)anim;
+	CdkPixbufScaledAnim *scaled = (CdkPixbufScaledAnim *)anim;
 
 	return cdk_pixbuf_animation_is_static_image (scaled->anim);
 }	
 
-static GdkPixbuf *
-get_scaled_pixbuf (GdkPixbufScaledAnim *scaled, 
-                   GdkPixbuf           *pixbuf)
+static CdkPixbuf *
+get_scaled_pixbuf (CdkPixbufScaledAnim *scaled, 
+                   CdkPixbuf           *pixbuf)
 {
 	GQuark  quark;
 	gchar **options;
@@ -149,22 +149,22 @@ get_scaled_pixbuf (GdkPixbufScaledAnim *scaled,
 	return scaled->current;
 }
 
-static GdkPixbuf *
-get_static_image (GdkPixbufAnimation *anim)
+static CdkPixbuf *
+get_static_image (CdkPixbufAnimation *anim)
 {
-	GdkPixbufScaledAnim *scaled = (GdkPixbufScaledAnim *)anim;
-	GdkPixbuf *pixbuf;
+	CdkPixbufScaledAnim *scaled = (CdkPixbufScaledAnim *)anim;
+	CdkPixbuf *pixbuf;
 	
 	pixbuf = cdk_pixbuf_animation_get_static_image (scaled->anim);
 	return get_scaled_pixbuf (scaled, pixbuf);
 }
 
 static void
-get_size (GdkPixbufAnimation *anim,
+get_size (CdkPixbufAnimation *anim,
 	  int                *width,
 	  int 		     *height)
 {
-	GdkPixbufScaledAnim *scaled = (GdkPixbufScaledAnim *)anim;
+	CdkPixbufScaledAnim *scaled = (CdkPixbufScaledAnim *)anim;
 
         CDK_PIXBUF_ANIMATION_GET_CLASS (scaled->anim)->get_size (scaled->anim, width, height);
 	if (width) 
@@ -174,27 +174,27 @@ get_size (GdkPixbufAnimation *anim,
 }
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-static GdkPixbufAnimationIter *
-get_iter (GdkPixbufAnimation *anim,
+static CdkPixbufAnimationIter *
+get_iter (CdkPixbufAnimation *anim,
           const GTimeVal     *start_time)
 {
-	GdkPixbufScaledAnim *scaled = (GdkPixbufScaledAnim *)anim;
-	GdkPixbufScaledAnimIter *iter;
+	CdkPixbufScaledAnim *scaled = (CdkPixbufScaledAnim *)anim;
+	CdkPixbufScaledAnimIter *iter;
 
 	iter = g_object_new (CDK_TYPE_PIXBUF_SCALED_ANIM_ITER, NULL);
 
 	iter->scaled = g_object_ref (scaled);
 	iter->iter = cdk_pixbuf_animation_get_iter (scaled->anim, start_time);
 	
-	return (GdkPixbufAnimationIter*)iter;
+	return (CdkPixbufAnimationIter*)iter;
 }
 G_GNUC_END_IGNORE_DEPRECATIONS
 
 static void
-cdk_pixbuf_scaled_anim_class_init (GdkPixbufScaledAnimClass *klass)
+cdk_pixbuf_scaled_anim_class_init (CdkPixbufScaledAnimClass *klass)
 {
         GObjectClass *object_class;
-        GdkPixbufAnimationClass *anim_class;
+        CdkPixbufAnimationClass *anim_class;
 
         object_class = G_OBJECT_CLASS (klass);
         anim_class = CDK_PIXBUF_ANIMATION_CLASS (klass);
@@ -208,17 +208,17 @@ cdk_pixbuf_scaled_anim_class_init (GdkPixbufScaledAnimClass *klass)
 }
 
 
-G_DEFINE_TYPE (GdkPixbufScaledAnimIter, cdk_pixbuf_scaled_anim_iter, CDK_TYPE_PIXBUF_ANIMATION_ITER);
+G_DEFINE_TYPE (CdkPixbufScaledAnimIter, cdk_pixbuf_scaled_anim_iter, CDK_TYPE_PIXBUF_ANIMATION_ITER);
 
 static void
-cdk_pixbuf_scaled_anim_iter_init (GdkPixbufScaledAnimIter *iter)
+cdk_pixbuf_scaled_anim_iter_init (CdkPixbufScaledAnimIter *iter)
 {
 }
 
 static int
-get_delay_time (GdkPixbufAnimationIter *iter)
+get_delay_time (CdkPixbufAnimationIter *iter)
 {
-	GdkPixbufScaledAnimIter *scaled = (GdkPixbufScaledAnimIter *)iter;
+	CdkPixbufScaledAnimIter *scaled = (CdkPixbufScaledAnimIter *)iter;
 	int delay;
 
 	delay = cdk_pixbuf_animation_iter_get_delay_time (scaled->iter);
@@ -227,30 +227,30 @@ get_delay_time (GdkPixbufAnimationIter *iter)
 	return delay;
 }
 
-static GdkPixbuf *
-get_pixbuf (GdkPixbufAnimationIter *iter)
+static CdkPixbuf *
+get_pixbuf (CdkPixbufAnimationIter *iter)
 {
-	GdkPixbufScaledAnimIter *scaled = (GdkPixbufScaledAnimIter *)iter;
-	GdkPixbuf *pixbuf;
+	CdkPixbufScaledAnimIter *scaled = (CdkPixbufScaledAnimIter *)iter;
+	CdkPixbuf *pixbuf;
 
 	pixbuf = cdk_pixbuf_animation_iter_get_pixbuf (scaled->iter);
 	return get_scaled_pixbuf (scaled->scaled, pixbuf);
 }
 
 static gboolean 
-on_currently_loading_frame (GdkPixbufAnimationIter *iter)
+on_currently_loading_frame (CdkPixbufAnimationIter *iter)
 {
-	GdkPixbufScaledAnimIter *scaled = (GdkPixbufScaledAnimIter *)iter;
+	CdkPixbufScaledAnimIter *scaled = (CdkPixbufScaledAnimIter *)iter;
 
 	return cdk_pixbuf_animation_iter_on_currently_loading_frame (scaled->iter);
 }
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 static gboolean
-advance (GdkPixbufAnimationIter *iter,
+advance (CdkPixbufAnimationIter *iter,
 	 const GTimeVal         *current_time)
 {
-	GdkPixbufScaledAnimIter *scaled = (GdkPixbufScaledAnimIter *)iter;
+	CdkPixbufScaledAnimIter *scaled = (CdkPixbufScaledAnimIter *)iter;
 
 	return cdk_pixbuf_animation_iter_advance (scaled->iter, current_time);
 }
@@ -259,7 +259,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 static void
 cdk_pixbuf_scaled_anim_iter_finalize (GObject *object)
 {
-        GdkPixbufScaledAnimIter *iter = (GdkPixbufScaledAnimIter *)object;
+        CdkPixbufScaledAnimIter *iter = (CdkPixbufScaledAnimIter *)object;
         
 	g_object_unref (iter->iter);
    	g_object_unref (iter->scaled);
@@ -268,10 +268,10 @@ cdk_pixbuf_scaled_anim_iter_finalize (GObject *object)
 }
 
 static void
-cdk_pixbuf_scaled_anim_iter_class_init (GdkPixbufScaledAnimIterClass *klass)
+cdk_pixbuf_scaled_anim_iter_class_init (CdkPixbufScaledAnimIterClass *klass)
 {
         GObjectClass *object_class;
-        GdkPixbufAnimationIterClass *anim_iter_class;
+        CdkPixbufAnimationIterClass *anim_iter_class;
 
         object_class = G_OBJECT_CLASS (klass);
         anim_iter_class = CDK_PIXBUF_ANIMATION_ITER_CLASS (klass);

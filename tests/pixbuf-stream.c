@@ -1,5 +1,5 @@
 /* -*- Mode: C; c-basic-offset: 2; -*- */
-/* GdkPixbuf library - test loaders
+/* CdkPixbuf library - test loaders
  *
  * Copyright (C) 2013 Red Hat, Inc.
  *
@@ -28,7 +28,7 @@
   g_strcmp0 (cdk_pixbuf_get_option (p1, key), cdk_pixbuf_get_option (p2, key))
 
 static gboolean
-pixbuf_equal (GdkPixbuf *p1, GdkPixbuf *p2)
+pixbuf_equal (CdkPixbuf *p1, CdkPixbuf *p2)
 {
   if (cdk_pixbuf_get_colorspace (p1) != cdk_pixbuf_get_colorspace (p2))
     return FALSE;
@@ -67,7 +67,7 @@ test_stream (gconstpointer data)
   const gchar *filename = data;
   const gchar *path;
   GError *error = NULL;
-  GdkPixbuf *pixbuf, *ref;
+  CdkPixbuf *pixbuf, *ref;
   GFile *file;
   GInputStream *stream;
 
@@ -98,8 +98,8 @@ test_stream (gconstpointer data)
 static void
 async_done_cb (GObject *source, GAsyncResult *res, gpointer data)
 {
-  GdkPixbuf *ref = data;
-  GdkPixbuf *pixbuf;
+  CdkPixbuf *ref = data;
+  CdkPixbuf *pixbuf;
   GError *error = NULL;
 
   pixbuf = cdk_pixbuf_new_from_stream_finish (res, &error);
@@ -117,7 +117,7 @@ test_stream_async (gconstpointer data)
   const gchar *filename = data;
   const gchar *path;
   GError *error = NULL;
-  GdkPixbuf *ref;
+  CdkPixbuf *ref;
   gchar *buffer;
   gsize size;
   GInputStream *stream;
@@ -146,7 +146,7 @@ test_stream_at_scale (gconstpointer data)
   const gchar *filename = data;
   const gchar *path;
   GError *error = NULL;
-  GdkPixbuf *pixbuf, *ref;
+  CdkPixbuf *pixbuf, *ref;
   GFile *file;
   GInputStream *stream;
 
@@ -180,7 +180,7 @@ test_stream_at_scale_async (gconstpointer data)
   const gchar *filename = data;
   const gchar *path;
   GError *error = NULL;
-  GdkPixbuf *ref;
+  CdkPixbuf *ref;
   gchar *buffer;
   gsize size;
   GInputStream *stream;

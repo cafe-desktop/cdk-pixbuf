@@ -1,5 +1,5 @@
 /* -*- Mode: C; c-basic-offset: 2; -*- */
-/* GdkPixbuf library - test loaders
+/* CdkPixbuf library - test loaders
  *
  * Copyright (C) 2013 Red Hat, Inc.
  *
@@ -28,7 +28,7 @@
   g_strcmp0 (cdk_pixbuf_get_option (p1, key), cdk_pixbuf_get_option (p2, key))
 
 static gboolean
-pixbuf_equal (GdkPixbuf *p1, GdkPixbuf *p2)
+pixbuf_equal (CdkPixbuf *p1, CdkPixbuf *p2)
 {
   if (!pixdata_equal (p1, p2, NULL))
     return FALSE;
@@ -53,7 +53,7 @@ test_resource (void)
 {
   const gchar *path;
   GError *error = NULL;
-  GdkPixbuf *pixbuf, *ref;
+  CdkPixbuf *pixbuf, *ref;
 
   if (!format_supported ("png"))
     {
@@ -93,7 +93,7 @@ test_resource_at_scale (void)
 {
   const gchar *path;
   GError *error = NULL;
-  GdkPixbuf *pixbuf, *ref;
+  CdkPixbuf *pixbuf, *ref;
 
   if (!format_supported ("png"))
     {

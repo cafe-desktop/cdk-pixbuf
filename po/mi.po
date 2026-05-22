@@ -536,7 +536,7 @@ msgstr "Ehara whanui ranei ehara ikeike kei PNG "
 
 #: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
-msgid "The GdkPixdata format"
+msgid "The CdkPixdata format"
 msgstr "Te whakatakotoranga a te ataahua GIF"
 
 #: cdk-pixbuf/io-png.c:54
@@ -724,7 +724,7 @@ msgstr "Kaore taea e whakarato pumahara mo te "
 
 #: cdk-pixbuf/io-qtif.c:330
 #, fuzzy
-msgid "Failed to create GdkPixbufLoader object."
+msgid "Failed to create CdkPixbufLoader object."
 msgstr "Kua hinga kia korero pukapuka i te puarahi taupua"
 
 #: cdk-pixbuf/io-qtif.c:434

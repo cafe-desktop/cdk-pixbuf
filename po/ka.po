@@ -163,7 +163,7 @@ msgstr "გამოსახულების ფაილის  ჩაწე
 #, c-format
 msgid "This build of cdk-pixbuf does not support saving the image format: %s"
 msgstr ""
-"Gdk-pixbuf-ის ამ აგებას ამ გამოსახულების ფორმატში შენახვის მხარდაჭერა არ "
+"Cdk-pixbuf-ის ამ აგებას ამ გამოსახულების ფორმატში შენახვის მხარდაჭერა არ "
 "გააჩნია: %s"
 
 #: cdk-pixbuf/cdk-pixbuf-io.c:2317
@@ -775,8 +775,8 @@ msgid "Failed to allocate QTIF context structure."
 msgstr "QTIF კონტექსტის სტრუქტურის გამოყოფის შეცდომა."
 
 #: cdk-pixbuf/io-qtif.c:329
-msgid "Failed to create GdkPixbufLoader object."
-msgstr "GdkPixbufLoader ობიექტის შექმნის შეცდომა."
+msgid "Failed to create CdkPixbufLoader object."
+msgstr "CdkPixbufLoader ობიექტის შექმნის შეცდომა."
 
 #: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."

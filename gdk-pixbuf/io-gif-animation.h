@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-/* GdkPixbuf library - GIF loader declarations
+/* CdkPixbuf library - GIF loader declarations
  *
  * Copyright (C) 1999 The Free Software Foundation
  *
@@ -39,25 +39,25 @@ typedef enum {
          */
         /* (GIF disposal method 3) */
 	CDK_PIXBUF_FRAME_REVERT
-} GdkPixbufFrameAction;
+} CdkPixbufFrameAction;
 
 
 
-typedef struct _GdkPixbufGifAnim GdkPixbufGifAnim;
-typedef struct _GdkPixbufGifAnimClass GdkPixbufGifAnimClass;
-typedef struct _GdkPixbufFrame GdkPixbufFrame;
+typedef struct _CdkPixbufGifAnim CdkPixbufGifAnim;
+typedef struct _CdkPixbufGifAnimClass CdkPixbufGifAnimClass;
+typedef struct _CdkPixbufFrame CdkPixbufFrame;
 
 #define CDK_TYPE_PIXBUF_GIF_ANIM              (cdk_pixbuf_gif_anim_get_type ())
-#define CDK_PIXBUF_GIF_ANIM(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF_GIF_ANIM, GdkPixbufGifAnim))
+#define CDK_PIXBUF_GIF_ANIM(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF_GIF_ANIM, CdkPixbufGifAnim))
 #define CDK_IS_PIXBUF_GIF_ANIM(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), CDK_TYPE_PIXBUF_GIF_ANIM))
 
-#define CDK_PIXBUF_GIF_ANIM_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_GIF_ANIM, GdkPixbufGifAnimClass))
+#define CDK_PIXBUF_GIF_ANIM_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_GIF_ANIM, CdkPixbufGifAnimClass))
 #define CDK_IS_PIXBUF_GIF_ANIM_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), CDK_TYPE_PIXBUF_GIF_ANIM))
-#define CDK_PIXBUF_GIF_ANIM_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_GIF_ANIM, GdkPixbufGifAnimClass))
+#define CDK_PIXBUF_GIF_ANIM_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_GIF_ANIM, CdkPixbufGifAnimClass))
 
-/* Private part of the GdkPixbufGifAnim structure */
-struct _GdkPixbufGifAnim {
-        GdkPixbufAnimation parent_instance;
+/* Private part of the CdkPixbufGifAnim structure */
+struct _CdkPixbufGifAnim {
+        CdkPixbufAnimation parent_instance;
 
         /* Total length of animation */
         int total_time;
@@ -65,7 +65,7 @@ struct _GdkPixbufGifAnim {
         /* Color map */
         guchar color_map[256 * 3];
 
-	/* List of GdkPixbufFrame structures */
+	/* List of CdkPixbufFrame structures */
         GList *frames;
 
 	/* bounding box size */
@@ -74,13 +74,13 @@ struct _GdkPixbufGifAnim {
         int loop;
 
         /* Last rendered frames */
-	GdkPixbuf *last_frame_data;
-	GdkPixbufFrame *last_frame;
-	GdkPixbuf *last_frame_revert_data;
+	CdkPixbuf *last_frame_data;
+	CdkPixbufFrame *last_frame;
+	CdkPixbuf *last_frame_revert_data;
 };
 
-struct _GdkPixbufGifAnimClass {
-        GdkPixbufAnimationClass parent_class;
+struct _CdkPixbufGifAnimClass {
+        CdkPixbufAnimationClass parent_class;
         
 };
 
@@ -88,23 +88,23 @@ GType cdk_pixbuf_gif_anim_get_type (void) G_GNUC_CONST;
 
 
 
-typedef struct _GdkPixbufGifAnimIter GdkPixbufGifAnimIter;
-typedef struct _GdkPixbufGifAnimIterClass GdkPixbufGifAnimIterClass;
+typedef struct _CdkPixbufGifAnimIter CdkPixbufGifAnimIter;
+typedef struct _CdkPixbufGifAnimIterClass CdkPixbufGifAnimIterClass;
 
 
 #define CDK_TYPE_PIXBUF_GIF_ANIM_ITER              (cdk_pixbuf_gif_anim_iter_get_type ())
-#define CDK_PIXBUF_GIF_ANIM_ITER(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF_GIF_ANIM_ITER, GdkPixbufGifAnimIter))
+#define CDK_PIXBUF_GIF_ANIM_ITER(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF_GIF_ANIM_ITER, CdkPixbufGifAnimIter))
 #define CDK_IS_PIXBUF_GIF_ANIM_ITER(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), CDK_TYPE_PIXBUF_GIF_ANIM_ITER))
 
-#define CDK_PIXBUF_GIF_ANIM_ITER_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_GIF_ANIM_ITER, GdkPixbufGifAnimIterClass))
+#define CDK_PIXBUF_GIF_ANIM_ITER_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), CDK_TYPE_PIXBUF_GIF_ANIM_ITER, CdkPixbufGifAnimIterClass))
 #define CDK_IS_PIXBUF_GIF_ANIM_ITER_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), CDK_TYPE_PIXBUF_GIF_ANIM_ITER))
-#define CDK_PIXBUF_GIF_ANIM_ITER_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_GIF_ANIM_ITER, GdkPixbufGifAnimIterClass))
+#define CDK_PIXBUF_GIF_ANIM_ITER_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_GIF_ANIM_ITER, CdkPixbufGifAnimIterClass))
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-struct _GdkPixbufGifAnimIter {
-        GdkPixbufAnimationIter parent_instance;
+struct _CdkPixbufGifAnimIter {
+        CdkPixbufAnimationIter parent_instance;
         
-        GdkPixbufGifAnim   *gif_anim;
+        CdkPixbufGifAnim   *gif_anim;
 
         GTimeVal            start_time;
         GTimeVal            current_time;
@@ -118,8 +118,8 @@ struct _GdkPixbufGifAnimIter {
 };
 G_GNUC_END_IGNORE_DEPRECATIONS
 
-struct _GdkPixbufGifAnimIterClass {
-        GdkPixbufAnimationIterClass parent_class;
+struct _CdkPixbufGifAnimIterClass {
+        CdkPixbufAnimationIterClass parent_class;
 
 };
 
@@ -127,7 +127,7 @@ GType cdk_pixbuf_gif_anim_iter_get_type (void) G_GNUC_CONST;
 
 
 
-struct _GdkPixbufFrame {
+struct _CdkPixbufFrame {
 	/* Compressed frame data */
 	GByteArray *lzw_data;
 	guint8 lzw_code_size;
@@ -155,7 +155,7 @@ struct _GdkPixbufFrame {
         int elapsed;
         
         /* Overlay mode */
-	GdkPixbufFrameAction action;
+	CdkPixbufFrameAction action;
 };
 
 #endif

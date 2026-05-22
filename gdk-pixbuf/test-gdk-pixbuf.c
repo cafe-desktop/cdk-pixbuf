@@ -1,6 +1,6 @@
 /* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 8; tab-width: 8 -*- */
 
-/* GdkPixbuf library - test program
+/* CdkPixbuf library - test program
  *
  * Copyright (C) 1999 The Free Software Foundation
  *
@@ -46,7 +46,7 @@ store_pixel (guchar *pixels,
 }
 
 static void
-fill_with_pixel (GdkPixbuf *pixbuf,
+fill_with_pixel (CdkPixbuf *pixbuf,
 		 int pixel)
 {
 	int x, y;
@@ -73,15 +73,15 @@ load_pixel (const guchar *pixels,
 }
 
 static gboolean
-simple_composite_test_one (GdkInterpType type,
+simple_composite_test_one (CdkInterpType type,
 			   int source_pixel,
 			   gboolean source_alpha,
 			   int destination_pixel,
 			   gboolean destination_alpha,
 			   int expected_result)
 {
-	GdkPixbuf *source_pixbuf;
-	GdkPixbuf *destination_pixbuf;
+	CdkPixbuf *source_pixbuf;
+	CdkPixbuf *destination_pixbuf;
 	int result_pixel;
 
 	source_pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, source_alpha, 8, 32, 32);
@@ -138,7 +138,7 @@ simple_composite_test_one (GdkInterpType type,
 }
 
 static gboolean
-simple_composite_test_one_type (GdkInterpType type)
+simple_composite_test_one_type (CdkInterpType type)
 {
 	gboolean success;
 
