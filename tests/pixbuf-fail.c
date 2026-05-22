@@ -21,7 +21,7 @@
 
 #include "config.h"
 
-#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <cdk-pixbuf/cdk-pixbuf.h>
 
 #include "test-common.h"
 
@@ -55,7 +55,7 @@ test_fail_size (GFile *file,
     content_type = g_content_type_guess (filename, contents, contents_length, NULL);
     mime_type = g_content_type_get_mime_type (content_type);
     g_assert_nonnull (mime_type);
-    loader = gdk_pixbuf_loader_new_with_mime_type (mime_type, &error);
+    loader = cdk_pixbuf_loader_new_with_mime_type (mime_type, &error);
     g_free (mime_type);
     g_free (content_type);
   }
@@ -65,7 +65,7 @@ test_fail_size (GFile *file,
 
     success = find_format (filename, &format);
     g_assert_true (success);
-    loader = gdk_pixbuf_loader_new_with_type (format, &error);
+    loader = cdk_pixbuf_loader_new_with_type (format, &error);
     g_free (format);
   }
 #endif
@@ -74,7 +74,7 @@ test_fail_size (GFile *file,
 
   for (i = 0; i < contents_length; i += chunk_size)
     {
-      success = gdk_pixbuf_loader_write (loader, &contents[i], MIN(chunk_size, contents_length - i), &error);
+      success = cdk_pixbuf_loader_write (loader, &contents[i], MIN(chunk_size, contents_length - i), &error);
       if (!success)
         {
           g_assert_nonnull (error);
@@ -84,7 +84,7 @@ test_fail_size (GFile *file,
       g_assert_no_error (error);
     }
   
-  success = gdk_pixbuf_loader_close (loader, &error);
+  success = cdk_pixbuf_loader_close (loader, &error);
   g_assert_false (success);
   g_assert_nonnull (error);
   g_clear_error (&error);

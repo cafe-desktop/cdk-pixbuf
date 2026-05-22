@@ -23,7 +23,7 @@
 #ifndef __TEST_COMMON_H__
 
 #include <glib.h>
-#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <cdk-pixbuf/cdk-pixbuf.h>
 
 G_BEGIN_DECLS
 

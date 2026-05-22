@@ -31,8 +31,8 @@
 #include <glib-object.h>
 #include <glib/gi18n-lib.h>
 
-#include "gdk-pixbuf-core.h"
-#include "gdk-pixbuf-io.h"
+#include "cdk-pixbuf-core.h"
+#include "cdk-pixbuf-io.h"
 
 #define DUMPBIH 0
 
@@ -189,14 +189,14 @@ struct bmp_progressive_state {
 };
 
 static gpointer
-gdk_pixbuf__bmp_image_begin_load(GdkPixbufModuleSizeFunc size_func,
+cdk_pixbuf__bmp_image_begin_load(GdkPixbufModuleSizeFunc size_func,
                                  GdkPixbufModulePreparedFunc prepared_func,
 				 GdkPixbufModuleUpdatedFunc updated_func,
                                  gpointer user_data,
                                  GError **error);
 
-static gboolean gdk_pixbuf__bmp_image_stop_load(gpointer data, GError **error);
-static gboolean gdk_pixbuf__bmp_image_load_increment(gpointer data,
+static gboolean cdk_pixbuf__bmp_image_stop_load(gpointer data, GError **error);
+static gboolean cdk_pixbuf__bmp_image_load_increment(gpointer data,
                                                      const guchar * buf,
                                                      guint size,
                                                      GError **error);
@@ -481,7 +481,7 @@ DecodeHeader (unsigned char *BFH,
 		else
 			has_alpha = FALSE;
 
-		rowstride = gdk_pixbuf_calculate_rowstride (GDK_COLORSPACE_RGB, has_alpha, 8,
+		rowstride = cdk_pixbuf_calculate_rowstride (GDK_COLORSPACE_RGB, has_alpha, 8,
 							    (gint) State->Header.width,
 							    (gint) State->Header.height);
 
@@ -496,7 +496,7 @@ DecodeHeader (unsigned char *BFH,
 			return FALSE;
 		}
 
-		State->pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, has_alpha, 8,
+		State->pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, has_alpha, 8,
 						(gint) State->Header.width,
 						(gint) State->Header.height);
 
@@ -514,10 +514,10 @@ DecodeHeader (unsigned char *BFH,
 		
 		/* make all pixels initially transparent */
 		if (State->Compressed == BI_RLE4 || State->Compressed == BI_RLE8) {
-			gint rowstride = gdk_pixbuf_get_rowstride (State->pixbuf);
+			gint rowstride = cdk_pixbuf_get_rowstride (State->pixbuf);
 
-			memset (gdk_pixbuf_get_pixels (State->pixbuf), 0, rowstride * State->Header.height);
-			State->compr.p = gdk_pixbuf_get_pixels (State->pixbuf) 
+			memset (cdk_pixbuf_get_pixels (State->pixbuf), 0, rowstride * State->Header.height);
+			State->compr.p = cdk_pixbuf_get_pixels (State->pixbuf) 
 				+ rowstride * (State->Header.height- 1);
 		}
 	}
@@ -743,7 +743,7 @@ decode_bitmasks (unsigned char *buf,
  */
 
 static gpointer
-gdk_pixbuf__bmp_image_begin_load(GdkPixbufModuleSizeFunc size_func,
+cdk_pixbuf__bmp_image_begin_load(GdkPixbufModuleSizeFunc size_func,
                                  GdkPixbufModulePreparedFunc prepared_func,
 				 GdkPixbufModuleUpdatedFunc updated_func,
                                  gpointer user_data,
@@ -787,9 +787,9 @@ gdk_pixbuf__bmp_image_begin_load(GdkPixbufModuleSizeFunc size_func,
 /*
  * context - returned from image_begin_load
  *
- * free context, unref gdk_pixbuf
+ * free context, unref cdk_pixbuf
  */
-static gboolean gdk_pixbuf__bmp_image_stop_load(gpointer data, GError **error)
+static gboolean cdk_pixbuf__bmp_image_stop_load(gpointer data, GError **error)
 {
 	gboolean retval = TRUE;
 	
@@ -831,13 +831,13 @@ static void OneLine32(struct bmp_progressive_state *context)
 	int i;
 	guchar *pixels;
 	guchar *src;
-	gint rowstride = gdk_pixbuf_get_rowstride (context->pixbuf);
+	gint rowstride = cdk_pixbuf_get_rowstride (context->pixbuf);
 
 	if (!context->Header.Negative)
-		pixels = (gdk_pixbuf_get_pixels (context->pixbuf) +
+		pixels = (cdk_pixbuf_get_pixels (context->pixbuf) +
 			  rowstride * (context->Header.height - context->Lines - 1));
 	else
-		pixels = (gdk_pixbuf_get_pixels (context->pixbuf) +
+		pixels = (cdk_pixbuf_get_pixels (context->pixbuf) +
 			  rowstride * context->Lines);
 
 	src = context->buff;
@@ -897,14 +897,14 @@ static void OneLine24(struct bmp_progressive_state *context)
 {
 	gint X;
 	guchar *Pixels;
-	gint rowstride = gdk_pixbuf_get_rowstride (context->pixbuf);
+	gint rowstride = cdk_pixbuf_get_rowstride (context->pixbuf);
 
 	X = 0;
 	if (context->Header.Negative == 0)
-		Pixels = (gdk_pixbuf_get_pixels (context->pixbuf) +
+		Pixels = (cdk_pixbuf_get_pixels (context->pixbuf) +
 			  rowstride * (context->Header.height - context->Lines - 1));
 	else
-		Pixels = (gdk_pixbuf_get_pixels (context->pixbuf) +
+		Pixels = (cdk_pixbuf_get_pixels (context->pixbuf) +
 			  rowstride * context->Lines);
 	while (X < context->Header.width) {
 		Pixels[X * 3 + 0] = context->buff[X * 3 + 2];
@@ -920,13 +920,13 @@ static void OneLine16(struct bmp_progressive_state *context)
 	int i;
 	guchar *pixels;
 	guchar *src;
-	gint rowstride = gdk_pixbuf_get_rowstride (context->pixbuf);
+	gint rowstride = cdk_pixbuf_get_rowstride (context->pixbuf);
 
 	if (!context->Header.Negative)
-		pixels = (gdk_pixbuf_get_pixels (context->pixbuf) +
+		pixels = (cdk_pixbuf_get_pixels (context->pixbuf) +
 			  rowstride * (context->Header.height - context->Lines - 1));
 	else
-		pixels = (gdk_pixbuf_get_pixels (context->pixbuf) +
+		pixels = (cdk_pixbuf_get_pixels (context->pixbuf) +
 			  rowstride * context->Lines);
 
 	src = context->buff;
@@ -982,14 +982,14 @@ static void OneLine8(struct bmp_progressive_state *context)
 {
 	gint X;
 	guchar *Pixels;
-	gint rowstride = gdk_pixbuf_get_rowstride (context->pixbuf);
+	gint rowstride = cdk_pixbuf_get_rowstride (context->pixbuf);
 
 	X = 0;
 	if (context->Header.Negative == 0)
-		Pixels = (gdk_pixbuf_get_pixels (context->pixbuf) +
+		Pixels = (cdk_pixbuf_get_pixels (context->pixbuf) +
 			  rowstride * (context->Header.height - context->Lines - 1));
 	else
-		Pixels = (gdk_pixbuf_get_pixels (context->pixbuf) +
+		Pixels = (cdk_pixbuf_get_pixels (context->pixbuf) +
 			  rowstride * context->Lines);
 	while (X < context->Header.width) {
 		Pixels[X * 3 + 0] =
@@ -1006,14 +1006,14 @@ static void OneLine4(struct bmp_progressive_state *context)
 {
 	gint X;
 	guchar *Pixels;
-	gint rowstride = gdk_pixbuf_get_rowstride (context->pixbuf);
+	gint rowstride = cdk_pixbuf_get_rowstride (context->pixbuf);
 
 	X = 0;
 	if (context->Header.Negative == 0)
-		Pixels = (gdk_pixbuf_get_pixels (context->pixbuf) +
+		Pixels = (cdk_pixbuf_get_pixels (context->pixbuf) +
 			  rowstride * (context->Header.height - context->Lines - 1));
 	else
-		Pixels = (gdk_pixbuf_get_pixels (context->pixbuf) +
+		Pixels = (cdk_pixbuf_get_pixels (context->pixbuf) +
 			  rowstride * context->Lines);
 
 	while (X < context->Header.width) {
@@ -1046,14 +1046,14 @@ static void OneLine1(struct bmp_progressive_state *context)
 {
 	gint X;
 	guchar *Pixels;
-	gint rowstride = gdk_pixbuf_get_rowstride (context->pixbuf);
+	gint rowstride = cdk_pixbuf_get_rowstride (context->pixbuf);
 
 	X = 0;
 	if (context->Header.Negative == 0)
-		Pixels = (gdk_pixbuf_get_pixels (context->pixbuf) +
+		Pixels = (cdk_pixbuf_get_pixels (context->pixbuf) +
 			  rowstride * (context->Header.height - context->Lines - 1));
 	else
-		Pixels = (gdk_pixbuf_get_pixels (context->pixbuf) +
+		Pixels = (cdk_pixbuf_get_pixels (context->pixbuf) +
 			  rowstride * context->Lines);
 	while (X < context->Header.width) {
 		gint Bit;
@@ -1171,8 +1171,8 @@ DoCompressed(struct bmp_progressive_state *context, GError **error)
 				case END_OF_LINE:
 					context->compr.x = 0;
 					context->compr.y++;
-					context->compr.p = gdk_pixbuf_get_pixels (context->pixbuf) 
-						+ (gdk_pixbuf_get_rowstride (context->pixbuf) * (context->Header.height - context->compr.y - 1))
+					context->compr.p = cdk_pixbuf_get_pixels (context->pixbuf) 
+						+ (cdk_pixbuf_get_rowstride (context->pixbuf) * (context->Header.height - context->compr.y - 1))
 						+ (4 * context->compr.x);
 					context->compr.phase = NEUTRAL;
 					break;
@@ -1197,8 +1197,8 @@ DoCompressed(struct bmp_progressive_state *context, GError **error)
 			    break;
 		    case DELTA_Y:
 			    context->compr.y += c;
-			    context->compr.p = gdk_pixbuf_get_pixels (context->pixbuf) 
-				    + (gdk_pixbuf_get_rowstride (context->pixbuf) * (context->Header.height - context->compr.y - 1))
+			    context->compr.p = cdk_pixbuf_get_pixels (context->pixbuf) 
+				    + (cdk_pixbuf_get_rowstride (context->pixbuf) * (context->Header.height - context->compr.y - 1))
 				    + (4 * context->compr.x);
 			    context->compr.phase = NEUTRAL;
 			    break;
@@ -1275,7 +1275,7 @@ DoCompressed(struct bmp_progressive_state *context, GError **error)
  * append image data onto incrementally built output image
  */
 static gboolean
-gdk_pixbuf__bmp_image_load_increment(gpointer data,
+cdk_pixbuf__bmp_image_load_increment(gpointer data,
                                      const guchar * buf,
                                      guint size,
                                      GError **error)
@@ -1377,7 +1377,7 @@ gdk_pixbuf__bmp_image_load_increment(gpointer data,
 			  buf += 4; }
 
 static gboolean
-gdk_pixbuf__bmp_image_save_to_callback (GdkPixbufSaveFunc   save_func,
+cdk_pixbuf__bmp_image_save_to_callback (GdkPixbufSaveFunc   save_func,
 					gpointer            user_data,
 					GdkPixbuf          *pixbuf, 
 					gchar             **keys,
@@ -1389,11 +1389,11 @@ gdk_pixbuf__bmp_image_save_to_callback (GdkPixbufSaveFunc   save_func,
 	guchar BFH_BIH[54], *pixels, *buf, *src, *dst, *dst_line;
 	gboolean ret;
 
-	width = gdk_pixbuf_get_width (pixbuf);
-	height = gdk_pixbuf_get_height (pixbuf);
-	channel = gdk_pixbuf_get_n_channels (pixbuf);
-	pixels = gdk_pixbuf_get_pixels (pixbuf);
-	src_stride = gdk_pixbuf_get_rowstride (pixbuf);
+	width = cdk_pixbuf_get_width (pixbuf);
+	height = cdk_pixbuf_get_height (pixbuf);
+	channel = cdk_pixbuf_get_n_channels (pixbuf);
+	pixels = cdk_pixbuf_get_pixels (pixbuf);
+	src_stride = cdk_pixbuf_get_rowstride (pixbuf);
 
 	/* stride = (width * 3 + 3) & ~3 */
 	if (!g_uint_checked_mul (&stride, width, 3) ||
@@ -1494,13 +1494,13 @@ save_to_file_cb (const gchar *buf,
 }
 
 static gboolean
-gdk_pixbuf__bmp_image_save (FILE          *f, 
+cdk_pixbuf__bmp_image_save (FILE          *f, 
                             GdkPixbuf     *pixbuf, 
                             gchar        **keys,
                             gchar        **values,
                             GError       **error)
 {
-	return gdk_pixbuf__bmp_image_save_to_callback (save_to_file_cb,
+	return cdk_pixbuf__bmp_image_save_to_callback (save_to_file_cb,
 						       f, pixbuf, keys,
 						       values, error);
 }
@@ -1508,16 +1508,16 @@ gdk_pixbuf__bmp_image_save (FILE          *f,
 #ifndef INCLUDE_bmp
 #define MODULE_ENTRY(function) G_MODULE_EXPORT void function
 #else
-#define MODULE_ENTRY(function) void _gdk_pixbuf__bmp_ ## function
+#define MODULE_ENTRY(function) void _cdk_pixbuf__bmp_ ## function
 #endif
 
 MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
 {
-	module->begin_load = gdk_pixbuf__bmp_image_begin_load;
-	module->stop_load = gdk_pixbuf__bmp_image_stop_load;
-	module->load_increment = gdk_pixbuf__bmp_image_load_increment;
-	module->save = gdk_pixbuf__bmp_image_save;
-	module->save_to_callback = gdk_pixbuf__bmp_image_save_to_callback;
+	module->begin_load = cdk_pixbuf__bmp_image_begin_load;
+	module->stop_load = cdk_pixbuf__bmp_image_stop_load;
+	module->load_increment = cdk_pixbuf__bmp_image_load_increment;
+	module->save = cdk_pixbuf__bmp_image_save;
+	module->save_to_callback = cdk_pixbuf__bmp_image_save_to_callback;
 }
 
 MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)

@@ -16,8 +16,8 @@
  */
 #include "config.h"
 
-#include "gdk-pixbuf-private.h"
-#include "gdk-pixdata.h"
+#include "cdk-pixbuf-private.h"
+#include "cdk-pixdata.h"
 #include <string.h>
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
@@ -41,10 +41,10 @@ G_GNUC_BEGIN_IGNORE_DEPRECATIONS
  * Using `GdkPixdata`, images can be compiled into an application,
  * making it unnecessary to refer to external image files at runtime.
  *
- * `GdkPixbuf` includes a utility named `gdk-pixbuf-csource`, which
+ * `GdkPixbuf` includes a utility named `cdk-pixbuf-csource`, which
  * can be used to convert image files into `GdkPixdata` structures suitable
  * for inclusion in C sources. To convert the `GdkPixdata` structures back
- * into a `GdkPixbuf`, use `gdk_pixbuf_from_pixdata()`.
+ * into a `GdkPixbuf`, use `cdk_pixbuf_from_pixdata()`.
  *
  * Deprecated: 2.32: `GdkPixdata` should not be used any more. `GResource`
  *   should be used to save the original compressed images inside the
@@ -108,7 +108,7 @@ pixdata_get_length (const GdkPixdata *pixdata)
 }
 
 /**
- * gdk_pixdata_serialize:
+ * cdk_pixdata_serialize:
  * @pixdata: a valid #GdkPixdata structure to serialize.
  * @stream_length_p: location to store the resulting stream length in.
  *
@@ -124,7 +124,7 @@ pixdata_get_length (const GdkPixdata *pixdata)
  * Deprecated: 2.32: Use #GResource instead.
  **/
 guint8* /* free result */
-gdk_pixdata_serialize (const GdkPixdata *pixdata,
+cdk_pixdata_serialize (const GdkPixdata *pixdata,
 		       guint            *stream_length_p)
 {
   guint8 *stream, *s;
@@ -197,7 +197,7 @@ get_uint32 (const guint8 *stream, guint *result)
 }
 
 /**
- * gdk_pixdata_deserialize:
+ * cdk_pixdata_deserialize:
  * @pixdata: a #GdkPixdata structure to be filled in.
  * @stream_length: length of the stream used for deserialization.
  * @stream: (array length=stream_length): stream of bytes containing a
@@ -222,7 +222,7 @@ get_uint32 (const guint8 *stream, guint *result)
  * Deprecated: 2.32: Use `GResource` instead.
  **/
 gboolean
-gdk_pixdata_deserialize (GdkPixdata   *pixdata,
+cdk_pixdata_deserialize (GdkPixdata   *pixdata,
 			 guint         stream_length,
 			 const guint8 *stream,
 			 GError	     **error)
@@ -328,7 +328,7 @@ rl_encode_rgbx (guint8       *bp,       /* dest buffer */
   return bp;
 }
 
-/* Used as the destroy notification function for gdk_pixbuf_new() */
+/* Used as the destroy notification function for cdk_pixbuf_new() */
 static void
 free_buffer (guchar *pixels, gpointer data)
 {
@@ -336,7 +336,7 @@ free_buffer (guchar *pixels, gpointer data)
 }
 
 /**
- * gdk_pixdata_from_pixbuf: (skip)
+ * cdk_pixdata_from_pixbuf: (skip)
  * @pixdata: a `GdkPixdata` to fill.
  * @pixbuf: the data to fill `pixdata` with.
  * @use_rle: whether to use run-length encoding for the pixel data.
@@ -353,7 +353,7 @@ free_buffer (guchar *pixels, gpointer data)
  * Deprecated: 2.32: Use #GResource instead.
  **/
 gpointer
-gdk_pixdata_from_pixbuf (GdkPixdata      *pixdata,
+cdk_pixdata_from_pixbuf (GdkPixdata      *pixdata,
 			 const GdkPixbuf *pixbuf,
 			 gboolean         use_rle)
 {
@@ -385,20 +385,20 @@ gdk_pixdata_from_pixbuf (GdkPixdata      *pixdata,
 	  rowstride = pixbuf->width * bpp;
 	  n_bytes = rowstride * height;
 	  data = g_malloc (n_bytes);
-	  buf = gdk_pixbuf_new_from_data (data,
+	  buf = cdk_pixbuf_new_from_data (data,
 					  GDK_COLORSPACE_RGB,
 					  pixbuf->has_alpha, 8,
 					  pixbuf->width,
 					  pixbuf->height,
 					  rowstride,
 					  free_buffer, NULL);
-	  gdk_pixbuf_copy_area (pixbuf, 0, 0, pixbuf->width, pixbuf->height,
+	  cdk_pixbuf_copy_area (pixbuf, 0, 0, pixbuf->width, pixbuf->height,
 				buf, 0, 0);
 	}
       else
         buf = (GdkPixbuf *)pixbuf;
 
-      pixels = gdk_pixbuf_read_pixels (buf);
+      pixels = cdk_pixbuf_read_pixels (buf);
       pad = rowstride;
       pad = MAX (pad, 130 + n_bytes / 127);
       data = g_new (guint8, pad + n_bytes);
@@ -413,7 +413,7 @@ gdk_pixdata_from_pixbuf (GdkPixdata      *pixdata,
     }
   else
     {
-      img_buffer = (guint8 *) gdk_pixbuf_read_pixels (pixbuf);
+      img_buffer = (guint8 *) cdk_pixbuf_read_pixels (pixbuf);
       length = rowstride * height;
     }
 
@@ -436,7 +436,7 @@ gdk_pixdata_from_pixbuf (GdkPixdata      *pixdata,
 #define RLE_OVERRUN(offset) (rle_buffer_limit == NULL ? FALSE : rle_buffer + (offset) > rle_buffer_limit)
 
 /**
- * gdk_pixbuf_from_pixdata:
+ * cdk_pixbuf_from_pixdata:
  * @pixdata: a #GdkPixdata to convert into a `GdkPixbuf`.
  * @copy_pixels: whether to copy raw pixel data; run-length encoded
  *   pixel data is always copied.
@@ -453,7 +453,7 @@ gdk_pixdata_from_pixbuf (GdkPixdata      *pixdata,
  * Deprecated: 2.32: Use `GResource` instead.
  **/
 GdkPixbuf*
-gdk_pixbuf_from_pixdata (const GdkPixdata *pixdata,
+cdk_pixbuf_from_pixdata (const GdkPixdata *pixdata,
 			 gboolean          copy_pixels,
 			 GError          **error)
 {
@@ -474,7 +474,7 @@ gdk_pixbuf_from_pixdata (const GdkPixdata *pixdata,
   bpp = (pixdata->pixdata_type & GDK_PIXDATA_COLOR_TYPE_MASK) == GDK_PIXDATA_COLOR_TYPE_RGB ? 3 : 4;
   encoding = pixdata->pixdata_type & GDK_PIXDATA_ENCODING_MASK;
 
-  g_debug ("gdk_pixbuf_from_pixdata() called on:");
+  g_debug ("cdk_pixbuf_from_pixdata() called on:");
   g_debug ("\tEncoding %s", encoding == GDK_PIXDATA_ENCODING_RAW ? "raw" : "rle");
   g_debug ("\tDimensions: %d x %d", pixdata->width, pixdata->height);
   g_debug ("\tRowstride: %d, Length: %d", pixdata->rowstride, pixdata->length);
@@ -603,7 +603,7 @@ gdk_pixbuf_from_pixdata (const GdkPixdata *pixdata,
   else
     data = pixdata->pixel_data;
 
-  return gdk_pixbuf_new_from_data (data, GDK_COLORSPACE_RGB,
+  return cdk_pixbuf_new_from_data (data, GDK_COLORSPACE_RGB,
 				   (pixdata->pixdata_type & GDK_PIXDATA_COLOR_TYPE_MASK) == GDK_PIXDATA_COLOR_TYPE_RGBA,
 				   8, pixdata->width, pixdata->height, pixdata->rowstride,
 				   copy_pixels ? (GdkPixbufDestroyNotify) g_free : NULL, data);
@@ -709,7 +709,7 @@ save_rle_decoder (GString     *gstring,
 }
 
 /**
- * gdk_pixdata_to_csource:
+ * cdk_pixdata_to_csource:
  * @pixdata: a `GdkPixdata` to convert to C source
  * @name: used for naming generated data structures or macros
  * @dump_type: the kind of C source to be generated
@@ -717,7 +717,7 @@ save_rle_decoder (GString     *gstring,
  * Generates C source code suitable for compiling images directly 
  * into programs. 
  *
- * GdkPixbuf ships with a program called `gdk-pixbuf-csource`, which offers
+ * GdkPixbuf ships with a program called `cdk-pixbuf-csource`, which offers
  * a command line interface to this function.
  *
  * Returns: (transfer full): a newly-allocated string buffer containing
@@ -726,7 +726,7 @@ save_rle_decoder (GString     *gstring,
  * Deprecated: 2.32: Use #GResource instead.
  **/
 GString*
-gdk_pixdata_to_csource (GdkPixdata        *pixdata,
+cdk_pixdata_to_csource (GdkPixdata        *pixdata,
 			const gchar	  *name,
 			GdkPixdataDumpType dump_type)
 {
@@ -842,7 +842,7 @@ gdk_pixdata_to_csource (GdkPixdata        *pixdata,
       guint pix_length = img_buffer_end - img_buffer;
 
 
-      stream = gdk_pixdata_serialize (pixdata, &stream_length);
+      stream = cdk_pixdata_serialize (pixdata, &stream_length);
       img_buffer = stream;
       img_buffer_end = stream + stream_length;
 
@@ -949,7 +949,7 @@ gdk_pixdata_to_csource (GdkPixdata        *pixdata,
 }
 
 /**
- * gdk_pixbuf_new_from_inline:
+ * cdk_pixbuf_new_from_inline:
  * @data_length: Length in bytes of the `data` argument or -1 to 
  *   disable length checks
  * @data: (array length=data_length): Byte data containing a
@@ -964,20 +964,20 @@ gdk_pixdata_to_csource (GdkPixdata        *pixdata,
  * This is useful if you want to ship a program with images, but don't want
  * to depend on any external files.
  *
- * GdkPixbuf ships with a program called `gdk-pixbuf-csource`, which allows
+ * GdkPixbuf ships with a program called `cdk-pixbuf-csource`, which allows
  * for conversion of `GdkPixbuf`s into such a inline representation.
  *
  * In almost all cases, you should pass the `--raw` option to
- * `gdk-pixbuf-csource`. A sample invocation would be:
+ * `cdk-pixbuf-csource`. A sample invocation would be:
  *
  * ```
- * gdk-pixbuf-csource --raw --name=myimage_inline myimage.png
+ * cdk-pixbuf-csource --raw --name=myimage_inline myimage.png
  * ```
  * 
  * For the typical case where the inline pixbuf is read-only static data,
  * you don't need to copy the pixel data unless you intend to write to
  * it, so you can pass `FALSE` for `copy_pixels`. If you pass `--rle` to
- * `gdk-pixbuf-csource`, a copy will be made even if `copy_pixels` is `FALSE`,
+ * `cdk-pixbuf-csource`, a copy will be made even if `copy_pixels` is `FALSE`,
  * so using this option is generally a bad idea.
  *
  * If you create a pixbuf from const inline data compiled into your
@@ -985,7 +985,7 @@ gdk_pixdata_to_csource (GdkPixdata        *pixdata,
  * since things will always succeed:
  *
  * ```c
- * pixbuf = gdk_pixbuf_new_from_inline (-1, myimage_inline, FALSE, NULL);
+ * pixbuf = cdk_pixbuf_new_from_inline (-1, myimage_inline, FALSE, NULL);
  * ```
  *
  * For non-const inline data, you could get out of memory. For untrusted 
@@ -997,7 +997,7 @@ gdk_pixdata_to_csource (GdkPixdata        *pixdata,
  * Deprecated: 2.32: Use `GResource` instead.
  **/
 GdkPixbuf*
-gdk_pixbuf_new_from_inline (gint          data_length,
+cdk_pixbuf_new_from_inline (gint          data_length,
 			    const guint8 *data,
 			    gboolean      copy_pixels,
 			    GError      **error)
@@ -1008,8 +1008,8 @@ gdk_pixbuf_new_from_inline (gint          data_length,
     g_return_val_if_fail (data_length > GDK_PIXDATA_HEADER_LENGTH, NULL);
   g_return_val_if_fail (data != NULL, NULL);
 
-  if (!gdk_pixdata_deserialize (&pixdata, data_length, data, error))
+  if (!cdk_pixdata_deserialize (&pixdata, data_length, data, error))
     return NULL;
 
-  return gdk_pixbuf_from_pixdata (&pixdata, copy_pixels, error);
+  return cdk_pixbuf_from_pixdata (&pixdata, copy_pixels, error);
 }

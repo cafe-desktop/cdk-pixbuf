@@ -27,7 +27,7 @@ option('others',
        type: 'feature',
        value: 'enabled')
 option('builtin_loaders',
-       description: 'Comma-separated list of loaders to build into gdk-pixbuf',
+       description: 'Comma-separated list of loaders to build into cdk-pixbuf',
        type: 'array',
        choices: ['default', 'all', 'none', 'windows', 'png', 'bmp', 'gif', 'ico', 'ani', 'jpeg', 'pnm', 'tiff', 'xpm', 'xbm', 'tga', 'icns', 'qtif', 'glycin'],
        value: ['png','jpeg'])
@@ -56,7 +56,7 @@ option('relocatable',
        type: 'boolean',
        value: false)
 option('native_windows_loaders',
-       description: 'Use Windows system components to handle BMP, EMF, GIF, ICO, JPEG, TIFF and WMF images, overriding jpeg and tiff.  To build this into gdk-pixbuf, pass in windows" with the other loaders to build in or use "all" with the builtin_loaders option',
+       description: 'Use Windows system components to handle BMP, EMF, GIF, ICO, JPEG, TIFF and WMF images, overriding jpeg and tiff.  To build this into cdk-pixbuf, pass in windows" with the other loaders to build in or use "all" with the builtin_loaders option',
        type: 'boolean',
        value: false)
 option('tests',

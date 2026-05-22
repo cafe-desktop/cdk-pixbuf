@@ -1,7 +1,7 @@
 /*** BEGIN file-header ***/
 #include "config.h"
 
-#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <cdk-pixbuf/cdk-pixbuf.h>
 
 /*** END file-header ***/
 

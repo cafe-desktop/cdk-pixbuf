@@ -26,25 +26,25 @@ G_BEGIN_DECLS
 
 typedef struct _GdkPixbufBufferQueue GdkPixbufBufferQueue;
 
-GdkPixbufBufferQueue *  gdk_pixbuf_buffer_queue_new             (void);
+GdkPixbufBufferQueue *  cdk_pixbuf_buffer_queue_new             (void);
 
-GdkPixbufBufferQueue *  gdk_pixbuf_buffer_queue_ref             (GdkPixbufBufferQueue   *queue);
-void                    gdk_pixbuf_buffer_queue_unref           (GdkPixbufBufferQueue   *queue);
+GdkPixbufBufferQueue *  cdk_pixbuf_buffer_queue_ref             (GdkPixbufBufferQueue   *queue);
+void                    cdk_pixbuf_buffer_queue_unref           (GdkPixbufBufferQueue   *queue);
 
-gsize                   gdk_pixbuf_buffer_queue_get_size        (GdkPixbufBufferQueue   *queue);
-gsize                   gdk_pixbuf_buffer_queue_get_offset      (GdkPixbufBufferQueue   *queue);
+gsize                   cdk_pixbuf_buffer_queue_get_size        (GdkPixbufBufferQueue   *queue);
+gsize                   cdk_pixbuf_buffer_queue_get_offset      (GdkPixbufBufferQueue   *queue);
 
-void                    gdk_pixbuf_buffer_queue_flush           (GdkPixbufBufferQueue   *queue,
+void                    cdk_pixbuf_buffer_queue_flush           (GdkPixbufBufferQueue   *queue,
                                                                  gsize                   n_bytes);
-void                    gdk_pixbuf_buffer_queue_clear           (GdkPixbufBufferQueue   *queue);
-void                    gdk_pixbuf_buffer_queue_push            (GdkPixbufBufferQueue   *queue,
+void                    cdk_pixbuf_buffer_queue_clear           (GdkPixbufBufferQueue   *queue);
+void                    cdk_pixbuf_buffer_queue_push            (GdkPixbufBufferQueue   *queue,
                                                                  GBytes                 *buffer);
-GBytes *                gdk_pixbuf_buffer_queue_pull            (GdkPixbufBufferQueue   *queue,
+GBytes *                cdk_pixbuf_buffer_queue_pull            (GdkPixbufBufferQueue   *queue,
                                                                  gsize                   length);
-GBytes *                gdk_pixbuf_buffer_queue_pull_buffer     (GdkPixbufBufferQueue   *queue);
-GBytes *                gdk_pixbuf_buffer_queue_peek            (GdkPixbufBufferQueue   *queue,
+GBytes *                cdk_pixbuf_buffer_queue_pull_buffer     (GdkPixbufBufferQueue   *queue);
+GBytes *                cdk_pixbuf_buffer_queue_peek            (GdkPixbufBufferQueue   *queue,
                                                                  gsize                   length);
-GBytes *                gdk_pixbuf_buffer_queue_peek_buffer     (GdkPixbufBufferQueue   *queue);
+GBytes *                cdk_pixbuf_buffer_queue_peek_buffer     (GdkPixbufBufferQueue   *queue);
 
 G_END_DECLS
 #endif

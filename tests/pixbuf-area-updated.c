@@ -22,7 +22,7 @@
 
 #define GLIB_DISABLE_DEPRECATION_WARNINGS
 #include <stdio.h>
-#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <cdk-pixbuf/cdk-pixbuf.h>
 
 #include "test-common.h"
 
@@ -50,12 +50,12 @@ get_pixel (GdkPixbuf *pixbuf, int x, int y)
     guchar *colors;
     guint32 pixel;
 
-    colors = ((guchar*)gdk_pixbuf_get_pixels(pixbuf)
-	      + gdk_pixbuf_get_n_channels(pixbuf) * x
-	      + gdk_pixbuf_get_rowstride(pixbuf) * y);
+    colors = ((guchar*)cdk_pixbuf_get_pixels(pixbuf)
+	      + cdk_pixbuf_get_n_channels(pixbuf) * x
+	      + cdk_pixbuf_get_rowstride(pixbuf) * y);
     pixel = (colors[0] << 16) | (colors[1] << 8) | colors[2];
 
-    if (gdk_pixbuf_get_n_channels (pixbuf) == 4)
+    if (cdk_pixbuf_get_n_channels (pixbuf) == 4)
         pixel = (pixel << 8) | colors[3];
 
     return pixel;
@@ -73,8 +73,8 @@ pixbuf_not_changed_outside_area (GdkPixbuf *pixbuf_new,
     int pixbuf_width, pixbuf_height;
     int x_curr, y_curr;
 
-    pixbuf_width = gdk_pixbuf_get_width (pixbuf_new);
-    pixbuf_height = gdk_pixbuf_get_height (pixbuf_new);
+    pixbuf_width = cdk_pixbuf_get_width (pixbuf_new);
+    pixbuf_height = cdk_pixbuf_get_height (pixbuf_new);
 
     for (x_curr = 0; x_curr < pixbuf_width; x_curr++) {
         for (y_curr = 0; y_curr < pixbuf_height; y_curr++) {
@@ -94,8 +94,8 @@ pixbuf_not_changed_outside_area (GdkPixbuf *pixbuf_new,
                        x, y, width, height);
 
 #if 0
-                gdk_pixbuf_save (pixbuf_old, "old.png", "png", NULL, NULL);
-                gdk_pixbuf_save (pixbuf_new, "new.png", "png", NULL, NULL);
+                cdk_pixbuf_save (pixbuf_old, "old.png", "png", NULL, NULL);
+                cdk_pixbuf_save (pixbuf_new, "new.png", "png", NULL, NULL);
 #endif
 
                 g_assert_not_reached ();
@@ -116,11 +116,11 @@ callback_area_updated (GdkPixbufLoader *loader,
 {
     GdkPixbuf *pixbuf_new;
 
-    pixbuf_new = gdk_pixbuf_loader_get_pixbuf (loader);
+    pixbuf_new = cdk_pixbuf_loader_get_pixbuf (loader);
 
     pixbuf_not_changed_outside_area (pixbuf_new, pixbuf_old, x, y, width, height);
     /* update copy of pixbuf */
-    gdk_pixbuf_copy_area (pixbuf_new, x, y, width, height, pixbuf_old, x, y);
+    cdk_pixbuf_copy_area (pixbuf_new, x, y, width, height, pixbuf_old, x, y);
 }
 
 /* free copy of pixbuf used in area-updated callback. */
@@ -137,7 +137,7 @@ callback_area_prepared (GdkPixbufLoader *loader)
 {
     GdkPixbuf *pixbuf_copy;
 
-    pixbuf_copy = gdk_pixbuf_copy (gdk_pixbuf_loader_get_pixbuf (loader));
+    pixbuf_copy = cdk_pixbuf_copy (cdk_pixbuf_loader_get_pixbuf (loader));
     /* connect callbacks for another signals for not use pointer to pointer in them. */
     g_signal_connect (loader, "area-updated",
                       (GCallback) callback_area_updated, (gpointer) pixbuf_copy);
@@ -169,7 +169,7 @@ loader_write_from_channel (GdkPixbufLoader *loader,
     if ((read_status != G_IO_STATUS_NORMAL) && (read_status != G_IO_STATUS_EOF))
         g_assert_not_reached ();
 
-    if (!gdk_pixbuf_loader_write(loader, buffer, bytes_read, NULL))
+    if (!cdk_pixbuf_loader_write(loader, buffer, bytes_read, NULL))
         g_assert_not_reached ();
 
     g_free (buffer);
@@ -194,7 +194,7 @@ test_area_updated_ico (gconstpointer data)
     g_assert_nonnull (channel);
     g_io_channel_set_encoding (channel, NULL, NULL);
     /* create loader */
-    loader = gdk_pixbuf_loader_new ();
+    loader = cdk_pixbuf_loader_new ();
     g_assert_nonnull (loader);
 
     g_signal_connect(loader, "area-prepared",
@@ -212,7 +212,7 @@ test_area_updated_ico (gconstpointer data)
     /* free resources */
     g_io_channel_unref (channel);
 
-    gdk_pixbuf_loader_close (loader, NULL);
+    cdk_pixbuf_loader_close (loader, NULL);
     g_object_unref (loader);
 }
 
@@ -222,7 +222,7 @@ update_currently_loaded_frame (FrameData* frame)
 {
     int tmp_count;
 
-    if (gdk_pixbuf_animation_iter_on_currently_loading_frame(frame->iter))
+    if (cdk_pixbuf_animation_iter_on_currently_loading_frame(frame->iter))
         return; /* frame is currently being loaded */
     /* clear old content of pixbuf */
     if (frame->pixbuf)
@@ -238,16 +238,16 @@ update_currently_loaded_frame (FrameData* frame)
             return;
         }
 
-        delay_time = gdk_pixbuf_animation_iter_get_delay_time (frame->iter);
+        delay_time = cdk_pixbuf_animation_iter_get_delay_time (frame->iter);
         if (delay_time < 0) {
             /* this is last frame in the animation */
             return;
         }
         g_time_val_add (&frame->time, delay_time * 1000);
-        gdk_pixbuf_animation_iter_advance (frame->iter, &frame->time);
-    } while (!gdk_pixbuf_animation_iter_on_currently_loading_frame (frame->iter));
+        cdk_pixbuf_animation_iter_advance (frame->iter, &frame->time);
+    } while (!cdk_pixbuf_animation_iter_on_currently_loading_frame (frame->iter));
     /* store current content of the frame */
-    frame->pixbuf = gdk_pixbuf_copy (gdk_pixbuf_animation_iter_get_pixbuf (frame->iter));
+    frame->pixbuf = cdk_pixbuf_copy (cdk_pixbuf_animation_iter_get_pixbuf (frame->iter));
 }
 
 static void
@@ -263,9 +263,9 @@ callback_area_updated_anim (GdkPixbufLoader *loader,
     /* "area-updated" signal was emitted after animation had fully loaded. */
     g_assert_nonnull (frame_old->pixbuf);
 
-    pixbuf_new = gdk_pixbuf_animation_iter_get_pixbuf (frame_old->iter);
+    pixbuf_new = cdk_pixbuf_animation_iter_get_pixbuf (frame_old->iter);
     pixbuf_not_changed_outside_area (pixbuf_new, frame_old->pixbuf, x, y, width, height);
-    gdk_pixbuf_copy_area (pixbuf_new, x, y, width, height, frame_old->pixbuf, x, y);
+    cdk_pixbuf_copy_area (pixbuf_new, x, y, width, height, frame_old->pixbuf, x, y);
     update_currently_loaded_frame (frame_old);
 }
 
@@ -292,9 +292,9 @@ callback_area_prepared_anim (GdkPixbufLoader* loader)
 
     frame_copy->time.tv_sec = frame_copy->time.tv_usec = 0; /* some time */
 
-    anim = gdk_pixbuf_loader_get_animation (loader);
-    frame_copy->iter = gdk_pixbuf_animation_get_iter (anim, &frame_copy->time);
-    frame_copy->pixbuf = gdk_pixbuf_copy (gdk_pixbuf_animation_iter_get_pixbuf (frame_copy->iter));
+    anim = cdk_pixbuf_loader_get_animation (loader);
+    frame_copy->iter = cdk_pixbuf_animation_get_iter (anim, &frame_copy->time);
+    frame_copy->pixbuf = cdk_pixbuf_copy (cdk_pixbuf_animation_iter_get_pixbuf (frame_copy->iter));
     update_currently_loaded_frame (frame_copy);
 }
 
@@ -315,7 +315,7 @@ test_area_updated_anim (gconstpointer data)
     g_assert_nonnull (channel);
     g_io_channel_set_encoding(channel, NULL, NULL);
     /*create loader */
-    loader = gdk_pixbuf_loader_new ();
+    loader = cdk_pixbuf_loader_new ();
     g_assert_nonnull (loader);
 
     g_signal_connect (loader, "area-prepared",
@@ -331,7 +331,7 @@ test_area_updated_anim (gconstpointer data)
 
     /* free resources */
     g_io_channel_unref (channel);
-    gdk_pixbuf_loader_close (loader, NULL);
+    cdk_pixbuf_loader_close (loader, NULL);
     g_object_unref (loader);
 }
 

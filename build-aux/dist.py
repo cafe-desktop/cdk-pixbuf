@@ -4,8 +4,8 @@ import os
 import shutil
 
 references = [
-    'docs/gdk-pixbuf',
-    'docs/gdk-pixdata',
+    'docs/cdk-pixbuf',
+    'docs/cdk-pixdata',
 ]
 
 sourceroot = os.environ.get('MESON_SOURCE_ROOT')

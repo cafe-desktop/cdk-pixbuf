@@ -29,9 +29,9 @@
 
 #include <gio/gio.h>
 #include <errno.h>
-#include "gdk-pixbuf-core.h"
-#include "gdk-pixbuf-io.h"
-#include "gdk-pixbuf-animation.h"
+#include "cdk-pixbuf-core.h"
+#include "cdk-pixbuf-io.h"
+#include "cdk-pixbuf-animation.h"
 
 #include <glycin.h>
 
@@ -40,14 +40,14 @@
 static gboolean
 should_run_unsandboxed (void)
 {
-  if (g_strcmp0 (g_get_prgname (), "gdk-pixbuf-thumbnailer") == 0)
+  if (g_strcmp0 (g_get_prgname (), "cdk-pixbuf-thumbnailer") == 0)
     {
-      g_debug ("In gdk-pixbuf-thumbnailer. Assuming external sandbox.");
+      g_debug ("In cdk-pixbuf-thumbnailer. Assuming external sandbox.");
       return TRUE;
     }
 
-  if (g_strcmp0 (g_get_prgname (), "gdk-pixbuf-csource") == 0 ||
-      g_strcmp0 (g_get_prgname (), "gdk-pixbuf-pixdata") == 0)
+  if (g_strcmp0 (g_get_prgname (), "cdk-pixbuf-csource") == 0 ||
+      g_strcmp0 (g_get_prgname (), "cdk-pixbuf-pixdata") == 0)
     {
       g_debug ("In %s. Not using sandboxing in build tools.", g_get_prgname ());
       return TRUE;
@@ -106,7 +106,7 @@ convert_glycin_frame_to_pixbuf (GlyFrame *frame)
   bytes = gly_frame_get_buf_bytes (frame);
   format = gly_frame_get_memory_format (frame);
 
-  return gdk_pixbuf_new_from_bytes (bytes,
+  return cdk_pixbuf_new_from_bytes (bytes,
                                     GDK_COLORSPACE_RGB,
                                     gly_memory_format_has_alpha (format),
                                     8,
@@ -132,15 +132,15 @@ typedef struct {
 } GdkPixbufGlycinFrame;
 
 static void
-gdk_pixbuf_glycin_frame_clear (GdkPixbufGlycinFrame *frame)
+cdk_pixbuf_glycin_frame_clear (GdkPixbufGlycinFrame *frame)
 {
   g_object_unref (frame->pixbuf);
 }
 
-#define GDK_PIXBUF_TYPE_GLYCIN_ANIMATION (gdk_pixbuf_glycin_animation_get_type ())
-#define GDK_PIXBUF_TYPE_GLYCIN_ANIMATION_ITER (gdk_pixbuf_glycin_animation_iter_get_type ())
-G_DECLARE_FINAL_TYPE (GdkPixbufGlycinAnimation, gdk_pixbuf_glycin_animation, GDK_PIXBUF, GLYCIN_ANIMATION, GdkPixbufAnimation)
-G_DECLARE_FINAL_TYPE (GdkPixbufGlycinAnimationIter, gdk_pixbuf_glycin_animation_iter, GDK_PIXBUF, GLYCIN_ANIMATION_ITER, GdkPixbufAnimationIter)
+#define GDK_PIXBUF_TYPE_GLYCIN_ANIMATION (cdk_pixbuf_glycin_animation_get_type ())
+#define GDK_PIXBUF_TYPE_GLYCIN_ANIMATION_ITER (cdk_pixbuf_glycin_animation_iter_get_type ())
+G_DECLARE_FINAL_TYPE (GdkPixbufGlycinAnimation, cdk_pixbuf_glycin_animation, GDK_PIXBUF, GLYCIN_ANIMATION, GdkPixbufAnimation)
+G_DECLARE_FINAL_TYPE (GdkPixbufGlycinAnimationIter, cdk_pixbuf_glycin_animation_iter, GDK_PIXBUF, GLYCIN_ANIMATION_ITER, GdkPixbufAnimationIter)
 
 struct _GdkPixbufGlycinAnimation
 {
@@ -160,28 +160,28 @@ struct _GdkPixbufGlycinAnimationIter
   gint64 time;
 };
 
-G_DEFINE_FINAL_TYPE (GdkPixbufGlycinAnimation, gdk_pixbuf_glycin_animation, GDK_TYPE_PIXBUF_ANIMATION)
-G_DEFINE_FINAL_TYPE (GdkPixbufGlycinAnimationIter, gdk_pixbuf_glycin_animation_iter, GDK_TYPE_PIXBUF_ANIMATION_ITER)
+G_DEFINE_FINAL_TYPE (GdkPixbufGlycinAnimation, cdk_pixbuf_glycin_animation, GDK_TYPE_PIXBUF_ANIMATION)
+G_DEFINE_FINAL_TYPE (GdkPixbufGlycinAnimationIter, cdk_pixbuf_glycin_animation_iter, GDK_TYPE_PIXBUF_ANIMATION_ITER)
 
 static void
-gdk_pixbuf_glycin_animation_finalize (GObject *object)
+cdk_pixbuf_glycin_animation_finalize (GObject *object)
 {
   GdkPixbufGlycinAnimation *self = (GdkPixbufGlycinAnimation *) object;
 
   g_array_unref (self->decoded);
   g_object_unref (self->image);
 
-  G_OBJECT_CLASS (gdk_pixbuf_glycin_animation_parent_class)->finalize (object);
+  G_OBJECT_CLASS (cdk_pixbuf_glycin_animation_parent_class)->finalize (object);
 }
 
 static gboolean
-gdk_pixbuf_glycin_animation_is_static_image (G_GNUC_UNUSED GdkPixbufAnimation *animation)
+cdk_pixbuf_glycin_animation_is_static_image (G_GNUC_UNUSED GdkPixbufAnimation *animation)
 {
   return FALSE;
 }
 
 static GdkPixbuf *
-gdk_pixbuf_glycin_animation_get_static_image (GdkPixbufAnimation *animation)
+cdk_pixbuf_glycin_animation_get_static_image (GdkPixbufAnimation *animation)
 {
   GdkPixbufGlycinAnimation *self = (GdkPixbufGlycinAnimation *) animation;
 
@@ -192,7 +192,7 @@ gdk_pixbuf_glycin_animation_get_static_image (GdkPixbufAnimation *animation)
 }
 
 static void
-gdk_pixbuf_glycin_animation_get_size (GdkPixbufAnimation *animation,
+cdk_pixbuf_glycin_animation_get_size (GdkPixbufAnimation *animation,
                                       int                *width,
                                       int                *height)
 {
@@ -205,7 +205,7 @@ gdk_pixbuf_glycin_animation_get_size (GdkPixbufAnimation *animation,
 }
 
 static GdkPixbufAnimationIter *
-gdk_pixbuf_glycin_animation_get_iter (GdkPixbufAnimation *animation,
+cdk_pixbuf_glycin_animation_get_iter (GdkPixbufAnimation *animation,
                                       const GTimeVal     *start_time)
 {
   GdkPixbufGlycinAnimation *self = (GdkPixbufGlycinAnimation *) animation;
@@ -225,41 +225,41 @@ gdk_pixbuf_glycin_animation_get_iter (GdkPixbufAnimation *animation,
 }
 
 static void
-gdk_pixbuf_glycin_animation_class_init (GdkPixbufGlycinAnimationClass *klass)
+cdk_pixbuf_glycin_animation_class_init (GdkPixbufGlycinAnimationClass *klass)
 {
   GObjectClass *object_class = (GObjectClass *) klass;
   GdkPixbufAnimationClass *animation_class = (GdkPixbufAnimationClass *) klass;
 
-  object_class->finalize = gdk_pixbuf_glycin_animation_finalize;
-  animation_class->is_static_image = gdk_pixbuf_glycin_animation_is_static_image;
-  animation_class->get_static_image = gdk_pixbuf_glycin_animation_get_static_image;
-  animation_class->get_size = gdk_pixbuf_glycin_animation_get_size;
-  animation_class->get_iter = gdk_pixbuf_glycin_animation_get_iter;
+  object_class->finalize = cdk_pixbuf_glycin_animation_finalize;
+  animation_class->is_static_image = cdk_pixbuf_glycin_animation_is_static_image;
+  animation_class->get_static_image = cdk_pixbuf_glycin_animation_get_static_image;
+  animation_class->get_size = cdk_pixbuf_glycin_animation_get_size;
+  animation_class->get_iter = cdk_pixbuf_glycin_animation_get_iter;
 }
 
 static void
-gdk_pixbuf_glycin_animation_init (GdkPixbufGlycinAnimation *self)
+cdk_pixbuf_glycin_animation_init (GdkPixbufGlycinAnimation *self)
 {
   self->width = -1;
   self->height = -1;
   self->image = NULL;
   self->decoded = g_array_new (FALSE, FALSE, sizeof (GdkPixbufGlycinFrame));
   g_array_set_clear_func (self->decoded,
-                          (GDestroyNotify) gdk_pixbuf_glycin_frame_clear);
+                          (GDestroyNotify) cdk_pixbuf_glycin_frame_clear);
 }
 
 static void
-gdk_pixbuf_glycin_animation_iter_finalize (GObject *object)
+cdk_pixbuf_glycin_animation_iter_finalize (GObject *object)
 {
   GdkPixbufGlycinAnimationIter *self = (GdkPixbufGlycinAnimationIter *) object;
 
   g_object_unref (self->animation);
 
-  G_OBJECT_CLASS (gdk_pixbuf_glycin_animation_iter_parent_class)->finalize (object);
+  G_OBJECT_CLASS (cdk_pixbuf_glycin_animation_iter_parent_class)->finalize (object);
 }
 
 static int
-gdk_pixbuf_glycin_animation_iter_get_delay_time (GdkPixbufAnimationIter *iter)
+cdk_pixbuf_glycin_animation_iter_get_delay_time (GdkPixbufAnimationIter *iter)
 {
   GdkPixbufGlycinAnimationIter *self = (GdkPixbufGlycinAnimationIter *) iter;
   int delay_time;
@@ -270,7 +270,7 @@ gdk_pixbuf_glycin_animation_iter_get_delay_time (GdkPixbufAnimationIter *iter)
 }
 
 static GdkPixbuf *
-gdk_pixbuf_glycin_animation_iter_get_pixbuf (GdkPixbufAnimationIter *iter)
+cdk_pixbuf_glycin_animation_iter_get_pixbuf (GdkPixbufAnimationIter *iter)
 {
   GdkPixbufGlycinAnimationIter *self = (GdkPixbufGlycinAnimationIter *) iter;
 
@@ -278,7 +278,7 @@ gdk_pixbuf_glycin_animation_iter_get_pixbuf (GdkPixbufAnimationIter *iter)
 }
 
 static gboolean
-gdk_pixbuf_glycin_animation_iter_on_currently_loading_frame (G_GNUC_UNUSED GdkPixbufAnimationIter *iter)
+cdk_pixbuf_glycin_animation_iter_on_currently_loading_frame (G_GNUC_UNUSED GdkPixbufAnimationIter *iter)
 {
   GdkPixbufGlycinAnimationIter *self = (GdkPixbufGlycinAnimationIter *) iter;
 
@@ -290,7 +290,7 @@ gdk_pixbuf_glycin_animation_iter_on_currently_loading_frame (G_GNUC_UNUSED GdkPi
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 static gboolean
-gdk_pixbuf_glycin_animation_iter_advance (GdkPixbufAnimationIter *iter,
+cdk_pixbuf_glycin_animation_iter_advance (GdkPixbufAnimationIter *iter,
                                           const GTimeVal         *current_time)
 {
   GdkPixbufGlycinAnimationIter *self = (GdkPixbufGlycinAnimationIter *) iter;
@@ -361,21 +361,21 @@ gdk_pixbuf_glycin_animation_iter_advance (GdkPixbufAnimationIter *iter,
 G_GNUC_END_IGNORE_DEPRECATIONS
 
 static void
-gdk_pixbuf_glycin_animation_iter_class_init (GdkPixbufGlycinAnimationIterClass *klass)
+cdk_pixbuf_glycin_animation_iter_class_init (GdkPixbufGlycinAnimationIterClass *klass)
 {
   GObjectClass *object_class = (GObjectClass *) klass;
   GdkPixbufAnimationIterClass *iter_class = (GdkPixbufAnimationIterClass *) klass;
 
-  object_class->finalize = gdk_pixbuf_glycin_animation_iter_finalize;
+  object_class->finalize = cdk_pixbuf_glycin_animation_iter_finalize;
 
-  iter_class->get_delay_time = gdk_pixbuf_glycin_animation_iter_get_delay_time;
-  iter_class->get_pixbuf = gdk_pixbuf_glycin_animation_iter_get_pixbuf;
-  iter_class->on_currently_loading_frame = gdk_pixbuf_glycin_animation_iter_on_currently_loading_frame;
-  iter_class->advance = gdk_pixbuf_glycin_animation_iter_advance;
+  iter_class->get_delay_time = cdk_pixbuf_glycin_animation_iter_get_delay_time;
+  iter_class->get_pixbuf = cdk_pixbuf_glycin_animation_iter_get_pixbuf;
+  iter_class->on_currently_loading_frame = cdk_pixbuf_glycin_animation_iter_on_currently_loading_frame;
+  iter_class->advance = cdk_pixbuf_glycin_animation_iter_advance;
 }
 
 static void
-gdk_pixbuf_glycin_animation_iter_init (GdkPixbufGlycinAnimationIter *self)
+cdk_pixbuf_glycin_animation_iter_init (GdkPixbufGlycinAnimationIter *self)
 {
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
   GTimeVal current;
@@ -389,7 +389,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 }
 
 static GdkPixbufGlycinAnimation *
-gdk_pixbuf_glycin_animation_new (GlyImage *image,
+cdk_pixbuf_glycin_animation_new (GlyImage *image,
                                  gint32    width,
                                  gint32    height)
 {
@@ -455,12 +455,12 @@ load_pixbuf_with_glycin (GFile                    *file,
     goto done;
 
   pixbuf = convert_glycin_frame_to_pixbuf (gly_frame);
-  width = gdk_pixbuf_get_width (pixbuf);
-  height = gdk_pixbuf_get_height (pixbuf);
+  width = cdk_pixbuf_get_width (pixbuf);
+  height = cdk_pixbuf_get_height (pixbuf);
 
   g_snprintf (value, sizeof (value), "%u",
               gly_image_get_transformation_orientation (image));
-  gdk_pixbuf_set_option (pixbuf, "orientation", value);
+  cdk_pixbuf_set_option (pixbuf, "orientation", value);
 
   keys = gly_image_get_metadata_keys (image);
   if (keys)
@@ -469,7 +469,7 @@ load_pixbuf_with_glycin (GFile                    *file,
         {
           char *value = gly_image_get_metadata_key_value (image, keys[i]);
           char *key = g_strconcat ("tEXt::", keys[i], NULL);
-          gdk_pixbuf_set_option (pixbuf, key, value);
+          cdk_pixbuf_set_option (pixbuf, key, value);
           g_free (key);
           g_free (value);
         }
@@ -481,7 +481,7 @@ load_pixbuf_with_glycin (GFile                    *file,
       GdkPixbufGlycinFrame frame;
       GdkPixbufGlycinAnimation *anim;
 
-      anim = gdk_pixbuf_glycin_animation_new (image, width, height);
+      anim = cdk_pixbuf_glycin_animation_new (image, width, height);
       frame.pixbuf = g_object_ref (pixbuf);
       frame.delay = gly_frame_get_delay (gly_frame);
       frame.is_last_frame = FALSE;
@@ -537,7 +537,7 @@ struct _GlycinContext
 };
 
 static gpointer
-gdk_pixbuf__glycin_image_begin_load (GdkPixbufModuleSizeFunc       size_func,
+cdk_pixbuf__glycin_image_begin_load (GdkPixbufModuleSizeFunc       size_func,
                                      GdkPixbufModulePreparedFunc   prepared_func,
                                      GdkPixbufModuleUpdatedFunc    updated_func,
                                      gpointer                      user_data,
@@ -558,7 +558,7 @@ gdk_pixbuf__glycin_image_begin_load (GdkPixbufModuleSizeFunc       size_func,
   context->user_data = user_data;
   context->all_ok = TRUE;
   context->is_svg = FALSE;
-  file = g_file_new_tmp ("gdk-pixbuf-glycin-tmp.XXXXXX", &iostream, error);
+  file = g_file_new_tmp ("cdk-pixbuf-glycin-tmp.XXXXXX", &iostream, error);
   if (file == NULL)
     {
       g_free (context);
@@ -572,7 +572,7 @@ gdk_pixbuf__glycin_image_begin_load (GdkPixbufModuleSizeFunc       size_func,
 }
 
 static gpointer
-gdk_pixbuf__glycin_svg_begin_load (GdkPixbufModuleSizeFunc       size_func,
+cdk_pixbuf__glycin_svg_begin_load (GdkPixbufModuleSizeFunc       size_func,
                                    GdkPixbufModulePreparedFunc   prepared_func,
                                    GdkPixbufModuleUpdatedFunc    updated_func,
                                    gpointer                      user_data,
@@ -580,7 +580,7 @@ gdk_pixbuf__glycin_svg_begin_load (GdkPixbufModuleSizeFunc       size_func,
 {
   GlycinContext *context;
 
-  context = gdk_pixbuf__glycin_image_begin_load (size_func, prepared_func, updated_func, user_data, error);
+  context = cdk_pixbuf__glycin_image_begin_load (size_func, prepared_func, updated_func, user_data, error);
 
   if (context)
     context->is_svg = TRUE;
@@ -589,7 +589,7 @@ gdk_pixbuf__glycin_svg_begin_load (GdkPixbufModuleSizeFunc       size_func,
 }
 
 static GdkPixbuf *
-gdk_pixbuf__glycin_image_load (FILE *f, GError **error)
+cdk_pixbuf__glycin_image_load (FILE *f, GError **error)
 {
   GFile *file;
   GdkPixbuf *pixbuf;
@@ -605,7 +605,7 @@ gdk_pixbuf__glycin_image_load (FILE *f, GError **error)
 }
 
 static gboolean
-gdk_pixbuf__glycin_image_stop_load (gpointer   data,
+cdk_pixbuf__glycin_image_stop_load (gpointer   data,
                                     GError   **error)
 {
   GlycinContext *context = (GlycinContext *) data;
@@ -656,27 +656,27 @@ gdk_pixbuf__glycin_image_stop_load (gpointer   data,
           const guchar *gly_data;
           gsize len;
 
-          bytes = gdk_pixbuf_read_pixel_bytes (pixbuf);
+          bytes = cdk_pixbuf_read_pixel_bytes (pixbuf);
           gly_data = g_bytes_get_data (bytes, &len);
-          g_assert (gdk_pixbuf_read_pixels (pixbuf) == gly_data);
+          g_assert (cdk_pixbuf_read_pixels (pixbuf) == gly_data);
 
           (* context->prepared_func) (pixbuf, animation, context->user_data);
 
-          if (gdk_pixbuf_read_pixels (pixbuf) != gly_data)
+          if (cdk_pixbuf_read_pixels (pixbuf) != gly_data)
             {
               guchar *pixbuf_data;
 
               g_warning ("pixbuf was mutated in the prepare callback");
 
-              pixbuf_data = gdk_pixbuf_get_pixels (pixbuf);
+              pixbuf_data = cdk_pixbuf_get_pixels (pixbuf);
               memcpy (pixbuf_data, gly_data, len);
             }
           g_bytes_unref (bytes);
 
           (* context->updated_func) (pixbuf,
                                      0, 0,
-                                     gdk_pixbuf_get_width (pixbuf),
-                                     gdk_pixbuf_get_height (pixbuf),
+                                     cdk_pixbuf_get_width (pixbuf),
+                                     cdk_pixbuf_get_height (pixbuf),
                                      context->user_data);
 
           if (animation)
@@ -696,7 +696,7 @@ gdk_pixbuf__glycin_image_stop_load (gpointer   data,
 }
 
 static gboolean
-gdk_pixbuf__glycin_image_load_increment (gpointer       data,
+cdk_pixbuf__glycin_image_load_increment (gpointer       data,
                                          const guchar  *buf,
                                          guint          size,
                                          GError       **error)
@@ -749,11 +749,11 @@ glycin_image_save (const char         *mimetype,
   if (should_run_unsandboxed ())
     gly_creator_set_sandbox_selector (creator, GLY_SANDBOX_SELECTOR_NOT_SANDBOXED);
 
-  data = gdk_pixbuf_read_pixel_bytes (pixbuf);
-  width = gdk_pixbuf_get_width (pixbuf);
-  height = gdk_pixbuf_get_height (pixbuf);
-  stride = gdk_pixbuf_get_rowstride (pixbuf);
-  format = gdk_pixbuf_get_n_channels (pixbuf) == 3
+  data = cdk_pixbuf_read_pixel_bytes (pixbuf);
+  width = cdk_pixbuf_get_width (pixbuf);
+  height = cdk_pixbuf_get_height (pixbuf);
+  stride = cdk_pixbuf_get_rowstride (pixbuf);
+  format = cdk_pixbuf_get_n_channels (pixbuf) == 3
              ? GLY_MEMORY_R8G8B8
              : GLY_MEMORY_R8G8B8A8;
 
@@ -828,7 +828,7 @@ glycin_image_save (const char         *mimetype,
 }
 
 static GdkPixbufAnimation *
-gdk_pixbuf__glycin_image_load_animation (FILE    *f,
+cdk_pixbuf__glycin_image_load_animation (FILE    *f,
                                          GError **error)
 {
   GFile *file;
@@ -847,7 +847,7 @@ gdk_pixbuf__glycin_image_load_animation (FILE    *f,
 
   if (!animation)
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-    animation = gdk_pixbuf_non_anim_new (pixbuf);
+    animation = cdk_pixbuf_non_anim_new (pixbuf);
 G_GNUC_END_IGNORE_DEPRECATIONS
 
   g_object_unref (pixbuf);
@@ -858,14 +858,14 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 void
 glycin_fill_vtable (GdkPixbufModule *module)
 {
-  module->load = gdk_pixbuf__glycin_image_load;
+  module->load = cdk_pixbuf__glycin_image_load;
   if (strcmp (module->module_name, "svg") == 0)
-    module->begin_load = gdk_pixbuf__glycin_svg_begin_load;
+    module->begin_load = cdk_pixbuf__glycin_svg_begin_load;
   else
-    module->begin_load = gdk_pixbuf__glycin_image_begin_load;
-  module->stop_load = gdk_pixbuf__glycin_image_stop_load;
-  module->load_increment = gdk_pixbuf__glycin_image_load_increment;
-  module->load_animation = gdk_pixbuf__glycin_image_load_animation;
+    module->begin_load = cdk_pixbuf__glycin_image_begin_load;
+  module->stop_load = cdk_pixbuf__glycin_image_stop_load;
+  module->load_increment = cdk_pixbuf__glycin_image_load_increment;
+  module->load_animation = cdk_pixbuf__glycin_image_load_animation;
 }
 
 /* }}} */

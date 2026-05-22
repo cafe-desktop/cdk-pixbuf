@@ -16,8 +16,8 @@
  */
 #include "config.h"
 
-#include "gdk-pixbuf.h"
-#include "gdk-pixdata.h"
+#include "cdk-pixbuf.h"
+#include "cdk-pixdata.h"
 #include <glib/gprintf.h>
 #include <stdlib.h>
 #include <string.h>
@@ -26,8 +26,8 @@
 /* --- defines --- */
 #undef	G_LOG_DOMAIN
 #define	G_LOG_DOMAIN	"Gdk-Pixbuf-CSource"
-#define PRG_NAME        "gdk-pixbuf-csource-3.0"
-#define PKG_NAME        "gdk-pixbuf"
+#define PRG_NAME        "cdk-pixbuf-csource-3.0"
+#define PKG_NAME        "cdk-pixbuf"
 #define PKG_HTTP_HOME   "https://github.com/cafe-desktop/ctk"
 
 
@@ -57,8 +57,8 @@ G_GNUC_BEGIN_IGNORE_DEPRECATIONS
   gpointer free_me;
   GString *gstring;
 
-  free_me = gdk_pixdata_from_pixbuf (&pixdata, pixbuf, use_rle);
-  gstring = gdk_pixdata_to_csource (&pixdata, image_name,
+  free_me = cdk_pixdata_from_pixbuf (&pixdata, pixbuf, use_rle);
+  gstring = cdk_pixdata_to_csource (&pixdata, image_name,
 				    gen_type | gen_ctype |
 				    (with_decoder ? GDK_PIXDATA_DUMP_RLE_DECODER : 0));
 
@@ -77,7 +77,7 @@ main (int   argc,
   GError *error = NULL;
   gchar *infilename;
 
-  g_set_prgname ("gdk-pixbuf-csource");
+  g_set_prgname ("cdk-pixbuf-csource");
 
   /* parse args and do fast exits */
   parse_args (&argc, &argv);
@@ -96,7 +96,7 @@ main (int   argc,
       infilename = argv[1];
 #endif
 
-      pixbuf = gdk_pixbuf_new_from_file (infilename, &error);
+      pixbuf = cdk_pixbuf_new_from_file (infilename, &error);
       if (!pixbuf)
 	{
 	  g_fprintf (stderr, "failed to load \"%s\": %s\n",
@@ -130,7 +130,7 @@ main (int   argc,
 	    }
 	  else
 	    {
-	      pixbuf = gdk_pixbuf_new_from_file (infilename, &error);
+	      pixbuf = cdk_pixbuf_new_from_file (infilename, &error);
 	      if (!pixbuf)
 		{
 		  g_fprintf (stderr, "failed to load \"%s\": %s\n",

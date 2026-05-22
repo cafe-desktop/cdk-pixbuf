@@ -1,5 +1,5 @@
 #include "config.h"
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 #include <glib.h>
 
 #include "test-common.h"
@@ -32,7 +32,7 @@ loader_write_from_channel (GdkPixbufLoader *loader,
     }
     g_assert (read_status == G_IO_STATUS_NORMAL || read_status == G_IO_STATUS_EOF);
 
-    ret = gdk_pixbuf_loader_write(loader, buffer, bytes_read, &error);
+    ret = cdk_pixbuf_loader_write(loader, buffer, bytes_read, &error);
     g_assert_no_error (error);
     g_assert (ret);
     g_free(buffer);
@@ -55,7 +55,7 @@ test_short_gif_write (void)
     g_assert (channel != NULL);
     g_io_channel_set_encoding (channel, NULL, NULL);
 
-    loader = gdk_pixbuf_loader_new_with_type ("gif", NULL);
+    loader = cdk_pixbuf_loader_new_with_type ("gif", NULL);
     g_assert (loader != NULL);
 
     loader_write_from_channel (loader, channel, 10);
@@ -63,7 +63,7 @@ test_short_gif_write (void)
 
     g_io_channel_unref (channel);
 
-    gdk_pixbuf_loader_close (loader, NULL);
+    cdk_pixbuf_loader_close (loader, NULL);
     g_object_unref (loader);
 }
 
@@ -85,17 +85,17 @@ test_load_first_frame (void)
     g_assert (channel != NULL);
     g_io_channel_set_encoding (channel, NULL, NULL);
 
-    loader = gdk_pixbuf_loader_new_with_type ("gif", NULL);
+    loader = cdk_pixbuf_loader_new_with_type ("gif", NULL);
     g_assert (loader != NULL);
 
     while (!has_frame) {
         GdkPixbufAnimation *animation;
 
         loader_write_from_channel (loader, channel, 4096);
-        animation = gdk_pixbuf_loader_get_animation (loader);
+        animation = cdk_pixbuf_loader_get_animation (loader);
         if (animation) {
-            GdkPixbufAnimationIter *iter = gdk_pixbuf_animation_get_iter (animation, NULL);
-            if (!gdk_pixbuf_animation_iter_on_currently_loading_frame (iter))
+            GdkPixbufAnimationIter *iter = cdk_pixbuf_animation_get_iter (animation, NULL);
+            if (!cdk_pixbuf_animation_iter_on_currently_loading_frame (iter))
                 has_frame = TRUE;
             g_object_unref (iter);
         }
@@ -103,13 +103,13 @@ test_load_first_frame (void)
 
     g_io_channel_unref (channel);
 
-    gdk_pixbuf_loader_close (loader, &error);
+    cdk_pixbuf_loader_close (loader, &error);
     g_assert_error (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_INCOMPLETE_ANIMATION);
     g_clear_error (&error);
-    pixbuf = gdk_pixbuf_loader_get_pixbuf (loader);
+    pixbuf = cdk_pixbuf_loader_get_pixbuf (loader);
     g_assert (pixbuf);
-    g_assert_cmpint (gdk_pixbuf_get_width (pixbuf), ==, 660);
-    g_assert_cmpint (gdk_pixbuf_get_height (pixbuf), ==, 666);
+    g_assert_cmpint (cdk_pixbuf_get_width (pixbuf), ==, 660);
+    g_assert_cmpint (cdk_pixbuf_get_height (pixbuf), ==, 666);
     g_object_unref (loader);
 }
 

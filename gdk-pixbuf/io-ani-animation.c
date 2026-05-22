@@ -25,43 +25,43 @@
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 
-static void gdk_pixbuf_ani_anim_finalize   (GObject        *object);
+static void cdk_pixbuf_ani_anim_finalize   (GObject        *object);
 
-static gboolean                gdk_pixbuf_ani_anim_is_static_image  (GdkPixbufAnimation *animation);
-static GdkPixbuf*              gdk_pixbuf_ani_anim_get_static_image (GdkPixbufAnimation *animation);
-static void                    gdk_pixbuf_ani_anim_get_size (GdkPixbufAnimation *anim,
+static gboolean                cdk_pixbuf_ani_anim_is_static_image  (GdkPixbufAnimation *animation);
+static GdkPixbuf*              cdk_pixbuf_ani_anim_get_static_image (GdkPixbufAnimation *animation);
+static void                    cdk_pixbuf_ani_anim_get_size (GdkPixbufAnimation *anim,
                                                              int                *width,
                                                              int                *height);
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-static GdkPixbufAnimationIter* gdk_pixbuf_ani_anim_get_iter (GdkPixbufAnimation *anim,
+static GdkPixbufAnimationIter* cdk_pixbuf_ani_anim_get_iter (GdkPixbufAnimation *anim,
                                                              const GTimeVal     *start_time);
 G_GNUC_END_IGNORE_DEPRECATIONS
 
 
 
-G_DEFINE_TYPE  (GdkPixbufAniAnim, gdk_pixbuf_ani_anim, GDK_TYPE_PIXBUF_ANIMATION)
+G_DEFINE_TYPE  (GdkPixbufAniAnim, cdk_pixbuf_ani_anim, GDK_TYPE_PIXBUF_ANIMATION)
 
 static void
-gdk_pixbuf_ani_anim_init (GdkPixbufAniAnim *anim)
+cdk_pixbuf_ani_anim_init (GdkPixbufAniAnim *anim)
 {
 }
 
 static void
-gdk_pixbuf_ani_anim_class_init (GdkPixbufAniAnimClass *klass)
+cdk_pixbuf_ani_anim_class_init (GdkPixbufAniAnimClass *klass)
 {
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
         GdkPixbufAnimationClass *anim_class = GDK_PIXBUF_ANIMATION_CLASS (klass);
 
-        object_class->finalize = gdk_pixbuf_ani_anim_finalize;
+        object_class->finalize = cdk_pixbuf_ani_anim_finalize;
 
-        anim_class->is_static_image = gdk_pixbuf_ani_anim_is_static_image;
-        anim_class->get_static_image = gdk_pixbuf_ani_anim_get_static_image;
-        anim_class->get_size = gdk_pixbuf_ani_anim_get_size;
-        anim_class->get_iter = gdk_pixbuf_ani_anim_get_iter;
+        anim_class->is_static_image = cdk_pixbuf_ani_anim_is_static_image;
+        anim_class->get_static_image = cdk_pixbuf_ani_anim_get_static_image;
+        anim_class->get_size = cdk_pixbuf_ani_anim_get_size;
+        anim_class->get_iter = cdk_pixbuf_ani_anim_get_iter;
 }
 
 static void
-gdk_pixbuf_ani_anim_finalize (GObject *object)
+cdk_pixbuf_ani_anim_finalize (GObject *object)
 {
         GdkPixbufAniAnim *ani_anim = GDK_PIXBUF_ANI_ANIM (object);
         gint i;
@@ -74,11 +74,11 @@ gdk_pixbuf_ani_anim_finalize (GObject *object)
         g_free (ani_anim->sequence);
         g_free (ani_anim->delay);
 
-        G_OBJECT_CLASS (gdk_pixbuf_ani_anim_parent_class)->finalize (object);
+        G_OBJECT_CLASS (cdk_pixbuf_ani_anim_parent_class)->finalize (object);
 }
 
 static gboolean
-gdk_pixbuf_ani_anim_is_static_image (GdkPixbufAnimation *animation)
+cdk_pixbuf_ani_anim_is_static_image (GdkPixbufAnimation *animation)
 {
         GdkPixbufAniAnim *ani_anim;
 
@@ -88,7 +88,7 @@ gdk_pixbuf_ani_anim_is_static_image (GdkPixbufAnimation *animation)
 }
 
 static GdkPixbuf*
-gdk_pixbuf_ani_anim_get_static_image (GdkPixbufAnimation *animation)
+cdk_pixbuf_ani_anim_get_static_image (GdkPixbufAnimation *animation)
 {
         GdkPixbufAniAnim *ani_anim;
 
@@ -101,7 +101,7 @@ gdk_pixbuf_ani_anim_get_static_image (GdkPixbufAnimation *animation)
 }
 
 static void
-gdk_pixbuf_ani_anim_get_size (GdkPixbufAnimation *anim,
+cdk_pixbuf_ani_anim_get_size (GdkPixbufAnimation *anim,
                               int                *width,
                               int                *height)
 {
@@ -127,7 +127,7 @@ iter_restart (GdkPixbufAniAnimIter *iter)
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 static GdkPixbufAnimationIter*
-gdk_pixbuf_ani_anim_get_iter (GdkPixbufAnimation *anim,
+cdk_pixbuf_ani_anim_get_iter (GdkPixbufAnimation *anim,
                               const GTimeVal     *start_time)
 {
         GdkPixbufAniAnimIter *iter;
@@ -149,53 +149,53 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 
 
 
-static void gdk_pixbuf_ani_anim_iter_finalize   (GObject                   *object);
+static void cdk_pixbuf_ani_anim_iter_finalize   (GObject                   *object);
 
-static int        gdk_pixbuf_ani_anim_iter_get_delay_time             (GdkPixbufAnimationIter *iter);
-static GdkPixbuf* gdk_pixbuf_ani_anim_iter_get_pixbuf                 (GdkPixbufAnimationIter *iter);
-static gboolean   gdk_pixbuf_ani_anim_iter_on_currently_loading_frame (GdkPixbufAnimationIter *iter);
+static int        cdk_pixbuf_ani_anim_iter_get_delay_time             (GdkPixbufAnimationIter *iter);
+static GdkPixbuf* cdk_pixbuf_ani_anim_iter_get_pixbuf                 (GdkPixbufAnimationIter *iter);
+static gboolean   cdk_pixbuf_ani_anim_iter_on_currently_loading_frame (GdkPixbufAnimationIter *iter);
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-static gboolean   gdk_pixbuf_ani_anim_iter_advance                    (GdkPixbufAnimationIter *iter,
+static gboolean   cdk_pixbuf_ani_anim_iter_advance                    (GdkPixbufAnimationIter *iter,
                                                                        const GTimeVal         *current_time);
 G_GNUC_END_IGNORE_DEPRECATIONS
 
 
 
-G_DEFINE_TYPE (GdkPixbufAniAnimIter, gdk_pixbuf_ani_anim_iter, GDK_TYPE_PIXBUF_ANIMATION_ITER);
+G_DEFINE_TYPE (GdkPixbufAniAnimIter, cdk_pixbuf_ani_anim_iter, GDK_TYPE_PIXBUF_ANIMATION_ITER);
 
 static void
-gdk_pixbuf_ani_anim_iter_init (GdkPixbufAniAnimIter *anim)
+cdk_pixbuf_ani_anim_iter_init (GdkPixbufAniAnimIter *anim)
 {
 }
 
 static void
-gdk_pixbuf_ani_anim_iter_class_init (GdkPixbufAniAnimIterClass *klass)
+cdk_pixbuf_ani_anim_iter_class_init (GdkPixbufAniAnimIterClass *klass)
 {
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
         GdkPixbufAnimationIterClass *anim_iter_class =
                 GDK_PIXBUF_ANIMATION_ITER_CLASS (klass);
 
-        object_class->finalize = gdk_pixbuf_ani_anim_iter_finalize;
+        object_class->finalize = cdk_pixbuf_ani_anim_iter_finalize;
 
-        anim_iter_class->get_delay_time = gdk_pixbuf_ani_anim_iter_get_delay_time;
-        anim_iter_class->get_pixbuf = gdk_pixbuf_ani_anim_iter_get_pixbuf;
-        anim_iter_class->on_currently_loading_frame = gdk_pixbuf_ani_anim_iter_on_currently_loading_frame;
-        anim_iter_class->advance = gdk_pixbuf_ani_anim_iter_advance;
+        anim_iter_class->get_delay_time = cdk_pixbuf_ani_anim_iter_get_delay_time;
+        anim_iter_class->get_pixbuf = cdk_pixbuf_ani_anim_iter_get_pixbuf;
+        anim_iter_class->on_currently_loading_frame = cdk_pixbuf_ani_anim_iter_on_currently_loading_frame;
+        anim_iter_class->advance = cdk_pixbuf_ani_anim_iter_advance;
 }
 
 static void
-gdk_pixbuf_ani_anim_iter_finalize (GObject *object)
+cdk_pixbuf_ani_anim_iter_finalize (GObject *object)
 {
         GdkPixbufAniAnimIter *iter = GDK_PIXBUF_ANI_ANIM_ITER (object);
 
         g_object_unref (iter->ani_anim);
 
-        G_OBJECT_CLASS (gdk_pixbuf_ani_anim_iter_parent_class)->finalize (object);
+        G_OBJECT_CLASS (cdk_pixbuf_ani_anim_iter_parent_class)->finalize (object);
 }
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 static gboolean
-gdk_pixbuf_ani_anim_iter_advance (GdkPixbufAnimationIter *anim_iter,
+cdk_pixbuf_ani_anim_iter_advance (GdkPixbufAnimationIter *anim_iter,
                                   const GTimeVal         *current_time)
 {
         GdkPixbufAniAnimIter *iter;
@@ -248,7 +248,7 @@ gdk_pixbuf_ani_anim_iter_advance (GdkPixbufAnimationIter *anim_iter,
 G_GNUC_END_IGNORE_DEPRECATIONS
 
 int
-gdk_pixbuf_ani_anim_iter_get_delay_time (GdkPixbufAnimationIter *anim_iter)
+cdk_pixbuf_ani_anim_iter_get_delay_time (GdkPixbufAnimationIter *anim_iter)
 {
         GdkPixbufAniAnimIter *iter;
 
@@ -258,7 +258,7 @@ gdk_pixbuf_ani_anim_iter_get_delay_time (GdkPixbufAnimationIter *anim_iter)
 }
 
 GdkPixbuf*
-gdk_pixbuf_ani_anim_iter_get_pixbuf (GdkPixbufAnimationIter *anim_iter)
+cdk_pixbuf_ani_anim_iter_get_pixbuf (GdkPixbufAnimationIter *anim_iter)
 {
         GdkPixbufAniAnimIter *iter;
         gint frame;
@@ -275,7 +275,7 @@ gdk_pixbuf_ani_anim_iter_get_pixbuf (GdkPixbufAnimationIter *anim_iter)
 }
 
 static gboolean
-gdk_pixbuf_ani_anim_iter_on_currently_loading_frame (GdkPixbufAnimationIter *anim_iter)
+cdk_pixbuf_ani_anim_iter_on_currently_loading_frame (GdkPixbufAnimationIter *anim_iter)
 {
         GdkPixbufAniAnimIter *iter;
         gint frame;

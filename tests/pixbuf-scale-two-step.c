@@ -18,7 +18,7 @@
  */
 
 /*
- * Test the two-step scaler speed optimization in gdk-pixbuf/pixops.c
+ * Test the two-step scaler speed optimization in cdk-pixbuf/pixops.c
  * for result correctness. See https://bugzilla.gnome.org/show_bug.cgi?id=80925
  *
  * The two-step scaler kicks in when ceil(1/scale_x + 1) * ceil(1/scale_y + 1)
@@ -31,7 +31,7 @@
  */
 
 #include "config.h"
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 #include "test-common.h"
 
 /* Size of images to be scaled */
@@ -64,30 +64,30 @@ pixdata_almost_equal (GdkPixbuf *one, GdkPixbuf *two)
   guint x, y;
   gint width_one, height_one;
 
-  width_one = gdk_pixbuf_get_width (one);
-  height_one = gdk_pixbuf_get_height (one);
+  width_one = cdk_pixbuf_get_width (one);
+  height_one = cdk_pixbuf_get_height (one);
 
   g_assert_cmpint (height_one, >=, 0);
   g_assert_cmpint (width_one, >=, 0);
-  g_assert_cmpint (gdk_pixbuf_get_height (two), >=, 0);
-  g_assert_cmpint (gdk_pixbuf_get_width (two), >=, 0);
+  g_assert_cmpint (cdk_pixbuf_get_height (two), >=, 0);
+  g_assert_cmpint (cdk_pixbuf_get_width (two), >=, 0);
 
-  if (width_one != gdk_pixbuf_get_width (two) ||
-      height_one != gdk_pixbuf_get_height (two))
+  if (width_one != cdk_pixbuf_get_width (two) ||
+      height_one != cdk_pixbuf_get_height (two))
     {
       g_test_fail();
     }
 
-  for (y = 0, one_row = gdk_pixbuf_get_pixels (one),
-              two_row = gdk_pixbuf_get_pixels (two);
+  for (y = 0, one_row = cdk_pixbuf_get_pixels (one),
+              two_row = cdk_pixbuf_get_pixels (two);
        y < height_one;
-       y++, one_row += gdk_pixbuf_get_rowstride (one),
-            two_row += gdk_pixbuf_get_rowstride (two))
+       y++, one_row += cdk_pixbuf_get_rowstride (one),
+            two_row += cdk_pixbuf_get_rowstride (two))
     {
       for (x = 0, one_pixel = one_row, two_pixel = two_row;
 	   x < width_one;
-	   x++, one_pixel += gdk_pixbuf_get_n_channels (one),
-	        two_pixel += gdk_pixbuf_get_n_channels (two))
+	   x++, one_pixel += cdk_pixbuf_get_n_channels (one),
+	        two_pixel += cdk_pixbuf_get_n_channels (two))
         {
 	  if (!(within_one(one_pixel[0], two_pixel[0]) &&
 	        within_one(one_pixel[1], two_pixel[1]) &&
@@ -120,12 +120,12 @@ test_old_and_new (gconstpointer data)
 
   /* Scale it without and with the two-step optimization */
   g_setenv ("GDK_PIXBUF_DISABLE_TWO_STEP_SCALER", "1", TRUE);
-  one = gdk_pixbuf_scale_simple (source,
+  one = cdk_pixbuf_scale_simple (source,
 				 (int) (width * SCALE_FACTOR + 0.5),
 				 (int) (height * SCALE_FACTOR + 0.5),
 				 interp_type);
   g_unsetenv("GDK_PIXBUF_DISABLE_TWO_STEP_SCALER");
-  two = gdk_pixbuf_scale_simple (source,
+  two = cdk_pixbuf_scale_simple (source,
 				 (int) (width * SCALE_FACTOR + 0.5),
 				 (int) (height * SCALE_FACTOR + 0.5),
 				 interp_type);
@@ -144,7 +144,7 @@ test_old_and_new (gconstpointer data)
   g_object_unref (G_OBJECT (source));
 }
 
-/* Crop a region out of a scaled image using gdk_pixbuf_new_subpixbuf() on a
+/* Crop a region out of a scaled image using cdk_pixbuf_new_subpixbuf() on a
  * scaled image and by cropping it as part of the scaling, and check that the
  * results are identical. */
 static void
@@ -162,20 +162,20 @@ crop_n_compare(const GdkPixbuf *source,	/* The source image */
   guint new_width, new_height; /* Size of whole scaled image */
 
   /* First, scale the whole image and crop it */
-  new_width = (int) (gdk_pixbuf_get_width (source) * scale_factor + 0.5);
-  new_height = (int) (gdk_pixbuf_get_height (source) * scale_factor + 0.5);
+  new_width = (int) (cdk_pixbuf_get_width (source) * scale_factor + 0.5);
+  new_height = (int) (cdk_pixbuf_get_height (source) * scale_factor + 0.5);
   g_assert_cmpint (new_width, ==, 10);
   g_assert_cmpint (new_height, ==, 10);
 
-  whole_scaled = gdk_pixbuf_scale_simple (source, new_width, new_height, interp_type);
+  whole_scaled = cdk_pixbuf_scale_simple (source, new_width, new_height, interp_type);
   g_assert_nonnull (whole_scaled);
-  cropped = gdk_pixbuf_new_subpixbuf (whole_scaled, offset_x, offset_y, width, height);
+  cropped = cdk_pixbuf_new_subpixbuf (whole_scaled, offset_x, offset_y, width, height);
   g_assert_nonnull (cropped);
 
   /* Now crop and scale it in one go */
-  scaled = gdk_pixbuf_new (GDK_COLORSPACE_RGB, 0, 8, width, height);
+  scaled = cdk_pixbuf_new (GDK_COLORSPACE_RGB, 0, 8, width, height);
   g_assert_nonnull (scaled);
-  gdk_pixbuf_scale (source, scaled,
+  cdk_pixbuf_scale (source, scaled,
 		    0, 0,                              /* dest_[xy] */
 		    width, height,                     /* dest_width/height */
 		    -1.0 * offset_x, -1.0 * offset_y,
@@ -184,7 +184,7 @@ crop_n_compare(const GdkPixbuf *source,	/* The source image */
 
   /* and check that the results are the same.
    * We can't use pixdata_equal() because it fails if rowstride is different
-   * and gdk_pixbuf_new_subpixbuf() reuses whole_scaled's image data with its
+   * and cdk_pixbuf_new_subpixbuf() reuses whole_scaled's image data with its
    * larger rowstride. */
   {
     guchar *scaled_row;     /* Pointer to start of row of pixels in scaled */
@@ -194,28 +194,28 @@ crop_n_compare(const GdkPixbuf *source,	/* The source image */
     guint x, y;
     gint scaled_width, scaled_height;
 
-    scaled_width = gdk_pixbuf_get_width (scaled);
-    scaled_height = gdk_pixbuf_get_height (scaled);
+    scaled_width = cdk_pixbuf_get_width (scaled);
+    scaled_height = cdk_pixbuf_get_height (scaled);
 
     g_assert (scaled_width > 0);
     g_assert (scaled_height > 0);
 
-    if (scaled_width != gdk_pixbuf_get_width (cropped) ||
-	scaled_height != gdk_pixbuf_get_height (cropped))
+    if (scaled_width != cdk_pixbuf_get_width (cropped) ||
+	scaled_height != cdk_pixbuf_get_height (cropped))
       {
         g_test_fail();
       }
 
-    for (y = 0, scaled_row = gdk_pixbuf_get_pixels (scaled),
-	       cropped_row = gdk_pixbuf_get_pixels (cropped);
+    for (y = 0, scaled_row = cdk_pixbuf_get_pixels (scaled),
+	       cropped_row = cdk_pixbuf_get_pixels (cropped);
 	 y < scaled_height;
-	 y++, scaled_row += gdk_pixbuf_get_rowstride (scaled),
-	      cropped_row += gdk_pixbuf_get_rowstride (cropped))
+	 y++, scaled_row += cdk_pixbuf_get_rowstride (scaled),
+	      cropped_row += cdk_pixbuf_get_rowstride (cropped))
       {
         for (x = 0, scaled_pixel = scaled_row, cropped_pixel = cropped_row;
 	    x < scaled_width;
-	    x++, scaled_pixel += gdk_pixbuf_get_n_channels (scaled),
-	         cropped_pixel += gdk_pixbuf_get_n_channels (cropped))
+	    x++, scaled_pixel += cdk_pixbuf_get_n_channels (scaled),
+	         cropped_pixel += cdk_pixbuf_get_n_channels (cropped))
 	  {
 	    if (!(scaled_pixel[0] == cropped_pixel[0] &&
 	          scaled_pixel[1] == cropped_pixel[1] &&
@@ -268,7 +268,7 @@ test_offset (gconstpointer data)
  * 3) a region of size dest_width x dest-height starting at (dest_x,dest_y)
  *    in the scaled-and-offset image is copied to (dest_x,dest_y) in the
  *    destination image. See the illustration at
- *    https://developer.gnome.org/gdk-pixbuf/2.22/gdk-pixbuf-scaling.html#gdk-pixbuf-composite */
+ *    https://developer.gnome.org/cdk-pixbuf/2.22/cdk-pixbuf-scaling.html#cdk-pixbuf-composite */
 static void
 test_dest (gconstpointer data)
 {
@@ -283,36 +283,36 @@ test_dest (gconstpointer data)
 
   source = make_checkerboard (swidth, sheight);
 
-  copy = gdk_pixbuf_new (GDK_COLORSPACE_RGB, 0, 8, dwidth, dheight);
+  copy = cdk_pixbuf_new (GDK_COLORSPACE_RGB, 0, 8, dwidth, dheight);
   g_assert_nonnull (copy);
 
   /* Copy the four quadrants separately */
-  gdk_pixbuf_scale ((const GdkPixbuf *) source, copy,
+  cdk_pixbuf_scale ((const GdkPixbuf *) source, copy,
 		    0, 0,                    /* dest_[xy] */
 		    dwidth / 2, dheight / 2, /* dest_width/height */
 		    0.0, 0.0,                /* offset_[xy] */
 		    SCALE_FACTOR,  SCALE_FACTOR,
 		    interp_type);
-  gdk_pixbuf_scale ((const GdkPixbuf *) source, copy,
+  cdk_pixbuf_scale ((const GdkPixbuf *) source, copy,
 		    dwidth / 2, 0,           /* dest_[xy] */
 		    dwidth / 2, dheight / 2, /* dest_width/height */
 		    0.0, 0.0,                /* offset_[xy] */
 		    SCALE_FACTOR,  SCALE_FACTOR,
 		    interp_type);
-  gdk_pixbuf_scale ((const GdkPixbuf *)source, copy,
+  cdk_pixbuf_scale ((const GdkPixbuf *)source, copy,
 		    0, dheight / 2,          /* dest_[xy] */
 		    dwidth / 2, dheight / 2, /* dest_width/height */
 		    0.0, 0.0,                /* offset_[xy] */
 		    SCALE_FACTOR,  SCALE_FACTOR,
 		    interp_type);
-  gdk_pixbuf_scale ((const GdkPixbuf *)source, copy,
+  cdk_pixbuf_scale ((const GdkPixbuf *)source, copy,
 		    dwidth / 2, dheight / 2, /* dest_[xy] */
 		    dwidth / 2, dheight / 2, /* dest_width/height */
 		    0.0, 0.0,                /* offset_[xy] */
 		    SCALE_FACTOR,  SCALE_FACTOR,
 		    interp_type);
 
-  scaled = gdk_pixbuf_scale_simple (source, dwidth, dheight, interp_type);
+  scaled = cdk_pixbuf_scale_simple (source, dwidth, dheight, interp_type);
   g_assert_nonnull (scaled);
 
   /* Compare the all-at-once and the composite images */

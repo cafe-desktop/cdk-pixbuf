@@ -20,7 +20,7 @@
  */
 
 #include "config.h"
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 #include "test-common.h"
 
 static void
@@ -43,16 +43,16 @@ test_incremental (gconstpointer data)
   g_file_get_contents (g_test_get_filename (G_TEST_DIST, filename, NULL), &contents, &size, &error);
   g_assert_no_error (error);
 
-  loader = gdk_pixbuf_loader_new ();
+  loader = cdk_pixbuf_loader_new ();
 
-  gdk_pixbuf_loader_write (loader, (const guchar*)contents, size, &error);
+  cdk_pixbuf_loader_write (loader, (const guchar*)contents, size, &error);
   g_assert_no_error (error);
   
-  gdk_pixbuf_loader_close (loader, &error);
+  cdk_pixbuf_loader_close (loader, &error);
   g_assert_no_error (error);
 
-  pixbuf = gdk_pixbuf_loader_get_pixbuf (loader);
-  profile = gdk_pixbuf_get_option (pixbuf, "icc-profile");
+  pixbuf = cdk_pixbuf_loader_get_pixbuf (loader);
+  profile = cdk_pixbuf_get_option (pixbuf, "icc-profile");
   g_assert (profile != NULL);
 
   g_object_unref (loader);
@@ -73,10 +73,10 @@ test_nonincremental (gconstpointer data)
       return;
     }
 
-  pixbuf = gdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, filename, NULL), &error);
+  pixbuf = cdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, filename, NULL), &error);
   g_assert_no_error (error);
 
-  profile = gdk_pixbuf_get_option (pixbuf, "icc-profile");
+  profile = cdk_pixbuf_get_option (pixbuf, "icc-profile");
   g_assert (profile != NULL);
 
   g_object_unref (pixbuf);

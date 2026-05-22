@@ -1,4 +1,4 @@
 [Thumbnailer Entry]
-TryExec=@bindir@/gdk-pixbuf-thumbnailer
-Exec=@bindir@/gdk-pixbuf-thumbnailer -s %s %u %o
+TryExec=@bindir@/cdk-pixbuf-thumbnailer
+Exec=@bindir@/cdk-pixbuf-thumbnailer -s %s %u %o
 MimeType=@mimetypes@

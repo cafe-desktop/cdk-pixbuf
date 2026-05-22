@@ -28,70 +28,70 @@
 #define GDK_PIXBUF_IO_H
 
 #if defined(GDK_PIXBUF_DISABLE_SINGLE_INCLUDES) && !defined (GDK_PIXBUF_H_INSIDE) && !defined (GDK_PIXBUF_COMPILATION)
-#error "Only <gdk-pixbuf/gdk-pixbuf.h> can be included directly."
+#error "Only <cdk-pixbuf/cdk-pixbuf.h> can be included directly."
 #endif
 
 #include <stdio.h>
 #include <glib.h>
 #include <gmodule.h>
-#include <gdk-pixbuf/gdk-pixbuf-core.h>
-#include <gdk-pixbuf/gdk-pixbuf-animation.h>
+#include <cdk-pixbuf/cdk-pixbuf-core.h>
+#include <cdk-pixbuf/cdk-pixbuf-animation.h>
 
 G_BEGIN_DECLS
 
 typedef struct _GdkPixbufFormat GdkPixbufFormat;
 
 GDK_PIXBUF_AVAILABLE_IN_2_40
-gboolean gdk_pixbuf_init_modules (const char  *path,
+gboolean cdk_pixbuf_init_modules (const char  *path,
                                   GError     **error);
 
 GDK_PIXBUF_AVAILABLE_IN_ALL
-GType gdk_pixbuf_format_get_type (void) G_GNUC_CONST;
+GType cdk_pixbuf_format_get_type (void) G_GNUC_CONST;
 
 GDK_PIXBUF_AVAILABLE_IN_ALL
-GSList    *gdk_pixbuf_get_formats            (void);
+GSList    *cdk_pixbuf_get_formats            (void);
 GDK_PIXBUF_AVAILABLE_IN_2_2
-gchar     *gdk_pixbuf_format_get_name        (GdkPixbufFormat *format);
+gchar     *cdk_pixbuf_format_get_name        (GdkPixbufFormat *format);
 GDK_PIXBUF_AVAILABLE_IN_2_2
-gchar     *gdk_pixbuf_format_get_description (GdkPixbufFormat *format);
+gchar     *cdk_pixbuf_format_get_description (GdkPixbufFormat *format);
 GDK_PIXBUF_AVAILABLE_IN_2_2
-gchar    **gdk_pixbuf_format_get_mime_types  (GdkPixbufFormat *format);
+gchar    **cdk_pixbuf_format_get_mime_types  (GdkPixbufFormat *format);
 GDK_PIXBUF_AVAILABLE_IN_2_2
-gchar    **gdk_pixbuf_format_get_extensions  (GdkPixbufFormat *format);
+gchar    **cdk_pixbuf_format_get_extensions  (GdkPixbufFormat *format);
 GDK_PIXBUF_AVAILABLE_IN_2_36
-gboolean   gdk_pixbuf_format_is_save_option_supported (GdkPixbufFormat *format,
+gboolean   cdk_pixbuf_format_is_save_option_supported (GdkPixbufFormat *format,
                                                        const gchar     *option_key);
 GDK_PIXBUF_AVAILABLE_IN_2_2
-gboolean   gdk_pixbuf_format_is_writable     (GdkPixbufFormat *format);
+gboolean   cdk_pixbuf_format_is_writable     (GdkPixbufFormat *format);
 GDK_PIXBUF_AVAILABLE_IN_2_6
-gboolean   gdk_pixbuf_format_is_scalable     (GdkPixbufFormat *format);
+gboolean   cdk_pixbuf_format_is_scalable     (GdkPixbufFormat *format);
 GDK_PIXBUF_AVAILABLE_IN_2_6
-gboolean   gdk_pixbuf_format_is_disabled     (GdkPixbufFormat *format);
+gboolean   cdk_pixbuf_format_is_disabled     (GdkPixbufFormat *format);
 GDK_PIXBUF_AVAILABLE_IN_2_6
-void       gdk_pixbuf_format_set_disabled    (GdkPixbufFormat *format,
+void       cdk_pixbuf_format_set_disabled    (GdkPixbufFormat *format,
 					      gboolean         disabled);
 GDK_PIXBUF_AVAILABLE_IN_2_6
-gchar     *gdk_pixbuf_format_get_license     (GdkPixbufFormat *format);
+gchar     *cdk_pixbuf_format_get_license     (GdkPixbufFormat *format);
 
 GDK_PIXBUF_AVAILABLE_IN_2_4
-GdkPixbufFormat *gdk_pixbuf_get_file_info    (const gchar     *filename,
+GdkPixbufFormat *cdk_pixbuf_get_file_info    (const gchar     *filename,
 					      gint            *width, 
 					      gint            *height);
 GDK_PIXBUF_AVAILABLE_IN_2_32
-void             gdk_pixbuf_get_file_info_async  (const gchar          *filename,
+void             cdk_pixbuf_get_file_info_async  (const gchar          *filename,
 						  GCancellable         *cancellable,
 						  GAsyncReadyCallback   callback,
 						  gpointer              user_data);
 GDK_PIXBUF_AVAILABLE_IN_2_32
-GdkPixbufFormat *gdk_pixbuf_get_file_info_finish (GAsyncResult         *async_result,
+GdkPixbufFormat *cdk_pixbuf_get_file_info_finish (GAsyncResult         *async_result,
 						  gint                 *width,
 						  gint                 *height,
 						  GError              **error);
 
 GDK_PIXBUF_AVAILABLE_IN_ALL
-GdkPixbufFormat *gdk_pixbuf_format_copy (const GdkPixbufFormat *format);
+GdkPixbufFormat *cdk_pixbuf_format_copy (const GdkPixbufFormat *format);
 GDK_PIXBUF_AVAILABLE_IN_ALL
-void             gdk_pixbuf_format_free (GdkPixbufFormat       *format);
+void             cdk_pixbuf_format_free (GdkPixbufFormat       *format);
 
 #ifdef GDK_PIXBUF_ENABLE_BACKEND
 
@@ -109,12 +109,12 @@ void             gdk_pixbuf_format_free (GdkPixbufFormat       *format);
  * The function is expected to set @width and @height to the desired
  * size to which the image should be scaled. If a module has no efficient 
  * way to achieve the desired scaling during the loading of the image, it may
- * either ignore the size request, or only approximate it - gdk-pixbuf will
+ * either ignore the size request, or only approximate it - cdk-pixbuf will
  * then perform the required scaling on the completely loaded image. 
  * 
  * If the function sets @width or @height to zero, the module should interpret
  * this as a hint that it will be closed soon and shouldn't allocate further 
- * resources. This convention is used to implement gdk_pixbuf_get_file_info()
+ * resources. This convention is used to implement cdk_pixbuf_get_file_info()
  * efficiently.
  * 
  * Since: 2.2
@@ -185,7 +185,7 @@ typedef void (* GdkPixbufModuleUpdatedFunc)  (GdkPixbuf *pixbuf,
  * Each prefix has an associated integer that describes the relevance of 
  * the prefix, with 0 meaning a mismatch and 100 a "perfect match".
  * 
- * Starting with gdk-pixbuf 2.8, the first byte of the mask may be '*', 
+ * Starting with cdk-pixbuf 2.8, the first byte of the mask may be '*', 
  * indicating an unanchored pattern that matches not only at the beginning, 
  * but also in the middle. Versions prior to 2.8 will interpret the '*'
  * like an 'x'.
@@ -425,7 +425,7 @@ typedef void (* GdkPixbufModuleFillInfoFunc) (GdkPixbufFormat *info);
  * GdkPixbufFormatFlags:
  * @GDK_PIXBUF_FORMAT_WRITABLE: the module can write out images in the format.
  * @GDK_PIXBUF_FORMAT_SCALABLE: the image format is scalable
- * @GDK_PIXBUF_FORMAT_THREADSAFE: the module is threadsafe. gdk-pixbuf
+ * @GDK_PIXBUF_FORMAT_THREADSAFE: the module is threadsafe. cdk-pixbuf
  *     ignores modules that are not marked as threadsafe. (Since 2.28).
  * 
  * Flags which allow a module to specify further details about the supported
@@ -458,7 +458,7 @@ typedef enum /*< skip >*/
  * by a module.
  *
  * Only modules should access the fields directly, applications should
- * use the `gdk_pixbuf_format_*` family of functions.
+ * use the `cdk_pixbuf_format_*` family of functions.
  * 
  * Since: 2.2
  */

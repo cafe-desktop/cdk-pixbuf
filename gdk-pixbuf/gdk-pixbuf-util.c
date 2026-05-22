@@ -23,11 +23,11 @@
 #include <string.h>
 #include <libintl.h>
 
-#include "gdk-pixbuf-transform.h"
-#include "gdk-pixbuf-private.h"
+#include "cdk-pixbuf-transform.h"
+#include "cdk-pixbuf-private.h"
 
 /**
- * gdk_pixbuf_add_alpha:
+ * cdk_pixbuf_add_alpha:
  * @pixbuf: A #GdkPixbuf.
  * @substitute_color: Whether to set a color to zero opacity.
  * @r: Red value to substitute.
@@ -51,7 +51,7 @@
  * Returns: (transfer full) (nullable): A newly-created pixbuf
  **/
 GdkPixbuf *
-gdk_pixbuf_add_alpha (const GdkPixbuf *pixbuf,
+cdk_pixbuf_add_alpha (const GdkPixbuf *pixbuf,
                       gboolean substitute_color,
                       guchar r,
                       guchar g,
@@ -69,23 +69,23 @@ gdk_pixbuf_add_alpha (const GdkPixbuf *pixbuf,
 	g_return_val_if_fail (pixbuf->n_channels == 3 || pixbuf->n_channels == 4, NULL);
 	g_return_val_if_fail (pixbuf->bits_per_sample == 8, NULL);
 
-	src_pixels = gdk_pixbuf_read_pixels (pixbuf);
+	src_pixels = cdk_pixbuf_read_pixels (pixbuf);
 
 	if (pixbuf->has_alpha) {
-		new_pixbuf = gdk_pixbuf_copy (pixbuf);
+		new_pixbuf = cdk_pixbuf_copy (pixbuf);
 		if (!new_pixbuf)
 			return NULL;
 
                 if (!substitute_color)
                         return new_pixbuf;
 	} else {
-                new_pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, pixbuf->width, pixbuf->height);
+                new_pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, pixbuf->width, pixbuf->height);
         }
 
 	if (!new_pixbuf)
 		return NULL;
 
-	ret_pixels = gdk_pixbuf_get_pixels (new_pixbuf);
+	ret_pixels = cdk_pixbuf_get_pixels (new_pixbuf);
 
 	for (y = 0; y < pixbuf->height; y++, src_pixels += pixbuf->rowstride, ret_pixels += new_pixbuf->rowstride) {
 		guchar tr, tg, tb;
@@ -119,7 +119,7 @@ gdk_pixbuf_add_alpha (const GdkPixbuf *pixbuf,
 }
 
 /**
- * gdk_pixbuf_copy_area:
+ * cdk_pixbuf_copy_area:
  * @src_pixbuf: Source pixbuf.
  * @src_x: Source X coordinate within @src_pixbuf.
  * @src_y: Source Y coordinate within @src_pixbuf.
@@ -138,7 +138,7 @@ gdk_pixbuf_add_alpha (const GdkPixbuf *pixbuf,
  * Therefore, you can not use this function to scroll a pixbuf.
  **/
 void
-gdk_pixbuf_copy_area (const GdkPixbuf *src_pixbuf,
+cdk_pixbuf_copy_area (const GdkPixbuf *src_pixbuf,
 		      int src_x, int src_y,
 		      int width, int height,
 		      GdkPixbuf *dest_pixbuf,
@@ -153,11 +153,11 @@ gdk_pixbuf_copy_area (const GdkPixbuf *src_pixbuf,
 	g_return_if_fail (dest_x >= 0 && dest_x + width <= dest_pixbuf->width);
 	g_return_if_fail (dest_y >= 0 && dest_y + height <= dest_pixbuf->height);
 
-        g_return_if_fail (!(gdk_pixbuf_get_has_alpha (src_pixbuf) && !gdk_pixbuf_get_has_alpha (dest_pixbuf)));
+        g_return_if_fail (!(cdk_pixbuf_get_has_alpha (src_pixbuf) && !cdk_pixbuf_get_has_alpha (dest_pixbuf)));
         
 	/* This will perform format conversions automatically */
 
-	gdk_pixbuf_scale (src_pixbuf,
+	cdk_pixbuf_scale (src_pixbuf,
 			  dest_pixbuf,
 			  dest_x, dest_y,
 			  width, height,
@@ -170,7 +170,7 @@ gdk_pixbuf_copy_area (const GdkPixbuf *src_pixbuf,
 
 
 /**
- * gdk_pixbuf_saturate_and_pixelate:
+ * cdk_pixbuf_saturate_and_pixelate:
  * @src: source image
  * @dest: place to write modified version of @src
  * @saturation: saturation factor
@@ -193,7 +193,7 @@ gdk_pixbuf_copy_area (const GdkPixbuf *src_pixbuf,
  * 
  **/
 void
-gdk_pixbuf_saturate_and_pixelate (const GdkPixbuf *src,
+cdk_pixbuf_saturate_and_pixelate (const GdkPixbuf *src,
                                   GdkPixbuf *dest,
                                   gfloat saturation,
                                   gboolean pixelate)
@@ -202,16 +202,16 @@ gdk_pixbuf_saturate_and_pixelate (const GdkPixbuf *src,
   
         g_return_if_fail (GDK_IS_PIXBUF (src));
         g_return_if_fail (GDK_IS_PIXBUF (dest));
-        g_return_if_fail (gdk_pixbuf_get_height (src) == gdk_pixbuf_get_height (dest));
-        g_return_if_fail (gdk_pixbuf_get_width (src) == gdk_pixbuf_get_width (dest));
-        g_return_if_fail (gdk_pixbuf_get_has_alpha (src) == gdk_pixbuf_get_has_alpha (dest));
-        g_return_if_fail (gdk_pixbuf_get_colorspace (src) == gdk_pixbuf_get_colorspace (dest));
+        g_return_if_fail (cdk_pixbuf_get_height (src) == cdk_pixbuf_get_height (dest));
+        g_return_if_fail (cdk_pixbuf_get_width (src) == cdk_pixbuf_get_width (dest));
+        g_return_if_fail (cdk_pixbuf_get_has_alpha (src) == cdk_pixbuf_get_has_alpha (dest));
+        g_return_if_fail (cdk_pixbuf_get_colorspace (src) == cdk_pixbuf_get_colorspace (dest));
   
         if (saturation == 1.0 && !pixelate) {
                 if (dest != src)
-                        gdk_pixbuf_copy_area (src, 0, 0, 
-                                              gdk_pixbuf_get_width (src),
-                                              gdk_pixbuf_get_height (src),
+                        cdk_pixbuf_copy_area (src, 0, 0, 
+                                              cdk_pixbuf_get_width (src),
+                                              cdk_pixbuf_get_height (src),
                                               dest, 0, 0);
         } else {
                 int i, j, t;
@@ -222,15 +222,15 @@ gdk_pixbuf_saturate_and_pixelate (const GdkPixbuf *src,
 		guchar *dest_pixel;
                 guchar intensity;
 
-                has_alpha = gdk_pixbuf_get_has_alpha (src);
+                has_alpha = cdk_pixbuf_get_has_alpha (src);
 		bytes_per_pixel = has_alpha ? 4 : 3;
-                width = gdk_pixbuf_get_width (src);
-                height = gdk_pixbuf_get_height (src);
-                src_rowstride = gdk_pixbuf_get_rowstride (src);
-                dest_rowstride = gdk_pixbuf_get_rowstride (dest);
+                width = cdk_pixbuf_get_width (src);
+                height = cdk_pixbuf_get_height (src);
+                src_rowstride = cdk_pixbuf_get_rowstride (src);
+                dest_rowstride = cdk_pixbuf_get_rowstride (dest);
                 
-                dest_line = gdk_pixbuf_get_pixels (dest);
-                src_line = gdk_pixbuf_read_pixels (src);
+                dest_line = cdk_pixbuf_get_pixels (dest);
+                src_line = cdk_pixbuf_read_pixels (src);
 		
 #define DARK_FACTOR 0.7
 #define INTENSITY(r, g, b) ((r) * 0.30 + (g) * 0.59 + (b) * 0.11)
@@ -271,7 +271,7 @@ gdk_pixbuf_saturate_and_pixelate (const GdkPixbuf *src,
 
 
 /**
- * gdk_pixbuf_apply_embedded_orientation:
+ * cdk_pixbuf_apply_embedded_orientation:
  * @src: a pixbuf with an orientation option
  *
  * Takes an existing pixbuf and checks for the presence of an
@@ -290,7 +290,7 @@ gdk_pixbuf_saturate_and_pixelate (const GdkPixbuf *src,
  * Since: 2.12
  **/
 GdkPixbuf *
-gdk_pixbuf_apply_embedded_orientation (GdkPixbuf *src)
+cdk_pixbuf_apply_embedded_orientation (GdkPixbuf *src)
 {
   	const gchar *orientation_string;
 	int          transform = 0;
@@ -300,7 +300,7 @@ gdk_pixbuf_apply_embedded_orientation (GdkPixbuf *src)
 	g_return_val_if_fail (GDK_IS_PIXBUF (src), NULL);
 
 	/* Read the orientation option associated with the pixbuf */
-	orientation_string = gdk_pixbuf_get_option (src, "orientation");	
+	orientation_string = cdk_pixbuf_get_option (src, "orientation");	
 
 	if (orientation_string) {
 		/* If an orientation option was found, convert the 
@@ -317,29 +317,29 @@ gdk_pixbuf_apply_embedded_orientation (GdkPixbuf *src)
                 g_object_ref (dest);
                 break;
         case 2:
-                dest = gdk_pixbuf_flip (src, TRUE);
+                dest = cdk_pixbuf_flip (src, TRUE);
                 break;
         case 3:
-                dest = gdk_pixbuf_rotate_simple (src, GDK_PIXBUF_ROTATE_UPSIDEDOWN);
+                dest = cdk_pixbuf_rotate_simple (src, GDK_PIXBUF_ROTATE_UPSIDEDOWN);
                 break;
         case 4:
-                dest = gdk_pixbuf_flip (src, FALSE);
+                dest = cdk_pixbuf_flip (src, FALSE);
                 break;
         case 5:
-                temp = gdk_pixbuf_rotate_simple (src, GDK_PIXBUF_ROTATE_CLOCKWISE);
-                dest = gdk_pixbuf_flip (temp, TRUE);
+                temp = cdk_pixbuf_rotate_simple (src, GDK_PIXBUF_ROTATE_CLOCKWISE);
+                dest = cdk_pixbuf_flip (temp, TRUE);
                 g_object_unref (temp);
                 break;
         case 6:
-                dest = gdk_pixbuf_rotate_simple (src, GDK_PIXBUF_ROTATE_CLOCKWISE);
+                dest = cdk_pixbuf_rotate_simple (src, GDK_PIXBUF_ROTATE_CLOCKWISE);
                 break;
         case 7:
-                temp = gdk_pixbuf_rotate_simple (src, GDK_PIXBUF_ROTATE_CLOCKWISE);
-                dest = gdk_pixbuf_flip (temp, FALSE);
+                temp = cdk_pixbuf_rotate_simple (src, GDK_PIXBUF_ROTATE_CLOCKWISE);
+                dest = cdk_pixbuf_flip (temp, FALSE);
                 g_object_unref (temp);
                 break;
         case 8:
-                dest = gdk_pixbuf_rotate_simple (src, GDK_PIXBUF_ROTATE_COUNTERCLOCKWISE);
+                dest = cdk_pixbuf_rotate_simple (src, GDK_PIXBUF_ROTATE_COUNTERCLOCKWISE);
                 break;
         default:
 		/* if no orientation tag was present */
@@ -358,7 +358,7 @@ get_localedir (void)
 {
     gchar *temp;
     
-    temp = g_build_filename (gdk_pixbuf_get_toplevel (), "share/locale", NULL);
+    temp = g_build_filename (cdk_pixbuf_get_toplevel (), "share/locale", NULL);
 
 #ifdef G_OS_WIN32
     {
@@ -381,7 +381,7 @@ get_localedir (void)
 #endif
 
 void
-_gdk_pixbuf_init_gettext (void)
+_cdk_pixbuf_init_gettext (void)
 {
         static gsize gettext_initialized = FALSE;
 
@@ -395,7 +395,7 @@ _gdk_pixbuf_init_gettext (void)
 }
 
 const gchar *
-gdk_pixbuf_gettext (const gchar *msgid)
+cdk_pixbuf_gettext (const gchar *msgid)
 {
         return g_dgettext (GETTEXT_PACKAGE, msgid);
 }

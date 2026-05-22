@@ -1,5 +1,5 @@
 #include "config.h"
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 #include <glib.h>
 
 #include "test-common.h"
@@ -16,7 +16,7 @@ test_gif_circular_table (void)
       return;
     }
 
-  pixbuf = gdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "circular-table.gif", NULL), &error);
+  pixbuf = cdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "circular-table.gif", NULL), &error);
   g_assert_no_error (error);
 
   g_object_unref (pixbuf);

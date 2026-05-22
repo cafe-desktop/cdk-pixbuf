@@ -18,7 +18,7 @@
  */
 
 #define GLIB_DISABLE_DEPRECATION_WARNINGS
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 #include "test-common.h"
 #include <string.h>
 
@@ -107,19 +107,19 @@ run_gif_test (gconstpointer data)
   height = g_key_file_get_integer (config_file, "config", "height", &error);
   g_assert_no_error (error);
 
-  loader = gdk_pixbuf_loader_new ();
-  gdk_pixbuf_loader_write_bytes (loader, input_bytes, &error);
+  loader = cdk_pixbuf_loader_new ();
+  cdk_pixbuf_loader_write_bytes (loader, input_bytes, &error);
   g_clear_pointer (&input_bytes, g_bytes_unref);
   g_assert_no_error (error);
 
-  gdk_pixbuf_loader_close (loader, &error);
+  cdk_pixbuf_loader_close (loader, &error);
   if (width == 0 || height == 0) {
     g_assert_error (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_CORRUPT_IMAGE);
     g_clear_error (&error);
   }
   else {
     g_assert_no_error (error);
-    animation = gdk_pixbuf_loader_get_animation (loader);
+    animation = cdk_pixbuf_loader_get_animation (loader);
     g_assert_nonnull (animation);
   }
 
@@ -139,11 +139,11 @@ run_gif_test (gconstpointer data)
       g_assert_nonnull (animation);
 
       if (iter == NULL)
-        iter = gdk_pixbuf_animation_get_iter (animation, &animation_time);
+        iter = cdk_pixbuf_animation_get_iter (animation, &animation_time);
       else
-        gdk_pixbuf_animation_iter_advance (iter, &animation_time);
-      delay_time = gdk_pixbuf_animation_iter_get_delay_time (iter);
-      g_time_val_add (&animation_time, gdk_pixbuf_animation_iter_get_delay_time (iter) * 1000);
+        cdk_pixbuf_animation_iter_advance (iter, &animation_time);
+      delay_time = cdk_pixbuf_animation_iter_get_delay_time (iter);
+      g_time_val_add (&animation_time, cdk_pixbuf_animation_iter_get_delay_time (iter) * 1000);
 
       if (g_key_file_has_key (config_file, frame, "delay", &error))
         expected_delay_time = g_key_file_get_integer (config_file, frame, "delay", &error) * 10;
@@ -159,10 +159,10 @@ run_gif_test (gconstpointer data)
           g_assert_cmpint (delay_time, ==, expected_delay_time);
         }
 
-      pixbuf = gdk_pixbuf_animation_iter_get_pixbuf (iter);
+      pixbuf = cdk_pixbuf_animation_iter_get_pixbuf (iter);
 
-      g_assert_cmpint (width, ==, gdk_pixbuf_get_width (pixbuf));
-      g_assert_cmpint (height, ==, gdk_pixbuf_get_height (pixbuf));
+      g_assert_cmpint (width, ==, cdk_pixbuf_get_width (pixbuf));
+      g_assert_cmpint (height, ==, cdk_pixbuf_get_height (pixbuf));
 
       pixels_filename = g_key_file_get_string (config_file, frame, "pixels", &error);
       g_assert_no_error (error);
@@ -172,11 +172,11 @@ run_gif_test (gconstpointer data)
       g_clear_object (&pixels_file);
       g_assert_no_error (error);
 
-      g_assert_cmpint (gdk_pixbuf_get_colorspace (pixbuf), ==, GDK_COLORSPACE_RGB);
-      g_assert_cmpint (gdk_pixbuf_get_n_channels (pixbuf), ==, 4);
-      g_assert_true (gdk_pixbuf_get_has_alpha (pixbuf));
-      g_assert_cmpint (gdk_pixbuf_get_rowstride (pixbuf), ==, width * 4);
-      pixels = g_bytes_new_static (gdk_pixbuf_read_pixels (pixbuf), gdk_pixbuf_get_byte_length (pixbuf));
+      g_assert_cmpint (cdk_pixbuf_get_colorspace (pixbuf), ==, GDK_COLORSPACE_RGB);
+      g_assert_cmpint (cdk_pixbuf_get_n_channels (pixbuf), ==, 4);
+      g_assert_true (cdk_pixbuf_get_has_alpha (pixbuf));
+      g_assert_cmpint (cdk_pixbuf_get_rowstride (pixbuf), ==, width * 4);
+      pixels = g_bytes_new_static (cdk_pixbuf_read_pixels (pixbuf), cdk_pixbuf_get_byte_length (pixbuf));
       g_assert_true (pixels_match (pixels, expected_pixels));
       g_clear_pointer (&pixels, g_bytes_unref);
       g_clear_pointer (&expected_pixels, g_bytes_unref);
@@ -184,7 +184,7 @@ run_gif_test (gconstpointer data)
   g_strfreev (frames);
   g_clear_object (&iter);
 
-  /* FIXME: We should check here if there's more frames than we were expecting, but gdk-pixbuf doesn't return this information */
+  /* FIXME: We should check here if there's more frames than we were expecting, but cdk-pixbuf doesn't return this information */
 
   g_clear_object (&loader);
   g_clear_pointer (&config_file, g_key_file_unref);

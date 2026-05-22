@@ -9,8 +9,8 @@ if 'DESTDIR' not in os.environ:
     libdir = sys.argv[2]
     binary_version = sys.argv[3]
 
-    query_loaders = os.path.join(bindir, "gdk-pixbuf-query-loaders")
-    loaders_dir = os.path.join(libdir, "gdk-pixbuf-2.0", binary_version)
+    query_loaders = os.path.join(bindir, "cdk-pixbuf-query-loaders")
+    loaders_dir = os.path.join(libdir, "cdk-pixbuf-2.0", binary_version)
     loaders_cache = os.path.join(loaders_dir, "loaders.cache")
 
     os.makedirs(loaders_dir, exist_ok=True)
@@ -23,4 +23,4 @@ if 'DESTDIR' not in os.environ:
         f.write(data)
 else:
     print("*** Warning: loaders.cache not built because DESTDIR is set")
-    print("***          You will need to manually call gdk-pixbuf-query-loaders")
+    print("***          You will need to manually call cdk-pixbuf-query-loaders")

@@ -227,11 +227,11 @@ gdip_pixbuf_to_bitmap (GdkPixbuf *pixbuf)
   int width, height, stride, n_channels;
   guint8 *pixels;
 
-  width = gdk_pixbuf_get_width (pixbuf);
-  height = gdk_pixbuf_get_height (pixbuf);
-  stride = gdk_pixbuf_get_rowstride (pixbuf);
-  n_channels = gdk_pixbuf_get_n_channels (pixbuf);
-  pixels = gdk_pixbuf_get_pixels (pixbuf);
+  width = cdk_pixbuf_get_width (pixbuf);
+  height = cdk_pixbuf_get_height (pixbuf);
+  stride = cdk_pixbuf_get_rowstride (pixbuf);
+  n_channels = cdk_pixbuf_get_n_channels (pixbuf);
+  pixels = cdk_pixbuf_get_pixels (pixbuf);
 
   if (n_channels == 3 || n_channels == 4) {
     /* rgbX. need to convert to argb. pass a null data to get an empty bitmap */
@@ -553,8 +553,8 @@ emit_updated (GdipContext *context, GdkPixbuf *pixbuf)
 {
   (*context->updated_func) (pixbuf,
                             0, 0,
-                            gdk_pixbuf_get_width (pixbuf),
-                            gdk_pixbuf_get_height (pixbuf),
+                            cdk_pixbuf_get_width (pixbuf),
+                            cdk_pixbuf_get_height (pixbuf),
                             context->user_data);
 }
 
@@ -565,7 +565,7 @@ emit_prepared (GdipContext *context, GdkPixbuf *pixbuf, GdkPixbufAnimation *anim
 }
 
 static gpointer
-gdk_pixbuf__gdip_image_begin_load (GdkPixbufModuleSizeFunc size_func,
+cdk_pixbuf__gdip_image_begin_load (GdkPixbufModuleSizeFunc size_func,
                                    GdkPixbufModulePreparedFunc prepared_func,
                                    GdkPixbufModuleUpdatedFunc  updated_func,
                                    gpointer user_data,
@@ -587,7 +587,7 @@ gdk_pixbuf__gdip_image_begin_load (GdkPixbufModuleSizeFunc size_func,
 }
 
 static gboolean
-gdk_pixbuf__gdip_image_load_increment (gpointer data,
+cdk_pixbuf__gdip_image_load_increment (gpointer data,
                                        const guchar *buf, guint size,
                                        GError **error)
 {
@@ -614,16 +614,16 @@ gdip_bitmap_to_pixbuf (GpBitmap *bitmap, GError **error)
   gdip_bitmap_get_size (bitmap, &width, &height);
   gdip_bitmap_get_has_alpha (bitmap, &has_alpha);
 
-  pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, has_alpha, 8, width, height);
+  pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, has_alpha, 8, width, height);
 
   if (!pixbuf) {
     g_set_error_literal (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY, _("Couldn’t load bitmap"));
     return NULL;
   }
 
-  rowstride = gdk_pixbuf_get_rowstride (pixbuf);
-  cursor = gdk_pixbuf_get_pixels (pixbuf);
-  n_channels = gdk_pixbuf_get_n_channels (pixbuf);
+  rowstride = cdk_pixbuf_get_rowstride (pixbuf);
+  cursor = cdk_pixbuf_get_pixels (pixbuf);
+  n_channels = cdk_pixbuf_get_n_channels (pixbuf);
 
   for (y = 0; y < height; y++) {
     for (x = 0; x < width; x++) {
@@ -647,17 +647,17 @@ gdip_bitmap_to_pixbuf (GpBitmap *bitmap, GError **error)
   }
 
   if (gdip_bitmap_get_property_as_string (bitmap, PropertyTagOrientation, &option)) {
-    gdk_pixbuf_set_option (pixbuf, "orientation", option);
+    cdk_pixbuf_set_option (pixbuf, "orientation", option);
     g_free (option);
   }
 
   if (gdip_bitmap_get_property_as_string (bitmap, PropertyTagArtist, &option)) {
-    gdk_pixbuf_set_option (pixbuf, "Author", option);
+    cdk_pixbuf_set_option (pixbuf, "Author", option);
     g_free (option);
   }
 
   if (gdip_bitmap_get_property_as_string (bitmap, PropertyTagImageTitle, &option)) {
-    gdk_pixbuf_set_option (pixbuf, "Title", option);
+    cdk_pixbuf_set_option (pixbuf, "Title", option);
     g_free (option);
   }
 
@@ -706,8 +706,8 @@ stop_load (GpBitmap *bitmap, GdipContext *context, GError **error)
     animation->n_frames++;
     animation->frames = g_list_append (animation->frames, frame);
 
-    animation->width = gdk_pixbuf_get_width (pixbuf);
-    animation->height = gdk_pixbuf_get_height (pixbuf);
+    animation->width = cdk_pixbuf_get_width (pixbuf);
+    animation->height = cdk_pixbuf_get_height (pixbuf);
 
     /* GIF delay is in hundredths, we want thousandths */
     frame->delay_time = frame_delay * 10;
@@ -743,7 +743,7 @@ stop_load (GpBitmap *bitmap, GdipContext *context, GError **error)
 }
 
 static gboolean
-gdk_pixbuf__gdip_image_stop_load (gpointer data, GError **error)
+cdk_pixbuf__gdip_image_stop_load (gpointer data, GError **error)
 {
   GdipContext *context = (GdipContext *)data;
   GpBitmap    *bitmap = NULL;
@@ -759,7 +759,7 @@ gdk_pixbuf__gdip_image_stop_load (gpointer data, GError **error)
 }
 
 static gboolean
-gdk_pixbuf__gdip_image_stop_vector_load (gpointer data, GError **error)
+cdk_pixbuf__gdip_image_stop_vector_load (gpointer data, GError **error)
 {
   GdipContext *context = (GdipContext *)data;
 
@@ -849,9 +849,9 @@ void
 gdip_fill_vtable (GdkPixbufModule *module)
 {
   if (gdip_init ()) {
-    module->begin_load     = gdk_pixbuf__gdip_image_begin_load;
-    module->stop_load      = gdk_pixbuf__gdip_image_stop_load;
-    module->load_increment = gdk_pixbuf__gdip_image_load_increment;
+    module->begin_load     = cdk_pixbuf__gdip_image_begin_load;
+    module->stop_load      = cdk_pixbuf__gdip_image_stop_load;
+    module->load_increment = cdk_pixbuf__gdip_image_load_increment;
   }
 }
 
@@ -859,9 +859,9 @@ void
 gdip_fill_vector_vtable (GdkPixbufModule *module)
 {
   if (gdip_init ()) {
-    module->begin_load     = gdk_pixbuf__gdip_image_begin_load;
-    module->stop_load      = gdk_pixbuf__gdip_image_stop_vector_load;
-    module->load_increment = gdk_pixbuf__gdip_image_load_increment;
+    module->begin_load     = cdk_pixbuf__gdip_image_begin_load;
+    module->stop_load      = cdk_pixbuf__gdip_image_stop_vector_load;
+    module->load_increment = cdk_pixbuf__gdip_image_load_increment;
   }
 }
 

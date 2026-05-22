@@ -1,7 +1,7 @@
 # Resources contain PNG and BMP files, so we need these two loaders
 # enabled in order to build them
 # FIXME: On Windows glib-compile-resources will fail to execute
-# gdk-pixbuf-pixdata from build directory because it needs all DLL locations in
+# cdk-pixbuf-pixdata from build directory because it needs all DLL locations in
 # $PATH. Ideally we should use gnome.compile_resources() and let Meson deal with
 # this problem: See https://github.com/mesonbuild/meson/issues/8266.
 if (enabled_loaders.contains('png') or enabled_loaders.contains('glycin')) and host_system != 'windows'
@@ -14,7 +14,7 @@ if (enabled_loaders.contains('png') or enabled_loaders.contains('glycin')) and h
     command: [
       gen_resources,
       '--glib-compile-resources', glib_compile_resources,
-      '--pixdata', gdk_pixbuf_pixdata,
+      '--pixdata', cdk_pixbuf_pixdata,
       '--loaders', loaders_cache,
       '--sourcedir', meson.current_source_dir(),
       '--source',
@@ -29,7 +29,7 @@ if (enabled_loaders.contains('png') or enabled_loaders.contains('glycin')) and h
     command: [
       gen_resources,
       '--glib-compile-resources', glib_compile_resources,
-      '--pixdata', gdk_pixbuf_pixdata,
+      '--pixdata', cdk_pixbuf_pixdata,
       '--loaders', loaders_cache,
       '--sourcedir', meson.current_source_dir(),
       '--header',
@@ -148,15 +148,15 @@ test_data = [
   'issue205.jpg',
 ]
 
-installed_test_bindir = join_paths(gdk_pixbuf_libexecdir, 'installed-tests', meson.project_name())
-installed_test_datadir = join_paths(gdk_pixbuf_datadir, 'installed-tests', meson.project_name())
+installed_test_bindir = join_paths(cdk_pixbuf_libexecdir, 'installed-tests', meson.project_name())
+installed_test_datadir = join_paths(cdk_pixbuf_datadir, 'installed-tests', meson.project_name())
 
 if get_option('installed_tests')
   install_data(test_data, install_dir: installed_test_bindir)
   install_subdir('test-images', install_dir: installed_test_bindir)
 endif
 
-test_deps = gdk_pixbuf_deps + [ gdkpixbuf_dep, ]
+test_deps = cdk_pixbuf_deps + [ cdkpixbuf_dep, ]
 test_args = [ '-k' ]
 test_env = environment()
 test_env.set('G_TEST_SRCDIR', meson.current_source_dir())
@@ -189,7 +189,7 @@ foreach test_name, test_data: installed_tests
 
   test_bin = executable(test_name, test_sources,
     dependencies: test_deps,
-    include_directories: [ root_inc, gdk_pixbuf_inc, ],
+    include_directories: [ root_inc, cdk_pixbuf_inc, ],
     c_args: common_cflags,
     install: get_option('installed_tests'),
     install_dir: installed_test_bindir,
@@ -215,7 +215,7 @@ executable('pixbuf-read',
   dependencies: test_deps,
   include_directories: [
     root_inc,
-    include_directories('../gdk-pixbuf')
+    include_directories('../cdk-pixbuf')
   ],
   c_args: common_cflags,
 )

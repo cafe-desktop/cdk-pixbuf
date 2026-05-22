@@ -32,8 +32,8 @@
 #include <unistd.h>
 #endif
 
-#include "gdk-pixbuf/gdk-pixbuf.h"
-#include "gdk-pixbuf/gdk-pixbuf-private.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf-private.h"
 
 #ifdef USE_LA_MODULES
 #define SOEXT ".la"
@@ -122,7 +122,7 @@ loader_sanity_check (const char *path, GdkPixbufFormat *info, GdkPixbufModule *v
 
 #ifdef GDK_PIXBUF_RELOCATABLE
 
-/* Based on gdk_pixbuf_get_toplevel () */
+/* Based on cdk_pixbuf_get_toplevel () */
 static gchar *
 get_toplevel (void)
 {
@@ -299,12 +299,12 @@ get_libdir (void)
 #endif
 
 static gchar *
-gdk_pixbuf_get_module_file (void)
+cdk_pixbuf_get_module_file (void)
 {
         gchar *result = g_strdup (g_getenv ("GDK_PIXBUF_MODULE_FILE"));
 
         if (!result)
-                result = g_build_filename (GDK_PIXBUF_LIBDIR, "gdk-pixbuf-2.0", GDK_PIXBUF_BINARY_VERSION, "loaders.cache", NULL);
+                result = g_build_filename (GDK_PIXBUF_LIBDIR, "cdk-pixbuf-2.0", GDK_PIXBUF_BINARY_VERSION, "loaders.cache", NULL);
 
         return result;
 }
@@ -346,7 +346,7 @@ int main (int argc, char **argv)
                  * normally is. Replace that prefix in pixbuf_libdir
                  * with the installation directory on this machine.
                  * We assume this invokation of
-                 * gdk-pixbuf-query-loaders is run from either a "bin"
+                 * cdk-pixbuf-query-loaders is run from either a "bin"
                  * subdirectory of the installation directory, or in
                  * the installation directory itself.
                  */
@@ -359,12 +359,12 @@ int main (int argc, char **argv)
                 /* If running from some weird location, or from the
                  * build directory (either in the .libs folder where
                  * libtool places the real executable when using a
-                 * wrapper, or directly from the gdk-pixbuf folder),
+                 * wrapper, or directly from the cdk-pixbuf folder),
                  * use the compile-time libdir.
                  */
                 if (slash == NULL ||
                     g_ascii_strcasecmp (slash + 1, ".libs") == 0 ||
-                    g_ascii_strcasecmp (slash + 1, "gdk-pixbuf") == 0) {
+                    g_ascii_strcasecmp (slash + 1, "cdk-pixbuf") == 0) {
                         libdir = NULL;
                 }
                 else {
@@ -401,7 +401,7 @@ int main (int argc, char **argv)
 	g_type_ensure (G_TYPE_OBJECT);
 
         if (argc > 1 && strcmp (argv[1], "--update-cache") == 0) {
-                cache_file = gdk_pixbuf_get_module_file ();
+                cache_file = cdk_pixbuf_get_module_file ();
                 first_file = 2;
         }
 
@@ -411,9 +411,9 @@ int main (int argc, char **argv)
         g_string_append_printf (contents,
                                 "# GdkPixbuf Image Loader Modules file\n"
                                 "# Automatically generated file, do not edit\n"
-                                "# Created by %s from gdk-pixbuf-%s\n"
+                                "# Created by %s from cdk-pixbuf-%s\n"
                                 "#\n",
-                                (prgname ? prgname : "gdk-pixbuf-query-loaders"),
+                                (prgname ? prgname : "cdk-pixbuf-query-loaders"),
                                 GDK_PIXBUF_VERSION);
 
         if (argc == first_file) {

@@ -20,12 +20,12 @@
  */
 
 #include "config.h"
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 #include "test-common.h"
 #include <string.h>
 
 #define compare_option(p1, p2, key) \
-  g_strcmp0 (gdk_pixbuf_get_option (p1, key), gdk_pixbuf_get_option (p2, key))
+  g_strcmp0 (cdk_pixbuf_get_option (p1, key), cdk_pixbuf_get_option (p2, key))
 
 static gboolean
 pixbuf_equal (GdkPixbuf *p1, GdkPixbuf *p2)
@@ -62,25 +62,25 @@ test_resource (void)
     }
 
   path = g_test_get_filename (G_TEST_DIST, "icc-profile.png", NULL);
-  ref = gdk_pixbuf_new_from_file (path, &error);
+  ref = cdk_pixbuf_new_from_file (path, &error);
   g_assert_no_error (error);
 
-  pixbuf = gdk_pixbuf_new_from_resource ("/test/resource/icc-profile.png", &error);
+  pixbuf = cdk_pixbuf_new_from_resource ("/test/resource/icc-profile.png", &error);
   g_assert_no_error (error);
   g_assert (pixbuf_equal (pixbuf, ref));
   g_object_unref (pixbuf);
   
-  pixbuf = gdk_pixbuf_new_from_resource ("/test/resource/icc-profile.pixdata", &error);
+  pixbuf = cdk_pixbuf_new_from_resource ("/test/resource/icc-profile.pixdata", &error);
   g_assert_no_error (error);
   g_assert (pixdata_equal (pixbuf, ref, NULL));
   g_object_unref (pixbuf);
 
-  pixbuf = gdk_pixbuf_new_from_resource ("/no/such/resource", &error);
+  pixbuf = cdk_pixbuf_new_from_resource ("/no/such/resource", &error);
   g_assert (pixbuf == NULL);
   g_assert_error (error, G_RESOURCE_ERROR, G_RESOURCE_ERROR_NOT_FOUND);
   g_clear_error (&error);
 
-  pixbuf = gdk_pixbuf_new_from_resource ("resource:///test/resource/icc-profile.png", &error);
+  pixbuf = cdk_pixbuf_new_from_resource ("resource:///test/resource/icc-profile.png", &error);
   g_assert (pixbuf == NULL);
   g_assert_error (error, G_RESOURCE_ERROR, G_RESOURCE_ERROR_NOT_FOUND);
   g_clear_error (&error);
@@ -102,10 +102,10 @@ test_resource_at_scale (void)
     }
 
   path = g_test_get_filename (G_TEST_DIST, "icc-profile.png", NULL);
-  ref = gdk_pixbuf_new_from_file_at_scale (path, 40, 10, FALSE, &error);
+  ref = cdk_pixbuf_new_from_file_at_scale (path, 40, 10, FALSE, &error);
   g_assert_no_error (error);
 
-  pixbuf = gdk_pixbuf_new_from_resource_at_scale ("/test/resource/icc-profile.png", 40, 10, FALSE, &error);
+  pixbuf = cdk_pixbuf_new_from_resource_at_scale ("/test/resource/icc-profile.png", 40, 10, FALSE, &error);
   g_assert_no_error (error);
   g_assert (pixbuf_equal (pixbuf, ref));
   g_object_unref (pixbuf);

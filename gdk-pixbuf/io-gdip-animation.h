@@ -25,13 +25,13 @@
 #ifndef GDK_PIXBUF_GDIP_H
 #define GDK_PIXBUF_GDIP_H
 
-#include <gdk-pixbuf/gdk-pixbuf-animation.h>
+#include <cdk-pixbuf/cdk-pixbuf-animation.h>
 
 typedef struct _GdkPixbufGdipAnim GdkPixbufGdipAnim;
 typedef struct _GdkPixbufGdipAnimClass GdkPixbufGdipAnimClass;
 typedef struct _GdkPixbufFrame GdkPixbufFrame;
 
-#define GDK_TYPE_PIXBUF_GDIP_ANIM              (gdk_pixbuf_gdip_anim_get_type ())
+#define GDK_TYPE_PIXBUF_GDIP_ANIM              (cdk_pixbuf_gdip_anim_get_type ())
 #define GDK_PIXBUF_GDIP_ANIM(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_PIXBUF_GDIP_ANIM, GdkPixbufGdipAnim))
 #define GDK_IS_PIXBUF_GDIP_ANIM(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_PIXBUF_GDIP_ANIM))
 
@@ -64,13 +64,13 @@ struct _GdkPixbufGdipAnimClass {
         
 };
 
-GType gdk_pixbuf_gdip_anim_get_type (void) G_GNUC_CONST;
+GType cdk_pixbuf_gdip_anim_get_type (void) G_GNUC_CONST;
 
 typedef struct _GdkPixbufGdipAnimIter GdkPixbufGdipAnimIter;
 typedef struct _GdkPixbufGdipAnimIterClass GdkPixbufGdipAnimIterClass;
 
 
-#define GDK_TYPE_PIXBUF_GDIP_ANIM_ITER              (gdk_pixbuf_gdip_anim_iter_get_type ())
+#define GDK_TYPE_PIXBUF_GDIP_ANIM_ITER              (cdk_pixbuf_gdip_anim_iter_get_type ())
 #define GDK_PIXBUF_GDIP_ANIM_ITER(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_PIXBUF_GDIP_ANIM_ITER, GdkPixbufGdipAnimIter))
 #define GDK_IS_PIXBUF_GDIP_ANIM_ITER(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_PIXBUF_GDIP_ANIM_ITER))
 
@@ -99,7 +99,7 @@ struct _GdkPixbufGdipAnimIterClass {
 
 };
 
-GType gdk_pixbuf_gdip_anim_iter_get_type (void) G_GNUC_CONST;
+GType cdk_pixbuf_gdip_anim_iter_get_type (void) G_GNUC_CONST;
 
 struct _GdkPixbufFrame {
 	/* The pixbuf with this frame's image data */

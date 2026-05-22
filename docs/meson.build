@@ -5,8 +5,8 @@ gidocgen_dep = dependency('gi-docgen',
 
 toml_conf = configuration_data()
 toml_conf.set('VERSION', meson.project_version())
-pixbuf_toml = configure_file(input: 'gdk-pixbuf.toml.in', output: 'gdk-pixbuf.toml', configuration: toml_conf)
-pixdata_toml = configure_file(input: 'gdk-pixdata.toml.in', output: 'gdk-pixdata.toml', configuration: toml_conf)
+pixbuf_toml = configure_file(input: 'cdk-pixbuf.toml.in', output: 'cdk-pixbuf.toml', configuration: toml_conf)
+pixdata_toml = configure_file(input: 'cdk-pixdata.toml.in', output: 'cdk-pixdata.toml', configuration: toml_conf)
 
 gidocgen = find_program('gi-docgen', required: get_option('documentation'))
 
@@ -21,14 +21,14 @@ if build_docs and not build_gir
 endif
 
 if build_docs
-  custom_target('gdk-pixbuf-doc',
-    input: [ pixbuf_toml, gdkpixbuf_gir[0] ],
-    output: 'gdk-pixbuf',
+  custom_target('cdk-pixbuf-doc',
+    input: [ pixbuf_toml, cdkpixbuf_gir[0] ],
+    output: 'cdk-pixbuf',
     command: [
       gidocgen,
       'generate',
       '--quiet',
-      '--add-include-path', meson.current_build_dir() / '../gdk-pixbuf',
+      '--add-include-path', meson.current_build_dir() / '../cdk-pixbuf',
       '--config=@INPUT0@',
       '--output-dir=@OUTPUT@',
       '--no-namespace-dir',
@@ -38,17 +38,17 @@ if build_docs
     depend_files: [ expand_content_md_files ],
     build_by_default: true,
     install: true,
-    install_dir: gdk_pixbuf_docsdir,
+    install_dir: cdk_pixbuf_docsdir,
   )
 
-  custom_target('gdk-pixdata-doc',
-    input: [ pixdata_toml, gdkpixdata_gir[0] ],
-    output: 'gdk-pixdata',
+  custom_target('cdk-pixdata-doc',
+    input: [ pixdata_toml, cdkpixdata_gir[0] ],
+    output: 'cdk-pixdata',
     command: [
       gidocgen,
       'generate',
       '--quiet',
-      '--add-include-path', meson.current_build_dir() / '../gdk-pixbuf',
+      '--add-include-path', meson.current_build_dir() / '../cdk-pixbuf',
       '--config=@INPUT0@',
       '--output-dir=@OUTPUT@',
       '--no-namespace-dir',
@@ -57,7 +57,7 @@ if build_docs
     ],
     build_by_default: true,
     install: true,
-    install_dir: gdk_pixbuf_docsdir,
+    install_dir: cdk_pixbuf_docsdir,
   )
 endif
 
@@ -68,8 +68,8 @@ endif
 
 if get_option('man') and rst2man.found()
   rst_files = [
-    [ 'gdk-pixbuf-csource', ],
-    [ 'gdk-pixbuf-query-loaders', ],
+    [ 'cdk-pixbuf-csource', ],
+    [ 'cdk-pixbuf-query-loaders', ],
   ]
 
   rst2man_flags = [

@@ -22,7 +22,7 @@
 
 #include "config.h"
 #include "test-common.h"
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 
 #include <string.h>
 
@@ -36,16 +36,16 @@ make_checkerboard (int width, int height)
   guchar *row;   /* Pointer to start of row of pixels within the image */
   guchar *pixel; /* Pointer to current pixel data in row */
 
-  checkerboard = gdk_pixbuf_new (GDK_COLORSPACE_RGB, 0, 8, width, height);
+  checkerboard = cdk_pixbuf_new (GDK_COLORSPACE_RGB, 0, 8, width, height);
   g_assert_nonnull (checkerboard);
 
-  for (y = 0, row = gdk_pixbuf_get_pixels (checkerboard);
+  for (y = 0, row = cdk_pixbuf_get_pixels (checkerboard);
        y < height;
-       y++, row += gdk_pixbuf_get_rowstride (checkerboard))
+       y++, row += cdk_pixbuf_get_rowstride (checkerboard))
     {
       for (x = 0, pixel = row;
            x < width;
-           x++, pixel += gdk_pixbuf_get_n_channels (checkerboard))
+           x++, pixel += cdk_pixbuf_get_n_channels (checkerboard))
         {
           pixel[0] = pixel[1] = pixel[2] = (x ^ y) & 1 ? 1 : 255;
         }
@@ -64,16 +64,16 @@ make_rg (int width, int height)
   guchar *pixel; /* Pointer to current pixel data in row */
 
   /* Make a source image whose pixels are all of different colors */
-  pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, 0, 8, width, height);
+  pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, 0, 8, width, height);
   g_assert_nonnull (pixbuf);
 
-  for (y = 0, row = gdk_pixbuf_get_pixels (pixbuf);
+  for (y = 0, row = cdk_pixbuf_get_pixels (pixbuf);
        y < height;
-       y++, row += gdk_pixbuf_get_rowstride (pixbuf))
+       y++, row += cdk_pixbuf_get_rowstride (pixbuf))
     {
       for (x = 0, pixel = row;
            x < width;
-           x++, pixel += gdk_pixbuf_get_n_channels (pixbuf))
+           x++, pixel += cdk_pixbuf_get_n_channels (pixbuf))
         {
           pixel[0] = x & 255; pixel[1] = y & 255;
           /* If image > 256 pixels wide/high put the extra bits in the last pixel */
@@ -91,11 +91,11 @@ find_format (const gchar *filename, gchar **found_format)
   gboolean retval;
 
   retval = FALSE;
-  formats = gdk_pixbuf_get_formats ();
+  formats = cdk_pixbuf_get_formats ();
   for (l = formats; l; l = l->next)
     {
       GdkPixbufFormat *format = l->data;
-      char **extensions = gdk_pixbuf_format_get_extensions (format);
+      char **extensions = cdk_pixbuf_format_get_extensions (format);
       gint i;
 
       for (i = 0; extensions[i]; i++)
@@ -103,7 +103,7 @@ find_format (const gchar *filename, gchar **found_format)
           if (g_str_has_suffix (filename, extensions[i]))
             {
               if (found_format != NULL)
-                *found_format = gdk_pixbuf_format_get_name (format);
+                *found_format = cdk_pixbuf_format_get_name (format);
               retval = TRUE;
               break;
             }
@@ -158,59 +158,59 @@ pixdata_equal (GdkPixbuf  *test,
                GdkPixbuf  *ref,
                GError    **error)
 {
-  if (gdk_pixbuf_get_colorspace (test) != gdk_pixbuf_get_colorspace (ref))
+  if (cdk_pixbuf_get_colorspace (test) != cdk_pixbuf_get_colorspace (ref))
     {
       g_set_error (error, GDK_PIXBUF_ERROR, 0, "Image colorspace is %d but should be %d",
-                   gdk_pixbuf_get_colorspace (test), gdk_pixbuf_get_colorspace (ref));
+                   cdk_pixbuf_get_colorspace (test), cdk_pixbuf_get_colorspace (ref));
       return FALSE;
     }
 
-  if (gdk_pixbuf_get_n_channels (test) != gdk_pixbuf_get_n_channels (ref))
+  if (cdk_pixbuf_get_n_channels (test) != cdk_pixbuf_get_n_channels (ref))
     {
       g_set_error (error, GDK_PIXBUF_ERROR, 0,
                    "has %u channels but should have %u",
-                   gdk_pixbuf_get_n_channels (test), gdk_pixbuf_get_n_channels (ref));
+                   cdk_pixbuf_get_n_channels (test), cdk_pixbuf_get_n_channels (ref));
       return FALSE;
     }
 
-  if (gdk_pixbuf_get_bits_per_sample (test) != gdk_pixbuf_get_bits_per_sample (ref))
+  if (cdk_pixbuf_get_bits_per_sample (test) != cdk_pixbuf_get_bits_per_sample (ref))
     {
       g_set_error (error, GDK_PIXBUF_ERROR, 0,
                    "Image is %u bits per sample but should be %u bits per sample",
-                   gdk_pixbuf_get_bits_per_sample (test), gdk_pixbuf_get_bits_per_sample (ref));
+                   cdk_pixbuf_get_bits_per_sample (test), cdk_pixbuf_get_bits_per_sample (ref));
       return FALSE;
     }
 
-  if (gdk_pixbuf_get_width (test) != gdk_pixbuf_get_width (ref) ||
-      gdk_pixbuf_get_height (test) != gdk_pixbuf_get_height (ref))
+  if (cdk_pixbuf_get_width (test) != cdk_pixbuf_get_width (ref) ||
+      cdk_pixbuf_get_height (test) != cdk_pixbuf_get_height (ref))
     {
       g_set_error (error, GDK_PIXBUF_ERROR, 0,
                    "Image size is %dx%d but should be %dx%d",
-                   gdk_pixbuf_get_width (test), gdk_pixbuf_get_height (test),
-                   gdk_pixbuf_get_width (ref), gdk_pixbuf_get_height (ref));
+                   cdk_pixbuf_get_width (test), cdk_pixbuf_get_height (test),
+                   cdk_pixbuf_get_width (ref), cdk_pixbuf_get_height (ref));
       return FALSE;
     }
 
-  if (gdk_pixbuf_get_rowstride (test) != gdk_pixbuf_get_rowstride (ref))
+  if (cdk_pixbuf_get_rowstride (test) != cdk_pixbuf_get_rowstride (ref))
     {
       g_set_error (error, GDK_PIXBUF_ERROR, 0,
                    "Image rowstrides is %u bytes but should be %u bytes",
-                   gdk_pixbuf_get_rowstride (test), gdk_pixbuf_get_rowstride (ref));
+                   cdk_pixbuf_get_rowstride (test), cdk_pixbuf_get_rowstride (ref));
       return FALSE;
     }
 
-  if (memcmp (gdk_pixbuf_get_pixels (test), gdk_pixbuf_get_pixels (ref),
-          gdk_pixbuf_get_byte_length (test)) != 0)
+  if (memcmp (cdk_pixbuf_get_pixels (test), cdk_pixbuf_get_pixels (ref),
+          cdk_pixbuf_get_byte_length (test)) != 0)
     {
       gint x, y, width, height, n_channels, rowstride, i;
       const guchar *test_pixels, *ref_pixels;
 
-      rowstride = gdk_pixbuf_get_rowstride (test);
-      n_channels = gdk_pixbuf_get_n_channels (test);
-      width = gdk_pixbuf_get_width (test);
-      height = gdk_pixbuf_get_height (test);
-      test_pixels = gdk_pixbuf_get_pixels (test);
-      ref_pixels = gdk_pixbuf_get_pixels (ref);
+      rowstride = cdk_pixbuf_get_rowstride (test);
+      n_channels = cdk_pixbuf_get_n_channels (test);
+      width = cdk_pixbuf_get_width (test);
+      height = cdk_pixbuf_get_height (test);
+      test_pixels = cdk_pixbuf_get_pixels (test);
+      ref_pixels = cdk_pixbuf_get_pixels (ref);
 
       g_assert_cmpint (width, >=, 0);
       g_assert_cmpint (height, >=, 0);

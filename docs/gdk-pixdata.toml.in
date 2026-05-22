@@ -3,15 +3,15 @@
 # SPDX-License-Identifier: CC0-1.0
 
 [library]
-name = "gdk-pixdata"
+name = "cdk-pixdata"
 version = "@VERSION@"
-browse_url = "https://gitlab.gnome.org/GNOME/gdk-pixbuf/"
-repository_url = "https://gitlab.gnome.org/GNOME/gdk-pixbuf.git"
+browse_url = "https://gitlab.gnome.org/GNOME/cdk-pixbuf/"
+repository_url = "https://gitlab.gnome.org/GNOME/cdk-pixbuf.git"
 website_url = "https://github.com/cafe-desktop/ctk"
 authors = "CTK Development Team"
 license = "GPL-2.1-or-later"
 description = "Inline image data"
-dependencies = [ "gobject", "gio", "gdk-pixbuf" ]
+dependencies = [ "gobject", "gio", "cdk-pixbuf" ]
 devhelp = true
 search_index = true
 
@@ -25,17 +25,17 @@ search_index = true
   description = "GObject Interfaces and Objects"
   docs_url = "https://developer.gnome.org/gio/stable"
 
-  [dependencies."gdk-pixbuf"]
+  [dependencies."cdk-pixbuf"]
   name = "GdkPixbuf"
   description = "Image loading library"
-  docs_url = "../gdk-pixbuf/index.html"
+  docs_url = "../cdk-pixbuf/index.html"
 
 [theme]
 name = "basic"
 show_index_summary = true
 
 [source-location]
-base_url = "https://gitlab.gnome.org/GNOME/gdk-pixbuf/-/blob/master/"
+base_url = "https://gitlab.gnome.org/GNOME/cdk-pixbuf/-/blob/master/"
 
 [extra]
 urlmap_file = "urlmap.js"

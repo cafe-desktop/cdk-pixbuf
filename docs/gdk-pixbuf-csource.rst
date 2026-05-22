@@ -1,7 +1,7 @@
-.. _gdk-pixbuf-csource(1):
+.. _cdk-pixbuf-csource(1):
 
 ==================
-gdk-pixbuf-csource
+cdk-pixbuf-csource
 ==================
 
 ----------------------------------------------
@@ -10,15 +10,15 @@ C code generation utility for GdkPixbuf images
 
 SYNOPSIS
 --------
-|   **gdk-pixbuf-csource** [OPTIONS...] <IMAGE>
+|   **cdk-pixbuf-csource** [OPTIONS...] <IMAGE>
 
 DESCRIPTION
 -----------
 
-``gdk-pixbuf-csource`` is a small utility that generates C code containing
+``cdk-pixbuf-csource`` is a small utility that generates C code containing
 images, useful for compiling images directly into programs.
 
-``gdk-pixbuf-csource`` either takes as input one image file name to generate
+``cdk-pixbuf-csource`` either takes as input one image file name to generate
 code for, or, using the ``--build-list`` option, a list of (``name``, ``image``)
 pairs to generate code for a list of images into named variables.
 
@@ -37,7 +37,7 @@ OPTIONS
 ``--struct``
 
   Generate ``GdkPixdata`` structure; your code needs the ``GdkPixdata``
-  structure definition from ``gdk-pixdata.h``.
+  structure definition from ``cdk-pixdata.h``.
 
 ``--macros``
 
@@ -90,8 +90,8 @@ OPTIONS
 SEE ALSO
 --------
 
-The ``GdkPixbuf`` documentation, shipped by gdk-pixbuf, and also
-available online on `docs.ctk.org <https://docs.ctk.org/gdk-pixbuf/>`__.
+The ``GdkPixbuf`` documentation, shipped by cdk-pixbuf, and also
+available online on `docs.ctk.org <https://docs.ctk.org/cdk-pixbuf/>`__.
 
 BUGS
 ----

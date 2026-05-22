@@ -6,7 +6,7 @@ set -e
 # be running in a personal fork of the repository which has out of date branches.
 if [ "${CI_PROJECT_NAMESPACE}" != "GNOME" ]; then
     echo "Retrieving the current upstream repository from ${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}..."
-    git remote add upstream https://gitlab.gnome.org/GNOME/gdk-pixbuf.git
+    git remote add upstream https://gitlab.gnome.org/GNOME/cdk-pixbuf.git
     git fetch upstream
     ORIGIN="upstream"
 else

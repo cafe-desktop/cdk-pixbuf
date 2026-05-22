@@ -25,18 +25,18 @@
 #define GDK_PIXBUF_LOADER_H
 
 #if defined(GDK_PIXBUF_DISABLE_SINGLE_INCLUDES) && !defined (GDK_PIXBUF_H_INSIDE) && !defined (GDK_PIXBUF_COMPILATION)
-#error "Only <gdk-pixbuf/gdk-pixbuf.h> can be included directly."
+#error "Only <cdk-pixbuf/cdk-pixbuf.h> can be included directly."
 #endif
 
 #include <glib.h>
 #include <glib-object.h>
-#include <gdk-pixbuf/gdk-pixbuf-core.h>
-#include <gdk-pixbuf/gdk-pixbuf-animation.h>
-#include <gdk-pixbuf/gdk-pixbuf-io.h>
+#include <cdk-pixbuf/cdk-pixbuf-core.h>
+#include <cdk-pixbuf/cdk-pixbuf-animation.h>
+#include <cdk-pixbuf/cdk-pixbuf-io.h>
 
 G_BEGIN_DECLS
 
-#define GDK_TYPE_PIXBUF_LOADER		   (gdk_pixbuf_loader_get_type ())
+#define GDK_TYPE_PIXBUF_LOADER		   (cdk_pixbuf_loader_get_type ())
 #define GDK_PIXBUF_LOADER(obj)		   (G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_PIXBUF_LOADER, GdkPixbufLoader))
 #define GDK_PIXBUF_LOADER_CLASS(klass)	   (G_TYPE_CHECK_CLASS_CAST ((klass), GDK_TYPE_PIXBUF_LOADER, GdkPixbufLoaderClass))
 #define GDK_IS_PIXBUF_LOADER(obj)	   (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GDK_TYPE_PIXBUF_LOADER))
@@ -74,37 +74,37 @@ struct _GdkPixbufLoaderClass
 };
 
 GDK_PIXBUF_AVAILABLE_IN_ALL
-GType                gdk_pixbuf_loader_get_type      (void) G_GNUC_CONST;
+GType                cdk_pixbuf_loader_get_type      (void) G_GNUC_CONST;
 GDK_PIXBUF_AVAILABLE_IN_ALL
-GdkPixbufLoader *    gdk_pixbuf_loader_new           (void);
+GdkPixbufLoader *    cdk_pixbuf_loader_new           (void);
 GDK_PIXBUF_AVAILABLE_IN_ALL
-GdkPixbufLoader *    gdk_pixbuf_loader_new_with_type (const char *image_type,
+GdkPixbufLoader *    cdk_pixbuf_loader_new_with_type (const char *image_type,
                                                       GError    **error);
 GDK_PIXBUF_AVAILABLE_IN_2_4
-GdkPixbufLoader *    gdk_pixbuf_loader_new_with_mime_type (const char *mime_type,
+GdkPixbufLoader *    cdk_pixbuf_loader_new_with_mime_type (const char *mime_type,
 							   GError    **error);
 GDK_PIXBUF_AVAILABLE_IN_2_2
-void                 gdk_pixbuf_loader_set_size (GdkPixbufLoader  *loader,
+void                 cdk_pixbuf_loader_set_size (GdkPixbufLoader  *loader,
                                                  int               width,
 						 int               height);
 GDK_PIXBUF_AVAILABLE_IN_ALL
-gboolean             gdk_pixbuf_loader_write         (GdkPixbufLoader *loader,
+gboolean             cdk_pixbuf_loader_write         (GdkPixbufLoader *loader,
 						      const guchar    *buf,
 						      gsize            count,
                                                       GError         **error);
 GDK_PIXBUF_AVAILABLE_IN_2_30
-gboolean             gdk_pixbuf_loader_write_bytes   (GdkPixbufLoader *loader,
+gboolean             cdk_pixbuf_loader_write_bytes   (GdkPixbufLoader *loader,
                                                       GBytes          *buffer,
                                                       GError         **error);
 GDK_PIXBUF_AVAILABLE_IN_ALL
-GdkPixbuf *          gdk_pixbuf_loader_get_pixbuf    (GdkPixbufLoader *loader);
+GdkPixbuf *          cdk_pixbuf_loader_get_pixbuf    (GdkPixbufLoader *loader);
 GDK_PIXBUF_DEPRECATED_IN_2_44
-GdkPixbufAnimation * gdk_pixbuf_loader_get_animation (GdkPixbufLoader *loader);
+GdkPixbufAnimation * cdk_pixbuf_loader_get_animation (GdkPixbufLoader *loader);
 GDK_PIXBUF_AVAILABLE_IN_ALL
-gboolean             gdk_pixbuf_loader_close         (GdkPixbufLoader *loader,
+gboolean             cdk_pixbuf_loader_close         (GdkPixbufLoader *loader,
                                                       GError         **error);
 GDK_PIXBUF_AVAILABLE_IN_2_2
-GdkPixbufFormat     *gdk_pixbuf_loader_get_format    (GdkPixbufLoader *loader);
+GdkPixbufFormat     *cdk_pixbuf_loader_get_format    (GdkPixbufLoader *loader);
 
 G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkPixbufLoader, g_object_unref)
 

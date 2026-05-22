@@ -65,7 +65,7 @@
 - Change the default value for the builtin_loaders option to 'default'.
   On Linux, we interpret 'default' as 'glycin'. On other platforms, we
   interpret it as 'png,jpeg' (which was the previous default value).
-- Require Meson 1.5 to build gdk-pixbuf
+- Require Meson 1.5 to build cdk-pixbuf
 - Use glycin for saving. The following formats are supported:
   png, jpeg, tiff, webp, ico, bmp. For png, jpeg and tiff, the most
   common options are supported when saving.
@@ -77,8 +77,8 @@
 
 - Make the thumbnailer optional
 - Add a glycin loader. Glycin is a sandboxed image loading framework that
-  is written in rust, and supports more image formats than gdk-pixbuf ever
-  did. On Linux, we recommend that you build gdk-pixbuf with *only* the
+  is written in rust, and supports more image formats than cdk-pixbuf ever
+  did. On Linux, we recommend that you build cdk-pixbuf with *only* the
   glycin loaders, and rely on glycin for thumbnailers too. Like this:
 
   meson configure -Dpng=disabled                \
@@ -90,14 +90,14 @@
                   -Dbuiltin_loaders='glycin'    \
                   -Dthumbnailer=disabled
 
-  Note that this change has some potential for fallout: use of gdk-pixbuf
+  Note that this change has some potential for fallout: use of cdk-pixbuf
   (e.g. for pixdata conversions) will fail if bubblewrap sandboxing is not
   available (as is the case in many build systems). The recommendation is
   to simply stop using pixdata as a format for resources, and just use png.
 - Deprecate "gtk_doc" configuration option; to conform with the rest of the
   GNOME core libraries, use "documentation" instead
 - Remove the long-since deprecated "docs" configuration option
-- Require Meson 1.0 to build gdk-pixbuf
+- Require Meson 1.0 to build cdk-pixbuf
 - Deprecate the XPM-related API; the XPM loader is disabled by default,
   and we have better API for loading those kinds of assets, though nobody
   should be shipping XPM files in 2025
@@ -157,7 +157,7 @@
  - Yield gtk_doc option value in subprojects
  - Always initialise locale on thumbnailer startup [Bastien Nocera, !110]
  - Add fallback subproject for libjpeg [Benjamin Otte, !109]
- - Install API reference directly under $datadir/doc/gdk-pixbuf
+ - Install API reference directly under $datadir/doc/cdk-pixbuf
  - Use type:array for the builtin_loaders option
  - Default to using builtin png and jpeg loaders
  - Replace platform-specific post-install script files with a Python script
@@ -173,7 +173,7 @@
  - Expose GdkPixbufLoader API via introspection [Paolo Borelli]
  - Fix revert-to-previous first frame behaviour for GIF files [Robert Ancell, #166]
  - Link to libintl if needed [Fabrice Fontaine]
- - Improve support for using gdk-pixbuf as a subproject [Xavier Claessens]
+ - Improve support for using cdk-pixbuf as a subproject [Xavier Claessens]
  - Fix build with GModule disabled [Fabrice Fontaine]
  - Use gi-docgen to generate the API reference from introspection data
 
@@ -190,7 +190,7 @@
 ===
 
  - Remove the libjasper JPEG2000 loader
- - Split the gdk-pixbuf-xlib library to a separate repository
+ - Split the cdk-pixbuf-xlib library to a separate repository
  - Fix build on Solaris [Alan Coopersmith]
  - Fix cppcheck 'shifting signed 32-bit value warning' [Emmanuel Fleury, #96]
  - Fix memory leaks in pixops error paths [Alex Henrie]
@@ -219,11 +219,11 @@
 2.39.2 (development)
 ===
 
- - Add gdk_pixbuf_init_modules() for applications with GdkPixbuf loader
+ - Add cdk_pixbuf_init_modules() for applications with GdkPixbuf loader
    modules in a separate directory [Bastien Nocera, bgo#786035]
  - Add subproject fallback for dependencies [Nirbheek Chauhan]
  - Handle large XPM without crashing [Bastien Nocera, #95]
- - Use the appropriate gdk-pixbuf-query-loaders on install [Emmanuele
+ - Use the appropriate cdk-pixbuf-query-loaders on install [Emmanuele
    Bassi, #126]
  - Disable deprecation warnings introduced by GLib 2.62
  - Escape GIF version in error messages [Robert Ancell]
@@ -485,7 +485,7 @@
 
 * Bug fixes:
  648815 SVGZ icons in notification GNOME3
- 725582 gdk_pixbuf_apply_embedded_orientation is not working...
+ 725582 cdk_pixbuf_apply_embedded_orientation is not working...
 
 * Translation updates:
  Bosnian, Danish, Italian, Kazakh, Korean, Swedish
@@ -512,7 +512,7 @@
 
 * API changes:
 - Deprecate GdkPixdata
-- Add gdk_pixbuf_get_options() helper to list set options
+- Add cdk_pixbuf_get_options() helper to list set options
 - Annotations fixes for various functions
 - Remove incorrect info about area-prepared signal
 
@@ -533,12 +533,12 @@
 - Honour requested depth in Xlib
 - Special-case compositing/copying with no scaling
 - Add relocation support to OSX and Linux
-- Prefer gdk-pixbuf's loaders to the GDI+ ones on Windows
+- Prefer cdk-pixbuf's loaders to the GDI+ ones on Windows
 
 2.31.1
 ======
 
-* Add gdk_pixbuf_get_file_info_async
+* Add cdk_pixbuf_get_file_info_async
 
 * Translation updates
 
@@ -548,8 +548,8 @@
 * To improve the situation for language bindings, pixbufs can now
   be constructed from data in GBytes, and pixbuf data can also be
   extracted in this form. The GBytes data is treated as readonly,
-  and gdk_pixbuf_get_pixels() will create a copy. To avoid this
-  copy, a new function gdk_pixbuf_read_pixels() was introduced
+  and cdk_pixbuf_get_pixels() will create a copy. To avoid this
+  copy, a new function cdk_pixbuf_read_pixels() was introduced
   which returns a const pointer to the data without copying.
 
 2.30.8
@@ -569,7 +569,7 @@
 2.30.6
 ======
 
-* Add annotations to gdk_pixbuf_save_to_buffer
+* Add annotations to cdk_pixbuf_save_to_buffer
 
 * Win32 build fixes
 
@@ -660,7 +660,7 @@
 2.29.0
 ======
 
-* Add gdk_pixbuf_loader_write_bytes (696917)
+* Add cdk_pixbuf_loader_write_bytes (696917)
 
 * Update GIcon implementation (688820)
 
@@ -685,7 +685,7 @@
 2.27.2
 ======
 
-* Make gdk_pixbuf_animation_new_from_file load png files (694148)
+* Make cdk_pixbuf_animation_new_from_file load png files (694148)
 
 * Fix string formatting for l10n extraction (693534)
 
@@ -709,7 +709,7 @@
 ======
 
 * The broken locking mechanism for loaders has been removed.
-  gdk-pixbuf now ignores loaders that are not marked as thread-safe.
+  cdk-pixbuf now ignores loaders that are not marked as thread-safe.
 
 
 2.26.5
@@ -804,7 +804,7 @@
 
 * Various functions have been added to the docs
 
-* Fix introspection of gdk_pixbuf_new_from_xpm_data (#668956)
+* Fix introspection of cdk_pixbuf_new_from_xpm_data (#668956)
 
 * Improve the gif loaders handling of animations
   with varying frame sizes (#613595)
@@ -876,10 +876,10 @@
 ======
 
 * New functions to load pixbufs from resources:
-  gdk_pixbuf_new_from_resource
-  gdk_pixbuf_new_from_resource_at_scale
+  cdk_pixbuf_new_from_resource
+  cdk_pixbuf_new_from_resource_at_scale
 
-* gdk-pixbuf-pixdata is a new program that generates
+* cdk-pixbuf-pixdata is a new program that generates
   raw binary GdkPixdata files, and there is a new
   loader for these.
 
@@ -905,7 +905,7 @@
 
 * Fix some string problems in the qtif loader (#629396)
 * Fix various introspection annotations (#659888)
-* Fix introspectability of gdk_pixbuf_get_pixels (#662009)
+* Fix introspectability of cdk_pixbuf_get_pixels (#662009)
 * Fix build problem on NetBSD (#640405)
 * Skip compressed icons in ICOs (#652498)
 * Add a --with-x11 configure options (#657569)
@@ -998,7 +998,7 @@
 * Build against libpng 1.5
 
 * Bugs fixed:
- 634659 gdk-pixbuf 2.22 can't find localisation
+ 634659 cdk-pixbuf 2.22 can't find localisation
  635364 Add C include and exported packages information to GIR
  639922 Proposed Visual C++ 2008 Project Files
  640407 Unportable test(1) construct in configure script.
@@ -1023,7 +1023,7 @@
 2.23.0
 ======
 
-* New API: gdk_pixbuf_new_from_stream_async
+* New API: cdk_pixbuf_new_from_stream_async
 
 * Translation updates
  Brazilian Portuguese
@@ -1133,9 +1133,9 @@
 2.21.4
 ======
 
-* Drop -2.0 suffix on gdk-pixbuf-csource and gdk-pixbuf-query-loaders
+* Drop -2.0 suffix on cdk-pixbuf-csource and cdk-pixbuf-query-loaders
 
-* Include gdk-pixbuf-xlib again
+* Include cdk-pixbuf-xlib again
 
 * Add pixbuf tests from the CTK+ tree
 
@@ -1147,14 +1147,14 @@
 2.21.3
 ======
 
-gdk-pixbuf has been turned back into a standalone library, after being
+cdk-pixbuf has been turned back into a standalone library, after being
 shipped as part of CTK+ for a number of years. The changes in this
 version, compared to the version included in CTK+ 2.20 are the following:
 
 * The default location for loaders has been changed to
-  $libdir/gdk-pixbuf-2.0/2.10.0/loaders
+  $libdir/cdk-pixbuf-2.0/2.10.0/loaders
 
 * The default location for the module file has been changed to
-  $libdir/gdk-pixbuf-2.0/2.10.0/loaders.cache
-  and gdk-pixbuf-query-loaders-2.0 will update that file when given
+  $libdir/cdk-pixbuf-2.0/2.10.0/loaders.cache
+  and cdk-pixbuf-query-loaders-2.0 will update that file when given
   the --update-cache option.

@@ -57,7 +57,7 @@ filter_keys (char   **keys,
 }
 
 static gboolean
-gdk_pixbuf__avif_image_save (FILE       *f,
+cdk_pixbuf__avif_image_save (FILE       *f,
                              GdkPixbuf  *pixbuf,
                              char      **keys,
                              char      **values,
@@ -77,7 +77,7 @@ gdk_pixbuf__avif_image_save (FILE       *f,
 }
 
 static gboolean
-gdk_pixbuf__avif_image_save_to_callback (GdkPixbufSaveFunc   save_func,
+cdk_pixbuf__avif_image_save_to_callback (GdkPixbufSaveFunc   save_func,
                                          gpointer            user_data,
                                          GdkPixbuf          *pixbuf,
                                          gchar             **keys,
@@ -98,7 +98,7 @@ gdk_pixbuf__avif_image_save_to_callback (GdkPixbufSaveFunc   save_func,
 }
 
 static gboolean
-gdk_pixbuf__avif_is_save_option_supported (const gchar *option_key)
+cdk_pixbuf__avif_is_save_option_supported (const gchar *option_key)
 {
   if (option_key == NULL)
     return FALSE;
@@ -109,15 +109,15 @@ gdk_pixbuf__avif_is_save_option_supported (const gchar *option_key)
 #ifndef INCLUDE_glycin
 #define MODULE_ENTRY(function) G_MODULE_EXPORT void function
 #else
-#define MODULE_ENTRY(function) void _gdk_pixbuf__glycin_avif_ ## function
+#define MODULE_ENTRY(function) void _cdk_pixbuf__glycin_avif_ ## function
 #endif
 
 MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
 {
   glycin_fill_vtable (module);
-  module->save = gdk_pixbuf__avif_image_save;
-  module->save_to_callback = gdk_pixbuf__avif_image_save_to_callback;
-  module->is_save_option_supported = gdk_pixbuf__avif_is_save_option_supported;
+  module->save = cdk_pixbuf__avif_image_save;
+  module->save_to_callback = cdk_pixbuf__avif_image_save_to_callback;
+  module->is_save_option_supported = cdk_pixbuf__avif_is_save_option_supported;
 }
 
 MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)

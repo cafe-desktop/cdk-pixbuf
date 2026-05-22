@@ -38,7 +38,7 @@
 #include <glib/gstdio.h>
 #include <glib/gi18n-lib.h>
 
-#include "gdk-pixbuf-io.h"
+#include "cdk-pixbuf-io.h"
 
 
 
@@ -298,7 +298,7 @@ read_bitmap_file_data (FILE    *fstream,
 
 
 static GdkPixbuf *
-gdk_pixbuf__xbm_image_load_real (FILE     *f, 
+cdk_pixbuf__xbm_image_load_real (FILE     *f, 
 				 XBMData  *context, 
 				 GError  **error)
 {
@@ -321,7 +321,7 @@ gdk_pixbuf__xbm_image_load_real (FILE     *f,
 		return NULL;
 	}
 
-	pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, w, h);
+	pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, w, h);
 
         if (pixbuf == NULL) {
                 g_free (data);
@@ -335,13 +335,13 @@ gdk_pixbuf__xbm_image_load_real (FILE     *f,
 	if (x_hot != -1 && y_hot != -1) {
 		gchar hot[10];
 		g_snprintf (hot, 10, "%d", x_hot);
-		gdk_pixbuf_set_option (pixbuf, "x_hot", hot);
+		cdk_pixbuf_set_option (pixbuf, "x_hot", hot);
 		g_snprintf (hot, 10, "%d", y_hot);
-		gdk_pixbuf_set_option (pixbuf, "y_hot", hot);
+		cdk_pixbuf_set_option (pixbuf, "y_hot", hot);
 	}
 
-	pixels = gdk_pixbuf_get_pixels (pixbuf);
-	row_stride = gdk_pixbuf_get_rowstride (pixbuf);
+	pixels = cdk_pixbuf_get_pixels (pixbuf);
+	row_stride = cdk_pixbuf_get_rowstride (pixbuf);
 
 	if (context)
 		(* context->prepared_func) (pixbuf, NULL, context->user_data);
@@ -382,10 +382,10 @@ gdk_pixbuf__xbm_image_load_real (FILE     *f,
 /* Static loader */
 
 static GdkPixbuf *
-gdk_pixbuf__xbm_image_load (FILE    *f, 
+cdk_pixbuf__xbm_image_load (FILE    *f, 
 			    GError **error)
 {
-	return gdk_pixbuf__xbm_image_load_real (f, NULL, error);
+	return cdk_pixbuf__xbm_image_load_real (f, NULL, error);
 }
 
 
@@ -397,7 +397,7 @@ gdk_pixbuf__xbm_image_load (FILE    *f,
  */
 
 static gpointer
-gdk_pixbuf__xbm_image_begin_load (GdkPixbufModuleSizeFunc       size_func,
+cdk_pixbuf__xbm_image_begin_load (GdkPixbufModuleSizeFunc       size_func,
                                   GdkPixbufModulePreparedFunc   prepared_func,
 				  GdkPixbufModuleUpdatedFunc    updated_func,
 				  gpointer                      user_data,
@@ -415,7 +415,7 @@ gdk_pixbuf__xbm_image_begin_load (GdkPixbufModuleSizeFunc       size_func,
 	context->updated_func = updated_func;
 	context->user_data = user_data;
 	context->all_okay = TRUE;
-	fd = g_file_open_tmp ("gdkpixbuf-xbm-tmp.XXXXXX",
+	fd = g_file_open_tmp ("cdkpixbuf-xbm-tmp.XXXXXX",
 			      &context->tempname,
 			      NULL);
 	if (fd < 0) {
@@ -434,7 +434,7 @@ gdk_pixbuf__xbm_image_begin_load (GdkPixbufModuleSizeFunc       size_func,
 }
 
 static gboolean
-gdk_pixbuf__xbm_image_stop_load (gpointer   data,
+cdk_pixbuf__xbm_image_stop_load (gpointer   data,
                                  GError   **error)
 {
 	XBMData *context = (XBMData*) data;
@@ -446,7 +446,7 @@ gdk_pixbuf__xbm_image_stop_load (gpointer   data,
 	rewind (context->file);
 	if (context->all_okay) {
                 GdkPixbuf *pixbuf;
-                pixbuf = gdk_pixbuf__xbm_image_load_real (context->file, 
+                pixbuf = cdk_pixbuf__xbm_image_load_real (context->file, 
 							  context,
                                                           error);
                 if (pixbuf == NULL)
@@ -464,7 +464,7 @@ gdk_pixbuf__xbm_image_stop_load (gpointer   data,
 }
 
 static gboolean
-gdk_pixbuf__xbm_image_load_increment (gpointer       data,
+cdk_pixbuf__xbm_image_load_increment (gpointer       data,
                                       const guchar  *buf,
                                       guint          size,
                                       GError       **error)
@@ -489,15 +489,15 @@ gdk_pixbuf__xbm_image_load_increment (gpointer       data,
 #ifndef INCLUDE_xbm
 #define MODULE_ENTRY(function) G_MODULE_EXPORT void function
 #else
-#define MODULE_ENTRY(function) void _gdk_pixbuf__xbm_ ## function
+#define MODULE_ENTRY(function) void _cdk_pixbuf__xbm_ ## function
 #endif
 
 MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
 {
-	module->load = gdk_pixbuf__xbm_image_load;
-	module->begin_load = gdk_pixbuf__xbm_image_begin_load;
-	module->stop_load = gdk_pixbuf__xbm_image_stop_load;
-	module->load_increment = gdk_pixbuf__xbm_image_load_increment;
+	module->load = cdk_pixbuf__xbm_image_load;
+	module->begin_load = cdk_pixbuf__xbm_image_begin_load;
+	module->stop_load = cdk_pixbuf__xbm_image_stop_load;
+	module->load_increment = cdk_pixbuf__xbm_image_load_increment;
 }
 
 MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)

@@ -23,12 +23,12 @@
 #define GDK_PIXBUF_ANI_ANIMATION_H
 
 #include <glib/gi18n-lib.h>
-#include "gdk-pixbuf-animation.h"
+#include "cdk-pixbuf-animation.h"
 
 typedef struct _GdkPixbufAniAnim GdkPixbufAniAnim;
 typedef struct _GdkPixbufAniAnimClass GdkPixbufAniAnimClass;
 
-#define GDK_TYPE_PIXBUF_ANI_ANIM              (gdk_pixbuf_ani_anim_get_type ())
+#define GDK_TYPE_PIXBUF_ANI_ANIM              (cdk_pixbuf_ani_anim_get_type ())
 #define GDK_PIXBUF_ANI_ANIM(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_PIXBUF_ANI_ANIM, GdkPixbufAniAnim))
 #define GDK_IS_PIXBUF_ANI_ANIM(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_PIXBUF_ANI_ANIM))
 
@@ -66,7 +66,7 @@ struct _GdkPixbufAniAnimClass {
         
 };
 
-GType gdk_pixbuf_ani_anim_get_type (void) G_GNUC_CONST;
+GType cdk_pixbuf_ani_anim_get_type (void) G_GNUC_CONST;
 
 
 
@@ -74,7 +74,7 @@ typedef struct _GdkPixbufAniAnimIter GdkPixbufAniAnimIter;
 typedef struct _GdkPixbufAniAnimIterClass GdkPixbufAniAnimIterClass;
 
 
-#define GDK_TYPE_PIXBUF_ANI_ANIM_ITER              (gdk_pixbuf_ani_anim_iter_get_type ())
+#define GDK_TYPE_PIXBUF_ANI_ANIM_ITER              (cdk_pixbuf_ani_anim_iter_get_type ())
 #define GDK_PIXBUF_ANI_ANIM_ITER(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_PIXBUF_ANI_ANIM_ITER, GdkPixbufAniAnimIter))
 #define GDK_IS_PIXBUF_ANI_ANIM_ITER(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_PIXBUF_ANI_ANIM_ITER))
 
@@ -108,6 +108,6 @@ struct _GdkPixbufAniAnimIterClass {
 
 };
 
-GType gdk_pixbuf_ani_anim_iter_get_type (void) G_GNUC_CONST;
+GType cdk_pixbuf_ani_anim_iter_get_type (void) G_GNUC_CONST;
 
 #endif

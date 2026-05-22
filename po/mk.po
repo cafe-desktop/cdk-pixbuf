@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ctk+.HEAD\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gdk-"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=cdk-"
 "pixbuf\n"
 "POT-Creation-Date: 2012-02-04 18:44-0500\n"
 "PO-Revision-Date: 2007-09-08 18:58+0200\n"
@@ -24,19 +24,19 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural= n==1 || n%10==1 ? 0 : 1\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: gdk-pixbuf/gdk-pixbuf-animation.c:146 gdk-pixbuf/gdk-pixbuf-io.c:1083
-#: gdk-pixbuf/gdk-pixbuf-io.c:1349
+#: cdk-pixbuf/cdk-pixbuf-animation.c:146 cdk-pixbuf/cdk-pixbuf-io.c:1083
+#: cdk-pixbuf/cdk-pixbuf-io.c:1349
 #, c-format
 msgid "Failed to open file '%s': %s"
 msgstr "Не успеав да ја отворам датотеката „%s“: %s"
 
-#: gdk-pixbuf/gdk-pixbuf-animation.c:159 gdk-pixbuf/gdk-pixbuf-io.c:1095
+#: cdk-pixbuf/cdk-pixbuf-animation.c:159 cdk-pixbuf/cdk-pixbuf-io.c:1095
 #, c-format
 msgid "Image file '%s' contains no data"
 msgstr "Датотеката слика „%s“ не содржи податоци"
 
-#: gdk-pixbuf/gdk-pixbuf-animation.c:201 gdk-pixbuf/gdk-pixbuf-io.c:1131
-#: gdk-pixbuf/gdk-pixbuf-io.c:1401
+#: cdk-pixbuf/cdk-pixbuf-animation.c:201 cdk-pixbuf/cdk-pixbuf-io.c:1131
+#: cdk-pixbuf/cdk-pixbuf-io.c:1401
 #, c-format
 msgid ""
 "Failed to load image '%s': reason not known, probably a corrupt image file"
@@ -44,7 +44,7 @@ msgstr ""
 "Не успеав да ја вчитам сликата „%s“: причината не е позната, најверојатно се "
 "работи за расипана слика"
 
-#: gdk-pixbuf/gdk-pixbuf-animation.c:234
+#: cdk-pixbuf/cdk-pixbuf-animation.c:234
 #, c-format
 msgid ""
 "Failed to load animation '%s': reason not known, probably a corrupt "
@@ -53,68 +53,68 @@ msgstr ""
 "Не успеав да ја вчитам анимацијата „%s“: причината е непозната, најверојатно "
 "се работи за расипана датотека"
 
-#: gdk-pixbuf/gdk-pixbuf-io.c:809
+#: cdk-pixbuf/cdk-pixbuf-io.c:809
 #, c-format
 msgid "Unable to load image-loading module: %s: %s"
 msgstr "Не успеав да го вчитам модулот за вчитување на слики: %s: %s"
 
-#: gdk-pixbuf/gdk-pixbuf-io.c:824
+#: cdk-pixbuf/cdk-pixbuf-io.c:824
 #, fuzzy, c-format
 msgid ""
 "Image-loading module %s does not export the proper interface; perhaps it's "
-"from a different gdk-pixbuf version?"
+"from a different cdk-pixbuf version?"
 msgstr ""
 "Модулот за вчитување на слики %s не го извесува точниот интерфејс; можеби е "
 "напишан во друга верзија на CTK?"
 
-#: gdk-pixbuf/gdk-pixbuf-io.c:833 gdk-pixbuf/gdk-pixbuf-io.c:884
+#: cdk-pixbuf/cdk-pixbuf-io.c:833 cdk-pixbuf/cdk-pixbuf-io.c:884
 #, c-format
 msgid "Image type '%s' is not supported"
 msgstr "Типот на слика „%s“ не е поддржан"
 
-#: gdk-pixbuf/gdk-pixbuf-io.c:964
+#: cdk-pixbuf/cdk-pixbuf-io.c:964
 #, c-format
 msgid "Couldn't recognize the image file format for file '%s'"
 msgstr "Не можам да го препознаам датотечниот формат на датотеката „%s“"
 
-#: gdk-pixbuf/gdk-pixbuf-io.c:972
+#: cdk-pixbuf/cdk-pixbuf-io.c:972
 msgid "Unrecognized image file format"
 msgstr "Непознат датотечен формат на слика"
 
-#: gdk-pixbuf/gdk-pixbuf-io.c:1140
+#: cdk-pixbuf/cdk-pixbuf-io.c:1140
 #, c-format
 msgid "Failed to load image '%s': %s"
 msgstr "Не успеав да ја вчитам сликата „%s“: %s"
 
-#: gdk-pixbuf/gdk-pixbuf-io.c:2028 gdk-pixbuf/io-gdip-utils.c:888
+#: cdk-pixbuf/cdk-pixbuf-io.c:2028 cdk-pixbuf/io-gdip-utils.c:888
 #, c-format
 msgid "Error writing to image file: %s"
 msgstr "Грешка при снимање на сликата: %s"
 
-#: gdk-pixbuf/gdk-pixbuf-io.c:2073 gdk-pixbuf/gdk-pixbuf-io.c:2203
+#: cdk-pixbuf/cdk-pixbuf-io.c:2073 cdk-pixbuf/cdk-pixbuf-io.c:2203
 #, c-format
-msgid "This build of gdk-pixbuf does not support saving the image format: %s"
+msgid "This build of cdk-pixbuf does not support saving the image format: %s"
 msgstr ""
-"Градењето на gdk-pixbuf не поддржува зачувување на форматот на сликата: %s"
+"Градењето на cdk-pixbuf не поддржува зачувување на форматот на сликата: %s"
 
-#: gdk-pixbuf/gdk-pixbuf-io.c:2107
+#: cdk-pixbuf/cdk-pixbuf-io.c:2107
 msgid "Insufficient memory to save image to callback"
 msgstr "Нема доволно меморија за да ја зачувам сликата во callback"
 
-#: gdk-pixbuf/gdk-pixbuf-io.c:2120
+#: cdk-pixbuf/cdk-pixbuf-io.c:2120
 msgid "Failed to open temporary file"
 msgstr "Не успеав да ја отворам привремената датотека"
 
-#: gdk-pixbuf/gdk-pixbuf-io.c:2146
+#: cdk-pixbuf/cdk-pixbuf-io.c:2146
 msgid "Failed to read from temporary file"
 msgstr "Не успеав да прочитам од привремената датотека"
 
-#: gdk-pixbuf/gdk-pixbuf-io.c:2399
+#: cdk-pixbuf/cdk-pixbuf-io.c:2399
 #, c-format
 msgid "Failed to open '%s' for writing: %s"
 msgstr "Не успеав да го отворам „%s“ за запишување: %s"
 
-#: gdk-pixbuf/gdk-pixbuf-io.c:2425
+#: cdk-pixbuf/cdk-pixbuf-io.c:2425
 #, c-format
 msgid ""
 "Failed to close '%s' while writing image, all data may not have been saved: "
@@ -123,16 +123,16 @@ msgstr ""
 "Не успеав да го затворам „%s“ додека ја снимав сликата, можно е да не се "
 "зачувани сите податоци: %s"
 
-#: gdk-pixbuf/gdk-pixbuf-io.c:2646 gdk-pixbuf/gdk-pixbuf-io.c:2698
+#: cdk-pixbuf/cdk-pixbuf-io.c:2646 cdk-pixbuf/cdk-pixbuf-io.c:2698
 msgid "Insufficient memory to save image into a buffer"
 msgstr "Нема доволно меморија за да ја зачувам сликата во баферот"
 
-#: gdk-pixbuf/gdk-pixbuf-io.c:2744
+#: cdk-pixbuf/cdk-pixbuf-io.c:2744
 #, fuzzy
 msgid "Error writing to image stream"
 msgstr "Грешка при снимање на сликата: %s"
 
-#: gdk-pixbuf/gdk-pixbuf-loader.c:395
+#: cdk-pixbuf/cdk-pixbuf-loader.c:395
 #, c-format
 msgid ""
 "Internal error: Image loader module '%s' failed to complete an operation, "
@@ -141,24 +141,24 @@ msgstr ""
 "Внатрешна грешка: Модулот за вчитување на слики „%s“ не успеа да почне да "
 "вчитува слика и не даде причина за неуспехот"
 
-#: gdk-pixbuf/gdk-pixbuf-loader.c:437
+#: cdk-pixbuf/cdk-pixbuf-loader.c:437
 #, c-format
 msgid "Incremental loading of image type '%s' is not supported"
 msgstr "Инкрементално вчитување на типот на сликата „%s“ не е поддржано"
 
-#: gdk-pixbuf/gdk-pixdata.c:160
+#: cdk-pixbuf/cdk-pixdata.c:160
 msgid "Image header corrupt"
 msgstr "Заглавјето на слиакта е расипано"
 
-#: gdk-pixbuf/gdk-pixdata.c:165
+#: cdk-pixbuf/cdk-pixdata.c:165
 msgid "Image format unknown"
 msgstr "Форматот на сликата е непознат"
 
-#: gdk-pixbuf/gdk-pixdata.c:170 gdk-pixbuf/gdk-pixdata.c:502
+#: cdk-pixbuf/cdk-pixdata.c:170 cdk-pixbuf/cdk-pixdata.c:502
 msgid "Image pixel data corrupt"
 msgstr "Податоците за пикеслите на сликата се расипани"
 
-#: gdk-pixbuf/gdk-pixdata.c:446
+#: cdk-pixbuf/cdk-pixdata.c:446
 #, c-format
 msgid "failed to allocate image buffer of %u byte"
 msgid_plural "failed to allocate image buffer of %u bytes"
@@ -166,79 +166,79 @@ msgstr[0] "не успеав да алоцирам бафер на сликат�
 msgstr[1] "не успеав да алоцирам бафер на сликата од %u бајти"
 msgstr[2] "не успеав да алоцирам бафер на сликата од %u бајт"
 
-#: gdk-pixbuf/io-ani.c:244
+#: cdk-pixbuf/io-ani.c:244
 msgid "Unexpected icon chunk in animation"
 msgstr "Неочекувана икона во анимацијата"
 
-#: gdk-pixbuf/io-ani.c:337
+#: cdk-pixbuf/io-ani.c:337
 msgid "Unsupported animation type"
 msgstr "Неподдржан тип на анимација"
 
-#: gdk-pixbuf/io-ani.c:348 gdk-pixbuf/io-ani.c:406 gdk-pixbuf/io-ani.c:432
-#: gdk-pixbuf/io-ani.c:455 gdk-pixbuf/io-ani.c:482 gdk-pixbuf/io-ani.c:569
+#: cdk-pixbuf/io-ani.c:348 cdk-pixbuf/io-ani.c:406 cdk-pixbuf/io-ani.c:432
+#: cdk-pixbuf/io-ani.c:455 cdk-pixbuf/io-ani.c:482 cdk-pixbuf/io-ani.c:569
 msgid "Invalid header in animation"
 msgstr "Невалидно заглавје во анимацијата"
 
-#: gdk-pixbuf/io-ani.c:358 gdk-pixbuf/io-ani.c:380 gdk-pixbuf/io-ani.c:464
-#: gdk-pixbuf/io-ani.c:491 gdk-pixbuf/io-ani.c:542 gdk-pixbuf/io-ani.c:614
+#: cdk-pixbuf/io-ani.c:358 cdk-pixbuf/io-ani.c:380 cdk-pixbuf/io-ani.c:464
+#: cdk-pixbuf/io-ani.c:491 cdk-pixbuf/io-ani.c:542 cdk-pixbuf/io-ani.c:614
 msgid "Not enough memory to load animation"
 msgstr "Нема доволно меморија за да се вчита анимацијата"
 
-#: gdk-pixbuf/io-ani.c:398 gdk-pixbuf/io-ani.c:424 gdk-pixbuf/io-ani.c:443
+#: cdk-pixbuf/io-ani.c:398 cdk-pixbuf/io-ani.c:424 cdk-pixbuf/io-ani.c:443
 msgid "Malformed chunk in animation"
 msgstr "Деформирано парче во анимацијата"
 
-#: gdk-pixbuf/io-ani.c:711
+#: cdk-pixbuf/io-ani.c:711
 msgid "The ANI image format"
 msgstr "ANI формат на слика"
 
-#: gdk-pixbuf/io-bmp.c:229 gdk-pixbuf/io-bmp.c:266 gdk-pixbuf/io-bmp.c:337
-#: gdk-pixbuf/io-bmp.c:369 gdk-pixbuf/io-bmp.c:392 gdk-pixbuf/io-bmp.c:495
+#: cdk-pixbuf/io-bmp.c:229 cdk-pixbuf/io-bmp.c:266 cdk-pixbuf/io-bmp.c:337
+#: cdk-pixbuf/io-bmp.c:369 cdk-pixbuf/io-bmp.c:392 cdk-pixbuf/io-bmp.c:495
 msgid "BMP image has bogus header data"
 msgstr "BMP сликата име погрешни податоци во заглавјето"
 
-#: gdk-pixbuf/io-bmp.c:240 gdk-pixbuf/io-bmp.c:432
+#: cdk-pixbuf/io-bmp.c:240 cdk-pixbuf/io-bmp.c:432
 msgid "Not enough memory to load bitmap image"
 msgstr "Нема доволно меморија за да се вчита bitmap сликата"
 
-#: gdk-pixbuf/io-bmp.c:318
+#: cdk-pixbuf/io-bmp.c:318
 msgid "BMP image has unsupported header size"
 msgstr "BMP сликата има неподдржана големина на заглавје"
 
-#: gdk-pixbuf/io-bmp.c:356
+#: cdk-pixbuf/io-bmp.c:356
 msgid "Topdown BMP images cannot be compressed"
 msgstr "BMP сликата не може да биде компресирана"
 
-#: gdk-pixbuf/io-bmp.c:716 gdk-pixbuf/io-pnm.c:707
+#: cdk-pixbuf/io-bmp.c:716 cdk-pixbuf/io-pnm.c:707
 msgid "Premature end-of-file encountered"
 msgstr "Преран крај на датотеката"
 
-#: gdk-pixbuf/io-bmp.c:1328
+#: cdk-pixbuf/io-bmp.c:1328
 msgid "Couldn't allocate memory for saving BMP file"
 msgstr "Не можам да алоцирам меморија за зачувување на BMP датотеката"
 
-#: gdk-pixbuf/io-bmp.c:1369
+#: cdk-pixbuf/io-bmp.c:1369
 msgid "Couldn't write to BMP file"
 msgstr "Не можам да запишам во BMP датотека"
 
-#: gdk-pixbuf/io-bmp.c:1422 gdk-pixbuf/io-gdip-bmp.c:82
+#: cdk-pixbuf/io-bmp.c:1422 cdk-pixbuf/io-gdip-bmp.c:82
 msgid "The BMP image format"
 msgstr "BMP формат на слика"
 
-#: gdk-pixbuf/io-gdip-emf.c:59
+#: cdk-pixbuf/io-gdip-emf.c:59
 #, fuzzy
 msgid "The EMF image format"
 msgstr "BMP формат на слика"
 
-#: gdk-pixbuf/io-gdip-gif.c:80 gdk-pixbuf/io-gif.c:1699
+#: cdk-pixbuf/io-gdip-gif.c:80 cdk-pixbuf/io-gif.c:1699
 msgid "The GIF image format"
 msgstr "Форматот GIF"
 
-#: gdk-pixbuf/io-gdip-ico.c:59 gdk-pixbuf/io-ico.c:1271
+#: cdk-pixbuf/io-gdip-ico.c:59 cdk-pixbuf/io-ico.c:1271
 msgid "The ICO image format"
 msgstr "Форматот ICO"
 
-#: gdk-pixbuf/io-gdip-jpeg.c:53 gdk-pixbuf/io-jpeg.c:1139
+#: cdk-pixbuf/io-gdip-jpeg.c:53 cdk-pixbuf/io-jpeg.c:1139
 #, c-format
 msgid ""
 "JPEG quality must be a value between 0 and 100; value '%s' could not be "
@@ -247,7 +247,7 @@ msgstr ""
 "Квалитетот на JPEG мора да биде помеѓу 0 и 100; вредноста „%s“ не може да "
 "биде парсирана."
 
-#: gdk-pixbuf/io-gdip-jpeg.c:68 gdk-pixbuf/io-jpeg.c:1154
+#: cdk-pixbuf/io-gdip-jpeg.c:68 cdk-pixbuf/io-jpeg.c:1154
 #, c-format
 msgid ""
 "JPEG quality must be a value between 0 and 100; value '%d' is not allowed."
@@ -255,223 +255,223 @@ msgstr ""
 "Квалитетот на JPEG сликата мора да биде помеѓу 0 и 100; вредноста '%d' не е "
 "дозволена."
 
-#: gdk-pixbuf/io-gdip-jpeg.c:136 gdk-pixbuf/io-jpeg.c:1316
+#: cdk-pixbuf/io-gdip-jpeg.c:136 cdk-pixbuf/io-jpeg.c:1316
 msgid "The JPEG image format"
 msgstr "JPEG формат на слика"
 
-#: gdk-pixbuf/io-gdip-utils.c:154
+#: cdk-pixbuf/io-gdip-utils.c:154
 #, fuzzy, c-format
 msgid "Could not allocate memory: %s"
 msgstr "Не можам да алоцирам меморија за заглавјето"
 
-#: gdk-pixbuf/io-gdip-utils.c:179 gdk-pixbuf/io-gdip-utils.c:293
-#: gdk-pixbuf/io-gdip-utils.c:333
+#: cdk-pixbuf/io-gdip-utils.c:179 cdk-pixbuf/io-gdip-utils.c:293
+#: cdk-pixbuf/io-gdip-utils.c:333
 #, fuzzy, c-format
 msgid "Could not create stream: %s"
 msgstr "Не можам да го преименувам %s во %s: %s\n"
 
-#: gdk-pixbuf/io-gdip-utils.c:193
+#: cdk-pixbuf/io-gdip-utils.c:193
 #, fuzzy, c-format
 msgid "Could not seek stream: %s"
 msgstr "Не можам да го отстранам предметот"
 
-#: gdk-pixbuf/io-gdip-utils.c:205
+#: cdk-pixbuf/io-gdip-utils.c:205
 #, fuzzy, c-format
 msgid "Could not read from stream: %s"
 msgstr "Не можам да го преименувам %s во %s: %s\n"
 
-#: gdk-pixbuf/io-gdip-utils.c:617 gdk-pixbuf/io-gdip-utils.c:752
+#: cdk-pixbuf/io-gdip-utils.c:617 cdk-pixbuf/io-gdip-utils.c:752
 #, fuzzy
 msgid "Couldn't load bitmap"
 msgstr "Не можам да го конвертирам името на датотеката"
 
-#: gdk-pixbuf/io-gdip-utils.c:774
+#: cdk-pixbuf/io-gdip-utils.c:774
 #, fuzzy
 msgid "Couldn't load metafile"
 msgstr "Не можам да го конвертирам името на датотеката"
 
-#: gdk-pixbuf/io-gdip-utils.c:933
+#: cdk-pixbuf/io-gdip-utils.c:933
 #, fuzzy
 msgid "Unsupported image format for GDI+"
 msgstr "неподдржана варијација на RAS слика"
 
-#: gdk-pixbuf/io-gdip-utils.c:940
+#: cdk-pixbuf/io-gdip-utils.c:940
 #, fuzzy
 msgid "Couldn't save"
 msgstr "Не можев да го зачувам остатокот"
 
-#: gdk-pixbuf/io-gdip-wmf.c:58
+#: cdk-pixbuf/io-gdip-wmf.c:58
 #, fuzzy
 msgid "The WMF image format"
 msgstr "WBMP форматот на слика"
 
-#: gdk-pixbuf/io-gif.c:221
+#: cdk-pixbuf/io-gif.c:221
 #, c-format
 msgid "Failure reading GIF: %s"
 msgstr "Грешка при читањето на GIF-от: %s"
 
-#: gdk-pixbuf/io-gif.c:495 gdk-pixbuf/io-gif.c:1482 gdk-pixbuf/io-gif.c:1648
+#: cdk-pixbuf/io-gif.c:495 cdk-pixbuf/io-gif.c:1482 cdk-pixbuf/io-gif.c:1648
 msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
 msgstr ""
 "На GIF датотеката и недостасуваа податоци (можеби била скратена некако ?)"
 
-#: gdk-pixbuf/io-gif.c:504
+#: cdk-pixbuf/io-gif.c:504
 #, c-format
 msgid "Internal error in the GIF loader (%s)"
 msgstr "Внатрешна грешка во вчитувачот за GIF (%s)"
 
-#: gdk-pixbuf/io-gif.c:578
+#: cdk-pixbuf/io-gif.c:578
 msgid "Stack overflow"
 msgstr "Stack overflow"
 
-#: gdk-pixbuf/io-gif.c:638
+#: cdk-pixbuf/io-gif.c:638
 msgid "GIF image loader cannot understand this image."
 msgstr "Вчитувачот на GIF слики не може да ја разбере оваа слика."
 
-#: gdk-pixbuf/io-gif.c:667
+#: cdk-pixbuf/io-gif.c:667
 msgid "Bad code encountered"
 msgstr "Налетав на лош код"
 
-#: gdk-pixbuf/io-gif.c:677
+#: cdk-pixbuf/io-gif.c:677
 msgid "Circular table entry in GIF file"
 msgstr "Запис на циркуларна табела во GIF датотеката"
 
-#: gdk-pixbuf/io-gif.c:865 gdk-pixbuf/io-gif.c:1468 gdk-pixbuf/io-gif.c:1521
-#: gdk-pixbuf/io-gif.c:1636
+#: cdk-pixbuf/io-gif.c:865 cdk-pixbuf/io-gif.c:1468 cdk-pixbuf/io-gif.c:1521
+#: cdk-pixbuf/io-gif.c:1636
 msgid "Not enough memory to load GIF file"
 msgstr "Нема доволно меморија за да се вчита GIF датотеката"
 
-#: gdk-pixbuf/io-gif.c:959
+#: cdk-pixbuf/io-gif.c:959
 msgid "Not enough memory to composite a frame in GIF file"
 msgstr "Нема доволно меморија за компонирање на рамка во GIF датотеката"
 
-#: gdk-pixbuf/io-gif.c:1131
+#: cdk-pixbuf/io-gif.c:1131
 msgid "GIF image is corrupt (incorrect LZW compression)"
 msgstr "GIF сликата е расипана (неточна LZW компресија)"
 
-#: gdk-pixbuf/io-gif.c:1181
+#: cdk-pixbuf/io-gif.c:1181
 msgid "File does not appear to be a GIF file"
 msgstr "Датотеката изгледа дека не е GIF датотека"
 
-#: gdk-pixbuf/io-gif.c:1193
+#: cdk-pixbuf/io-gif.c:1193
 #, c-format
 msgid "Version %s of the GIF file format is not supported"
 msgstr "Верзијата %s од датотечниот формат GIF не е поддржана"
 
-#: gdk-pixbuf/io-gif.c:1302
+#: cdk-pixbuf/io-gif.c:1302
 msgid ""
 "GIF image has no global colormap, and a frame inside it has no local "
 "colormap."
 msgstr "GIF сликата нема глобална боја и рамката во неа нема локална боја."
 
-#: gdk-pixbuf/io-gif.c:1543
+#: cdk-pixbuf/io-gif.c:1543
 msgid "GIF image was truncated or incomplete."
 msgstr "GIF сликата беше скратена или нецелосна."
 
-#: gdk-pixbuf/io-icns.c:347
+#: cdk-pixbuf/io-icns.c:347
 #, fuzzy, c-format
 msgid "Error reading ICNS image: %s"
 msgstr "Фатлна грешка при читањето на PNG сликата: %s"
 
-#: gdk-pixbuf/io-icns.c:364
+#: cdk-pixbuf/io-icns.c:364
 #, fuzzy
 msgid "Could not decode ICNS file"
 msgstr "Не можам да ја одберам датотеката"
 
-#: gdk-pixbuf/io-icns.c:397
+#: cdk-pixbuf/io-icns.c:397
 #, fuzzy
 msgid "The ICNS image format"
 msgstr "Форматот ICO"
 
-#: gdk-pixbuf/io-ico.c:228 gdk-pixbuf/io-ico.c:242 gdk-pixbuf/io-ico.c:291
-#: gdk-pixbuf/io-ico.c:302 gdk-pixbuf/io-ico.c:395
+#: cdk-pixbuf/io-ico.c:228 cdk-pixbuf/io-ico.c:242 cdk-pixbuf/io-ico.c:291
+#: cdk-pixbuf/io-ico.c:302 cdk-pixbuf/io-ico.c:395
 msgid "Invalid header in icon"
 msgstr "Невалидно заглавје во иконата"
 
-#: gdk-pixbuf/io-ico.c:257 gdk-pixbuf/io-ico.c:312 gdk-pixbuf/io-ico.c:405
-#: gdk-pixbuf/io-ico.c:458 gdk-pixbuf/io-ico.c:488
+#: cdk-pixbuf/io-ico.c:257 cdk-pixbuf/io-ico.c:312 cdk-pixbuf/io-ico.c:405
+#: cdk-pixbuf/io-ico.c:458 cdk-pixbuf/io-ico.c:488
 msgid "Not enough memory to load icon"
 msgstr "Нема доволно меморија за вчитување на иконата"
 
-#: gdk-pixbuf/io-ico.c:338
+#: cdk-pixbuf/io-ico.c:338
 msgid "Compressed icons are not supported"
 msgstr "Не се поддржани компресирани икони"
 
-#: gdk-pixbuf/io-ico.c:358
+#: cdk-pixbuf/io-ico.c:358
 msgid "Icon has zero width"
 msgstr "Иконата има нула широчина"
 
-#: gdk-pixbuf/io-ico.c:368
+#: cdk-pixbuf/io-ico.c:368
 msgid "Icon has zero height"
 msgstr "Иконата има нула височина"
 
-#: gdk-pixbuf/io-ico.c:443
+#: cdk-pixbuf/io-ico.c:443
 msgid "Unsupported icon type"
 msgstr "Неподдржан тип на икони"
 
-#: gdk-pixbuf/io-ico.c:537
+#: cdk-pixbuf/io-ico.c:537
 msgid "Not enough memory to load ICO file"
 msgstr "Нема доволно меморија за вчитувае на ICO датотеката"
 
-#: gdk-pixbuf/io-ico.c:1002
+#: cdk-pixbuf/io-ico.c:1002
 msgid "Image too large to be saved as ICO"
 msgstr "Сликата е преголема за да биде зачувана како ICO"
 
-#: gdk-pixbuf/io-ico.c:1013
+#: cdk-pixbuf/io-ico.c:1013
 msgid "Cursor hotspot outside image"
 msgstr "Место за стрелката надвор од сликата"
 
-#: gdk-pixbuf/io-ico.c:1036
+#: cdk-pixbuf/io-ico.c:1036
 #, c-format
 msgid "Unsupported depth for ICO file: %d"
 msgstr "Неподдржана длабочина за ICO датотеката: %d"
 
-#: gdk-pixbuf/io-jasper.c:74
+#: cdk-pixbuf/io-jasper.c:74
 #, fuzzy
 msgid "Couldn't allocate memory for stream"
 msgstr "Не можам да алоцирам меморија за заглавјето"
 
-#: gdk-pixbuf/io-jasper.c:104
+#: cdk-pixbuf/io-jasper.c:104
 #, fuzzy
 msgid "Couldn't decode image"
 msgstr "Не можам да го конвертирам името на датотеката"
 
-#: gdk-pixbuf/io-jasper.c:122
+#: cdk-pixbuf/io-jasper.c:122
 #, fuzzy
 msgid "Transformed JPEG2000 has zero width or height"
 msgstr "Трансформираната JPEG има нула широчина и височина."
 
-#: gdk-pixbuf/io-jasper.c:136
+#: cdk-pixbuf/io-jasper.c:136
 #, fuzzy
 msgid "Image type currently not supported"
 msgstr "Типот на слика „%s“ не е поддржан"
 
-#: gdk-pixbuf/io-jasper.c:148 gdk-pixbuf/io-jasper.c:156
+#: cdk-pixbuf/io-jasper.c:148 cdk-pixbuf/io-jasper.c:156
 #, fuzzy
 msgid "Couldn't allocate memory for color profile"
 msgstr "Не можам да алоцирам меморија за вчитување на JPEG датотеката"
 
-#: gdk-pixbuf/io-jasper.c:182
+#: cdk-pixbuf/io-jasper.c:182
 #, fuzzy
 msgid "Insufficient memory to open JPEG 2000 file"
 msgstr "Нема доволно меморија за отворање на TIFF датотеката"
 
-#: gdk-pixbuf/io-jasper.c:261
+#: cdk-pixbuf/io-jasper.c:261
 #, fuzzy
 msgid "Couldn't allocate memory to buffer image data"
 msgstr "Не можам да алоцирам меморија за податоците на линијата"
 
-#: gdk-pixbuf/io-jasper.c:305
+#: cdk-pixbuf/io-jasper.c:305
 #, fuzzy
 msgid "The JPEG 2000 image format"
 msgstr "JPEG формат на слика"
 
-#: gdk-pixbuf/io-jpeg.c:116
+#: cdk-pixbuf/io-jpeg.c:116
 #, c-format
 msgid "Error interpreting JPEG image file (%s)"
 msgstr "Грешка при интерпретација на JPEG датотеката (%s)"
 
-#: gdk-pixbuf/io-jpeg.c:527
+#: cdk-pixbuf/io-jpeg.c:527
 msgid ""
 "Insufficient memory to load image, try exiting some applications to free "
 "memory"
@@ -479,107 +479,107 @@ msgstr ""
 "Недоволно меморија за да се вчита сликата, пробајте да исклучите некои од "
 "апликациите за да ослободите меморија"
 
-#: gdk-pixbuf/io-jpeg.c:568 gdk-pixbuf/io-jpeg.c:781
+#: cdk-pixbuf/io-jpeg.c:568 cdk-pixbuf/io-jpeg.c:781
 #, c-format
 msgid "Unsupported JPEG color space (%s)"
 msgstr "Неподдржан простор помеѓу бојата во JPEG (%s)"
 
-#: gdk-pixbuf/io-jpeg.c:680 gdk-pixbuf/io-jpeg.c:950 gdk-pixbuf/io-jpeg.c:1183
-#: gdk-pixbuf/io-jpeg.c:1192
+#: cdk-pixbuf/io-jpeg.c:680 cdk-pixbuf/io-jpeg.c:950 cdk-pixbuf/io-jpeg.c:1183
+#: cdk-pixbuf/io-jpeg.c:1192
 msgid "Couldn't allocate memory for loading JPEG file"
 msgstr "Не можам да алоцирам меморија за вчитување на JPEG датотеката"
 
-#: gdk-pixbuf/io-jpeg.c:925
+#: cdk-pixbuf/io-jpeg.c:925
 msgid "Transformed JPEG has zero width or height."
 msgstr "Трансформираната JPEG има нула широчина и височина."
 
-#: gdk-pixbuf/io-pcx.c:186
+#: cdk-pixbuf/io-pcx.c:186
 msgid "Couldn't allocate memory for header"
 msgstr "Не можам да алоцирам меморија за заглавјето"
 
-#: gdk-pixbuf/io-pcx.c:201 gdk-pixbuf/io-pcx.c:559
+#: cdk-pixbuf/io-pcx.c:201 cdk-pixbuf/io-pcx.c:559
 msgid "Couldn't allocate memory for context buffer"
 msgstr "Не можам да алоцирам меморија за контекстниот бафер"
 
-#: gdk-pixbuf/io-pcx.c:600
+#: cdk-pixbuf/io-pcx.c:600
 msgid "Image has invalid width and/or height"
 msgstr "Сликата има невалидна широчина и/или височина"
 
-#: gdk-pixbuf/io-pcx.c:612 gdk-pixbuf/io-pcx.c:673
+#: cdk-pixbuf/io-pcx.c:612 cdk-pixbuf/io-pcx.c:673
 msgid "Image has unsupported bpp"
 msgstr "Сликата има неподдржан bpp"
 
-#: gdk-pixbuf/io-pcx.c:617 gdk-pixbuf/io-pcx.c:625
+#: cdk-pixbuf/io-pcx.c:617 cdk-pixbuf/io-pcx.c:625
 #, c-format
 msgid "Image has unsupported number of %d-bit planes"
 msgstr "Сликата има неподдржан број на %d bit planes"
 
-#: gdk-pixbuf/io-pcx.c:641
+#: cdk-pixbuf/io-pcx.c:641
 msgid "Couldn't create new pixbuf"
 msgstr "Не можам да креирам нов pixbuf"
 
-#: gdk-pixbuf/io-pcx.c:649
+#: cdk-pixbuf/io-pcx.c:649
 msgid "Couldn't allocate memory for line data"
 msgstr "Не можам да алоцирам меморија за податоците на линијата"
 
-#: gdk-pixbuf/io-pcx.c:656
+#: cdk-pixbuf/io-pcx.c:656
 #, fuzzy
 msgid "Couldn't allocate memory for PCX image"
 msgstr "Не можам да алоцирам меморија за заглавјето"
 
-#: gdk-pixbuf/io-pcx.c:703
+#: cdk-pixbuf/io-pcx.c:703
 msgid "Didn't get all lines of PCX image"
 msgstr "Не ги добив сите линии за PCX сликата"
 
-#: gdk-pixbuf/io-pcx.c:710
+#: cdk-pixbuf/io-pcx.c:710
 msgid "No palette found at end of PCX data"
 msgstr "Не најдов палета на крајот од PCX податоците"
 
-#: gdk-pixbuf/io-pcx.c:755
+#: cdk-pixbuf/io-pcx.c:755
 msgid "The PCX image format"
 msgstr "PCX формат на слика"
 
-#: gdk-pixbuf/io-pixdata.c:148
+#: cdk-pixbuf/io-pixdata.c:148
 #, fuzzy
 msgid "Transformed pixbuf has zero width or height."
 msgstr "Трансформираната PNG има нула широчина и височина."
 
-#: gdk-pixbuf/io-pixdata.c:186
+#: cdk-pixbuf/io-pixdata.c:186
 #, fuzzy
 msgid "The GdkPixdata format"
 msgstr "Форматот GIF"
 
-#: gdk-pixbuf/io-png.c:54
+#: cdk-pixbuf/io-png.c:54
 msgid "Bits per channel of PNG image is invalid."
 msgstr "Битовите по канал за PNG сликата се невалидни."
 
-#: gdk-pixbuf/io-png.c:135 gdk-pixbuf/io-png.c:641
+#: cdk-pixbuf/io-png.c:135 cdk-pixbuf/io-png.c:641
 msgid "Transformed PNG has zero width or height."
 msgstr "Трансформираната PNG има нула широчина и височина."
 
-#: gdk-pixbuf/io-png.c:143
+#: cdk-pixbuf/io-png.c:143
 msgid "Bits per channel of transformed PNG is not 8."
 msgstr "Битовите по канал на трансформираната PNG не се 8."
 
-#: gdk-pixbuf/io-png.c:152
+#: cdk-pixbuf/io-png.c:152
 msgid "Transformed PNG not RGB or RGBA."
 msgstr "Трансформирана PNG а не RGB или RGBA."
 
-#: gdk-pixbuf/io-png.c:161
+#: cdk-pixbuf/io-png.c:161
 msgid "Transformed PNG has unsupported number of channels, must be 3 or 4."
 msgstr ""
 "Трансформираната PNG содржи неподдржани канали, мораат да биде 3 или 4."
 
-#: gdk-pixbuf/io-png.c:182
+#: cdk-pixbuf/io-png.c:182
 #, c-format
 msgid "Fatal error in PNG image file: %s"
 msgstr "Фатална грешка во PNG сликата: %s"
 
-#: gdk-pixbuf/io-png.c:315
+#: cdk-pixbuf/io-png.c:315
 msgid "Insufficient memory to load PNG file"
 msgstr "Нема доволно меморија за вчитување на PNG датотеката"
 
-#: gdk-pixbuf/io-png.c:656
+#: cdk-pixbuf/io-png.c:656
 #, c-format
 msgid ""
 "Insufficient memory to store a %ld by %ld image; try exiting some "
@@ -588,31 +588,31 @@ msgstr ""
 "Нема доволно меморија за да се складира %ld од %ld сликата; пробајте да "
 "исклучите неколку апликации за да се намали употребата на меморијата"
 
-#: gdk-pixbuf/io-png.c:719
+#: cdk-pixbuf/io-png.c:719
 msgid "Fatal error reading PNG image file"
 msgstr "Фатална грешка при вчитување на PNG сликата"
 
-#: gdk-pixbuf/io-png.c:768
+#: cdk-pixbuf/io-png.c:768
 #, c-format
 msgid "Fatal error reading PNG image file: %s"
 msgstr "Фатлна грешка при читањето на PNG сликата: %s"
 
-#: gdk-pixbuf/io-png.c:862
+#: cdk-pixbuf/io-png.c:862
 msgid ""
 "Keys for PNG text chunks must have at least 1 and at most 79 characters."
 msgstr ""
 "Копчињата за текстот на PNG мора да бидат помеѓу 1 и 70 букви или броеви."
 
-#: gdk-pixbuf/io-png.c:871
+#: cdk-pixbuf/io-png.c:871
 msgid "Keys for PNG text chunks must be ASCII characters."
 msgstr "Копчињата за текстот за PNG мораат да бидат во ASCII букви или броеви."
 
-#: gdk-pixbuf/io-png.c:885 gdk-pixbuf/io-tiff.c:737
+#: cdk-pixbuf/io-png.c:885 cdk-pixbuf/io-tiff.c:737
 #, c-format
 msgid "Color profile has invalid length %d."
 msgstr ""
 
-#: gdk-pixbuf/io-png.c:898
+#: cdk-pixbuf/io-png.c:898
 #, c-format
 msgid ""
 "PNG compression level must be a value between 0 and 9; value '%s' could not "
@@ -621,7 +621,7 @@ msgstr ""
 "Нивото на компресија на PNG сликата мора да биде помеѓу 0 и 9; вредноста "
 "'%s' не може да биде парсирана."
 
-#: gdk-pixbuf/io-png.c:911
+#: cdk-pixbuf/io-png.c:911
 #, c-format
 msgid ""
 "PNG compression level must be a value between 0 and 9; value '%d' is not "
@@ -630,87 +630,87 @@ msgstr ""
 "Нивото на компресија на PNG сликата мора да биде помеѓу 0 и 9; вредноста "
 "'%d' не е дозволена."
 
-#: gdk-pixbuf/io-png.c:959
+#: cdk-pixbuf/io-png.c:959
 #, c-format
 msgid "Value for PNG text chunk %s cannot be converted to ISO-8859-1 encoding."
 msgstr ""
 "Вредноста на текстот за PNG %s не може да биде конвертирана во енкодингот "
 "ISO-8859-1."
 
-#: gdk-pixbuf/io-png.c:1122
+#: cdk-pixbuf/io-png.c:1122
 msgid "The PNG image format"
 msgstr "PNG форматот на слика"
 
-#: gdk-pixbuf/io-pnm.c:248
+#: cdk-pixbuf/io-pnm.c:248
 msgid "PNM loader expected to find an integer, but didn't"
 msgstr "Вчитувачот на PNM очекуваше да најде цело број, но не најде"
 
-#: gdk-pixbuf/io-pnm.c:280
+#: cdk-pixbuf/io-pnm.c:280
 msgid "PNM file has an incorrect initial byte"
 msgstr "PNM датотеката има неточен почетен бајт"
 
-#: gdk-pixbuf/io-pnm.c:310
+#: cdk-pixbuf/io-pnm.c:310
 msgid "PNM file is not in a recognized PNM subformat"
 msgstr "PNМ датотеката не е препозната како PNM подформат"
 
-#: gdk-pixbuf/io-pnm.c:335
+#: cdk-pixbuf/io-pnm.c:335
 msgid "PNM file has an image width of 0"
 msgstr "PNM датотеката има слика со широчина од 0"
 
-#: gdk-pixbuf/io-pnm.c:356
+#: cdk-pixbuf/io-pnm.c:356
 msgid "PNM file has an image height of 0"
 msgstr "PNM датотеката има слика со височина од 0"
 
-#: gdk-pixbuf/io-pnm.c:379
+#: cdk-pixbuf/io-pnm.c:379
 msgid "Maximum color value in PNM file is 0"
 msgstr "Максимална вредност на боја во PNM датотека е 0"
 
-#: gdk-pixbuf/io-pnm.c:387
+#: cdk-pixbuf/io-pnm.c:387
 msgid "Maximum color value in PNM file is too large"
 msgstr "Максималната вредност на боја во PNM датотеката е преголема"
 
-#: gdk-pixbuf/io-pnm.c:427 gdk-pixbuf/io-pnm.c:457 gdk-pixbuf/io-pnm.c:502
+#: cdk-pixbuf/io-pnm.c:427 cdk-pixbuf/io-pnm.c:457 cdk-pixbuf/io-pnm.c:502
 msgid "Raw PNM image type is invalid"
 msgstr "Грубиот тип на PNM слика е невалиден"
 
-#: gdk-pixbuf/io-pnm.c:652
+#: cdk-pixbuf/io-pnm.c:652
 msgid "PNM image loader does not support this PNM subformat"
 msgstr "Вчитувачот на PNM слики не го поддржувам овој подформат на PNM"
 
-#: gdk-pixbuf/io-pnm.c:739 gdk-pixbuf/io-pnm.c:966
+#: cdk-pixbuf/io-pnm.c:739 cdk-pixbuf/io-pnm.c:966
 msgid "Raw PNM formats require exactly one whitespace before sample data"
 msgstr "Груби PNM формати бараат точно едно бело место пред податоците"
 
-#: gdk-pixbuf/io-pnm.c:766
+#: cdk-pixbuf/io-pnm.c:766
 msgid "Cannot allocate memory for loading PNM image"
 msgstr "Не можам да алоцирам меморија за вчитување на PNM сликата"
 
-#: gdk-pixbuf/io-pnm.c:816
+#: cdk-pixbuf/io-pnm.c:816
 msgid "Insufficient memory to load PNM context struct"
 msgstr "Нема доволно меморија за да се вчитам PNM контекстот"
 
-#: gdk-pixbuf/io-pnm.c:867
+#: cdk-pixbuf/io-pnm.c:867
 msgid "Unexpected end of PNM image data"
 msgstr "Неочекуван крај на податоците за PNM сликата"
 
-#: gdk-pixbuf/io-pnm.c:995
+#: cdk-pixbuf/io-pnm.c:995
 msgid "Insufficient memory to load PNM file"
 msgstr "Нема доволно меморија за вчитување на PNM датотеката"
 
-#: gdk-pixbuf/io-pnm.c:1079
+#: cdk-pixbuf/io-pnm.c:1079
 msgid "The PNM/PBM/PGM/PPM image format family"
 msgstr "PNM/PBM/PGM/PPM фамилија на формати на слики"
 
-#: gdk-pixbuf/io-qtif.c:128
+#: cdk-pixbuf/io-qtif.c:128
 msgid "Input file descriptor is NULL."
 msgstr ""
 
-#: gdk-pixbuf/io-qtif.c:143
+#: cdk-pixbuf/io-qtif.c:143
 #, fuzzy
 msgid "Failed to read QTIF header"
 msgstr "Не можам да го запишам заглавието\n"
 
-#: gdk-pixbuf/io-qtif.c:152 gdk-pixbuf/io-qtif.c:189 gdk-pixbuf/io-qtif.c:460
+#: cdk-pixbuf/io-qtif.c:152 cdk-pixbuf/io-qtif.c:189 cdk-pixbuf/io-qtif.c:460
 #, c-format
 msgid "QTIF atom size too large (%d byte)"
 msgid_plural "QTIF atom size too large (%d bytes)"
@@ -718,7 +718,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: gdk-pixbuf/io-qtif.c:175
+#: cdk-pixbuf/io-qtif.c:175
 #, fuzzy, c-format
 msgid "Failed to allocate %d byte for file read buffer"
 msgid_plural "Failed to allocate %d bytes for file read buffer"
@@ -726,12 +726,12 @@ msgstr[0] "не успеав да алоцирам бафер на сликат�
 msgstr[1] "не успеав да алоцирам бафер на сликата од %u бајт"
 msgstr[2] "не успеав да алоцирам бафер на сликата од %u бајт"
 
-#: gdk-pixbuf/io-qtif.c:206
+#: cdk-pixbuf/io-qtif.c:206
 #, fuzzy, c-format
 msgid "File error when reading QTIF atom: %s"
 msgstr "Грешка при читањето на GIF-от: %s"
 
-#: gdk-pixbuf/io-qtif.c:243
+#: cdk-pixbuf/io-qtif.c:243
 #, c-format
 msgid "Failed to skip the next %d byte with seek()."
 msgid_plural "Failed to skip the next %d bytes with seek()."
@@ -739,239 +739,239 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: gdk-pixbuf/io-qtif.c:270
+#: cdk-pixbuf/io-qtif.c:270
 #, fuzzy
 msgid "Failed to allocate QTIF context structure."
 msgstr "Не можам да алоцирам меморија во TGA контекстот"
 
-#: gdk-pixbuf/io-qtif.c:330
+#: cdk-pixbuf/io-qtif.c:330
 #, fuzzy
 msgid "Failed to create GdkPixbufLoader object."
 msgstr "Не успеав да го запишам индексирањето на папката\n"
 
-#: gdk-pixbuf/io-qtif.c:434
+#: cdk-pixbuf/io-qtif.c:434
 #, fuzzy
 msgid "Failed to find an image data atom."
 msgstr "Не успеав да ја отворам TIFF сликата"
 
-#: gdk-pixbuf/io-qtif.c:619
+#: cdk-pixbuf/io-qtif.c:619
 #, fuzzy
 msgid "The QTIF image format"
 msgstr "TIFF форматот на слика"
 
-#: gdk-pixbuf/io-ras.c:125
+#: cdk-pixbuf/io-ras.c:125
 msgid "RAS image has bogus header data"
 msgstr "RAS сликата има погрешни податоци во заглавјето"
 
-#: gdk-pixbuf/io-ras.c:147
+#: cdk-pixbuf/io-ras.c:147
 msgid "RAS image has unknown type"
 msgstr "RAS сликата и од непознат тип"
 
-#: gdk-pixbuf/io-ras.c:155
+#: cdk-pixbuf/io-ras.c:155
 msgid "unsupported RAS image variation"
 msgstr "неподдржана варијација на RAS слика"
 
-#: gdk-pixbuf/io-ras.c:170 gdk-pixbuf/io-ras.c:199
+#: cdk-pixbuf/io-ras.c:170 cdk-pixbuf/io-ras.c:199
 msgid "Not enough memory to load RAS image"
 msgstr "Нема доволно меморија за вчитување на RAS сликата"
 
-#: gdk-pixbuf/io-ras.c:544
+#: cdk-pixbuf/io-ras.c:544
 msgid "The Sun raster image format"
 msgstr "Формат на слика Sun raster"
 
-#: gdk-pixbuf/io-tga.c:153
+#: cdk-pixbuf/io-tga.c:153
 msgid "Cannot allocate memory for IOBuffer struct"
 msgstr "Не можам да алоцирам меморија за IOBuffer"
 
-#: gdk-pixbuf/io-tga.c:172
+#: cdk-pixbuf/io-tga.c:172
 msgid "Cannot allocate memory for IOBuffer data"
 msgstr "Не можам да алоцирам меморија за податоците на IOBuffer"
 
-#: gdk-pixbuf/io-tga.c:183
+#: cdk-pixbuf/io-tga.c:183
 msgid "Cannot realloc IOBuffer data"
 msgstr "Не можам да реалоцирам податоци за IOBuffer"
 
-#: gdk-pixbuf/io-tga.c:213
+#: cdk-pixbuf/io-tga.c:213
 msgid "Cannot allocate temporary IOBuffer data"
 msgstr "Не можам да алоцирам привремени податоци за IOBuffer"
 
-#: gdk-pixbuf/io-tga.c:346
+#: cdk-pixbuf/io-tga.c:346
 msgid "Cannot allocate new pixbuf"
 msgstr "Не можам да алоцирам нов pixbuf"
 
-#: gdk-pixbuf/io-tga.c:685
+#: cdk-pixbuf/io-tga.c:685
 #, fuzzy
 msgid "Image is corrupted or truncated"
 msgstr "GIF сликата беше скратена или нецелосна."
 
-#: gdk-pixbuf/io-tga.c:692
+#: cdk-pixbuf/io-tga.c:692
 msgid "Cannot allocate colormap structure"
 msgstr "Не можам да алоцирам структура на мапа за бои"
 
-#: gdk-pixbuf/io-tga.c:699
+#: cdk-pixbuf/io-tga.c:699
 msgid "Cannot allocate colormap entries"
 msgstr "Не можам да алоцирам записи за мапа на бои"
 
-#: gdk-pixbuf/io-tga.c:721
+#: cdk-pixbuf/io-tga.c:721
 msgid "Unexpected bitdepth for colormap entries"
 msgstr "Неочекувана длабочиња на бит за записит за мапата на бои"
 
-#: gdk-pixbuf/io-tga.c:739
+#: cdk-pixbuf/io-tga.c:739
 msgid "Cannot allocate TGA header memory"
 msgstr "Не можам да алоцирам меморија во заглавјето на TGA"
 
-#: gdk-pixbuf/io-tga.c:772
+#: cdk-pixbuf/io-tga.c:772
 msgid "TGA image has invalid dimensions"
 msgstr "TGA сликата има невалидни димензии"
 
-#: gdk-pixbuf/io-tga.c:778 gdk-pixbuf/io-tga.c:787 gdk-pixbuf/io-tga.c:797
-#: gdk-pixbuf/io-tga.c:807 gdk-pixbuf/io-tga.c:814
+#: cdk-pixbuf/io-tga.c:778 cdk-pixbuf/io-tga.c:787 cdk-pixbuf/io-tga.c:797
+#: cdk-pixbuf/io-tga.c:807 cdk-pixbuf/io-tga.c:814
 msgid "TGA image type not supported"
 msgstr "TGA сликата не е поддржана"
 
-#: gdk-pixbuf/io-tga.c:861
+#: cdk-pixbuf/io-tga.c:861
 msgid "Cannot allocate memory for TGA context struct"
 msgstr "Не можам да алоцирам меморија во TGA контекстот"
 
-#: gdk-pixbuf/io-tga.c:926
+#: cdk-pixbuf/io-tga.c:926
 msgid "Excess data in file"
 msgstr "Поголемо количество на податоци во датотеката"
 
-#: gdk-pixbuf/io-tga.c:1007
+#: cdk-pixbuf/io-tga.c:1007
 msgid "The Targa image format"
 msgstr "Targa форматот на слика"
 
-#: gdk-pixbuf/io-tiff.c:164
+#: cdk-pixbuf/io-tiff.c:164
 msgid "Could not get image width (bad TIFF file)"
 msgstr "Не можам да ја добијам широчината на сликата (лоша TIFF датотека)"
 
-#: gdk-pixbuf/io-tiff.c:171
+#: cdk-pixbuf/io-tiff.c:171
 msgid "Could not get image height (bad TIFF file)"
 msgstr "Не можам да ја добијам височината на сликата (лоша TIFF датотека)"
 
-#: gdk-pixbuf/io-tiff.c:179
+#: cdk-pixbuf/io-tiff.c:179
 msgid "Width or height of TIFF image is zero"
 msgstr "Височината или широчината на TIFF сликата е нула"
 
-#: gdk-pixbuf/io-tiff.c:188 gdk-pixbuf/io-tiff.c:197
+#: cdk-pixbuf/io-tiff.c:188 cdk-pixbuf/io-tiff.c:197
 msgid "Dimensions of TIFF image too large"
 msgstr "Димензиите на TIFF сликате се преголеми"
 
-#: gdk-pixbuf/io-tiff.c:221 gdk-pixbuf/io-tiff.c:233 gdk-pixbuf/io-tiff.c:560
+#: cdk-pixbuf/io-tiff.c:221 cdk-pixbuf/io-tiff.c:233 cdk-pixbuf/io-tiff.c:560
 msgid "Insufficient memory to open TIFF file"
 msgstr "Нема доволно меморија за отворање на TIFF датотеката"
 
-#: gdk-pixbuf/io-tiff.c:294
+#: cdk-pixbuf/io-tiff.c:294
 msgid "Failed to load RGB data from TIFF file"
 msgstr "Не успеав да ги вчитам податоците за RGB за TIFF датотеката"
 
-#: gdk-pixbuf/io-tiff.c:350
+#: cdk-pixbuf/io-tiff.c:350
 msgid "Failed to open TIFF image"
 msgstr "Не успеав да ја отворам TIFF сликата"
 
-#: gdk-pixbuf/io-tiff.c:362 gdk-pixbuf/io-tiff.c:777
+#: cdk-pixbuf/io-tiff.c:362 cdk-pixbuf/io-tiff.c:777
 msgid "TIFFClose operation failed"
 msgstr "Операцијата за затворање на TIFF не успеа"
 
-#: gdk-pixbuf/io-tiff.c:492 gdk-pixbuf/io-tiff.c:505
+#: cdk-pixbuf/io-tiff.c:492 cdk-pixbuf/io-tiff.c:505
 msgid "Failed to load TIFF image"
 msgstr "Не успеав да ја вчитам TIFF сликата"
 
-#: gdk-pixbuf/io-tiff.c:691
+#: cdk-pixbuf/io-tiff.c:691
 msgid "Failed to save TIFF image"
 msgstr "Не успеав да ја зачувам TIFF сликата"
 
-#: gdk-pixbuf/io-tiff.c:726
+#: cdk-pixbuf/io-tiff.c:726
 msgid "TIFF compression doesn't refer to a valid codec."
 msgstr ""
 
-#: gdk-pixbuf/io-tiff.c:766
+#: cdk-pixbuf/io-tiff.c:766
 msgid "Failed to write TIFF data"
 msgstr "Не успеав да запишам TIFF податоци"
 
-#: gdk-pixbuf/io-tiff.c:813
+#: cdk-pixbuf/io-tiff.c:813
 msgid "Couldn't write to TIFF file"
 msgstr "Не можам да запишам во TIFF датотека"
 
-#: gdk-pixbuf/io-tiff.c:868
+#: cdk-pixbuf/io-tiff.c:868
 msgid "The TIFF image format"
 msgstr "TIFF форматот на слика"
 
-#: gdk-pixbuf/io-wbmp.c:245
+#: cdk-pixbuf/io-wbmp.c:245
 msgid "Image has zero width"
 msgstr "Сликата има нула широчина"
 
-#: gdk-pixbuf/io-wbmp.c:263
+#: cdk-pixbuf/io-wbmp.c:263
 msgid "Image has zero height"
 msgstr "Сликата има нула височина"
 
-#: gdk-pixbuf/io-wbmp.c:274
+#: cdk-pixbuf/io-wbmp.c:274
 msgid "Not enough memory to load image"
 msgstr "Нема доволно меморија за вчитување на сликата"
 
-#: gdk-pixbuf/io-wbmp.c:333
+#: cdk-pixbuf/io-wbmp.c:333
 msgid "Couldn't save the rest"
 msgstr "Не можев да го зачувам остатокот"
 
-#: gdk-pixbuf/io-wbmp.c:374
+#: cdk-pixbuf/io-wbmp.c:374
 msgid "The WBMP image format"
 msgstr "WBMP форматот на слика"
 
-#: gdk-pixbuf/io-xbm.c:296
+#: cdk-pixbuf/io-xbm.c:296
 msgid "Invalid XBM file"
 msgstr "Невалидна XBM датотека"
 
-#: gdk-pixbuf/io-xbm.c:306
+#: cdk-pixbuf/io-xbm.c:306
 msgid "Insufficient memory to load XBM image file"
 msgstr "Нема доволно меморија за вчитување на XBM слика"
 
-#: gdk-pixbuf/io-xbm.c:454
+#: cdk-pixbuf/io-xbm.c:454
 msgid "Failed to write to temporary file when loading XBM image"
 msgstr ""
 "Не успеав да запишам во привремената датотека при вчитување на XBM сликата"
 
-#: gdk-pixbuf/io-xbm.c:493
+#: cdk-pixbuf/io-xbm.c:493
 msgid "The XBM image format"
 msgstr "XBM форматот на слика"
 
-#: gdk-pixbuf/io-xpm.c:469
+#: cdk-pixbuf/io-xpm.c:469
 msgid "No XPM header found"
 msgstr "Не е пронајдено заглавје за XPM"
 
-#: gdk-pixbuf/io-xpm.c:478
+#: cdk-pixbuf/io-xpm.c:478
 msgid "Invalid XPM header"
 msgstr "Невалидно заглавје на XPM"
 
-#: gdk-pixbuf/io-xpm.c:486
+#: cdk-pixbuf/io-xpm.c:486
 msgid "XPM file has image width <= 0"
 msgstr "XPM датотеката има широчина <= 0"
 
-#: gdk-pixbuf/io-xpm.c:494
+#: cdk-pixbuf/io-xpm.c:494
 msgid "XPM file has image height <= 0"
 msgstr "XPM датотеката има височина <= 0"
 
-#: gdk-pixbuf/io-xpm.c:502
+#: cdk-pixbuf/io-xpm.c:502
 msgid "XPM has invalid number of chars per pixel"
 msgstr "XPM има невалиден број на промеливи по пиксел"
 
-#: gdk-pixbuf/io-xpm.c:511
+#: cdk-pixbuf/io-xpm.c:511
 msgid "XPM file has invalid number of colors"
 msgstr "XPM датотеката има невалиден број на бои"
 
-#: gdk-pixbuf/io-xpm.c:523 gdk-pixbuf/io-xpm.c:532 gdk-pixbuf/io-xpm.c:584
+#: cdk-pixbuf/io-xpm.c:523 cdk-pixbuf/io-xpm.c:532 cdk-pixbuf/io-xpm.c:584
 msgid "Cannot allocate memory for loading XPM image"
 msgstr "Не можам да алоцирам меморија за вчитување на XPM сликата"
 
-#: gdk-pixbuf/io-xpm.c:546
+#: cdk-pixbuf/io-xpm.c:546
 msgid "Cannot read XPM colormap"
 msgstr "Не можам да ја вчитам бојата на XPM"
 
-#: gdk-pixbuf/io-xpm.c:778
+#: cdk-pixbuf/io-xpm.c:778
 msgid "Failed to write to temporary file when loading XPM image"
 msgstr ""
 "Не успеав да запишам во привремената датотека при вчитување на XPM сликата"
 
-#: gdk-pixbuf/io-xpm.c:817
+#: cdk-pixbuf/io-xpm.c:817
 msgid "The XPM image format"
 msgstr "XPM формат на слика"
 

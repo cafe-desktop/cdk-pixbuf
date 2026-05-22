@@ -19,7 +19,7 @@
  *
  */
 
-#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <cdk-pixbuf/cdk-pixbuf.h>
 
 #ifdef THUMBNAILER_RETURNS_PIXBUF
 #ifdef THUMBNAILER_RETURNS_DATA

@@ -35,9 +35,9 @@
 #include <glib-object.h>
 #include <glib/gi18n-lib.h>
 
-#include "gdk-pixbuf-core.h"
-#include "gdk-pixbuf-io.h"
-#include "gdk-pixbuf-buffer-queue-private.h"
+#include "cdk-pixbuf-core.h"
+#include "cdk-pixbuf-io.h"
+#include "cdk-pixbuf-buffer-queue-private.h"
 
 #undef DEBUG_TGA
 
@@ -184,7 +184,7 @@ static gboolean
 tga_skip_rest_of_image (TGAContext  *ctx,
                         GError     **err)
 {
-  gdk_pixbuf_buffer_queue_flush (ctx->input, gdk_pixbuf_buffer_queue_get_size (ctx->input));
+  cdk_pixbuf_buffer_queue_flush (ctx->input, cdk_pixbuf_buffer_queue_get_size (ctx->input));
 
   return TRUE;
 }
@@ -193,15 +193,15 @@ static inline void
 tga_write_pixel (TGAContext     *ctx,
                  const TGAColor *color)
 {
-  gint width = gdk_pixbuf_get_width (ctx->pbuf);
-  gint height = gdk_pixbuf_get_height (ctx->pbuf);
-  gint rowstride = gdk_pixbuf_get_rowstride (ctx->pbuf);
-  gint n_channels = gdk_pixbuf_get_n_channels (ctx->pbuf);
+  gint width = cdk_pixbuf_get_width (ctx->pbuf);
+  gint height = cdk_pixbuf_get_height (ctx->pbuf);
+  gint rowstride = cdk_pixbuf_get_rowstride (ctx->pbuf);
+  gint n_channels = cdk_pixbuf_get_n_channels (ctx->pbuf);
 
   guint x = (ctx->hdr->flags & TGA_ORIGIN_RIGHT) ? width - ctx->pbuf_x - 1 : ctx->pbuf_x;
   guint y = (ctx->hdr->flags & TGA_ORIGIN_UPPER) ? ctx->pbuf_y : height - ctx->pbuf_y - 1;
 
-  memcpy (gdk_pixbuf_get_pixels (ctx->pbuf) + y * rowstride + x * n_channels, color, n_channels);
+  memcpy (cdk_pixbuf_get_pixels (ctx->pbuf) + y * rowstride + x * n_channels, color, n_channels);
 
   ctx->pbuf_x++;
   if (ctx->pbuf_x >= width)
@@ -214,8 +214,8 @@ tga_write_pixel (TGAContext     *ctx,
 static gsize
 tga_pixels_remaining (TGAContext *ctx)
 {
-  gint width = gdk_pixbuf_get_width (ctx->pbuf);
-  gint height = gdk_pixbuf_get_height (ctx->pbuf);
+  gint width = cdk_pixbuf_get_width (ctx->pbuf);
+  gint height = cdk_pixbuf_get_height (ctx->pbuf);
 
   return width * (height - ctx->pbuf_y) - ctx->pbuf_x;
 }
@@ -223,7 +223,7 @@ tga_pixels_remaining (TGAContext *ctx)
 static gboolean
 tga_all_pixels_written (TGAContext *ctx)
 {
-  gint height = gdk_pixbuf_get_height (ctx->pbuf);
+  gint height = cdk_pixbuf_get_height (ctx->pbuf);
 
   return ctx->pbuf_y >= height;
 }
@@ -231,8 +231,8 @@ tga_all_pixels_written (TGAContext *ctx)
 static void
 tga_emit_update (TGAContext *ctx)
 {
-  gint width = gdk_pixbuf_get_width (ctx->pbuf);
-  gint height = gdk_pixbuf_get_height (ctx->pbuf);
+  gint width = cdk_pixbuf_get_width (ctx->pbuf);
+  gint height = cdk_pixbuf_get_height (ctx->pbuf);
 
   /* We only notify row-by-row for now.
    * I was too lazy to handle line-breaks.
@@ -364,7 +364,7 @@ static gboolean fill_in_context(TGAContext *ctx, GError **err)
 			return FALSE;
 	}
 
-	ctx->pbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, alpha, 8, w, h);
+	ctx->pbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, alpha, 8, w, h);
 
 	if (!ctx->pbuf) {
 		g_set_error_literal(err, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
@@ -385,10 +385,10 @@ tga_load_image (TGAContext  *ctx,
   const guchar *data;
 
   bytes_per_pixel = (ctx->hdr->bpp + 7) / 8;
-  size = gdk_pixbuf_buffer_queue_get_size (ctx->input) / bytes_per_pixel;
+  size = cdk_pixbuf_buffer_queue_get_size (ctx->input) / bytes_per_pixel;
   size = MIN (size, tga_pixels_remaining (ctx));
 
-  bytes = gdk_pixbuf_buffer_queue_pull (ctx->input, size * bytes_per_pixel);
+  bytes = cdk_pixbuf_buffer_queue_pull (ctx->input, size * bytes_per_pixel);
   g_assert (bytes != NULL);
 
   data = g_bytes_get_data (bytes, NULL);
@@ -421,7 +421,7 @@ tga_load_rle_image (TGAContext  *ctx,
 	gsize n, size, bytes_per_pixel;
 
         bytes_per_pixel = (ctx->hdr->bpp + 7) / 8;
-        bytes = gdk_pixbuf_buffer_queue_peek (ctx->input, gdk_pixbuf_buffer_queue_get_size (ctx->input));
+        bytes = cdk_pixbuf_buffer_queue_peek (ctx->input, cdk_pixbuf_buffer_queue_get_size (ctx->input));
 	s = g_bytes_get_data (bytes, &size);
 
 	for (n = 0; n < size; ) {
@@ -465,7 +465,7 @@ tga_load_rle_image (TGAContext  *ctx,
 	}
 
         g_bytes_unref (bytes);
-        gdk_pixbuf_buffer_queue_flush (ctx->input, n);
+        cdk_pixbuf_buffer_queue_flush (ctx->input, n);
 
         tga_emit_update (ctx);
 
@@ -485,7 +485,7 @@ tga_load_colormap (TGAContext  *ctx,
 
   if (ctx->hdr->has_cmap)
     {
-      bytes = gdk_pixbuf_buffer_queue_pull (ctx->input, ctx->cmap_size);
+      bytes = cdk_pixbuf_buffer_queue_pull (ctx->input, ctx->cmap_size);
       if (bytes == NULL)
         return TRUE;
 
@@ -551,10 +551,10 @@ static gboolean
 tga_read_info (TGAContext  *ctx,
                GError     **err)
 {
-  if (gdk_pixbuf_buffer_queue_get_size (ctx->input) < ctx->hdr->infolen)
+  if (cdk_pixbuf_buffer_queue_get_size (ctx->input) < ctx->hdr->infolen)
     return TRUE;
   
-  gdk_pixbuf_buffer_queue_flush (ctx->input, ctx->hdr->infolen);
+  cdk_pixbuf_buffer_queue_flush (ctx->input, ctx->hdr->infolen);
 
   ctx->process = tga_load_colormap;
   return TRUE;
@@ -566,7 +566,7 @@ tga_load_header (TGAContext  *ctx,
 {
   GBytes *bytes;
   
-  bytes = gdk_pixbuf_buffer_queue_pull (ctx->input, sizeof (TGAHeader));
+  bytes = cdk_pixbuf_buffer_queue_pull (ctx->input, sizeof (TGAHeader));
   if (bytes == NULL)
     return TRUE;
 
@@ -632,7 +632,7 @@ tga_load_header (TGAContext  *ctx,
   return TRUE;
 }
 
-static gpointer gdk_pixbuf__tga_begin_load(GdkPixbufModuleSizeFunc size_func,
+static gpointer cdk_pixbuf__tga_begin_load(GdkPixbufModuleSizeFunc size_func,
                                            GdkPixbufModulePreparedFunc prepared_func,
 					   GdkPixbufModuleUpdatedFunc updated_func,
 					   gpointer user_data, GError **err)
@@ -661,7 +661,7 @@ static gpointer gdk_pixbuf__tga_begin_load(GdkPixbufModuleSizeFunc size_func,
         ctx->pbuf_y = 0;
         ctx->pbuf_y_notified = 0;
 
-	ctx->input = gdk_pixbuf_buffer_queue_new ();
+	ctx->input = cdk_pixbuf_buffer_queue_new ();
 
         ctx->process = tga_load_header;
 
@@ -674,7 +674,7 @@ static gpointer gdk_pixbuf__tga_begin_load(GdkPixbufModuleSizeFunc size_func,
 	return ctx;
 }
 
-static gboolean gdk_pixbuf__tga_load_increment(gpointer data,
+static gboolean cdk_pixbuf__tga_load_increment(gpointer data,
 					       const guchar *buffer,
 					       guint size,
 					       GError **err)
@@ -683,7 +683,7 @@ static gboolean gdk_pixbuf__tga_load_increment(gpointer data,
         TGAProcessFunc process;
 
 	g_return_val_if_fail(buffer != NULL, TRUE);
-        gdk_pixbuf_buffer_queue_push (ctx->input, g_bytes_new (buffer, size));
+        cdk_pixbuf_buffer_queue_push (ctx->input, g_bytes_new (buffer, size));
 
         do
           {
@@ -697,7 +697,7 @@ static gboolean gdk_pixbuf__tga_load_increment(gpointer data,
 	return TRUE;
 }
 
-static gboolean gdk_pixbuf__tga_stop_load(gpointer data, GError **err)
+static gboolean cdk_pixbuf__tga_stop_load(gpointer data, GError **err)
 {
 	TGAContext *ctx = (TGAContext *) data;
         gboolean result = TRUE;
@@ -719,7 +719,7 @@ static gboolean gdk_pixbuf__tga_stop_load(gpointer data, GError **err)
           colormap_free (ctx->cmap);
 	if (ctx->pbuf)
           g_object_unref (ctx->pbuf);
-	gdk_pixbuf_buffer_queue_unref (ctx->input);
+	cdk_pixbuf_buffer_queue_unref (ctx->input);
 	g_free (ctx);
 
 	return result;
@@ -728,14 +728,14 @@ static gboolean gdk_pixbuf__tga_stop_load(gpointer data, GError **err)
 #ifndef INCLUDE_tga
 #define MODULE_ENTRY(function) G_MODULE_EXPORT void function
 #else
-#define MODULE_ENTRY(function) void _gdk_pixbuf__tga_ ## function
+#define MODULE_ENTRY(function) void _cdk_pixbuf__tga_ ## function
 #endif
 
 MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
 {
-	module->begin_load = gdk_pixbuf__tga_begin_load;
-	module->stop_load = gdk_pixbuf__tga_stop_load;
-	module->load_increment = gdk_pixbuf__tga_load_increment;
+	module->begin_load = cdk_pixbuf__tga_begin_load;
+	module->stop_load = cdk_pixbuf__tga_stop_load;
+	module->load_increment = cdk_pixbuf__tga_load_increment;
 }
 
 MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)

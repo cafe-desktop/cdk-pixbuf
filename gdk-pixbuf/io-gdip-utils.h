@@ -22,7 +22,7 @@
 #ifndef _HAVE_IO_GDIP_UTILS_H
 #define _HAVE_IO_GDIP_UTILS_H
 
-#include "gdk-pixbuf.h"
+#include "cdk-pixbuf.h"
 
 #include "io-gdip-native.h"
 

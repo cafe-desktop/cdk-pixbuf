@@ -63,7 +63,7 @@ desired.
    From the build directory:
    for /f %a in (*.dll.manifest) do if exist $(PREFIX)\bin\%~na /manifest %a /outputresource:$(PREFIX)\bin\%~na;2
    for /f %a in (*.exe.manifest) do if exist $(PREFIX)\bin\%~na /manifest %a /outputresource:$(PREFIX)\bin\%~na;1
-   for /f %a in (*.exe.manifest) do if exist $(PREFIX)\libexec\installed-tests\gdk-pixbuf-2.0\%~na /manifest %a /outputresource:$(PREFIX)\libexec\installed-tests\gdk-pixbuf-2.0\%~na;1
+   for /f %a in (*.exe.manifest) do if exist $(PREFIX)\libexec\installed-tests\cdk-pixbuf-2.0\%~na /manifest %a /outputresource:$(PREFIX)\libexec\installed-tests\cdk-pixbuf-2.0\%~na;1
    
    So that the security manifests that are generated can be embedded into the built
    DLLs and EXEs so that they can be usable.

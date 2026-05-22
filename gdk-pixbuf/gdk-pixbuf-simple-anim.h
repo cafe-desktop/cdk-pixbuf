@@ -23,10 +23,10 @@
 #define GDK_PIXBUF_SIMPLE_ANIM_H
 
 #if defined(GDK_PIXBUF_DISABLE_SINGLE_INCLUDES) && !defined (GDK_PIXBUF_H_INSIDE) && !defined (GDK_PIXBUF_COMPILATION)
-#error "Only <gdk-pixbuf/gdk-pixbuf.h> can be included directly."
+#error "Only <cdk-pixbuf/cdk-pixbuf.h> can be included directly."
 #endif
 
-#include <gdk-pixbuf/gdk-pixbuf-animation.h>
+#include <cdk-pixbuf/cdk-pixbuf-animation.h>
 
 G_BEGIN_DECLS
 
@@ -38,7 +38,7 @@ G_BEGIN_DECLS
 typedef struct _GdkPixbufSimpleAnim GdkPixbufSimpleAnim;
 typedef struct _GdkPixbufSimpleAnimClass GdkPixbufSimpleAnimClass;
 
-#define GDK_TYPE_PIXBUF_SIMPLE_ANIM              (gdk_pixbuf_simple_anim_get_type ())
+#define GDK_TYPE_PIXBUF_SIMPLE_ANIM              (cdk_pixbuf_simple_anim_get_type ())
 #define GDK_PIXBUF_SIMPLE_ANIM(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_PIXBUF_SIMPLE_ANIM, GdkPixbufSimpleAnim))
 #define GDK_IS_PIXBUF_SIMPLE_ANIM(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_PIXBUF_SIMPLE_ANIM))
 
@@ -47,23 +47,23 @@ typedef struct _GdkPixbufSimpleAnimClass GdkPixbufSimpleAnimClass;
 #define GDK_PIXBUF_SIMPLE_ANIM_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GDK_TYPE_PIXBUF_SIMPLE_ANIM, GdkPixbufSimpleAnimClass))
 
 GDK_PIXBUF_AVAILABLE_IN_ALL
-GType gdk_pixbuf_simple_anim_get_type (void) G_GNUC_CONST;
+GType cdk_pixbuf_simple_anim_get_type (void) G_GNUC_CONST;
 GDK_PIXBUF_AVAILABLE_IN_ALL
-GType gdk_pixbuf_simple_anim_iter_get_type (void) G_GNUC_CONST;
+GType cdk_pixbuf_simple_anim_iter_get_type (void) G_GNUC_CONST;
 
 GDK_PIXBUF_DEPRECATED_IN_2_44
-GdkPixbufSimpleAnim *gdk_pixbuf_simple_anim_new           (gint   width, 
+GdkPixbufSimpleAnim *cdk_pixbuf_simple_anim_new           (gint   width, 
                                                            gint   height,
                                                            gfloat rate);
 
 GDK_PIXBUF_DEPRECATED_IN_2_44
-void                 gdk_pixbuf_simple_anim_add_frame     (GdkPixbufSimpleAnim *animation,
+void                 cdk_pixbuf_simple_anim_add_frame     (GdkPixbufSimpleAnim *animation,
                                                            GdkPixbuf           *pixbuf);
 GDK_PIXBUF_DEPRECATED_IN_2_44
-void                 gdk_pixbuf_simple_anim_set_loop      (GdkPixbufSimpleAnim *animation,
+void                 cdk_pixbuf_simple_anim_set_loop      (GdkPixbufSimpleAnim *animation,
                                                            gboolean             loop);
 GDK_PIXBUF_DEPRECATED_IN_2_44
-gboolean             gdk_pixbuf_simple_anim_get_loop      (GdkPixbufSimpleAnim *animation);
+gboolean             cdk_pixbuf_simple_anim_get_loop      (GdkPixbufSimpleAnim *animation);
 
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (GdkPixbufSimpleAnim, g_object_unref)
 

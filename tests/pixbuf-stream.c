@@ -20,30 +20,30 @@
  */
 
 #include "config.h"
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 #include "test-common.h"
 #include <string.h>
 
 #define compare_option(p1, p2, key) \
-  g_strcmp0 (gdk_pixbuf_get_option (p1, key), gdk_pixbuf_get_option (p2, key))
+  g_strcmp0 (cdk_pixbuf_get_option (p1, key), cdk_pixbuf_get_option (p2, key))
 
 static gboolean
 pixbuf_equal (GdkPixbuf *p1, GdkPixbuf *p2)
 {
-  if (gdk_pixbuf_get_colorspace (p1) != gdk_pixbuf_get_colorspace (p2))
+  if (cdk_pixbuf_get_colorspace (p1) != cdk_pixbuf_get_colorspace (p2))
     return FALSE;
-  if (gdk_pixbuf_get_n_channels (p1) != gdk_pixbuf_get_n_channels (p2))
+  if (cdk_pixbuf_get_n_channels (p1) != cdk_pixbuf_get_n_channels (p2))
     return FALSE;
-  if (gdk_pixbuf_get_bits_per_sample (p1) != gdk_pixbuf_get_bits_per_sample (p2))
+  if (cdk_pixbuf_get_bits_per_sample (p1) != cdk_pixbuf_get_bits_per_sample (p2))
     return FALSE;
-  if (gdk_pixbuf_get_width (p1) != gdk_pixbuf_get_width (p2))
+  if (cdk_pixbuf_get_width (p1) != cdk_pixbuf_get_width (p2))
     return FALSE;
-  if (gdk_pixbuf_get_height (p1) != gdk_pixbuf_get_height (p2))
+  if (cdk_pixbuf_get_height (p1) != cdk_pixbuf_get_height (p2))
     return FALSE;
-  if (gdk_pixbuf_get_rowstride (p1) != gdk_pixbuf_get_rowstride (p2))
+  if (cdk_pixbuf_get_rowstride (p1) != cdk_pixbuf_get_rowstride (p2))
     return FALSE;
-  if (memcmp (gdk_pixbuf_get_pixels (p1), gdk_pixbuf_get_pixels (p2),
-          gdk_pixbuf_get_byte_length (p1)) != 0)
+  if (memcmp (cdk_pixbuf_get_pixels (p1), cdk_pixbuf_get_pixels (p2),
+          cdk_pixbuf_get_byte_length (p1)) != 0)
     return FALSE;
   if (compare_option (p1, p2, "Title") != 0)
     return FALSE;
@@ -78,14 +78,14 @@ test_stream (gconstpointer data)
     }
 
   path = g_test_get_filename (G_TEST_DIST, filename, NULL);
-  ref = gdk_pixbuf_new_from_file (path, &error);
+  ref = cdk_pixbuf_new_from_file (path, &error);
   g_assert_no_error (error);
 
   file = g_file_new_for_path (path);
   stream = (GInputStream *)g_file_read (file, NULL, &error);
   g_assert_no_error (error);
 
-  pixbuf = gdk_pixbuf_new_from_stream (stream, NULL, &error);
+  pixbuf = cdk_pixbuf_new_from_stream (stream, NULL, &error);
   g_assert_no_error (error);
   g_assert (pixbuf_equal (pixbuf, ref));
   g_object_unref (pixbuf);
@@ -102,7 +102,7 @@ async_done_cb (GObject *source, GAsyncResult *res, gpointer data)
   GdkPixbuf *pixbuf;
   GError *error = NULL;
 
-  pixbuf = gdk_pixbuf_new_from_stream_finish (res, &error);
+  pixbuf = cdk_pixbuf_new_from_stream_finish (res, &error);
   g_assert_no_error (error);
 
   g_assert (pixbuf_equal (pixbuf, ref));
@@ -129,14 +129,14 @@ test_stream_async (gconstpointer data)
     }
 
   path = g_test_get_filename (G_TEST_DIST, filename, NULL);
-  ref = gdk_pixbuf_new_from_file (path, &error);
+  ref = cdk_pixbuf_new_from_file (path, &error);
   g_assert_no_error (error);
 
   g_file_get_contents (path, &buffer, &size, &error);
   g_assert_no_error (error);
 
   stream = g_memory_input_stream_new_from_data (buffer, size, g_free);
-  gdk_pixbuf_new_from_stream_async (stream, NULL, async_done_cb, ref);
+  cdk_pixbuf_new_from_stream_async (stream, NULL, async_done_cb, ref);
   g_object_unref (stream);
 }
 
@@ -157,14 +157,14 @@ test_stream_at_scale (gconstpointer data)
     }
 
   path = g_test_get_filename (G_TEST_DIST, filename, NULL);
-  ref = gdk_pixbuf_new_from_file_at_scale (path, 20, 30, TRUE, &error);
+  ref = cdk_pixbuf_new_from_file_at_scale (path, 20, 30, TRUE, &error);
   g_assert_no_error (error);
 
   file = g_file_new_for_path (path);
   stream = (GInputStream *)g_file_read (file, NULL, &error);
   g_assert_no_error (error);
 
-  pixbuf = gdk_pixbuf_new_from_stream_at_scale (stream, 20, 30, TRUE, NULL, &error);
+  pixbuf = cdk_pixbuf_new_from_stream_at_scale (stream, 20, 30, TRUE, NULL, &error);
   g_assert_no_error (error);
   g_assert (pixbuf_equal (pixbuf, ref));
   g_object_unref (pixbuf);
@@ -192,14 +192,14 @@ test_stream_at_scale_async (gconstpointer data)
     }
 
   path = g_test_get_filename (G_TEST_DIST, filename, NULL);
-  ref = gdk_pixbuf_new_from_file_at_scale (path, 40, 10, FALSE, &error);
+  ref = cdk_pixbuf_new_from_file_at_scale (path, 40, 10, FALSE, &error);
   g_assert_no_error (error);
 
   g_file_get_contents (path, &buffer, &size, &error);
   g_assert_no_error (error);
 
   stream = g_memory_input_stream_new_from_data (buffer, size, g_free);
-  gdk_pixbuf_new_from_stream_at_scale_async (stream, 40, 10, FALSE, NULL, async_done_cb, ref);
+  cdk_pixbuf_new_from_stream_at_scale_async (stream, 40, 10, FALSE, NULL, async_done_cb, ref);
   g_object_unref (stream);
 }
 

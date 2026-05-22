@@ -24,7 +24,7 @@
 #include "config.h"
 #include <stdlib.h>
 #include <string.h>
-#include "gdk-pixbuf-loader.h"
+#include "cdk-pixbuf-loader.h"
 #include "io-ani-animation.h"
 
 static int
@@ -118,7 +118,7 @@ context_free (AniLoaderContext *context)
 
 	if (context->loader) 
 	{
-		gdk_pixbuf_loader_close (context->loader, NULL);
+		cdk_pixbuf_loader_close (context->loader, NULL);
 		g_object_unref (context->loader);
 	}
         if (context->animation) 
@@ -140,21 +140,21 @@ prepared_callback (GdkPixbufLoader *loader,
 	g_print ("%d pixbuf prepared\n", context->pos);
 #endif
 
-	GdkPixbuf *pixbuf = gdk_pixbuf_loader_get_pixbuf (loader);
+	GdkPixbuf *pixbuf = cdk_pixbuf_loader_get_pixbuf (loader);
         if (!pixbuf)
 		return;
 
-	if (gdk_pixbuf_get_width (pixbuf) > context->animation->width) 
-		context->animation->width = gdk_pixbuf_get_width (pixbuf);
+	if (cdk_pixbuf_get_width (pixbuf) > context->animation->width) 
+		context->animation->width = cdk_pixbuf_get_width (pixbuf);
 	
-	if (gdk_pixbuf_get_height (pixbuf) > context->animation->height) 
-		context->animation->height = gdk_pixbuf_get_height (pixbuf);
+	if (cdk_pixbuf_get_height (pixbuf) > context->animation->height) 
+		context->animation->height = cdk_pixbuf_get_height (pixbuf);
 	
 	if (context->title != NULL) 
-		gdk_pixbuf_set_option (pixbuf, "Title", context->title);
+		cdk_pixbuf_set_option (pixbuf, "Title", context->title);
 	
 	if (context->author != NULL) 
-		gdk_pixbuf_set_option (pixbuf, "Author", context->author);
+		cdk_pixbuf_set_option (pixbuf, "Author", context->author);
 
 	g_object_ref (pixbuf);
 	context->animation->pixbufs[context->pos] = pixbuf;
@@ -168,12 +168,12 @@ prepared_callback (GdkPixbufLoader *loader,
 	else {
 		/* FIXME - this is necessary for nice display of loading 
 		   animations because CtkImage ignores 
-		   gdk_pixbuf_animation_iter_on_currently_loading_frame()
+		   cdk_pixbuf_animation_iter_on_currently_loading_frame()
 		   and always exposes the full frame */
 		GdkPixbuf *last = context->animation->pixbufs[context->pos - 1];
-		gint width = MIN (gdk_pixbuf_get_width (last), gdk_pixbuf_get_width (pixbuf));
-		gint height = MIN (gdk_pixbuf_get_height (last), gdk_pixbuf_get_height (pixbuf));
-		gdk_pixbuf_copy_area (last, 0, 0, width, height, pixbuf, 0, 0);
+		gint width = MIN (cdk_pixbuf_get_width (last), cdk_pixbuf_get_width (pixbuf));
+		gint height = MIN (cdk_pixbuf_get_height (last), cdk_pixbuf_get_height (pixbuf));
+		cdk_pixbuf_copy_area (last, 0, 0, width, height, pixbuf, 0, 0);
 	}
 
 	context->pos++;
@@ -186,7 +186,7 @@ updated_callback (GdkPixbufLoader* loader,
 {
 	AniLoaderContext *context = (AniLoaderContext*)data;
 
-	GdkPixbuf *pixbuf = gdk_pixbuf_loader_get_pixbuf (loader);
+	GdkPixbuf *pixbuf = cdk_pixbuf_loader_get_pixbuf (loader);
 	
 	(* context->updated_func) (pixbuf, 
 				   x, y, width, height,
@@ -243,7 +243,7 @@ ani_load_chunk (AniLoaderContext *context, GError **error)
 #ifdef DEBUG_ANI
 			g_print ("opening loader\n");
 #endif
-			context->loader = gdk_pixbuf_loader_new_with_type ("ico", &loader_error);
+			context->loader = cdk_pixbuf_loader_new_with_type ("ico", &loader_error);
 			if (loader_error) 
 			{
 				g_propagate_error (error, loader_error);
@@ -263,10 +263,10 @@ ani_load_chunk (AniLoaderContext *context, GError **error)
 		g_print ("miss %d, get %d, leftover %d\n", context->chunk_size, towrite, BYTES_LEFT (context));
 #endif
 		context->chunk_size -= towrite;
-		if (!gdk_pixbuf_loader_write (context->loader, data, towrite, &loader_error)) 
+		if (!cdk_pixbuf_loader_write (context->loader, data, towrite, &loader_error)) 
 		{
 			g_propagate_error (error, loader_error);
-			gdk_pixbuf_loader_close (context->loader, NULL);
+			cdk_pixbuf_loader_close (context->loader, NULL);
 			g_object_unref (context->loader);
 			context->loader = NULL;
 			return FALSE; 
@@ -276,7 +276,7 @@ ani_load_chunk (AniLoaderContext *context, GError **error)
 #ifdef DEBUG_ANI
 			g_print ("closing loader\n");
 #endif
-			if (!gdk_pixbuf_loader_close (context->loader, &loader_error)) 
+			if (!cdk_pixbuf_loader_close (context->loader, &loader_error)) 
 			{
 				g_propagate_error (error, loader_error);
 				g_object_unref (context->loader);
@@ -476,7 +476,7 @@ ani_load_chunk (AniLoaderContext *context, GError **error)
 		g_print ("INAM %s\n", context->title);
 #endif
 		for (i = 0; i < context->pos; i++)
-			gdk_pixbuf_set_option (context->animation->pixbufs[i], "Title", context->title);			
+			cdk_pixbuf_set_option (context->animation->pixbufs[i], "Title", context->title);			
 	}
         else if (context->chunk_id == TAG_IART) 
 	{
@@ -503,7 +503,7 @@ ani_load_chunk (AniLoaderContext *context, GError **error)
 		g_print ("IART %s\n", context->author);
 #endif
 		for (i = 0; i < context->pos; i++)
-			gdk_pixbuf_set_option (context->animation->pixbufs[i], "Author", context->author);			
+			cdk_pixbuf_set_option (context->animation->pixbufs[i], "Author", context->author);			
 	}
 
 #ifdef DEBUG_ANI
@@ -522,7 +522,7 @@ ani_load_chunk (AniLoaderContext *context, GError **error)
 }
 
 static gboolean
-gdk_pixbuf__ani_image_load_increment (gpointer data,
+cdk_pixbuf__ani_image_load_increment (gpointer data,
 				      const guchar *buf, guint size,
 				      GError **error)
 {
@@ -593,7 +593,7 @@ gdk_pixbuf__ani_image_load_increment (gpointer data,
 }
 
 static gpointer
-gdk_pixbuf__ani_image_begin_load (GdkPixbufModuleSizeFunc size_func, 
+cdk_pixbuf__ani_image_begin_load (GdkPixbufModuleSizeFunc size_func, 
                                   GdkPixbufModulePreparedFunc prepared_func, 
 				  GdkPixbufModuleUpdatedFunc  updated_func,
 				  gpointer user_data,
@@ -632,7 +632,7 @@ gdk_pixbuf__ani_image_begin_load (GdkPixbufModuleSizeFunc size_func,
 }
 
 static gboolean
-gdk_pixbuf__ani_image_stop_load (gpointer data,
+cdk_pixbuf__ani_image_stop_load (gpointer data,
 				 GError **error)
 {
         AniLoaderContext *context = (AniLoaderContext *) data;
@@ -657,14 +657,14 @@ gdk_pixbuf__ani_image_stop_load (gpointer data,
 #ifndef INCLUDE_ani
 #define MODULE_ENTRY(function) G_MODULE_EXPORT void function
 #else
-#define MODULE_ENTRY(function) void _gdk_pixbuf__ani_ ## function
+#define MODULE_ENTRY(function) void _cdk_pixbuf__ani_ ## function
 #endif
 
 MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
 {
-        module->begin_load = gdk_pixbuf__ani_image_begin_load;
-        module->stop_load = gdk_pixbuf__ani_image_stop_load;
-        module->load_increment = gdk_pixbuf__ani_image_load_increment;
+        module->begin_load = cdk_pixbuf__ani_image_begin_load;
+        module->stop_load = cdk_pixbuf__ani_image_stop_load;
+        module->load_increment = cdk_pixbuf__ani_image_load_increment;
 }
 
 MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)

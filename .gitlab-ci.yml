@@ -18,7 +18,7 @@ stages:
 
 # Common variables
 variables:
-  FDO_UPSTREAM_REPO: GNOME/gdk-pixbuf
+  FDO_UPSTREAM_REPO: GNOME/cdk-pixbuf
   CCACHE_DIR: _ccache
   COMMON_MESON_FLAGS: "-Dwerror=true -Dglib:werror=false"
   LOADERS_NO_GLYCIN_FLAGS: "-Dpng=enabled -Djpeg=enabled -Dtiff=enabled -Dgif=enabled -Dothers=enabled -Dglycin=disabled"
@@ -106,7 +106,7 @@ container:fedora:
 
 .test-runner:
   artifacts:
-    name: "gdk-pixbuf-${CI_COMMIT_REF_NAME}"
+    name: "cdk-pixbuf-${CI_COMMIT_REF_NAME}"
     when: always
     reports:
       junit:
@@ -117,14 +117,14 @@ container:fedora:
 
 .dist-runner:
   artifacts:
-    name: "gdk-pixbuf-dist-${CI_COMMIT_REF_NAME}"
+    name: "cdk-pixbuf-dist-${CI_COMMIT_REF_NAME}"
     when: always
     paths:
       - "${CI_PROJECT_DIR}/public-dist"
 
 .scan-runner:
   artifacts:
-    name: "gdk-pixbuf-scan-${CI_COMMIT_REF_NAME}"
+    name: "cdk-pixbuf-scan-${CI_COMMIT_REF_NAME}"
     when: always
     paths:
       - "${CI_PROJECT_DIR}/_scan_build/meson-logs"
@@ -296,7 +296,7 @@ macos-build:
   stage: build
   needs: []
   only:
-    - branches@GNOME/gdk-pixbuf
+    - branches@GNOME/cdk-pixbuf
   except:
     - tags
   tags:
@@ -332,7 +332,7 @@ msys2-mingw64-build:
     - C:\msys64\usr\bin\pacman --noconfirm -Syyuu
     - C:\msys64\usr\bin\bash -lc "bash -x ./.gitlab/ci/test-msys2.sh"
   artifacts:
-    name: "gdk-pixbuf-${env:CI_JOB_NAME}-${env:CI_COMMIT_REF_NAME}"
+    name: "cdk-pixbuf-${env:CI_JOB_NAME}-${env:CI_COMMIT_REF_NAME}"
     when: always
     paths:
       - _build/meson-logs
@@ -353,8 +353,8 @@ reference:
         _build
     - meson compile -C _build
     - mkdir -p _reference
-    - mv _build/docs/gdk-pixbuf/ _reference/gdk-pixbuf/
-    - mv _build/docs/gdk-pixdata/ _reference/gdk-pixdata/
+    - mv _build/docs/cdk-pixbuf/ _reference/cdk-pixbuf/
+    - mv _build/docs/cdk-pixdata/ _reference/cdk-pixdata/
   artifacts:
     when: on_success
     paths:

@@ -39,8 +39,8 @@
 #include <glib-object.h>
 #include <glib/gi18n-lib.h>
 
-#include "gdk-pixbuf-core.h"
-#include "gdk-pixbuf-io.h"
+#include "cdk-pixbuf-core.h"
+#include "cdk-pixbuf-io.h"
 #include "fallback-c89.c"
 
 #ifdef G_OS_WIN32
@@ -160,7 +160,7 @@ tiff_image_parse (TIFF *tiff, TiffContext *context, GError **error)
 		(* context->size_func) (&w, &h, context->user_data);
                 
 		/* This is a signal that this function is being called
-		   to support gdk_pixbuf_get_file_info, so we can stop
+		   to support cdk_pixbuf_get_file_info, so we can stop
 		   parsing the tiff file at this point. It is not an
 		   error condition. */
 
@@ -178,7 +178,7 @@ tiff_image_parse (TIFF *tiff, TiffContext *context, GError **error)
                 return NULL;
         }
 
-	pixbuf = gdk_pixbuf_new_from_data (pixels, GDK_COLORSPACE_RGB, TRUE, 8, 
+	pixbuf = cdk_pixbuf_new_from_data (pixels, GDK_COLORSPACE_RGB, TRUE, 8, 
                                            width, height, rowstride,
                                            free_buffer, NULL);
         if (!pixbuf) {
@@ -196,7 +196,7 @@ tiff_image_parse (TIFF *tiff, TiffContext *context, GError **error)
         if (bits_per_sample > 0) {
                 gchar str[5];
                 g_snprintf (str, sizeof (str), "%d", bits_per_sample);
-                gdk_pixbuf_set_option (pixbuf, "bits-per-sample", str);
+                cdk_pixbuf_set_option (pixbuf, "bits-per-sample", str);
         }
 
 	/* Set the "orientation" key associated with this image. libtiff 
@@ -232,21 +232,21 @@ tiff_image_parse (TIFF *tiff, TiffContext *context, GError **error)
 	if (transform > 0 ) {
 		gchar str[5];
 		g_snprintf (str, sizeof (str), "%d", transform);
-		gdk_pixbuf_set_option (pixbuf, "orientation", str);
+		cdk_pixbuf_set_option (pixbuf, "orientation", str);
 	}
 
         TIFFGetField (tiff, TIFFTAG_COMPRESSION, &codec);
         if (codec > 0) {
           gchar str[5];
           g_snprintf (str, sizeof (str), "%d", codec);
-          gdk_pixbuf_set_option (pixbuf, "compression", str);
+          cdk_pixbuf_set_option (pixbuf, "compression", str);
         }
 
         /* Extract embedded ICC profile */
         retval = TIFFGetField (tiff, TIFFTAG_ICCPROFILE, &icc_profile_size, &icc_profile);
         if (retval == 1) {
                 icc_profile_base64 = g_base64_encode ((const guchar *) icc_profile, icc_profile_size);
-                gdk_pixbuf_set_option (pixbuf, "icc-profile", icc_profile_base64);
+                cdk_pixbuf_set_option (pixbuf, "icc-profile", icc_profile_base64);
                 g_free (icc_profile_base64);
         }
 
@@ -260,18 +260,18 @@ tiff_image_parse (TIFF *tiff, TiffContext *context, GError **error)
                 switch (resolution_unit) {
                 case RESUNIT_INCH:
                         density_str = g_strdup_printf ("%d", (int) round (x_resolution));
-                        gdk_pixbuf_set_option (pixbuf, "x-dpi", density_str);
+                        cdk_pixbuf_set_option (pixbuf, "x-dpi", density_str);
                         g_free (density_str);
                         density_str = g_strdup_printf ("%d", (int) round (y_resolution));
-                        gdk_pixbuf_set_option (pixbuf, "y-dpi", density_str);
+                        cdk_pixbuf_set_option (pixbuf, "y-dpi", density_str);
                         g_free (density_str);
                         break;
                 case RESUNIT_CENTIMETER:
                         density_str = g_strdup_printf ("%d", DPCM_TO_DPI (x_resolution));
-                        gdk_pixbuf_set_option (pixbuf, "x-dpi", density_str);
+                        cdk_pixbuf_set_option (pixbuf, "x-dpi", density_str);
                         g_free (density_str);
                         density_str = g_strdup_printf ("%d", DPCM_TO_DPI (y_resolution));
-                        gdk_pixbuf_set_option (pixbuf, "y-dpi", density_str);
+                        cdk_pixbuf_set_option (pixbuf, "y-dpi", density_str);
                         g_free (density_str);
                         break;
                 }
@@ -292,11 +292,11 @@ tiff_image_parse (TIFF *tiff, TiffContext *context, GError **error)
 	/* Flag multi-page documents, because this loader only handles the
 	   first page. The client app may wish to warn the user. */
         if (TIFFReadDirectory (tiff))
-                gdk_pixbuf_set_option (pixbuf, "multipage", "yes");
+                cdk_pixbuf_set_option (pixbuf, "multipage", "yes");
 
 #if G_BYTE_ORDER == G_BIG_ENDIAN
         {
-                guchar *pixbuf_pixels = gdk_pixbuf_get_pixels (pixbuf);
+                guchar *pixbuf_pixels = cdk_pixbuf_get_pixels (pixbuf);
 
                 pixels = pixbuf_pixels;
 
@@ -328,7 +328,7 @@ tiff_image_parse (TIFF *tiff, TiffContext *context, GError **error)
 /* Static loader */
 
 static GdkPixbuf *
-gdk_pixbuf__tiff_image_load (FILE *f, GError **error)
+cdk_pixbuf__tiff_image_load (FILE *f, GError **error)
 {
         TIFF *tiff = NULL;
         int fd;
@@ -341,7 +341,7 @@ gdk_pixbuf__tiff_image_load (FILE *f, GError **error)
         fd = fileno (f);
 
         /* On OSF, apparently fseek() works in some on-demand way, so
-         * the fseek gdk_pixbuf_new_from_file() doesn't work here
+         * the fseek cdk_pixbuf_new_from_file() doesn't work here
          * since we are using the raw file descriptor. So, we call lseek() on the fd
          * before using it. (#60840)
          */
@@ -391,7 +391,7 @@ gdk_pixbuf__tiff_image_load (FILE *f, GError **error)
 /* Progressive loader */
 
 static gpointer
-gdk_pixbuf__tiff_image_begin_load (GdkPixbufModuleSizeFunc size_func,
+cdk_pixbuf__tiff_image_begin_load (GdkPixbufModuleSizeFunc size_func,
                                    GdkPixbufModulePreparedFunc prepared_func,
 				   GdkPixbufModuleUpdatedFunc updated_func,
 				   gpointer user_data,
@@ -493,7 +493,7 @@ tiff_load_unmap_file (thandle_t handle, tdata_t data, toff_t offset)
 }
 
 static gboolean
-gdk_pixbuf__tiff_image_stop_load (gpointer data,
+cdk_pixbuf__tiff_image_stop_load (gpointer data,
                                   GError **error)
 {
         TiffContext *context = data;
@@ -569,7 +569,7 @@ make_available_at_least (TiffContext *context, guint needed)
 }
 
 static gboolean
-gdk_pixbuf__tiff_image_load_increment (gpointer data, const guchar *buf,
+cdk_pixbuf__tiff_image_load_increment (gpointer data, const guchar *buf,
                                        guint size, GError **error)
 {
 	TiffContext *context = (TiffContext *) data;
@@ -721,7 +721,7 @@ copy_gray_row (gint     *dest,
 }
 
 static gboolean
-gdk_pixbuf__tiff_image_save_to_callback (GdkPixbufSaveFunc   save_func,
+cdk_pixbuf__tiff_image_save_to_callback (GdkPixbufSaveFunc   save_func,
                                          gpointer            user_data,
                                          GdkPixbuf          *pixbuf, 
                                          gchar             **keys,
@@ -762,13 +762,13 @@ gdk_pixbuf__tiff_image_save_to_callback (GdkPixbufSaveFunc   save_func,
                 return FALSE;
         }
 
-        rowstride = gdk_pixbuf_get_rowstride (pixbuf);
-        pixels = gdk_pixbuf_get_pixels (pixbuf);
+        rowstride = cdk_pixbuf_get_rowstride (pixbuf);
+        pixels = cdk_pixbuf_get_pixels (pixbuf);
 
-        has_alpha = gdk_pixbuf_get_has_alpha (pixbuf);
+        has_alpha = cdk_pixbuf_get_has_alpha (pixbuf);
 
-        height = gdk_pixbuf_get_height (pixbuf);
-        width = gdk_pixbuf_get_width (pixbuf);
+        height = cdk_pixbuf_get_height (pixbuf);
+        width = cdk_pixbuf_get_width (pixbuf);
 
         /* Guaranteed by the caller. */
         g_assert (width >= 0);
@@ -1023,19 +1023,19 @@ save_to_file_cb (const gchar *buf,
 }
 
 static gboolean
-gdk_pixbuf__tiff_image_save (FILE          *f, 
+cdk_pixbuf__tiff_image_save (FILE          *f, 
                              GdkPixbuf     *pixbuf, 
                              gchar        **keys,
                              gchar        **values,
                              GError       **error)
 {
-	return gdk_pixbuf__tiff_image_save_to_callback (save_to_file_cb,
+	return cdk_pixbuf__tiff_image_save_to_callback (save_to_file_cb,
                                                         f, pixbuf, keys,
                                                         values, error);
 }
 
 static gboolean
-gdk_pixbuf__tiff_is_save_option_supported (const gchar *option_key)
+cdk_pixbuf__tiff_is_save_option_supported (const gchar *option_key)
 {
         if (g_strcmp0 (option_key, "bits-per-sample") == 0 ||
             g_strcmp0 (option_key, "compression") == 0 ||
@@ -1050,18 +1050,18 @@ gdk_pixbuf__tiff_is_save_option_supported (const gchar *option_key)
 #ifndef INCLUDE_tiff
 #define MODULE_ENTRY(function) G_MODULE_EXPORT void function
 #else
-#define MODULE_ENTRY(function) void _gdk_pixbuf__tiff_ ## function
+#define MODULE_ENTRY(function) void _cdk_pixbuf__tiff_ ## function
 #endif
 
 MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
 {
-        module->load = gdk_pixbuf__tiff_image_load;
-        module->begin_load = gdk_pixbuf__tiff_image_begin_load;
-        module->stop_load = gdk_pixbuf__tiff_image_stop_load;
-        module->load_increment = gdk_pixbuf__tiff_image_load_increment;
-        module->save = gdk_pixbuf__tiff_image_save;
-        module->save_to_callback = gdk_pixbuf__tiff_image_save_to_callback;
-        module->is_save_option_supported = gdk_pixbuf__tiff_is_save_option_supported;
+        module->load = cdk_pixbuf__tiff_image_load;
+        module->begin_load = cdk_pixbuf__tiff_image_begin_load;
+        module->stop_load = cdk_pixbuf__tiff_image_stop_load;
+        module->load_increment = cdk_pixbuf__tiff_image_load_increment;
+        module->save = cdk_pixbuf__tiff_image_save;
+        module->save_to_callback = cdk_pixbuf__tiff_image_save_to_callback;
+        module->is_save_option_supported = cdk_pixbuf__tiff_is_save_option_supported;
 }
 
 MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)

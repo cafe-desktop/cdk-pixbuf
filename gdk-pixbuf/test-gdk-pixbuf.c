@@ -23,7 +23,7 @@
 #include "config.h"
 
 #include <stdlib.h>
-#include "gdk-pixbuf.h"
+#include "cdk-pixbuf.h"
 #include <glib-object.h>
 
 
@@ -51,13 +51,13 @@ fill_with_pixel (GdkPixbuf *pixbuf,
 {
 	int x, y;
 	
-	for (x = 0; x < gdk_pixbuf_get_width (pixbuf); x++) {
-		for (y = 0; y < gdk_pixbuf_get_height (pixbuf); y++) {
-			store_pixel (gdk_pixbuf_get_pixels (pixbuf)
-				     + y * gdk_pixbuf_get_rowstride (pixbuf)
-				     + x * gdk_pixbuf_get_n_channels (pixbuf),
+	for (x = 0; x < cdk_pixbuf_get_width (pixbuf); x++) {
+		for (y = 0; y < cdk_pixbuf_get_height (pixbuf); y++) {
+			store_pixel (cdk_pixbuf_get_pixels (pixbuf)
+				     + y * cdk_pixbuf_get_rowstride (pixbuf)
+				     + x * cdk_pixbuf_get_n_channels (pixbuf),
 				     pixel,
-				     gdk_pixbuf_get_has_alpha (pixbuf));
+				     cdk_pixbuf_get_has_alpha (pixbuf));
 		}
 	}
 }
@@ -84,18 +84,18 @@ simple_composite_test_one (GdkInterpType type,
 	GdkPixbuf *destination_pixbuf;
 	int result_pixel;
 
-	source_pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, source_alpha, 8, 32, 32);
-	destination_pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, destination_alpha, 8, 32, 32);
+	source_pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, source_alpha, 8, 32, 32);
+	destination_pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, destination_alpha, 8, 32, 32);
 	
 	fill_with_pixel (source_pixbuf, source_pixel);
 	fill_with_pixel (destination_pixbuf, destination_pixel);
 
-	gdk_pixbuf_composite (source_pixbuf, destination_pixbuf,
+	cdk_pixbuf_composite (source_pixbuf, destination_pixbuf,
 			      0, 0, 32, 32, 0, 0, 1, 1, type, 0xFF);
 
-	result_pixel = load_pixel (gdk_pixbuf_get_pixels (destination_pixbuf)
-				   + 16 * gdk_pixbuf_get_rowstride (destination_pixbuf)
-				   + 16 * gdk_pixbuf_get_n_channels (destination_pixbuf),
+	result_pixel = load_pixel (cdk_pixbuf_get_pixels (destination_pixbuf)
+				   + 16 * cdk_pixbuf_get_rowstride (destination_pixbuf)
+				   + 16 * cdk_pixbuf_get_n_channels (destination_pixbuf),
 				   destination_alpha);
 	  
 	g_object_unref (source_pixbuf);

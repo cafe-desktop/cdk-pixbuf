@@ -32,15 +32,15 @@
 #include <errno.h>
 #include <glib/gstdio.h>
 #include <glib/gi18n-lib.h>
-#include "gdk-pixbuf-core.h"
-#include "gdk-pixbuf-io.h"
+#include "cdk-pixbuf-core.h"
+#include "cdk-pixbuf-io.h"
 
 
 
 
 /* I have must have done something to deserve this.
  * XPM is such a crappy format to handle.
- * This code is an ugly hybrid from gdkpixmap.c
+ * This code is an ugly hybrid from cdkpixmap.c
  * modified to respect transparent colors.
  * It's still a mess, though.
  */
@@ -385,7 +385,7 @@ xpm_extract_color (const gchar *buffer)
 		return NULL; 
 }
 
-/* (almost) direct copy from gdkpixmap.c... loads an XPM from a file */
+/* (almost) direct copy from cdkpixmap.c... loads an XPM from a file */
 
 static const gchar *
 file_buffer (enum buf_op op, gpointer handle)
@@ -584,7 +584,7 @@ pixbuf_create_from_xpm (const gchar * (*get_buf) (enum buf_op op, gpointer handl
 			fallbackcolor = color;
 	}
 
-	pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, is_trans, 8, w, h);
+	pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, is_trans, 8, w, h);
 
 	if (!pixbuf) {
                 g_set_error_literal (error,
@@ -594,12 +594,12 @@ pixbuf_create_from_xpm (const gchar * (*get_buf) (enum buf_op op, gpointer handl
                 goto out;
 	}
 
-	rowstride = gdk_pixbuf_get_rowstride (pixbuf);
+	rowstride = cdk_pixbuf_get_rowstride (pixbuf);
 
 	wbytes = w * cpp;
 
 	for (ycnt = 0; ycnt < h; ycnt++) {
-		pixtmp = gdk_pixbuf_get_pixels (pixbuf) + ycnt * rowstride;
+		pixtmp = cdk_pixbuf_get_pixels (pixbuf) + ycnt * rowstride;
 
 		buffer = (*get_buf) (op_body, handle);
 		if ((!buffer) || (strlen (buffer) < wbytes)) {
@@ -639,9 +639,9 @@ pixbuf_create_from_xpm (const gchar * (*get_buf) (enum buf_op op, gpointer handl
 	if (items == 6) {
 		gchar hot[10];
 		g_snprintf (hot, 10, "%d", x_hot);
-		gdk_pixbuf_set_option (pixbuf, "x_hot", hot);
+		cdk_pixbuf_set_option (pixbuf, "x_hot", hot);
 		g_snprintf (hot, 10, "%d", y_hot);
-		gdk_pixbuf_set_option (pixbuf, "y_hot", hot);
+		cdk_pixbuf_set_option (pixbuf, "y_hot", hot);
 
 	}
 
@@ -658,7 +658,7 @@ out:
 
 /* Shared library entry point for file loading */
 static GdkPixbuf *
-gdk_pixbuf__xpm_image_load (FILE *f,
+cdk_pixbuf__xpm_image_load (FILE *f,
                             GError **error)
 {
 	GdkPixbuf *pixbuf;
@@ -674,7 +674,7 @@ gdk_pixbuf__xpm_image_load (FILE *f,
 
 /* Shared library entry point for memory loading */
 static GdkPixbuf *
-gdk_pixbuf__xpm_image_load_xpm_data (const gchar **data)
+cdk_pixbuf__xpm_image_load_xpm_data (const gchar **data)
 {
         GdkPixbuf *pixbuf;
         struct mem_handle h;
@@ -714,7 +714,7 @@ struct _XPMContext
  * in the future.
  */
 static gpointer
-gdk_pixbuf__xpm_image_begin_load (GdkPixbufModuleSizeFunc size_func,
+cdk_pixbuf__xpm_image_begin_load (GdkPixbufModuleSizeFunc size_func,
                                   GdkPixbufModulePreparedFunc prepared_func,
                                   GdkPixbufModuleUpdatedFunc updated_func,
                                   gpointer user_data,
@@ -732,7 +732,7 @@ gdk_pixbuf__xpm_image_begin_load (GdkPixbufModuleSizeFunc size_func,
        context->updated_func = updated_func;
        context->user_data = user_data;
        context->all_okay = TRUE;
-       fd = g_file_open_tmp ("gdkpixbuf-xpm-tmp.XXXXXX", &context->tempname,
+       fd = g_file_open_tmp ("cdkpixbuf-xpm-tmp.XXXXXX", &context->tempname,
 			     NULL);
        if (fd < 0) {
                g_free (context);
@@ -750,7 +750,7 @@ gdk_pixbuf__xpm_image_begin_load (GdkPixbufModuleSizeFunc size_func,
 }
 
 static gboolean
-gdk_pixbuf__xpm_image_stop_load (gpointer data,
+cdk_pixbuf__xpm_image_stop_load (gpointer data,
                                  GError **error)
 {
        XPMContext *context = (XPMContext*) data;
@@ -762,7 +762,7 @@ gdk_pixbuf__xpm_image_stop_load (gpointer data,
        fflush (context->file);
        rewind (context->file);
        if (context->all_okay) {
-               pixbuf = gdk_pixbuf__xpm_image_load (context->file, error);
+               pixbuf = cdk_pixbuf__xpm_image_load (context->file, error);
 
                if (pixbuf != NULL) {
 		       (* context->prepared_func) (pixbuf,
@@ -770,8 +770,8 @@ gdk_pixbuf__xpm_image_stop_load (gpointer data,
 						   context->user_data);
 		       (* context->updated_func) (pixbuf,
 						  0, 0,
-						  gdk_pixbuf_get_width (pixbuf),
-						  gdk_pixbuf_get_height (pixbuf),
+						  cdk_pixbuf_get_width (pixbuf),
+						  cdk_pixbuf_get_height (pixbuf),
 						  context->user_data);
                        g_object_unref (pixbuf);
 
@@ -788,7 +788,7 @@ gdk_pixbuf__xpm_image_stop_load (gpointer data,
 }
 
 static gboolean
-gdk_pixbuf__xpm_image_load_increment (gpointer data,
+cdk_pixbuf__xpm_image_load_increment (gpointer data,
                                       const guchar *buf,
                                       guint    size,
                                       GError **error)
@@ -813,16 +813,16 @@ gdk_pixbuf__xpm_image_load_increment (gpointer data,
 #ifndef INCLUDE_xpm
 #define MODULE_ENTRY(function) G_MODULE_EXPORT void function
 #else
-#define MODULE_ENTRY(function) void _gdk_pixbuf__xpm_ ## function
+#define MODULE_ENTRY(function) void _cdk_pixbuf__xpm_ ## function
 #endif
 
 MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
 {
-	module->load = gdk_pixbuf__xpm_image_load;
-	module->load_xpm_data = gdk_pixbuf__xpm_image_load_xpm_data;
-	module->begin_load = gdk_pixbuf__xpm_image_begin_load;
-	module->stop_load = gdk_pixbuf__xpm_image_stop_load;
-	module->load_increment = gdk_pixbuf__xpm_image_load_increment;
+	module->load = cdk_pixbuf__xpm_image_load;
+	module->load_xpm_data = cdk_pixbuf__xpm_image_load_xpm_data;
+	module->begin_load = cdk_pixbuf__xpm_image_begin_load;
+	module->stop_load = cdk_pixbuf__xpm_image_stop_load;
+	module->load_increment = cdk_pixbuf__xpm_image_load_increment;
 }
 
 MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)

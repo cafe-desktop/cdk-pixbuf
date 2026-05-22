@@ -25,7 +25,7 @@
 DEFINE_GUID(EncoderCompression, 0xe09d739d,0xccd4,0x44ee,0x8e,0xba,0x3f,0xbf,0x8b,0xe4,0xfc,0x58);
 
 static gboolean
-gdk_pixbuf__gdip_image_save_PNG_to_callback (GdkPixbufSaveFunc   save_func,
+cdk_pixbuf__gdip_image_save_PNG_to_callback (GdkPixbufSaveFunc   save_func,
                                              gpointer            user_data,
                                              GdkPixbuf          *pixbuf,
                                              gchar             **keys,
@@ -86,17 +86,17 @@ gdk_pixbuf__gdip_image_save_PNG_to_callback (GdkPixbufSaveFunc   save_func,
 }
 
 static gboolean
-gdk_pixbuf__gdip_image_save_PNG (FILE          *f,
+cdk_pixbuf__gdip_image_save_PNG (FILE          *f,
                                  GdkPixbuf     *pixbuf,
                                  gchar        **keys,
                                  gchar        **values,
                                  GError       **error)
 {
-  return gdk_pixbuf__gdip_image_save_PNG_to_callback (gdip_save_to_file_callback, f, pixbuf, keys, values, error);
+  return cdk_pixbuf__gdip_image_save_PNG_to_callback (gdip_save_to_file_callback, f, pixbuf, keys, values, error);
 }
 
 static gboolean
-gdk_pixbuf__gdip_is_save_option_supported_PNG (const gchar *option_key)
+cdk_pixbuf__gdip_is_save_option_supported_PNG (const gchar *option_key)
 {
   if (g_strcmp0 (option_key, "compression") == 0 ||
       strncmp (option_key, "tEXt::", 6) == 0)
@@ -108,16 +108,16 @@ gdk_pixbuf__gdip_is_save_option_supported_PNG (const gchar *option_key)
 #ifndef INCLUDE_gdip_png
 #define MODULE_ENTRY(function) G_MODULE_EXPORT void function
 #else
-#define MODULE_ENTRY(function) void _gdk_pixbuf__gdip_png_ ## function
+#define MODULE_ENTRY(function) void _cdk_pixbuf__gdip_png_ ## function
 #endif
 
 MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
 {
   gdip_fill_vtable (module);
 
-  module->save_to_callback = gdk_pixbuf__gdip_image_save_PNG_to_callback;
-  module->save = gdk_pixbuf__gdip_image_save_PNG; /* for ctk < 2.14, you need to implement both. otherwise gdk-pixbuf-queryloaders fails */
-  module->is_save_option_supported = gdk_pixbuf__gdip_is_save_option_supported_PNG;
+  module->save_to_callback = cdk_pixbuf__gdip_image_save_PNG_to_callback;
+  module->save = cdk_pixbuf__gdip_image_save_PNG; /* for ctk < 2.14, you need to implement both. otherwise cdk-pixbuf-queryloaders fails */
+  module->is_save_option_supported = cdk_pixbuf__gdip_is_save_option_supported_PNG;
 }
 
 MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)

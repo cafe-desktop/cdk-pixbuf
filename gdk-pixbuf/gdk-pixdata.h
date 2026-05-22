@@ -17,7 +17,7 @@
 #ifndef __GDK_PIXDATA_H__
 #define __GDK_PIXDATA_H__
 
-#include        <gdk-pixbuf/gdk-pixbuf.h>
+#include        <cdk-pixbuf/cdk-pixbuf.h>
 
 G_BEGIN_DECLS
 
@@ -90,19 +90,19 @@ struct _GdkPixdata
 
 /* the returned stream is plain htonl of GdkPixdata members + pixel_data */
 GDK_PIXBUF_DEPRECATED_IN_2_32
-guint8*		gdk_pixdata_serialize	(const GdkPixdata	*pixdata,
+guint8*		cdk_pixdata_serialize	(const GdkPixdata	*pixdata,
 					 guint			*stream_length_p);
 GDK_PIXBUF_DEPRECATED_IN_2_32
-gboolean	gdk_pixdata_deserialize	(GdkPixdata		*pixdata,
+gboolean	cdk_pixdata_deserialize	(GdkPixdata		*pixdata,
 					 guint			 stream_length,
 					 const guint8		*stream,
 					 GError		       **error);
 GDK_PIXBUF_DEPRECATED_IN_2_32
-gpointer	gdk_pixdata_from_pixbuf	(GdkPixdata		*pixdata,
+gpointer	cdk_pixdata_from_pixbuf	(GdkPixdata		*pixdata,
 					 const GdkPixbuf	*pixbuf,
 					 gboolean		 use_rle);
 GDK_PIXBUF_DEPRECATED_IN_2_32
-GdkPixbuf*	gdk_pixbuf_from_pixdata	(const GdkPixdata	*pixdata,
+GdkPixbuf*	cdk_pixbuf_from_pixdata	(const GdkPixdata	*pixdata,
 					 gboolean		 copy_pixels,
 					 GError		       **error);
 /** 
@@ -111,7 +111,7 @@ GdkPixbuf*	gdk_pixbuf_from_pixdata	(const GdkPixdata	*pixdata,
  *    string containing a serialized #GdkPixdata structure in network byte 
  *    order).
  * @GDK_PIXDATA_DUMP_PIXDATA_STRUCT: Generate #GdkPixdata structure (needs 
- *    the #GdkPixdata structure definition from gdk-pixdata.h).
+ *    the #GdkPixdata structure definition from cdk-pixdata.h).
  * @GDK_PIXDATA_DUMP_MACROS: Generate <function>*_ROWSTRIDE</function>,     
  *    <function>*_WIDTH</function>, <function>*_HEIGHT</function>,
  *    <function>*_BYTES_PER_PIXEL</function> and 
@@ -126,7 +126,7 @@ GdkPixbuf*	gdk_pixbuf_from_pixdata	(const GdkPixdata	*pixdata,
  * @GDK_PIXDATA_DUMP_RLE_DECODER: Provide a <function>*_RUN_LENGTH_DECODE(image_buf, rle_data, size, bpp)</function> 
  *    macro definition  to  decode  run-length encoded image data.
  *  
- * An enumeration which is used by gdk_pixdata_to_csource() to
+ * An enumeration which is used by cdk_pixdata_to_csource() to
  * determine the form of C source to be generated. The three values
  * @GDK_PIXDATA_DUMP_PIXDATA_STREAM, @GDK_PIXDATA_DUMP_PIXDATA_STRUCT
  * and @GDK_PIXDATA_DUMP_MACROS are mutually exclusive, as are
@@ -152,7 +152,7 @@ typedef enum
   
 
 GDK_PIXBUF_DEPRECATED_IN_2_32
-GString*	gdk_pixdata_to_csource	(GdkPixdata		*pixdata,
+GString*	cdk_pixdata_to_csource	(GdkPixdata		*pixdata,
 					 const gchar		*name,
 					 GdkPixdataDumpType	 dump_type);
 

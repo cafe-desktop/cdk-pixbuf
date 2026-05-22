@@ -19,7 +19,7 @@
  * Author: Matthias Clasen
  */
 
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 #include "test-common.h"
 #include <string.h>
 
@@ -35,10 +35,10 @@ test_inverted_cmyk_jpeg (void)
       return;
     }
 
-  ref = gdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "premature-end.jpg", NULL), &error);
+  ref = cdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "premature-end.jpg", NULL), &error);
   g_assert_no_error (error);
 
-  ref2 = gdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "premature-end.png", NULL), &error);
+  ref2 = cdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "premature-end.png", NULL), &error);
   g_assert_no_error (error);
 
   g_object_unref (ref);
@@ -57,7 +57,7 @@ test_bug_775218 (void)
       return;
     }
 
-  ref = gdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "bug775218.jpg", NULL), &error);
+  ref = cdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "bug775218.jpg", NULL), &error);
   g_assert_error (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_CORRUPT_IMAGE);
   g_error_free (error);
   g_clear_object (&ref);
@@ -76,10 +76,10 @@ test_comment(void)
       return;
     }
 
-  ref = gdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "bug143608-comment.jpg", NULL), &error);
+  ref = cdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "bug143608-comment.jpg", NULL), &error);
   g_assert_no_error (error);
 
-  g_assert_cmpstr (gdk_pixbuf_get_option (ref, "comment"), ==, "COMMENT HERE");
+  g_assert_cmpstr (cdk_pixbuf_get_option (ref, "comment"), ==, "COMMENT HERE");
   g_object_unref (ref);
 }
 #endif
@@ -96,11 +96,11 @@ test_at_size (void)
       return;
     }
 
-  ref = gdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "bug753605-atsize.jpg", NULL), &error);
+  ref = cdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, "bug753605-atsize.jpg", NULL), &error);
   g_assert_no_error (error);
   g_object_unref (ref);
 
-  ref = gdk_pixbuf_new_from_file_at_size (g_test_get_filename (G_TEST_DIST, "bug753605-atsize.jpg", NULL),
+  ref = cdk_pixbuf_new_from_file_at_size (g_test_get_filename (G_TEST_DIST, "bug753605-atsize.jpg", NULL),
 					  50, 50, &error);
   g_assert_no_error (error);
   g_object_unref (ref);
@@ -124,15 +124,15 @@ test_jpeg_markers (void)
   g_file_get_contents (g_test_get_filename (G_TEST_DIST, "issue70.jpg", NULL), &contents, &size, &error);
   g_assert_no_error (error);
 
-  loader = gdk_pixbuf_loader_new ();
+  loader = cdk_pixbuf_loader_new ();
 
-  gdk_pixbuf_loader_write (loader, (const guchar*)contents, size, &error);
+  cdk_pixbuf_loader_write (loader, (const guchar*)contents, size, &error);
   g_assert_no_error (error);
 
-  gdk_pixbuf_loader_close (loader, &error);
+  cdk_pixbuf_loader_close (loader, &error);
   g_assert_no_error (error);
 
-  pixbuf = gdk_pixbuf_loader_get_pixbuf (loader);
+  pixbuf = cdk_pixbuf_loader_get_pixbuf (loader);
   g_assert_nonnull (pixbuf);
 
   g_object_unref (loader);
@@ -167,12 +167,12 @@ test_jpeg_fbfbfbfb (void)
 
   g_assert_no_error (error);
 
-  loader = gdk_pixbuf_loader_new ();
+  loader = cdk_pixbuf_loader_new ();
 
-  gdk_pixbuf_loader_write (loader, (const guchar*)contents, size, &error);
+  cdk_pixbuf_loader_write (loader, (const guchar*)contents, size, &error);
   g_assert_no_error (error);
 
-  gdk_pixbuf_loader_close (loader, &error);
+  cdk_pixbuf_loader_close (loader, &error);
   _g_assert_error_domain (error, GDK_PIXBUF_ERROR);
 
   g_error_free (error);

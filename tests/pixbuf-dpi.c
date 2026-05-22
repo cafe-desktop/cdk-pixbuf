@@ -22,7 +22,7 @@
 #include <string.h>
 
 #include "config.h"
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 #include "test-common.h"
 
 static void
@@ -45,18 +45,18 @@ test_incremental (gconstpointer data)
   g_file_get_contents (g_test_get_filename (G_TEST_DIST, filename, NULL), &contents, &size, &error);
   g_assert_no_error (error);
 
-  loader = gdk_pixbuf_loader_new ();
+  loader = cdk_pixbuf_loader_new ();
 
-  gdk_pixbuf_loader_write (loader, (const guchar*)contents, size, &error);
+  cdk_pixbuf_loader_write (loader, (const guchar*)contents, size, &error);
   g_assert_no_error (error);
   
-  gdk_pixbuf_loader_close (loader, &error);
+  cdk_pixbuf_loader_close (loader, &error);
   g_assert_no_error (error);
 
-  pixbuf = gdk_pixbuf_loader_get_pixbuf (loader);
+  pixbuf = cdk_pixbuf_loader_get_pixbuf (loader);
   g_assert_nonnull (pixbuf);
-  x_dpi = gdk_pixbuf_get_option (pixbuf, "x-dpi");
-  y_dpi = gdk_pixbuf_get_option (pixbuf, "y-dpi");
+  x_dpi = cdk_pixbuf_get_option (pixbuf, "x-dpi");
+  y_dpi = cdk_pixbuf_get_option (pixbuf, "y-dpi");
   g_assert_nonnull (x_dpi);
   g_assert_nonnull (y_dpi);
   g_assert_cmpstr (x_dpi, ==, "300");
@@ -80,11 +80,11 @@ test_nonincremental (gconstpointer data)
       return;
     }
 
-  pixbuf = gdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, filename, NULL), &error);
+  pixbuf = cdk_pixbuf_new_from_file (g_test_get_filename (G_TEST_DIST, filename, NULL), &error);
   g_assert_no_error (error);
 
-  x_dpi = gdk_pixbuf_get_option (pixbuf, "x-dpi");
-  y_dpi = gdk_pixbuf_get_option (pixbuf, "y-dpi");
+  x_dpi = cdk_pixbuf_get_option (pixbuf, "x-dpi");
+  y_dpi = cdk_pixbuf_get_option (pixbuf, "y-dpi");
   g_assert_nonnull (x_dpi);
   g_assert_nonnull (y_dpi);
   g_assert_cmpstr (x_dpi, ==, "300");

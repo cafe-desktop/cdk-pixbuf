@@ -30,8 +30,8 @@
 #include <glib-object.h>
 #include <glib/gi18n-lib.h>
 
-#include "gdk-pixbuf-core.h"
-#include "gdk-pixbuf-io.h"
+#include "cdk-pixbuf-core.h"
+#include "cdk-pixbuf-io.h"
 #include "fallback-c89.c"
 
 /* Helper macros to convert between density units */
@@ -263,7 +263,7 @@ png_free_callback (png_structp o, png_voidp x)
 #ifndef NO_MODULE_ENTRIES
 /* Shared library entry point */
 static GdkPixbuf *
-gdk_pixbuf__png_image_load (FILE *f, GError **error)
+cdk_pixbuf__png_image_load (FILE *f, GError **error)
 {
         GdkPixbuf * volatile pixbuf = NULL;
         gint rowstride;
@@ -329,7 +329,7 @@ gdk_pixbuf__png_image_load (FILE *f, GError **error)
                 return NULL;
         }
         
-        pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, ctype & PNG_COLOR_MASK_ALPHA, 8, w, h);
+        pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, ctype & PNG_COLOR_MASK_ALPHA, 8, w, h);
 
 	if (!pixbuf) {
                 g_set_error_literal (error,
@@ -341,13 +341,13 @@ gdk_pixbuf__png_image_load (FILE *f, GError **error)
 		return NULL;
 	}
 
-        rowstride = gdk_pixbuf_get_rowstride (pixbuf);
+        rowstride = cdk_pixbuf_get_rowstride (pixbuf);
 
-        gdk_pixbuf_fill (pixbuf, DEFAULT_FILL_COLOR);
+        cdk_pixbuf_fill (pixbuf, DEFAULT_FILL_COLOR);
 
 	rows = g_new (png_bytep, h);
 
-        for (i = 0, ptr = gdk_pixbuf_get_pixels (pixbuf); i < h; i++, ptr = (guchar *) ptr + rowstride)
+        for (i = 0, ptr = cdk_pixbuf_get_pixels (pixbuf); i < h; i++, ptr = (guchar *) ptr + rowstride)
 		rows[i] = ptr;
 
 	png_read_image (png_ptr, rows);
@@ -356,7 +356,7 @@ gdk_pixbuf__png_image_load (FILE *f, GError **error)
         if (png_get_text (png_ptr, info_ptr, &text_ptr, &num_texts)) {
                 for (i = 0; i < num_texts; i++) {
                         png_text_to_pixbuf_option (text_ptr[i], &key, &value);
-                        gdk_pixbuf_set_option (pixbuf, key, value);
+                        cdk_pixbuf_set_option (pixbuf, key, value);
                         g_free (key);
                         g_free (value);
                 }
@@ -369,7 +369,7 @@ gdk_pixbuf__png_image_load (FILE *f, GError **error)
                                (png_bytepp) &icc_profile, (png_uint_32*) &icc_profile_size);
         if (retval != 0) {
                 icc_profile_base64 = g_base64_encode ((const guchar *) icc_profile, (gsize)icc_profile_size);
-                gdk_pixbuf_set_option (pixbuf, "icc-profile", icc_profile_base64);
+                cdk_pixbuf_set_option (pixbuf, "icc-profile", icc_profile_base64);
                 g_free (icc_profile_base64);
         }
 #endif
@@ -378,10 +378,10 @@ gdk_pixbuf__png_image_load (FILE *f, GError **error)
         retval = png_get_pHYs (png_ptr, info_ptr, &x_resolution, &y_resolution, &unit_type);
         if (retval != 0 && unit_type == PNG_RESOLUTION_METER) {
                 density_str = g_strdup_printf ("%d", DPM_TO_DPI (x_resolution));
-                gdk_pixbuf_set_option (pixbuf, "x-dpi", density_str);
+                cdk_pixbuf_set_option (pixbuf, "x-dpi", density_str);
                 g_free (density_str);
                 density_str = g_strdup_printf ("%d", DPM_TO_DPI (y_resolution));
-                gdk_pixbuf_set_option (pixbuf, "y-dpi", density_str);
+                cdk_pixbuf_set_option (pixbuf, "y-dpi", density_str);
                 g_free (density_str);
         }
 #endif
@@ -462,7 +462,7 @@ struct _LoadContext {
 
 #ifndef NO_MODULE_ENTRIES
 static gpointer
-gdk_pixbuf__png_image_begin_load (GdkPixbufModuleSizeFunc size_func,
+cdk_pixbuf__png_image_begin_load (GdkPixbufModuleSizeFunc size_func,
                                   GdkPixbufModulePreparedFunc prepared_func,
 				  GdkPixbufModuleUpdatedFunc updated_func,
 				  gpointer user_data,
@@ -568,7 +568,7 @@ gdk_pixbuf__png_image_begin_load (GdkPixbufModuleSizeFunc size_func,
 
 #ifndef NO_MODULE_ENTRIES
 static gboolean
-gdk_pixbuf__png_image_stop_load (gpointer context, GError **error)
+cdk_pixbuf__png_image_stop_load (gpointer context, GError **error)
 {
         LoadContext* lc = context;
         gboolean retval = TRUE;
@@ -597,7 +597,7 @@ gdk_pixbuf__png_image_stop_load (gpointer context, GError **error)
 
 #ifndef NO_MODULE_ENTRIES
 static gboolean
-gdk_pixbuf__png_image_load_increment(gpointer context,
+cdk_pixbuf__png_image_load_increment(gpointer context,
                                      const guchar *buf, guint size,
                                      GError **error)
 {
@@ -627,7 +627,7 @@ gdk_pixbuf__png_image_load_increment(gpointer context,
                 return FALSE;
         } else {
                 if (lc->first_row_seen_in_chunk >= 0) {
-                        gint width = gdk_pixbuf_get_width (lc->pixbuf);
+                        gint width = cdk_pixbuf_get_width (lc->pixbuf);
                         /* We saw at least one row */
                         gint pass_diff = lc->last_pass_seen_in_chunk - lc->first_pass_seen_in_chunk;
                         
@@ -732,7 +732,7 @@ png_info_callback   (png_structp png_read_ptr,
                 }
         }
 
-        lc->pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, have_alpha, 8, width, height);
+        lc->pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, have_alpha, 8, width, height);
 
         if (lc->pixbuf == NULL) {
                 /* Failed to allocate memory */
@@ -745,7 +745,7 @@ png_info_callback   (png_structp png_read_ptr,
                 return;
         }
 
-        gdk_pixbuf_fill (lc->pixbuf, DEFAULT_FILL_COLOR);
+        cdk_pixbuf_fill (lc->pixbuf, DEFAULT_FILL_COLOR);
 
         /* Extract text chunks and attach them as pixbuf options */
         
@@ -755,7 +755,7 @@ png_info_callback   (png_structp png_read_ptr,
 
                         if (png_text_to_pixbuf_option (png_text_ptr[i],
                                                        &key, &value)) {
-                                gdk_pixbuf_set_option (lc->pixbuf, key, value);
+                                cdk_pixbuf_set_option (lc->pixbuf, key, value);
                                 g_free (key);
                                 g_free (value);
                         }
@@ -769,7 +769,7 @@ png_info_callback   (png_structp png_read_ptr,
                                (png_bytepp) &icc_profile, &icc_profile_size);
         if (retval != 0) {
                 icc_profile_base64 = g_base64_encode ((const guchar *) icc_profile, (gsize)icc_profile_size);
-                gdk_pixbuf_set_option (lc->pixbuf, "icc-profile", icc_profile_base64);
+                cdk_pixbuf_set_option (lc->pixbuf, "icc-profile", icc_profile_base64);
                 g_free (icc_profile_base64);
         }
 #endif
@@ -778,10 +778,10 @@ png_info_callback   (png_structp png_read_ptr,
         retval = png_get_pHYs (png_read_ptr, png_info_ptr, &x_resolution, &y_resolution, &unit_type);
         if (retval != 0 && unit_type == PNG_RESOLUTION_METER) {
                 density_str = g_strdup_printf ("%d", DPM_TO_DPI (x_resolution));
-                gdk_pixbuf_set_option (lc->pixbuf, "x-dpi", density_str);
+                cdk_pixbuf_set_option (lc->pixbuf, "x-dpi", density_str);
                 g_free (density_str);
                 density_str = g_strdup_printf ("%d", DPM_TO_DPI (y_resolution));
-                gdk_pixbuf_set_option (lc->pixbuf, "y-dpi", density_str);
+                cdk_pixbuf_set_option (lc->pixbuf, "y-dpi", density_str);
                 g_free (density_str);
         }
 #endif
@@ -812,7 +812,7 @@ png_row_callback   (png_structp png_read_ptr,
         if (lc->fatal_error_occurred)
                 return;
 
-        if (row_num >= gdk_pixbuf_get_height (lc->pixbuf)) {
+        if (row_num >= cdk_pixbuf_get_height (lc->pixbuf)) {
                 lc->fatal_error_occurred = TRUE;
                 g_set_error_literal (lc->error,
                                      GDK_PIXBUF_ERROR,
@@ -830,8 +830,8 @@ png_row_callback   (png_structp png_read_ptr,
         lc->last_row_seen_in_chunk = row_num;
         lc->last_pass_seen_in_chunk = pass_num;
 
-        rowstride = gdk_pixbuf_get_rowstride (lc->pixbuf);
-        old_row = gdk_pixbuf_get_pixels (lc->pixbuf) + (row_num * rowstride);
+        rowstride = cdk_pixbuf_get_rowstride (lc->pixbuf);
+        old_row = cdk_pixbuf_get_pixels (lc->pixbuf) + (row_num * rowstride);
 
         png_progressive_combine_row(lc->png_read_ptr, old_row, new_row);
 }
@@ -1067,12 +1067,12 @@ real_save_png (GdkPixbuf        *pixbuf,
                 }
         }
 
-        bpc = gdk_pixbuf_get_bits_per_sample (pixbuf);
-        w = gdk_pixbuf_get_width (pixbuf);
-        h = gdk_pixbuf_get_height (pixbuf);
-        rowstride = gdk_pixbuf_get_rowstride (pixbuf);
-        has_alpha = gdk_pixbuf_get_has_alpha (pixbuf);
-        pixels = gdk_pixbuf_get_pixels (pixbuf);
+        bpc = cdk_pixbuf_get_bits_per_sample (pixbuf);
+        w = cdk_pixbuf_get_width (pixbuf);
+        h = cdk_pixbuf_get_height (pixbuf);
+        rowstride = cdk_pixbuf_get_rowstride (pixbuf);
+        has_alpha = cdk_pixbuf_get_has_alpha (pixbuf);
+        pixels = cdk_pixbuf_get_pixels (pixbuf);
 
         if (text_data->len > 0) {
                 num_keys = text_data->len;
@@ -1205,7 +1205,7 @@ cleanup:
 }
 
 static gboolean
-gdk_pixbuf__png_image_save (FILE          *f, 
+cdk_pixbuf__png_image_save (FILE          *f, 
                             GdkPixbuf     *pixbuf, 
                             gchar        **keys,
                             gchar        **values,
@@ -1218,7 +1218,7 @@ gdk_pixbuf__png_image_save (FILE          *f,
 }
 
 static gboolean
-gdk_pixbuf__png_image_save_to_callback (GdkPixbufSaveFunc   save_func,
+cdk_pixbuf__png_image_save_to_callback (GdkPixbufSaveFunc   save_func,
                                         gpointer            user_data,
                                         GdkPixbuf          *pixbuf, 
                                         gchar             **keys,
@@ -1232,7 +1232,7 @@ gdk_pixbuf__png_image_save_to_callback (GdkPixbufSaveFunc   save_func,
 }
 
 static gboolean
-gdk_pixbuf__png_is_save_option_supported (const gchar *option_key)
+cdk_pixbuf__png_is_save_option_supported (const gchar *option_key)
 {
         if (g_strcmp0 (option_key, "compression") == 0 ||
             g_strcmp0 (option_key, "icc-profile") == 0 ||
@@ -1249,18 +1249,18 @@ gdk_pixbuf__png_is_save_option_supported (const gchar *option_key)
 #ifndef INCLUDE_png
 #define MODULE_ENTRY(function) G_MODULE_EXPORT void function
 #else
-#define MODULE_ENTRY(function) void _gdk_pixbuf__png_ ## function
+#define MODULE_ENTRY(function) void _cdk_pixbuf__png_ ## function
 #endif
 
 MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
 {
-        module->load = gdk_pixbuf__png_image_load;
-        module->begin_load = gdk_pixbuf__png_image_begin_load;
-        module->stop_load = gdk_pixbuf__png_image_stop_load;
-        module->load_increment = gdk_pixbuf__png_image_load_increment;
-        module->save = gdk_pixbuf__png_image_save;
-        module->save_to_callback = gdk_pixbuf__png_image_save_to_callback;
-        module->is_save_option_supported = gdk_pixbuf__png_is_save_option_supported;
+        module->load = cdk_pixbuf__png_image_load;
+        module->begin_load = cdk_pixbuf__png_image_begin_load;
+        module->stop_load = cdk_pixbuf__png_image_stop_load;
+        module->load_increment = cdk_pixbuf__png_image_load_increment;
+        module->save = cdk_pixbuf__png_image_save;
+        module->save_to_callback = cdk_pixbuf__png_image_save_to_callback;
+        module->is_save_option_supported = cdk_pixbuf__png_is_save_option_supported;
 }
 
 MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)

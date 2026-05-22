@@ -26,7 +26,7 @@
 #include <string.h>
 #include <setjmp.h>
 #include <glib/gi18n-lib.h>
-#include "gdk-pixbuf-io.h"
+#include "cdk-pixbuf-io.h"
 
 #define PNM_BUF_SIZE 4096
 
@@ -78,14 +78,14 @@ typedef struct {
 	
 } PnmLoaderContext;
 
-static GdkPixbuf   *gdk_pixbuf__pnm_image_load          (FILE *f, GError **error);
-static gpointer    gdk_pixbuf__pnm_image_begin_load     (GdkPixbufModuleSizeFunc size_func, 
+static GdkPixbuf   *cdk_pixbuf__pnm_image_load          (FILE *f, GError **error);
+static gpointer    cdk_pixbuf__pnm_image_begin_load     (GdkPixbufModuleSizeFunc size_func, 
                                                          GdkPixbufModulePreparedFunc func, 
 							 GdkPixbufModuleUpdatedFunc func2,
 							 gpointer user_data,
 							 GError **error);
-static gboolean    gdk_pixbuf__pnm_image_stop_load      (gpointer context, GError **error);
-static gboolean    gdk_pixbuf__pnm_image_load_increment (gpointer context,
+static gboolean    cdk_pixbuf__pnm_image_stop_load      (gpointer context, GError **error);
+static gboolean    cdk_pixbuf__pnm_image_load_increment (gpointer context,
 							 const guchar *buf, guint size,
 							 GError **error);
 
@@ -674,7 +674,7 @@ pnm_read_scanline (PnmLoaderContext *context)
 
 /* Shared library entry point */
 static GdkPixbuf *
-gdk_pixbuf__pnm_image_load (FILE *f, GError **error)
+cdk_pixbuf__pnm_image_load (FILE *f, GError **error)
 {
 	PnmLoaderContext context;
 	PnmIOBuffer *inbuf;
@@ -770,7 +770,7 @@ gdk_pixbuf__pnm_image_load (FILE *f, GError **error)
 			context.output_row = 0;
 			context.output_col = 0;
 			
-			context.pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8,
+			context.pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8,
 							 context.width, context.height);
 			
 			if (!context.pixbuf) {
@@ -782,8 +782,8 @@ gdk_pixbuf__pnm_image_load (FILE *f, GError **error)
 				return NULL;
 			}
 
-			context.rowstride = gdk_pixbuf_get_rowstride (context.pixbuf);
-			context.pixels = gdk_pixbuf_get_pixels (context.pixbuf);
+			context.rowstride = cdk_pixbuf_get_rowstride (context.pixbuf);
+			context.pixels = cdk_pixbuf_get_pixels (context.pixbuf);
 		}
 		
 		/* if we got here we're reading image data */
@@ -816,7 +816,7 @@ gdk_pixbuf__pnm_image_load (FILE *f, GError **error)
  */
 
 static gpointer
-gdk_pixbuf__pnm_image_begin_load (GdkPixbufModuleSizeFunc size_func, 
+cdk_pixbuf__pnm_image_begin_load (GdkPixbufModuleSizeFunc size_func, 
                                   GdkPixbufModulePreparedFunc prepared_func, 
 				  GdkPixbufModuleUpdatedFunc  updated_func,
 				  gpointer user_data,
@@ -860,10 +860,10 @@ gdk_pixbuf__pnm_image_begin_load (GdkPixbufModuleSizeFunc size_func,
 /*
  * context - returned from image_begin_load
  *
- * free context, unref gdk_pixbuf
+ * free context, unref cdk_pixbuf
  */
 static gboolean
-gdk_pixbuf__pnm_image_stop_load (gpointer data,
+cdk_pixbuf__pnm_image_stop_load (gpointer data,
 				 GError **error)
 {
 	PnmLoaderContext *context = (PnmLoaderContext *) data;
@@ -907,7 +907,7 @@ gdk_pixbuf__pnm_image_stop_load (gpointer data,
  * append image data onto inrecrementally built output image
  */
 static gboolean
-gdk_pixbuf__pnm_image_load_increment (gpointer data,
+cdk_pixbuf__pnm_image_load_increment (gpointer data,
 				      const guchar *buf, guint size,
 				      GError **error)
 {
@@ -1007,7 +1007,7 @@ gdk_pixbuf__pnm_image_load_increment (gpointer data,
 			context->output_row = 0;
 			context->output_col = 0;
 			
-			context->pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, 
+			context->pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, 
 							  FALSE,
 							  8, 
 							  context->width,
@@ -1021,8 +1021,8 @@ gdk_pixbuf__pnm_image_load_increment (gpointer data,
 				return FALSE;
 			}
 			
-			context->pixels = gdk_pixbuf_get_pixels (context->pixbuf);
-			context->rowstride = gdk_pixbuf_get_rowstride (context->pixbuf);
+			context->pixels = cdk_pixbuf_get_pixels (context->pixbuf);
+			context->rowstride = cdk_pixbuf_get_rowstride (context->pixbuf);
 			
 			/* Notify the client that we are ready to go */
 			(* context->prepared_func) (context->pixbuf,
@@ -1061,15 +1061,15 @@ gdk_pixbuf__pnm_image_load_increment (gpointer data,
 #ifndef INCLUDE_pnm
 #define MODULE_ENTRY(function) G_MODULE_EXPORT void function
 #else
-#define MODULE_ENTRY(function) void _gdk_pixbuf__pnm_ ## function
+#define MODULE_ENTRY(function) void _cdk_pixbuf__pnm_ ## function
 #endif
 
 MODULE_ENTRY (fill_vtable) (GdkPixbufModule *module)
 {
-	module->load = gdk_pixbuf__pnm_image_load;
-	module->begin_load = gdk_pixbuf__pnm_image_begin_load;
-	module->stop_load = gdk_pixbuf__pnm_image_stop_load;
-	module->load_increment = gdk_pixbuf__pnm_image_load_increment;
+	module->load = cdk_pixbuf__pnm_image_load;
+	module->begin_load = cdk_pixbuf__pnm_image_begin_load;
+	module->stop_load = cdk_pixbuf__pnm_image_stop_load;
+	module->load_increment = cdk_pixbuf__pnm_image_load_increment;
 }
 
 MODULE_ENTRY (fill_info) (GdkPixbufFormat *info)

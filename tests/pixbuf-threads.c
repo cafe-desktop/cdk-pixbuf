@@ -19,7 +19,7 @@
 
 #include "config.h"
 #include <glib/gstdio.h>
-#include "gdk-pixbuf/gdk-pixbuf.h"
+#include "cdk-pixbuf/cdk-pixbuf.h"
 #include "test-common.h"
 
 static void
@@ -34,7 +34,7 @@ load_image (gpointer data,
   GdkPixbufLoader *loader;
   GError *error = NULL;
 
-  loader = gdk_pixbuf_loader_new ();
+  loader = cdk_pixbuf_loader_new ();
   path = g_test_get_filename (G_TEST_DIST, "test-images/randomly-modified", filename, NULL);
 
   g_test_message ("reading %s", path); 
@@ -44,14 +44,14 @@ load_image (gpointer data,
   while (!feof (file)) 
     {
       nbytes = fread (buffer, 1, sizeof (buffer), file);
-      gdk_pixbuf_loader_write (loader, buffer, nbytes, &error);
+      cdk_pixbuf_loader_write (loader, buffer, nbytes, &error);
       g_assert_no_error (error);
       g_thread_yield ();      
     }
 
   fclose (file);
 
-  gdk_pixbuf_loader_close (loader, &error);
+  cdk_pixbuf_loader_close (loader, &error);
 
   if (g_error_matches (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_UNKNOWN_TYPE))
     {
