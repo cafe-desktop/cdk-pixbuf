@@ -13,6 +13,7 @@ requires:
     - expect #required for unbuffer
     - gi-docgen
     - libglib2.0-dev
+    - librsvg2-dev
     - meson
     - python3-docutils
 
