@@ -27,7 +27,7 @@
 #include <stdlib.h>
 
 #include <librsvg/rsvg.h>
-#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <cdk-pixbuf/cdk-pixbuf.h>
 
 typedef struct {
         RsvgHandle                 *handle;
@@ -61,7 +61,7 @@ rsvg_propagate_error (GError ** err,
 }
 
 static gpointer
-gdk_pixbuf__svg_image_begin_load (GdkPixbufModuleSizeFunc size_func,
+cdk_pixbuf__svg_image_begin_load (GdkPixbufModuleSizeFunc size_func,
                                   GdkPixbufModulePreparedFunc prepared_func,
                                   GdkPixbufModuleUpdatedFunc  updated_func,
                                   gpointer user_data,
@@ -88,8 +88,8 @@ emit_updated (SvgContext *context, GdkPixbuf *pixbuf)
         if (context->updated_func != NULL)
                 (* context->updated_func) (pixbuf,
                                            0, 0,
-                                           gdk_pixbuf_get_width (pixbuf),
-                                           gdk_pixbuf_get_height (pixbuf),
+                                           cdk_pixbuf_get_width (pixbuf),
+                                           cdk_pixbuf_get_height (pixbuf),
                                            context->user_data);
 }
 
@@ -101,7 +101,7 @@ emit_prepared (SvgContext *context, GdkPixbuf *pixbuf)
 }
 
 static gboolean
-gdk_pixbuf__svg_image_load_increment (gpointer data,
+cdk_pixbuf__svg_image_load_increment (gpointer data,
 				      const guchar *buf, guint size,
 				      GError **error)
 {
@@ -138,7 +138,7 @@ gdk_pixbuf__svg_image_load_increment (gpointer data,
 }
 
 static gboolean
-gdk_pixbuf__svg_image_stop_load (gpointer data, GError **error)
+cdk_pixbuf__svg_image_stop_load (gpointer data, GError **error)
 {
         SvgContext *context = (SvgContext *)data;
         GdkPixbuf *pixbuf;
@@ -179,9 +179,9 @@ gdk_pixbuf__svg_image_stop_load (gpointer data, GError **error)
 void
 fill_vtable (GdkPixbufModule *module)
 {
-        module->begin_load     = gdk_pixbuf__svg_image_begin_load;
-        module->stop_load      = gdk_pixbuf__svg_image_stop_load;
-        module->load_increment = gdk_pixbuf__svg_image_load_increment;
+        module->begin_load     = cdk_pixbuf__svg_image_begin_load;
+        module->stop_load      = cdk_pixbuf__svg_image_stop_load;
+        module->load_increment = cdk_pixbuf__svg_image_load_increment;
 }
 
 void
