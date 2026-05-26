@@ -1,5 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-/* GdkPixbuf library - SVG image loader
+/* CdkPixbuf library - SVG image loader
  *
  * Copyright (C) 2002 Matthias Clasen
  * Copyright (C) 2002-2004 Dom Lachowicz
@@ -32,17 +32,17 @@
 typedef struct {
         RsvgHandle                 *handle;
 
-        GdkPixbufModuleUpdatedFunc  updated_func;
-        GdkPixbufModulePreparedFunc prepared_func;
-        GdkPixbufModuleSizeFunc     size_func;
+        CdkPixbufModuleUpdatedFunc  updated_func;
+        CdkPixbufModulePreparedFunc prepared_func;
+        CdkPixbufModuleSizeFunc     size_func;
 
         gboolean                    first_write;
 
         gpointer                    user_data;
 } SvgContext;
 
-G_MODULE_EXPORT void fill_vtable (GdkPixbufModule *module);
-G_MODULE_EXPORT void fill_info (GdkPixbufFormat *info);
+G_MODULE_EXPORT void fill_vtable (CdkPixbufModule *module);
+G_MODULE_EXPORT void fill_info (CdkPixbufFormat *info);
 
 enum {
         ERROR_WRITING = 1,
@@ -61,9 +61,9 @@ rsvg_propagate_error (GError ** err,
 }
 
 static gpointer
-cdk_pixbuf__svg_image_begin_load (GdkPixbufModuleSizeFunc size_func,
-                                  GdkPixbufModulePreparedFunc prepared_func,
-                                  GdkPixbufModuleUpdatedFunc  updated_func,
+cdk_pixbuf__svg_image_begin_load (CdkPixbufModuleSizeFunc size_func,
+                                  CdkPixbufModulePreparedFunc prepared_func,
+                                  CdkPixbufModuleUpdatedFunc  updated_func,
                                   gpointer user_data,
                                   GError **error)
 {
@@ -83,7 +83,7 @@ cdk_pixbuf__svg_image_begin_load (GdkPixbufModuleSizeFunc size_func,
 }
 
 static void
-emit_updated (SvgContext *context, GdkPixbuf *pixbuf)
+emit_updated (SvgContext *context, CdkPixbuf *pixbuf)
 {
         if (context->updated_func != NULL)
                 (* context->updated_func) (pixbuf,
@@ -94,7 +94,7 @@ emit_updated (SvgContext *context, GdkPixbuf *pixbuf)
 }
 
 static void
-emit_prepared (SvgContext *context, GdkPixbuf *pixbuf)
+emit_prepared (SvgContext *context, CdkPixbuf *pixbuf)
 {
         if (context->prepared_func != NULL)
                 (* context->prepared_func) (pixbuf, NULL, context->user_data);
@@ -141,7 +141,7 @@ static gboolean
 cdk_pixbuf__svg_image_stop_load (gpointer data, GError **error)
 {
         SvgContext *context = (SvgContext *)data;
-        GdkPixbuf *pixbuf;
+        CdkPixbuf *pixbuf;
         gboolean result = TRUE;
 
         if (error)
@@ -177,7 +177,7 @@ cdk_pixbuf__svg_image_stop_load (gpointer data, GError **error)
 }
 
 void
-fill_vtable (GdkPixbufModule *module)
+fill_vtable (CdkPixbufModule *module)
 {
         module->begin_load     = cdk_pixbuf__svg_image_begin_load;
         module->stop_load      = cdk_pixbuf__svg_image_stop_load;
@@ -185,9 +185,9 @@ fill_vtable (GdkPixbufModule *module)
 }
 
 void
-fill_info (GdkPixbufFormat *info)
+fill_info (CdkPixbufFormat *info)
 {
-        static const GdkPixbufModulePattern signature[] = {
+        static const CdkPixbufModulePattern signature[] = {
                 {  " <svg",  "*    ", 100 },
                 {  " <!DOCTYPE svg",  "*             ", 100 },
                 { NULL, NULL, 0 }
@@ -210,7 +210,7 @@ fill_info (GdkPixbufFormat *info)
         };
 
         info->name        = "svg";
-        info->signature   = (GdkPixbufModulePattern *) signature;
+        info->signature   = (CdkPixbufModulePattern *) signature;
         info->description = "Scalable Vector Graphics";
         info->mime_types  = (gchar **) mime_types;
         info->extensions  = (gchar **) extensions;
