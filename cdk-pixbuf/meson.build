@@ -58,6 +58,10 @@ loaders = {
     'sources': [ 'io-qtif.c' ],
     'enabled': enabled_loaders.contains('qtif'),
   },
+  'svg': {
+    'sources': [ 'io-svg.c' ],
+    'enabled': enabled_loaders.contains('svg'),
+  },
 }
 
 cdk_pixbuf_inc = include_directories('.')
