@@ -28,6 +28,7 @@
 
 #include <librsvg/rsvg.h>
 #include <cdk-pixbuf/cdk-pixbuf.h>
+#include <gdk-pixbuf/gdk-pixbuf.h>
 
 typedef struct {
         RsvgHandle                 *handle;
@@ -141,7 +142,8 @@ static gboolean
 cdk_pixbuf__svg_image_stop_load (gpointer data, GError **error)
 {
         SvgContext *context = (SvgContext *)data;
-        CdkPixbuf *pixbuf;
+        CdkPixbuf *cdk_pixbuf;
+        GdkPixbuf *gdk_pixbuf;
         gboolean result = TRUE;
 
         if (error)
@@ -158,12 +160,42 @@ cdk_pixbuf__svg_image_stop_load (gpointer data, GError **error)
                 return FALSE;
         }
 
-        pixbuf = rsvg_handle_get_pixbuf (context->handle);
+        gdk_pixbuf = rsvg_handle_get_pixbuf (context->handle);
 
-        if (pixbuf != NULL) {
-                emit_prepared (context, pixbuf);
-                emit_updated (context, pixbuf);
-                g_object_unref (pixbuf);
+        if (gdk_pixbuf != NULL) {
+                int width, height, rowstride, bytes_per_row;
+                guchar *src_pixels, *dest_pixels;
+
+                width      = gdk_pixbuf_get_width (gdk_pixbuf);
+                height     = gdk_pixbuf_get_height (gdk_pixbuf);
+                rowstride  = gdk_pixbuf_get_rowstride (gdk_pixbuf);
+                src_pixels = gdk_pixbuf_get_pixels (gdk_pixbuf);
+
+                cdk_pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB,
+                                             gdk_pixbuf_get_has_alpha (gdk_pixbuf),
+                                             gdk_pixbuf_get_bits_per_sample (gdk_pixbuf),
+                                             width, height);
+
+                if (cdk_pixbuf != NULL) {
+                        int dest_rowstride = cdk_pixbuf_get_rowstride (cdk_pixbuf);
+                        bytes_per_row = width * gdk_pixbuf_get_n_channels (gdk_pixbuf);
+                        dest_pixels = cdk_pixbuf_get_pixels (cdk_pixbuf);
+
+                        for (int y = 0; y < height; y++) {
+                                memcpy (dest_pixels + y * dest_rowstride,
+                                        src_pixels + y * rowstride,
+                                        bytes_per_row);
+                        }
+
+                        emit_prepared (context, cdk_pixbuf);
+                        emit_updated (context, cdk_pixbuf);
+                        g_object_unref (cdk_pixbuf);
+                } else {
+                        rsvg_propagate_error (error, "Error displaying image", ERROR_DISPLAYING_IMAGE);
+                        result = FALSE;
+                }
+
+                g_object_unref (gdk_pixbuf);
         }
         else {
                 rsvg_propagate_error (error, "Error displaying image", ERROR_DISPLAYING_IMAGE);
