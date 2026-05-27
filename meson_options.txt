@@ -29,8 +29,12 @@ option('others',
 option('builtin_loaders',
        description: 'Comma-separated list of loaders to build into cdk-pixbuf',
        type: 'array',
-       choices: ['default', 'all', 'none', 'windows', 'png', 'bmp', 'gif', 'ico', 'ani', 'jpeg', 'pnm', 'tiff', 'xpm', 'xbm', 'tga', 'icns', 'qtif', 'glycin'],
+       choices: ['default', 'all', 'none', 'windows', 'png', 'bmp', 'gif', 'ico', 'ani', 'jpeg', 'pnm', 'tiff', 'xpm', 'xbm', 'tga', 'icns', 'qtif', 'glycin', 'svg'],
        value: ['png','jpeg'])
+option('svg',
+       description: 'Enable SVG loader (requires librsvg-2.0)',
+       type: 'feature',
+       value: 'enabled')
 option('gtk_doc',
        description: 'Whether to generate the API reference',
        deprecated: 'documentation',

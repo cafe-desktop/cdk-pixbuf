@@ -394,6 +394,15 @@ if not tiff_opt.disabled() and not native_windows_loaders
   endif
 endif
 
+# --- SVG Loader (Depends on system librsvg) ---
+svg_opt = get_option('svg').disable_auto_if(glycin_dep.found())
+svg_dep = dependency('librsvg-2.0', version: '>= 2.60.0', required: svg_opt)
+
+if svg_dep.found()
+  enabled_loaders += 'svg'
+  loaders_deps += svg_dep
+endif
+
 # Determine whether we enable application bundle relocation support, and we use
 # this always on Windows
 if host_system == 'windows'
