@@ -28,7 +28,6 @@
 
 #include <librsvg/rsvg.h>
 #include <cdk-pixbuf/cdk-pixbuf.h>
-#include <gdk-pixbuf/gdk-pixbuf.h>
 
 typedef struct {
         RsvgHandle                 *handle;
@@ -163,23 +162,29 @@ cdk_pixbuf__svg_image_stop_load (gpointer data, GError **error)
         gdk_pixbuf = rsvg_handle_get_pixbuf (context->handle);
 
         if (gdk_pixbuf != NULL) {
-                int width, height, rowstride, bytes_per_row;
-                guchar *src_pixels, *dest_pixels;
+                int width, height, rowstride, n_channels, bits_per_sample;
+                gboolean has_alpha;
+                guchar *src_pixels;
 
-                width      = gdk_pixbuf_get_width (gdk_pixbuf);
-                height     = gdk_pixbuf_get_height (gdk_pixbuf);
-                rowstride  = gdk_pixbuf_get_rowstride (gdk_pixbuf);
-                src_pixels = gdk_pixbuf_get_pixels (gdk_pixbuf);
+                g_object_get (gdk_pixbuf,
+                              "width", &width,
+                              "height", &height,
+                              "rowstride", &rowstride,
+                              "n-channels", &n_channels,
+                              "has-alpha", &has_alpha,
+                              "bits-per-sample", &bits_per_sample,
+                              "pixels", &src_pixels,
+                              NULL);
 
                 cdk_pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB,
-                                             gdk_pixbuf_get_has_alpha (gdk_pixbuf),
-                                             gdk_pixbuf_get_bits_per_sample (gdk_pixbuf),
+                                             has_alpha,
+                                             bits_per_sample,
                                              width, height);
 
                 if (cdk_pixbuf != NULL) {
                         int dest_rowstride = cdk_pixbuf_get_rowstride (cdk_pixbuf);
-                        bytes_per_row = width * gdk_pixbuf_get_n_channels (gdk_pixbuf);
-                        dest_pixels = cdk_pixbuf_get_pixels (cdk_pixbuf);
+                        int bytes_per_row = width * n_channels;
+                        guchar *dest_pixels = cdk_pixbuf_get_pixels (cdk_pixbuf);
 
                         for (int y = 0; y < height; y++) {
                                 memcpy (dest_pixels + y * dest_rowstride,

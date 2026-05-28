@@ -13,7 +13,6 @@ requires:
     - expect #required for unbuffer
     - gi-docgen
     - libglib2.0-dev
-    - libgdk-pixbuf-2.0-dev #required for svg loader
     - librsvg2-dev
     - meson
     - python3-docutils
