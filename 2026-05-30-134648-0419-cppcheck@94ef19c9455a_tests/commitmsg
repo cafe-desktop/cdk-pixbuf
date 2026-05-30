@@ -1,0 +1,3 @@
+reftests: keep mandatory-bitmasks.bmp in original state
+
+it fixes cdk-pixbuf:pixbuf-reftest test

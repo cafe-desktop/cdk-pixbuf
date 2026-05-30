@@ -1,0 +1,68 @@
+Format: 1.8
+Date: Sat, 14 Feb 2026 10:24:34 -0500
+Source: cdk-pixbuf
+Binary: cdk-pixbuf-tests cdk-pixbuf-tests-dbgsym gir1.2-cdkpixbuf-2.0 libcdk-pixbuf-2.0-0 libcdk-pixbuf-2.0-0-dbgsym libcdk-pixbuf-2.0-0-udeb libcdk-pixbuf-2.0-dev libcdk-pixbuf2.0-0-udeb libcdk-pixbuf2.0-bin libcdk-pixbuf2.0-bin-dbgsym libcdk-pixbuf2.0-common libcdk-pixbuf2.0-doc
+Architecture: amd64 all
+Version: 2.44.5+dfsg-4
+Distribution: unstable
+Urgency: medium
+Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
+Changed-By: Jeremy Bícha <jbicha@ubuntu.com>
+Description:
+ cdk-pixbuf-tests - installed tests for the CDK Pixbuf library
+ gir1.2-cdkpixbuf-2.0 - CDK Pixbuf library - GObject-Introspection
+ libcdk-pixbuf-2.0-0 - CDK Pixbuf library
+ libcdk-pixbuf-2.0-0-udeb - CDK Pixbuf library - minimal runtime (udeb)
+ libcdk-pixbuf-2.0-dev - CDK Pixbuf library (development files)
+ libcdk-pixbuf2.0-0-udeb - CDK Pixbuf library - minimal runtime (udeb)
+ libcdk-pixbuf2.0-bin - CDK Pixbuf library (thumbnailer)
+ libcdk-pixbuf2.0-common - CDK Pixbuf library - data files
+ libcdk-pixbuf2.0-doc - CDK Pixbuf library (documentation)
+Closes: 815612
+Changes:
+ cdk-pixbuf (2.44.5+dfsg-4) unstable; urgency=medium
+ .
+   * Add patch to support JPEG2000 (Closes: #815612)
+   * Bump minimum glycin to 2.0.8 for this to work
+Checksums-Sha1:
+ 7bcdbfe98db3eff04c01bb15a4cb817ee1a8e9c4 15876 cdk-pixbuf-tests-dbgsym_2.44.5+dfsg-4_amd64.deb
+ 8e5aa790e9401ac392f5464f49b4fb34df5dfd01 5293000 cdk-pixbuf-tests_2.44.5+dfsg-4_amd64.deb
+ 16e0b29e2753e0a4fed0752f6496438c27593c32 14796 cdk-pixbuf_2.44.5+dfsg-4_amd64.buildinfo
+ 4547534b053907df68de09fad1e0d2d982617d4e 11772 gir1.2-cdkpixbuf-2.0_2.44.5+dfsg-4_amd64.deb
+ f476239a6316d4c91e58d667adcacdf1a9463a75 18976 libcdk-pixbuf-2.0-0-dbgsym_2.44.5+dfsg-4_amd64.deb
+ 580ea6cccd2b9a3ea757a1c5eda3c2593c933164 354032 libcdk-pixbuf-2.0-0-udeb_2.44.5+dfsg-4_amd64.udeb
+ aa5f0ae12757ae5e8bc041789d8f3c436446c926 118944 libcdk-pixbuf-2.0-0_2.44.5+dfsg-4_amd64.deb
+ c8479b55eec439e55fa7efb18ed4814295c9bbf4 50272 libcdk-pixbuf-2.0-dev_2.44.5+dfsg-4_amd64.deb
+ 7de42c310e139b1379c70fc2caa854058ec62231 944 libcdk-pixbuf2.0-0-udeb_2.44.5+dfsg-4_amd64.udeb
+ 15cc3121d61b80a4a912d9faf8ec8235cb126267 4020 libcdk-pixbuf2.0-bin-dbgsym_2.44.5+dfsg-4_amd64.deb
+ 0c82b43f6edaeee64f155fd1fd77a114e9d025bb 15808 libcdk-pixbuf2.0-bin_2.44.5+dfsg-4_amd64.deb
+ 008c29b90714e923b8042725ad2a4c980d128419 311948 libcdk-pixbuf2.0-common_2.44.5+dfsg-4_all.deb
+ 150b5bb649bbfd0845a3416863e75eadf2afeb22 268760 libcdk-pixbuf2.0-doc_2.44.5+dfsg-4_all.deb
+Checksums-Sha256:
+ 1c31b7ddb2738e824f11f90ed06eff8f700a519be86f5082489c460cc4273565 15876 cdk-pixbuf-tests-dbgsym_2.44.5+dfsg-4_amd64.deb
+ 968132a7433a9f80b5a84acdd19d7bf7cce2b8976f89b3e9a023ea594b8fdb09 5293000 cdk-pixbuf-tests_2.44.5+dfsg-4_amd64.deb
+ 0d06e5a731fc88eb9dda7ccad55ab7d1326c92013ac6eb6027c7bb707725384c 14796 cdk-pixbuf_2.44.5+dfsg-4_amd64.buildinfo
+ a78661990b2d519b880665cf2726418feb16db55905f8021b107784b03bc58fc 11772 gir1.2-cdkpixbuf-2.0_2.44.5+dfsg-4_amd64.deb
+ a6e2053a5bd24061feea5e9404fc5b064b9f30abdcb89019c69c9fe7cc417e01 18976 libcdk-pixbuf-2.0-0-dbgsym_2.44.5+dfsg-4_amd64.deb
+ 032487da7d404f6a74766843d741f2977805f435175abdabf186ea781fe59ab6 354032 libcdk-pixbuf-2.0-0-udeb_2.44.5+dfsg-4_amd64.udeb
+ b690c5fab297586118cfd4aa8d34c6b46ba197aa5cbee4626f78cdc54195f811 118944 libcdk-pixbuf-2.0-0_2.44.5+dfsg-4_amd64.deb
+ a05cf49c00b1c4f1ae14c332ee553663ab59b5cb5ab1690eaf365949bf06a66d 50272 libcdk-pixbuf-2.0-dev_2.44.5+dfsg-4_amd64.deb
+ 46f7189737ee766c03606eb65a8aadcf31f6fc42549f42601cabe7e084a3a7c8 944 libcdk-pixbuf2.0-0-udeb_2.44.5+dfsg-4_amd64.udeb
+ 1f3faeb8104f025392e118bd9c7270de80aca10087ecc01cd65e3d9e435d7226 4020 libcdk-pixbuf2.0-bin-dbgsym_2.44.5+dfsg-4_amd64.deb
+ 7ee4b29a7a858ed66697ca80e3f93e1c9a6ba73e5210f5aa470888496d70e36e 15808 libcdk-pixbuf2.0-bin_2.44.5+dfsg-4_amd64.deb
+ 999bb9673edbfec3a00cf8c49a6cc130c277e593f4476cabb85d08829828dec7 311948 libcdk-pixbuf2.0-common_2.44.5+dfsg-4_all.deb
+ c0bf00f54c0f93eae26c22a320684dad9eac875aaf3ad1144616750ba4c87dd3 268760 libcdk-pixbuf2.0-doc_2.44.5+dfsg-4_all.deb
+Files:
+ 63867fa405eb9763f00a2868b2006a96 15876 debug optional cdk-pixbuf-tests-dbgsym_2.44.5+dfsg-4_amd64.deb
+ 1ad8f7aa0fdc6be1cf678106ef5ec8ba 5293000 libs optional cdk-pixbuf-tests_2.44.5+dfsg-4_amd64.deb
+ 04df496d57a8fc6a09b30857d7252595 14796 libs optional cdk-pixbuf_2.44.5+dfsg-4_amd64.buildinfo
+ ccc2c2b6e47784afe248135e614525e2 11772 introspection optional gir1.2-cdkpixbuf-2.0_2.44.5+dfsg-4_amd64.deb
+ efebeb83f9bf58fdee43c833725e05ad 18976 debug optional libcdk-pixbuf-2.0-0-dbgsym_2.44.5+dfsg-4_amd64.deb
+ 31d73fa73262112d8203e47a8f40a147 354032 debian-installer optional libcdk-pixbuf-2.0-0-udeb_2.44.5+dfsg-4_amd64.udeb
+ 0b4caa52ea2dd7de015e7c6404a09e10 118944 libs optional libcdk-pixbuf-2.0-0_2.44.5+dfsg-4_amd64.deb
+ 5705b30671485a5662574cf8c733c826 50272 libdevel optional libcdk-pixbuf-2.0-dev_2.44.5+dfsg-4_amd64.deb
+ 2cdab14afaa17bdf3d56d967905d6952 944 debian-installer optional libcdk-pixbuf2.0-0-udeb_2.44.5+dfsg-4_amd64.udeb
+ 1da43915ce65b7dd5b680dbb145529c9 4020 debug optional libcdk-pixbuf2.0-bin-dbgsym_2.44.5+dfsg-4_amd64.deb
+ 78dbed69a4c7a381aeff8a47202a2ecb 15808 libs optional libcdk-pixbuf2.0-bin_2.44.5+dfsg-4_amd64.deb
+ efcaa9abaf60c21b935024e489027266 311948 libs optional libcdk-pixbuf2.0-common_2.44.5+dfsg-4_all.deb
+ e9a347bdeaf23ad51b6358c7819d36b5 268760 doc optional libcdk-pixbuf2.0-doc_2.44.5+dfsg-4_all.deb

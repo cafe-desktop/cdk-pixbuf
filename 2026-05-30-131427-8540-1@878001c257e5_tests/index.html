@@ -1,0 +1,392 @@
+<html>
+<head>
+<title>cdk-pixbuf (clang-tools 1:21.1.6-71+b1) - scan-build results</title>
+<link type="text/css" rel="stylesheet" href="scanview.css"/>
+<script src="sorttable.js"></script>
+<script language='javascript' type="text/javascript">
+function SetDisplay(RowClass, DisplayVal)
+{
+  var Rows = document.getElementsByTagName("tr");
+  for ( var i = 0 ; i < Rows.length; ++i ) {
+    if (Rows[i].className == RowClass) {
+      Rows[i].style.display = DisplayVal;
+    }
+  }
+}
+
+function CopyCheckedStateToCheckButtons(SummaryCheckButton) {
+  var Inputs = document.getElementsByTagName("input");
+  for ( var i = 0 ; i < Inputs.length; ++i ) {
+    if (Inputs[i].type == "checkbox") {
+      if(Inputs[i] != SummaryCheckButton) {
+        Inputs[i].checked = SummaryCheckButton.checked;
+        Inputs[i].onclick();
+      }
+    }
+  }
+}
+
+function returnObjById( id ) {
+    if (document.getElementById)
+        var returnVar = document.getElementById(id);
+    else if (document.all)
+        var returnVar = document.all[id];
+    else if (document.layers)
+        var returnVar = document.layers[id];
+    return returnVar;
+}
+
+var NumUnchecked = 0;
+
+function ToggleDisplay(CheckButton, ClassName) {
+  if (CheckButton.checked) {
+    SetDisplay(ClassName, "");
+    if (--NumUnchecked == 0) {
+      returnObjById("AllBugsCheck").checked = true;
+    }
+  }
+  else {
+    SetDisplay(ClassName, "none");
+    NumUnchecked++;
+    returnObjById("AllBugsCheck").checked = false;
+  }
+}
+</script>
+<!-- SUMMARYENDHEAD -->
+</head>
+<body>
+<h1>cdk-pixbuf (clang-tools 1:21.1.6-71+b1) - scan-build results</h1>
+
+<table>
+<tr><th>User:</th><td>root@33f0d9cf439d</td></tr>
+<tr><th>Working Directory:</th><td>/rootdir</td></tr>
+<tr><th>Command Line:</th><td>ninja -C _build</td></tr>
+<tr><th>Clang Version:</th><td>Debian clang version 21.1.8 (7+b1)
+</td></tr>
+<tr><th>Date:</th><td>Sat May 30 13:14:27 2026</td></tr>
+</table>
+<h2>Bug Summary</h2><table>
+<thead><tr><td>Bug Type</td><td>Quantity</td><td class="sorttable_nosort">Display?</td></tr></thead>
+<tr style="font-weight:bold"><td class="SUMM_DESC">All Bugs</td><td class="Q">90</td><td><center><input type="checkbox" id="AllBugsCheck" onClick="CopyCheckedStateToCheckButtons(this);" checked/></center></td></tr>
+<tr><th>API</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">Argument with 'nonnull' attribute passed null</td><td class="Q">2</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_api_argument_with_nonnull_attribute_passed_null');" checked/></center></td></tr>
+<tr><th>Error handling</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">Value of 'errno' was not checked</td><td class="Q">5</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_error_handling_value_of_errno_was_not_checked');" checked/></center></td></tr>
+<tr><th>Logic error</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">Branch condition evaluates to a garbage value</td><td class="Q">1</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_branch_condition_evaluates_to_a_garbage_value');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Cast from non-struct type to struct type</td><td class="Q">4</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_cast_from_non-struct_type_to_struct_type');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Dereference of null pointer</td><td class="Q">20</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_dereference_of_null_pointer');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Dereference of undefined pointer value</td><td class="Q">3</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_dereference_of_undefined_pointer_value');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Division by zero</td><td class="Q">2</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_division_by_zero');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Out-of-bound access</td><td class="Q">20</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_out-of-bound_access');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Result of operation is garbage or undefined</td><td class="Q">3</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_result_of_operation_is_garbage_or_undefined');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Use fixed address</td><td class="Q">1</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_use_fixed_address');" checked/></center></td></tr>
+<tr><th>Memory error</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">Memory leak</td><td class="Q">1</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_memory_error_memory_leak');" checked/></center></td></tr>
+<tr><th>Stream handling error</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">Invalid stream state</td><td class="Q">1</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_stream_handling_error_invalid_stream_state');" checked/></center></td></tr>
+<tr><th>Suspicious operation</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">Bitwise shift</td><td class="Q">2</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_suspicious_operation_bitwise_shift');" checked/></center></td></tr>
+<tr><th>Unused code</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">Dead assignment</td><td class="Q">2</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_unused_code_dead_assignment');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Dead increment</td><td class="Q">1</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_unused_code_dead_increment');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Dead nested assignment</td><td class="Q">3</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_unused_code_dead_nested_assignment');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Unreachable code</td><td class="Q">19</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_unused_code_unreachable_code');" checked/></center></td></tr>
+</table>
+
+<h2>Filter Results by File</h2>
+<input
+  type="text"
+  id="file_input"
+  onkeyup="searchFiles()"
+  placeholder="Enter a path or filename"
+  title="Enter a path or filename">
+
+<h2>Reports</h2>
+
+<table id="reports_table" class="sortable" style="table-layout:automatic">
+<thead><tr>
+  <td>Bug Group</td>
+  <td class="sorttable_sorted">Bug Type<span id="sorttable_sortfwdind">&nbsp;&#x25BE;</span></td>
+  <td>File</td>
+  <td>Function/Method</td>
+  <td class="Q">Line</td>
+  <td class="Q">Path Length</td>
+  <td class="sorttable_nosort"></td>
+  <!-- REPORTBUGCOL -->
+</tr></thead>
+<tbody>
+<tr class="bt_api_argument_with_nonnull_attribute_passed_null"><td class="DESC">API</td><td class="DESC">Argument with 'nonnull' attribute passed null</td><td>cdk-pixbuf/io-jpeg.c</td><td class="DESC">jpeg_parse_exif_app2_segment</td><td class="Q">382</td><td class="Q">76</td><td><a href="report-111589.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-111589.html" -->
+</tr>
+<tr class="bt_api_argument_with_nonnull_attribute_passed_null"><td class="DESC">API</td><td class="DESC">Argument with 'nonnull' attribute passed null</td><td>subprojects/libjpeg-turbo-2.1.2/jdatadst.c</td><td class="DESC">empty_mem_output_buffer</td><td class="Q">144</td><td class="Q">4</td><td><a href="report-82bb4d.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-82bb4d.html" -->
+</tr>
+<tr class="bt_suspicious_operation_bitwise_shift"><td class="DESC">Suspicious operation</td><td class="DESC">Bitwise shift</td><td>subprojects/libjpeg-turbo-2.1.2/jdhuff.c</td><td class="DESC">jpeg_huff_decode</td><td class="Q">445</td><td class="Q">33</td><td><a href="report-2cb403.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-2cb403.html" -->
+</tr>
+<tr class="bt_suspicious_operation_bitwise_shift"><td class="DESC">Suspicious operation</td><td class="DESC">Bitwise shift</td><td>subprojects/libjpeg-turbo-2.1.2/jdhuff.c</td><td class="DESC">decode_mcu_slow</td><td class="Q">574</td><td class="Q">32</td><td><a href="report-3fce48.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-3fce48.html" -->
+</tr>
+<tr class="bt_logic_error_branch_condition_evaluates_to_a_garbage_value"><td class="DESC">Logic error</td><td class="DESC">Branch condition evaluates to a garbage value</td><td>subprojects/libjpeg-turbo-2.1.2/jcmaster.c</td><td class="DESC">validate_script</td><td class="Q">306</td><td class="Q">22</td><td><a href="report-e2c5ba.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e2c5ba.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>cdk-pixbuf/io-qtif.c</td><td class="DESC">cdk_pixbuf__qtif_image_load_increment</td><td class="Q">441</td><td class="Q">1</td><td><a href="report-208675.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-208675.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>cdk-pixbuf/io-icns.c</td><td class="DESC">load_resources</td><td class="Q">98</td><td class="Q">1</td><td><a href="report-352c1c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-352c1c.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>cdk-pixbuf/cdk-pixbuf.c</td><td class="DESC">cdk_pixbuf_serialize</td><td class="Q">471</td><td class="Q">1</td><td><a href="report-4ff4c5.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-4ff4c5.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>cdk-pixbuf/io-png.c</td><td class="DESC">real_save_png</td><td class="Q">1079</td><td class="Q">1</td><td><a href="report-74dc8b.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-74dc8b.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>subprojects/libjpeg-turbo-2.1.2/jcparam.c</td><td class="DESC">jpeg_simple_progression</td><td class="Q">537</td><td class="Q">1</td><td><a href="report-ba8cc5.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ba8cc5.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>subprojects/libjpeg-turbo-2.1.2/jcparam.c</td><td class="DESC">jpeg_simple_progression</td><td class="Q">526</td><td class="Q">1</td><td><a href="report-f469be.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-f469be.html" -->
+</tr>
+<tr class="bt_unused_code_dead_increment"><td class="DESC">Unused code</td><td class="DESC">Dead increment</td><td>subprojects/libjpeg-turbo-2.1.2/jcdctmgr.c</td><td class="DESC">flss</td><td class="Q">106</td><td class="Q">1</td><td><a href="report-f8075f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-f8075f.html" -->
+</tr>
+<tr class="bt_unused_code_dead_nested_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead nested assignment</td><td>subprojects/libjpeg-turbo-2.1.2/jcarith.c</td><td class="DESC">encode_mcu_AC_refine</td><td class="Q">634</td><td class="Q">1</td><td><a href="report-1d67d2.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-1d67d2.html" -->
+</tr>
+<tr class="bt_unused_code_dead_nested_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead nested assignment</td><td>subprojects/libjpeg-turbo-2.1.2/jcarith.c</td><td class="DESC">encode_mcu_AC_refine</td><td class="Q">625</td><td class="Q">1</td><td><a href="report-1f3490.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-1f3490.html" -->
+</tr>
+<tr class="bt_unused_code_dead_nested_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead nested assignment</td><td>subprojects/libjpeg-turbo-2.1.2/jcarith.c</td><td class="DESC">encode_mcu_AC_first</td><td class="Q">491</td><td class="Q">1</td><td><a href="report-254845.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-254845.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subprojects/libjpeg-turbo-2.1.2/jmemmgr.c</td><td class="DESC">access_virt_sarray</td><td class="Q">886</td><td class="Q">18</td><td><a href="report-0ac018.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-0ac018.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subprojects/libjpeg-turbo-2.1.2/jdatadst.c</td><td class="DESC">jpeg_mem_dest</td><td class="Q">281</td><td class="Q">6</td><td><a href="report-186654.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-186654.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subprojects/libjpeg-turbo-2.1.2/jcmarker.c</td><td class="DESC">emit_dht</td><td class="Q">205</td><td class="Q">16</td><td><a href="report-1c3eb3.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-1c3eb3.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subprojects/libjpeg-turbo-2.1.2/jmemmgr.c</td><td class="DESC">alloc_large</td><td class="Q">400</td><td class="Q">43</td><td><a href="report-350e00.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-350e00.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subprojects/libjpeg-turbo-2.1.2/jdhuff.c</td><td class="DESC">jpeg_make_d_derived_tbl</td><td class="Q">176</td><td class="Q">22</td><td><a href="report-3dde89.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-3dde89.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subprojects/libjpeg-turbo-2.1.2/jmemmgr.c</td><td class="DESC">do_sarray_io</td><td class="Q">774</td><td class="Q">23</td><td><a href="report-41bcae.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-41bcae.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subprojects/libjpeg-turbo-2.1.2/jdapistd.c</td><td class="DESC">jpeg_crop_scanline</td><td class="Q">170</td><td class="Q">5</td><td><a href="report-4a7363.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-4a7363.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subprojects/libjpeg-turbo-2.1.2/jdicc.c</td><td class="DESC">jpeg_read_icc_profile</td><td class="Q">93</td><td class="Q">6</td><td><a href="report-64770e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-64770e.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subprojects/libjpeg-turbo-2.1.2/jdapistd.c</td><td class="DESC">jpeg_crop_scanline</td><td class="Q">201</td><td class="Q">7</td><td><a href="report-674c60.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-674c60.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subprojects/libjpeg-turbo-2.1.2/jchuff.c</td><td class="DESC">jpeg_make_c_derived_tbl</td><td class="Q">282</td><td class="Q">22</td><td><a href="report-97a3ed.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-97a3ed.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>cdk-pixbuf/io-ico.c</td><td class="DESC">OneLine4</td><td class="Q">765</td><td class="Q">58</td><td><a href="report-a6b682.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-a6b682.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subprojects/libjpeg-turbo-2.1.2/jdapistd.c</td><td class="DESC">jpeg_crop_scanline</td><td class="Q">170</td><td class="Q">6</td><td><a href="report-c3bff6.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c3bff6.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>cdk-pixbuf/cdk-pixbuf-loader.c</td><td class="DESC">cdk_pixbuf_loader_ensure_error</td><td class="Q">422</td><td class="Q">46</td><td><a href="report-c82116.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c82116.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subprojects/libjpeg-turbo-2.1.2/jdatadst.c</td><td class="DESC">jpeg_mem_dest</td><td class="Q">281</td><td class="Q">9</td><td><a href="report-ce4a14.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ce4a14.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subprojects/libjpeg-turbo-2.1.2/jmemmgr.c</td><td class="DESC">jinit_memory_mgr</td><td class="Q">1127</td><td class="Q">7</td><td><a href="report-da776a.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-da776a.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subprojects/libjpeg-turbo-2.1.2/jdicc.c</td><td class="DESC">jpeg_read_icc_profile</td><td class="Q">92</td><td class="Q">4</td><td><a href="report-f255ce.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-f255ce.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subprojects/libjpeg-turbo-2.1.2/jmemmgr.c</td><td class="DESC">do_barray_io</td><td class="Q">807</td><td class="Q">23</td><td><a href="report-f25a2e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-f25a2e.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subprojects/libjpeg-turbo-2.1.2/jcicc.c</td><td class="DESC">jpeg_write_icc_profile</td><td class="Q">100</td><td class="Q">11</td><td><a href="report-f4de06.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-f4de06.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subprojects/libjpeg-turbo-2.1.2/jdatadst.c</td><td class="DESC">jpeg_mem_dest</td><td class="Q">286</td><td class="Q">11</td><td><a href="report-f7e4c4.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-f7e4c4.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subprojects/libjpeg-turbo-2.1.2/jmemmgr.c</td><td class="DESC">access_virt_barray</td><td class="Q">970</td><td class="Q">18</td><td><a href="report-f96240.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-f96240.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_undefined_pointer_value"><td class="DESC">Logic error</td><td class="DESC">Dereference of undefined pointer value</td><td>subprojects/libjpeg-turbo-2.1.2/jctrans.c</td><td class="DESC">compress_output</td><td class="Q">329</td><td class="Q">20</td><td><a href="report-460f7b.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-460f7b.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_undefined_pointer_value"><td class="DESC">Logic error</td><td class="DESC">Dereference of undefined pointer value</td><td>subprojects/libjpeg-turbo-2.1.2/jccoefct.c</td><td class="DESC">compress_output</td><td class="Q">374</td><td class="Q">21</td><td><a href="report-7ec7f0.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-7ec7f0.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_undefined_pointer_value"><td class="DESC">Logic error</td><td class="DESC">Dereference of undefined pointer value</td><td>subprojects/libjpeg-turbo-2.1.2/jdcoefct.c</td><td class="DESC">consume_data</td><td class="Q">226</td><td class="Q">20</td><td><a href="report-c4af02.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c4af02.html" -->
+</tr>
+<tr class="bt_logic_error_division_by_zero"><td class="DESC">Logic error</td><td class="DESC">Division by zero</td><td>subprojects/libjpeg-turbo-2.1.2/jquant1.c</td><td class="DESC">output_value</td><td class="Q">258</td><td class="Q">13</td><td><a href="report-2c7438.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-2c7438.html" -->
+</tr>
+<tr class="bt_logic_error_division_by_zero"><td class="DESC">Logic error</td><td class="DESC">Division by zero</td><td>subprojects/libjpeg-turbo-2.1.2/jquant2.c</td><td class="DESC">compute_color</td><td class="Q">511</td><td class="Q">7</td><td><a href="report-f7c862.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-f7c862.html" -->
+</tr>
+<tr class="bt_stream_handling_error_invalid_stream_state"><td class="DESC">Stream handling error</td><td class="DESC">Invalid stream state</td><td>tests/pixbuf-threads.c</td><td class="DESC">load_image</td><td class="Q">46</td><td class="Q">11</td><td><a href="report-137174.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-137174.html" -->
+</tr>
+<tr class="bt_memory_error_memory_leak"><td class="DESC">Memory error</td><td class="DESC">Memory leak</td><td>cdk-pixbuf/cdk-pixbuf-io.c</td><td class="DESC">cdk_pixbuf_io_init_modules</td><td class="Q">546</td><td class="Q">33</td><td><a href="report-572c73.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-572c73.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>cdk-pixbuf/io-icns.c</td><td class="DESC">uncompress</td><td class="Q">234</td><td class="Q">58</td><td><a href="report-01a134.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-01a134.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>subprojects/libjpeg-turbo-2.1.2/jcarith.c</td><td class="DESC">start_pass</td><td class="Q">867</td><td class="Q">11</td><td><a href="report-067c97.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-067c97.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>subprojects/libjpeg-turbo-2.1.2/jccoefct.c</td><td class="DESC">compress_data</td><td class="Q">185</td><td class="Q">23</td><td><a href="report-082b79.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-082b79.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>subprojects/libjpeg-turbo-2.1.2/jcphuff.c</td><td class="DESC">start_pass_phuff</td><td class="Q">274</td><td class="Q">18</td><td><a href="report-0e598d.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-0e598d.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>subprojects/libjpeg-turbo-2.1.2/jdmarker.c</td><td class="DESC">get_dqt</td><td class="Q">529</td><td class="Q">18</td><td><a href="report-11021d.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-11021d.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>subprojects/libjpeg-turbo-2.1.2/jdarith.c</td><td class="DESC">start_pass</td><td class="Q">727</td><td class="Q">13</td><td><a href="report-4044fc.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-4044fc.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>cdk-pixbuf/io-icns.c</td><td class="DESC">uncompress</td><td class="Q">219</td><td class="Q">58</td><td><a href="report-454c38.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-454c38.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>subprojects/libjpeg-turbo-2.1.2/jdhuff.c</td><td class="DESC">jpeg_make_d_derived_tbl</td><td class="Q">160</td><td class="Q">14</td><td><a href="report-543593.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-543593.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>subprojects/libjpeg-turbo-2.1.2/jdmarker.c</td><td class="DESC">get_dac</td><td class="Q">409</td><td class="Q">24</td><td><a href="report-705e0d.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-705e0d.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>subprojects/libjpeg-turbo-2.1.2/jchuff.c</td><td class="DESC">start_pass_huff</td><td class="Q">204</td><td class="Q">13</td><td><a href="report-9248b6.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-9248b6.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>subprojects/libjpeg-turbo-2.1.2/jcmaster.c</td><td class="DESC">validate_script</td><td class="Q">260</td><td class="Q">37</td><td><a href="report-97a06e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-97a06e.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>subprojects/libjpeg-turbo-2.1.2/jcarith.c</td><td class="DESC">encode_mcu_AC_refine</td><td class="Q">646</td><td class="Q">12</td><td><a href="report-a2bc22.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-a2bc22.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>subprojects/libjpeg-turbo-2.1.2/jchuff.c</td><td class="DESC">start_pass_huff</td><td class="Q">199</td><td class="Q">12</td><td><a href="report-adf35f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-adf35f.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>subprojects/libjpeg-turbo-2.1.2/jcdctmgr.c</td><td class="DESC">start_pass_fdctmgr</td><td class="Q">251</td><td class="Q">5</td><td><a href="report-be7cae.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-be7cae.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>subprojects/libjpeg-turbo-2.1.2/jdinput.c</td><td class="DESC">latch_quant_tables</td><td class="Q">267</td><td class="Q">15</td><td><a href="report-c01c44.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c01c44.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>subprojects/libjpeg-turbo-2.1.2/jdarith.c</td><td class="DESC">start_pass</td><td class="Q">715</td><td class="Q">12</td><td><a href="report-c6be16.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c6be16.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>subprojects/libjpeg-turbo-2.1.2/jctrans.c</td><td class="DESC">compress_output</td><td class="Q">344</td><td class="Q">23</td><td><a href="report-c8f36b.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c8f36b.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>subprojects/libjpeg-turbo-2.1.2/jcmaster.c</td><td class="DESC">validate_script</td><td class="Q">284</td><td class="Q">28</td><td><a href="report-d7d3dc.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-d7d3dc.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>subprojects/libjpeg-turbo-2.1.2/jccoefct.c</td><td class="DESC">compress_data</td><td class="Q">194</td><td class="Q">15</td><td><a href="report-da20dd.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-da20dd.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>subprojects/libjpeg-turbo-2.1.2/jcarith.c</td><td class="DESC">start_pass</td><td class="Q">880</td><td class="Q">19</td><td><a href="report-de40e0.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-de40e0.html" -->
+</tr>
+<tr class="bt_logic_error_result_of_operation_is_garbage_or_undefined"><td class="DESC">Logic error</td><td class="DESC">Result of operation is garbage or undefined</td><td>subprojects/libjpeg-turbo-2.1.2/jcmaster.c</td><td class="DESC">validate_script</td><td class="Q">300</td><td class="Q">24</td><td><a href="report-04239f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-04239f.html" -->
+</tr>
+<tr class="bt_logic_error_result_of_operation_is_garbage_or_undefined"><td class="DESC">Logic error</td><td class="DESC">Result of operation is garbage or undefined</td><td>cdk-pixbuf/pixops/pixops.c</td><td class="DESC">correct_total</td><td class="Q">1210</td><td class="Q">34</td><td><a href="report-0f50cd.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-0f50cd.html" -->
+</tr>
+<tr class="bt_logic_error_result_of_operation_is_garbage_or_undefined"><td class="DESC">Logic error</td><td class="DESC">Result of operation is garbage or undefined</td><td>subprojects/libjpeg-turbo-2.1.2/jcmaster.c</td><td class="DESC">validate_script</td><td class="Q">264</td><td class="Q">48</td><td><a href="report-96ad04.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-96ad04.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>subprojects/libjpeg-turbo-2.1.2/jdmerge.c</td><td class="DESC">h2v1_merged_upsample_565</td><td class="Q">482</td><td class="Q">1</td><td><a href="report-055c87.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-055c87.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>subprojects/libjpeg-turbo-2.1.2/jdcolor.c</td><td class="DESC">ycc_rgb565_convert</td><td class="Q">660</td><td class="Q">1</td><td><a href="report-113923.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-113923.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>subprojects/libjpeg-turbo-2.1.2/jdcolor.c</td><td class="DESC">gray_rgb565_convert</td><td class="Q">704</td><td class="Q">1</td><td><a href="report-2442df.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-2442df.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>subprojects/libjpeg-turbo-2.1.2/jdmerge.c</td><td class="DESC">h2v2_merged_upsample_565</td><td class="Q">508</td><td class="Q">1</td><td><a href="report-2e07c5.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-2e07c5.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>cdk-pixbuf/cdk-pixbuf-csource.c</td><td class="DESC">main</td><td class="Q">133</td><td class="Q">1</td><td><a href="report-3206cb.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-3206cb.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>thumbnailer/gnome-thumbnailer-skeleton.c</td><td class="DESC">main</td><td class="Q">265</td><td class="Q">1</td><td><a href="report-3e7524.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-3e7524.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>cdk-pixbuf/io-png.c</td><td class="DESC">cdk_pixbuf__png_image_load</td><td class="Q">318</td><td class="Q">1</td><td><a href="report-3f865c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-3f865c.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>subprojects/libjpeg-turbo-2.1.2/jdcolor.c</td><td class="DESC">rgb_rgb565D_convert</td><td class="Q">693</td><td class="Q">1</td><td><a href="report-55806f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-55806f.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>cdk-pixbuf/io-png.c</td><td class="DESC">cdk_pixbuf__png_image_load_increment</td><td class="Q">630</td><td class="Q">1</td><td><a href="report-5dd2da.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-5dd2da.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>cdk-pixbuf/io-icns.c</td><td class="DESC">icns_image_load</td><td class="Q">378</td><td class="Q">1</td><td><a href="report-7c3b70.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-7c3b70.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>subprojects/libjpeg-turbo-2.1.2/jdcolor.c</td><td class="DESC">rgb_rgb565_convert</td><td class="Q">682</td><td class="Q">1</td><td><a href="report-8ce337.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-8ce337.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>cdk-pixbuf/io-png.c</td><td class="DESC">cdk_pixbuf__png_image_load_increment</td><td class="Q">638</td><td class="Q">1</td><td><a href="report-9a2db0.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-9a2db0.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>subprojects/libjpeg-turbo-2.1.2/jdmerge.c</td><td class="DESC">h2v2_merged_upsample_565D</td><td class="Q">521</td><td class="Q">1</td><td><a href="report-9a6647.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-9a6647.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>subprojects/libjpeg-turbo-2.1.2/jdcolor.c</td><td class="DESC">gray_rgb565D_convert</td><td class="Q">715</td><td class="Q">1</td><td><a href="report-b46ac4.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-b46ac4.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>subprojects/libjpeg-turbo-2.1.2/jdarith.c</td><td class="DESC">decode_mcu_AC_refine</td><td class="Q">482</td><td class="Q">1</td><td><a href="report-c0b58e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c0b58e.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>subprojects/libjpeg-turbo-2.1.2/jdmerge.c</td><td class="DESC">h2v1_merged_upsample_565D</td><td class="Q">495</td><td class="Q">1</td><td><a href="report-cf8599.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-cf8599.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>subprojects/libjpeg-turbo-2.1.2/jdcolor.c</td><td class="DESC">ycc_rgb565D_convert</td><td class="Q">671</td><td class="Q">1</td><td><a href="report-de69e5.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-de69e5.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>thumbnailer/gnome-thumbnailer-skeleton.c</td><td class="DESC">main</td><td class="Q">334</td><td class="Q">1</td><td><a href="report-ef7486.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ef7486.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>subprojects/libjpeg-turbo-2.1.2/jdarith.c</td><td class="DESC">decode_mcu_AC_refine</td><td class="Q">480</td><td class="Q">1</td><td><a href="report-ef9340.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ef9340.html" -->
+</tr>
+<tr class="bt_logic_error_use_fixed_address"><td class="DESC">Logic error</td><td class="DESC">Use fixed address</td><td>cdk-pixbuf/cdk-pixbuf-io.c</td><td class="DESC">cdk_pixbuf_load_module_unlocked</td><td class="Q">878</td><td class="Q">20</td><td><a href="report-a1ef54.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-a1ef54.html" -->
+</tr>
+<tr class="bt_error_handling_value_of_errno_was_not_checked"><td class="DESC">Error handling</td><td class="DESC">Value of 'errno' was not checked</td><td>cdk-pixbuf/io-xbm.c</td><td class="DESC">read_bitmap_file_data</td><td class="Q">176</td><td class="Q">12</td><td><a href="report-38c794.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-38c794.html" -->
+</tr>
+<tr class="bt_error_handling_value_of_errno_was_not_checked"><td class="DESC">Error handling</td><td class="DESC">Value of 'errno' was not checked</td><td>cdk-pixbuf/cdk-pixbuf-io.c</td><td class="DESC">save_to_callback_with_tmp_file</td><td class="Q">2442</td><td class="Q">53</td><td><a href="report-56d83e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-56d83e.html" -->
+</tr>
+<tr class="bt_error_handling_value_of_errno_was_not_checked"><td class="DESC">Error handling</td><td class="DESC">Value of 'errno' was not checked</td><td>cdk-pixbuf/io-xpm.c</td><td class="DESC">cdk_pixbuf__xpm_image_stop_load</td><td class="Q">782</td><td class="Q">8</td><td><a href="report-704d11.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-704d11.html" -->
+</tr>
+<tr class="bt_error_handling_value_of_errno_was_not_checked"><td class="DESC">Error handling</td><td class="DESC">Value of 'errno' was not checked</td><td>cdk-pixbuf/io-xpm.c</td><td class="DESC">cdk_pixbuf__xpm_image_load</td><td class="Q">667</td><td class="Q">9</td><td><a href="report-be7506.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-be7506.html" -->
+</tr>
+<tr class="bt_error_handling_value_of_errno_was_not_checked"><td class="DESC">Error handling</td><td class="DESC">Value of 'errno' was not checked</td><td>cdk-pixbuf/io-xbm.c</td><td class="DESC">cdk_pixbuf__xbm_image_stop_load</td><td class="Q">458</td><td class="Q">8</td><td><a href="report-eb356e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-eb356e.html" -->
+</tr>
+</tbody>
+</table>
+
+</body></html>

@@ -1,0 +1,3 @@
+tests: keep .pixdata files in original state
+
+it fixes cdk-pixbuf:pixbuf-pixdata test
