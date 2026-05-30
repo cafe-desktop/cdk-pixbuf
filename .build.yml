@@ -14,6 +14,7 @@ requires:
     - gi-docgen
     - libglib2.0-dev
     - librsvg2-dev
+    - libtiff-dev
     - meson
     - python3-docutils
 
