@@ -5,7 +5,7 @@ option('png',
 option('tiff',
        description: 'Enable TIFF loader (requires libtiff), disabled on Windows if "native_windows_loaders" is used',
        type: 'feature',
-       value: 'auto')
+       value: 'enabled')
 option('jpeg',
        description: 'Enable JPEG loader (requires libjpeg), disabled on Windows if "native_windows_loaders" is used',
        type: 'feature',
@@ -13,7 +13,7 @@ option('jpeg',
 option('gif',
        description: 'Enable GIF loader, disabled on Windows if "native_windows_loaders" is used',
        type: 'feature',
-       value: 'auto')
+       value: 'enabled')
 option('glycin',
        description: 'Enable Glycin loader (requires glycin)',
        type: 'feature',
