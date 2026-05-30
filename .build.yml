@@ -3,28 +3,16 @@
 ##########################################################
 requires:
   debian:
-    # Useful URL: https://github.com/cafe-desktop/debian-packages
-    - aptitude
-    - cmake
-    - clang
-    - clang-tools
-    - cppcheck
-    - git
-    - expect #required for unbuffer
-    - gi-docgen
-    - libglib2.0-dev
-    - librsvg2-dev
-    - libtiff-dev
-    - meson
-    - python3-docutils
 
 before_scripts:
-  - ./html-cppcheck
 
 build_scripts:
-  - ./before-build
-  - ./make-scanbuild meson 'setup'
-  - ./after-build
+  - ./build-debs https://github.com/cafe-desktop/debian-packages cdkpixbuf cdk-pixbuf
+  - cd `pkg-config --variable=cdk_pixbuf_binarydir cdk-pixbuf-2.0`
+  - cd loaders
+  - ls
+  - cd ..
+  - cat loaders.cache
 
 after_scripts:
   - if [ -f "gen-index" ]; then ./gen-index -l 20 ; fi
