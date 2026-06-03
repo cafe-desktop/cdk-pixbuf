@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ctk+ 2.25.3\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/cdk-pixbuf/issues\n"
-"POT-Creation-Date: 2020-11-10 02:27+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 08:56+0200\n"
 "PO-Revision-Date: 2021-04-24 01:41+0000\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (Traditional) <http://darkbear.ddns.net/projects/"
@@ -21,211 +21,211 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.6\n"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:175 cdk-pixbuf/cdk-pixbuf-io.c:1125
-#: cdk-pixbuf/cdk-pixbuf-io.c:1387
+#: cdk-pixbuf/cdk-pixbuf-animation.c:190 cdk-pixbuf/cdk-pixbuf-io.c:1224
+#: cdk-pixbuf/cdk-pixbuf-io.c:1497
 #, c-format
 msgid "Failed to open file “%s”: %s"
 msgstr "開啟檔案「%s」失敗：%s"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:188 cdk-pixbuf/cdk-pixbuf-io.c:992
+#: cdk-pixbuf/cdk-pixbuf-animation.c:203 cdk-pixbuf/cdk-pixbuf-io.c:1085
 #, c-format
 msgid "Image file “%s” contains no data"
 msgstr "影像檔「%s」沒有內容"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:226
+#: cdk-pixbuf/cdk-pixbuf-animation.c:241
 #, c-format
 msgid ""
 "Failed to load animation “%s”: reason not known, probably a corrupt "
 "animation file"
 msgstr "無法載入動畫檔「%s」：原因不明，可能動畫檔已經損毀"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:294 cdk-pixbuf/cdk-pixbuf-io.c:1161
-#: cdk-pixbuf/cdk-pixbuf-io.c:1439
+#: cdk-pixbuf/cdk-pixbuf-animation.c:309 cdk-pixbuf/cdk-pixbuf-io.c:1260
+#: cdk-pixbuf/cdk-pixbuf-io.c:1549
 #, c-format
 msgid ""
 "Failed to load image “%s”: reason not known, probably a corrupt image file"
 msgstr "無法載入影像檔「%s」：原因不明，可能檔案已經損毀"
 
-#: cdk-pixbuf/cdk-pixbuf.c:237
+#: cdk-pixbuf/cdk-pixbuf.c:248
 msgid "Number of Channels"
 msgstr "色板數量"
 
-#: cdk-pixbuf/cdk-pixbuf.c:238
+#: cdk-pixbuf/cdk-pixbuf.c:249
 msgid "The number of samples per pixel"
 msgstr "每個像素的樣本數量"
 
-#: cdk-pixbuf/cdk-pixbuf.c:247
+#: cdk-pixbuf/cdk-pixbuf.c:264
 msgid "Colorspace"
 msgstr "色彩空間"
 
-#: cdk-pixbuf/cdk-pixbuf.c:248
+#: cdk-pixbuf/cdk-pixbuf.c:265
 msgid "The colorspace in which the samples are interpreted"
 msgstr "樣本解譯的色彩空間"
 
-#: cdk-pixbuf/cdk-pixbuf.c:256
+#: cdk-pixbuf/cdk-pixbuf.c:277
 msgid "Has Alpha"
 msgstr "具有透明"
 
-#: cdk-pixbuf/cdk-pixbuf.c:257
+#: cdk-pixbuf/cdk-pixbuf.c:278
 msgid "Whether the pixbuf has an alpha channel"
 msgstr "pixbuf 是否有 alpha 色板"
 
-#: cdk-pixbuf/cdk-pixbuf.c:270
+#: cdk-pixbuf/cdk-pixbuf.c:291
 msgid "Bits per Sample"
 msgstr "位元/樣本"
 
-#: cdk-pixbuf/cdk-pixbuf.c:271
+#: cdk-pixbuf/cdk-pixbuf.c:292
 msgid "The number of bits per sample"
 msgstr "每個樣本的位元數量"
 
-#: cdk-pixbuf/cdk-pixbuf.c:280
+#: cdk-pixbuf/cdk-pixbuf.c:305
 msgid "Width"
 msgstr "寬度"
 
-#: cdk-pixbuf/cdk-pixbuf.c:281
+#: cdk-pixbuf/cdk-pixbuf.c:306
 msgid "The number of columns of the pixbuf"
 msgstr "pixbuf 的欄數"
 
-#: cdk-pixbuf/cdk-pixbuf.c:290
+#: cdk-pixbuf/cdk-pixbuf.c:319
 msgid "Height"
 msgstr "高度"
 
-#: cdk-pixbuf/cdk-pixbuf.c:291
+#: cdk-pixbuf/cdk-pixbuf.c:320
 msgid "The number of rows of the pixbuf"
 msgstr "pixbuf 的列數"
 
-#: cdk-pixbuf/cdk-pixbuf.c:307
+#: cdk-pixbuf/cdk-pixbuf.c:337
 msgid "Rowstride"
 msgstr "Rowstride"
 
-#: cdk-pixbuf/cdk-pixbuf.c:308
+#: cdk-pixbuf/cdk-pixbuf.c:338
 msgid ""
 "The number of bytes between the start of a row and the start of the next row"
 msgstr "從列的開頭到下一列開頭之間的位元組的數量"
 
-#: cdk-pixbuf/cdk-pixbuf.c:317
+#: cdk-pixbuf/cdk-pixbuf.c:351
 msgid "Pixels"
 msgstr "像素"
 
-#: cdk-pixbuf/cdk-pixbuf.c:318
+#: cdk-pixbuf/cdk-pixbuf.c:352
 msgid "A pointer to the pixel data of the pixbuf"
 msgstr "pixbuf 的像素資料指標"
 
-#: cdk-pixbuf/cdk-pixbuf.c:332
+#: cdk-pixbuf/cdk-pixbuf.c:366
 msgid "Pixel Bytes"
 msgstr "像素位元組"
 
-#: cdk-pixbuf/cdk-pixbuf.c:333
+#: cdk-pixbuf/cdk-pixbuf.c:367
 msgid "Readonly pixel data"
 msgstr "唯讀像素資料"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:812
+#: cdk-pixbuf/cdk-pixbuf-io.c:901
 #, c-format
 msgid "Unable to load image-loading module: %s: %s"
 msgstr "無法載入用來載入影像的模組：%s：%s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:827
+#: cdk-pixbuf/cdk-pixbuf-io.c:919
 #, c-format
 msgid ""
 "Image-loading module %s does not export the proper interface; perhaps it’s "
 "from a different cdk-pixbuf version?"
 msgstr "影像載入模組 %s 沒有匯出正確的介面；它是否屬於另一個 ctk-pixbuf 版本？"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:836 cdk-pixbuf/cdk-pixbuf-io.c:879
+#: cdk-pixbuf/cdk-pixbuf-io.c:929 cdk-pixbuf/cdk-pixbuf-io.c:972
 #, c-format
 msgid "Image type “%s” is not supported"
 msgstr "不支援影像類型「%s」"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:964
+#: cdk-pixbuf/cdk-pixbuf-io.c:1057
 #, c-format
 msgid "Couldn’t recognize the image file format for file “%s”"
 msgstr "無法識別影像檔「%s」的影像格式"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:972
+#: cdk-pixbuf/cdk-pixbuf-io.c:1065
 msgid "Unrecognized image file format"
 msgstr "無法識別的影像檔格式"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:1172
+#: cdk-pixbuf/cdk-pixbuf-io.c:1271
 #, c-format
 msgid "Failed to load image “%s”: %s"
 msgstr "無法載入影像「%s」：%s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2242 cdk-pixbuf/io-gdip-utils.c:840
+#: cdk-pixbuf/cdk-pixbuf-io.c:2346 cdk-pixbuf/io-gdip-utils.c:840
 #, c-format
 msgid "Error writing to image file: %s"
 msgstr "寫入影像檔時發生錯誤 (%s)"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2284 cdk-pixbuf/cdk-pixbuf-io.c:2405
+#: cdk-pixbuf/cdk-pixbuf-io.c:2388 cdk-pixbuf/cdk-pixbuf-io.c:2509
 #, c-format
 msgid "This build of cdk-pixbuf does not support saving the image format: %s"
 msgstr "此 cdk-pixbuf 版本不支援儲存以下的影像格式：%s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2315
+#: cdk-pixbuf/cdk-pixbuf-io.c:2419
 msgid "Insufficient memory to save image to callback"
 msgstr "記憶體不足以儲存影像到 callback"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2328
+#: cdk-pixbuf/cdk-pixbuf-io.c:2432
 msgid "Failed to open temporary file"
 msgstr "無法開啟暫存檔"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2351
+#: cdk-pixbuf/cdk-pixbuf-io.c:2455
 msgid "Failed to read from temporary file"
 msgstr "無法讀入暫存檔"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2561
+#: cdk-pixbuf/cdk-pixbuf-io.c:2677
 #, c-format
 msgid "Failed to open “%s” for writing: %s"
 msgstr "無法開啟「%s」以供寫入資料：%s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2587
+#: cdk-pixbuf/cdk-pixbuf-io.c:2703
 #, c-format
 msgid ""
 "Failed to close “%s” while writing image, all data may not have been saved: "
 "%s"
 msgstr "在寫入影像時無法關閉「%s」，資料可能無法完整地儲存：%s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2808 cdk-pixbuf/cdk-pixbuf-io.c:2860
+#: cdk-pixbuf/cdk-pixbuf-io.c:2937 cdk-pixbuf/cdk-pixbuf-io.c:2992
 msgid "Insufficient memory to save image into a buffer"
 msgstr "記憶體不足以將影像寫入緩衝區"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2906
+#: cdk-pixbuf/cdk-pixbuf-io.c:3038
 msgid "Error writing to image stream"
 msgstr "寫入影像串流時發生錯誤"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:406
+#: cdk-pixbuf/cdk-pixbuf-loader.c:426
 #, c-format
 msgid ""
 "Internal error: Image loader module “%s” failed to complete an operation, "
 "but didn’t give a reason for the failure"
 msgstr "內部錯誤：影像載入模組「%s」無法完成動作，但沒有提供任何原因"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:448
+#: cdk-pixbuf/cdk-pixbuf-loader.c:468
 #, c-format
 msgid "Incremental loading of image type “%s” is not supported"
 msgstr "不支援以漸進方式載入影像類型「%s」"
 
-#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:162
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:166
 msgid "Loop"
 msgstr "循環"
 
-#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:163
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:167
 msgid "Whether the animation should loop when it reaches the end"
 msgstr "動畫到達結尾時是否應循環"
 
-#: cdk-pixbuf/cdk-pixdata.c:165
+#: cdk-pixbuf/cdk-pixdata.c:178
 msgid "Image header corrupt"
 msgstr "影像標頭損毀"
 
-#: cdk-pixbuf/cdk-pixdata.c:170
+#: cdk-pixbuf/cdk-pixdata.c:183
 msgid "Image format unknown"
 msgstr "影像格式不明"
 
-#: cdk-pixbuf/cdk-pixdata.c:175 cdk-pixbuf/cdk-pixdata.c:470
-#: cdk-pixbuf/cdk-pixdata.c:480 cdk-pixbuf/cdk-pixdata.c:576
+#: cdk-pixbuf/cdk-pixdata.c:188 cdk-pixbuf/cdk-pixdata.c:491
+#: cdk-pixbuf/cdk-pixdata.c:501 cdk-pixbuf/cdk-pixdata.c:597
 msgid "Image pixel data corrupt"
 msgstr "影像像素資料損毀"
 
-#: cdk-pixbuf/cdk-pixdata.c:492
+#: cdk-pixbuf/cdk-pixdata.c:513
 #, c-format
 msgid "failed to allocate image buffer of %u byte"
 msgid_plural "failed to allocate image buffer of %u bytes"
@@ -235,82 +235,83 @@ msgstr[0] "無法分配 %u 位元組的影像緩衝區"
 msgid "Unexpected icon chunk in animation"
 msgstr "動畫中含有未預期的圖示區塊"
 
-#: cdk-pixbuf/io-ani.c:337 cdk-pixbuf/io-ani.c:395 cdk-pixbuf/io-ani.c:421
-#: cdk-pixbuf/io-ani.c:444 cdk-pixbuf/io-ani.c:471 cdk-pixbuf/io-ani.c:558
-msgid "Invalid header in animation"
-msgstr "動畫檔的標頭資料無效"
-
-#: cdk-pixbuf/io-ani.c:347 cdk-pixbuf/io-ani.c:369 cdk-pixbuf/io-ani.c:453
-#: cdk-pixbuf/io-ani.c:480 cdk-pixbuf/io-ani.c:531 cdk-pixbuf/io-ani.c:607
-msgid "Not enough memory to load animation"
-msgstr "記憶體不足以載入動畫"
-
-#: cdk-pixbuf/io-ani.c:387 cdk-pixbuf/io-ani.c:413 cdk-pixbuf/io-ani.c:432
+#: cdk-pixbuf/io-ani.c:303 cdk-pixbuf/io-ani.c:404 cdk-pixbuf/io-ani.c:430
+#: cdk-pixbuf/io-ani.c:449
 msgid "Malformed chunk in animation"
 msgstr "動畫中有部份資料不符合格式"
 
-#: cdk-pixbuf/io-ani.c:629
+#: cdk-pixbuf/io-ani.c:311 cdk-pixbuf/io-ani.c:354 cdk-pixbuf/io-ani.c:412
+#: cdk-pixbuf/io-ani.c:438 cdk-pixbuf/io-ani.c:461 cdk-pixbuf/io-ani.c:488
+#: cdk-pixbuf/io-ani.c:575
+msgid "Invalid header in animation"
+msgstr "動畫檔的標頭資料無效"
+
+#: cdk-pixbuf/io-ani.c:364 cdk-pixbuf/io-ani.c:386 cdk-pixbuf/io-ani.c:470
+#: cdk-pixbuf/io-ani.c:497 cdk-pixbuf/io-ani.c:548 cdk-pixbuf/io-ani.c:624
+msgid "Not enough memory to load animation"
+msgstr "記憶體不足以載入動畫"
+
+#: cdk-pixbuf/io-ani.c:646
 msgid "ANI image was truncated or incomplete."
 msgstr "ANI 影像被截斷或是不完整。"
 
-#: cdk-pixbuf/io-ani.c:670
+#: cdk-pixbuf/io-ani.c:687
 msgctxt "image format"
 msgid "Windows animated cursor"
 msgstr "視窗動畫游標"
 
-#: cdk-pixbuf/io-bmp.c:231 cdk-pixbuf/io-bmp.c:269 cdk-pixbuf/io-bmp.c:376
-#: cdk-pixbuf/io-bmp.c:403 cdk-pixbuf/io-bmp.c:428 cdk-pixbuf/io-bmp.c:463
-#: cdk-pixbuf/io-bmp.c:485 cdk-pixbuf/io-bmp.c:563
+#: cdk-pixbuf/io-bmp.c:234 cdk-pixbuf/io-bmp.c:275 cdk-pixbuf/io-bmp.c:385
+#: cdk-pixbuf/io-bmp.c:412 cdk-pixbuf/io-bmp.c:437 cdk-pixbuf/io-bmp.c:472
+#: cdk-pixbuf/io-bmp.c:494 cdk-pixbuf/io-bmp.c:572
 msgid "BMP image has bogus header data"
 msgstr "BMP 影像中有冗餘的標頭資料"
 
-#: cdk-pixbuf/io-bmp.c:242 cdk-pixbuf/io-bmp.c:498
+#: cdk-pixbuf/io-bmp.c:245 cdk-pixbuf/io-bmp.c:507
 msgid "Not enough memory to load bitmap image"
 msgstr "記憶體不足以載入點陣影像"
 
-#: cdk-pixbuf/io-bmp.c:333
+#: cdk-pixbuf/io-bmp.c:339
 msgid "BMP image has unsupported header size"
 msgstr "不支援這種 BMP 影像檔標頭大小"
 
-#: cdk-pixbuf/io-bmp.c:343
+#: cdk-pixbuf/io-bmp.c:348
 msgid "BMP image has unsupported depth"
 msgstr "BMP 影像具有不支援的深度"
 
-#: cdk-pixbuf/io-bmp.c:358
+#: cdk-pixbuf/io-bmp.c:367
 msgid "BMP image has oversize palette"
 msgstr "BMP 影像具有過大的調色盤"
 
-#: cdk-pixbuf/io-bmp.c:390
+#: cdk-pixbuf/io-bmp.c:399
 msgid "Topdown BMP images cannot be compressed"
 msgstr "由上至下描繪的 BMP 影像不可以壓縮"
 
-#: cdk-pixbuf/io-bmp.c:415
+#: cdk-pixbuf/io-bmp.c:424
 msgid "BMP image width too large"
 msgstr "BMP 影像寬度太大"
 
-#: cdk-pixbuf/io-bmp.c:792 cdk-pixbuf/io-png.c:564 cdk-pixbuf/io-pnm.c:722
+#: cdk-pixbuf/io-bmp.c:814 cdk-pixbuf/io-png.c:587 cdk-pixbuf/io-pnm.c:722
 #: cdk-pixbuf/io-pnm.c:879
 msgid "Premature end-of-file encountered"
 msgstr "檔案太早結束"
 
-#: cdk-pixbuf/io-bmp.c:1313
-#, c-format
+#: cdk-pixbuf/io-bmp.c:1340
 msgid "Error while decoding colormap"
 msgstr "解碼色彩映射時發生錯誤"
 
-#: cdk-pixbuf/io-bmp.c:1376 cdk-pixbuf/io-bmp.c:1388
+#: cdk-pixbuf/io-bmp.c:1403 cdk-pixbuf/io-bmp.c:1415
 msgid "Image is too wide for BMP format."
 msgstr "影像對 BMP 格式來說太寬了。"
 
-#: cdk-pixbuf/io-bmp.c:1421
+#: cdk-pixbuf/io-bmp.c:1448
 msgid "Couldn’t allocate memory for saving BMP file"
 msgstr "無法分配記憶體來儲存 BMP 檔"
 
-#: cdk-pixbuf/io-bmp.c:1462
+#: cdk-pixbuf/io-bmp.c:1489
 msgid "Couldn’t write to BMP file"
 msgstr "無法寫入 BMP 檔案"
 
-#: cdk-pixbuf/io-bmp.c:1515 cdk-pixbuf/io-gdip-bmp.c:83
+#: cdk-pixbuf/io-bmp.c:1542 cdk-pixbuf/io-gdip-bmp.c:83
 msgctxt "image format"
 msgid "BMP"
 msgstr "BMP"
@@ -320,35 +321,35 @@ msgctxt "image format"
 msgid "EMF"
 msgstr "EMF"
 
-#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1043
+#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1039
 msgctxt "image format"
 msgid "GIF"
 msgstr "GIF"
 
-#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1412
+#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1418
 msgctxt "image format"
 msgid "Windows icon"
 msgstr "Windows 圖示"
 
-#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1382
+#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1409
 #, c-format
 msgid ""
 "JPEG quality must be a value between 0 and 100; value “%s” could not be "
 "parsed."
 msgstr "JPEG 品質必須在 0 至 100 之間；無法分析數值「%s」。"
 
-#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1398
+#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1425
 #, c-format
 msgid ""
 "JPEG quality must be a value between 0 and 100; value “%d” is not allowed."
 msgstr "JPEG 品質必須在 0 至 100 之間；不允許使用數值「%d」。"
 
-#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1682
+#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1710
 msgctxt "image format"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: cdk-pixbuf/io-gdip-tiff.c:83 cdk-pixbuf/io-tiff.c:1086
+#: cdk-pixbuf/io-gdip-tiff.c:83 cdk-pixbuf/io-tiff.c:1087
 msgctxt "image format"
 msgid "TIFF"
 msgstr "TIFF"
@@ -395,48 +396,48 @@ msgctxt "image format"
 msgid "WMF"
 msgstr "WMF"
 
-#: cdk-pixbuf/io-gif.c:158
+#: cdk-pixbuf/io-gif.c:160
 #, c-format
 msgid "Failure reading GIF: %s"
 msgstr "無法讀入 GIF：%s"
 
-#: cdk-pixbuf/io-gif.c:381 cdk-pixbuf/io-gif.c:854 cdk-pixbuf/io-gif.c:907
-#: cdk-pixbuf/io-gif.c:980
+#: cdk-pixbuf/io-gif.c:383 cdk-pixbuf/io-gif.c:850 cdk-pixbuf/io-gif.c:903
+#: cdk-pixbuf/io-gif.c:976
 msgid "Not enough memory to load GIF file"
 msgstr "記憶體不足以載入 GIF 檔"
 
-#: cdk-pixbuf/io-gif.c:507
+#: cdk-pixbuf/io-gif.c:509
 msgid "GIF image is corrupt (incorrect LZW compression)"
 msgstr "GIF 影像已損毀（不正確的 LZW 壓縮資料）"
 
-#: cdk-pixbuf/io-gif.c:536
+#: cdk-pixbuf/io-gif.c:545
 msgid "File does not appear to be a GIF file"
 msgstr "檔案不像是 GIF 檔"
 
-#: cdk-pixbuf/io-gif.c:551
+#: cdk-pixbuf/io-gif.c:560
 #, c-format
 msgid "Version %s of the GIF file format is not supported"
 msgstr "不支援 %s 版本的 GIF 檔案格式"
 
-#: cdk-pixbuf/io-gif.c:586
+#: cdk-pixbuf/io-gif.c:589
 msgid "Resulting GIF image has zero size"
 msgstr "產生的 GIF 影響大小為零"
 
-#: cdk-pixbuf/io-gif.c:664
+#: cdk-pixbuf/io-gif.c:659
 msgid ""
 "GIF image has no global colormap, and a frame inside it has no local "
 "colormap."
 msgstr "GIF 影像沒有整體使用的色盤，而且影像其中一個畫格沒有專用的色盤。"
 
-#: cdk-pixbuf/io-gif.c:867 cdk-pixbuf/io-gif.c:992
+#: cdk-pixbuf/io-gif.c:863 cdk-pixbuf/io-gif.c:988
 msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
 msgstr "GIF 檔缺少了一部份資料（可能是檔案被截斷了？）"
 
-#: cdk-pixbuf/io-gif.c:926
+#: cdk-pixbuf/io-gif.c:922
 msgid "GIF image was truncated or incomplete."
 msgstr "GIF 檔案被截斷或是不完整。"
 
-#: cdk-pixbuf/io-gif.c:933
+#: cdk-pixbuf/io-gif.c:929
 msgid "Not all frames of the GIF image were loaded."
 msgstr "GIF 影像並非所有影格都載入。"
 
@@ -499,87 +500,87 @@ msgstr "游標熱點在影像之外"
 msgid "Unsupported depth for ICO file: %d"
 msgstr "ICO 檔含有未支援的色彩深度：%d"
 
-#: cdk-pixbuf/io-jpeg.c:129
+#: cdk-pixbuf/io-jpeg.c:131
 #, c-format
 msgid "Error interpreting JPEG image file (%s)"
 msgstr "分析 JPEG 影像檔時發生錯誤 (%s)"
 
-#: cdk-pixbuf/io-jpeg.c:637
+#: cdk-pixbuf/io-jpeg.c:647
 msgid ""
 "Insufficient memory to load image, try exiting some applications to free "
 "memory"
 msgstr "記憶體不足以載入影像，請嘗試退出其它應用程式來釋放記憶體"
 
-#: cdk-pixbuf/io-jpeg.c:710 cdk-pixbuf/io-jpeg.c:947
+#: cdk-pixbuf/io-jpeg.c:720 cdk-pixbuf/io-jpeg.c:970
 #, c-format
 msgid "Unsupported JPEG color space (%s)"
 msgstr "未支援的 JPEG 色彩空間 (%s)"
 
-#: cdk-pixbuf/io-jpeg.c:825 cdk-pixbuf/io-jpeg.c:1142 cdk-pixbuf/io-jpeg.c:1489
-#: cdk-pixbuf/io-jpeg.c:1499
+#: cdk-pixbuf/io-jpeg.c:845 cdk-pixbuf/io-jpeg.c:1169 cdk-pixbuf/io-jpeg.c:1516
+#: cdk-pixbuf/io-jpeg.c:1526
 msgid "Couldn’t allocate memory for loading JPEG file"
 msgstr "無法分配記憶體來載入 JPEG 檔案"
 
-#: cdk-pixbuf/io-jpeg.c:1100
+#: cdk-pixbuf/io-jpeg.c:1127
 msgid "Transformed JPEG has zero width or height."
 msgstr "變換後的 JPEG 寬度或高度為零。"
 
-#: cdk-pixbuf/io-jpeg.c:1126
+#: cdk-pixbuf/io-jpeg.c:1153
 #, c-format
 msgid "Unsupported number of color components (%d)"
 msgstr "未支援的色彩構成數目 (%d)"
 
-#: cdk-pixbuf/io-jpeg.c:1419
+#: cdk-pixbuf/io-jpeg.c:1446
 #, c-format
 msgid ""
 "JPEG x-dpi must be a value between 1 and 65535; value “%s” is not allowed."
 msgstr "JPEG x-dpi 必須在 1 至 65535 之間；不允許使用數值「%s」。"
 
-#: cdk-pixbuf/io-jpeg.c:1440
+#: cdk-pixbuf/io-jpeg.c:1467
 #, c-format
 msgid ""
 "JPEG y-dpi must be a value between 1 and 65535; value “%s” is not allowed."
 msgstr "JPEG y-dpi 必須在 1 至 65535 之間；不允許使用數值「%s」。"
 
-#: cdk-pixbuf/io-jpeg.c:1454
+#: cdk-pixbuf/io-jpeg.c:1481
 #, c-format
 msgid "Color profile has invalid length “%u”."
 msgstr "色彩設定檔有無效的長度「%u」。"
 
-#: cdk-pixbuf/io-png.c:63
+#: cdk-pixbuf/io-png.c:64
 msgid "Bits per channel of PNG image is invalid."
 msgstr "PNG 影像中每個色板所佔的位元數目無效。"
 
-#: cdk-pixbuf/io-png.c:144 cdk-pixbuf/io-png.c:703
+#: cdk-pixbuf/io-png.c:145 cdk-pixbuf/io-png.c:730
 msgid "Transformed PNG has zero width or height."
 msgstr "變換後的 PNG 寬度及高度均為零。"
 
-#: cdk-pixbuf/io-png.c:152
+#: cdk-pixbuf/io-png.c:153
 msgid "Bits per channel of transformed PNG is not 8."
 msgstr "變換後的 PNG 影像中每個色板所佔的位元數目不是 8。"
 
-#: cdk-pixbuf/io-png.c:161
+#: cdk-pixbuf/io-png.c:162
 msgid "Transformed PNG not RGB or RGBA."
 msgstr "變換後的 PNG 的色彩模式不是 RGB 或 RGBA。"
 
-#: cdk-pixbuf/io-png.c:170
+#: cdk-pixbuf/io-png.c:171
 msgid "Transformed PNG has unsupported number of channels, must be 3 or 4."
 msgstr "變換後的 PNG 色板數目不受支援，正確數字應為 3 或 4。"
 
-#: cdk-pixbuf/io-png.c:191
+#: cdk-pixbuf/io-png.c:193
 #, c-format
 msgid "Fatal error in PNG image file: %s"
 msgstr "PNG 影像檔中有嚴重錯誤：%s"
 
-#: cdk-pixbuf/io-png.c:329
+#: cdk-pixbuf/io-png.c:338
 msgid "Insufficient memory to load PNG file"
 msgstr "記憶體不足以載入 PNG 檔"
 
-#: cdk-pixbuf/io-png.c:498 cdk-pixbuf/io-png.c:519
+#: cdk-pixbuf/io-png.c:519 cdk-pixbuf/io-png.c:540
 msgid "Couldn’t allocate memory for loading PNG"
 msgstr "無法分配用來載入 PNG 的記憶體"
 
-#: cdk-pixbuf/io-png.c:716
+#: cdk-pixbuf/io-png.c:743
 #, c-format
 msgid ""
 "Insufficient memory to store a %lu by %lu image; try exiting some "
@@ -588,50 +589,50 @@ msgstr ""
 "記憶體不足以儲存大小為 %lu×%lu 的影像；請嘗試退出其他應用程式來減低記憶體使用"
 "量"
 
-#: cdk-pixbuf/io-png.c:791
+#: cdk-pixbuf/io-png.c:820
 msgid "Fatal error reading PNG image file"
 msgstr "讀入 PNG 影像檔時發生嚴重錯誤"
 
-#: cdk-pixbuf/io-png.c:840
+#: cdk-pixbuf/io-png.c:873
 #, c-format
 msgid "Fatal error reading PNG image file: %s"
 msgstr "讀入 PNG 影像檔時發生嚴重錯誤：%s"
 
-#: cdk-pixbuf/io-png.c:937
+#: cdk-pixbuf/io-png.c:972
 #, c-format
 msgid ""
 "Invalid key “%s”. Keys for PNG text chunks must have at least 1 and at most "
 "79 characters."
 msgstr "無效的關鍵字“%s”。PNG text 區段的關鍵字必須在 1 至 79 字元之內。"
 
-#: cdk-pixbuf/io-png.c:950
+#: cdk-pixbuf/io-png.c:985
 #, c-format
 msgid "Invalid key “%s”. Keys for PNG text chunks must be ASCII characters."
 msgstr "無效的關鍵字“%s”。PNG text 區段的關鍵字必須是 ASCII 字元。"
 
-#: cdk-pixbuf/io-png.c:980
+#: cdk-pixbuf/io-png.c:1015
 #, c-format
 msgid ""
 "Value for PNG text chunk '%s' cannot be converted to ISO-8859-1 encoding."
 msgstr "PNG text 區段的內容 '%s' 無法轉換為 ISO-8859-1 編碼。"
 
-#: cdk-pixbuf/io-png.c:992
+#: cdk-pixbuf/io-png.c:1027
 #, c-format
 msgid "Color profile has invalid length %d"
 msgstr "色彩設定檔有無效的長度 %d"
 
-#: cdk-pixbuf/io-png.c:1004
+#: cdk-pixbuf/io-png.c:1039
 #, c-format
 msgid ""
 "PNG compression level must be a value between 0 and 9; value “%s” is invalid"
 msgstr "PNG 壓縮程度必須在 0 至 9 之間；不允許使用數值“%s”"
 
-#: cdk-pixbuf/io-png.c:1018
+#: cdk-pixbuf/io-png.c:1053
 #, c-format
 msgid "PNG %s must be greater than zero; value “%s” is not allowed"
 msgstr "PNG %s 必須大於零；不允許使用數值“%s”"
 
-#: cdk-pixbuf/io-png.c:1246
+#: cdk-pixbuf/io-png.c:1283
 msgctxt "image format"
 msgid "PNG"
 msgstr "PNG"
@@ -795,70 +796,70 @@ msgctxt "image format"
 msgid "Targa"
 msgstr "Targa"
 
-#: cdk-pixbuf/io-tiff.c:116
+#: cdk-pixbuf/io-tiff.c:117
 msgid "Could not get image width (bad TIFF file)"
 msgstr "無法取得影像寬度（TIFF 檔損毀）"
 
-#: cdk-pixbuf/io-tiff.c:124
+#: cdk-pixbuf/io-tiff.c:125
 msgid "Could not get image height (bad TIFF file)"
 msgstr "無法取得影像高度（TIFF 檔損毀）"
 
-#: cdk-pixbuf/io-tiff.c:132
+#: cdk-pixbuf/io-tiff.c:133
 msgid "Width or height of TIFF image is zero"
 msgstr "TIFF 影像的寬度或高度為零"
 
-#: cdk-pixbuf/io-tiff.c:140 cdk-pixbuf/io-tiff.c:150
+#: cdk-pixbuf/io-tiff.c:141 cdk-pixbuf/io-tiff.c:151
 msgid "Dimensions of TIFF image too large"
 msgstr "TIFF 影像的尺寸太大"
 
-#: cdk-pixbuf/io-tiff.c:176 cdk-pixbuf/io-tiff.c:188 cdk-pixbuf/io-tiff.c:584
+#: cdk-pixbuf/io-tiff.c:177 cdk-pixbuf/io-tiff.c:189 cdk-pixbuf/io-tiff.c:585
 msgid "Insufficient memory to open TIFF file"
 msgstr "記憶體不足以開啟 TIFF 檔"
 
-#: cdk-pixbuf/io-tiff.c:286
+#: cdk-pixbuf/io-tiff.c:287
 msgid "Failed to load RGB data from TIFF file"
 msgstr "無法載入 TIFF 檔裡的 RGB 資料"
 
-#: cdk-pixbuf/io-tiff.c:377
+#: cdk-pixbuf/io-tiff.c:378
 msgid "Failed to open TIFF image"
 msgstr "無法開啟 TIFF 影像"
 
-#: cdk-pixbuf/io-tiff.c:515 cdk-pixbuf/io-tiff.c:527
+#: cdk-pixbuf/io-tiff.c:516 cdk-pixbuf/io-tiff.c:528
 msgid "Failed to load TIFF image"
 msgstr "無法載入 TIFF 影像"
 
-#: cdk-pixbuf/io-tiff.c:759
+#: cdk-pixbuf/io-tiff.c:760
 msgid "Failed to save TIFF image"
 msgstr "無法儲存 TIFF 影像"
 
-#: cdk-pixbuf/io-tiff.c:820
+#: cdk-pixbuf/io-tiff.c:821
 msgid "TIFF compression doesn’t refer to a valid codec."
 msgstr "TIFF 壓縮並未參照到有效的編解碼器。"
 
-#: cdk-pixbuf/io-tiff.c:850
+#: cdk-pixbuf/io-tiff.c:851
 #, c-format
 msgid "Color profile has invalid length %d."
 msgstr "色彩設定檔有無效的長度 %d。"
 
-#: cdk-pixbuf/io-tiff.c:865
+#: cdk-pixbuf/io-tiff.c:866
 msgid "TIFF bits-per-sample doesn’t contain a supported value."
 msgstr "TIFF 每樣本位元未包含支援的數值。"
 
-#: cdk-pixbuf/io-tiff.c:946
+#: cdk-pixbuf/io-tiff.c:947
 msgid "Failed to write TIFF data"
 msgstr "無法寫入 TIFF 資料"
 
-#: cdk-pixbuf/io-tiff.c:964
+#: cdk-pixbuf/io-tiff.c:965
 #, c-format
 msgid "TIFF x-dpi must be greater than zero; value “%s” is not allowed."
 msgstr "TIFF x-dpi 必須大於零；不允許使用數值「%s」。"
 
-#: cdk-pixbuf/io-tiff.c:976
+#: cdk-pixbuf/io-tiff.c:977
 #, c-format
 msgid "TIFF y-dpi must be greater than zero; value “%s” is not allowed."
 msgstr "TIFF y-dpi 必須大於零；不允許使用數值「%s」。"
 
-#: cdk-pixbuf/io-tiff.c:1017
+#: cdk-pixbuf/io-tiff.c:1018
 msgid "Couldn’t write to TIFF file"
 msgstr "無法寫入 TIFF 檔案"
 

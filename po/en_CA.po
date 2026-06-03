@@ -7,9 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ctk+\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=cdk-"
-"pixbuf\n"
-"POT-Creation-Date: 2012-02-04 18:44-0500\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 08:56+0200\n"
 "PO-Revision-Date: 2005-07-18 03:57-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: Canadian English <adamw@gnome.org>\n"
@@ -19,335 +18,433 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:146 cdk-pixbuf/cdk-pixbuf-io.c:1083
-#: cdk-pixbuf/cdk-pixbuf-io.c:1349
-#, c-format
-msgid "Failed to open file '%s': %s"
+#: cdk-pixbuf/cdk-pixbuf-animation.c:190 cdk-pixbuf/cdk-pixbuf-io.c:1224
+#: cdk-pixbuf/cdk-pixbuf-io.c:1497
+#, fuzzy, c-format
+msgid "Failed to open file “%s”: %s"
 msgstr "Failed to open file '%s': %s"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:159 cdk-pixbuf/cdk-pixbuf-io.c:1095
-#, c-format
-msgid "Image file '%s' contains no data"
+#: cdk-pixbuf/cdk-pixbuf-animation.c:203 cdk-pixbuf/cdk-pixbuf-io.c:1085
+#, fuzzy, c-format
+msgid "Image file “%s” contains no data"
 msgstr "Image file '%s' contains no data"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:201 cdk-pixbuf/cdk-pixbuf-io.c:1131
-#: cdk-pixbuf/cdk-pixbuf-io.c:1401
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-animation.c:241
+#, fuzzy, c-format
 msgid ""
-"Failed to load image '%s': reason not known, probably a corrupt image file"
-msgstr ""
-"Failed to load image '%s': reason not known, probably a corrupt image file"
-
-#: cdk-pixbuf/cdk-pixbuf-animation.c:234
-#, c-format
-msgid ""
-"Failed to load animation '%s': reason not known, probably a corrupt "
+"Failed to load animation “%s”: reason not known, probably a corrupt "
 "animation file"
 msgstr ""
 "Failed to load animation '%s': reason not known, probably a corrupt "
 "animation file"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:809
+#: cdk-pixbuf/cdk-pixbuf-animation.c:309 cdk-pixbuf/cdk-pixbuf-io.c:1260
+#: cdk-pixbuf/cdk-pixbuf-io.c:1549
+#, fuzzy, c-format
+msgid ""
+"Failed to load image “%s”: reason not known, probably a corrupt image file"
+msgstr ""
+"Failed to load image '%s': reason not known, probably a corrupt image file"
+
+#: cdk-pixbuf/cdk-pixbuf.c:248
+msgid "Number of Channels"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:249
+#, fuzzy
+msgid "The number of samples per pixel"
+msgstr "XPM has invalid number of chars per pixel"
+
+#: cdk-pixbuf/cdk-pixbuf.c:264
+msgid "Colorspace"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:265
+msgid "The colorspace in which the samples are interpreted"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:277
+msgid "Has Alpha"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:278
+msgid "Whether the pixbuf has an alpha channel"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:291
+msgid "Bits per Sample"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:292
+msgid "The number of bits per sample"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:305
+msgid "Width"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:306
+msgid "The number of columns of the pixbuf"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:319
+msgid "Height"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:320
+msgid "The number of rows of the pixbuf"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:337
+msgid "Rowstride"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:338
+msgid ""
+"The number of bytes between the start of a row and the start of the next row"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:351
+msgid "Pixels"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:352
+msgid "A pointer to the pixel data of the pixbuf"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:366
+msgid "Pixel Bytes"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:367
+msgid "Readonly pixel data"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf-io.c:901
 #, c-format
 msgid "Unable to load image-loading module: %s: %s"
 msgstr "Unable to load image-loading module: %s: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:824
+#: cdk-pixbuf/cdk-pixbuf-io.c:919
 #, fuzzy, c-format
 msgid ""
-"Image-loading module %s does not export the proper interface; perhaps it's "
+"Image-loading module %s does not export the proper interface; perhaps it’s "
 "from a different cdk-pixbuf version?"
 msgstr ""
 "Image-loading module %s does not export the proper interface; perhaps it's "
 "from a different CTK version?"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:833 cdk-pixbuf/cdk-pixbuf-io.c:884
-#, c-format
-msgid "Image type '%s' is not supported"
+#: cdk-pixbuf/cdk-pixbuf-io.c:929 cdk-pixbuf/cdk-pixbuf-io.c:972
+#, fuzzy, c-format
+msgid "Image type “%s” is not supported"
 msgstr "Image type '%s' is not supported"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:964
-#, c-format
-msgid "Couldn't recognize the image file format for file '%s'"
+#: cdk-pixbuf/cdk-pixbuf-io.c:1057
+#, fuzzy, c-format
+msgid "Couldn’t recognize the image file format for file “%s”"
 msgstr "Couldn't recognize the image file format for file '%s'"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:972
+#: cdk-pixbuf/cdk-pixbuf-io.c:1065
 msgid "Unrecognized image file format"
 msgstr "Unrecognized image file format"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:1140
-#, c-format
-msgid "Failed to load image '%s': %s"
+#: cdk-pixbuf/cdk-pixbuf-io.c:1271
+#, fuzzy, c-format
+msgid "Failed to load image “%s”: %s"
 msgstr "Failed to load image '%s': %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2028 cdk-pixbuf/io-gdip-utils.c:888
+#: cdk-pixbuf/cdk-pixbuf-io.c:2346 cdk-pixbuf/io-gdip-utils.c:840
 #, c-format
 msgid "Error writing to image file: %s"
 msgstr "Error writing to image file: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2073 cdk-pixbuf/cdk-pixbuf-io.c:2203
+#: cdk-pixbuf/cdk-pixbuf-io.c:2388 cdk-pixbuf/cdk-pixbuf-io.c:2509
 #, c-format
 msgid "This build of cdk-pixbuf does not support saving the image format: %s"
 msgstr "This build of cdk-pixbuf does not support saving the image format: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2107
+#: cdk-pixbuf/cdk-pixbuf-io.c:2419
 msgid "Insufficient memory to save image to callback"
 msgstr "Insufficient memory to save image to callback"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2120
+#: cdk-pixbuf/cdk-pixbuf-io.c:2432
 msgid "Failed to open temporary file"
 msgstr "Failed to open temporary file"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2146
+#: cdk-pixbuf/cdk-pixbuf-io.c:2455
 msgid "Failed to read from temporary file"
 msgstr "Failed to read from temporary file"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2399
-#, c-format
-msgid "Failed to open '%s' for writing: %s"
+#: cdk-pixbuf/cdk-pixbuf-io.c:2677
+#, fuzzy, c-format
+msgid "Failed to open “%s” for writing: %s"
 msgstr "Failed to open '%s' for writing: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2425
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-io.c:2703
+#, fuzzy, c-format
 msgid ""
-"Failed to close '%s' while writing image, all data may not have been saved: "
+"Failed to close “%s” while writing image, all data may not have been saved: "
 "%s"
 msgstr ""
 "Failed to close '%s' while writing image, all data may not have been saved: "
 "%s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2646 cdk-pixbuf/cdk-pixbuf-io.c:2698
+#: cdk-pixbuf/cdk-pixbuf-io.c:2937 cdk-pixbuf/cdk-pixbuf-io.c:2992
 msgid "Insufficient memory to save image into a buffer"
 msgstr "Insufficient memory to save image into a buffer"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2744
+#: cdk-pixbuf/cdk-pixbuf-io.c:3038
 msgid "Error writing to image stream"
 msgstr "Error writing to image stream"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:395
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-loader.c:426
+#, fuzzy, c-format
 msgid ""
-"Internal error: Image loader module '%s' failed to complete an operation, "
-"but didn't give a reason for the failure"
+"Internal error: Image loader module “%s” failed to complete an operation, "
+"but didn’t give a reason for the failure"
 msgstr ""
 "Internal error: Image loader module '%s' failed to complete an operation, "
 "but didn't give a reason for the failure"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:437
-#, c-format
-msgid "Incremental loading of image type '%s' is not supported"
+#: cdk-pixbuf/cdk-pixbuf-loader.c:468
+#, fuzzy, c-format
+msgid "Incremental loading of image type “%s” is not supported"
 msgstr "Incremental loading of image type '%s' is not supported"
 
-#: cdk-pixbuf/cdk-pixdata.c:160
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:166
+msgid "Loop"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:167
+msgid "Whether the animation should loop when it reaches the end"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixdata.c:178
 msgid "Image header corrupt"
 msgstr "Image header corrupt"
 
-#: cdk-pixbuf/cdk-pixdata.c:165
+#: cdk-pixbuf/cdk-pixdata.c:183
 msgid "Image format unknown"
 msgstr "Image format unknown"
 
-#: cdk-pixbuf/cdk-pixdata.c:170 cdk-pixbuf/cdk-pixdata.c:502
+#: cdk-pixbuf/cdk-pixdata.c:188 cdk-pixbuf/cdk-pixdata.c:491
+#: cdk-pixbuf/cdk-pixdata.c:501 cdk-pixbuf/cdk-pixdata.c:597
 msgid "Image pixel data corrupt"
 msgstr "Image pixel data corrupt"
 
-#: cdk-pixbuf/cdk-pixdata.c:446
+#: cdk-pixbuf/cdk-pixdata.c:513
 #, c-format
 msgid "failed to allocate image buffer of %u byte"
 msgid_plural "failed to allocate image buffer of %u bytes"
 msgstr[0] "failed to allocate image buffer of %u byte"
 msgstr[1] "failed to allocate image buffer of %u bytes"
 
-#: cdk-pixbuf/io-ani.c:244
+#: cdk-pixbuf/io-ani.c:239
 msgid "Unexpected icon chunk in animation"
 msgstr "Unexpected icon chunk in animation"
 
-#: cdk-pixbuf/io-ani.c:337
-msgid "Unsupported animation type"
-msgstr "Unsupported animation type"
-
-#: cdk-pixbuf/io-ani.c:348 cdk-pixbuf/io-ani.c:406 cdk-pixbuf/io-ani.c:432
-#: cdk-pixbuf/io-ani.c:455 cdk-pixbuf/io-ani.c:482 cdk-pixbuf/io-ani.c:569
-msgid "Invalid header in animation"
-msgstr "Invalid header in animation"
-
-#: cdk-pixbuf/io-ani.c:358 cdk-pixbuf/io-ani.c:380 cdk-pixbuf/io-ani.c:464
-#: cdk-pixbuf/io-ani.c:491 cdk-pixbuf/io-ani.c:542 cdk-pixbuf/io-ani.c:614
-msgid "Not enough memory to load animation"
-msgstr "Not enough memory to load animation"
-
-#: cdk-pixbuf/io-ani.c:398 cdk-pixbuf/io-ani.c:424 cdk-pixbuf/io-ani.c:443
+#: cdk-pixbuf/io-ani.c:303 cdk-pixbuf/io-ani.c:404 cdk-pixbuf/io-ani.c:430
+#: cdk-pixbuf/io-ani.c:449
 msgid "Malformed chunk in animation"
 msgstr "Malformed chunk in animation"
 
-#: cdk-pixbuf/io-ani.c:711
-msgid "The ANI image format"
-msgstr "The ANI image format"
+#: cdk-pixbuf/io-ani.c:311 cdk-pixbuf/io-ani.c:354 cdk-pixbuf/io-ani.c:412
+#: cdk-pixbuf/io-ani.c:438 cdk-pixbuf/io-ani.c:461 cdk-pixbuf/io-ani.c:488
+#: cdk-pixbuf/io-ani.c:575
+msgid "Invalid header in animation"
+msgstr "Invalid header in animation"
 
-#: cdk-pixbuf/io-bmp.c:229 cdk-pixbuf/io-bmp.c:266 cdk-pixbuf/io-bmp.c:337
-#: cdk-pixbuf/io-bmp.c:369 cdk-pixbuf/io-bmp.c:392 cdk-pixbuf/io-bmp.c:495
+#: cdk-pixbuf/io-ani.c:364 cdk-pixbuf/io-ani.c:386 cdk-pixbuf/io-ani.c:470
+#: cdk-pixbuf/io-ani.c:497 cdk-pixbuf/io-ani.c:548 cdk-pixbuf/io-ani.c:624
+msgid "Not enough memory to load animation"
+msgstr "Not enough memory to load animation"
+
+#: cdk-pixbuf/io-ani.c:646
+#, fuzzy
+msgid "ANI image was truncated or incomplete."
+msgstr "GIF image was truncated or incomplete."
+
+#: cdk-pixbuf/io-ani.c:687
+msgctxt "image format"
+msgid "Windows animated cursor"
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:234 cdk-pixbuf/io-bmp.c:275 cdk-pixbuf/io-bmp.c:385
+#: cdk-pixbuf/io-bmp.c:412 cdk-pixbuf/io-bmp.c:437 cdk-pixbuf/io-bmp.c:472
+#: cdk-pixbuf/io-bmp.c:494 cdk-pixbuf/io-bmp.c:572
 msgid "BMP image has bogus header data"
 msgstr "BMP image has bogus header data"
 
-#: cdk-pixbuf/io-bmp.c:240 cdk-pixbuf/io-bmp.c:432
+#: cdk-pixbuf/io-bmp.c:245 cdk-pixbuf/io-bmp.c:507
 msgid "Not enough memory to load bitmap image"
 msgstr "Not enough memory to load bitmap image"
 
-#: cdk-pixbuf/io-bmp.c:318
+#: cdk-pixbuf/io-bmp.c:339
 msgid "BMP image has unsupported header size"
 msgstr "BMP image has unsupported header size"
 
-#: cdk-pixbuf/io-bmp.c:356
+#: cdk-pixbuf/io-bmp.c:348
+#, fuzzy
+msgid "BMP image has unsupported depth"
+msgstr "BMP image has unsupported header size"
+
+#: cdk-pixbuf/io-bmp.c:367
+#, fuzzy
+msgid "BMP image has oversize palette"
+msgstr "BMP image has bogus header data"
+
+#: cdk-pixbuf/io-bmp.c:399
 msgid "Topdown BMP images cannot be compressed"
 msgstr "Top-down BMP images cannot be compressed"
 
-#: cdk-pixbuf/io-bmp.c:716 cdk-pixbuf/io-pnm.c:707
+#: cdk-pixbuf/io-bmp.c:424
+msgid "BMP image width too large"
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:814 cdk-pixbuf/io-png.c:587 cdk-pixbuf/io-pnm.c:722
+#: cdk-pixbuf/io-pnm.c:879
 msgid "Premature end-of-file encountered"
 msgstr "Premature end-of-file encountered"
 
-#: cdk-pixbuf/io-bmp.c:1328
-msgid "Couldn't allocate memory for saving BMP file"
+#: cdk-pixbuf/io-bmp.c:1340
+msgid "Error while decoding colormap"
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:1403 cdk-pixbuf/io-bmp.c:1415
+msgid "Image is too wide for BMP format."
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:1448
+#, fuzzy
+msgid "Couldn’t allocate memory for saving BMP file"
 msgstr "Could not allocate memory for saving BMP file"
 
-#: cdk-pixbuf/io-bmp.c:1369
-msgid "Couldn't write to BMP file"
+#: cdk-pixbuf/io-bmp.c:1489
+#, fuzzy
+msgid "Couldn’t write to BMP file"
 msgstr "Could not write to BMP file"
 
-#: cdk-pixbuf/io-bmp.c:1422 cdk-pixbuf/io-gdip-bmp.c:82
-msgid "The BMP image format"
-msgstr "The BMP image format"
+#: cdk-pixbuf/io-bmp.c:1542 cdk-pixbuf/io-gdip-bmp.c:83
+msgctxt "image format"
+msgid "BMP"
+msgstr ""
 
-#: cdk-pixbuf/io-gdip-emf.c:59
-#, fuzzy
-msgid "The EMF image format"
-msgstr "The BMP image format"
+#: cdk-pixbuf/io-gdip-emf.c:61
+msgctxt "image format"
+msgid "EMF"
+msgstr ""
 
-#: cdk-pixbuf/io-gdip-gif.c:80 cdk-pixbuf/io-gif.c:1699
-msgid "The GIF image format"
-msgstr "The GIF image format"
+#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1039
+msgctxt "image format"
+msgid "GIF"
+msgstr ""
 
-#: cdk-pixbuf/io-gdip-ico.c:59 cdk-pixbuf/io-ico.c:1271
-msgid "The ICO image format"
-msgstr "The ICO image format"
+#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1418
+msgctxt "image format"
+msgid "Windows icon"
+msgstr ""
 
-#: cdk-pixbuf/io-gdip-jpeg.c:53 cdk-pixbuf/io-jpeg.c:1139
-#, c-format
+#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1409
+#, fuzzy, c-format
 msgid ""
-"JPEG quality must be a value between 0 and 100; value '%s' could not be "
+"JPEG quality must be a value between 0 and 100; value “%s” could not be "
 "parsed."
 msgstr ""
 "JPEG quality must be a value between 0 and 100; value '%s' could not be "
 "parsed."
 
-#: cdk-pixbuf/io-gdip-jpeg.c:68 cdk-pixbuf/io-jpeg.c:1154
-#, c-format
+#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1425
+#, fuzzy, c-format
 msgid ""
-"JPEG quality must be a value between 0 and 100; value '%d' is not allowed."
+"JPEG quality must be a value between 0 and 100; value “%d” is not allowed."
 msgstr ""
 "JPEG quality must be a value between 0 and 100; value '%d' is not allowed."
 
-#: cdk-pixbuf/io-gdip-jpeg.c:136 cdk-pixbuf/io-jpeg.c:1316
-msgid "The JPEG image format"
-msgstr "The JPEG image format"
+#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1710
+msgctxt "image format"
+msgid "JPEG"
+msgstr ""
 
-#: cdk-pixbuf/io-gdip-utils.c:154
+#: cdk-pixbuf/io-gdip-tiff.c:83 cdk-pixbuf/io-tiff.c:1087
+msgctxt "image format"
+msgid "TIFF"
+msgstr ""
+
+#: cdk-pixbuf/io-gdip-utils.c:155
 #, fuzzy, c-format
 msgid "Could not allocate memory: %s"
 msgstr "Couldn't allocate memory for stream"
 
-#: cdk-pixbuf/io-gdip-utils.c:179 cdk-pixbuf/io-gdip-utils.c:293
-#: cdk-pixbuf/io-gdip-utils.c:333
+#: cdk-pixbuf/io-gdip-utils.c:180 cdk-pixbuf/io-gdip-utils.c:294
+#: cdk-pixbuf/io-gdip-utils.c:334
 #, fuzzy, c-format
 msgid "Could not create stream: %s"
 msgstr "Could not rename %s to %s: %s\n"
 
-#: cdk-pixbuf/io-gdip-utils.c:193
+#: cdk-pixbuf/io-gdip-utils.c:194
 #, fuzzy, c-format
 msgid "Could not seek stream: %s"
 msgstr "Could not remove item"
 
-#: cdk-pixbuf/io-gdip-utils.c:205
+#: cdk-pixbuf/io-gdip-utils.c:206
 #, fuzzy, c-format
 msgid "Could not read from stream: %s"
 msgstr "Could not rename %s to %s: %s\n"
 
-#: cdk-pixbuf/io-gdip-utils.c:617 cdk-pixbuf/io-gdip-utils.c:752
+#: cdk-pixbuf/io-gdip-utils.c:620
 #, fuzzy
-msgid "Couldn't load bitmap"
+msgid "Couldn’t load bitmap"
 msgstr "Couldn't decode image"
 
-#: cdk-pixbuf/io-gdip-utils.c:774
+#: cdk-pixbuf/io-gdip-utils.c:776
 #, fuzzy
-msgid "Couldn't load metafile"
+msgid "Couldn’t load metafile"
 msgstr "Couldn't decode image"
 
-#: cdk-pixbuf/io-gdip-utils.c:933
+#: cdk-pixbuf/io-gdip-utils.c:881
 #, fuzzy
 msgid "Unsupported image format for GDI+"
 msgstr "unsupported RAS image variation"
 
-#: cdk-pixbuf/io-gdip-utils.c:940
+#: cdk-pixbuf/io-gdip-utils.c:888
 #, fuzzy
-msgid "Couldn't save"
+msgid "Couldn’t save"
 msgstr "Couldn't save the rest"
 
-#: cdk-pixbuf/io-gdip-wmf.c:58
-#, fuzzy
-msgid "The WMF image format"
-msgstr "The WBMP image format"
+#: cdk-pixbuf/io-gdip-wmf.c:60
+msgctxt "image format"
+msgid "WMF"
+msgstr ""
 
-#: cdk-pixbuf/io-gif.c:221
+#: cdk-pixbuf/io-gif.c:160
 #, c-format
 msgid "Failure reading GIF: %s"
 msgstr "Failure reading GIF: %s"
 
-#: cdk-pixbuf/io-gif.c:495 cdk-pixbuf/io-gif.c:1482 cdk-pixbuf/io-gif.c:1648
-msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
-msgstr "GIF file was missing some data (perhaps it was truncated somehow?)"
-
-#: cdk-pixbuf/io-gif.c:504
-#, c-format
-msgid "Internal error in the GIF loader (%s)"
-msgstr "Internal error in the GIF loader (%s)"
-
-#: cdk-pixbuf/io-gif.c:578
-msgid "Stack overflow"
-msgstr "Stack overflow"
-
-#: cdk-pixbuf/io-gif.c:638
-msgid "GIF image loader cannot understand this image."
-msgstr "GIF image loader cannot understand this image."
-
-#: cdk-pixbuf/io-gif.c:667
-msgid "Bad code encountered"
-msgstr "Bad code encountered"
-
-#: cdk-pixbuf/io-gif.c:677
-msgid "Circular table entry in GIF file"
-msgstr "Circular table entry in GIF file"
-
-#: cdk-pixbuf/io-gif.c:865 cdk-pixbuf/io-gif.c:1468 cdk-pixbuf/io-gif.c:1521
-#: cdk-pixbuf/io-gif.c:1636
+#: cdk-pixbuf/io-gif.c:383 cdk-pixbuf/io-gif.c:850 cdk-pixbuf/io-gif.c:903
+#: cdk-pixbuf/io-gif.c:976
 msgid "Not enough memory to load GIF file"
 msgstr "Not enough memory to load GIF file"
 
-#: cdk-pixbuf/io-gif.c:959
-msgid "Not enough memory to composite a frame in GIF file"
-msgstr "Not enough memory to composite a frame in GIF file"
-
-#: cdk-pixbuf/io-gif.c:1131
+#: cdk-pixbuf/io-gif.c:509
 msgid "GIF image is corrupt (incorrect LZW compression)"
 msgstr "GIF image is corrupt (incorrect LZW compression)"
 
-#: cdk-pixbuf/io-gif.c:1181
+#: cdk-pixbuf/io-gif.c:545
 msgid "File does not appear to be a GIF file"
 msgstr "File does not appear to be a GIF file"
 
-#: cdk-pixbuf/io-gif.c:1193
+#: cdk-pixbuf/io-gif.c:560
 #, c-format
 msgid "Version %s of the GIF file format is not supported"
 msgstr "Version %s of the GIF file format is not supported"
 
-#: cdk-pixbuf/io-gif.c:1302
+#: cdk-pixbuf/io-gif.c:589
+#, fuzzy
+msgid "Resulting GIF image has zero size"
+msgstr "Image has zero width"
+
+#: cdk-pixbuf/io-gif.c:659
 msgid ""
 "GIF image has no global colormap, and a frame inside it has no local "
 "colormap."
@@ -355,104 +452,83 @@ msgstr ""
 "GIF image has no global colourmap, and a frame inside it has no local "
 "colourmap."
 
-#: cdk-pixbuf/io-gif.c:1543
+#: cdk-pixbuf/io-gif.c:863 cdk-pixbuf/io-gif.c:988
+msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
+msgstr "GIF file was missing some data (perhaps it was truncated somehow?)"
+
+#: cdk-pixbuf/io-gif.c:922
 msgid "GIF image was truncated or incomplete."
 msgstr "GIF image was truncated or incomplete."
 
-#: cdk-pixbuf/io-icns.c:347
+#: cdk-pixbuf/io-gif.c:929
+msgid "Not all frames of the GIF image were loaded."
+msgstr ""
+
+#: cdk-pixbuf/io-icns.c:363
 #, c-format
 msgid "Error reading ICNS image: %s"
 msgstr "Error reading ICNS image: %s"
 
-#: cdk-pixbuf/io-icns.c:364
+#: cdk-pixbuf/io-icns.c:380 cdk-pixbuf/io-icns.c:461
 msgid "Could not decode ICNS file"
 msgstr "Could not decode ICNS file"
 
-#: cdk-pixbuf/io-icns.c:397
-msgid "The ICNS image format"
-msgstr "The ICNS image format"
+#: cdk-pixbuf/io-icns.c:517
+msgctxt "image format"
+msgid "MacOS X icon"
+msgstr ""
 
-#: cdk-pixbuf/io-ico.c:228 cdk-pixbuf/io-ico.c:242 cdk-pixbuf/io-ico.c:291
-#: cdk-pixbuf/io-ico.c:302 cdk-pixbuf/io-ico.c:395
-msgid "Invalid header in icon"
+#: cdk-pixbuf/io-ico.c:238 cdk-pixbuf/io-ico.c:252 cdk-pixbuf/io-ico.c:342
+#: cdk-pixbuf/io-ico.c:426 cdk-pixbuf/io-ico.c:451
+#, fuzzy, c-format
+msgid "Invalid header in icon (%s)"
 msgstr "Invalid header in icon"
 
-#: cdk-pixbuf/io-ico.c:257 cdk-pixbuf/io-ico.c:312 cdk-pixbuf/io-ico.c:405
-#: cdk-pixbuf/io-ico.c:458 cdk-pixbuf/io-ico.c:488
+#: cdk-pixbuf/io-ico.c:268 cdk-pixbuf/io-ico.c:355 cdk-pixbuf/io-ico.c:461
+#: cdk-pixbuf/io-ico.c:504 cdk-pixbuf/io-ico.c:532
 msgid "Not enough memory to load icon"
 msgstr "Not enough memory to load icon"
 
-#: cdk-pixbuf/io-ico.c:338
+#: cdk-pixbuf/io-ico.c:386
+msgid "Invalid header in icon"
+msgstr "Invalid header in icon"
+
+#: cdk-pixbuf/io-ico.c:387
 msgid "Compressed icons are not supported"
 msgstr "Compressed icons are not supported"
 
-#: cdk-pixbuf/io-ico.c:358
-msgid "Icon has zero width"
-msgstr "Icon has zero width"
-
-#: cdk-pixbuf/io-ico.c:368
-msgid "Icon has zero height"
-msgstr "Icon has zero height"
-
-#: cdk-pixbuf/io-ico.c:443
+#: cdk-pixbuf/io-ico.c:489
 msgid "Unsupported icon type"
 msgstr "Unsupported icon type"
 
-#: cdk-pixbuf/io-ico.c:537
+#: cdk-pixbuf/io-ico.c:583
 msgid "Not enough memory to load ICO file"
 msgstr "Not enough memory to load ICO file"
 
-#: cdk-pixbuf/io-ico.c:1002
+#: cdk-pixbuf/io-ico.c:629
+#, fuzzy
+msgid "ICO image was truncated or incomplete."
+msgstr "GIF image was truncated or incomplete."
+
+#: cdk-pixbuf/io-ico.c:1070
 msgid "Image too large to be saved as ICO"
 msgstr "Image too large to be saved as ICO"
 
-#: cdk-pixbuf/io-ico.c:1013
+#: cdk-pixbuf/io-ico.c:1081
 msgid "Cursor hotspot outside image"
 msgstr "Cursor hotspot outside image"
 
-#: cdk-pixbuf/io-ico.c:1036
+#: cdk-pixbuf/io-ico.c:1104
 #, c-format
 msgid "Unsupported depth for ICO file: %d"
 msgstr "Unsupported depth for ICO file: %d"
 
-#: cdk-pixbuf/io-jasper.c:74
-msgid "Couldn't allocate memory for stream"
-msgstr "Couldn't allocate memory for stream"
-
-#: cdk-pixbuf/io-jasper.c:104
-msgid "Couldn't decode image"
-msgstr "Couldn't decode image"
-
-#: cdk-pixbuf/io-jasper.c:122
-msgid "Transformed JPEG2000 has zero width or height"
-msgstr "Transformed JPEG2000 has zero width or height"
-
-#: cdk-pixbuf/io-jasper.c:136
-msgid "Image type currently not supported"
-msgstr "Image type currently not supported"
-
-#: cdk-pixbuf/io-jasper.c:148 cdk-pixbuf/io-jasper.c:156
-msgid "Couldn't allocate memory for color profile"
-msgstr "Couldn't allocate memory for colour profile"
-
-#: cdk-pixbuf/io-jasper.c:182
-msgid "Insufficient memory to open JPEG 2000 file"
-msgstr "Insufficient memory to open JPEG 2000 file"
-
-#: cdk-pixbuf/io-jasper.c:261
-msgid "Couldn't allocate memory to buffer image data"
-msgstr "Couldn't allocate memory to buffer image data"
-
-#: cdk-pixbuf/io-jasper.c:305
-msgid "The JPEG 2000 image format"
-msgstr "The JPEG 2000 image format"
-
-#: cdk-pixbuf/io-jpeg.c:116
+#: cdk-pixbuf/io-jpeg.c:131
 #, c-format
 msgid "Error interpreting JPEG image file (%s)"
 msgstr "Error interpreting JPEG image file (%s)"
 
-#: cdk-pixbuf/io-jpeg.c:527
+#: cdk-pixbuf/io-jpeg.c:647
 msgid ""
 "Insufficient memory to load image, try exiting some applications to free "
 "memory"
@@ -460,494 +536,646 @@ msgstr ""
 "Insufficient memory to load image, try exiting some applications to free "
 "memory"
 
-#: cdk-pixbuf/io-jpeg.c:568 cdk-pixbuf/io-jpeg.c:781
+#: cdk-pixbuf/io-jpeg.c:720 cdk-pixbuf/io-jpeg.c:970
 #, c-format
 msgid "Unsupported JPEG color space (%s)"
 msgstr "Unsupported JPEG colour space (%s)"
 
-#: cdk-pixbuf/io-jpeg.c:680 cdk-pixbuf/io-jpeg.c:950 cdk-pixbuf/io-jpeg.c:1183
-#: cdk-pixbuf/io-jpeg.c:1192
-msgid "Couldn't allocate memory for loading JPEG file"
+#: cdk-pixbuf/io-jpeg.c:845 cdk-pixbuf/io-jpeg.c:1169 cdk-pixbuf/io-jpeg.c:1516
+#: cdk-pixbuf/io-jpeg.c:1526
+#, fuzzy
+msgid "Couldn’t allocate memory for loading JPEG file"
 msgstr "Couldn't allocate memory for loading JPEG file"
 
-#: cdk-pixbuf/io-jpeg.c:925
+#: cdk-pixbuf/io-jpeg.c:1127
 msgid "Transformed JPEG has zero width or height."
 msgstr "Transformed JPEG has zero width or height."
 
-#: cdk-pixbuf/io-pcx.c:186
-msgid "Couldn't allocate memory for header"
-msgstr "Couldn't allocate memory for header"
+#: cdk-pixbuf/io-jpeg.c:1153
+#, fuzzy, c-format
+msgid "Unsupported number of color components (%d)"
+msgstr "Unsupported JPEG colour space (%s)"
 
-#: cdk-pixbuf/io-pcx.c:201 cdk-pixbuf/io-pcx.c:559
-msgid "Couldn't allocate memory for context buffer"
-msgstr "Couldn't allocate memory for context buffer"
+#: cdk-pixbuf/io-jpeg.c:1446
+#, fuzzy, c-format
+msgid ""
+"JPEG x-dpi must be a value between 1 and 65535; value “%s” is not allowed."
+msgstr ""
+"JPEG quality must be a value between 0 and 100; value '%d' is not allowed."
 
-#: cdk-pixbuf/io-pcx.c:600
-msgid "Image has invalid width and/or height"
-msgstr "Image has invalid width and/or height"
+#: cdk-pixbuf/io-jpeg.c:1467
+#, fuzzy, c-format
+msgid ""
+"JPEG y-dpi must be a value between 1 and 65535; value “%s” is not allowed."
+msgstr ""
+"JPEG quality must be a value between 0 and 100; value '%d' is not allowed."
 
-#: cdk-pixbuf/io-pcx.c:612 cdk-pixbuf/io-pcx.c:673
-msgid "Image has unsupported bpp"
-msgstr "Image has unsupported bpp"
-
-#: cdk-pixbuf/io-pcx.c:617 cdk-pixbuf/io-pcx.c:625
+#: cdk-pixbuf/io-jpeg.c:1481
 #, c-format
-msgid "Image has unsupported number of %d-bit planes"
-msgstr "Image has unsupported number of %d-bit planes"
+msgid "Color profile has invalid length “%u”."
+msgstr ""
 
-#: cdk-pixbuf/io-pcx.c:641
-msgid "Couldn't create new pixbuf"
-msgstr "Couldn't create new pixbuf"
-
-#: cdk-pixbuf/io-pcx.c:649
-msgid "Couldn't allocate memory for line data"
-msgstr "Couldn't allocate memory for line data"
-
-#: cdk-pixbuf/io-pcx.c:656
-#, fuzzy
-msgid "Couldn't allocate memory for PCX image"
-msgstr "Couldn't allocate memory for header"
-
-#: cdk-pixbuf/io-pcx.c:703
-msgid "Didn't get all lines of PCX image"
-msgstr "Didn't get all lines of PCX image"
-
-#: cdk-pixbuf/io-pcx.c:710
-msgid "No palette found at end of PCX data"
-msgstr "No palette found at end of PCX data"
-
-#: cdk-pixbuf/io-pcx.c:755
-msgid "The PCX image format"
-msgstr "The PCX image format"
-
-#: cdk-pixbuf/io-pixdata.c:148
-#, fuzzy
-msgid "Transformed pixbuf has zero width or height."
-msgstr "Transformed PNG has zero width or height."
-
-#: cdk-pixbuf/io-pixdata.c:186
-#, fuzzy
-msgid "The CdkPixdata format"
-msgstr "The GIF image format"
-
-#: cdk-pixbuf/io-png.c:54
+#: cdk-pixbuf/io-png.c:64
 msgid "Bits per channel of PNG image is invalid."
 msgstr "Bits per channel of PNG image is invalid."
 
-#: cdk-pixbuf/io-png.c:135 cdk-pixbuf/io-png.c:641
+#: cdk-pixbuf/io-png.c:145 cdk-pixbuf/io-png.c:730
 msgid "Transformed PNG has zero width or height."
 msgstr "Transformed PNG has zero width or height."
 
-#: cdk-pixbuf/io-png.c:143
+#: cdk-pixbuf/io-png.c:153
 msgid "Bits per channel of transformed PNG is not 8."
 msgstr "Bits per channel of transformed PNG is not 8."
 
-#: cdk-pixbuf/io-png.c:152
+#: cdk-pixbuf/io-png.c:162
 msgid "Transformed PNG not RGB or RGBA."
 msgstr "Transformed PNG not RGB or RGBA."
 
-#: cdk-pixbuf/io-png.c:161
+#: cdk-pixbuf/io-png.c:171
 msgid "Transformed PNG has unsupported number of channels, must be 3 or 4."
 msgstr "Transformed PNG has unsupported number of channels, must be 3 or 4."
 
-#: cdk-pixbuf/io-png.c:182
+#: cdk-pixbuf/io-png.c:193
 #, c-format
 msgid "Fatal error in PNG image file: %s"
 msgstr "Fatal error in PNG image file: %s"
 
-#: cdk-pixbuf/io-png.c:315
+#: cdk-pixbuf/io-png.c:338
 msgid "Insufficient memory to load PNG file"
 msgstr "Insufficient memory to load PNG file"
 
-#: cdk-pixbuf/io-png.c:656
-#, c-format
+#: cdk-pixbuf/io-png.c:519 cdk-pixbuf/io-png.c:540
+#, fuzzy
+msgid "Couldn’t allocate memory for loading PNG"
+msgstr "Couldn't allocate memory for loading JPEG file"
+
+#: cdk-pixbuf/io-png.c:743
+#, fuzzy, c-format
 msgid ""
-"Insufficient memory to store a %ld by %ld image; try exiting some "
+"Insufficient memory to store a %lu by %lu image; try exiting some "
 "applications to reduce memory usage"
 msgstr ""
 "Insufficient memory to store a %ld by %ld image; try exiting some "
 "applications to reduce memory usage"
 
-#: cdk-pixbuf/io-png.c:719
+#: cdk-pixbuf/io-png.c:820
 msgid "Fatal error reading PNG image file"
 msgstr "Fatal error reading PNG image file"
 
-#: cdk-pixbuf/io-png.c:768
+#: cdk-pixbuf/io-png.c:873
 #, c-format
 msgid "Fatal error reading PNG image file: %s"
 msgstr "Fatal error reading PNG image file: %s"
 
-#: cdk-pixbuf/io-png.c:862
+#: cdk-pixbuf/io-png.c:972
+#, fuzzy, c-format
 msgid ""
-"Keys for PNG text chunks must have at least 1 and at most 79 characters."
+"Invalid key “%s”. Keys for PNG text chunks must have at least 1 and at most "
+"79 characters."
 msgstr ""
 "Keys for PNG text chunks must have at least 1 and at most 79 characters."
 
-#: cdk-pixbuf/io-png.c:871
-msgid "Keys for PNG text chunks must be ASCII characters."
+#: cdk-pixbuf/io-png.c:985
+#, fuzzy, c-format
+msgid "Invalid key “%s”. Keys for PNG text chunks must be ASCII characters."
 msgstr "Keys for PNG text chunks must be ASCII characters."
 
-#: cdk-pixbuf/io-png.c:885 cdk-pixbuf/io-tiff.c:737
-#, c-format
-msgid "Color profile has invalid length %d."
-msgstr ""
-
-#: cdk-pixbuf/io-png.c:898
-#, c-format
+#: cdk-pixbuf/io-png.c:1015
+#, fuzzy, c-format
 msgid ""
-"PNG compression level must be a value between 0 and 9; value '%s' could not "
-"be parsed."
-msgstr ""
-"PNG compression level must be a value between 0 and 9; value '%s' could not "
-"be parsed."
-
-#: cdk-pixbuf/io-png.c:911
-#, c-format
-msgid ""
-"PNG compression level must be a value between 0 and 9; value '%d' is not "
-"allowed."
-msgstr ""
-"PNG compression level must be a value between 0 and 9; value '%d' is not "
-"allowed."
-
-#: cdk-pixbuf/io-png.c:959
-#, c-format
-msgid "Value for PNG text chunk %s cannot be converted to ISO-8859-1 encoding."
+"Value for PNG text chunk '%s' cannot be converted to ISO-8859-1 encoding."
 msgstr ""
 "Value for PNG text chunk %s cannot be converted to ISO-8859-1 encoding."
 
-#: cdk-pixbuf/io-png.c:1122
-msgid "The PNG image format"
-msgstr "The PNG image format"
+#: cdk-pixbuf/io-png.c:1027
+#, c-format
+msgid "Color profile has invalid length %d"
+msgstr ""
 
-#: cdk-pixbuf/io-pnm.c:248
-msgid "PNM loader expected to find an integer, but didn't"
+#: cdk-pixbuf/io-png.c:1039
+#, fuzzy, c-format
+msgid ""
+"PNG compression level must be a value between 0 and 9; value “%s” is invalid"
+msgstr ""
+"PNG compression level must be a value between 0 and 9; value '%d' is not "
+"allowed."
+
+#: cdk-pixbuf/io-png.c:1053
+#, fuzzy, c-format
+msgid "PNG %s must be greater than zero; value “%s” is not allowed"
+msgstr ""
+"JPEG quality must be a value between 0 and 100; value '%d' is not allowed."
+
+#: cdk-pixbuf/io-png.c:1283
+msgctxt "image format"
+msgid "PNG"
+msgstr ""
+
+#: cdk-pixbuf/io-pnm.c:247
+#, fuzzy
+msgid "PNM loader expected to find an integer, but didn’t"
 msgstr "PNM loader expected to find an integer, but didn't"
 
-#: cdk-pixbuf/io-pnm.c:280
+#: cdk-pixbuf/io-pnm.c:279
 msgid "PNM file has an incorrect initial byte"
 msgstr "PNM file has an incorrect initial byte"
 
-#: cdk-pixbuf/io-pnm.c:310
+#: cdk-pixbuf/io-pnm.c:309
 msgid "PNM file is not in a recognized PNM subformat"
 msgstr "PNM file is not in a recognized PNM subformat"
 
-#: cdk-pixbuf/io-pnm.c:335
+#: cdk-pixbuf/io-pnm.c:334
+#, fuzzy
+msgid "PNM file has an invalid width"
+msgstr "PNM file has an image width of 0"
+
+#: cdk-pixbuf/io-pnm.c:342
 msgid "PNM file has an image width of 0"
 msgstr "PNM file has an image width of 0"
 
-#: cdk-pixbuf/io-pnm.c:356
+#: cdk-pixbuf/io-pnm.c:363
+#, fuzzy
+msgid "PNM file has an invalid height"
+msgstr "PNM file has an image height of 0"
+
+#: cdk-pixbuf/io-pnm.c:371
 msgid "PNM file has an image height of 0"
 msgstr "PNM file has an image height of 0"
 
-#: cdk-pixbuf/io-pnm.c:379
+#: cdk-pixbuf/io-pnm.c:394
 msgid "Maximum color value in PNM file is 0"
 msgstr "Maximum colour value in PNM file is 0"
 
-#: cdk-pixbuf/io-pnm.c:387
+#: cdk-pixbuf/io-pnm.c:402
 msgid "Maximum color value in PNM file is too large"
 msgstr "Maximum colour value in PNM file is too large"
 
-#: cdk-pixbuf/io-pnm.c:427 cdk-pixbuf/io-pnm.c:457 cdk-pixbuf/io-pnm.c:502
+#: cdk-pixbuf/io-pnm.c:442 cdk-pixbuf/io-pnm.c:472 cdk-pixbuf/io-pnm.c:517
 msgid "Raw PNM image type is invalid"
 msgstr "Raw PNM image type is invalid"
 
-#: cdk-pixbuf/io-pnm.c:652
+#: cdk-pixbuf/io-pnm.c:667
 msgid "PNM image loader does not support this PNM subformat"
 msgstr "PNM image loader does not support this PNM subformat"
 
-#: cdk-pixbuf/io-pnm.c:739 cdk-pixbuf/io-pnm.c:966
+#: cdk-pixbuf/io-pnm.c:754 cdk-pixbuf/io-pnm.c:991
 msgid "Raw PNM formats require exactly one whitespace before sample data"
 msgstr "Raw PNM formats require exactly one whitespace before sample data"
 
-#: cdk-pixbuf/io-pnm.c:766
+#: cdk-pixbuf/io-pnm.c:781
 msgid "Cannot allocate memory for loading PNM image"
 msgstr "Cannot allocate memory for loading PNM image"
 
-#: cdk-pixbuf/io-pnm.c:816
+#: cdk-pixbuf/io-pnm.c:835
 msgid "Insufficient memory to load PNM context struct"
 msgstr "Insufficient memory to load PNM context struct"
 
-#: cdk-pixbuf/io-pnm.c:867
+#: cdk-pixbuf/io-pnm.c:892
 msgid "Unexpected end of PNM image data"
 msgstr "Unexpected end of PNM image data"
 
-#: cdk-pixbuf/io-pnm.c:995
+#: cdk-pixbuf/io-pnm.c:1020
 msgid "Insufficient memory to load PNM file"
 msgstr "Insufficient memory to load PNM file"
 
-#: cdk-pixbuf/io-pnm.c:1079
-msgid "The PNM/PBM/PGM/PPM image format family"
-msgstr "The PNM/PBM/PGM/PPM image format family"
+#: cdk-pixbuf/io-pnm.c:1103
+msgctxt "image format"
+msgid "PNM/PBM/PGM/PPM"
+msgstr ""
 
-#: cdk-pixbuf/io-qtif.c:128
+#: cdk-pixbuf/io-qtif.c:126
 msgid "Input file descriptor is NULL."
 msgstr ""
 
-#: cdk-pixbuf/io-qtif.c:143
+#: cdk-pixbuf/io-qtif.c:141
 #, fuzzy
 msgid "Failed to read QTIF header"
 msgstr "Failed to write header\n"
 
-#: cdk-pixbuf/io-qtif.c:152 cdk-pixbuf/io-qtif.c:189 cdk-pixbuf/io-qtif.c:460
+#: cdk-pixbuf/io-qtif.c:150 cdk-pixbuf/io-qtif.c:187 cdk-pixbuf/io-qtif.c:449
 #, c-format
 msgid "QTIF atom size too large (%d byte)"
 msgid_plural "QTIF atom size too large (%d bytes)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: cdk-pixbuf/io-qtif.c:175
+#: cdk-pixbuf/io-qtif.c:173
 #, fuzzy, c-format
 msgid "Failed to allocate %d byte for file read buffer"
 msgid_plural "Failed to allocate %d bytes for file read buffer"
 msgstr[0] "failed to allocate image buffer of %u byte"
 msgstr[1] "failed to allocate image buffer of %u byte"
 
-#: cdk-pixbuf/io-qtif.c:206
+#: cdk-pixbuf/io-qtif.c:201
 #, fuzzy, c-format
 msgid "File error when reading QTIF atom: %s"
 msgstr "Failure reading GIF: %s"
 
-#: cdk-pixbuf/io-qtif.c:243
+#: cdk-pixbuf/io-qtif.c:238
 #, c-format
 msgid "Failed to skip the next %d byte with seek()."
 msgid_plural "Failed to skip the next %d bytes with seek()."
 msgstr[0] ""
 msgstr[1] ""
 
-#: cdk-pixbuf/io-qtif.c:270
+#: cdk-pixbuf/io-qtif.c:269
 #, fuzzy
 msgid "Failed to allocate QTIF context structure."
 msgstr "Cannot allocate memory for TGA context struct"
 
-#: cdk-pixbuf/io-qtif.c:330
+#: cdk-pixbuf/io-qtif.c:329
 #, fuzzy
 msgid "Failed to create CdkPixbufLoader object."
 msgstr "Failed to write folder index\n"
 
-#: cdk-pixbuf/io-qtif.c:434
+#: cdk-pixbuf/io-qtif.c:424
 #, fuzzy
 msgid "Failed to find an image data atom."
 msgstr "Failed to open TIFF image"
 
-#: cdk-pixbuf/io-qtif.c:619
-#, fuzzy
-msgid "The QTIF image format"
-msgstr "The TIFF image format"
-
-#: cdk-pixbuf/io-ras.c:125
-msgid "RAS image has bogus header data"
-msgstr "RAS image has bogus header data"
-
-#: cdk-pixbuf/io-ras.c:147
-msgid "RAS image has unknown type"
-msgstr "RAS image has unknown type"
-
-#: cdk-pixbuf/io-ras.c:155
-msgid "unsupported RAS image variation"
-msgstr "unsupported RAS image variation"
-
-#: cdk-pixbuf/io-ras.c:170 cdk-pixbuf/io-ras.c:199
-msgid "Not enough memory to load RAS image"
-msgstr "Not enough memory to load RAS image"
-
-#: cdk-pixbuf/io-ras.c:544
-msgid "The Sun raster image format"
-msgstr "The Sun raster image format"
-
-#: cdk-pixbuf/io-tga.c:153
-msgid "Cannot allocate memory for IOBuffer struct"
-msgstr "Cannot allocate memory for IOBuffer struct"
-
-#: cdk-pixbuf/io-tga.c:172
-msgid "Cannot allocate memory for IOBuffer data"
-msgstr "Cannot allocate memory for IOBuffer data"
-
-#: cdk-pixbuf/io-tga.c:183
-msgid "Cannot realloc IOBuffer data"
-msgstr "Cannot realloc IOBuffer data"
-
-#: cdk-pixbuf/io-tga.c:213
-msgid "Cannot allocate temporary IOBuffer data"
-msgstr "Cannot allocate temporary IOBuffer data"
+#: cdk-pixbuf/io-qtif.c:599
+msgctxt "image format"
+msgid "QuickTime"
+msgstr ""
 
 #: cdk-pixbuf/io-tga.c:346
+#, fuzzy
+msgid "Cannot allocate colormap"
+msgstr "Cannot allocate colourmap entries"
+
+#: cdk-pixbuf/io-tga.c:371
 msgid "Cannot allocate new pixbuf"
 msgstr "Cannot allocate new pixbuf"
 
-#: cdk-pixbuf/io-tga.c:685
-#, fuzzy
-msgid "Image is corrupted or truncated"
-msgstr "GIF image was truncated or incomplete."
-
-#: cdk-pixbuf/io-tga.c:692
-msgid "Cannot allocate colormap structure"
-msgstr "Cannot allocate colourmap structure"
-
-#: cdk-pixbuf/io-tga.c:699
-msgid "Cannot allocate colormap entries"
-msgstr "Cannot allocate colourmap entries"
-
-#: cdk-pixbuf/io-tga.c:721
+#: cdk-pixbuf/io-tga.c:519
 msgid "Unexpected bitdepth for colormap entries"
 msgstr "Unexpected bitdepth for colourmap entries"
 
-#: cdk-pixbuf/io-tga.c:739
+#: cdk-pixbuf/io-tga.c:535
+msgid "Pseudocolor image does not contain a colormap"
+msgstr ""
+
+#: cdk-pixbuf/io-tga.c:578
 msgid "Cannot allocate TGA header memory"
 msgstr "Cannot allocate TGA header memory"
 
-#: cdk-pixbuf/io-tga.c:772
+#: cdk-pixbuf/io-tga.c:609
 msgid "TGA image has invalid dimensions"
 msgstr "TGA image has invalid dimensions"
 
-#: cdk-pixbuf/io-tga.c:778 cdk-pixbuf/io-tga.c:787 cdk-pixbuf/io-tga.c:797
-#: cdk-pixbuf/io-tga.c:807 cdk-pixbuf/io-tga.c:814
+#: cdk-pixbuf/io-tga.c:615 cdk-pixbuf/io-tga.c:622
 msgid "TGA image type not supported"
 msgstr "TGA image type not supported"
 
-#: cdk-pixbuf/io-tga.c:861
+#: cdk-pixbuf/io-tga.c:650
 msgid "Cannot allocate memory for TGA context struct"
 msgstr "Cannot allocate memory for TGA context struct"
 
-#: cdk-pixbuf/io-tga.c:926
-msgid "Excess data in file"
-msgstr "Excess data in file"
+#: cdk-pixbuf/io-tga.c:712
+#, fuzzy
+msgid "TGA image was truncated or incomplete."
+msgstr "GIF image was truncated or incomplete."
 
-#: cdk-pixbuf/io-tga.c:1007
-msgid "The Targa image format"
-msgstr "The Targa image format"
+#: cdk-pixbuf/io-tga.c:764
+msgctxt "image format"
+msgid "Targa"
+msgstr ""
 
-#: cdk-pixbuf/io-tiff.c:164
+#: cdk-pixbuf/io-tiff.c:117
 msgid "Could not get image width (bad TIFF file)"
 msgstr "Could not get image width (bad TIFF file)"
 
-#: cdk-pixbuf/io-tiff.c:171
+#: cdk-pixbuf/io-tiff.c:125
 msgid "Could not get image height (bad TIFF file)"
 msgstr "Could not get image height (bad TIFF file)"
 
-#: cdk-pixbuf/io-tiff.c:179
+#: cdk-pixbuf/io-tiff.c:133
 msgid "Width or height of TIFF image is zero"
 msgstr "Width or height of TIFF image is zero"
 
-#: cdk-pixbuf/io-tiff.c:188 cdk-pixbuf/io-tiff.c:197
+#: cdk-pixbuf/io-tiff.c:141 cdk-pixbuf/io-tiff.c:151
 msgid "Dimensions of TIFF image too large"
 msgstr "Dimensions of TIFF image too large"
 
-#: cdk-pixbuf/io-tiff.c:221 cdk-pixbuf/io-tiff.c:233 cdk-pixbuf/io-tiff.c:560
+#: cdk-pixbuf/io-tiff.c:177 cdk-pixbuf/io-tiff.c:189 cdk-pixbuf/io-tiff.c:585
 msgid "Insufficient memory to open TIFF file"
 msgstr "Insufficient memory to open TIFF file"
 
-#: cdk-pixbuf/io-tiff.c:294
+#: cdk-pixbuf/io-tiff.c:287
 msgid "Failed to load RGB data from TIFF file"
 msgstr "Failed to load RGB data from TIFF file"
 
-#: cdk-pixbuf/io-tiff.c:350
+#: cdk-pixbuf/io-tiff.c:378
 msgid "Failed to open TIFF image"
 msgstr "Failed to open TIFF image"
 
-#: cdk-pixbuf/io-tiff.c:362 cdk-pixbuf/io-tiff.c:777
-msgid "TIFFClose operation failed"
-msgstr "TIFFClose operation failed"
-
-#: cdk-pixbuf/io-tiff.c:492 cdk-pixbuf/io-tiff.c:505
+#: cdk-pixbuf/io-tiff.c:516 cdk-pixbuf/io-tiff.c:528
 msgid "Failed to load TIFF image"
 msgstr "Failed to load TIFF image"
 
-#: cdk-pixbuf/io-tiff.c:691
+#: cdk-pixbuf/io-tiff.c:760
 msgid "Failed to save TIFF image"
 msgstr "Failed to save TIFF image"
 
-#: cdk-pixbuf/io-tiff.c:726
-msgid "TIFF compression doesn't refer to a valid codec."
+#: cdk-pixbuf/io-tiff.c:821
+msgid "TIFF compression doesn’t refer to a valid codec."
 msgstr ""
 
-#: cdk-pixbuf/io-tiff.c:766
+#: cdk-pixbuf/io-tiff.c:851
+#, c-format
+msgid "Color profile has invalid length %d."
+msgstr ""
+
+#: cdk-pixbuf/io-tiff.c:866
+msgid "TIFF bits-per-sample doesn’t contain a supported value."
+msgstr ""
+
+#: cdk-pixbuf/io-tiff.c:947
 msgid "Failed to write TIFF data"
 msgstr "Failed to write TIFF data"
 
-#: cdk-pixbuf/io-tiff.c:813
-msgid "Couldn't write to TIFF file"
+#: cdk-pixbuf/io-tiff.c:965
+#, fuzzy, c-format
+msgid "TIFF x-dpi must be greater than zero; value “%s” is not allowed."
+msgstr ""
+"JPEG quality must be a value between 0 and 100; value '%d' is not allowed."
+
+#: cdk-pixbuf/io-tiff.c:977
+#, fuzzy, c-format
+msgid "TIFF y-dpi must be greater than zero; value “%s” is not allowed."
+msgstr ""
+"JPEG quality must be a value between 0 and 100; value '%d' is not allowed."
+
+#: cdk-pixbuf/io-tiff.c:1018
+#, fuzzy
+msgid "Couldn’t write to TIFF file"
 msgstr "Couldn't write to TIFF file"
 
-#: cdk-pixbuf/io-tiff.c:868
-msgid "The TIFF image format"
-msgstr "The TIFF image format"
-
-#: cdk-pixbuf/io-wbmp.c:245
-msgid "Image has zero width"
-msgstr "Image has zero width"
-
-#: cdk-pixbuf/io-wbmp.c:263
-msgid "Image has zero height"
-msgstr "Image has zero height"
-
-#: cdk-pixbuf/io-wbmp.c:274
-msgid "Not enough memory to load image"
-msgstr "Not enough memory to load image"
-
-#: cdk-pixbuf/io-wbmp.c:333
-msgid "Couldn't save the rest"
-msgstr "Couldn't save the rest"
-
-#: cdk-pixbuf/io-wbmp.c:374
-msgid "The WBMP image format"
-msgstr "The WBMP image format"
-
-#: cdk-pixbuf/io-xbm.c:296
+#: cdk-pixbuf/io-xbm.c:320
 msgid "Invalid XBM file"
 msgstr "Invalid XBM file"
 
-#: cdk-pixbuf/io-xbm.c:306
+#: cdk-pixbuf/io-xbm.c:331
 msgid "Insufficient memory to load XBM image file"
 msgstr "Insufficient memory to load XBM image file"
 
-#: cdk-pixbuf/io-xbm.c:454
+#: cdk-pixbuf/io-xbm.c:482
 msgid "Failed to write to temporary file when loading XBM image"
 msgstr "Failed to write to temporary file when loading XBM image"
 
-#: cdk-pixbuf/io-xbm.c:493
-msgid "The XBM image format"
-msgstr "The XBM image format"
+#: cdk-pixbuf/io-xbm.c:521
+msgctxt "image format"
+msgid "XBM"
+msgstr ""
 
-#: cdk-pixbuf/io-xpm.c:469
+#: cdk-pixbuf/io-xpm.c:472
 msgid "No XPM header found"
 msgstr "No XPM header found"
 
-#: cdk-pixbuf/io-xpm.c:478
+#: cdk-pixbuf/io-xpm.c:481 cdk-pixbuf/io-xpm.c:507
 msgid "Invalid XPM header"
 msgstr "Invalid XPM header"
 
-#: cdk-pixbuf/io-xpm.c:486
+#: cdk-pixbuf/io-xpm.c:489
 msgid "XPM file has image width <= 0"
 msgstr "XPM file has image width <= 0"
 
-#: cdk-pixbuf/io-xpm.c:494
+#: cdk-pixbuf/io-xpm.c:497
 msgid "XPM file has image height <= 0"
 msgstr "XPM file has image height <= 0"
 
-#: cdk-pixbuf/io-xpm.c:502
+#: cdk-pixbuf/io-xpm.c:514
 msgid "XPM has invalid number of chars per pixel"
 msgstr "XPM has invalid number of chars per pixel"
 
-#: cdk-pixbuf/io-xpm.c:511
+#: cdk-pixbuf/io-xpm.c:523
 msgid "XPM file has invalid number of colors"
 msgstr "XPM file has invalid number of colours"
 
-#: cdk-pixbuf/io-xpm.c:523 cdk-pixbuf/io-xpm.c:532 cdk-pixbuf/io-xpm.c:584
+#: cdk-pixbuf/io-xpm.c:535 cdk-pixbuf/io-xpm.c:544 cdk-pixbuf/io-xpm.c:593
 msgid "Cannot allocate memory for loading XPM image"
 msgstr "Cannot allocate memory for loading XPM image"
 
-#: cdk-pixbuf/io-xpm.c:546
+#: cdk-pixbuf/io-xpm.c:558
 msgid "Cannot read XPM colormap"
 msgstr "Cannot read XPM colourmap"
 
-#: cdk-pixbuf/io-xpm.c:778
+#: cdk-pixbuf/io-xpm.c:610
+#, fuzzy
+msgid "Dimensions do not match data"
+msgstr "Dimensions of TIFF image too large"
+
+#: cdk-pixbuf/io-xpm.c:806
 msgid "Failed to write to temporary file when loading XPM image"
 msgstr "Failed to write to temporary file when loading XPM image"
 
-#: cdk-pixbuf/io-xpm.c:817
-msgid "The XPM image format"
-msgstr "The XPM image format"
+#: cdk-pixbuf/io-xpm.c:845
+msgctxt "image format"
+msgid "XPM"
+msgstr ""
+
+#~ msgid "Unsupported animation type"
+#~ msgstr "Unsupported animation type"
+
+#~ msgid "The ANI image format"
+#~ msgstr "The ANI image format"
+
+#~ msgid "The BMP image format"
+#~ msgstr "The BMP image format"
+
+#, fuzzy
+#~ msgid "The EMF image format"
+#~ msgstr "The BMP image format"
+
+#~ msgid "The GIF image format"
+#~ msgstr "The GIF image format"
+
+#~ msgid "The ICO image format"
+#~ msgstr "The ICO image format"
+
+#~ msgid "The JPEG image format"
+#~ msgstr "The JPEG image format"
+
+#, fuzzy
+#~ msgid "The WMF image format"
+#~ msgstr "The WBMP image format"
+
+#, c-format
+#~ msgid "Internal error in the GIF loader (%s)"
+#~ msgstr "Internal error in the GIF loader (%s)"
+
+#~ msgid "Stack overflow"
+#~ msgstr "Stack overflow"
+
+#~ msgid "GIF image loader cannot understand this image."
+#~ msgstr "GIF image loader cannot understand this image."
+
+#~ msgid "Bad code encountered"
+#~ msgstr "Bad code encountered"
+
+#~ msgid "Circular table entry in GIF file"
+#~ msgstr "Circular table entry in GIF file"
+
+#~ msgid "Not enough memory to composite a frame in GIF file"
+#~ msgstr "Not enough memory to composite a frame in GIF file"
+
+#~ msgid "The ICNS image format"
+#~ msgstr "The ICNS image format"
+
+#~ msgid "Icon has zero width"
+#~ msgstr "Icon has zero width"
+
+#~ msgid "Icon has zero height"
+#~ msgstr "Icon has zero height"
+
+#~ msgid "Couldn't allocate memory for stream"
+#~ msgstr "Couldn't allocate memory for stream"
+
+#~ msgid "Couldn't decode image"
+#~ msgstr "Couldn't decode image"
+
+#~ msgid "Transformed JPEG2000 has zero width or height"
+#~ msgstr "Transformed JPEG2000 has zero width or height"
+
+#~ msgid "Image type currently not supported"
+#~ msgstr "Image type currently not supported"
+
+#~ msgid "Couldn't allocate memory for color profile"
+#~ msgstr "Couldn't allocate memory for colour profile"
+
+#~ msgid "Insufficient memory to open JPEG 2000 file"
+#~ msgstr "Insufficient memory to open JPEG 2000 file"
+
+#~ msgid "Couldn't allocate memory to buffer image data"
+#~ msgstr "Couldn't allocate memory to buffer image data"
+
+#~ msgid "The JPEG 2000 image format"
+#~ msgstr "The JPEG 2000 image format"
+
+#~ msgid "Couldn't allocate memory for header"
+#~ msgstr "Couldn't allocate memory for header"
+
+#~ msgid "Couldn't allocate memory for context buffer"
+#~ msgstr "Couldn't allocate memory for context buffer"
+
+#~ msgid "Image has invalid width and/or height"
+#~ msgstr "Image has invalid width and/or height"
+
+#~ msgid "Image has unsupported bpp"
+#~ msgstr "Image has unsupported bpp"
+
+#, c-format
+#~ msgid "Image has unsupported number of %d-bit planes"
+#~ msgstr "Image has unsupported number of %d-bit planes"
+
+#~ msgid "Couldn't create new pixbuf"
+#~ msgstr "Couldn't create new pixbuf"
+
+#~ msgid "Couldn't allocate memory for line data"
+#~ msgstr "Couldn't allocate memory for line data"
+
+#, fuzzy
+#~ msgid "Couldn't allocate memory for PCX image"
+#~ msgstr "Couldn't allocate memory for header"
+
+#~ msgid "Didn't get all lines of PCX image"
+#~ msgstr "Didn't get all lines of PCX image"
+
+#~ msgid "No palette found at end of PCX data"
+#~ msgstr "No palette found at end of PCX data"
+
+#~ msgid "The PCX image format"
+#~ msgstr "The PCX image format"
+
+#, fuzzy
+#~ msgid "Transformed pixbuf has zero width or height."
+#~ msgstr "Transformed PNG has zero width or height."
+
+#, fuzzy
+#~ msgid "The CdkPixdata format"
+#~ msgstr "The GIF image format"
+
+#, c-format
+#~ msgid ""
+#~ "PNG compression level must be a value between 0 and 9; value '%s' could "
+#~ "not be parsed."
+#~ msgstr ""
+#~ "PNG compression level must be a value between 0 and 9; value '%s' could "
+#~ "not be parsed."
+
+#~ msgid "The PNG image format"
+#~ msgstr "The PNG image format"
+
+#~ msgid "The PNM/PBM/PGM/PPM image format family"
+#~ msgstr "The PNM/PBM/PGM/PPM image format family"
+
+#, fuzzy
+#~ msgid "The QTIF image format"
+#~ msgstr "The TIFF image format"
+
+#~ msgid "RAS image has bogus header data"
+#~ msgstr "RAS image has bogus header data"
+
+#~ msgid "RAS image has unknown type"
+#~ msgstr "RAS image has unknown type"
+
+#~ msgid "unsupported RAS image variation"
+#~ msgstr "unsupported RAS image variation"
+
+#~ msgid "Not enough memory to load RAS image"
+#~ msgstr "Not enough memory to load RAS image"
+
+#~ msgid "The Sun raster image format"
+#~ msgstr "The Sun raster image format"
+
+#~ msgid "Cannot allocate memory for IOBuffer struct"
+#~ msgstr "Cannot allocate memory for IOBuffer struct"
+
+#~ msgid "Cannot allocate memory for IOBuffer data"
+#~ msgstr "Cannot allocate memory for IOBuffer data"
+
+#~ msgid "Cannot realloc IOBuffer data"
+#~ msgstr "Cannot realloc IOBuffer data"
+
+#~ msgid "Cannot allocate temporary IOBuffer data"
+#~ msgstr "Cannot allocate temporary IOBuffer data"
+
+#, fuzzy
+#~ msgid "Image is corrupted or truncated"
+#~ msgstr "GIF image was truncated or incomplete."
+
+#~ msgid "Cannot allocate colormap structure"
+#~ msgstr "Cannot allocate colourmap structure"
+
+#~ msgid "Excess data in file"
+#~ msgstr "Excess data in file"
+
+#~ msgid "The Targa image format"
+#~ msgstr "The Targa image format"
+
+#~ msgid "TIFFClose operation failed"
+#~ msgstr "TIFFClose operation failed"
+
+#~ msgid "The TIFF image format"
+#~ msgstr "The TIFF image format"
+
+#~ msgid "Image has zero height"
+#~ msgstr "Image has zero height"
+
+#~ msgid "Not enough memory to load image"
+#~ msgstr "Not enough memory to load image"
+
+#~ msgid "Couldn't save the rest"
+#~ msgstr "Couldn't save the rest"
+
+#~ msgid "The WBMP image format"
+#~ msgstr "The WBMP image format"
+
+#~ msgid "The XBM image format"
+#~ msgstr "The XBM image format"
+
+#~ msgid "The XPM image format"
+#~ msgstr "The XPM image format"
 
 #~ msgid "Couldn't allocate memory for paletted data"
 #~ msgstr "Couldn't allocate memory for paletted data"

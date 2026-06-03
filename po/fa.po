@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ctk+ 2.6\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/cdk-pixbuf/issues/new\n"
-"POT-Creation-Date: 2024-09-03 21:05+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 08:56+0200\n"
 "PO-Revision-Date: 2024-11-04 12:37+0330\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <farsi@lists.sharif.edu>\n"
@@ -19,29 +19,30 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.4.4\n"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:185 cdk-pixbuf/cdk-pixbuf-io.c:1129
-#: cdk-pixbuf/cdk-pixbuf-io.c:1402
+#: cdk-pixbuf/cdk-pixbuf-animation.c:190 cdk-pixbuf/cdk-pixbuf-io.c:1224
+#: cdk-pixbuf/cdk-pixbuf-io.c:1497
 #, c-format
 msgid "Failed to open file “%s”: %s"
 msgstr "شکست در گشودن پروندهٔ «%s»: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:198 cdk-pixbuf/cdk-pixbuf-io.c:990
+#: cdk-pixbuf/cdk-pixbuf-animation.c:203 cdk-pixbuf/cdk-pixbuf-io.c:1085
 #, c-format
 msgid "Image file “%s” contains no data"
 msgstr "پروندهٔ تصویری «%s» شامل هیچ داده‌ای نیست"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:236
+#: cdk-pixbuf/cdk-pixbuf-animation.c:241
 #, c-format
 msgid ""
-"Failed to load animation “%s”: reason not known, probably a corrupt animation "
-"file"
+"Failed to load animation “%s”: reason not known, probably a corrupt "
+"animation file"
 msgstr ""
 "شکست در بار کردن پویانمایی «%s»: دلیل نامعلوم، احتمالاً پروندهٔ پویانمایی خراب"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:304 cdk-pixbuf/cdk-pixbuf-io.c:1165
-#: cdk-pixbuf/cdk-pixbuf-io.c:1454
+#: cdk-pixbuf/cdk-pixbuf-animation.c:309 cdk-pixbuf/cdk-pixbuf-io.c:1260
+#: cdk-pixbuf/cdk-pixbuf-io.c:1549
 #, c-format
-msgid "Failed to load image “%s”: reason not known, probably a corrupt image file"
+msgid ""
+"Failed to load image “%s”: reason not known, probably a corrupt image file"
 msgstr "شکست در بار کردن تصویر «%s»: دلیل نامعلوم، احتمالاً پروندهٔ تصویری خراب"
 
 #: cdk-pixbuf/cdk-pixbuf.c:248
@@ -117,100 +118,102 @@ msgstr "بایت تصدانه‌ای"
 msgid "Readonly pixel data"
 msgstr "داده‌های تصدانه‌ای فقط خواندنی"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:807
+#: cdk-pixbuf/cdk-pixbuf-io.c:901
 #, c-format
 msgid "Unable to load image-loading module: %s: %s"
 msgstr "نمی‌توان پیمانهٔ تصویربارکن را بار کرد: %s: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:824
+#: cdk-pixbuf/cdk-pixbuf-io.c:919
 #, c-format
 msgid ""
-"Image-loading module %s does not export the proper interface; perhaps it’s from "
-"a different cdk-pixbuf version?"
+"Image-loading module %s does not export the proper interface; perhaps it’s "
+"from a different cdk-pixbuf version?"
 msgstr ""
-"پیمانهٔ بار کردن تصویر %s رابط مناسب را صادر نمی‌کند؛ شاید از نگارش دیگری از cdk-"
-"pixbuf است؟"
+"پیمانهٔ بار کردن تصویر %s رابط مناسب را صادر نمی‌کند؛ شاید از نگارش دیگری از "
+"cdk-pixbuf است؟"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:834 cdk-pixbuf/cdk-pixbuf-io.c:877
+#: cdk-pixbuf/cdk-pixbuf-io.c:929 cdk-pixbuf/cdk-pixbuf-io.c:972
 #, c-format
 msgid "Image type “%s” is not supported"
 msgstr "گونهٔ تصویری «%s» پشتیبانی نمی‌شود"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:962
+#: cdk-pixbuf/cdk-pixbuf-io.c:1057
 #, c-format
 msgid "Couldn’t recognize the image file format for file “%s”"
 msgstr "نتوانست قالب پروندهٔ تصویری را برای پروندهٔ «%s» تشخیص دهد"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:970
+#: cdk-pixbuf/cdk-pixbuf-io.c:1065
 msgid "Unrecognized image file format"
 msgstr "قالب پروندهٔ تصویری ناشناخته"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:1176
+#: cdk-pixbuf/cdk-pixbuf-io.c:1271
 #, c-format
 msgid "Failed to load image “%s”: %s"
 msgstr "شکست در بار کردن تصویر «%s»: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2244 cdk-pixbuf/io-gdip-utils.c:840
+#: cdk-pixbuf/cdk-pixbuf-io.c:2346 cdk-pixbuf/io-gdip-utils.c:840
 #, c-format
 msgid "Error writing to image file: %s"
 msgstr "خطا در نوشتن در پروندهٔ تصویر: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2286 cdk-pixbuf/cdk-pixbuf-io.c:2407
+#: cdk-pixbuf/cdk-pixbuf-io.c:2388 cdk-pixbuf/cdk-pixbuf-io.c:2509
 #, c-format
 msgid "This build of cdk-pixbuf does not support saving the image format: %s"
 msgstr "این ساخت cdk-pixbuf از ذخیرهٔ این قالب تصویری پشتیبانی نمی‌کند: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2317
+#: cdk-pixbuf/cdk-pixbuf-io.c:2419
 msgid "Insufficient memory to save image to callback"
 msgstr "حافظهٔ ناکافی برای ذخیرهٔ تصویر به پاسخ"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2330
+#: cdk-pixbuf/cdk-pixbuf-io.c:2432
 msgid "Failed to open temporary file"
 msgstr "گشودن پروندهٔ موقت شکست خورد"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2353
+#: cdk-pixbuf/cdk-pixbuf-io.c:2455
 msgid "Failed to read from temporary file"
 msgstr "خواندن از پروندهٔ موقت شکست خورد"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2575
+#: cdk-pixbuf/cdk-pixbuf-io.c:2677
 #, c-format
 msgid "Failed to open “%s” for writing: %s"
 msgstr "شکست در گشودن پروندهٔ «%s» برای نوشتن: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2601
+#: cdk-pixbuf/cdk-pixbuf-io.c:2703
 #, c-format
 msgid ""
-"Failed to close “%s” while writing image, all data may not have been saved: %s"
+"Failed to close “%s” while writing image, all data may not have been saved: "
+"%s"
 msgstr ""
-"شکست در بستن «%s» هنگام نوشتن تصویر. ممکن است تمامی داده‌ها ذخیره نشده باشند: %s"
+"شکست در بستن «%s» هنگام نوشتن تصویر. ممکن است تمامی داده‌ها ذخیره نشده باشند: "
+"%s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2835 cdk-pixbuf/cdk-pixbuf-io.c:2890
+#: cdk-pixbuf/cdk-pixbuf-io.c:2937 cdk-pixbuf/cdk-pixbuf-io.c:2992
 msgid "Insufficient memory to save image into a buffer"
 msgstr "حافظه برای ذخیره کردن تصویر در میان‌گیر کافی نیست"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2936
+#: cdk-pixbuf/cdk-pixbuf-io.c:3038
 msgid "Error writing to image stream"
 msgstr "خطا در نوشتن روی جریان تصویر"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:416
+#: cdk-pixbuf/cdk-pixbuf-loader.c:426
 #, c-format
 msgid ""
-"Internal error: Image loader module “%s” failed to complete an operation, but "
-"didn’t give a reason for the failure"
+"Internal error: Image loader module “%s” failed to complete an operation, "
+"but didn’t give a reason for the failure"
 msgstr ""
-"خطای داخلی: پیمانهٔ بارکنندهٔ تصویر «%s» در تکیمل یک عملیات شکست خورد، ولی دلیلی "
-"برای شکست اعلام نکرد"
+"خطای داخلی: پیمانهٔ بارکنندهٔ تصویر «%s» در تکیمل یک عملیات شکست خورد، ولی "
+"دلیلی برای شکست اعلام نکرد"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:458
+#: cdk-pixbuf/cdk-pixbuf-loader.c:468
 #, c-format
 msgid "Incremental loading of image type “%s” is not supported"
 msgstr "بار کردن افزایشی گونهٔ تصویری «%s» پشتیبانی نمی‌شود"
 
-#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:162
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:166
 msgid "Loop"
 msgstr "حلقه"
 
-#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:163
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:167
 msgid "Whether the animation should loop when it reaches the end"
 msgstr "این که پونمایی باید هنگام رسیدن به پایان حلقه بزند یا نه"
 
@@ -262,58 +265,58 @@ msgctxt "image format"
 msgid "Windows animated cursor"
 msgstr "مکان‌نمای پویا پنجره"
 
-#: cdk-pixbuf/io-bmp.c:231 cdk-pixbuf/io-bmp.c:269 cdk-pixbuf/io-bmp.c:376
-#: cdk-pixbuf/io-bmp.c:403 cdk-pixbuf/io-bmp.c:428 cdk-pixbuf/io-bmp.c:463
-#: cdk-pixbuf/io-bmp.c:485 cdk-pixbuf/io-bmp.c:563
+#: cdk-pixbuf/io-bmp.c:234 cdk-pixbuf/io-bmp.c:275 cdk-pixbuf/io-bmp.c:385
+#: cdk-pixbuf/io-bmp.c:412 cdk-pixbuf/io-bmp.c:437 cdk-pixbuf/io-bmp.c:472
+#: cdk-pixbuf/io-bmp.c:494 cdk-pixbuf/io-bmp.c:572
 msgid "BMP image has bogus header data"
 msgstr "داده‌های سرصفحهٔ تصویر BMP جعلی است"
 
-#: cdk-pixbuf/io-bmp.c:242 cdk-pixbuf/io-bmp.c:498
+#: cdk-pixbuf/io-bmp.c:245 cdk-pixbuf/io-bmp.c:507
 msgid "Not enough memory to load bitmap image"
 msgstr "حافظه برای بار کردن تصویر نقشه‌بیتی کافی نیست"
 
-#: cdk-pixbuf/io-bmp.c:333
+#: cdk-pixbuf/io-bmp.c:339
 msgid "BMP image has unsupported header size"
 msgstr "اندازهٔ سرصفحهٔ تصویر BMP پشتیبانی نمی‌شود"
 
-#: cdk-pixbuf/io-bmp.c:343
+#: cdk-pixbuf/io-bmp.c:348
 msgid "BMP image has unsupported depth"
 msgstr "تصویر BMP عمق پشتیبانی نشده‌ای دارد"
 
-#: cdk-pixbuf/io-bmp.c:358
+#: cdk-pixbuf/io-bmp.c:367
 msgid "BMP image has oversize palette"
 msgstr "تصویر BMP تختهٔ بیش از اندازه‌ای دارد"
 
-#: cdk-pixbuf/io-bmp.c:390
+#: cdk-pixbuf/io-bmp.c:399
 msgid "Topdown BMP images cannot be compressed"
 msgstr "تصاویر BMP ازبالا‌به‌پایین نمی‌توانند فشرده باشند"
 
-#: cdk-pixbuf/io-bmp.c:415
+#: cdk-pixbuf/io-bmp.c:424
 msgid "BMP image width too large"
 msgstr "پهنای بیش از حد زیاد تصویر BMP"
 
-#: cdk-pixbuf/io-bmp.c:792 cdk-pixbuf/io-png.c:564 cdk-pixbuf/io-pnm.c:722
+#: cdk-pixbuf/io-bmp.c:814 cdk-pixbuf/io-png.c:587 cdk-pixbuf/io-pnm.c:722
 #: cdk-pixbuf/io-pnm.c:879
 msgid "Premature end-of-file encountered"
 msgstr "پیش از موقع به پایان پرونده برخورد شد"
 
-#: cdk-pixbuf/io-bmp.c:1313
+#: cdk-pixbuf/io-bmp.c:1340
 msgid "Error while decoding colormap"
 msgstr "خطا هنگام رمزگشایی نقشهٔ رنگی"
 
-#: cdk-pixbuf/io-bmp.c:1376 cdk-pixbuf/io-bmp.c:1388
+#: cdk-pixbuf/io-bmp.c:1403 cdk-pixbuf/io-bmp.c:1415
 msgid "Image is too wide for BMP format."
 msgstr "تصویر برای قالب BMP بیش از حد پهن است."
 
-#: cdk-pixbuf/io-bmp.c:1421
+#: cdk-pixbuf/io-bmp.c:1448
 msgid "Couldn’t allocate memory for saving BMP file"
 msgstr "نمی‌توان برای ذخیره کردن پروندهٔ JPEG حافظه تخصیص داد"
 
-#: cdk-pixbuf/io-bmp.c:1462
+#: cdk-pixbuf/io-bmp.c:1489
 msgid "Couldn’t write to BMP file"
 msgstr "نمی‌توان روی پروندهٔ BMP نوشت"
 
-#: cdk-pixbuf/io-bmp.c:1515 cdk-pixbuf/io-gdip-bmp.c:83
+#: cdk-pixbuf/io-bmp.c:1542 cdk-pixbuf/io-gdip-bmp.c:83
 msgctxt "image format"
 msgid "BMP"
 msgstr "BMP"
@@ -323,28 +326,30 @@ msgctxt "image format"
 msgid "EMF"
 msgstr "EMF"
 
-#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1037
+#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1039
 msgctxt "image format"
 msgid "GIF"
 msgstr "GIF"
 
-#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1412
+#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1418
 msgctxt "image format"
 msgid "Windows icon"
 msgstr "نقشک ویندوز"
 
-#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1394
+#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1409
 #, c-format
 msgid ""
-"JPEG quality must be a value between 0 and 100; value “%s” could not be parsed."
+"JPEG quality must be a value between 0 and 100; value “%s” could not be "
+"parsed."
 msgstr "کیفیت JPEG باید مقداری بین ۰ و ۱۰۰ باشد. مقدار «%s» نتوانست تجزیه شود."
 
-#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1410
+#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1425
 #, c-format
-msgid "JPEG quality must be a value between 0 and 100; value “%d” is not allowed."
+msgid ""
+"JPEG quality must be a value between 0 and 100; value “%d” is not allowed."
 msgstr "کیفیت JPEG باید مقداری بین ۰ و ۱۰۰ باشد. مقدار «%Id» مجاز نیست."
 
-#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1694
+#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1710
 msgctxt "image format"
 msgid "JPEG"
 msgstr "JPEG"
@@ -396,49 +401,51 @@ msgctxt "image format"
 msgid "WMF"
 msgstr "WMF"
 
-#: cdk-pixbuf/io-gif.c:158
+#: cdk-pixbuf/io-gif.c:160
 #, c-format
 msgid "Failure reading GIF: %s"
 msgstr "شکست در خواندن GIF: %s"
 
-#: cdk-pixbuf/io-gif.c:381 cdk-pixbuf/io-gif.c:848 cdk-pixbuf/io-gif.c:901
-#: cdk-pixbuf/io-gif.c:974
+#: cdk-pixbuf/io-gif.c:383 cdk-pixbuf/io-gif.c:850 cdk-pixbuf/io-gif.c:903
+#: cdk-pixbuf/io-gif.c:976
 msgid "Not enough memory to load GIF file"
 msgstr "حافظه برای بار کردن پروندهٔ GIF کافی نیست"
 
-#: cdk-pixbuf/io-gif.c:507
+#: cdk-pixbuf/io-gif.c:509
 msgid "GIF image is corrupt (incorrect LZW compression)"
 msgstr "تصویر GIF خراب است (فشرده‌سازی LZW غلط)"
 
-#: cdk-pixbuf/io-gif.c:543
+#: cdk-pixbuf/io-gif.c:545
 msgid "File does not appear to be a GIF file"
 msgstr "پرونده به‌نظر یک پروندهٔ GIF نمی‌رسد"
 
-#: cdk-pixbuf/io-gif.c:558
+#: cdk-pixbuf/io-gif.c:560
 #, c-format
 msgid "Version %s of the GIF file format is not supported"
 msgstr "نسخهٔ %s از قالب پروندهٔ GIF پشتیبانی نمی‌شود"
 
-#: cdk-pixbuf/io-gif.c:587
+#: cdk-pixbuf/io-gif.c:589
 msgid "Resulting GIF image has zero size"
 msgstr "تصویر جیف نتیجه اندازهٔ صفر دارد"
 
-#: cdk-pixbuf/io-gif.c:657
+#: cdk-pixbuf/io-gif.c:659
 msgid ""
-"GIF image has no global colormap, and a frame inside it has no local colormap."
+"GIF image has no global colormap, and a frame inside it has no local "
+"colormap."
 msgstr ""
-"تصویر GIF نقشه‌رنگ سراسری‌ای ندارد، و یکی از چارچوب‌های داخل آن نقشه‌رنگ محلی ندارد."
+"تصویر GIF نقشه‌رنگ سراسری‌ای ندارد، و یکی از چارچوب‌های داخل آن نقشه‌رنگ محلی "
+"ندارد."
 
-#: cdk-pixbuf/io-gif.c:861 cdk-pixbuf/io-gif.c:986
+#: cdk-pixbuf/io-gif.c:863 cdk-pixbuf/io-gif.c:988
 msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
 msgstr ""
 "بعضی از داده‌های پروندهٔ GIF مفقود شده‌اند (شاید پرونده به شکلی قطع شده است؟)‏"
 
-#: cdk-pixbuf/io-gif.c:920
+#: cdk-pixbuf/io-gif.c:922
 msgid "GIF image was truncated or incomplete."
 msgstr "تصویر GIF قطع شده یا ناقص است."
 
-#: cdk-pixbuf/io-gif.c:927
+#: cdk-pixbuf/io-gif.c:929
 msgid "Not all frames of the GIF image were loaded."
 msgstr "تمامی قاب‌های تصویر جیف بار نشده‌اند."
 
@@ -500,142 +507,147 @@ msgstr "کانون مکان‌نما خارج از تصویر است"
 msgid "Unsupported depth for ICO file: %d"
 msgstr "عمق پشتیبانی‌نشده برای پروندهٔ ICO: %Id"
 
-#: cdk-pixbuf/io-jpeg.c:129
+#: cdk-pixbuf/io-jpeg.c:131
 #, c-format
 msgid "Error interpreting JPEG image file (%s)"
 msgstr "خطا در تفسیر پروندهٔ JPEG ‏(%s)"
 
-#: cdk-pixbuf/io-jpeg.c:638
+#: cdk-pixbuf/io-jpeg.c:647
 msgid ""
-"Insufficient memory to load image, try exiting some applications to free memory"
+"Insufficient memory to load image, try exiting some applications to free "
+"memory"
 msgstr ""
-"حافظه برای بار کردن تصویر کافی نیست، برای آزاد کردن حافظه خروج از بعضی برنامه‌ها "
-"را امتحان کنید"
+"حافظه برای بار کردن تصویر کافی نیست، برای آزاد کردن حافظه خروج از بعضی "
+"برنامه‌ها را امتحان کنید"
 
-#: cdk-pixbuf/io-jpeg.c:711 cdk-pixbuf/io-jpeg.c:956
+#: cdk-pixbuf/io-jpeg.c:720 cdk-pixbuf/io-jpeg.c:970
 #, c-format
 msgid "Unsupported JPEG color space (%s)"
 msgstr "فضای رنگ JPEG پشتیبانی نمی‌شود (%s)"
 
-#: cdk-pixbuf/io-jpeg.c:834 cdk-pixbuf/io-jpeg.c:1154 cdk-pixbuf/io-jpeg.c:1501
-#: cdk-pixbuf/io-jpeg.c:1511
+#: cdk-pixbuf/io-jpeg.c:845 cdk-pixbuf/io-jpeg.c:1169 cdk-pixbuf/io-jpeg.c:1516
+#: cdk-pixbuf/io-jpeg.c:1526
 msgid "Couldn’t allocate memory for loading JPEG file"
 msgstr "نتوانست برای بار کردن پروندهٔ JPEG حافظه تخصیص دهد"
 
-#: cdk-pixbuf/io-jpeg.c:1112
+#: cdk-pixbuf/io-jpeg.c:1127
 msgid "Transformed JPEG has zero width or height."
 msgstr "پروندهٔ JPEG تبدیل شده پهنا یا بلندای صفر دارد."
 
-#: cdk-pixbuf/io-jpeg.c:1138
+#: cdk-pixbuf/io-jpeg.c:1153
 #, c-format
 msgid "Unsupported number of color components (%d)"
 msgstr "تعداد مولفه‌های رنگی پشتیبانی نشده (%Id)"
 
-#: cdk-pixbuf/io-jpeg.c:1431
+#: cdk-pixbuf/io-jpeg.c:1446
 #, c-format
-msgid "JPEG x-dpi must be a value between 1 and 65535; value “%s” is not allowed."
+msgid ""
+"JPEG x-dpi must be a value between 1 and 65535; value “%s” is not allowed."
 msgstr ""
 "نقطه در اینچ افقی JPEG باید مقداری بین ۱ و ۶۵۵۳۵ باشد. مقدار «%s» مجاز نیست."
 
-#: cdk-pixbuf/io-jpeg.c:1452
+#: cdk-pixbuf/io-jpeg.c:1467
 #, c-format
-msgid "JPEG y-dpi must be a value between 1 and 65535; value “%s” is not allowed."
+msgid ""
+"JPEG y-dpi must be a value between 1 and 65535; value “%s” is not allowed."
 msgstr ""
 "نقطه در اینچ عمودی JPEG باید مقداری بین ۱ و ۶۵۵۳۵ باشد. مقدار «%s» مجاز نیست."
 
-#: cdk-pixbuf/io-jpeg.c:1466
+#: cdk-pixbuf/io-jpeg.c:1481
 #, c-format
 msgid "Color profile has invalid length “%u”."
 msgstr "نمایهٔ رنگی طولی نامعتبر دارد «%Iu»."
 
-#: cdk-pixbuf/io-png.c:63
+#: cdk-pixbuf/io-png.c:64
 msgid "Bits per channel of PNG image is invalid."
 msgstr "بیت بر کانال تصویر PNG نامعتبر است."
 
-#: cdk-pixbuf/io-png.c:144 cdk-pixbuf/io-png.c:703
+#: cdk-pixbuf/io-png.c:145 cdk-pixbuf/io-png.c:730
 msgid "Transformed PNG has zero width or height."
 msgstr "عرض یا ارتفاع PNG تبدیل‌شده صفر است."
 
-#: cdk-pixbuf/io-png.c:152
+#: cdk-pixbuf/io-png.c:153
 msgid "Bits per channel of transformed PNG is not 8."
 msgstr "بیت بر کانال PNG تبدیل‌شده، ۸ نیست."
 
-#: cdk-pixbuf/io-png.c:161
+#: cdk-pixbuf/io-png.c:162
 msgid "Transformed PNG not RGB or RGBA."
 msgstr "PNG تبدیل‌شده RGB یا RGBA نیست."
 
-#: cdk-pixbuf/io-png.c:170
+#: cdk-pixbuf/io-png.c:171
 msgid "Transformed PNG has unsupported number of channels, must be 3 or 4."
 msgstr "تعداد کانالهای PNG تبدیل‌شده پشتیبانی نمی‌شود، باید ۳ یا ۴ تا باشد."
 
-#: cdk-pixbuf/io-png.c:191
+#: cdk-pixbuf/io-png.c:193
 #, c-format
 msgid "Fatal error in PNG image file: %s"
 msgstr "خطای مهلک در پروندهٔ تصویر PNG‏: %s"
 
-#: cdk-pixbuf/io-png.c:329
+#: cdk-pixbuf/io-png.c:338
 msgid "Insufficient memory to load PNG file"
 msgstr "حافظه برای بار کردن پروندهٔ PNG کافی نیست"
 
-#: cdk-pixbuf/io-png.c:498 cdk-pixbuf/io-png.c:519
+#: cdk-pixbuf/io-png.c:519 cdk-pixbuf/io-png.c:540
 msgid "Couldn’t allocate memory for loading PNG"
 msgstr "نمی‌توان برای بار کردن پروندهٔ PNG حافظه تخصیص داد"
 
-#: cdk-pixbuf/io-png.c:716
+#: cdk-pixbuf/io-png.c:743
 #, c-format
 msgid ""
-"Insufficient memory to store a %lu by %lu image; try exiting some applications "
-"to reduce memory usage"
+"Insufficient memory to store a %lu by %lu image; try exiting some "
+"applications to reduce memory usage"
 msgstr ""
-"حافظهٔ ناکافی برای نگه‌داری یک تصویر %lu در %lu. برای کاهش مصرف حافظه،‌ بستن برخی "
-"برنامه‌ها را بیازمایید"
+"حافظهٔ ناکافی برای نگه‌داری یک تصویر %lu در %lu. برای کاهش مصرف حافظه،‌ بستن "
+"برخی برنامه‌ها را بیازمایید"
 
-#: cdk-pixbuf/io-png.c:791
+#: cdk-pixbuf/io-png.c:820
 msgid "Fatal error reading PNG image file"
 msgstr "خطای مهلک در خواندن پروندهٔ تصویری PNG"
 
-#: cdk-pixbuf/io-png.c:840
+#: cdk-pixbuf/io-png.c:873
 #, c-format
 msgid "Fatal error reading PNG image file: %s"
 msgstr "خطای مهلک در خواندن پروندهٔ تصویری PNG‏: %s"
 
-#: cdk-pixbuf/io-png.c:937
+#: cdk-pixbuf/io-png.c:972
 #, c-format
 msgid ""
-"Invalid key “%s”. Keys for PNG text chunks must have at least 1 and at most 79 "
-"characters."
+"Invalid key “%s”. Keys for PNG text chunks must have at least 1 and at most "
+"79 characters."
 msgstr ""
-"کلید نامعتبر «%s». کلیدها برای تکه‌های متنی PNG باید کمینه ۱ و بیشینه ۷۹ نویسه "
-"داشته باشند."
+"کلید نامعتبر «%s». کلیدها برای تکه‌های متنی PNG باید کمینه ۱ و بیشینه ۷۹ "
+"نویسه داشته باشند."
 
-#: cdk-pixbuf/io-png.c:950
+#: cdk-pixbuf/io-png.c:985
 #, c-format
 msgid "Invalid key “%s”. Keys for PNG text chunks must be ASCII characters."
 msgstr ""
-"کلید نامعتبر «%s». کلیدها برای تکه‌های متنی PNG باید کمینه نویسه‌های اسکی باشند."
+"کلید نامعتبر «%s». کلیدها برای تکه‌های متنی PNG باید کمینه نویسه‌های اسکی "
+"باشند."
 
-#: cdk-pixbuf/io-png.c:980
+#: cdk-pixbuf/io-png.c:1015
 #, c-format
-msgid "Value for PNG text chunk '%s' cannot be converted to ISO-8859-1 encoding."
+msgid ""
+"Value for PNG text chunk '%s' cannot be converted to ISO-8859-1 encoding."
 msgstr "مقدار تکهٔ متنی PNG «%s» را نمی‌توان به کدگذاری ISO-8859-1 تبدیل کرد."
 
-#: cdk-pixbuf/io-png.c:992
+#: cdk-pixbuf/io-png.c:1027
 #, c-format
 msgid "Color profile has invalid length %d"
 msgstr "نمایهٔ رنگی طولی نامعتبر دارد «%Id»"
 
-#: cdk-pixbuf/io-png.c:1004
+#: cdk-pixbuf/io-png.c:1039
 #, c-format
 msgid ""
 "PNG compression level must be a value between 0 and 9; value “%s” is invalid"
 msgstr "سطح فشردگی PNG باید مقداری بین ۰ و ۹ باشد. مقدار «%s» نامعتبر است"
 
-#: cdk-pixbuf/io-png.c:1018
+#: cdk-pixbuf/io-png.c:1053
 #, c-format
 msgid "PNG %s must be greater than zero; value “%s” is not allowed"
 msgstr "%s PNG باید بزرگ‌تر از صفر باشد. مقدار «%s» مجاز نیست"
 
-#: cdk-pixbuf/io-png.c:1246
+#: cdk-pixbuf/io-png.c:1283
 msgctxt "image format"
 msgid "PNG"
 msgstr "PNG"
@@ -1060,8 +1072,8 @@ msgstr "XPM"
 
 #, fuzzy, c-format
 #~ msgid ""
-#~ "PNG compression level must be a value between 0 and 9; value '%s' could not "
-#~ "be parsed."
+#~ "PNG compression level must be a value between 0 and 9; value '%s' could "
+#~ "not be parsed."
 #~ msgstr "کیفیت JPEG باید مقداری بین ۰ و ۱۰۰ باشد؛ مقدار «%s» قابل درک نیست."
 
 #~ msgid "The PNG image format"

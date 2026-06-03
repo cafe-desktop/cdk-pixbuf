@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cdk-pixbuf master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/cdk-pixbuf/issues/new\n"
-"POT-Creation-Date: 2025-10-07 17:02+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 08:56+0200\n"
 "PO-Revision-Date: 2026-01-11 15:20+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.8\n"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:190 cdk-pixbuf/cdk-pixbuf-io.c:1216
-#: cdk-pixbuf/cdk-pixbuf-io.c:1489
+#: cdk-pixbuf/cdk-pixbuf-animation.c:190 cdk-pixbuf/cdk-pixbuf-io.c:1224
+#: cdk-pixbuf/cdk-pixbuf-io.c:1497
 #, c-format
 msgid "Failed to open file “%s”: %s"
 msgstr "\"%s\" файлын ашу сәтсіз: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:203 cdk-pixbuf/cdk-pixbuf-io.c:1077
+#: cdk-pixbuf/cdk-pixbuf-animation.c:203 cdk-pixbuf/cdk-pixbuf-io.c:1085
 #, c-format
 msgid "Image file “%s” contains no data"
 msgstr "\"%s\" сурет файлында деректер жоқ"
@@ -38,14 +38,13 @@ msgstr ""
 "\"%s\" анимациясын жүктеу сәтсіз: себебі белгісіз, мүмкін анимация файлы "
 "зақымдалған"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:309 cdk-pixbuf/cdk-pixbuf-io.c:1252
-#: cdk-pixbuf/cdk-pixbuf-io.c:1541
+#: cdk-pixbuf/cdk-pixbuf-animation.c:309 cdk-pixbuf/cdk-pixbuf-io.c:1260
+#: cdk-pixbuf/cdk-pixbuf-io.c:1549
 #, c-format
 msgid ""
 "Failed to load image “%s”: reason not known, probably a corrupt image file"
 msgstr ""
-"\"%s\" суретін жүктеу сәтсіз: себебі белгісіз, мүмкін сурет файлы "
-"зақымдалған"
+"\"%s\" суретін жүктеу сәтсіз: себебі белгісіз, мүмкін сурет файлы зақымдалған"
 
 #: cdk-pixbuf/cdk-pixbuf.c:248
 msgid "Number of Channels"
@@ -120,69 +119,69 @@ msgstr "Пиксель байттары"
 msgid "Readonly pixel data"
 msgstr "Тек оқу үшін пиксель деректері"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:893
+#: cdk-pixbuf/cdk-pixbuf-io.c:901
 #, c-format
 msgid "Unable to load image-loading module: %s: %s"
 msgstr "Суретті жүктеу модулін жүктеу мүмкін емес: %s: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:911
+#: cdk-pixbuf/cdk-pixbuf-io.c:919
 #, c-format
 msgid ""
 "Image-loading module %s does not export the proper interface; perhaps it’s "
 "from a different cdk-pixbuf version?"
 msgstr ""
-"%s суретті жүктеу модулі тиісті интерфейсті экспорттамайды; бәлкім, ол "
-"басқа cdk-pixbuf нұсқасынан шығар?"
+"%s суретті жүктеу модулі тиісті интерфейсті экспорттамайды; бәлкім, ол басқа "
+"cdk-pixbuf нұсқасынан шығар?"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:921 cdk-pixbuf/cdk-pixbuf-io.c:964
+#: cdk-pixbuf/cdk-pixbuf-io.c:929 cdk-pixbuf/cdk-pixbuf-io.c:972
 #, c-format
 msgid "Image type “%s” is not supported"
 msgstr "\"%s\" суретінің түріне қолдау жоқ"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:1049
+#: cdk-pixbuf/cdk-pixbuf-io.c:1057
 #, c-format
 msgid "Couldn’t recognize the image file format for file “%s”"
 msgstr "“%s” файлы үшін сурет файлының пішімін тану мүмкін болмады"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:1057
+#: cdk-pixbuf/cdk-pixbuf-io.c:1065
 msgid "Unrecognized image file format"
 msgstr "Танылмаған сурет файлының пішімі"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:1263
+#: cdk-pixbuf/cdk-pixbuf-io.c:1271
 #, c-format
 msgid "Failed to load image “%s”: %s"
 msgstr "\"%s\" суретін жүктеу сәтсіз аяқталды: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2338 cdk-pixbuf/io-gdip-utils.c:840
+#: cdk-pixbuf/cdk-pixbuf-io.c:2346 cdk-pixbuf/io-gdip-utils.c:840
 #, c-format
 msgid "Error writing to image file: %s"
 msgstr "Сурет файлына жазу қатесі: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2380 cdk-pixbuf/cdk-pixbuf-io.c:2501
+#: cdk-pixbuf/cdk-pixbuf-io.c:2388 cdk-pixbuf/cdk-pixbuf-io.c:2509
 #, c-format
 msgid "This build of cdk-pixbuf does not support saving the image format: %s"
 msgstr ""
 "cdk-pixbuf бағдарламасының бұл жинағы келесі сурет пішімін сақтауды "
 "қолдамайды: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2411
+#: cdk-pixbuf/cdk-pixbuf-io.c:2419
 msgid "Insufficient memory to save image to callback"
 msgstr "Суретті кері шақыруға сақтау үшін жады жеткіліксіз"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2424
+#: cdk-pixbuf/cdk-pixbuf-io.c:2432
 msgid "Failed to open temporary file"
 msgstr "Уақытша файлын ашу сәтсіз аяқталды"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2447
+#: cdk-pixbuf/cdk-pixbuf-io.c:2455
 msgid "Failed to read from temporary file"
 msgstr "Уақытша файлдан оқу сәтсіз аяқталды"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2669
+#: cdk-pixbuf/cdk-pixbuf-io.c:2677
 #, c-format
 msgid "Failed to open “%s” for writing: %s"
 msgstr "Жазу үшін \"%s\" файлын ашу сәтсіз: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2695
+#: cdk-pixbuf/cdk-pixbuf-io.c:2703
 #, c-format
 msgid ""
 "Failed to close “%s” while writing image, all data may not have been saved: "
@@ -191,11 +190,11 @@ msgstr ""
 "Суретті жазу кезінде “%s” жабу сәтсіз аяқталды, барлық деректер сақталмаған "
 "болуы мүмкін: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2929 cdk-pixbuf/cdk-pixbuf-io.c:2984
+#: cdk-pixbuf/cdk-pixbuf-io.c:2937 cdk-pixbuf/cdk-pixbuf-io.c:2992
 msgid "Insufficient memory to save image into a buffer"
 msgstr "Суретті буферге сақтау үшін жады жеткіліксіз"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:3030
+#: cdk-pixbuf/cdk-pixbuf-io.c:3038
 msgid "Error writing to image stream"
 msgstr "Сурет ағынына жазу қатесі"
 
@@ -525,16 +524,16 @@ msgid ""
 "Insufficient memory to load image, try exiting some applications to free "
 "memory"
 msgstr ""
-"Суретті жүктеу үшін жад жеткіліксіз, жадты босату үшін кейбір "
-"қолданбалардан шығып көріңіз"
+"Суретті жүктеу үшін жад жеткіліксіз, жадты босату үшін кейбір қолданбалардан "
+"шығып көріңіз"
 
 #: cdk-pixbuf/io-jpeg.c:720 cdk-pixbuf/io-jpeg.c:970
 #, c-format
 msgid "Unsupported JPEG color space (%s)"
 msgstr "Қолдау көрсетілмейтін JPEG түс кеңістігі (%s)"
 
-#: cdk-pixbuf/io-jpeg.c:845 cdk-pixbuf/io-jpeg.c:1169
-#: cdk-pixbuf/io-jpeg.c:1516 cdk-pixbuf/io-jpeg.c:1526
+#: cdk-pixbuf/io-jpeg.c:845 cdk-pixbuf/io-jpeg.c:1169 cdk-pixbuf/io-jpeg.c:1516
+#: cdk-pixbuf/io-jpeg.c:1526
 msgid "Couldn’t allocate memory for loading JPEG file"
 msgstr "JPEG файлын жүктеу үшін жадыны бөлу мүмкін емес"
 
@@ -587,8 +586,8 @@ msgstr "Түрлендірілген PNG RGB немесе RGBA емес."
 #: cdk-pixbuf/io-png.c:171
 msgid "Transformed PNG has unsupported number of channels, must be 3 or 4."
 msgstr ""
-"Түрлендірілген PNG-дің арналар санына қолдау көрсетілмейді, 3 немесе 4 "
-"болуы тиіс."
+"Түрлендірілген PNG-дің арналар санына қолдау көрсетілмейді, 3 немесе 4 болуы "
+"тиіс."
 
 #: cdk-pixbuf/io-png.c:193
 #, c-format
@@ -654,8 +653,7 @@ msgstr "Түс профилінің %d ұзындығы жарамсыз"
 #, c-format
 msgid ""
 "PNG compression level must be a value between 0 and 9; value “%s” is invalid"
-msgstr ""
-"PNG сығу деңгейі 0 мен 9 арасындағы мән болуы тиіс; «%s» мәні жарамсыз"
+msgstr "PNG сығу деңгейі 0 мен 9 арасындағы мән болуы тиіс; «%s» мәні жарамсыз"
 
 #: cdk-pixbuf/io-png.c:1053
 #, c-format

@@ -10,9 +10,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bn_IN\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=cdk-"
-"pixbuf\n"
-"POT-Creation-Date: 2012-02-04 18:44-0500\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 08:56+0200\n"
 "PO-Revision-Date: 2011-02-11 12:24+0530\n"
 "Last-Translator: \n"
 "Language-Team: Bengali (India) <anubad@lists.ankur.org.in>\n"
@@ -24,330 +23,431 @@ msgstr ""
 "\n"
 "X-Generator: Lokalize 1.1\n"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:146 cdk-pixbuf/cdk-pixbuf-io.c:1083
-#: cdk-pixbuf/cdk-pixbuf-io.c:1349
-#, c-format
-msgid "Failed to open file '%s': %s"
+#: cdk-pixbuf/cdk-pixbuf-animation.c:190 cdk-pixbuf/cdk-pixbuf-io.c:1224
+#: cdk-pixbuf/cdk-pixbuf-io.c:1497
+#, fuzzy, c-format
+msgid "Failed to open file “%s”: %s"
 msgstr "'%s' ফাইল খুলতে ব্যর্থ: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:159 cdk-pixbuf/cdk-pixbuf-io.c:1095
-#, c-format
-msgid "Image file '%s' contains no data"
+#: cdk-pixbuf/cdk-pixbuf-animation.c:203 cdk-pixbuf/cdk-pixbuf-io.c:1085
+#, fuzzy, c-format
+msgid "Image file “%s” contains no data"
 msgstr "'%s' নামক ছবির ফাইলে তথ্য অনুপস্থিত"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:201 cdk-pixbuf/cdk-pixbuf-io.c:1131
-#: cdk-pixbuf/cdk-pixbuf-io.c:1401
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-animation.c:241
+#, fuzzy, c-format
 msgid ""
-"Failed to load image '%s': reason not known, probably a corrupt image file"
-msgstr "'%s' ছবির ফাইল লোড করতে ব্যর্থ: কারণ অজানা, সম্ভবত ছবির ফাইলটি ক্ষতিগ্রস্ত"
-
-#: cdk-pixbuf/cdk-pixbuf-animation.c:234
-#, c-format
-msgid ""
-"Failed to load animation '%s': reason not known, probably a corrupt "
+"Failed to load animation “%s”: reason not known, probably a corrupt "
 "animation file"
 msgstr ""
 "'%s' অ্যানিমেশন লোড করতে ব্যর্থ: কারণ অজানা, সম্ভবত অ্যানিমেশন ফাইল ক্ষতিগ্রস্ত"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:809
+#: cdk-pixbuf/cdk-pixbuf-animation.c:309 cdk-pixbuf/cdk-pixbuf-io.c:1260
+#: cdk-pixbuf/cdk-pixbuf-io.c:1549
+#, fuzzy, c-format
+msgid ""
+"Failed to load image “%s”: reason not known, probably a corrupt image file"
+msgstr "'%s' ছবির ফাইল লোড করতে ব্যর্থ: কারণ অজানা, সম্ভবত ছবির ফাইলটি ক্ষতিগ্রস্ত"
+
+#: cdk-pixbuf/cdk-pixbuf.c:248
+msgid "Number of Channels"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:249
+#, fuzzy
+msgid "The number of samples per pixel"
+msgstr "XPM'র মধ্যে প্রতি পিক্সেলে chars সংখ্যা অবৈধ"
+
+#: cdk-pixbuf/cdk-pixbuf.c:264
+msgid "Colorspace"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:265
+msgid "The colorspace in which the samples are interpreted"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:277
+msgid "Has Alpha"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:278
+msgid "Whether the pixbuf has an alpha channel"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:291
+msgid "Bits per Sample"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:292
+msgid "The number of bits per sample"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:305
+msgid "Width"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:306
+msgid "The number of columns of the pixbuf"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:319
+msgid "Height"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:320
+msgid "The number of rows of the pixbuf"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:337
+msgid "Rowstride"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:338
+msgid ""
+"The number of bytes between the start of a row and the start of the next row"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:351
+msgid "Pixels"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:352
+msgid "A pointer to the pixel data of the pixbuf"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:366
+msgid "Pixel Bytes"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:367
+msgid "Readonly pixel data"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf-io.c:901
 #, c-format
 msgid "Unable to load image-loading module: %s: %s"
 msgstr "ছবি লোড করতে ব্যবহৃত মডিউল লোড করতে ব্যর্থ: %s: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:824
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-io.c:919
+#, fuzzy, c-format
 msgid ""
-"Image-loading module %s does not export the proper interface; perhaps it's "
+"Image-loading module %s does not export the proper interface; perhaps it’s "
 "from a different cdk-pixbuf version?"
 msgstr ""
 "ছবি লোড করতে ব্যবহৃত %s নামক মডিউল সঠিক প্রেক্ষাপট এক্সপোর্ট করতে বিফল; সম্ভবত এটি "
 "পৃথক cdk-pixbuf সংস্করণের অংশ?"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:833 cdk-pixbuf/cdk-pixbuf-io.c:884
-#, c-format
-msgid "Image type '%s' is not supported"
+#: cdk-pixbuf/cdk-pixbuf-io.c:929 cdk-pixbuf/cdk-pixbuf-io.c:972
+#, fuzzy, c-format
+msgid "Image type “%s” is not supported"
 msgstr "'%s' প্রকৃতির ছবি সমর্থিত নয়"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:964
-#, c-format
-msgid "Couldn't recognize the image file format for file '%s'"
+#: cdk-pixbuf/cdk-pixbuf-io.c:1057
+#, fuzzy, c-format
+msgid "Couldn’t recognize the image file format for file “%s”"
 msgstr "'%s' নামক ফাইলের ছবির ফাইলের বিন্যাস সনাক্ত করতে ব্যর্থ"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:972
+#: cdk-pixbuf/cdk-pixbuf-io.c:1065
 msgid "Unrecognized image file format"
 msgstr "ছবির ফাইলের বিন্যাস অজানা"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:1140
-#, c-format
-msgid "Failed to load image '%s': %s"
+#: cdk-pixbuf/cdk-pixbuf-io.c:1271
+#, fuzzy, c-format
+msgid "Failed to load image “%s”: %s"
 msgstr "'%s' ছবির লোড করতে ব্যর্থ: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2028 cdk-pixbuf/io-gdip-utils.c:888
+#: cdk-pixbuf/cdk-pixbuf-io.c:2346 cdk-pixbuf/io-gdip-utils.c:840
 #, c-format
 msgid "Error writing to image file: %s"
 msgstr "ছবির ফাইলে লিখতে সমস্যা: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2073 cdk-pixbuf/cdk-pixbuf-io.c:2203
+#: cdk-pixbuf/cdk-pixbuf-io.c:2388 cdk-pixbuf/cdk-pixbuf-io.c:2509
 #, c-format
 msgid "This build of cdk-pixbuf does not support saving the image format: %s"
 msgstr ""
 "cdk-pixbuf'র বর্তমান বিল্ডের দ্বারা চিহ্নিত বিন্যাসের ছবি সংরক্ষণ সমর্থন করা হয় না: "
 "%s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2107
+#: cdk-pixbuf/cdk-pixbuf-io.c:2419
 msgid "Insufficient memory to save image to callback"
 msgstr "callback'এ ছবি সংরক্ষণের জন্য পর্যাপ্ত মেমরি অনুপস্থিত"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2120
+#: cdk-pixbuf/cdk-pixbuf-io.c:2432
 msgid "Failed to open temporary file"
 msgstr "অস্থায়ী ফাইল খুলতে ব্যর্থ"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2146
+#: cdk-pixbuf/cdk-pixbuf-io.c:2455
 msgid "Failed to read from temporary file"
 msgstr "অস্থায়ী ফাইল থেকে পড়তে ব্যর্থ"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2399
-#, c-format
-msgid "Failed to open '%s' for writing: %s"
+#: cdk-pixbuf/cdk-pixbuf-io.c:2677
+#, fuzzy, c-format
+msgid "Failed to open “%s” for writing: %s"
 msgstr "লেখার উদ্দেশ্যে '%s' খুলতে ব্যর্থ: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2425
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-io.c:2703
+#, fuzzy, c-format
 msgid ""
-"Failed to close '%s' while writing image, all data may not have been saved: "
+"Failed to close “%s” while writing image, all data may not have been saved: "
 "%s"
 msgstr "ছবি লেখার সময় '%s' বন্ধ করতে ব্যর্থ, সম্ভবত সব তথ্য সংরক্ষিত হয়নি: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2646 cdk-pixbuf/cdk-pixbuf-io.c:2698
+#: cdk-pixbuf/cdk-pixbuf-io.c:2937 cdk-pixbuf/cdk-pixbuf-io.c:2992
 msgid "Insufficient memory to save image into a buffer"
 msgstr "বাফারে ছবি সংরক্ষণের উদ্দেশ্যে পর্যাপ্ত মেমরি উপস্থিত নেই"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2744
+#: cdk-pixbuf/cdk-pixbuf-io.c:3038
 msgid "Error writing to image stream"
 msgstr "ছবির স্ট্রিমে লিখতে সমস্যা"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:395
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-loader.c:426
+#, fuzzy, c-format
 msgid ""
-"Internal error: Image loader module '%s' failed to complete an operation, "
-"but didn't give a reason for the failure"
+"Internal error: Image loader module “%s” failed to complete an operation, "
+"but didn’t give a reason for the failure"
 msgstr ""
 "অভ্যন্তরীণ সমস্যা: ছবি লোড করতে ব্যবহৃত মডিউল '%s' কর্ম সমাপ্ত করতে ব্যর্থ, কিন্তু "
 "ব্যর্থতার কারণ দর্শানো হয়নি। "
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:437
-#, c-format
-msgid "Incremental loading of image type '%s' is not supported"
+#: cdk-pixbuf/cdk-pixbuf-loader.c:468
+#, fuzzy, c-format
+msgid "Incremental loading of image type “%s” is not supported"
 msgstr "বর্ধিতক্রমে '%s' প্রকৃতির ছবি লোড করার বৈশিষ্ট্য সমর্থিত নয়"
 
-#: cdk-pixbuf/cdk-pixdata.c:160
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:166
+msgid "Loop"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:167
+msgid "Whether the animation should loop when it reaches the end"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixdata.c:178
 msgid "Image header corrupt"
 msgstr "ছবির হেডার ক্ষতিগ্রস্ত"
 
-#: cdk-pixbuf/cdk-pixdata.c:165
+#: cdk-pixbuf/cdk-pixdata.c:183
 msgid "Image format unknown"
 msgstr "ছবির বিন্যাস অজানা"
 
-#: cdk-pixbuf/cdk-pixdata.c:170 cdk-pixbuf/cdk-pixdata.c:502
+#: cdk-pixbuf/cdk-pixdata.c:188 cdk-pixbuf/cdk-pixdata.c:491
+#: cdk-pixbuf/cdk-pixdata.c:501 cdk-pixbuf/cdk-pixdata.c:597
 msgid "Image pixel data corrupt"
 msgstr "ছবির পিক্সেল সংক্রান্ত তথ্য ক্ষতিগ্রস্ত"
 
-#: cdk-pixbuf/cdk-pixdata.c:446
+#: cdk-pixbuf/cdk-pixdata.c:513
 #, c-format
 msgid "failed to allocate image buffer of %u byte"
 msgid_plural "failed to allocate image buffer of %u bytes"
 msgstr[0] "ছবির বাফারের জন্য %u বাইট বরাদ্দ করতে ব্যর্থ"
 msgstr[1] "ছবির বাফারের জন্য %u বাইট বরাদ্দ করতে ব্যর্থ"
 
-#: cdk-pixbuf/io-ani.c:244
+#: cdk-pixbuf/io-ani.c:239
 msgid "Unexpected icon chunk in animation"
 msgstr "অ্যানিমেশনের মধ্যে অপ্রত্যাশিত আইকনের অংশ"
 
-#: cdk-pixbuf/io-ani.c:337
-msgid "Unsupported animation type"
-msgstr "অসমর্থিত বিন্যাসের অ্যানিমেশন"
-
-#: cdk-pixbuf/io-ani.c:348 cdk-pixbuf/io-ani.c:406 cdk-pixbuf/io-ani.c:432
-#: cdk-pixbuf/io-ani.c:455 cdk-pixbuf/io-ani.c:482 cdk-pixbuf/io-ani.c:569
-msgid "Invalid header in animation"
-msgstr "অ্যানিমেশনের মধ্যে অবৈধ হেডার তথ্য"
-
-#: cdk-pixbuf/io-ani.c:358 cdk-pixbuf/io-ani.c:380 cdk-pixbuf/io-ani.c:464
-#: cdk-pixbuf/io-ani.c:491 cdk-pixbuf/io-ani.c:542 cdk-pixbuf/io-ani.c:614
-msgid "Not enough memory to load animation"
-msgstr "অ্যানিমেশন লোড করার উদ্দেশ্যে পর্যাপ্ত মেমরি অনুপস্থিত"
-
-#: cdk-pixbuf/io-ani.c:398 cdk-pixbuf/io-ani.c:424 cdk-pixbuf/io-ani.c:443
+#: cdk-pixbuf/io-ani.c:303 cdk-pixbuf/io-ani.c:404 cdk-pixbuf/io-ani.c:430
+#: cdk-pixbuf/io-ani.c:449
 msgid "Malformed chunk in animation"
 msgstr "অ্যানিমেশনের মধ্যে ত্রুটিযুক্ত অংশ"
 
-#: cdk-pixbuf/io-ani.c:711
-msgid "The ANI image format"
-msgstr "ANI ছবির বিন্যাস"
+#: cdk-pixbuf/io-ani.c:311 cdk-pixbuf/io-ani.c:354 cdk-pixbuf/io-ani.c:412
+#: cdk-pixbuf/io-ani.c:438 cdk-pixbuf/io-ani.c:461 cdk-pixbuf/io-ani.c:488
+#: cdk-pixbuf/io-ani.c:575
+msgid "Invalid header in animation"
+msgstr "অ্যানিমেশনের মধ্যে অবৈধ হেডার তথ্য"
 
-#: cdk-pixbuf/io-bmp.c:229 cdk-pixbuf/io-bmp.c:266 cdk-pixbuf/io-bmp.c:337
-#: cdk-pixbuf/io-bmp.c:369 cdk-pixbuf/io-bmp.c:392 cdk-pixbuf/io-bmp.c:495
+#: cdk-pixbuf/io-ani.c:364 cdk-pixbuf/io-ani.c:386 cdk-pixbuf/io-ani.c:470
+#: cdk-pixbuf/io-ani.c:497 cdk-pixbuf/io-ani.c:548 cdk-pixbuf/io-ani.c:624
+msgid "Not enough memory to load animation"
+msgstr "অ্যানিমেশন লোড করার উদ্দেশ্যে পর্যাপ্ত মেমরি অনুপস্থিত"
+
+#: cdk-pixbuf/io-ani.c:646
+#, fuzzy
+msgid "ANI image was truncated or incomplete."
+msgstr "GIF ছবির তথ্য মুছে ফেলা হয়েছে অথবা অসম্পূর্ণ।"
+
+#: cdk-pixbuf/io-ani.c:687
+msgctxt "image format"
+msgid "Windows animated cursor"
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:234 cdk-pixbuf/io-bmp.c:275 cdk-pixbuf/io-bmp.c:385
+#: cdk-pixbuf/io-bmp.c:412 cdk-pixbuf/io-bmp.c:437 cdk-pixbuf/io-bmp.c:472
+#: cdk-pixbuf/io-bmp.c:494 cdk-pixbuf/io-bmp.c:572
 msgid "BMP image has bogus header data"
 msgstr "BMP ছবির মধ্যে ভুয়ো হেডার তথ্য"
 
-#: cdk-pixbuf/io-bmp.c:240 cdk-pixbuf/io-bmp.c:432
+#: cdk-pixbuf/io-bmp.c:245 cdk-pixbuf/io-bmp.c:507
 msgid "Not enough memory to load bitmap image"
 msgstr "বিটম্যাপ ছবি লোড করার উদ্দেশ্যে পর্যাপ্ত মেমরি অনুপস্থিত"
 
-#: cdk-pixbuf/io-bmp.c:318
+#: cdk-pixbuf/io-bmp.c:339
 msgid "BMP image has unsupported header size"
 msgstr "BMP ছবির হেডারের মাপ অনুপস্থিত"
 
-#: cdk-pixbuf/io-bmp.c:356
+#: cdk-pixbuf/io-bmp.c:348
+#, fuzzy
+msgid "BMP image has unsupported depth"
+msgstr "BMP ছবির হেডারের মাপ অনুপস্থিত"
+
+#: cdk-pixbuf/io-bmp.c:367
+#, fuzzy
+msgid "BMP image has oversize palette"
+msgstr "BMP ছবির মধ্যে ভুয়ো হেডার তথ্য"
+
+#: cdk-pixbuf/io-bmp.c:399
 msgid "Topdown BMP images cannot be compressed"
 msgstr "Topdown BMP ছবি সংকুচন করা সম্ভব নয়"
 
-#: cdk-pixbuf/io-bmp.c:716 cdk-pixbuf/io-pnm.c:707
+#: cdk-pixbuf/io-bmp.c:424
+msgid "BMP image width too large"
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:814 cdk-pixbuf/io-png.c:587 cdk-pixbuf/io-pnm.c:722
+#: cdk-pixbuf/io-pnm.c:879
 msgid "Premature end-of-file encountered"
 msgstr "অপ্রত্যাশিত স্থানে ফাইলের অন্তিম অংশ প্রাপ্ত হয়েছে"
 
-#: cdk-pixbuf/io-bmp.c:1328
-msgid "Couldn't allocate memory for saving BMP file"
+#: cdk-pixbuf/io-bmp.c:1340
+msgid "Error while decoding colormap"
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:1403 cdk-pixbuf/io-bmp.c:1415
+msgid "Image is too wide for BMP format."
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:1448
+#, fuzzy
+msgid "Couldn’t allocate memory for saving BMP file"
 msgstr "BMP ফাইল সংরক্ষণের উদ্দেশ্যে মেমরি বরাদ্দ করা যায়নি"
 
-#: cdk-pixbuf/io-bmp.c:1369
-msgid "Couldn't write to BMP file"
+#: cdk-pixbuf/io-bmp.c:1489
+#, fuzzy
+msgid "Couldn’t write to BMP file"
 msgstr "BMP ফাইলে লিখতে ব্যর্থ"
 
-#: cdk-pixbuf/io-bmp.c:1422 cdk-pixbuf/io-gdip-bmp.c:82
-msgid "The BMP image format"
-msgstr "BMP ছবির বিন্যাস"
+#: cdk-pixbuf/io-bmp.c:1542 cdk-pixbuf/io-gdip-bmp.c:83
+msgctxt "image format"
+msgid "BMP"
+msgstr ""
 
-#: cdk-pixbuf/io-gdip-emf.c:59
-msgid "The EMF image format"
-msgstr "EMF ছবির বিন্যাস"
+#: cdk-pixbuf/io-gdip-emf.c:61
+msgctxt "image format"
+msgid "EMF"
+msgstr ""
 
-#: cdk-pixbuf/io-gdip-gif.c:80 cdk-pixbuf/io-gif.c:1699
-msgid "The GIF image format"
-msgstr "GIF ছবির বিন্যাস"
+#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1039
+msgctxt "image format"
+msgid "GIF"
+msgstr ""
 
-#: cdk-pixbuf/io-gdip-ico.c:59 cdk-pixbuf/io-ico.c:1271
-msgid "The ICO image format"
-msgstr "ICO ছবির বিন্যাস"
+#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1418
+msgctxt "image format"
+msgid "Windows icon"
+msgstr ""
 
-#: cdk-pixbuf/io-gdip-jpeg.c:53 cdk-pixbuf/io-jpeg.c:1139
-#, c-format
+#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1409
+#, fuzzy, c-format
 msgid ""
-"JPEG quality must be a value between 0 and 100; value '%s' could not be "
+"JPEG quality must be a value between 0 and 100; value “%s” could not be "
 "parsed."
 msgstr ""
 "JPEG'র গুণমানের মাত্রা 0(০) থেকে 100(১০০)'র মধ্যে হওয়া আবশ্যক; '%s' মান পার্স "
 "করতে ব্যর্থ।"
 
-#: cdk-pixbuf/io-gdip-jpeg.c:68 cdk-pixbuf/io-jpeg.c:1154
-#, c-format
+#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1425
+#, fuzzy, c-format
 msgid ""
-"JPEG quality must be a value between 0 and 100; value '%d' is not allowed."
+"JPEG quality must be a value between 0 and 100; value “%d” is not allowed."
 msgstr ""
 "JPEG'র গুণমানের মাত্রা 0(০) থেকে 100(১০০)'র মধ্যে হওয়া আবশ্যক; '%d' মান গ্রহণযোগ্য "
 "নয়।"
 
-#: cdk-pixbuf/io-gdip-jpeg.c:136 cdk-pixbuf/io-jpeg.c:1316
-msgid "The JPEG image format"
-msgstr "JPEG ছবির বিন্যাস"
+#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1710
+msgctxt "image format"
+msgid "JPEG"
+msgstr ""
 
-#: cdk-pixbuf/io-gdip-utils.c:154
+#: cdk-pixbuf/io-gdip-tiff.c:83 cdk-pixbuf/io-tiff.c:1087
+msgctxt "image format"
+msgid "TIFF"
+msgstr ""
+
+#: cdk-pixbuf/io-gdip-utils.c:155
 #, c-format
 msgid "Could not allocate memory: %s"
 msgstr "মেমরি বরাদ্দ করতে ব্যর্থ: %s"
 
-#: cdk-pixbuf/io-gdip-utils.c:179 cdk-pixbuf/io-gdip-utils.c:293
-#: cdk-pixbuf/io-gdip-utils.c:333
+#: cdk-pixbuf/io-gdip-utils.c:180 cdk-pixbuf/io-gdip-utils.c:294
+#: cdk-pixbuf/io-gdip-utils.c:334
 #, c-format
 msgid "Could not create stream: %s"
 msgstr "স্ট্রিম নির্মাণ করতে ব্যর্থ: %s"
 
-#: cdk-pixbuf/io-gdip-utils.c:193
+#: cdk-pixbuf/io-gdip-utils.c:194
 #, c-format
 msgid "Could not seek stream: %s"
 msgstr "Could not seek stream: %s"
 
-#: cdk-pixbuf/io-gdip-utils.c:205
+#: cdk-pixbuf/io-gdip-utils.c:206
 #, c-format
 msgid "Could not read from stream: %s"
 msgstr "স্ট্রিম থেকে পড়তে ব্যর্থ: %s"
 
-#: cdk-pixbuf/io-gdip-utils.c:617 cdk-pixbuf/io-gdip-utils.c:752
-msgid "Couldn't load bitmap"
+#: cdk-pixbuf/io-gdip-utils.c:620
+#, fuzzy
+msgid "Couldn’t load bitmap"
 msgstr "বিট-ম্যাপ লোড করতে ব্যর্থ"
 
-#: cdk-pixbuf/io-gdip-utils.c:774
-msgid "Couldn't load metafile"
+#: cdk-pixbuf/io-gdip-utils.c:776
+#, fuzzy
+msgid "Couldn’t load metafile"
 msgstr "মিটা-ফাইল লোড করতে ব্যর্থ"
 
-#: cdk-pixbuf/io-gdip-utils.c:933
+#: cdk-pixbuf/io-gdip-utils.c:881
 msgid "Unsupported image format for GDI+"
 msgstr "GDI+-র জন্য ছবির বিন্যাস সমর্থিত নয়"
 
-#: cdk-pixbuf/io-gdip-utils.c:940
-msgid "Couldn't save"
+#: cdk-pixbuf/io-gdip-utils.c:888
+#, fuzzy
+msgid "Couldn’t save"
 msgstr "সংরক্ষণ করতে ব্যর্থ"
 
-#: cdk-pixbuf/io-gdip-wmf.c:58
-msgid "The WMF image format"
-msgstr "WMF ছবির বিন্যাস"
+#: cdk-pixbuf/io-gdip-wmf.c:60
+msgctxt "image format"
+msgid "WMF"
+msgstr ""
 
-#: cdk-pixbuf/io-gif.c:221
+#: cdk-pixbuf/io-gif.c:160
 #, c-format
 msgid "Failure reading GIF: %s"
 msgstr "GIF পড়তে ব্যর্থ: %s"
 
-#: cdk-pixbuf/io-gif.c:495 cdk-pixbuf/io-gif.c:1482 cdk-pixbuf/io-gif.c:1648
-msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
-msgstr ""
-"GIF ফাইলের কিছু তথ্য অনুপস্থিত (সম্ভবত কোনো কারণে এটির কিছু অংশ মুছে ফেলা হয়েছে?)"
-
-#: cdk-pixbuf/io-gif.c:504
-#, c-format
-msgid "Internal error in the GIF loader (%s)"
-msgstr "GIF লোড ব্যবস্থায় অভ্যন্তরীণ সমস্যা (%s)"
-
-#: cdk-pixbuf/io-gif.c:578
-msgid "Stack overflow"
-msgstr "স্ট্যাক-ওভারফ্লো"
-
-#: cdk-pixbuf/io-gif.c:638
-msgid "GIF image loader cannot understand this image."
-msgstr "GIF ছবি লোড ব্যবস্থার দ্বারা এই ছবিটি বোধগম্য নয়।"
-
-#: cdk-pixbuf/io-gif.c:667
-msgid "Bad code encountered"
-msgstr "ভুল কোডের সম্মুখীন"
-
-#: cdk-pixbuf/io-gif.c:677
-msgid "Circular table entry in GIF file"
-msgstr "GIF ফাইলের মধ্যে বৃত্তাকার টেবিলের তথ্য উপস্থিত রয়েছে"
-
-#: cdk-pixbuf/io-gif.c:865 cdk-pixbuf/io-gif.c:1468 cdk-pixbuf/io-gif.c:1521
-#: cdk-pixbuf/io-gif.c:1636
+#: cdk-pixbuf/io-gif.c:383 cdk-pixbuf/io-gif.c:850 cdk-pixbuf/io-gif.c:903
+#: cdk-pixbuf/io-gif.c:976
 msgid "Not enough memory to load GIF file"
 msgstr "GIF ফাইল লোড করার উদ্দেশ্যে পর্যাপ্ত মেমরি অনুপস্থিত"
 
-# FIXME: Composite
-#: cdk-pixbuf/io-gif.c:959
-msgid "Not enough memory to composite a frame in GIF file"
-msgstr "GIF ফাইলের মধ্যে ফ্রেম অন্তর্ভুক্ত করার উদ্দেশ্যে পর্যাপ্ত মেমরি অনুপস্থিত"
-
-#: cdk-pixbuf/io-gif.c:1131
+#: cdk-pixbuf/io-gif.c:509
 msgid "GIF image is corrupt (incorrect LZW compression)"
 msgstr "GIF ছবি ক্ষতিগ্রস্ত (LZW সংকুচন সঠিক নয়)"
 
-#: cdk-pixbuf/io-gif.c:1181
+#: cdk-pixbuf/io-gif.c:545
 msgid "File does not appear to be a GIF file"
 msgstr "ফাইলটি সম্ভবত GIF বিন্যাসে নয়"
 
-#: cdk-pixbuf/io-gif.c:1193
+#: cdk-pixbuf/io-gif.c:560
 #, c-format
 msgid "Version %s of the GIF file format is not supported"
 msgstr "GIF ফাইল বিন্যাসের %s সংস্করণ সমর্থিত নয়"
 
-#: cdk-pixbuf/io-gif.c:1302
+#: cdk-pixbuf/io-gif.c:589
+#, fuzzy
+msgid "Resulting GIF image has zero size"
+msgstr "ছবির প্রস্থের মাপ শূণ্য"
+
+#: cdk-pixbuf/io-gif.c:659
 msgid ""
 "GIF image has no global colormap, and a frame inside it has no local "
 "colormap."
@@ -355,106 +455,85 @@ msgstr ""
 "GIF ছবির মধ্যে কোনো গ্লোবাল colormap উপস্থিত নেই এবং এর মধ্যে অন্তর্ভুক্ত ফ্রেমে "
 "স্থানীয় colormap উপস্থিত নেই।"
 
-#: cdk-pixbuf/io-gif.c:1543
+#: cdk-pixbuf/io-gif.c:863 cdk-pixbuf/io-gif.c:988
+msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
+msgstr ""
+"GIF ফাইলের কিছু তথ্য অনুপস্থিত (সম্ভবত কোনো কারণে এটির কিছু অংশ মুছে ফেলা হয়েছে?)"
+
+#: cdk-pixbuf/io-gif.c:922
 msgid "GIF image was truncated or incomplete."
 msgstr "GIF ছবির তথ্য মুছে ফেলা হয়েছে অথবা অসম্পূর্ণ।"
 
-#: cdk-pixbuf/io-icns.c:347
+#: cdk-pixbuf/io-gif.c:929
+msgid "Not all frames of the GIF image were loaded."
+msgstr ""
+
+#: cdk-pixbuf/io-icns.c:363
 #, c-format
 msgid "Error reading ICNS image: %s"
 msgstr "ICNS ছবির ফাইল পড়তে সমস্যা: %s"
 
-#: cdk-pixbuf/io-icns.c:364
+#: cdk-pixbuf/io-icns.c:380 cdk-pixbuf/io-icns.c:461
 msgid "Could not decode ICNS file"
 msgstr "ICNS ফাইল ডি-কোড করতে ব্যর্থ"
 
-#: cdk-pixbuf/io-icns.c:397
-msgid "The ICNS image format"
-msgstr "ICNS ছবির বিন্যাস"
+#: cdk-pixbuf/io-icns.c:517
+msgctxt "image format"
+msgid "MacOS X icon"
+msgstr ""
 
-#: cdk-pixbuf/io-ico.c:228 cdk-pixbuf/io-ico.c:242 cdk-pixbuf/io-ico.c:291
-#: cdk-pixbuf/io-ico.c:302 cdk-pixbuf/io-ico.c:395
-msgid "Invalid header in icon"
+#: cdk-pixbuf/io-ico.c:238 cdk-pixbuf/io-ico.c:252 cdk-pixbuf/io-ico.c:342
+#: cdk-pixbuf/io-ico.c:426 cdk-pixbuf/io-ico.c:451
+#, fuzzy, c-format
+msgid "Invalid header in icon (%s)"
 msgstr "আইকনে অবৈধ হেডার"
 
-#: cdk-pixbuf/io-ico.c:257 cdk-pixbuf/io-ico.c:312 cdk-pixbuf/io-ico.c:405
-#: cdk-pixbuf/io-ico.c:458 cdk-pixbuf/io-ico.c:488
+#: cdk-pixbuf/io-ico.c:268 cdk-pixbuf/io-ico.c:355 cdk-pixbuf/io-ico.c:461
+#: cdk-pixbuf/io-ico.c:504 cdk-pixbuf/io-ico.c:532
 msgid "Not enough memory to load icon"
 msgstr "আইকন লোড করার জন্য পর্যাপ্ত মেমরি অনুপস্থিত"
 
-#: cdk-pixbuf/io-ico.c:338
+#: cdk-pixbuf/io-ico.c:386
+msgid "Invalid header in icon"
+msgstr "আইকনে অবৈধ হেডার"
+
+#: cdk-pixbuf/io-ico.c:387
 msgid "Compressed icons are not supported"
 msgstr "সংকুচিত আইকনের ব্যবহার অসমর্থিত"
 
-#: cdk-pixbuf/io-ico.c:358
-msgid "Icon has zero width"
-msgstr "আইকনের প্রস্থের মাপ শূণ্য"
-
-#: cdk-pixbuf/io-ico.c:368
-msgid "Icon has zero height"
-msgstr "আইকনের দৈর্ঘ্যের মাপ শূন্য"
-
-#: cdk-pixbuf/io-ico.c:443
+#: cdk-pixbuf/io-ico.c:489
 msgid "Unsupported icon type"
 msgstr "অসমর্থিত আইকনের বিন্যাস"
 
-#: cdk-pixbuf/io-ico.c:537
+#: cdk-pixbuf/io-ico.c:583
 msgid "Not enough memory to load ICO file"
 msgstr "ICO ফাইল লোড করার জন্য পর্যাপ্ত মেমরি অনুপস্থিত"
 
-#: cdk-pixbuf/io-ico.c:1002
+#: cdk-pixbuf/io-ico.c:629
+#, fuzzy
+msgid "ICO image was truncated or incomplete."
+msgstr "GIF ছবির তথ্য মুছে ফেলা হয়েছে অথবা অসম্পূর্ণ।"
+
+#: cdk-pixbuf/io-ico.c:1070
 msgid "Image too large to be saved as ICO"
 msgstr "ICO ফাইল রূপে সংরক্ষণের জন্য ফাইলের মাপ অত্যাধিক বড়"
 
-#: cdk-pixbuf/io-ico.c:1013
+#: cdk-pixbuf/io-ico.c:1081
 msgid "Cursor hotspot outside image"
 msgstr "কার্সারের হট-স্পট ছবির বাইরে"
 
 # FIXME
-#: cdk-pixbuf/io-ico.c:1036
+#: cdk-pixbuf/io-ico.c:1104
 #, c-format
 msgid "Unsupported depth for ICO file: %d"
 msgstr "আইকন ফাইলে অসমর্থিত গভীরতা: %d"
 
-#: cdk-pixbuf/io-jasper.c:74
-msgid "Couldn't allocate memory for stream"
-msgstr "স্ট্রিমের জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
-
-#: cdk-pixbuf/io-jasper.c:104
-msgid "Couldn't decode image"
-msgstr "ছবি ডি-কোড করতে ব্যর্থ"
-
-#: cdk-pixbuf/io-jasper.c:122
-msgid "Transformed JPEG2000 has zero width or height"
-msgstr "রূপান্তরিত JPEG2000-র প্রস্থ অথবা দৈর্ঘ্যের মাপ শূণ্য।"
-
-#: cdk-pixbuf/io-jasper.c:136
-msgid "Image type currently not supported"
-msgstr "চিহ্নিত প্রকৃতির ছবি সমর্থিত নয়"
-
-#: cdk-pixbuf/io-jasper.c:148 cdk-pixbuf/io-jasper.c:156
-msgid "Couldn't allocate memory for color profile"
-msgstr "রঙের প্রোফাইলের জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
-
-#: cdk-pixbuf/io-jasper.c:182
-msgid "Insufficient memory to open JPEG 2000 file"
-msgstr "JPEG 2000 ফাইল খোলার জন্য পর্যাপ্ত মেমরি অনুপস্থিত"
-
-# FIXME
-#: cdk-pixbuf/io-jasper.c:261
-msgid "Couldn't allocate memory to buffer image data"
-msgstr "ছবি সংক্রান্ত তথ্য বাফার করার জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
-
-#: cdk-pixbuf/io-jasper.c:305
-msgid "The JPEG 2000 image format"
-msgstr "JPEG 2000 ছবির বিন্যাস"
-
-#: cdk-pixbuf/io-jpeg.c:116
+#: cdk-pixbuf/io-jpeg.c:131
 #, c-format
 msgid "Error interpreting JPEG image file (%s)"
 msgstr "JPEG ছবির ফাইল ব্যাখ্যা করতে সমস্যা (%s)"
 
-#: cdk-pixbuf/io-jpeg.c:527
+#: cdk-pixbuf/io-jpeg.c:647
 msgid ""
 "Insufficient memory to load image, try exiting some applications to free "
 "memory"
@@ -462,485 +541,643 @@ msgstr ""
 "ছবি লোড করার জন্য পর্যাপ্ত মেমরি অনুপস্থিত, মেমরি ফাঁকা করার জন্য কয়েকটি অ্যাপ্লিকেশন "
 "বন্ধ করার প্রচেষ্টা করুন"
 
-#: cdk-pixbuf/io-jpeg.c:568 cdk-pixbuf/io-jpeg.c:781
+#: cdk-pixbuf/io-jpeg.c:720 cdk-pixbuf/io-jpeg.c:970
 #, c-format
 msgid "Unsupported JPEG color space (%s)"
 msgstr "অসমর্থিত JPEG কালার-স্পেস (%s)"
 
-#: cdk-pixbuf/io-jpeg.c:680 cdk-pixbuf/io-jpeg.c:950 cdk-pixbuf/io-jpeg.c:1183
-#: cdk-pixbuf/io-jpeg.c:1192
-msgid "Couldn't allocate memory for loading JPEG file"
+#: cdk-pixbuf/io-jpeg.c:845 cdk-pixbuf/io-jpeg.c:1169 cdk-pixbuf/io-jpeg.c:1516
+#: cdk-pixbuf/io-jpeg.c:1526
+#, fuzzy
+msgid "Couldn’t allocate memory for loading JPEG file"
 msgstr "JPEG ফাইল লোড করার জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
 
-#: cdk-pixbuf/io-jpeg.c:925
+#: cdk-pixbuf/io-jpeg.c:1127
 msgid "Transformed JPEG has zero width or height."
 msgstr "রূপান্তরিত JPEG'র প্রস্থ অথবা দৈর্ঘ্যের মাপ শূণ্য।"
 
-#: cdk-pixbuf/io-pcx.c:186
-msgid "Couldn't allocate memory for header"
-msgstr "হেডারের জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
+#: cdk-pixbuf/io-jpeg.c:1153
+#, fuzzy, c-format
+msgid "Unsupported number of color components (%d)"
+msgstr "অসমর্থিত JPEG কালার-স্পেস (%s)"
 
-#: cdk-pixbuf/io-pcx.c:201 cdk-pixbuf/io-pcx.c:559
-msgid "Couldn't allocate memory for context buffer"
-msgstr "কনটেক্সট-বাফারের জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
+#: cdk-pixbuf/io-jpeg.c:1446
+#, fuzzy, c-format
+msgid ""
+"JPEG x-dpi must be a value between 1 and 65535; value “%s” is not allowed."
+msgstr ""
+"JPEG'র গুণমানের মাত্রা 0(০) থেকে 100(১০০)'র মধ্যে হওয়া আবশ্যক; '%d' মান গ্রহণযোগ্য "
+"নয়।"
 
-#: cdk-pixbuf/io-pcx.c:600
-msgid "Image has invalid width and/or height"
-msgstr "ছবির প্রস্থ এবং/অথবা দৈর্ঘ্যের মাপ বৈধ নয়"
+#: cdk-pixbuf/io-jpeg.c:1467
+#, fuzzy, c-format
+msgid ""
+"JPEG y-dpi must be a value between 1 and 65535; value “%s” is not allowed."
+msgstr ""
+"JPEG'র গুণমানের মাত্রা 0(০) থেকে 100(১০০)'র মধ্যে হওয়া আবশ্যক; '%d' মান গ্রহণযোগ্য "
+"নয়।"
 
-#: cdk-pixbuf/io-pcx.c:612 cdk-pixbuf/io-pcx.c:673
-msgid "Image has unsupported bpp"
-msgstr "ছবির মধ্যে অসমর্থিত মাপের bpp উপস্থিত"
+#: cdk-pixbuf/io-jpeg.c:1481
+#, fuzzy, c-format
+msgid "Color profile has invalid length “%u”."
+msgstr "অবৈধ দৈর্ঘ্য %d-র ক্ষেত্রে রঙের প্রোফাইল।"
 
-#: cdk-pixbuf/io-pcx.c:617 cdk-pixbuf/io-pcx.c:625
-#, c-format
-msgid "Image has unsupported number of %d-bit planes"
-msgstr "ছবির মধ্যে উপস্থিত %d-বিট প্লেইনের সংখ্যা সমর্থিত নয়"
-
-#: cdk-pixbuf/io-pcx.c:641
-msgid "Couldn't create new pixbuf"
-msgstr "নতুন pixbuf তৈরি করতে ব্যর্থ"
-
-# FIXME
-#: cdk-pixbuf/io-pcx.c:649
-msgid "Couldn't allocate memory for line data"
-msgstr "রেখা সংক্রান্ত তথ্যের জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
-
-#: cdk-pixbuf/io-pcx.c:656
-msgid "Couldn't allocate memory for PCX image"
-msgstr "PCX ইমেজের জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
-
-#: cdk-pixbuf/io-pcx.c:703
-msgid "Didn't get all lines of PCX image"
-msgstr "PCX ছবির জন্য সমস্ত রেখা প্রাপ্ত করা যায়নি"
-
-#: cdk-pixbuf/io-pcx.c:710
-msgid "No palette found at end of PCX data"
-msgstr "PCX তথ্যের অন্তে কোনো প্যালেট সনাক্ত করা যায়নি"
-
-#: cdk-pixbuf/io-pcx.c:755
-msgid "The PCX image format"
-msgstr "PCX ছবির বিন্যাস"
-
-#: cdk-pixbuf/io-pixdata.c:148
-#, fuzzy
-msgid "Transformed pixbuf has zero width or height."
-msgstr "রূপান্তরিত PNG'র প্রস্থ অথবা দৈর্ঘ্যের মাপ শূণ্য।"
-
-#: cdk-pixbuf/io-pixdata.c:186
-#, fuzzy
-msgid "The CdkPixdata format"
-msgstr "GIF ছবির বিন্যাস"
-
-#: cdk-pixbuf/io-png.c:54
+#: cdk-pixbuf/io-png.c:64
 msgid "Bits per channel of PNG image is invalid."
 msgstr "PNG ছবির প্রতি চ্যানেল বিট সংখ্যা বৈধ নয়।"
 
-#: cdk-pixbuf/io-png.c:135 cdk-pixbuf/io-png.c:641
+#: cdk-pixbuf/io-png.c:145 cdk-pixbuf/io-png.c:730
 msgid "Transformed PNG has zero width or height."
 msgstr "রূপান্তরিত PNG'র প্রস্থ অথবা দৈর্ঘ্যের মাপ শূণ্য।"
 
-#: cdk-pixbuf/io-png.c:143
+#: cdk-pixbuf/io-png.c:153
 msgid "Bits per channel of transformed PNG is not 8."
 msgstr "রূপান্তরিত PNG'র প্রতি চ্যানেলের বিট সংখ্যা ৮ নয়।"
 
 # FIXME
-#: cdk-pixbuf/io-png.c:152
+#: cdk-pixbuf/io-png.c:162
 msgid "Transformed PNG not RGB or RGBA."
 msgstr "রূপান্তরিত PNG, RGB অথবা RGBA বিন্যাসে নয়।"
 
-#: cdk-pixbuf/io-png.c:161
+#: cdk-pixbuf/io-png.c:171
 msgid "Transformed PNG has unsupported number of channels, must be 3 or 4."
 msgstr ""
 "রূপান্তরিত PNG'র মধ্যে অসমর্থিত চ্যানেল সংখ্যা, এই সংখ্যা ৩ অথবা ৪ হওয়া আবশ্যক।"
 
-#: cdk-pixbuf/io-png.c:182
+#: cdk-pixbuf/io-png.c:193
 #, c-format
 msgid "Fatal error in PNG image file: %s"
 msgstr "PNG ছবির ফাইলে গুরুতর সমস্যা: %s"
 
-#: cdk-pixbuf/io-png.c:315
+#: cdk-pixbuf/io-png.c:338
 msgid "Insufficient memory to load PNG file"
 msgstr "PNG ফাইল লোড করার জন্য পর্যাপ্ত মেমরি অনুপস্থিত"
 
-#: cdk-pixbuf/io-png.c:656
-#, c-format
+#: cdk-pixbuf/io-png.c:519 cdk-pixbuf/io-png.c:540
+#, fuzzy
+msgid "Couldn’t allocate memory for loading PNG"
+msgstr "JPEG ফাইল লোড করার জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
+
+#: cdk-pixbuf/io-png.c:743
+#, fuzzy, c-format
 msgid ""
-"Insufficient memory to store a %ld by %ld image; try exiting some "
+"Insufficient memory to store a %lu by %lu image; try exiting some "
 "applications to reduce memory usage"
 msgstr ""
 "%ld গুণ %ld আকারের ছবি সংরক্ষণের জন্য পর্যাপ্ত মেমরি অনুপস্থিত;  কয়েকটি অ্যাপ্লিকেশন "
 "বন্ধ করে মেমরির ব্যবহার হ্রাস করে পুনরায় প্রচেষ্টা করুন"
 
-#: cdk-pixbuf/io-png.c:719
+#: cdk-pixbuf/io-png.c:820
 msgid "Fatal error reading PNG image file"
 msgstr "PNG ছবির ফাইল পড়তে গুরুতর সমস্যা"
 
-#: cdk-pixbuf/io-png.c:768
+#: cdk-pixbuf/io-png.c:873
 #, c-format
 msgid "Fatal error reading PNG image file: %s"
 msgstr "PNG ছবির ফাইল পড়তে গুরুতর সমস্যা: %s"
 
-#: cdk-pixbuf/io-png.c:862
+#: cdk-pixbuf/io-png.c:972
+#, fuzzy, c-format
 msgid ""
-"Keys for PNG text chunks must have at least 1 and at most 79 characters."
+"Invalid key “%s”. Keys for PNG text chunks must have at least 1 and at most "
+"79 characters."
 msgstr ""
 "PNG টেক্সট অংশের কি (key) নূন্যতম ১ ও সর্বাধিক ৭৯-টি অক্ষর বিশিষ্ট হওয়া আবশ্যক।"
 
-#: cdk-pixbuf/io-png.c:871
-msgid "Keys for PNG text chunks must be ASCII characters."
+#: cdk-pixbuf/io-png.c:985
+#, fuzzy, c-format
+msgid "Invalid key “%s”. Keys for PNG text chunks must be ASCII characters."
 msgstr "PNG টেক্সট অংশের কি (key) ASCII অক্ষরবিশিষ্ট হওয়া আবশ্যক।"
 
-#: cdk-pixbuf/io-png.c:885 cdk-pixbuf/io-tiff.c:737
-#, c-format
-msgid "Color profile has invalid length %d."
-msgstr "অবৈধ দৈর্ঘ্য %d-র ক্ষেত্রে রঙের প্রোফাইল।"
-
-#: cdk-pixbuf/io-png.c:898
-#, c-format
+#: cdk-pixbuf/io-png.c:1015
+#, fuzzy, c-format
 msgid ""
-"PNG compression level must be a value between 0 and 9; value '%s' could not "
-"be parsed."
-msgstr "PNG সংকুচনের মাত্রা ০ ও ৯'র মধ্যে হওয়া আবশ্যক; '%s' মান পার্স করতে ব্যর্থ।"
-
-#: cdk-pixbuf/io-png.c:911
-#, c-format
-msgid ""
-"PNG compression level must be a value between 0 and 9; value '%d' is not "
-"allowed."
-msgstr "PNG সংকুচনের মাত্রা ০ ও ৯'র মধ্যে হওয়া আবশ্যক; '%d' মান গ্রহণযোগ্য নয়।"
-
-#: cdk-pixbuf/io-png.c:959
-#, c-format
-msgid "Value for PNG text chunk %s cannot be converted to ISO-8859-1 encoding."
+"Value for PNG text chunk '%s' cannot be converted to ISO-8859-1 encoding."
 msgstr "PNG টেক্সট অংশ %s'র ক্ষেত্রে ISO-8859-1 এনকোডিং'এ পরিবর্তন করা সম্ভব নয়।"
 
-#: cdk-pixbuf/io-png.c:1122
-msgid "The PNG image format"
-msgstr "PNG ছবির বিন্যাস"
+#: cdk-pixbuf/io-png.c:1027
+#, fuzzy, c-format
+msgid "Color profile has invalid length %d"
+msgstr "অবৈধ দৈর্ঘ্য %d-র ক্ষেত্রে রঙের প্রোফাইল।"
 
-#: cdk-pixbuf/io-pnm.c:248
-msgid "PNM loader expected to find an integer, but didn't"
+#: cdk-pixbuf/io-png.c:1039
+#, fuzzy, c-format
+msgid ""
+"PNG compression level must be a value between 0 and 9; value “%s” is invalid"
+msgstr "PNG সংকুচনের মাত্রা ০ ও ৯'র মধ্যে হওয়া আবশ্যক; '%d' মান গ্রহণযোগ্য নয়।"
+
+#: cdk-pixbuf/io-png.c:1053
+#, fuzzy, c-format
+msgid "PNG %s must be greater than zero; value “%s” is not allowed"
+msgstr ""
+"JPEG'র গুণমানের মাত্রা 0(০) থেকে 100(১০০)'র মধ্যে হওয়া আবশ্যক; '%d' মান গ্রহণযোগ্য "
+"নয়।"
+
+#: cdk-pixbuf/io-png.c:1283
+msgctxt "image format"
+msgid "PNG"
+msgstr ""
+
+#: cdk-pixbuf/io-pnm.c:247
+#, fuzzy
+msgid "PNM loader expected to find an integer, but didn’t"
 msgstr "PNM লোডারের দ্বারা পূর্ণসংখ্যা মান প্রত্যাশিত, কিন্তু প্রাপ্ত করা যায়নি"
 
-#: cdk-pixbuf/io-pnm.c:280
+#: cdk-pixbuf/io-pnm.c:279
 msgid "PNM file has an incorrect initial byte"
 msgstr "PNM ফাইলের প্রারম্ভিক বাইট সঠিক নয়"
 
-#: cdk-pixbuf/io-pnm.c:310
+#: cdk-pixbuf/io-pnm.c:309
 msgid "PNM file is not in a recognized PNM subformat"
 msgstr "PNM ফাইল পরিচিত PNM সাব-ফরম্যাট বিন্যাসে নেই"
 
-#: cdk-pixbuf/io-pnm.c:335
+#: cdk-pixbuf/io-pnm.c:334
+#, fuzzy
+msgid "PNM file has an invalid width"
+msgstr "PNM ফাইলের ছবির প্রস্থের মাপ ০"
+
+#: cdk-pixbuf/io-pnm.c:342
 msgid "PNM file has an image width of 0"
 msgstr "PNM ফাইলের ছবির প্রস্থের মাপ ০"
 
-#: cdk-pixbuf/io-pnm.c:356
+#: cdk-pixbuf/io-pnm.c:363
+#, fuzzy
+msgid "PNM file has an invalid height"
+msgstr "PNM ফাইলের ছবির দৈর্ঘ্যের মাপ ০"
+
+#: cdk-pixbuf/io-pnm.c:371
 msgid "PNM file has an image height of 0"
 msgstr "PNM ফাইলের ছবির দৈর্ঘ্যের মাপ ০"
 
-#: cdk-pixbuf/io-pnm.c:379
+#: cdk-pixbuf/io-pnm.c:394
 msgid "Maximum color value in PNM file is 0"
 msgstr "PNM ফাইলে সর্বোচ্চ রং'র মাপ ০"
 
-#: cdk-pixbuf/io-pnm.c:387
+#: cdk-pixbuf/io-pnm.c:402
 msgid "Maximum color value in PNM file is too large"
 msgstr "PNM ফাইলে সর্বোচ্চ রং'র মাপ অত্যাধিক বড়"
 
-#: cdk-pixbuf/io-pnm.c:427 cdk-pixbuf/io-pnm.c:457 cdk-pixbuf/io-pnm.c:502
+#: cdk-pixbuf/io-pnm.c:442 cdk-pixbuf/io-pnm.c:472 cdk-pixbuf/io-pnm.c:517
 msgid "Raw PNM image type is invalid"
 msgstr "Raw PNM ছবির বিন্যাস বৈধ নয়"
 
-#: cdk-pixbuf/io-pnm.c:652
+#: cdk-pixbuf/io-pnm.c:667
 msgid "PNM image loader does not support this PNM subformat"
 msgstr "PNM ছবি লোড ব্যবস্থার দ্বারা চিহ্নিত PNM সাব-ফরম্যাট সমর্থিত নয়"
 
-#: cdk-pixbuf/io-pnm.c:739 cdk-pixbuf/io-pnm.c:966
+#: cdk-pixbuf/io-pnm.c:754 cdk-pixbuf/io-pnm.c:991
 msgid "Raw PNM formats require exactly one whitespace before sample data"
 msgstr "Raw PNM বিন্যাসে নমূণা তথ্যের পূর্বে শুধুমাত্র একটি শূণ্যস্থান উপস্থিত থাকা আবশ্যক"
 
-#: cdk-pixbuf/io-pnm.c:766
+#: cdk-pixbuf/io-pnm.c:781
 msgid "Cannot allocate memory for loading PNM image"
 msgstr "PNM বিন্যাসের ছবি লোড করার জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
 
-#: cdk-pixbuf/io-pnm.c:816
+#: cdk-pixbuf/io-pnm.c:835
 msgid "Insufficient memory to load PNM context struct"
 msgstr "PNM context struct লোড করার জন্য পর্যাপ্ত মেমরি অনুপস্থিত"
 
-#: cdk-pixbuf/io-pnm.c:867
+#: cdk-pixbuf/io-pnm.c:892
 msgid "Unexpected end of PNM image data"
 msgstr "PNM ছবির তথ্যে অপ্রত্যাশিতরূপে সমাপ্ত"
 
-#: cdk-pixbuf/io-pnm.c:995
+#: cdk-pixbuf/io-pnm.c:1020
 msgid "Insufficient memory to load PNM file"
 msgstr "PNM ফাইল লোড করার জন্য পর্যাপ্ত মেমরি অনুপস্থিত"
 
-#: cdk-pixbuf/io-pnm.c:1079
-msgid "The PNM/PBM/PGM/PPM image format family"
-msgstr "PNM/PBM/PGM/PPM ছবির বিন্যাসের সংকলন"
+#: cdk-pixbuf/io-pnm.c:1103
+msgctxt "image format"
+msgid "PNM/PBM/PGM/PPM"
+msgstr ""
 
-#: cdk-pixbuf/io-qtif.c:128
+#: cdk-pixbuf/io-qtif.c:126
 msgid "Input file descriptor is NULL."
 msgstr "ইনপুট ফাইল ডেস্ক্রিপটরের মান NULL।"
 
-#: cdk-pixbuf/io-qtif.c:143
+#: cdk-pixbuf/io-qtif.c:141
 msgid "Failed to read QTIF header"
 msgstr "QTIF হেডার পড়তে ব্যর্থ"
 
-#: cdk-pixbuf/io-qtif.c:152 cdk-pixbuf/io-qtif.c:189 cdk-pixbuf/io-qtif.c:460
+#: cdk-pixbuf/io-qtif.c:150 cdk-pixbuf/io-qtif.c:187 cdk-pixbuf/io-qtif.c:449
 #, fuzzy, c-format
 msgid "QTIF atom size too large (%d byte)"
 msgid_plural "QTIF atom size too large (%d bytes)"
 msgstr[0] "QTIF অ্যাটমের মাপ অত্যাধিক বড় (%d বাইট)"
 msgstr[1] "QTIF অ্যাটমের মাপ অত্যাধিক বড় (%d বাইট)"
 
-#: cdk-pixbuf/io-qtif.c:175
+#: cdk-pixbuf/io-qtif.c:173
 #, fuzzy, c-format
 msgid "Failed to allocate %d byte for file read buffer"
 msgid_plural "Failed to allocate %d bytes for file read buffer"
 msgstr[0] "ফাইল পড়ার বাফারের জন্য %d বাইট বরাদ্দ করতে ব্যর্থ"
 msgstr[1] "ফাইল পড়ার বাফারের জন্য %d বাইট বরাদ্দ করতে ব্যর্থ"
 
-#: cdk-pixbuf/io-qtif.c:206
+#: cdk-pixbuf/io-qtif.c:201
 #, c-format
 msgid "File error when reading QTIF atom: %s"
 msgstr "QTIF অ্যাটম পড়াকালে ফাইল সংক্রান্ত ত্রুটি দেখা দিয়েছে: %s"
 
-#: cdk-pixbuf/io-qtif.c:243
+#: cdk-pixbuf/io-qtif.c:238
 #, fuzzy, c-format
 msgid "Failed to skip the next %d byte with seek()."
 msgid_plural "Failed to skip the next %d bytes with seek()."
 msgstr[0] "seek() সহযোগে পরবর্তী %d বাইট উপেক্ষা করতে ব্যর্থ।"
 msgstr[1] "seek() সহযোগে পরবর্তী %d বাইট উপেক্ষা করতে ব্যর্থ।"
 
-#: cdk-pixbuf/io-qtif.c:270
+#: cdk-pixbuf/io-qtif.c:269
 msgid "Failed to allocate QTIF context structure."
 msgstr "QTIF কনটেক্সট স্ট্রাকচারের জন্য মেমরি বরাদ্দ করতে ব্যর্থ।"
 
-#: cdk-pixbuf/io-qtif.c:330
+#: cdk-pixbuf/io-qtif.c:329
 msgid "Failed to create CdkPixbufLoader object."
 msgstr "CdkPixbufLoader অবজেক্ট নির্মাণ করতে ব্যর্থ।"
 
-#: cdk-pixbuf/io-qtif.c:434
+#: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
 msgstr "ছবির তথ্যের অ্যাটম সন্ধান করতে ব্যর্থ"
 
-#: cdk-pixbuf/io-qtif.c:619
-msgid "The QTIF image format"
-msgstr "QTIF ছবির বিন্যাস"
-
-#: cdk-pixbuf/io-ras.c:125
-msgid "RAS image has bogus header data"
-msgstr "RAS ছবির হেডারে ভুয়ো তথ্য"
-
-#: cdk-pixbuf/io-ras.c:147
-msgid "RAS image has unknown type"
-msgstr "RAS ছবির প্রকৃতি অজানা"
-
-#: cdk-pixbuf/io-ras.c:155
-msgid "unsupported RAS image variation"
-msgstr "RAS ছবির পরিবর্তন সমর্থিত নয়"
-
-#: cdk-pixbuf/io-ras.c:170 cdk-pixbuf/io-ras.c:199
-msgid "Not enough memory to load RAS image"
-msgstr "RAS ছবি লোড করার জন্য পর্যাপ্ত মেমরি অনুপস্থিত"
-
-#: cdk-pixbuf/io-ras.c:544
-msgid "The Sun raster image format"
-msgstr "Sun রেসটার ছবির বিন্যাস"
-
-#: cdk-pixbuf/io-tga.c:153
-msgid "Cannot allocate memory for IOBuffer struct"
-msgstr "IOBuffer struct'র জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
-
-#: cdk-pixbuf/io-tga.c:172
-msgid "Cannot allocate memory for IOBuffer data"
-msgstr "IOBuffer তথ্যের জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
-
-#: cdk-pixbuf/io-tga.c:183
-msgid "Cannot realloc IOBuffer data"
-msgstr "IOBuffer তথ্য পুনরায় বরাদ্দ (realloc) করতে ব্যর্থ"
-
-#: cdk-pixbuf/io-tga.c:213
-msgid "Cannot allocate temporary IOBuffer data"
-msgstr "অস্থায়ী IOBuffer তথ্য বরাদ্দ করতে ব্যর্থ"
+#: cdk-pixbuf/io-qtif.c:599
+msgctxt "image format"
+msgid "QuickTime"
+msgstr ""
 
 #: cdk-pixbuf/io-tga.c:346
+#, fuzzy
+msgid "Cannot allocate colormap"
+msgstr "colormap এন্ট্রি বরাদ্দ করতে ব্যর্থ"
+
+#: cdk-pixbuf/io-tga.c:371
 msgid "Cannot allocate new pixbuf"
 msgstr "নতুন pixbuf বরাদ্দ করতে ব্যর্থ"
 
-#: cdk-pixbuf/io-tga.c:685
-msgid "Image is corrupted or truncated"
-msgstr "ছবিটি ক্ষতিগ্রস্ত অথবা সেটি ছাঁটাই করা হয়েছে"
-
-#: cdk-pixbuf/io-tga.c:692
-msgid "Cannot allocate colormap structure"
-msgstr "colormap structure বরাদ্দ করতে ব্যর্থ"
-
-#: cdk-pixbuf/io-tga.c:699
-msgid "Cannot allocate colormap entries"
-msgstr "colormap এন্ট্রি বরাদ্দ করতে ব্যর্থ"
-
-#: cdk-pixbuf/io-tga.c:721
+#: cdk-pixbuf/io-tga.c:519
 msgid "Unexpected bitdepth for colormap entries"
 msgstr "colormap এন্ট্রির ক্ষেত্রে অপ্রত্যাশিত bitdepth'র মাত্রা"
 
-#: cdk-pixbuf/io-tga.c:739
+#: cdk-pixbuf/io-tga.c:535
+msgid "Pseudocolor image does not contain a colormap"
+msgstr ""
+
+#: cdk-pixbuf/io-tga.c:578
 msgid "Cannot allocate TGA header memory"
 msgstr "TGA হেডার মেমরি বরাদ্দ করতে ব্যর্থ"
 
-#: cdk-pixbuf/io-tga.c:772
+#: cdk-pixbuf/io-tga.c:609
 msgid "TGA image has invalid dimensions"
 msgstr "TGA ছবির দিকমাত্রা বৈধ নয়"
 
-#: cdk-pixbuf/io-tga.c:778 cdk-pixbuf/io-tga.c:787 cdk-pixbuf/io-tga.c:797
-#: cdk-pixbuf/io-tga.c:807 cdk-pixbuf/io-tga.c:814
+#: cdk-pixbuf/io-tga.c:615 cdk-pixbuf/io-tga.c:622
 msgid "TGA image type not supported"
 msgstr "TGA বিন্যাসের ছবি সমর্থিত নয়"
 
-#: cdk-pixbuf/io-tga.c:861
+#: cdk-pixbuf/io-tga.c:650
 msgid "Cannot allocate memory for TGA context struct"
 msgstr "TGA context struct'র জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
 
-#: cdk-pixbuf/io-tga.c:926
-msgid "Excess data in file"
-msgstr "ফাইলে প্রয়োজনাতিরিক্ত তথ্য"
+#: cdk-pixbuf/io-tga.c:712
+#, fuzzy
+msgid "TGA image was truncated or incomplete."
+msgstr "GIF ছবির তথ্য মুছে ফেলা হয়েছে অথবা অসম্পূর্ণ।"
 
-#: cdk-pixbuf/io-tga.c:1007
-msgid "The Targa image format"
-msgstr "Targa ছবির বিন্যাস"
+#: cdk-pixbuf/io-tga.c:764
+msgctxt "image format"
+msgid "Targa"
+msgstr ""
 
-#: cdk-pixbuf/io-tiff.c:164
+#: cdk-pixbuf/io-tiff.c:117
 msgid "Could not get image width (bad TIFF file)"
 msgstr "ছবির প্রস্থ প্রাপ্ত করতে ব্যর্থ (TIFF ফাইল সঠিক নয়)"
 
-#: cdk-pixbuf/io-tiff.c:171
+#: cdk-pixbuf/io-tiff.c:125
 msgid "Could not get image height (bad TIFF file)"
 msgstr "ছবির দৈর্ঘ্য প্রাপ্ত করতে ব্যর্থ (TIFF ফাইল সঠিক নয়)"
 
-#: cdk-pixbuf/io-tiff.c:179
+#: cdk-pixbuf/io-tiff.c:133
 msgid "Width or height of TIFF image is zero"
 msgstr "TIFF ছবির প্রস্থ অথবা দৈর্ঘ্যের মাপ শূণ্য"
 
-#: cdk-pixbuf/io-tiff.c:188 cdk-pixbuf/io-tiff.c:197
+#: cdk-pixbuf/io-tiff.c:141 cdk-pixbuf/io-tiff.c:151
 msgid "Dimensions of TIFF image too large"
 msgstr "TIFF ছবির দিকমাত্রা অত্যাধিক বড়"
 
-#: cdk-pixbuf/io-tiff.c:221 cdk-pixbuf/io-tiff.c:233 cdk-pixbuf/io-tiff.c:560
+#: cdk-pixbuf/io-tiff.c:177 cdk-pixbuf/io-tiff.c:189 cdk-pixbuf/io-tiff.c:585
 msgid "Insufficient memory to open TIFF file"
 msgstr "TIFF ফাইল খোলার জন্য পর্যাপ্ত মেমরি অনুপস্থিত"
 
-#: cdk-pixbuf/io-tiff.c:294
+#: cdk-pixbuf/io-tiff.c:287
 msgid "Failed to load RGB data from TIFF file"
 msgstr "TIFF ফাইল থেকে RGB সংক্রান্ত তথ্য লোড করতে ব্যর্থ"
 
-#: cdk-pixbuf/io-tiff.c:350
+#: cdk-pixbuf/io-tiff.c:378
 msgid "Failed to open TIFF image"
 msgstr "TIFF ছবি খুলতে ব্যর্থ"
 
-#: cdk-pixbuf/io-tiff.c:362 cdk-pixbuf/io-tiff.c:777
-msgid "TIFFClose operation failed"
-msgstr "TIFFClose কর্ম সঞ্চালনে ব্যর্থ"
-
-#: cdk-pixbuf/io-tiff.c:492 cdk-pixbuf/io-tiff.c:505
+#: cdk-pixbuf/io-tiff.c:516 cdk-pixbuf/io-tiff.c:528
 msgid "Failed to load TIFF image"
 msgstr "TIFF ছবি লোড করতে ব্যর্থ"
 
-#: cdk-pixbuf/io-tiff.c:691
+#: cdk-pixbuf/io-tiff.c:760
 msgid "Failed to save TIFF image"
 msgstr "TIFF ছবি সংরক্ষণে ব্যর্থ"
 
-#: cdk-pixbuf/io-tiff.c:726
-msgid "TIFF compression doesn't refer to a valid codec."
+#: cdk-pixbuf/io-tiff.c:821
+#, fuzzy
+msgid "TIFF compression doesn’t refer to a valid codec."
 msgstr "TIFF কম্প্রেশন দ্বারা বৈধ codec উল্লেখ করা হয় না।"
 
-#: cdk-pixbuf/io-tiff.c:766
+#: cdk-pixbuf/io-tiff.c:851
+#, c-format
+msgid "Color profile has invalid length %d."
+msgstr "অবৈধ দৈর্ঘ্য %d-র ক্ষেত্রে রঙের প্রোফাইল।"
+
+#: cdk-pixbuf/io-tiff.c:866
+msgid "TIFF bits-per-sample doesn’t contain a supported value."
+msgstr ""
+
+#: cdk-pixbuf/io-tiff.c:947
 msgid "Failed to write TIFF data"
 msgstr "TIFF তথ্য লিখতে ব্যর্থ"
 
-#: cdk-pixbuf/io-tiff.c:813
-msgid "Couldn't write to TIFF file"
+#: cdk-pixbuf/io-tiff.c:965
+#, fuzzy, c-format
+msgid "TIFF x-dpi must be greater than zero; value “%s” is not allowed."
+msgstr ""
+"JPEG'র গুণমানের মাত্রা 0(০) থেকে 100(১০০)'র মধ্যে হওয়া আবশ্যক; '%d' মান গ্রহণযোগ্য "
+"নয়।"
+
+#: cdk-pixbuf/io-tiff.c:977
+#, fuzzy, c-format
+msgid "TIFF y-dpi must be greater than zero; value “%s” is not allowed."
+msgstr ""
+"JPEG'র গুণমানের মাত্রা 0(০) থেকে 100(১০০)'র মধ্যে হওয়া আবশ্যক; '%d' মান গ্রহণযোগ্য "
+"নয়।"
+
+#: cdk-pixbuf/io-tiff.c:1018
+#, fuzzy
+msgid "Couldn’t write to TIFF file"
 msgstr "TIFF ফাইলে লিখতে ব্যর্থ"
 
-#: cdk-pixbuf/io-tiff.c:868
-msgid "The TIFF image format"
-msgstr "TIFF ছবির বিন্যাস"
-
-#: cdk-pixbuf/io-wbmp.c:245
-msgid "Image has zero width"
-msgstr "ছবির প্রস্থের মাপ শূণ্য"
-
-#: cdk-pixbuf/io-wbmp.c:263
-msgid "Image has zero height"
-msgstr "ছবির দৈর্ঘ্যের মাপ শূণ্য"
-
-#: cdk-pixbuf/io-wbmp.c:274
-msgid "Not enough memory to load image"
-msgstr "ছবি লোড করার জন্য পর্যাপ্ত মেমরি অনুপস্থিত"
-
-#: cdk-pixbuf/io-wbmp.c:333
-msgid "Couldn't save the rest"
-msgstr "অবশিষ্ট অংশ সংরক্ষণ করতে ব্যর্থ"
-
-#: cdk-pixbuf/io-wbmp.c:374
-msgid "The WBMP image format"
-msgstr "WBMP ছবির বিন্যাস"
-
-#: cdk-pixbuf/io-xbm.c:296
+#: cdk-pixbuf/io-xbm.c:320
 msgid "Invalid XBM file"
 msgstr "অবৈধ XBM ফাইল"
 
-#: cdk-pixbuf/io-xbm.c:306
+#: cdk-pixbuf/io-xbm.c:331
 msgid "Insufficient memory to load XBM image file"
 msgstr "XBM ছবির ফাইল লোড করার জন্য পর্যাপ্ত মেমরি অনুপস্থিত"
 
-#: cdk-pixbuf/io-xbm.c:454
+#: cdk-pixbuf/io-xbm.c:482
 msgid "Failed to write to temporary file when loading XBM image"
 msgstr "XBM ছবি লোড করার সময় অস্থায়ী ফাইলে লিখতে ব্যর্থ"
 
-#: cdk-pixbuf/io-xbm.c:493
-msgid "The XBM image format"
-msgstr "XBM ছবির বিন্যাস"
+#: cdk-pixbuf/io-xbm.c:521
+msgctxt "image format"
+msgid "XBM"
+msgstr ""
 
-#: cdk-pixbuf/io-xpm.c:469
+#: cdk-pixbuf/io-xpm.c:472
 msgid "No XPM header found"
 msgstr "XPM হেডার পাওয়া যায়নি"
 
-#: cdk-pixbuf/io-xpm.c:478
+#: cdk-pixbuf/io-xpm.c:481 cdk-pixbuf/io-xpm.c:507
 msgid "Invalid XPM header"
 msgstr "অবৈধ XPM হেডার"
 
-#: cdk-pixbuf/io-xpm.c:486
+#: cdk-pixbuf/io-xpm.c:489
 msgid "XPM file has image width <= 0"
 msgstr "XPM ফাইলের ছবির প্রস্থের মাপ <= ০"
 
-#: cdk-pixbuf/io-xpm.c:494
+#: cdk-pixbuf/io-xpm.c:497
 msgid "XPM file has image height <= 0"
 msgstr "XPM ফাইলের ছবির দৈর্ঘ্যের মাপ <= ০"
 
-#: cdk-pixbuf/io-xpm.c:502
+#: cdk-pixbuf/io-xpm.c:514
 msgid "XPM has invalid number of chars per pixel"
 msgstr "XPM'র মধ্যে প্রতি পিক্সেলে chars সংখ্যা অবৈধ"
 
-#: cdk-pixbuf/io-xpm.c:511
+#: cdk-pixbuf/io-xpm.c:523
 msgid "XPM file has invalid number of colors"
 msgstr "XPM ফাইলের মধ্যে অবৈধ রং'র সংখ্যা"
 
-#: cdk-pixbuf/io-xpm.c:523 cdk-pixbuf/io-xpm.c:532 cdk-pixbuf/io-xpm.c:584
+#: cdk-pixbuf/io-xpm.c:535 cdk-pixbuf/io-xpm.c:544 cdk-pixbuf/io-xpm.c:593
 msgid "Cannot allocate memory for loading XPM image"
 msgstr "XPM ছবি লোড করার জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
 
-#: cdk-pixbuf/io-xpm.c:546
+#: cdk-pixbuf/io-xpm.c:558
 msgid "Cannot read XPM colormap"
 msgstr "XPM colormap পড়তে ব্যর্থ"
 
-#: cdk-pixbuf/io-xpm.c:778
+#: cdk-pixbuf/io-xpm.c:610
+#, fuzzy
+msgid "Dimensions do not match data"
+msgstr "TIFF ছবির দিকমাত্রা অত্যাধিক বড়"
+
+#: cdk-pixbuf/io-xpm.c:806
 msgid "Failed to write to temporary file when loading XPM image"
 msgstr "XPM ছবি লোড করার সময় অস্থায়ী ফাইলে লিখতে ব্যর্থ"
 
-#: cdk-pixbuf/io-xpm.c:817
-msgid "The XPM image format"
-msgstr "XPM বিন্যাসের ছবি"
+#: cdk-pixbuf/io-xpm.c:845
+msgctxt "image format"
+msgid "XPM"
+msgstr ""
+
+#~ msgid "Unsupported animation type"
+#~ msgstr "অসমর্থিত বিন্যাসের অ্যানিমেশন"
+
+#~ msgid "The ANI image format"
+#~ msgstr "ANI ছবির বিন্যাস"
+
+#~ msgid "The BMP image format"
+#~ msgstr "BMP ছবির বিন্যাস"
+
+#~ msgid "The EMF image format"
+#~ msgstr "EMF ছবির বিন্যাস"
+
+#~ msgid "The GIF image format"
+#~ msgstr "GIF ছবির বিন্যাস"
+
+#~ msgid "The ICO image format"
+#~ msgstr "ICO ছবির বিন্যাস"
+
+#~ msgid "The JPEG image format"
+#~ msgstr "JPEG ছবির বিন্যাস"
+
+#~ msgid "The WMF image format"
+#~ msgstr "WMF ছবির বিন্যাস"
+
+#, c-format
+#~ msgid "Internal error in the GIF loader (%s)"
+#~ msgstr "GIF লোড ব্যবস্থায় অভ্যন্তরীণ সমস্যা (%s)"
+
+#~ msgid "Stack overflow"
+#~ msgstr "স্ট্যাক-ওভারফ্লো"
+
+#~ msgid "GIF image loader cannot understand this image."
+#~ msgstr "GIF ছবি লোড ব্যবস্থার দ্বারা এই ছবিটি বোধগম্য নয়।"
+
+#~ msgid "Bad code encountered"
+#~ msgstr "ভুল কোডের সম্মুখীন"
+
+#~ msgid "Circular table entry in GIF file"
+#~ msgstr "GIF ফাইলের মধ্যে বৃত্তাকার টেবিলের তথ্য উপস্থিত রয়েছে"
+
+# FIXME: Composite
+#~ msgid "Not enough memory to composite a frame in GIF file"
+#~ msgstr "GIF ফাইলের মধ্যে ফ্রেম অন্তর্ভুক্ত করার উদ্দেশ্যে পর্যাপ্ত মেমরি অনুপস্থিত"
+
+#~ msgid "The ICNS image format"
+#~ msgstr "ICNS ছবির বিন্যাস"
+
+#~ msgid "Icon has zero width"
+#~ msgstr "আইকনের প্রস্থের মাপ শূণ্য"
+
+#~ msgid "Icon has zero height"
+#~ msgstr "আইকনের দৈর্ঘ্যের মাপ শূন্য"
+
+#~ msgid "Couldn't allocate memory for stream"
+#~ msgstr "স্ট্রিমের জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
+
+#~ msgid "Couldn't decode image"
+#~ msgstr "ছবি ডি-কোড করতে ব্যর্থ"
+
+#~ msgid "Transformed JPEG2000 has zero width or height"
+#~ msgstr "রূপান্তরিত JPEG2000-র প্রস্থ অথবা দৈর্ঘ্যের মাপ শূণ্য।"
+
+#~ msgid "Image type currently not supported"
+#~ msgstr "চিহ্নিত প্রকৃতির ছবি সমর্থিত নয়"
+
+#~ msgid "Couldn't allocate memory for color profile"
+#~ msgstr "রঙের প্রোফাইলের জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
+
+#~ msgid "Insufficient memory to open JPEG 2000 file"
+#~ msgstr "JPEG 2000 ফাইল খোলার জন্য পর্যাপ্ত মেমরি অনুপস্থিত"
+
+# FIXME
+#~ msgid "Couldn't allocate memory to buffer image data"
+#~ msgstr "ছবি সংক্রান্ত তথ্য বাফার করার জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
+
+#~ msgid "The JPEG 2000 image format"
+#~ msgstr "JPEG 2000 ছবির বিন্যাস"
+
+#~ msgid "Couldn't allocate memory for header"
+#~ msgstr "হেডারের জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
+
+#~ msgid "Couldn't allocate memory for context buffer"
+#~ msgstr "কনটেক্সট-বাফারের জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
+
+#~ msgid "Image has invalid width and/or height"
+#~ msgstr "ছবির প্রস্থ এবং/অথবা দৈর্ঘ্যের মাপ বৈধ নয়"
+
+#~ msgid "Image has unsupported bpp"
+#~ msgstr "ছবির মধ্যে অসমর্থিত মাপের bpp উপস্থিত"
+
+#, c-format
+#~ msgid "Image has unsupported number of %d-bit planes"
+#~ msgstr "ছবির মধ্যে উপস্থিত %d-বিট প্লেইনের সংখ্যা সমর্থিত নয়"
+
+#~ msgid "Couldn't create new pixbuf"
+#~ msgstr "নতুন pixbuf তৈরি করতে ব্যর্থ"
+
+# FIXME
+#~ msgid "Couldn't allocate memory for line data"
+#~ msgstr "রেখা সংক্রান্ত তথ্যের জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
+
+#~ msgid "Couldn't allocate memory for PCX image"
+#~ msgstr "PCX ইমেজের জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
+
+#~ msgid "Didn't get all lines of PCX image"
+#~ msgstr "PCX ছবির জন্য সমস্ত রেখা প্রাপ্ত করা যায়নি"
+
+#~ msgid "No palette found at end of PCX data"
+#~ msgstr "PCX তথ্যের অন্তে কোনো প্যালেট সনাক্ত করা যায়নি"
+
+#~ msgid "The PCX image format"
+#~ msgstr "PCX ছবির বিন্যাস"
+
+#, fuzzy
+#~ msgid "Transformed pixbuf has zero width or height."
+#~ msgstr "রূপান্তরিত PNG'র প্রস্থ অথবা দৈর্ঘ্যের মাপ শূণ্য।"
+
+#, fuzzy
+#~ msgid "The CdkPixdata format"
+#~ msgstr "GIF ছবির বিন্যাস"
+
+#, c-format
+#~ msgid ""
+#~ "PNG compression level must be a value between 0 and 9; value '%s' could "
+#~ "not be parsed."
+#~ msgstr "PNG সংকুচনের মাত্রা ০ ও ৯'র মধ্যে হওয়া আবশ্যক; '%s' মান পার্স করতে ব্যর্থ।"
+
+#~ msgid "The PNG image format"
+#~ msgstr "PNG ছবির বিন্যাস"
+
+#~ msgid "The PNM/PBM/PGM/PPM image format family"
+#~ msgstr "PNM/PBM/PGM/PPM ছবির বিন্যাসের সংকলন"
+
+#~ msgid "The QTIF image format"
+#~ msgstr "QTIF ছবির বিন্যাস"
+
+#~ msgid "RAS image has bogus header data"
+#~ msgstr "RAS ছবির হেডারে ভুয়ো তথ্য"
+
+#~ msgid "RAS image has unknown type"
+#~ msgstr "RAS ছবির প্রকৃতি অজানা"
+
+#~ msgid "unsupported RAS image variation"
+#~ msgstr "RAS ছবির পরিবর্তন সমর্থিত নয়"
+
+#~ msgid "Not enough memory to load RAS image"
+#~ msgstr "RAS ছবি লোড করার জন্য পর্যাপ্ত মেমরি অনুপস্থিত"
+
+#~ msgid "The Sun raster image format"
+#~ msgstr "Sun রেসটার ছবির বিন্যাস"
+
+#~ msgid "Cannot allocate memory for IOBuffer struct"
+#~ msgstr "IOBuffer struct'র জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
+
+#~ msgid "Cannot allocate memory for IOBuffer data"
+#~ msgstr "IOBuffer তথ্যের জন্য মেমরি বরাদ্দ করতে ব্যর্থ"
+
+#~ msgid "Cannot realloc IOBuffer data"
+#~ msgstr "IOBuffer তথ্য পুনরায় বরাদ্দ (realloc) করতে ব্যর্থ"
+
+#~ msgid "Cannot allocate temporary IOBuffer data"
+#~ msgstr "অস্থায়ী IOBuffer তথ্য বরাদ্দ করতে ব্যর্থ"
+
+#~ msgid "Image is corrupted or truncated"
+#~ msgstr "ছবিটি ক্ষতিগ্রস্ত অথবা সেটি ছাঁটাই করা হয়েছে"
+
+#~ msgid "Cannot allocate colormap structure"
+#~ msgstr "colormap structure বরাদ্দ করতে ব্যর্থ"
+
+#~ msgid "Excess data in file"
+#~ msgstr "ফাইলে প্রয়োজনাতিরিক্ত তথ্য"
+
+#~ msgid "The Targa image format"
+#~ msgstr "Targa ছবির বিন্যাস"
+
+#~ msgid "TIFFClose operation failed"
+#~ msgstr "TIFFClose কর্ম সঞ্চালনে ব্যর্থ"
+
+#~ msgid "The TIFF image format"
+#~ msgstr "TIFF ছবির বিন্যাস"
+
+#~ msgid "Image has zero height"
+#~ msgstr "ছবির দৈর্ঘ্যের মাপ শূণ্য"
+
+#~ msgid "Not enough memory to load image"
+#~ msgstr "ছবি লোড করার জন্য পর্যাপ্ত মেমরি অনুপস্থিত"
+
+#~ msgid "Couldn't save the rest"
+#~ msgstr "অবশিষ্ট অংশ সংরক্ষণ করতে ব্যর্থ"
+
+#~ msgid "The WBMP image format"
+#~ msgstr "WBMP ছবির বিন্যাস"
+
+#~ msgid "The XBM image format"
+#~ msgstr "XBM ছবির বিন্যাস"
+
+#~ msgid "The XPM image format"
+#~ msgstr "XPM বিন্যাসের ছবি"
 
 #~ msgid "Couldn't allocate memory for paletted data"
 #~ msgstr "প্যালেট করা তথ্যের জন্য মেমরি বরাদ্দ করতে ব্যর্থ"

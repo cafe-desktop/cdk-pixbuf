@@ -14,9 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cdk-pixbuf MASTER\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=ctk"
-"%2b&keywords=I18N+L10N&component=cdk\n"
-"POT-Creation-Date: 2013-09-11 19:46+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 08:56+0200\n"
 "PO-Revision-Date: 2013-09-11 23:20+0300\n"
 "Last-Translator: Mattias Põldaru <mahfiaz@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -27,336 +26,513 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#, c-format
-msgid "Failed to open file '%s': %s"
+#: cdk-pixbuf/cdk-pixbuf-animation.c:190 cdk-pixbuf/cdk-pixbuf-io.c:1224
+#: cdk-pixbuf/cdk-pixbuf-io.c:1497
+#, fuzzy, c-format
+msgid "Failed to open file “%s”: %s"
 msgstr "Tõrge faili '%s' avamisel: %s"
 
-#, c-format
-msgid "Image file '%s' contains no data"
+#: cdk-pixbuf/cdk-pixbuf-animation.c:203 cdk-pixbuf/cdk-pixbuf-io.c:1085
+#, fuzzy, c-format
+msgid "Image file “%s” contains no data"
 msgstr "Pildifaili '%s' ei sisalda andmeid"
 
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-animation.c:241
+#, fuzzy, c-format
 msgid ""
-"Failed to load animation '%s': reason not known, probably a corrupt "
+"Failed to load animation “%s”: reason not known, probably a corrupt "
 "animation file"
 msgstr ""
 "Tõrge animatsiooni '%s' laadimisel: põhjus teadmata, arvatavasti on "
 "animatsioonifail rikutud"
 
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-animation.c:309 cdk-pixbuf/cdk-pixbuf-io.c:1260
+#: cdk-pixbuf/cdk-pixbuf-io.c:1549
+#, fuzzy, c-format
 msgid ""
-"Failed to load image '%s': reason not known, probably a corrupt image file"
+"Failed to load image “%s”: reason not known, probably a corrupt image file"
 msgstr ""
 "Tõrge pildifaili '%s' laadimisel: põhjus teadmata, arvatavasti on pildifail "
 "rikutud"
 
+#: cdk-pixbuf/cdk-pixbuf.c:248
+msgid "Number of Channels"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:249
+#, fuzzy
+msgid "The number of samples per pixel"
+msgstr "XPM sisaldab vigast \"sümboleid piksli kohta\" arvu"
+
+#: cdk-pixbuf/cdk-pixbuf.c:264
+msgid "Colorspace"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:265
+msgid "The colorspace in which the samples are interpreted"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:277
+msgid "Has Alpha"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:278
+msgid "Whether the pixbuf has an alpha channel"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:291
+msgid "Bits per Sample"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:292
+msgid "The number of bits per sample"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:305
+msgid "Width"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:306
+msgid "The number of columns of the pixbuf"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:319
+msgid "Height"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:320
+msgid "The number of rows of the pixbuf"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:337
+msgid "Rowstride"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:338
+msgid ""
+"The number of bytes between the start of a row and the start of the next row"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:351
+msgid "Pixels"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:352
+msgid "A pointer to the pixel data of the pixbuf"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:366
+msgid "Pixel Bytes"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:367
+msgid "Readonly pixel data"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf-io.c:901
 #, c-format
 msgid "Unable to load image-loading module: %s: %s"
 msgstr "Piltide laadimise moodulit pole võimalik laadida: %s: %s"
 
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-io.c:919
+#, fuzzy, c-format
 msgid ""
-"Image-loading module %s does not export the proper interface; perhaps it's "
+"Image-loading module %s does not export the proper interface; perhaps it’s "
 "from a different cdk-pixbuf version?"
 msgstr ""
 "Pildilaadimismoodul '%s' ei väljasta korralikku liidest. Võib-olla on "
 "tegemist erinevate cdk-pixbuf versioonidega?"
 
-#, c-format
-msgid "Image type '%s' is not supported"
+#: cdk-pixbuf/cdk-pixbuf-io.c:929 cdk-pixbuf/cdk-pixbuf-io.c:972
+#, fuzzy, c-format
+msgid "Image type “%s” is not supported"
 msgstr "'%s' pilditüüp pole toetatud"
 
-#, c-format
-msgid "Couldn't recognize the image file format for file '%s'"
+#: cdk-pixbuf/cdk-pixbuf-io.c:1057
+#, fuzzy, c-format
+msgid "Couldn’t recognize the image file format for file “%s”"
 msgstr "Pildifaili '%s' vormingut pole võimalik ära tunda"
 
+#: cdk-pixbuf/cdk-pixbuf-io.c:1065
 msgid "Unrecognized image file format"
 msgstr "Pildifaili vorming pole äratuntav"
 
-#, c-format
-msgid "Failed to load image '%s': %s"
+#: cdk-pixbuf/cdk-pixbuf-io.c:1271
+#, fuzzy, c-format
+msgid "Failed to load image “%s”: %s"
 msgstr "Tõrge pildi '%s' laadimisel: %s"
 
+#: cdk-pixbuf/cdk-pixbuf-io.c:2346 cdk-pixbuf/io-gdip-utils.c:840
 #, c-format
 msgid "Error writing to image file: %s"
 msgstr "Viga pildifaili kirjutamisel: %s"
 
+#: cdk-pixbuf/cdk-pixbuf-io.c:2388 cdk-pixbuf/cdk-pixbuf-io.c:2509
 #, c-format
 msgid "This build of cdk-pixbuf does not support saving the image format: %s"
 msgstr "See cdk-pixbuf'i variant ei toeta %s pildivormingu salvestamist"
 
+#: cdk-pixbuf/cdk-pixbuf-io.c:2419
 msgid "Insufficient memory to save image to callback"
 msgstr "Pildi väljakutsesse salvestamiseks pole piisavalt mälu"
 
+#: cdk-pixbuf/cdk-pixbuf-io.c:2432
 msgid "Failed to open temporary file"
 msgstr "Tõrge ajutise faili avamisel"
 
+#: cdk-pixbuf/cdk-pixbuf-io.c:2455
 msgid "Failed to read from temporary file"
 msgstr "Tõrge ajutisest failist lugemisel"
 
-#, c-format
-msgid "Failed to open '%s' for writing: %s"
+#: cdk-pixbuf/cdk-pixbuf-io.c:2677
+#, fuzzy, c-format
+msgid "Failed to open “%s” for writing: %s"
 msgstr "Tõrge faili '%s' kirjutamiseks avamisel: %s"
 
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-io.c:2703
+#, fuzzy, c-format
 msgid ""
-"Failed to close '%s' while writing image, all data may not have been saved: "
+"Failed to close “%s” while writing image, all data may not have been saved: "
 "%s"
 msgstr ""
 "Tõrge faili '%s' sulgemisel, kõik andmeid ei pruugi olla salvestatud: %s"
 
+#: cdk-pixbuf/cdk-pixbuf-io.c:2937 cdk-pixbuf/cdk-pixbuf-io.c:2992
 msgid "Insufficient memory to save image into a buffer"
 msgstr "Pildi puhvrisse salvestamiseks pole piisavalt mälu"
 
+#: cdk-pixbuf/cdk-pixbuf-io.c:3038
 msgid "Error writing to image stream"
 msgstr "Viga pildifaili voogu kirjutamisel"
 
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-loader.c:426
+#, fuzzy, c-format
 msgid ""
-"Internal error: Image loader module '%s' failed to complete an operation, "
-"but didn't give a reason for the failure"
+"Internal error: Image loader module “%s” failed to complete an operation, "
+"but didn’t give a reason for the failure"
 msgstr ""
 "Sisemine viga: pildilaadimismooduli '%s' tõrge toimingu läbiviimisel, moodul "
 "ei andud tõrke põhjuse kohta andmeid"
 
-#, c-format
-msgid "Incremental loading of image type '%s' is not supported"
+#: cdk-pixbuf/cdk-pixbuf-loader.c:468
+#, fuzzy, c-format
+msgid "Incremental loading of image type “%s” is not supported"
 msgstr "Osade kaupa laadimine pole %s pilditüübi puhul toetatud"
 
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:166
+msgid "Loop"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:167
+msgid "Whether the animation should loop when it reaches the end"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixdata.c:178
 msgid "Image header corrupt"
 msgstr "Pildi päis on rikutud"
 
+#: cdk-pixbuf/cdk-pixdata.c:183
 msgid "Image format unknown"
 msgstr "Pildi vorming on tundmatu"
 
+#: cdk-pixbuf/cdk-pixdata.c:188 cdk-pixbuf/cdk-pixdata.c:491
+#: cdk-pixbuf/cdk-pixdata.c:501 cdk-pixbuf/cdk-pixdata.c:597
 msgid "Image pixel data corrupt"
 msgstr "Pildi piksliandmed on rikutud"
 
+#: cdk-pixbuf/cdk-pixdata.c:513
 #, c-format
 msgid "failed to allocate image buffer of %u byte"
 msgid_plural "failed to allocate image buffer of %u bytes"
 msgstr[0] "Tõrge pildipuhvrile %u baidi eraldamisel"
 msgstr[1] "Tõrge pildipuhvrile %u baidi eraldamisel"
 
+#: cdk-pixbuf/io-ani.c:239
 msgid "Unexpected icon chunk in animation"
 msgstr "Animatsioonis on ootamatu ikoonitükk"
 
-msgid "Invalid header in animation"
-msgstr "Vigane päis animatsioonis"
-
-msgid "Not enough memory to load animation"
-msgstr "Animatsiooni laadimiseks pole piisavalt mälu"
-
+#: cdk-pixbuf/io-ani.c:303 cdk-pixbuf/io-ani.c:404 cdk-pixbuf/io-ani.c:430
+#: cdk-pixbuf/io-ani.c:449
 msgid "Malformed chunk in animation"
 msgstr "Animatsioonis on vigaselt vormindatud tükk"
 
+#: cdk-pixbuf/io-ani.c:311 cdk-pixbuf/io-ani.c:354 cdk-pixbuf/io-ani.c:412
+#: cdk-pixbuf/io-ani.c:438 cdk-pixbuf/io-ani.c:461 cdk-pixbuf/io-ani.c:488
+#: cdk-pixbuf/io-ani.c:575
+msgid "Invalid header in animation"
+msgstr "Vigane päis animatsioonis"
+
+#: cdk-pixbuf/io-ani.c:364 cdk-pixbuf/io-ani.c:386 cdk-pixbuf/io-ani.c:470
+#: cdk-pixbuf/io-ani.c:497 cdk-pixbuf/io-ani.c:548 cdk-pixbuf/io-ani.c:624
+msgid "Not enough memory to load animation"
+msgstr "Animatsiooni laadimiseks pole piisavalt mälu"
+
+#: cdk-pixbuf/io-ani.c:646
 msgid "ANI image was truncated or incomplete."
 msgstr "ANI-pilt pole täielik või on seda tükeldatud."
 
-msgid "The ANI image format"
-msgstr "ANI-pildivorming"
+#: cdk-pixbuf/io-ani.c:687
+msgctxt "image format"
+msgid "Windows animated cursor"
+msgstr ""
 
+#: cdk-pixbuf/io-bmp.c:234 cdk-pixbuf/io-bmp.c:275 cdk-pixbuf/io-bmp.c:385
+#: cdk-pixbuf/io-bmp.c:412 cdk-pixbuf/io-bmp.c:437 cdk-pixbuf/io-bmp.c:472
+#: cdk-pixbuf/io-bmp.c:494 cdk-pixbuf/io-bmp.c:572
 msgid "BMP image has bogus header data"
 msgstr "BMP-pildi päises on võltsandmed"
 
+#: cdk-pixbuf/io-bmp.c:245 cdk-pixbuf/io-bmp.c:507
 msgid "Not enough memory to load bitmap image"
 msgstr "Rasterpildi laadimiseks pole piisavalt mälu"
 
+#: cdk-pixbuf/io-bmp.c:339
 msgid "BMP image has unsupported header size"
 msgstr "BMP-pilt omas toetamata suurusega päist"
 
+#: cdk-pixbuf/io-bmp.c:348
+#, fuzzy
+msgid "BMP image has unsupported depth"
+msgstr "BMP-pilt omas toetamata suurusega päist"
+
+#: cdk-pixbuf/io-bmp.c:367
+#, fuzzy
+msgid "BMP image has oversize palette"
+msgstr "BMP-pildi päises on võltsandmed"
+
+#: cdk-pixbuf/io-bmp.c:399
 msgid "Topdown BMP images cannot be compressed"
 msgstr "Ülalt-alla suunaga BMP-pilte pole võimalik pakkida"
 
+#: cdk-pixbuf/io-bmp.c:424
+msgid "BMP image width too large"
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:814 cdk-pixbuf/io-png.c:587 cdk-pixbuf/io-pnm.c:722
+#: cdk-pixbuf/io-pnm.c:879
 msgid "Premature end-of-file encountered"
 msgstr "Faili lõpp tuli enneaegselt"
 
-msgid "Couldn't allocate memory for saving BMP file"
+#: cdk-pixbuf/io-bmp.c:1340
+msgid "Error while decoding colormap"
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:1403 cdk-pixbuf/io-bmp.c:1415
+msgid "Image is too wide for BMP format."
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:1448
+#, fuzzy
+msgid "Couldn’t allocate memory for saving BMP file"
 msgstr "BMP-faili salvestamiseks pole võimalik mälu eraldada"
 
-msgid "Couldn't write to BMP file"
+#: cdk-pixbuf/io-bmp.c:1489
+#, fuzzy
+msgid "Couldn’t write to BMP file"
 msgstr "BMP-faili pole võimalik kirjutada"
 
-msgid "The BMP image format"
-msgstr "BMP-pildivorming"
+#: cdk-pixbuf/io-bmp.c:1542 cdk-pixbuf/io-gdip-bmp.c:83
+msgctxt "image format"
+msgid "BMP"
+msgstr ""
 
-msgid "The EMF image format"
-msgstr "EMF-pildivorming"
+#: cdk-pixbuf/io-gdip-emf.c:61
+msgctxt "image format"
+msgid "EMF"
+msgstr ""
 
-msgid "The GIF image format"
-msgstr "GIF-failivorming"
+#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1039
+msgctxt "image format"
+msgid "GIF"
+msgstr ""
 
-msgid "The ICO image format"
-msgstr "ICO-pildivorming"
+#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1418
+msgctxt "image format"
+msgid "Windows icon"
+msgstr ""
 
-#, c-format
+#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1409
+#, fuzzy, c-format
 msgid ""
-"JPEG quality must be a value between 0 and 100; value '%s' could not be "
+"JPEG quality must be a value between 0 and 100; value “%s” could not be "
 "parsed."
 msgstr ""
 "JPEG kvaliteedi väärtus peab olema 0 ja 100 vahel; väärtust '%s' pole "
 "võimalik analüüsida."
 
-#, c-format
+#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1425
+#, fuzzy, c-format
 msgid ""
-"JPEG quality must be a value between 0 and 100; value '%d' is not allowed."
+"JPEG quality must be a value between 0 and 100; value “%d” is not allowed."
 msgstr ""
 "JPEG kvaliteedi väärtus peab olema 0 ja 100 vahel; väärtus '%d' pole lubatud."
 
-msgid "The JPEG image format"
-msgstr "JPEG-pildivorming"
+#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1710
+msgctxt "image format"
+msgid "JPEG"
+msgstr ""
 
+#: cdk-pixbuf/io-gdip-tiff.c:83 cdk-pixbuf/io-tiff.c:1087
+msgctxt "image format"
+msgid "TIFF"
+msgstr ""
+
+#: cdk-pixbuf/io-gdip-utils.c:155
 #, c-format
 msgid "Could not allocate memory: %s"
 msgstr "Mälu pole võimalik eraldada: %s"
 
+#: cdk-pixbuf/io-gdip-utils.c:180 cdk-pixbuf/io-gdip-utils.c:294
+#: cdk-pixbuf/io-gdip-utils.c:334
 #, c-format
 msgid "Could not create stream: %s"
 msgstr "Voogu pole võimalik luua: %s"
 
+#: cdk-pixbuf/io-gdip-utils.c:194
 #, c-format
 msgid "Could not seek stream: %s"
 msgstr "Voos pole võimalik asukohta vahetada: %s"
 
+#: cdk-pixbuf/io-gdip-utils.c:206
 #, c-format
 msgid "Could not read from stream: %s"
 msgstr "Voost pole võimalik lugeda: %s"
 
-msgid "Couldn't load bitmap"
+#: cdk-pixbuf/io-gdip-utils.c:620
+#, fuzzy
+msgid "Couldn’t load bitmap"
 msgstr "Rastergraafikat pole võimalik laadida"
 
-msgid "Couldn't load metafile"
+#: cdk-pixbuf/io-gdip-utils.c:776
+#, fuzzy
+msgid "Couldn’t load metafile"
 msgstr "Metafaili pole võimalik laadida"
 
+#: cdk-pixbuf/io-gdip-utils.c:881
 msgid "Unsupported image format for GDI+"
 msgstr "Toetamata pildivorming GDI+ jaoks"
 
-msgid "Couldn't save"
+#: cdk-pixbuf/io-gdip-utils.c:888
+#, fuzzy
+msgid "Couldn’t save"
 msgstr "Salvestamine pole võimalik"
 
-msgid "The WMF image format"
-msgstr "WMF-pildivorming"
+#: cdk-pixbuf/io-gdip-wmf.c:60
+msgctxt "image format"
+msgid "WMF"
+msgstr ""
 
+#: cdk-pixbuf/io-gif.c:160
 #, c-format
 msgid "Failure reading GIF: %s"
 msgstr "Viga GIF-faili lugemisel: %s"
 
-msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
-msgstr "GIF-failis on mõningad andmed puudu (kas seda on kuidagi tükeldatud?)"
-
-#, c-format
-msgid "Internal error in the GIF loader (%s)"
-msgstr "Sisemine viga GIF laadijas (%s)"
-
-msgid "Stack overflow"
-msgstr "Pinu ületäituvus"
-
-msgid "GIF image loader cannot understand this image."
-msgstr "GIF-pildifaili laadija ei saa sellest pildist aru."
-
-msgid "Bad code encountered"
-msgstr "Avastati vigane kood"
-
-msgid "Circular table entry in GIF file"
-msgstr "GIF-failis on ringseosega tabelikirje"
-
+#: cdk-pixbuf/io-gif.c:383 cdk-pixbuf/io-gif.c:850 cdk-pixbuf/io-gif.c:903
+#: cdk-pixbuf/io-gif.c:976
 msgid "Not enough memory to load GIF file"
 msgstr "GIF-faili laadimiseks pole piisavalt mälu"
 
-msgid "Not enough memory to composite a frame in GIF file"
-msgstr "GIF-failis liitraami loomiseks pole piisavalt mälu"
-
+#: cdk-pixbuf/io-gif.c:509
 msgid "GIF image is corrupt (incorrect LZW compression)"
 msgstr "GIF-pilt on rikutud (mittekorrektne LZW pakkimine)"
 
+#: cdk-pixbuf/io-gif.c:545
 msgid "File does not appear to be a GIF file"
 msgstr "Fail ei tundu olevat GIF-fail"
 
+#: cdk-pixbuf/io-gif.c:560
 #, c-format
 msgid "Version %s of the GIF file format is not supported"
 msgstr "GIF-failivormingu versioon %s pole toetatud"
 
+#: cdk-pixbuf/io-gif.c:589
 msgid "Resulting GIF image has zero size"
 msgstr "Saadud GIF pildi suurus on null"
 
+#: cdk-pixbuf/io-gif.c:659
 msgid ""
 "GIF image has no global colormap, and a frame inside it has no local "
 "colormap."
 msgstr ""
 "GIF-pildil puudub üldine värvikaart ja raami sees pole kohalikku värvikaarti."
 
+#: cdk-pixbuf/io-gif.c:863 cdk-pixbuf/io-gif.c:988
+msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
+msgstr "GIF-failis on mõningad andmed puudu (kas seda on kuidagi tükeldatud?)"
+
+#: cdk-pixbuf/io-gif.c:922
 msgid "GIF image was truncated or incomplete."
 msgstr "GIF-pilt pole täielik või on seda tükeldatud."
 
+#: cdk-pixbuf/io-gif.c:929
+msgid "Not all frames of the GIF image were loaded."
+msgstr ""
+
+#: cdk-pixbuf/io-icns.c:363
 #, c-format
 msgid "Error reading ICNS image: %s"
 msgstr "Viga ICNS-pildi lugemisel: %s"
 
+#: cdk-pixbuf/io-icns.c:380 cdk-pixbuf/io-icns.c:461
 msgid "Could not decode ICNS file"
 msgstr "ICNS-faili pole võimalik dekodeerida"
 
-msgid "The ICNS image format"
-msgstr "ICNS-pildivorming"
+#: cdk-pixbuf/io-icns.c:517
+msgctxt "image format"
+msgid "MacOS X icon"
+msgstr ""
 
-msgid "Invalid header in icon"
+#: cdk-pixbuf/io-ico.c:238 cdk-pixbuf/io-ico.c:252 cdk-pixbuf/io-ico.c:342
+#: cdk-pixbuf/io-ico.c:426 cdk-pixbuf/io-ico.c:451
+#, fuzzy, c-format
+msgid "Invalid header in icon (%s)"
 msgstr "Vigane päis ikoonis"
 
+#: cdk-pixbuf/io-ico.c:268 cdk-pixbuf/io-ico.c:355 cdk-pixbuf/io-ico.c:461
+#: cdk-pixbuf/io-ico.c:504 cdk-pixbuf/io-ico.c:532
 msgid "Not enough memory to load icon"
 msgstr "Ikooni laadimiseks pole piisavalt mälu"
 
+#: cdk-pixbuf/io-ico.c:386
+msgid "Invalid header in icon"
+msgstr "Vigane päis ikoonis"
+
+#: cdk-pixbuf/io-ico.c:387
 msgid "Compressed icons are not supported"
 msgstr "Pakitud ikoonid pole toetatud"
 
-msgid "Icon has zero width"
-msgstr "Ikoonil on null-laius"
-
-msgid "Icon has zero height"
-msgstr "Ikoonil on null-kõrgus"
-
+#: cdk-pixbuf/io-ico.c:489
 msgid "Unsupported icon type"
 msgstr "Toetamata ikoonitüüp"
 
+#: cdk-pixbuf/io-ico.c:583
 msgid "Not enough memory to load ICO file"
 msgstr "ICO-faili laadimiseks pole piisavalt mälu"
 
+#: cdk-pixbuf/io-ico.c:629
+#, fuzzy
+msgid "ICO image was truncated or incomplete."
+msgstr "ANI-pilt pole täielik või on seda tükeldatud."
+
+#: cdk-pixbuf/io-ico.c:1070
 msgid "Image too large to be saved as ICO"
 msgstr "Pilt on ICO-vormingus salvestamiseks liiga suur"
 
+#: cdk-pixbuf/io-ico.c:1081
 msgid "Cursor hotspot outside image"
 msgstr "Kursori tulipunkt jääb pildist välja"
 
+#: cdk-pixbuf/io-ico.c:1104
 #, c-format
 msgid "Unsupported depth for ICO file: %d"
 msgstr "Toetamata värvisügavus %d ICO-faili jaoks"
 
-msgid "Couldn't allocate memory for stream"
-msgstr "Voo jaoks pole võimalik mälu eraldada"
-
-msgid "Couldn't decode image"
-msgstr "Pilti pole võimalik dekodeerida"
-
-msgid "Transformed JPEG2000 has zero width or height"
-msgstr "Transformeeritud JPEG2000 laius või kõrgus on null"
-
-msgid "Image type currently not supported"
-msgstr "Pilditüüp pole hetkel toetatud"
-
-msgid "Couldn't allocate memory for color profile"
-msgstr "Värviprofiilile pole võimalik mälu eraldada"
-
-msgid "Insufficient memory to open JPEG 2000 file"
-msgstr "JPEG 2000 faili avamiseks pole piisavalt mälu"
-
-msgid "Couldn't allocate memory to buffer image data"
-msgstr "Pildi andmete puhverdamiseks pole võimalik mälu eraldada"
-
-msgid "The JPEG 2000 image format"
-msgstr "JPEG 2000 pildivorming"
-
+#: cdk-pixbuf/io-jpeg.c:131
 #, c-format
 msgid "Error interpreting JPEG image file (%s)"
 msgstr "Viga JPEG-pildifaili (%s) tõlgendamisel"
 
+#: cdk-pixbuf/io-jpeg.c:647
 msgid ""
 "Insufficient memory to load image, try exiting some applications to free "
 "memory"
@@ -364,83 +540,81 @@ msgstr ""
 "Pildifaili laadimiseks pole piisavalt mälu. Mälu vabastamiseks võid sa "
 "proovida sulgeda mõned rakendused"
 
+#: cdk-pixbuf/io-jpeg.c:720 cdk-pixbuf/io-jpeg.c:970
 #, c-format
 msgid "Unsupported JPEG color space (%s)"
 msgstr "Toetamata JPEG värviruum (%s)"
 
-msgid "Couldn't allocate memory for loading JPEG file"
+#: cdk-pixbuf/io-jpeg.c:845 cdk-pixbuf/io-jpeg.c:1169 cdk-pixbuf/io-jpeg.c:1516
+#: cdk-pixbuf/io-jpeg.c:1526
+#, fuzzy
+msgid "Couldn’t allocate memory for loading JPEG file"
 msgstr "JPEG-faili laadimiseks pole võimalik mälu eraldada"
 
+#: cdk-pixbuf/io-jpeg.c:1127
 msgid "Transformed JPEG has zero width or height."
 msgstr "Transformeeritud JPEG laius või kõrgus on null."
 
-#, c-format
-msgid "Color profile has invalid length '%u'."
+#: cdk-pixbuf/io-jpeg.c:1153
+#, fuzzy, c-format
+msgid "Unsupported number of color components (%d)"
+msgstr "Toetamata JPEG värviruum (%s)"
+
+#: cdk-pixbuf/io-jpeg.c:1446
+#, fuzzy, c-format
+msgid ""
+"JPEG x-dpi must be a value between 1 and 65535; value “%s” is not allowed."
+msgstr ""
+"JPEG kvaliteedi väärtus peab olema 0 ja 100 vahel; väärtus '%d' pole lubatud."
+
+#: cdk-pixbuf/io-jpeg.c:1467
+#, fuzzy, c-format
+msgid ""
+"JPEG y-dpi must be a value between 1 and 65535; value “%s” is not allowed."
+msgstr ""
+"JPEG kvaliteedi väärtus peab olema 0 ja 100 vahel; väärtus '%d' pole lubatud."
+
+#: cdk-pixbuf/io-jpeg.c:1481
+#, fuzzy, c-format
+msgid "Color profile has invalid length “%u”."
 msgstr "Värvusprofiilil pikkus '%u' on vigane."
 
-msgid "Couldn't allocate memory for header"
-msgstr "Päise jaoks pole võimalik mälu eraldada"
-
-msgid "Couldn't allocate memory for context buffer"
-msgstr "Kontekstipuhvri jaoks pole võimalik mälu eraldada"
-
-msgid "Image has invalid width and/or height"
-msgstr "Pildil on vigane laius ja/või kõrgus"
-
-msgid "Image has unsupported bpp"
-msgstr "Pildil on toetamata värvisügavus"
-
-#, c-format
-msgid "Image has unsupported number of %d-bit planes"
-msgstr "Pildil on toetamata hulk %d-bitiseid tasandeid"
-
-msgid "Couldn't create new pixbuf"
-msgstr "Uut pixbuf'i pole võimalik luua"
-
-msgid "Couldn't allocate memory for line data"
-msgstr "Joone andmetele pole võimalik mälu eraldada"
-
-msgid "Couldn't allocate memory for PCX image"
-msgstr "PCX-pildi jaoks pole võimalik mälu eraldada"
-
-msgid "Didn't get all lines of PCX image"
-msgstr "PCX-pildi jaoks ei saadud kõiki ridu"
-
-msgid "No palette found at end of PCX data"
-msgstr "PCX-andmete lõpust ei leitud paletti"
-
-msgid "The PCX image format"
-msgstr "PCX-pildivorming"
-
-msgid "Transformed pixbuf has zero width or height."
-msgstr "Transformeeritud pixbuf'i laius või kõrgus on null."
-
-msgid "The CdkPixdata format"
-msgstr "CdkPixdata vorming"
-
+#: cdk-pixbuf/io-png.c:64
 msgid "Bits per channel of PNG image is invalid."
 msgstr "Bittide arv PNG-faili kanalis on vigane."
 
+#: cdk-pixbuf/io-png.c:145 cdk-pixbuf/io-png.c:730
 msgid "Transformed PNG has zero width or height."
 msgstr "Transformeeritud PNG laius või kõrgus on null."
 
+#: cdk-pixbuf/io-png.c:153
 msgid "Bits per channel of transformed PNG is not 8."
 msgstr "Bittide arv transformeeritud PNG kanali kohta pole 8."
 
+#: cdk-pixbuf/io-png.c:162
 msgid "Transformed PNG not RGB or RGBA."
 msgstr "Transformeeritud PNG pole RGB ega RGBA."
 
+#: cdk-pixbuf/io-png.c:171
 msgid "Transformed PNG has unsupported number of channels, must be 3 or 4."
 msgstr ""
 "Transformeeritud PNG omab toetamata arvu kanaleid, peaks olema 3 või 4."
 
+#: cdk-pixbuf/io-png.c:193
 #, c-format
 msgid "Fatal error in PNG image file: %s"
 msgstr "Saatuslik viga PNG-pildifailis: %s"
 
+#: cdk-pixbuf/io-png.c:338
 msgid "Insufficient memory to load PNG file"
 msgstr "PNG-faili laadimiseks pole piisavalt mälu"
 
+#: cdk-pixbuf/io-png.c:519 cdk-pixbuf/io-png.c:540
+#, fuzzy
+msgid "Couldn’t allocate memory for loading PNG"
+msgstr "JPEG-faili laadimiseks pole võimalik mälu eraldada"
+
+#: cdk-pixbuf/io-png.c:743
 #, c-format
 msgid ""
 "Insufficient memory to store a %lu by %lu image; try exiting some "
@@ -449,288 +623,550 @@ msgstr ""
 "%lu x%lu suurusega pildi salvestamiseks pole piisavalt mälu. Mälukasutuse "
 "vähendamiseks võid sa proovida mõnede rakenduste sulgemist"
 
+#: cdk-pixbuf/io-png.c:820
 msgid "Fatal error reading PNG image file"
 msgstr "Saatuslik viga PNG-pildifaili lugemisel"
 
+#: cdk-pixbuf/io-png.c:873
 #, c-format
 msgid "Fatal error reading PNG image file: %s"
 msgstr "Saatuslik viga PNG-pildifaili lugemisel: %s"
 
+#: cdk-pixbuf/io-png.c:972
+#, fuzzy, c-format
 msgid ""
-"Keys for PNG text chunks must have at least 1 and at most 79 characters."
+"Invalid key “%s”. Keys for PNG text chunks must have at least 1 and at most "
+"79 characters."
 msgstr ""
 "PNG tekstitükkide võtmed peavad olema vähemalt 1 märgi ja kõige rohkem 79 "
 "märgi pikkused."
 
-msgid "Keys for PNG text chunks must be ASCII characters."
+#: cdk-pixbuf/io-png.c:985
+#, fuzzy, c-format
+msgid "Invalid key “%s”. Keys for PNG text chunks must be ASCII characters."
 msgstr "PNG tekstitükkide võtmed peavad olema ASCII-märkidena."
 
-#, c-format
-msgid "Color profile has invalid length %d."
-msgstr "Värvusprofiilil on vigane pikkus %d."
-
-#, c-format
+#: cdk-pixbuf/io-png.c:1015
+#, fuzzy, c-format
 msgid ""
-"PNG compression level must be a value between 0 and 9; value '%s' could not "
-"be parsed."
-msgstr ""
-"PNG pakkimistase peab olema 0 ja 9 vahel; väärtust '%s' pole võimalik "
-"analüüsida."
-
-#, c-format
-msgid ""
-"PNG compression level must be a value between 0 and 9; value '%d' is not "
-"allowed."
-msgstr "PNG pakkimistase peab olema 0 ja 9 vahel; väärtus '%d' pole lubatud."
-
-#, c-format
-msgid "Value for PNG text chunk %s cannot be converted to ISO-8859-1 encoding."
+"Value for PNG text chunk '%s' cannot be converted to ISO-8859-1 encoding."
 msgstr ""
 "PNG tekstitüki %s väärtust pole võimalik ISO-8859-1 kooditabelile vastavaks "
 "teisendada."
 
-msgid "The PNG image format"
-msgstr "PNG-pildivorming"
+#: cdk-pixbuf/io-png.c:1027
+#, fuzzy, c-format
+msgid "Color profile has invalid length %d"
+msgstr "Värvusprofiilil on vigane pikkus %d."
 
-msgid "PNM loader expected to find an integer, but didn't"
+#: cdk-pixbuf/io-png.c:1039
+#, fuzzy, c-format
+msgid ""
+"PNG compression level must be a value between 0 and 9; value “%s” is invalid"
+msgstr "PNG pakkimistase peab olema 0 ja 9 vahel; väärtus '%d' pole lubatud."
+
+#: cdk-pixbuf/io-png.c:1053
+#, fuzzy, c-format
+msgid "PNG %s must be greater than zero; value “%s” is not allowed"
+msgstr ""
+"JPEG kvaliteedi väärtus peab olema 0 ja 100 vahel; väärtus '%d' pole lubatud."
+
+#: cdk-pixbuf/io-png.c:1283
+msgctxt "image format"
+msgid "PNG"
+msgstr ""
+
+#: cdk-pixbuf/io-pnm.c:247
+#, fuzzy
+msgid "PNM loader expected to find an integer, but didn’t"
 msgstr "PNM laadur lootis leida täisarvu, kuid ei leidnud"
 
+#: cdk-pixbuf/io-pnm.c:279
 msgid "PNM file has an incorrect initial byte"
 msgstr "PNM-failil on ebakorrektne algbait"
 
+#: cdk-pixbuf/io-pnm.c:309
 msgid "PNM file is not in a recognized PNM subformat"
 msgstr "PNM-fail pole äratuntavas PNM-alamvormingus"
 
+#: cdk-pixbuf/io-pnm.c:334
+#, fuzzy
+msgid "PNM file has an invalid width"
+msgstr "PNM-failil on pildi laius 0"
+
+#: cdk-pixbuf/io-pnm.c:342
 msgid "PNM file has an image width of 0"
 msgstr "PNM-failil on pildi laius 0"
 
+#: cdk-pixbuf/io-pnm.c:363
+#, fuzzy
+msgid "PNM file has an invalid height"
+msgstr "PNM-failil on pildi kõrgus 0"
+
+#: cdk-pixbuf/io-pnm.c:371
 msgid "PNM file has an image height of 0"
 msgstr "PNM-failil on pildi kõrgus 0"
 
+#: cdk-pixbuf/io-pnm.c:394
 msgid "Maximum color value in PNM file is 0"
 msgstr "Maksimaalne suurim värvi väärtus PNM-failis on 0"
 
+#: cdk-pixbuf/io-pnm.c:402
 msgid "Maximum color value in PNM file is too large"
 msgstr "Maksimaalne suurim värvi väärtus PNM-failis on liiga suur"
 
+#: cdk-pixbuf/io-pnm.c:442 cdk-pixbuf/io-pnm.c:472 cdk-pixbuf/io-pnm.c:517
 msgid "Raw PNM image type is invalid"
 msgstr "Toore PNM-faili tüüp on vigane"
 
+#: cdk-pixbuf/io-pnm.c:667
 msgid "PNM image loader does not support this PNM subformat"
 msgstr "PNM-pildivormingu laadija ei toeta seda PNM-alamvormingut"
 
+#: cdk-pixbuf/io-pnm.c:754 cdk-pixbuf/io-pnm.c:991
 msgid "Raw PNM formats require exactly one whitespace before sample data"
 msgstr ""
 "Toored PNM-vormingud nõuavad näidisandmete ette vähemalt ühte tühemikku"
 
+#: cdk-pixbuf/io-pnm.c:781
 msgid "Cannot allocate memory for loading PNM image"
 msgstr "PNM-faili laadimiseks pole võimalik mälu eraldada"
 
+#: cdk-pixbuf/io-pnm.c:835
 msgid "Insufficient memory to load PNM context struct"
 msgstr "PNM kontekstistruktuuri laadimiseks pole piisavalt mälu"
 
+#: cdk-pixbuf/io-pnm.c:892
 msgid "Unexpected end of PNM image data"
 msgstr "Ootamatu PNM-pildi andmete lõpp"
 
+#: cdk-pixbuf/io-pnm.c:1020
 msgid "Insufficient memory to load PNM file"
 msgstr "PNM-faili laadimiseks pole piisavalt mälu"
 
-msgid "The PNM/PBM/PGM/PPM image format family"
-msgstr "PNM/PBM/PGM/PPM-pildivormingu perekond"
+#: cdk-pixbuf/io-pnm.c:1103
+msgctxt "image format"
+msgid "PNM/PBM/PGM/PPM"
+msgstr ""
 
+#: cdk-pixbuf/io-qtif.c:126
 msgid "Input file descriptor is NULL."
 msgstr "Sisendfaili deskriptor on NULL."
 
+#: cdk-pixbuf/io-qtif.c:141
 msgid "Failed to read QTIF header"
 msgstr "Tõrge QTIF-päise lugemisel"
 
+#: cdk-pixbuf/io-qtif.c:150 cdk-pixbuf/io-qtif.c:187 cdk-pixbuf/io-qtif.c:449
 #, c-format
 msgid "QTIF atom size too large (%d byte)"
 msgid_plural "QTIF atom size too large (%d bytes)"
 msgstr[0] "QTIF-aatom on liiga suur (%d bait)"
 msgstr[1] "QTIF-aatom on liiga suur (%d baiti)"
 
+#: cdk-pixbuf/io-qtif.c:173
 #, c-format
 msgid "Failed to allocate %d byte for file read buffer"
 msgid_plural "Failed to allocate %d bytes for file read buffer"
 msgstr[0] "Tõrge faililugemispuhvrile %d baidi eraldamisel"
 msgstr[1] "Tõrge faililugemispuhvrile %d baidi eraldamisel"
 
+#: cdk-pixbuf/io-qtif.c:201
 #, c-format
 msgid "File error when reading QTIF atom: %s"
 msgstr "QTIF-aatomi lugemisel esines failitõrge: %s"
 
+#: cdk-pixbuf/io-qtif.c:238
 #, c-format
 msgid "Failed to skip the next %d byte with seek()."
 msgid_plural "Failed to skip the next %d bytes with seek()."
 msgstr[0] "Tõrge seek() abil järgnevast %d baidist ülehüppamisel."
 msgstr[1] "Tõrge seek() abil järgnevast %d baidist ülehüppamisel."
 
+#: cdk-pixbuf/io-qtif.c:269
 msgid "Failed to allocate QTIF context structure."
 msgstr "QTIF kontekstistruktuuri jaoks pole võimalik ruumi eraldada."
 
+#: cdk-pixbuf/io-qtif.c:329
 msgid "Failed to create CdkPixbufLoader object."
 msgstr "Tõrge CdkPixbufLoader objekti loomisel."
 
+#: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
 msgstr "Pildi andmeaatomi leidmine nurjus."
 
-msgid "The QTIF image format"
-msgstr "QTIF-pildivorming"
+#: cdk-pixbuf/io-qtif.c:599
+msgctxt "image format"
+msgid "QuickTime"
+msgstr ""
 
-msgid "RAS image has bogus header data"
-msgstr "RAS-pildi päises on võltsandmed"
+#: cdk-pixbuf/io-tga.c:346
+#, fuzzy
+msgid "Cannot allocate colormap"
+msgstr "Värvikaardi kirjetele pole võimalik mälu eraldada"
 
-msgid "RAS image has unknown type"
-msgstr "RAS-pildil on tundmatu tüüp"
-
-msgid "unsupported RAS image variation"
-msgstr "RAS-pildi toetamata variatsioon"
-
-msgid "Not enough memory to load RAS image"
-msgstr "RAS-pildi laadimiseks pole piisavalt mälu"
-
-msgid "The Sun raster image format"
-msgstr "Sun'i rasterpildivorming"
-
-msgid "Cannot allocate memory for IOBuffer struct"
-msgstr "IOBuffer struktuuri jaoks pole võimalik mälu eraldada"
-
-msgid "Cannot allocate memory for IOBuffer data"
-msgstr "IOBuffer andmete jaoks pole võimalik mälu eraldada"
-
-msgid "Cannot realloc IOBuffer data"
-msgstr "IO-puhvri andmeid pole võimalik ümber paigutada"
-
-msgid "Cannot allocate temporary IOBuffer data"
-msgstr "IOBuffer andmetele pole võimalik mälu eraldada"
-
+#: cdk-pixbuf/io-tga.c:371
 msgid "Cannot allocate new pixbuf"
 msgstr "Uut pixbuf'i pole võimalik eraldada"
 
-msgid "Image is corrupted or truncated"
-msgstr "Tõmmis pole täielik või on tükeldatud"
-
-msgid "Cannot allocate colormap structure"
-msgstr "Värvikaardi struktuurile pole võimalik mälu eraldada"
-
-msgid "Cannot allocate colormap entries"
-msgstr "Värvikaardi kirjetele pole võimalik mälu eraldada"
-
+#: cdk-pixbuf/io-tga.c:519
 msgid "Unexpected bitdepth for colormap entries"
 msgstr "Ootamatu bitisügavus värvikaardi kirjetele"
 
+#: cdk-pixbuf/io-tga.c:535
+msgid "Pseudocolor image does not contain a colormap"
+msgstr ""
+
+#: cdk-pixbuf/io-tga.c:578
 msgid "Cannot allocate TGA header memory"
 msgstr "TGA päisele pole võimalik mälu eraldada"
 
+#: cdk-pixbuf/io-tga.c:609
 msgid "TGA image has invalid dimensions"
 msgstr "TGA-pildil on vigane suurus"
 
+#: cdk-pixbuf/io-tga.c:615 cdk-pixbuf/io-tga.c:622
 msgid "TGA image type not supported"
 msgstr "TGA-pilditüüp pole toetatud"
 
+#: cdk-pixbuf/io-tga.c:650
 msgid "Cannot allocate memory for TGA context struct"
 msgstr "TGA kontekstistruktuuri jaoks pole võimalik mälu eraldada"
 
-msgid "Excess data in file"
-msgstr "Failis on liigsed andmed"
+#: cdk-pixbuf/io-tga.c:712
+#, fuzzy
+msgid "TGA image was truncated or incomplete."
+msgstr "ANI-pilt pole täielik või on seda tükeldatud."
 
-msgid "The Targa image format"
-msgstr "Targa pildivorming"
+#: cdk-pixbuf/io-tga.c:764
+msgctxt "image format"
+msgid "Targa"
+msgstr ""
 
+#: cdk-pixbuf/io-tiff.c:117
 msgid "Could not get image width (bad TIFF file)"
 msgstr "Pildi laiust pole võimalik tuvastada (vigane TIFF-fail)"
 
+#: cdk-pixbuf/io-tiff.c:125
 msgid "Could not get image height (bad TIFF file)"
 msgstr "Pildi kõrgust pole võimalik tuvastada (vigane TIFF-fail)"
 
+#: cdk-pixbuf/io-tiff.c:133
 msgid "Width or height of TIFF image is zero"
 msgstr "TIFF-pildi laius või kõrgus on null"
 
+#: cdk-pixbuf/io-tiff.c:141 cdk-pixbuf/io-tiff.c:151
 msgid "Dimensions of TIFF image too large"
 msgstr "TIFF-pildi mõõtmed on liiga suured"
 
+#: cdk-pixbuf/io-tiff.c:177 cdk-pixbuf/io-tiff.c:189 cdk-pixbuf/io-tiff.c:585
 msgid "Insufficient memory to open TIFF file"
 msgstr "TIFF-faili avamiseks pole piisavalt mälu"
 
+#: cdk-pixbuf/io-tiff.c:287
 msgid "Failed to load RGB data from TIFF file"
 msgstr "TIFF-failist pole võimalik RGB andmeid lugeda "
 
+#: cdk-pixbuf/io-tiff.c:378
 msgid "Failed to open TIFF image"
 msgstr "Tõrge TIFF-faili avamisel"
 
+#: cdk-pixbuf/io-tiff.c:516 cdk-pixbuf/io-tiff.c:528
 msgid "Failed to load TIFF image"
 msgstr "Tõrge TIFF-faili laadimisel"
 
+#: cdk-pixbuf/io-tiff.c:760
 msgid "Failed to save TIFF image"
 msgstr "Tõrge TIFF-faili salvestamisel"
 
-msgid "TIFF compression doesn't refer to a valid codec."
+#: cdk-pixbuf/io-tiff.c:821
+#, fuzzy
+msgid "TIFF compression doesn’t refer to a valid codec."
 msgstr "TIFF-pakkimine ei viita korrektsele koodekile."
 
+#: cdk-pixbuf/io-tiff.c:851
+#, c-format
+msgid "Color profile has invalid length %d."
+msgstr "Värvusprofiilil on vigane pikkus %d."
+
+#: cdk-pixbuf/io-tiff.c:866
+msgid "TIFF bits-per-sample doesn’t contain a supported value."
+msgstr ""
+
+#: cdk-pixbuf/io-tiff.c:947
 msgid "Failed to write TIFF data"
 msgstr "Tõrge TIFF-andmete kirjutamisel"
 
-msgid "Couldn't write to TIFF file"
+#: cdk-pixbuf/io-tiff.c:965
+#, fuzzy, c-format
+msgid "TIFF x-dpi must be greater than zero; value “%s” is not allowed."
+msgstr ""
+"JPEG kvaliteedi väärtus peab olema 0 ja 100 vahel; väärtus '%d' pole lubatud."
+
+#: cdk-pixbuf/io-tiff.c:977
+#, fuzzy, c-format
+msgid "TIFF y-dpi must be greater than zero; value “%s” is not allowed."
+msgstr ""
+"JPEG kvaliteedi väärtus peab olema 0 ja 100 vahel; väärtus '%d' pole lubatud."
+
+#: cdk-pixbuf/io-tiff.c:1018
+#, fuzzy
+msgid "Couldn’t write to TIFF file"
 msgstr "TIFF-faili pole võimalik kirjutada"
 
-msgid "The TIFF image format"
-msgstr "TIFF-pildivorming"
-
-msgid "Image has zero width"
-msgstr "Pildi laius on null"
-
-msgid "Image has zero height"
-msgstr "Pildi kõrgus on null"
-
-msgid "Not enough memory to load image"
-msgstr "Pildi laadimiseks pole piisavalt mälu"
-
-msgid "Couldn't save the rest"
-msgstr "Ülejäänut pole võimalik salvestada"
-
-msgid "The WBMP image format"
-msgstr "WBMP-pildivorming"
-
+#: cdk-pixbuf/io-xbm.c:320
 msgid "Invalid XBM file"
 msgstr "Vigane XBM-fail"
 
+#: cdk-pixbuf/io-xbm.c:331
 msgid "Insufficient memory to load XBM image file"
 msgstr "XBM-pildifaili laadimiseks pole piisavalt mälu"
 
+#: cdk-pixbuf/io-xbm.c:482
 msgid "Failed to write to temporary file when loading XBM image"
 msgstr "Tõrge XBM-pildi laadimise käigus ajutisse faili kirjutamisel"
 
-msgid "The XBM image format"
-msgstr "XBM-pildivorming"
+#: cdk-pixbuf/io-xbm.c:521
+msgctxt "image format"
+msgid "XBM"
+msgstr ""
 
+#: cdk-pixbuf/io-xpm.c:472
 msgid "No XPM header found"
 msgstr "XPM päist ei leitud"
 
+#: cdk-pixbuf/io-xpm.c:481 cdk-pixbuf/io-xpm.c:507
 msgid "Invalid XPM header"
 msgstr "Vigane XPM päis"
 
+#: cdk-pixbuf/io-xpm.c:489
 msgid "XPM file has image width <= 0"
 msgstr "XPM-failil on pildi laius <= 0 "
 
+#: cdk-pixbuf/io-xpm.c:497
 msgid "XPM file has image height <= 0"
 msgstr "XPM-failil on pildi kõrgus <= 0 "
 
+#: cdk-pixbuf/io-xpm.c:514
 msgid "XPM has invalid number of chars per pixel"
 msgstr "XPM sisaldab vigast \"sümboleid piksli kohta\" arvu"
 
+#: cdk-pixbuf/io-xpm.c:523
 msgid "XPM file has invalid number of colors"
 msgstr "XPM-fail sisaldab vigast värvide arvu"
 
+#: cdk-pixbuf/io-xpm.c:535 cdk-pixbuf/io-xpm.c:544 cdk-pixbuf/io-xpm.c:593
 msgid "Cannot allocate memory for loading XPM image"
 msgstr "XPM-faili laadimiseks pole võimalik mälu eraldada"
 
 # see on kahtlane, kas ühtegi XMP värvikaarti ei loeta?
+#: cdk-pixbuf/io-xpm.c:558
 msgid "Cannot read XPM colormap"
 msgstr "XPM värvikaarti ei suudeta lugeda"
 
+#: cdk-pixbuf/io-xpm.c:610
+#, fuzzy
+msgid "Dimensions do not match data"
+msgstr "TIFF-pildi mõõtmed on liiga suured"
+
+#: cdk-pixbuf/io-xpm.c:806
 msgid "Failed to write to temporary file when loading XPM image"
 msgstr "Tõrge ajutise faili kirjutamisel XPM-pildi laadimisel"
 
-msgid "The XPM image format"
-msgstr "XPM-pildivorming"
+#: cdk-pixbuf/io-xpm.c:845
+msgctxt "image format"
+msgid "XPM"
+msgstr ""
+
+#~ msgid "The ANI image format"
+#~ msgstr "ANI-pildivorming"
+
+#~ msgid "The BMP image format"
+#~ msgstr "BMP-pildivorming"
+
+#~ msgid "The EMF image format"
+#~ msgstr "EMF-pildivorming"
+
+#~ msgid "The GIF image format"
+#~ msgstr "GIF-failivorming"
+
+#~ msgid "The ICO image format"
+#~ msgstr "ICO-pildivorming"
+
+#~ msgid "The JPEG image format"
+#~ msgstr "JPEG-pildivorming"
+
+#~ msgid "The WMF image format"
+#~ msgstr "WMF-pildivorming"
+
+#, c-format
+#~ msgid "Internal error in the GIF loader (%s)"
+#~ msgstr "Sisemine viga GIF laadijas (%s)"
+
+#~ msgid "Stack overflow"
+#~ msgstr "Pinu ületäituvus"
+
+#~ msgid "GIF image loader cannot understand this image."
+#~ msgstr "GIF-pildifaili laadija ei saa sellest pildist aru."
+
+#~ msgid "Bad code encountered"
+#~ msgstr "Avastati vigane kood"
+
+#~ msgid "Circular table entry in GIF file"
+#~ msgstr "GIF-failis on ringseosega tabelikirje"
+
+#~ msgid "Not enough memory to composite a frame in GIF file"
+#~ msgstr "GIF-failis liitraami loomiseks pole piisavalt mälu"
+
+#~ msgid "The ICNS image format"
+#~ msgstr "ICNS-pildivorming"
+
+#~ msgid "Icon has zero width"
+#~ msgstr "Ikoonil on null-laius"
+
+#~ msgid "Icon has zero height"
+#~ msgstr "Ikoonil on null-kõrgus"
+
+#~ msgid "Couldn't allocate memory for stream"
+#~ msgstr "Voo jaoks pole võimalik mälu eraldada"
+
+#~ msgid "Couldn't decode image"
+#~ msgstr "Pilti pole võimalik dekodeerida"
+
+#~ msgid "Transformed JPEG2000 has zero width or height"
+#~ msgstr "Transformeeritud JPEG2000 laius või kõrgus on null"
+
+#~ msgid "Image type currently not supported"
+#~ msgstr "Pilditüüp pole hetkel toetatud"
+
+#~ msgid "Couldn't allocate memory for color profile"
+#~ msgstr "Värviprofiilile pole võimalik mälu eraldada"
+
+#~ msgid "Insufficient memory to open JPEG 2000 file"
+#~ msgstr "JPEG 2000 faili avamiseks pole piisavalt mälu"
+
+#~ msgid "Couldn't allocate memory to buffer image data"
+#~ msgstr "Pildi andmete puhverdamiseks pole võimalik mälu eraldada"
+
+#~ msgid "The JPEG 2000 image format"
+#~ msgstr "JPEG 2000 pildivorming"
+
+#~ msgid "Couldn't allocate memory for header"
+#~ msgstr "Päise jaoks pole võimalik mälu eraldada"
+
+#~ msgid "Couldn't allocate memory for context buffer"
+#~ msgstr "Kontekstipuhvri jaoks pole võimalik mälu eraldada"
+
+#~ msgid "Image has invalid width and/or height"
+#~ msgstr "Pildil on vigane laius ja/või kõrgus"
+
+#~ msgid "Image has unsupported bpp"
+#~ msgstr "Pildil on toetamata värvisügavus"
+
+#, c-format
+#~ msgid "Image has unsupported number of %d-bit planes"
+#~ msgstr "Pildil on toetamata hulk %d-bitiseid tasandeid"
+
+#~ msgid "Couldn't create new pixbuf"
+#~ msgstr "Uut pixbuf'i pole võimalik luua"
+
+#~ msgid "Couldn't allocate memory for line data"
+#~ msgstr "Joone andmetele pole võimalik mälu eraldada"
+
+#~ msgid "Couldn't allocate memory for PCX image"
+#~ msgstr "PCX-pildi jaoks pole võimalik mälu eraldada"
+
+#~ msgid "Didn't get all lines of PCX image"
+#~ msgstr "PCX-pildi jaoks ei saadud kõiki ridu"
+
+#~ msgid "No palette found at end of PCX data"
+#~ msgstr "PCX-andmete lõpust ei leitud paletti"
+
+#~ msgid "The PCX image format"
+#~ msgstr "PCX-pildivorming"
+
+#~ msgid "Transformed pixbuf has zero width or height."
+#~ msgstr "Transformeeritud pixbuf'i laius või kõrgus on null."
+
+#~ msgid "The CdkPixdata format"
+#~ msgstr "CdkPixdata vorming"
+
+#, c-format
+#~ msgid ""
+#~ "PNG compression level must be a value between 0 and 9; value '%s' could "
+#~ "not be parsed."
+#~ msgstr ""
+#~ "PNG pakkimistase peab olema 0 ja 9 vahel; väärtust '%s' pole võimalik "
+#~ "analüüsida."
+
+#~ msgid "The PNG image format"
+#~ msgstr "PNG-pildivorming"
+
+#~ msgid "The PNM/PBM/PGM/PPM image format family"
+#~ msgstr "PNM/PBM/PGM/PPM-pildivormingu perekond"
+
+#~ msgid "The QTIF image format"
+#~ msgstr "QTIF-pildivorming"
+
+#~ msgid "RAS image has bogus header data"
+#~ msgstr "RAS-pildi päises on võltsandmed"
+
+#~ msgid "RAS image has unknown type"
+#~ msgstr "RAS-pildil on tundmatu tüüp"
+
+#~ msgid "unsupported RAS image variation"
+#~ msgstr "RAS-pildi toetamata variatsioon"
+
+#~ msgid "Not enough memory to load RAS image"
+#~ msgstr "RAS-pildi laadimiseks pole piisavalt mälu"
+
+#~ msgid "The Sun raster image format"
+#~ msgstr "Sun'i rasterpildivorming"
+
+#~ msgid "Cannot allocate memory for IOBuffer struct"
+#~ msgstr "IOBuffer struktuuri jaoks pole võimalik mälu eraldada"
+
+#~ msgid "Cannot allocate memory for IOBuffer data"
+#~ msgstr "IOBuffer andmete jaoks pole võimalik mälu eraldada"
+
+#~ msgid "Cannot realloc IOBuffer data"
+#~ msgstr "IO-puhvri andmeid pole võimalik ümber paigutada"
+
+#~ msgid "Cannot allocate temporary IOBuffer data"
+#~ msgstr "IOBuffer andmetele pole võimalik mälu eraldada"
+
+#~ msgid "Image is corrupted or truncated"
+#~ msgstr "Tõmmis pole täielik või on tükeldatud"
+
+#~ msgid "Cannot allocate colormap structure"
+#~ msgstr "Värvikaardi struktuurile pole võimalik mälu eraldada"
+
+#~ msgid "Excess data in file"
+#~ msgstr "Failis on liigsed andmed"
+
+#~ msgid "The Targa image format"
+#~ msgstr "Targa pildivorming"
+
+#~ msgid "The TIFF image format"
+#~ msgstr "TIFF-pildivorming"
+
+#~ msgid "Image has zero width"
+#~ msgstr "Pildi laius on null"
+
+#~ msgid "Image has zero height"
+#~ msgstr "Pildi kõrgus on null"
+
+#~ msgid "Not enough memory to load image"
+#~ msgstr "Pildi laadimiseks pole piisavalt mälu"
+
+#~ msgid "Couldn't save the rest"
+#~ msgstr "Ülejäänut pole võimalik salvestada"
+
+#~ msgid "The WBMP image format"
+#~ msgstr "WBMP-pildivorming"
+
+#~ msgid "The XBM image format"
+#~ msgstr "XBM-pildivorming"
+
+#~ msgid "The XPM image format"
+#~ msgstr "XPM-pildivorming"

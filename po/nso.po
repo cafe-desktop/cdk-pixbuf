@@ -7,9 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ctk+ 2.8-branch\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=cdk-"
-"pixbuf\n"
-"POT-Creation-Date: 2012-02-04 18:44-0500\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 08:56+0200\n"
 "PO-Revision-Date: 2004-11-30 16:02+0200\n"
 "Last-Translator: Zuza Software Foundation <info@translate.org.za>\n"
 "Language-Team: Northern Sotho <translate-discuss-nso@lists.sourceforge.net>\n"
@@ -19,349 +18,443 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:146 cdk-pixbuf/cdk-pixbuf-io.c:1083
-#: cdk-pixbuf/cdk-pixbuf-io.c:1349
-#, c-format
-msgid "Failed to open file '%s': %s"
+#: cdk-pixbuf/cdk-pixbuf-animation.c:190 cdk-pixbuf/cdk-pixbuf-io.c:1224
+#: cdk-pixbuf/cdk-pixbuf-io.c:1497
+#, fuzzy, c-format
+msgid "Failed to open file “%s”: %s"
 msgstr "E paletšwe go bula faele ya '%s': %s"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:159 cdk-pixbuf/cdk-pixbuf-io.c:1095
-#, c-format
-msgid "Image file '%s' contains no data"
+#: cdk-pixbuf/cdk-pixbuf-animation.c:203 cdk-pixbuf/cdk-pixbuf-io.c:1085
+#, fuzzy, c-format
+msgid "Image file “%s” contains no data"
 msgstr "Faele ya seswantšho ya '%s' ga e na tsebišo"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:201 cdk-pixbuf/cdk-pixbuf-io.c:1131
-#: cdk-pixbuf/cdk-pixbuf-io.c:1401
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-animation.c:241
+#, fuzzy, c-format
 msgid ""
-"Failed to load image '%s': reason not known, probably a corrupt image file"
-msgstr ""
-"Faele ya go laiša seswantšho sa '%s': lebaka ga le tsebjwe, mohlomongwe "
-"faele e senyegilego ya seswantšho"
-
-#: cdk-pixbuf/cdk-pixbuf-animation.c:234
-#, c-format
-msgid ""
-"Failed to load animation '%s': reason not known, probably a corrupt "
+"Failed to load animation “%s”: reason not known, probably a corrupt "
 "animation file"
 msgstr ""
 "E paletšwe go laiša tsošološo ya '%s': lebaka ga le tsebjwe, mohlomongwe "
 "faele e senyegilego ya tsošološo"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:809
+#: cdk-pixbuf/cdk-pixbuf-animation.c:309 cdk-pixbuf/cdk-pixbuf-io.c:1260
+#: cdk-pixbuf/cdk-pixbuf-io.c:1549
+#, fuzzy, c-format
+msgid ""
+"Failed to load image “%s”: reason not known, probably a corrupt image file"
+msgstr ""
+"Faele ya go laiša seswantšho sa '%s': lebaka ga le tsebjwe, mohlomongwe "
+"faele e senyegilego ya seswantšho"
+
+#: cdk-pixbuf/cdk-pixbuf.c:248
+msgid "Number of Channels"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:249
+#, fuzzy
+msgid "The number of samples per pixel"
+msgstr ""
+"XPM e na le nomoro yeo e sego ya kgonthe ya ditlhaka go ya ka dikarolwana "
+"tše bopago seswantšho"
+
+#: cdk-pixbuf/cdk-pixbuf.c:264
+msgid "Colorspace"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:265
+msgid "The colorspace in which the samples are interpreted"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:277
+msgid "Has Alpha"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:278
+msgid "Whether the pixbuf has an alpha channel"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:291
+msgid "Bits per Sample"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:292
+msgid "The number of bits per sample"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:305
+msgid "Width"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:306
+msgid "The number of columns of the pixbuf"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:319
+msgid "Height"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:320
+msgid "The number of rows of the pixbuf"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:337
+msgid "Rowstride"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:338
+msgid ""
+"The number of bytes between the start of a row and the start of the next row"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:351
+msgid "Pixels"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:352
+msgid "A pointer to the pixel data of the pixbuf"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:366
+msgid "Pixel Bytes"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:367
+msgid "Readonly pixel data"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf-io.c:901
 #, c-format
 msgid "Unable to load image-loading module: %s: %s"
 msgstr "Ga e kgone go laiša tekanyo ya go laiša seswantšho: %s: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:824
+#: cdk-pixbuf/cdk-pixbuf-io.c:919
 #, fuzzy, c-format
 msgid ""
-"Image-loading module %s does not export the proper interface; perhaps it's "
+"Image-loading module %s does not export the proper interface; perhaps it’s "
 "from a different cdk-pixbuf version?"
 msgstr ""
 "Tekanyo ya go laiša seswantšho ya %s ga e romele poledišano e swanetšego; "
 "mohlomongwe e tšwa tokollong e fapanego ya CTK?"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:833 cdk-pixbuf/cdk-pixbuf-io.c:884
-#, c-format
-msgid "Image type '%s' is not supported"
+#: cdk-pixbuf/cdk-pixbuf-io.c:929 cdk-pixbuf/cdk-pixbuf-io.c:972
+#, fuzzy, c-format
+msgid "Image type “%s” is not supported"
 msgstr "Mohuta wa seswantšho wa '%s' ga o thekgwe"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:964
-#, c-format
-msgid "Couldn't recognize the image file format for file '%s'"
+#: cdk-pixbuf/cdk-pixbuf-io.c:1057
+#, fuzzy, c-format
+msgid "Couldn’t recognize the image file format for file “%s”"
 msgstr "Ga e kgone go lemoga sebopego sa seswantšho bakeng sa faele ya '%s'"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:972
+#: cdk-pixbuf/cdk-pixbuf-io.c:1065
 msgid "Unrecognized image file format"
 msgstr "Sebopego seo se sa lemogwego sa faele ya seswantšho"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:1140
-#, c-format
-msgid "Failed to load image '%s': %s"
+#: cdk-pixbuf/cdk-pixbuf-io.c:1271
+#, fuzzy, c-format
+msgid "Failed to load image “%s”: %s"
 msgstr "E paletšwe go laiša seswantšho sa '%s': %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2028 cdk-pixbuf/io-gdip-utils.c:888
+#: cdk-pixbuf/cdk-pixbuf-io.c:2346 cdk-pixbuf/io-gdip-utils.c:840
 #, c-format
 msgid "Error writing to image file: %s"
 msgstr "Phošo ya go ngwala faeleng ya seswantšho: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2073 cdk-pixbuf/cdk-pixbuf-io.c:2203
+#: cdk-pixbuf/cdk-pixbuf-io.c:2388 cdk-pixbuf/cdk-pixbuf-io.c:2509
 #, c-format
 msgid "This build of cdk-pixbuf does not support saving the image format: %s"
 msgstr ""
 "Kago ye ya cdk-pixbuf ga e thekge go bolokwa ga sebopego sa seswantšho: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2107
+#: cdk-pixbuf/cdk-pixbuf-io.c:2419
 msgid "Insufficient memory to save image to callback"
 msgstr "Kgopolo e sa lekanago ya go boloka seswantšho go boea morago"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2120
+#: cdk-pixbuf/cdk-pixbuf-io.c:2432
 msgid "Failed to open temporary file"
 msgstr "E paletšwe go bula faele ya motšwa-o-swere"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2146
+#: cdk-pixbuf/cdk-pixbuf-io.c:2455
 msgid "Failed to read from temporary file"
 msgstr "E paletšwe go bala go tšwa faeleng ya motšwa-o-swere"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2399
-#, c-format
-msgid "Failed to open '%s' for writing: %s"
+#: cdk-pixbuf/cdk-pixbuf-io.c:2677
+#, fuzzy, c-format
+msgid "Failed to open “%s” for writing: %s"
 msgstr "E paletšwe go bula '%s' bakeng sa go ngwala: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2425
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-io.c:2703
+#, fuzzy, c-format
 msgid ""
-"Failed to close '%s' while writing image, all data may not have been saved: "
+"Failed to close “%s” while writing image, all data may not have been saved: "
 "%s"
 msgstr ""
 "E paletšwe go tswalela '%s' mola e dutše e ngwala seswantšho, tsebišo ka "
 "moka e ka ba e sa bolokwa: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2646 cdk-pixbuf/cdk-pixbuf-io.c:2698
+#: cdk-pixbuf/cdk-pixbuf-io.c:2937 cdk-pixbuf/cdk-pixbuf-io.c:2992
 msgid "Insufficient memory to save image into a buffer"
 msgstr "Kgopolo e sa lekanago go boloka seswantšho sešireletšing"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2744
+#: cdk-pixbuf/cdk-pixbuf-io.c:3038
 #, fuzzy
 msgid "Error writing to image stream"
 msgstr "Phošo ya go ngwala faeleng ya seswantšho: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:395
+#: cdk-pixbuf/cdk-pixbuf-loader.c:426
 #, fuzzy, c-format
 msgid ""
-"Internal error: Image loader module '%s' failed to complete an operation, "
-"but didn't give a reason for the failure"
+"Internal error: Image loader module “%s” failed to complete an operation, "
+"but didn’t give a reason for the failure"
 msgstr ""
 "Phošo ya ka gare: Tekanyo ya go laiša seswantšho ya '%s' e paletšwe go thoma "
 "go laiša seswantšho, eupša ga se ya nea lebaka la gore ke ka baka la eng e "
 "paletšwe"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:437
-#, c-format
-msgid "Incremental loading of image type '%s' is not supported"
+#: cdk-pixbuf/cdk-pixbuf-loader.c:468
+#, fuzzy, c-format
+msgid "Incremental loading of image type “%s” is not supported"
 msgstr ""
 "Go laiša mo go okeditšwego ga mohuta wa seswantšho wa '%s' ga go thekgwe"
 
-#: cdk-pixbuf/cdk-pixdata.c:160
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:166
+msgid "Loop"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:167
+msgid "Whether the animation should loop when it reaches the end"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixdata.c:178
 msgid "Image header corrupt"
 msgstr "Hlogwana ya seswantšho e senyegile"
 
-#: cdk-pixbuf/cdk-pixdata.c:165
+#: cdk-pixbuf/cdk-pixdata.c:183
 msgid "Image format unknown"
 msgstr "Sebopego sa seswantšho ga se tsebjwe"
 
-#: cdk-pixbuf/cdk-pixdata.c:170 cdk-pixbuf/cdk-pixdata.c:502
+#: cdk-pixbuf/cdk-pixdata.c:188 cdk-pixbuf/cdk-pixdata.c:491
+#: cdk-pixbuf/cdk-pixdata.c:501 cdk-pixbuf/cdk-pixdata.c:597
 msgid "Image pixel data corrupt"
 msgstr "Tsebišo ya dikarolwana tše bopago seswantšho ya seswantšho e senyegile"
 
-#: cdk-pixbuf/cdk-pixdata.c:446
+#: cdk-pixbuf/cdk-pixdata.c:513
 #, c-format
 msgid "failed to allocate image buffer of %u byte"
 msgid_plural "failed to allocate image buffer of %u bytes"
 msgstr[0] "e paletšwe go hwetša sešireletši sa seswantšho sa paete ya %u"
 msgstr[1] "e paletšwe go hwetša sešireletši sa seswantšho sa dipaete tša %u"
 
-#: cdk-pixbuf/io-ani.c:244
+#: cdk-pixbuf/io-ani.c:239
 msgid "Unexpected icon chunk in animation"
 msgstr "Go dira modumo ga leswao mo go sa letelwago tsošološong"
 
-#: cdk-pixbuf/io-ani.c:337
-msgid "Unsupported animation type"
-msgstr "Mohuta wa tsošološo o sa thekgwego"
-
-#: cdk-pixbuf/io-ani.c:348 cdk-pixbuf/io-ani.c:406 cdk-pixbuf/io-ani.c:432
-#: cdk-pixbuf/io-ani.c:455 cdk-pixbuf/io-ani.c:482 cdk-pixbuf/io-ani.c:569
-msgid "Invalid header in animation"
-msgstr "Hlogwana yeo e sego ya kgonthe tsošološong"
-
-#: cdk-pixbuf/io-ani.c:358 cdk-pixbuf/io-ani.c:380 cdk-pixbuf/io-ani.c:464
-#: cdk-pixbuf/io-ani.c:491 cdk-pixbuf/io-ani.c:542 cdk-pixbuf/io-ani.c:614
-msgid "Not enough memory to load animation"
-msgstr "Ga go na kgopolo e lekanego go laiša tsošološo"
-
-#: cdk-pixbuf/io-ani.c:398 cdk-pixbuf/io-ani.c:424 cdk-pixbuf/io-ani.c:443
+#: cdk-pixbuf/io-ani.c:303 cdk-pixbuf/io-ani.c:404 cdk-pixbuf/io-ani.c:430
+#: cdk-pixbuf/io-ani.c:449
 msgid "Malformed chunk in animation"
 msgstr "Go dira modumo mo go sa bopšago gabotse tsošološong"
 
-#: cdk-pixbuf/io-ani.c:711
-msgid "The ANI image format"
-msgstr "Sebopego sa seswantšho sa ANI"
+#: cdk-pixbuf/io-ani.c:311 cdk-pixbuf/io-ani.c:354 cdk-pixbuf/io-ani.c:412
+#: cdk-pixbuf/io-ani.c:438 cdk-pixbuf/io-ani.c:461 cdk-pixbuf/io-ani.c:488
+#: cdk-pixbuf/io-ani.c:575
+msgid "Invalid header in animation"
+msgstr "Hlogwana yeo e sego ya kgonthe tsošološong"
 
-#: cdk-pixbuf/io-bmp.c:229 cdk-pixbuf/io-bmp.c:266 cdk-pixbuf/io-bmp.c:337
-#: cdk-pixbuf/io-bmp.c:369 cdk-pixbuf/io-bmp.c:392 cdk-pixbuf/io-bmp.c:495
+#: cdk-pixbuf/io-ani.c:364 cdk-pixbuf/io-ani.c:386 cdk-pixbuf/io-ani.c:470
+#: cdk-pixbuf/io-ani.c:497 cdk-pixbuf/io-ani.c:548 cdk-pixbuf/io-ani.c:624
+msgid "Not enough memory to load animation"
+msgstr "Ga go na kgopolo e lekanego go laiša tsošološo"
+
+#: cdk-pixbuf/io-ani.c:646
+#, fuzzy
+msgid "ANI image was truncated or incomplete."
+msgstr "Seswantšho sa GIF se lekanyeditšwe goba ga se a felela."
+
+#: cdk-pixbuf/io-ani.c:687
+msgctxt "image format"
+msgid "Windows animated cursor"
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:234 cdk-pixbuf/io-bmp.c:275 cdk-pixbuf/io-bmp.c:385
+#: cdk-pixbuf/io-bmp.c:412 cdk-pixbuf/io-bmp.c:437 cdk-pixbuf/io-bmp.c:472
+#: cdk-pixbuf/io-bmp.c:494 cdk-pixbuf/io-bmp.c:572
 msgid "BMP image has bogus header data"
 msgstr "Seswantšho sa BMP se na le tsebišo ya hlogwana yeo e sego ya kgonthe"
 
-#: cdk-pixbuf/io-bmp.c:240 cdk-pixbuf/io-bmp.c:432
+#: cdk-pixbuf/io-bmp.c:245 cdk-pixbuf/io-bmp.c:507
 msgid "Not enough memory to load bitmap image"
 msgstr "Ga go na kgopolo e lekanego go laiša seswantšho sa bitmap"
 
-#: cdk-pixbuf/io-bmp.c:318
+#: cdk-pixbuf/io-bmp.c:339
 msgid "BMP image has unsupported header size"
 msgstr "Seswantšho sa BMP se na le bogolo bja hlogwana bjo bo sa thekgwego"
 
-#: cdk-pixbuf/io-bmp.c:356
+#: cdk-pixbuf/io-bmp.c:348
+#, fuzzy
+msgid "BMP image has unsupported depth"
+msgstr "Seswantšho sa BMP se na le bogolo bja hlogwana bjo bo sa thekgwego"
+
+#: cdk-pixbuf/io-bmp.c:367
+#, fuzzy
+msgid "BMP image has oversize palette"
+msgstr "Seswantšho sa BMP se na le tsebišo ya hlogwana yeo e sego ya kgonthe"
+
+#: cdk-pixbuf/io-bmp.c:399
 msgid "Topdown BMP images cannot be compressed"
 msgstr ""
 
-#: cdk-pixbuf/io-bmp.c:716 cdk-pixbuf/io-pnm.c:707
+#: cdk-pixbuf/io-bmp.c:424
+msgid "BMP image width too large"
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:814 cdk-pixbuf/io-png.c:587 cdk-pixbuf/io-pnm.c:722
+#: cdk-pixbuf/io-pnm.c:879
 msgid "Premature end-of-file encountered"
 msgstr "Go kopanwe le mafelelo a faele ao a sa golago gabotse"
 
-#: cdk-pixbuf/io-bmp.c:1328
+#: cdk-pixbuf/io-bmp.c:1340
+msgid "Error while decoding colormap"
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:1403 cdk-pixbuf/io-bmp.c:1415
+msgid "Image is too wide for BMP format."
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:1448
 #, fuzzy
-msgid "Couldn't allocate memory for saving BMP file"
+msgid "Couldn’t allocate memory for saving BMP file"
 msgstr "E ka se kgone go bea kgopolo bakeng sa go laiša faele ya JPEG"
 
-#: cdk-pixbuf/io-bmp.c:1369
+#: cdk-pixbuf/io-bmp.c:1489
 #, fuzzy
-msgid "Couldn't write to BMP file"
+msgid "Couldn’t write to BMP file"
 msgstr "E be e ka se fetole leina la faele"
 
-#: cdk-pixbuf/io-bmp.c:1422 cdk-pixbuf/io-gdip-bmp.c:82
-msgid "The BMP image format"
-msgstr "Sebopego sa seswantšho sa BMP"
+#: cdk-pixbuf/io-bmp.c:1542 cdk-pixbuf/io-gdip-bmp.c:83
+msgctxt "image format"
+msgid "BMP"
+msgstr ""
 
-#: cdk-pixbuf/io-gdip-emf.c:59
-#, fuzzy
-msgid "The EMF image format"
-msgstr "Sebopego sa seswantšho sa BMP"
+#: cdk-pixbuf/io-gdip-emf.c:61
+msgctxt "image format"
+msgid "EMF"
+msgstr ""
 
-#: cdk-pixbuf/io-gdip-gif.c:80 cdk-pixbuf/io-gif.c:1699
-msgid "The GIF image format"
-msgstr "Sebopego sa seswantšho sa GIF"
+#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1039
+msgctxt "image format"
+msgid "GIF"
+msgstr ""
 
-#: cdk-pixbuf/io-gdip-ico.c:59 cdk-pixbuf/io-ico.c:1271
-msgid "The ICO image format"
-msgstr "Sebopego sa seswantšho sa ICO"
+#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1418
+msgctxt "image format"
+msgid "Windows icon"
+msgstr ""
 
-#: cdk-pixbuf/io-gdip-jpeg.c:53 cdk-pixbuf/io-jpeg.c:1139
-#, c-format
+#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1409
+#, fuzzy, c-format
 msgid ""
-"JPEG quality must be a value between 0 and 100; value '%s' could not be "
+"JPEG quality must be a value between 0 and 100; value “%s” could not be "
 "parsed."
 msgstr ""
 "Khwaliti ya JPEG e swanetše go ba boleng magareng ga 0 le 100; boleng bja "
 "'%s' bo ka se arolwe."
 
-#: cdk-pixbuf/io-gdip-jpeg.c:68 cdk-pixbuf/io-jpeg.c:1154
-#, c-format
+#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1425
+#, fuzzy, c-format
 msgid ""
-"JPEG quality must be a value between 0 and 100; value '%d' is not allowed."
+"JPEG quality must be a value between 0 and 100; value “%d” is not allowed."
 msgstr ""
 "Khwaliti ya JPEG e swanetše go ba boleng magareng ga 0 le 100; boleng bja "
 "'%d' ga bo a dumelelwa."
 
-#: cdk-pixbuf/io-gdip-jpeg.c:136 cdk-pixbuf/io-jpeg.c:1316
-msgid "The JPEG image format"
-msgstr "Sebopego sa seswantšho sa JPEG"
+#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1710
+msgctxt "image format"
+msgid "JPEG"
+msgstr ""
 
-#: cdk-pixbuf/io-gdip-utils.c:154
+#: cdk-pixbuf/io-gdip-tiff.c:83 cdk-pixbuf/io-tiff.c:1087
+msgctxt "image format"
+msgid "TIFF"
+msgstr ""
+
+#: cdk-pixbuf/io-gdip-utils.c:155
 #, fuzzy, c-format
 msgid "Could not allocate memory: %s"
 msgstr "Ga e kgone go šupa kgopolo bakeng sa hlogwana"
 
-#: cdk-pixbuf/io-gdip-utils.c:179 cdk-pixbuf/io-gdip-utils.c:293
-#: cdk-pixbuf/io-gdip-utils.c:333
+#: cdk-pixbuf/io-gdip-utils.c:180 cdk-pixbuf/io-gdip-utils.c:294
+#: cdk-pixbuf/io-gdip-utils.c:334
 #, fuzzy, c-format
 msgid "Could not create stream: %s"
 msgstr "phošo ya go hlama tšhupetšo '%s': %s"
 
-#: cdk-pixbuf/io-gdip-utils.c:193
+#: cdk-pixbuf/io-gdip-utils.c:194
 #, fuzzy, c-format
 msgid "Could not seek stream: %s"
 msgstr ""
 "E be e ka se kgethe %s:\n"
 "%s"
 
-#: cdk-pixbuf/io-gdip-utils.c:205
+#: cdk-pixbuf/io-gdip-utils.c:206
 #, fuzzy, c-format
 msgid "Could not read from stream: %s"
 msgstr "phošo ya go hlama tšhupetšo '%s': %s"
 
-#: cdk-pixbuf/io-gdip-utils.c:617 cdk-pixbuf/io-gdip-utils.c:752
+#: cdk-pixbuf/io-gdip-utils.c:620
 #, fuzzy
-msgid "Couldn't load bitmap"
+msgid "Couldn’t load bitmap"
 msgstr "E be e ka se fetole leina la faele"
 
-#: cdk-pixbuf/io-gdip-utils.c:774
+#: cdk-pixbuf/io-gdip-utils.c:776
 #, fuzzy
-msgid "Couldn't load metafile"
+msgid "Couldn’t load metafile"
 msgstr "E be e ka se fetole leina la faele"
 
-#: cdk-pixbuf/io-gdip-utils.c:933
+#: cdk-pixbuf/io-gdip-utils.c:881
 #, fuzzy
 msgid "Unsupported image format for GDI+"
 msgstr "Go fapana ga seswantšho sa RAS mo go sa thekgwego"
 
-#: cdk-pixbuf/io-gdip-utils.c:940
+#: cdk-pixbuf/io-gdip-utils.c:888
 #, fuzzy
-msgid "Couldn't save"
+msgid "Couldn’t save"
 msgstr "Ga e kgone go e boloka ka moka"
 
-#: cdk-pixbuf/io-gdip-wmf.c:58
-#, fuzzy
-msgid "The WMF image format"
-msgstr "Sebopego sa seswantšho sa WBMP"
+#: cdk-pixbuf/io-gdip-wmf.c:60
+msgctxt "image format"
+msgid "WMF"
+msgstr ""
 
-#: cdk-pixbuf/io-gif.c:221
+#: cdk-pixbuf/io-gif.c:160
 #, c-format
 msgid "Failure reading GIF: %s"
 msgstr "Go palelwa ke go bala GIF: %s"
 
-#: cdk-pixbuf/io-gif.c:495 cdk-pixbuf/io-gif.c:1482 cdk-pixbuf/io-gif.c:1648
-msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
-msgstr ""
-"Faele ya GIF e be e sa bone tsebišo e itšego (mohlomongwe e ile ya "
-"lekanyetšwa ka tsela e itšego?)"
-
-#: cdk-pixbuf/io-gif.c:504
-#, c-format
-msgid "Internal error in the GIF loader (%s)"
-msgstr "Phošo ya ka gare selaišing sa GIF (%s)"
-
-#: cdk-pixbuf/io-gif.c:578
-msgid "Stack overflow"
-msgstr "Go elela ga mokgobo"
-
-#: cdk-pixbuf/io-gif.c:638
-#, fuzzy
-msgid "GIF image loader cannot understand this image."
-msgstr "Selaiši sa seswantšho sa GIF ga se kwešiše seswantšho se."
-
-#: cdk-pixbuf/io-gif.c:667
-msgid "Bad code encountered"
-msgstr "Go kopanwe le khoutu e mpe"
-
-#: cdk-pixbuf/io-gif.c:677
-msgid "Circular table entry in GIF file"
-msgstr "Tseno e dikologago ya lenaneo faeleng ya GIF"
-
-#: cdk-pixbuf/io-gif.c:865 cdk-pixbuf/io-gif.c:1468 cdk-pixbuf/io-gif.c:1521
-#: cdk-pixbuf/io-gif.c:1636
+#: cdk-pixbuf/io-gif.c:383 cdk-pixbuf/io-gif.c:850 cdk-pixbuf/io-gif.c:903
+#: cdk-pixbuf/io-gif.c:976
 msgid "Not enough memory to load GIF file"
 msgstr "Ga go na kgopolo e lekanego go laiša faele ya GIF"
 
-#: cdk-pixbuf/io-gif.c:959
-#, fuzzy
-msgid "Not enough memory to composite a frame in GIF file"
-msgstr "Ga go na kgopolo e lekanego go laiša faele ya GIF"
-
-#: cdk-pixbuf/io-gif.c:1131
+#: cdk-pixbuf/io-gif.c:509
 msgid "GIF image is corrupt (incorrect LZW compression)"
 msgstr "Seswantšho sa GIF se senyegile (kgatelelo e fošagetšego ya LZW)"
 
-#: cdk-pixbuf/io-gif.c:1181
+#: cdk-pixbuf/io-gif.c:545
 msgid "File does not appear to be a GIF file"
 msgstr "Faele ga e bonagale e le faele ya GIF"
 
-#: cdk-pixbuf/io-gif.c:1193
+#: cdk-pixbuf/io-gif.c:560
 #, c-format
 msgid "Version %s of the GIF file format is not supported"
 msgstr "Tokollo ya %s ya sebopego sa faele ya GIF ga e thekgwe"
 
-#: cdk-pixbuf/io-gif.c:1302
+#: cdk-pixbuf/io-gif.c:589
+#, fuzzy
+msgid "Resulting GIF image has zero size"
+msgstr "Seswantšho se na le bophara bja lefeela"
+
+#: cdk-pixbuf/io-gif.c:659
 msgid ""
 "GIF image has no global colormap, and a frame inside it has no local "
 "colormap."
@@ -369,116 +462,88 @@ msgstr ""
 "Seswantšho sa GIF ga se na mmapa wa mmala wa lefase ka bophara, gape foreime "
 "yeo e lego ka gare ga e na mmapa wa mmala wa mo gae."
 
-#: cdk-pixbuf/io-gif.c:1543
+#: cdk-pixbuf/io-gif.c:863 cdk-pixbuf/io-gif.c:988
+msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
+msgstr ""
+"Faele ya GIF e be e sa bone tsebišo e itšego (mohlomongwe e ile ya "
+"lekanyetšwa ka tsela e itšego?)"
+
+#: cdk-pixbuf/io-gif.c:922
 msgid "GIF image was truncated or incomplete."
 msgstr "Seswantšho sa GIF se lekanyeditšwe goba ga se a felela."
 
-#: cdk-pixbuf/io-icns.c:347
+#: cdk-pixbuf/io-gif.c:929
+msgid "Not all frames of the GIF image were loaded."
+msgstr ""
+
+#: cdk-pixbuf/io-icns.c:363
 #, fuzzy, c-format
 msgid "Error reading ICNS image: %s"
 msgstr "Phošo e kotsi ya go bala faele ya seswantšho ya PNG: %s"
 
-#: cdk-pixbuf/io-icns.c:364
+#: cdk-pixbuf/io-icns.c:380 cdk-pixbuf/io-icns.c:461
 #, fuzzy
 msgid "Could not decode ICNS file"
 msgstr ""
 "E be e ka se kgethe %s:\n"
 "%s"
 
-#: cdk-pixbuf/io-icns.c:397
-#, fuzzy
-msgid "The ICNS image format"
-msgstr "Sebopego sa seswantšho sa ICO"
+#: cdk-pixbuf/io-icns.c:517
+msgctxt "image format"
+msgid "MacOS X icon"
+msgstr ""
 
-#: cdk-pixbuf/io-ico.c:228 cdk-pixbuf/io-ico.c:242 cdk-pixbuf/io-ico.c:291
-#: cdk-pixbuf/io-ico.c:302 cdk-pixbuf/io-ico.c:395
-msgid "Invalid header in icon"
+#: cdk-pixbuf/io-ico.c:238 cdk-pixbuf/io-ico.c:252 cdk-pixbuf/io-ico.c:342
+#: cdk-pixbuf/io-ico.c:426 cdk-pixbuf/io-ico.c:451
+#, fuzzy, c-format
+msgid "Invalid header in icon (%s)"
 msgstr "Hlogwana yeo e sego ya kgonthe leswaong"
 
-#: cdk-pixbuf/io-ico.c:257 cdk-pixbuf/io-ico.c:312 cdk-pixbuf/io-ico.c:405
-#: cdk-pixbuf/io-ico.c:458 cdk-pixbuf/io-ico.c:488
+#: cdk-pixbuf/io-ico.c:268 cdk-pixbuf/io-ico.c:355 cdk-pixbuf/io-ico.c:461
+#: cdk-pixbuf/io-ico.c:504 cdk-pixbuf/io-ico.c:532
 msgid "Not enough memory to load icon"
 msgstr "Ga go na kgopolo e lekanego go laiša leswao"
 
-#: cdk-pixbuf/io-ico.c:338
+#: cdk-pixbuf/io-ico.c:386
+msgid "Invalid header in icon"
+msgstr "Hlogwana yeo e sego ya kgonthe leswaong"
+
+#: cdk-pixbuf/io-ico.c:387
 msgid "Compressed icons are not supported"
 msgstr "Maswao a gateletšwego ga a thekgwe"
 
-#: cdk-pixbuf/io-ico.c:358
-msgid "Icon has zero width"
-msgstr "Leswao le na bophara bja lefeela"
-
-#: cdk-pixbuf/io-ico.c:368
-msgid "Icon has zero height"
-msgstr "Leswao le na le bophagamo bja lefeela"
-
-#: cdk-pixbuf/io-ico.c:443
+#: cdk-pixbuf/io-ico.c:489
 msgid "Unsupported icon type"
 msgstr "Mohuta wa leswao o sa thekgwego"
 
-#: cdk-pixbuf/io-ico.c:537
+#: cdk-pixbuf/io-ico.c:583
 msgid "Not enough memory to load ICO file"
 msgstr "Ga go na kgopolo e lekanego go laiša faele ya ICO"
 
-#: cdk-pixbuf/io-ico.c:1002
+#: cdk-pixbuf/io-ico.c:629
+#, fuzzy
+msgid "ICO image was truncated or incomplete."
+msgstr "Seswantšho sa GIF se lekanyeditšwe goba ga se a felela."
+
+#: cdk-pixbuf/io-ico.c:1070
 msgid "Image too large to be saved as ICO"
 msgstr "Seswantšho ke se segolo kudu gore se ka bolokwa bjalo ka ICO"
 
-#: cdk-pixbuf/io-ico.c:1013
+#: cdk-pixbuf/io-ico.c:1081
 msgid "Cursor hotspot outside image"
 msgstr "Lefelo le kotsi la leswao ka ntle ga seswantšho"
 
-#: cdk-pixbuf/io-ico.c:1036
+#: cdk-pixbuf/io-ico.c:1104
 #, c-format
 msgid "Unsupported depth for ICO file: %d"
 msgstr "Botebo bjo bo sa thekgwego bakeng sa faele ya ICO: %d"
 
-#: cdk-pixbuf/io-jasper.c:74
-#, fuzzy
-msgid "Couldn't allocate memory for stream"
-msgstr "Ga e kgone go šupa kgopolo bakeng sa hlogwana"
-
-#: cdk-pixbuf/io-jasper.c:104
-#, fuzzy
-msgid "Couldn't decode image"
-msgstr "E be e ka se fetole leina la faele"
-
-#: cdk-pixbuf/io-jasper.c:122
-#, fuzzy
-msgid "Transformed JPEG2000 has zero width or height"
-msgstr "PNG e fetotšwego e na bophara goba bophagamo bja lefeela."
-
-#: cdk-pixbuf/io-jasper.c:136
-#, fuzzy
-msgid "Image type currently not supported"
-msgstr "Mohuta wa seswantšho wa '%s' ga o thekgwe"
-
-#: cdk-pixbuf/io-jasper.c:148 cdk-pixbuf/io-jasper.c:156
-#, fuzzy
-msgid "Couldn't allocate memory for color profile"
-msgstr "E ka se kgone go bea kgopolo bakeng sa go laiša faele ya JPEG"
-
-#: cdk-pixbuf/io-jasper.c:182
-#, fuzzy
-msgid "Insufficient memory to open JPEG 2000 file"
-msgstr "Ga go na kgopolo e lekanego go ka bula faele ya TIFF"
-
-#: cdk-pixbuf/io-jasper.c:261
-#, fuzzy
-msgid "Couldn't allocate memory to buffer image data"
-msgstr "Ga e kgone go šupa kgopolo bakeng sa tsebišo ya mothaladi"
-
-#: cdk-pixbuf/io-jasper.c:305
-#, fuzzy
-msgid "The JPEG 2000 image format"
-msgstr "Sebopego sa seswantšho sa JPEG"
-
-#: cdk-pixbuf/io-jpeg.c:116
+#: cdk-pixbuf/io-jpeg.c:131
 #, c-format
 msgid "Error interpreting JPEG image file (%s)"
 msgstr "Phošo go tolokwa ga faele ya seswantšho ya JPEG (%s)"
 
-#: cdk-pixbuf/io-jpeg.c:527
+#: cdk-pixbuf/io-jpeg.c:647
 msgid ""
 "Insufficient memory to load image, try exiting some applications to free "
 "memory"
@@ -486,530 +551,699 @@ msgstr ""
 "Ga go na kgopolo e lekanego go laiša seswantšho, leka go ntšha ditirišo tše "
 "itšego bakeng sa go bula kgopolo"
 
-#: cdk-pixbuf/io-jpeg.c:568 cdk-pixbuf/io-jpeg.c:781
+#: cdk-pixbuf/io-jpeg.c:720 cdk-pixbuf/io-jpeg.c:970
 #, c-format
 msgid "Unsupported JPEG color space (%s)"
 msgstr "Sekgoba sa mmala sa JPEG seo se sa thekgwego (%s)"
 
-#: cdk-pixbuf/io-jpeg.c:680 cdk-pixbuf/io-jpeg.c:950 cdk-pixbuf/io-jpeg.c:1183
-#: cdk-pixbuf/io-jpeg.c:1192
-msgid "Couldn't allocate memory for loading JPEG file"
+#: cdk-pixbuf/io-jpeg.c:845 cdk-pixbuf/io-jpeg.c:1169 cdk-pixbuf/io-jpeg.c:1516
+#: cdk-pixbuf/io-jpeg.c:1526
+#, fuzzy
+msgid "Couldn’t allocate memory for loading JPEG file"
 msgstr "E ka se kgone go bea kgopolo bakeng sa go laiša faele ya JPEG"
 
-#: cdk-pixbuf/io-jpeg.c:925
+#: cdk-pixbuf/io-jpeg.c:1127
 #, fuzzy
 msgid "Transformed JPEG has zero width or height."
 msgstr "PNG e fetotšwego e na bophara goba bophagamo bja lefeela."
 
-#: cdk-pixbuf/io-pcx.c:186
-msgid "Couldn't allocate memory for header"
-msgstr "Ga e kgone go šupa kgopolo bakeng sa hlogwana"
+#: cdk-pixbuf/io-jpeg.c:1153
+#, fuzzy, c-format
+msgid "Unsupported number of color components (%d)"
+msgstr "Sekgoba sa mmala sa JPEG seo se sa thekgwego (%s)"
 
-#: cdk-pixbuf/io-pcx.c:201 cdk-pixbuf/io-pcx.c:559
-msgid "Couldn't allocate memory for context buffer"
-msgstr "Ga e kgone go šupa kgopolo bakeng sa sešireletši sa dikagare"
+#: cdk-pixbuf/io-jpeg.c:1446
+#, fuzzy, c-format
+msgid ""
+"JPEG x-dpi must be a value between 1 and 65535; value “%s” is not allowed."
+msgstr ""
+"Khwaliti ya JPEG e swanetše go ba boleng magareng ga 0 le 100; boleng bja "
+"'%d' ga bo a dumelelwa."
 
-#: cdk-pixbuf/io-pcx.c:600
-msgid "Image has invalid width and/or height"
-msgstr "Seswantšho se na le bophara le/goba bophagamo tšeo e sego tša kgonthe"
+#: cdk-pixbuf/io-jpeg.c:1467
+#, fuzzy, c-format
+msgid ""
+"JPEG y-dpi must be a value between 1 and 65535; value “%s” is not allowed."
+msgstr ""
+"Khwaliti ya JPEG e swanetše go ba boleng magareng ga 0 le 100; boleng bja "
+"'%d' ga bo a dumelelwa."
 
-#: cdk-pixbuf/io-pcx.c:612 cdk-pixbuf/io-pcx.c:673
-msgid "Image has unsupported bpp"
-msgstr "Seswantšho se na le bpp yeo e sa thekgwego"
-
-#: cdk-pixbuf/io-pcx.c:617 cdk-pixbuf/io-pcx.c:625
+#: cdk-pixbuf/io-jpeg.c:1481
 #, c-format
-msgid "Image has unsupported number of %d-bit planes"
+msgid "Color profile has invalid length “%u”."
 msgstr ""
-"Seswantšho se na le nomoro e sa thekgwego ya difofane tša dibiti tša %d"
 
-#: cdk-pixbuf/io-pcx.c:641
-msgid "Couldn't create new pixbuf"
-msgstr "Ga e kgone go bopa pixbuf e mpsha"
-
-#: cdk-pixbuf/io-pcx.c:649
-msgid "Couldn't allocate memory for line data"
-msgstr "Ga e kgone go šupa kgopolo bakeng sa tsebišo ya mothaladi"
-
-#: cdk-pixbuf/io-pcx.c:656
-#, fuzzy
-msgid "Couldn't allocate memory for PCX image"
-msgstr "Ga e kgone go šupa kgopolo bakeng sa hlogwana"
-
-#: cdk-pixbuf/io-pcx.c:703
-msgid "Didn't get all lines of PCX image"
-msgstr "Ga se ya hwetša methaladi ka moka ya seswantšho ya PCX"
-
-#: cdk-pixbuf/io-pcx.c:710
-msgid "No palette found at end of PCX data"
-msgstr ""
-"Ga go na seo se hweditšwego seo se bolokilwego mafelelong ga tsebišo ya PCX"
-
-#: cdk-pixbuf/io-pcx.c:755
-msgid "The PCX image format"
-msgstr "Sebopego sa seswantšho sa PCX"
-
-#: cdk-pixbuf/io-pixdata.c:148
-#, fuzzy
-msgid "Transformed pixbuf has zero width or height."
-msgstr "PNG e fetotšwego e na bophara goba bophagamo bja lefeela."
-
-#: cdk-pixbuf/io-pixdata.c:186
-#, fuzzy
-msgid "The CdkPixdata format"
-msgstr "Sebopego sa seswantšho sa GIF"
-
-#: cdk-pixbuf/io-png.c:54
+#: cdk-pixbuf/io-png.c:64
 msgid "Bits per channel of PNG image is invalid."
 msgstr "Dibiti go ya ka kanale ya seswantšho sa PNG ga se tša kgonthe."
 
-#: cdk-pixbuf/io-png.c:135 cdk-pixbuf/io-png.c:641
+#: cdk-pixbuf/io-png.c:145 cdk-pixbuf/io-png.c:730
 msgid "Transformed PNG has zero width or height."
 msgstr "PNG e fetotšwego e na bophara goba bophagamo bja lefeela."
 
-#: cdk-pixbuf/io-png.c:143
+#: cdk-pixbuf/io-png.c:153
 msgid "Bits per channel of transformed PNG is not 8."
 msgstr "Dibiti go ya ka kanale ya PNG e fetotšwego ga se 8."
 
-#: cdk-pixbuf/io-png.c:152
+#: cdk-pixbuf/io-png.c:162
 msgid "Transformed PNG not RGB or RGBA."
 msgstr "PNG e fetotšwego e sego RGB goba RGBA."
 
-#: cdk-pixbuf/io-png.c:161
+#: cdk-pixbuf/io-png.c:171
 msgid "Transformed PNG has unsupported number of channels, must be 3 or 4."
 msgstr ""
 "PNG e fetotšwego e na le dikanale tše mmalwa tše sa thekgwego, e swanetše go "
 "ba 3 goba 4."
 
-#: cdk-pixbuf/io-png.c:182
+#: cdk-pixbuf/io-png.c:193
 #, c-format
 msgid "Fatal error in PNG image file: %s"
 msgstr "Phošo e kotsi faeleng ya seswantšho ya PNG: %s"
 
-#: cdk-pixbuf/io-png.c:315
+#: cdk-pixbuf/io-png.c:338
 msgid "Insufficient memory to load PNG file"
 msgstr "Ga go na kgopolo e lekanego go laiša faele ya PNG"
 
-#: cdk-pixbuf/io-png.c:656
-#, c-format
+#: cdk-pixbuf/io-png.c:519 cdk-pixbuf/io-png.c:540
+#, fuzzy
+msgid "Couldn’t allocate memory for loading PNG"
+msgstr "E ka se kgone go bea kgopolo bakeng sa go laiša faele ya JPEG"
+
+#: cdk-pixbuf/io-png.c:743
+#, fuzzy, c-format
 msgid ""
-"Insufficient memory to store a %ld by %ld image; try exiting some "
+"Insufficient memory to store a %lu by %lu image; try exiting some "
 "applications to reduce memory usage"
 msgstr ""
 "Ga go na kgopolo e lekanego go boloka %ld ka seswantšho sa %ld; leka go "
 "ntšha ditirišo tše dingwe bakeng sa go theoša go dirišwa ga kgopolo"
 
-#: cdk-pixbuf/io-png.c:719
+#: cdk-pixbuf/io-png.c:820
 msgid "Fatal error reading PNG image file"
 msgstr "Phošo e kotsi ya go bala faele ya seswantšho sa PNG"
 
-#: cdk-pixbuf/io-png.c:768
+#: cdk-pixbuf/io-png.c:873
 #, c-format
 msgid "Fatal error reading PNG image file: %s"
 msgstr "Phošo e kotsi ya go bala faele ya seswantšho ya PNG: %s"
 
-#: cdk-pixbuf/io-png.c:862
+#: cdk-pixbuf/io-png.c:972
+#, fuzzy, c-format
 msgid ""
-"Keys for PNG text chunks must have at least 1 and at most 79 characters."
+"Invalid key “%s”. Keys for PNG text chunks must have at least 1 and at most "
+"79 characters."
 msgstr ""
 "Dinotlelo tša go dira modumo ga sengwalwa sa PNG di swanetše gore di be le "
 "bonyenyane tlhaka e 1 goba ge e le tše dintši e be tše 79."
 
-#: cdk-pixbuf/io-png.c:871
-msgid "Keys for PNG text chunks must be ASCII characters."
+#: cdk-pixbuf/io-png.c:985
+#, fuzzy, c-format
+msgid "Invalid key “%s”. Keys for PNG text chunks must be ASCII characters."
 msgstr ""
 "Dinotlelo tša go dira modumo ga sengwalwa sa PNG e swanetše go ba ditlhaka "
 "tša MMAFT."
 
-#: cdk-pixbuf/io-png.c:885 cdk-pixbuf/io-tiff.c:737
-#, c-format
-msgid "Color profile has invalid length %d."
-msgstr ""
-
-#: cdk-pixbuf/io-png.c:898
+#: cdk-pixbuf/io-png.c:1015
 #, fuzzy, c-format
 msgid ""
-"PNG compression level must be a value between 0 and 9; value '%s' could not "
-"be parsed."
-msgstr ""
-"Khwaliti ya JPEG e swanetše go ba boleng magareng ga 0 le 100; boleng bja "
-"'%s' bo ka se arolwe."
-
-#: cdk-pixbuf/io-png.c:911
-#, fuzzy, c-format
-msgid ""
-"PNG compression level must be a value between 0 and 9; value '%d' is not "
-"allowed."
-msgstr ""
-"Khwaliti ya JPEG e swanetše go ba boleng magareng ga 0 le 100; boleng bja "
-"'%d' ga bo a dumelelwa."
-
-#: cdk-pixbuf/io-png.c:959
-#, fuzzy, c-format
-msgid "Value for PNG text chunk %s cannot be converted to ISO-8859-1 encoding."
+"Value for PNG text chunk '%s' cannot be converted to ISO-8859-1 encoding."
 msgstr ""
 "Boleng bja go dira modumo ga %s ga sengwalwa sa PNG bo ka se fetolelwe go go "
 "tsentšha khoutu ga ISO-8859-1."
 
-#: cdk-pixbuf/io-png.c:1122
-msgid "The PNG image format"
-msgstr "Sebopego sa seswantšho sa PNG"
+#: cdk-pixbuf/io-png.c:1027
+#, c-format
+msgid "Color profile has invalid length %d"
+msgstr ""
 
-#: cdk-pixbuf/io-pnm.c:248
-msgid "PNM loader expected to find an integer, but didn't"
+#: cdk-pixbuf/io-png.c:1039
+#, fuzzy, c-format
+msgid ""
+"PNG compression level must be a value between 0 and 9; value “%s” is invalid"
+msgstr ""
+"Khwaliti ya JPEG e swanetše go ba boleng magareng ga 0 le 100; boleng bja "
+"'%d' ga bo a dumelelwa."
+
+#: cdk-pixbuf/io-png.c:1053
+#, fuzzy, c-format
+msgid "PNG %s must be greater than zero; value “%s” is not allowed"
+msgstr ""
+"Khwaliti ya JPEG e swanetše go ba boleng magareng ga 0 le 100; boleng bja "
+"'%d' ga bo a dumelelwa."
+
+#: cdk-pixbuf/io-png.c:1283
+msgctxt "image format"
+msgid "PNG"
+msgstr ""
+
+#: cdk-pixbuf/io-pnm.c:247
+#, fuzzy
+msgid "PNM loader expected to find an integer, but didn’t"
 msgstr ""
 "Selaiši sa PNM seo se letetšwego gore se hwetše dinomoro tša tlhago, eupša "
 "ga se a e hwetša"
 
-#: cdk-pixbuf/io-pnm.c:280
+#: cdk-pixbuf/io-pnm.c:279
 msgid "PNM file has an incorrect initial byte"
 msgstr "Faele ya PNM e na le paete ya mathomo yeo e fošagetšego"
 
-#: cdk-pixbuf/io-pnm.c:310
+#: cdk-pixbuf/io-pnm.c:309
 msgid "PNM file is not in a recognized PNM subformat"
 msgstr "Faele ya PNM ga e ka gare ga seka-sebopego sa PNM seo se lemogwago"
 
-#: cdk-pixbuf/io-pnm.c:335
+#: cdk-pixbuf/io-pnm.c:334
+#, fuzzy
+msgid "PNM file has an invalid width"
+msgstr "Faele ya PNM e na le bophara bja seswantšho bja 0"
+
+#: cdk-pixbuf/io-pnm.c:342
 msgid "PNM file has an image width of 0"
 msgstr "Faele ya PNM e na le bophara bja seswantšho bja 0"
 
-#: cdk-pixbuf/io-pnm.c:356
+#: cdk-pixbuf/io-pnm.c:363
+#, fuzzy
+msgid "PNM file has an invalid height"
+msgstr "Faele ya PNM e na le bophagamo bja seswantšho bja 0"
+
+#: cdk-pixbuf/io-pnm.c:371
 msgid "PNM file has an image height of 0"
 msgstr "Faele ya PNM e na le bophagamo bja seswantšho bja 0"
 
-#: cdk-pixbuf/io-pnm.c:379
+#: cdk-pixbuf/io-pnm.c:394
 msgid "Maximum color value in PNM file is 0"
 msgstr "Boleng bjo bogolo bja mmala faeleng ya PNM ke 0"
 
-#: cdk-pixbuf/io-pnm.c:387
+#: cdk-pixbuf/io-pnm.c:402
 msgid "Maximum color value in PNM file is too large"
 msgstr "Boleng bjo bogolo bja mmala faeleng ya PNM ke bjo bogolo kudu"
 
-#: cdk-pixbuf/io-pnm.c:427 cdk-pixbuf/io-pnm.c:457 cdk-pixbuf/io-pnm.c:502
+#: cdk-pixbuf/io-pnm.c:442 cdk-pixbuf/io-pnm.c:472 cdk-pixbuf/io-pnm.c:517
 msgid "Raw PNM image type is invalid"
 msgstr "Mohuta wa seswantšho se sa butšwago sa PNM ga se wa kgonthe"
 
-#: cdk-pixbuf/io-pnm.c:652
+#: cdk-pixbuf/io-pnm.c:667
 msgid "PNM image loader does not support this PNM subformat"
 msgstr "Selaiši sa seswantšho sa PNM ga se thekge seka-sebopego se sa PNM"
 
-#: cdk-pixbuf/io-pnm.c:739 cdk-pixbuf/io-pnm.c:966
+#: cdk-pixbuf/io-pnm.c:754 cdk-pixbuf/io-pnm.c:991
 msgid "Raw PNM formats require exactly one whitespace before sample data"
 msgstr ""
 "Dibopego tše sa butšwago tša PNM di nyaka sekgoba se sešweu ka go lebanya "
 "pele ga tsebišo ya mohlala"
 
-#: cdk-pixbuf/io-pnm.c:766
+#: cdk-pixbuf/io-pnm.c:781
 #, fuzzy
 msgid "Cannot allocate memory for loading PNM image"
 msgstr "Ga e kgone go hwetša kgopolo ya go laiša seswantšho sa PNM"
 
-#: cdk-pixbuf/io-pnm.c:816
+#: cdk-pixbuf/io-pnm.c:835
 msgid "Insufficient memory to load PNM context struct"
 msgstr "Ga go na kgopolo e lekanego go laiša struct sa dikagare sa PNM"
 
-#: cdk-pixbuf/io-pnm.c:867
+#: cdk-pixbuf/io-pnm.c:892
 msgid "Unexpected end of PNM image data"
 msgstr "Mafelelo a tsebišo ya seswantšho sa PNM ao a sa letelwago"
 
-#: cdk-pixbuf/io-pnm.c:995
+#: cdk-pixbuf/io-pnm.c:1020
 msgid "Insufficient memory to load PNM file"
 msgstr "Kgopolo e sa lekanago go ka laiša faele ya PNM"
 
-#: cdk-pixbuf/io-pnm.c:1079
-msgid "The PNM/PBM/PGM/PPM image format family"
-msgstr "Lapa la sebopego sa seswantšho la PNM/PBM/PGM/PPM"
+#: cdk-pixbuf/io-pnm.c:1103
+msgctxt "image format"
+msgid "PNM/PBM/PGM/PPM"
+msgstr ""
 
-#: cdk-pixbuf/io-qtif.c:128
+#: cdk-pixbuf/io-qtif.c:126
 msgid "Input file descriptor is NULL."
 msgstr ""
 
-#: cdk-pixbuf/io-qtif.c:143
+#: cdk-pixbuf/io-qtif.c:141
 #, fuzzy
 msgid "Failed to read QTIF header"
 msgstr "E paletšwe go bula seswantšho sa TIFF"
 
-#: cdk-pixbuf/io-qtif.c:152 cdk-pixbuf/io-qtif.c:189 cdk-pixbuf/io-qtif.c:460
+#: cdk-pixbuf/io-qtif.c:150 cdk-pixbuf/io-qtif.c:187 cdk-pixbuf/io-qtif.c:449
 #, c-format
 msgid "QTIF atom size too large (%d byte)"
 msgid_plural "QTIF atom size too large (%d bytes)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: cdk-pixbuf/io-qtif.c:175
+#: cdk-pixbuf/io-qtif.c:173
 #, fuzzy, c-format
 msgid "Failed to allocate %d byte for file read buffer"
 msgid_plural "Failed to allocate %d bytes for file read buffer"
 msgstr[0] "e paletšwe go hwetša sešireletši sa seswantšho sa paete ya %u"
 msgstr[1] "e paletšwe go hwetša sešireletši sa seswantšho sa paete ya %u"
 
-#: cdk-pixbuf/io-qtif.c:206
+#: cdk-pixbuf/io-qtif.c:201
 #, fuzzy, c-format
 msgid "File error when reading QTIF atom: %s"
 msgstr "Go palelwa ke go bala GIF: %s"
 
-#: cdk-pixbuf/io-qtif.c:243
+#: cdk-pixbuf/io-qtif.c:238
 #, c-format
 msgid "Failed to skip the next %d byte with seek()."
 msgid_plural "Failed to skip the next %d bytes with seek()."
 msgstr[0] ""
 msgstr[1] ""
 
-#: cdk-pixbuf/io-qtif.c:270
+#: cdk-pixbuf/io-qtif.c:269
 #, fuzzy
 msgid "Failed to allocate QTIF context structure."
 msgstr "Ga e kgone go šupa kgopolo bakeng sa struct sa dikagare sa TGA"
 
-#: cdk-pixbuf/io-qtif.c:330
+#: cdk-pixbuf/io-qtif.c:329
 #, fuzzy
 msgid "Failed to create CdkPixbufLoader object."
 msgstr "E paletšwe go bala go tšwa faeleng ya motšwa-o-swere"
 
-#: cdk-pixbuf/io-qtif.c:434
+#: cdk-pixbuf/io-qtif.c:424
 #, fuzzy
 msgid "Failed to find an image data atom."
 msgstr "E paletšwe go bula seswantšho sa TIFF"
 
-#: cdk-pixbuf/io-qtif.c:619
-#, fuzzy
-msgid "The QTIF image format"
-msgstr "Sebopego sa seswantšho sa TIFF"
-
-#: cdk-pixbuf/io-ras.c:125
-msgid "RAS image has bogus header data"
-msgstr "Seswantšho sa RAS se na le tsebišo ya hlogwana yeo e sego ya kgonthe"
-
-#: cdk-pixbuf/io-ras.c:147
-msgid "RAS image has unknown type"
-msgstr "Seswantšo sa RAS se na le mohuta o sa tsebjwego"
-
-#: cdk-pixbuf/io-ras.c:155
-msgid "unsupported RAS image variation"
-msgstr "Go fapana ga seswantšho sa RAS mo go sa thekgwego"
-
-#: cdk-pixbuf/io-ras.c:170 cdk-pixbuf/io-ras.c:199
-msgid "Not enough memory to load RAS image"
-msgstr "Ga go na kgopolo e lekanego go laiša seswantšho sa RAS"
-
-#: cdk-pixbuf/io-ras.c:544
-msgid "The Sun raster image format"
-msgstr "Sebopego sa seswantšho sa dikhutlo tše bopago seswantšho tša Sun"
-
-#: cdk-pixbuf/io-tga.c:153
-#, fuzzy
-msgid "Cannot allocate memory for IOBuffer struct"
-msgstr "Ga e kgone go šupa kgopolo ya struct sa IOBuffer"
-
-#: cdk-pixbuf/io-tga.c:172
-#, fuzzy
-msgid "Cannot allocate memory for IOBuffer data"
-msgstr "Ga e kgone go šupa kgopolo bakeng sa tsebišo ya IOBuffer"
-
-#: cdk-pixbuf/io-tga.c:183
-#, fuzzy
-msgid "Cannot realloc IOBuffer data"
-msgstr "Ga e kgone go šupa tsebišo ya IOBuffer"
-
-#: cdk-pixbuf/io-tga.c:213
-#, fuzzy
-msgid "Cannot allocate temporary IOBuffer data"
-msgstr "Ga e kgone go šupa tsebišo ya motšwa-o-swere ya IOBuffer"
+#: cdk-pixbuf/io-qtif.c:599
+msgctxt "image format"
+msgid "QuickTime"
+msgstr ""
 
 #: cdk-pixbuf/io-tga.c:346
+#, fuzzy
+msgid "Cannot allocate colormap"
+msgstr "Ga e kgone go šupa ditseno tša mmapa wa mmala"
+
+#: cdk-pixbuf/io-tga.c:371
 #, fuzzy
 msgid "Cannot allocate new pixbuf"
 msgstr "Ga e kgone go šupa pixbuf e mpsha"
 
-#: cdk-pixbuf/io-tga.c:685
-#, fuzzy
-msgid "Image is corrupted or truncated"
-msgstr "Seswantšho sa GIF se lekanyeditšwe goba ga se a felela."
-
-#: cdk-pixbuf/io-tga.c:692
-#, fuzzy
-msgid "Cannot allocate colormap structure"
-msgstr "Ga e kgone go šupa sebopego sa mmapa wa mmala"
-
-#: cdk-pixbuf/io-tga.c:699
-#, fuzzy
-msgid "Cannot allocate colormap entries"
-msgstr "Ga e kgone go šupa ditseno tša mmapa wa mmala"
-
-#: cdk-pixbuf/io-tga.c:721
+#: cdk-pixbuf/io-tga.c:519
 msgid "Unexpected bitdepth for colormap entries"
 msgstr ""
 "Botebo bja biti bjo bo sa letelwago bakeng sa ditseno tša mmapa wa mmala"
 
-#: cdk-pixbuf/io-tga.c:739
+#: cdk-pixbuf/io-tga.c:535
+msgid "Pseudocolor image does not contain a colormap"
+msgstr ""
+
+#: cdk-pixbuf/io-tga.c:578
 #, fuzzy
 msgid "Cannot allocate TGA header memory"
 msgstr "Ga e kgone go šupa kgopolo ya hlogwana ya TGA"
 
-#: cdk-pixbuf/io-tga.c:772
+#: cdk-pixbuf/io-tga.c:609
 msgid "TGA image has invalid dimensions"
 msgstr "Seswantšho sa TGA se na le bogolo bjo e sego bja kgonthe"
 
-#: cdk-pixbuf/io-tga.c:778 cdk-pixbuf/io-tga.c:787 cdk-pixbuf/io-tga.c:797
-#: cdk-pixbuf/io-tga.c:807 cdk-pixbuf/io-tga.c:814
+#: cdk-pixbuf/io-tga.c:615 cdk-pixbuf/io-tga.c:622
 msgid "TGA image type not supported"
 msgstr "Mohuta wa seswantšho sa TGA wo o sa thekgwego"
 
-#: cdk-pixbuf/io-tga.c:861
+#: cdk-pixbuf/io-tga.c:650
 #, fuzzy
 msgid "Cannot allocate memory for TGA context struct"
 msgstr "Ga e kgone go šupa kgopolo bakeng sa struct sa dikagare sa TGA"
 
-#: cdk-pixbuf/io-tga.c:926
-msgid "Excess data in file"
-msgstr "Tsebišo e oketšegilego ka faeleng"
+#: cdk-pixbuf/io-tga.c:712
+#, fuzzy
+msgid "TGA image was truncated or incomplete."
+msgstr "Seswantšho sa GIF se lekanyeditšwe goba ga se a felela."
 
-#: cdk-pixbuf/io-tga.c:1007
-msgid "The Targa image format"
-msgstr "Sebopego sa seswantšho sa Targa"
+#: cdk-pixbuf/io-tga.c:764
+msgctxt "image format"
+msgid "Targa"
+msgstr ""
 
-#: cdk-pixbuf/io-tiff.c:164
+#: cdk-pixbuf/io-tiff.c:117
 msgid "Could not get image width (bad TIFF file)"
 msgstr "Ga e kgone go hwetša bophara bja seswantšho (faele e mpe ya TIFF)"
 
-#: cdk-pixbuf/io-tiff.c:171
+#: cdk-pixbuf/io-tiff.c:125
 msgid "Could not get image height (bad TIFF file)"
 msgstr "Ga e kgone go hwetša bophagamo bja seswantšho (faele e mpe ya TIFF)"
 
-#: cdk-pixbuf/io-tiff.c:179
+#: cdk-pixbuf/io-tiff.c:133
 msgid "Width or height of TIFF image is zero"
 msgstr "Bophara goba bophagamo bja seswantšho sa TIFF ke lefeela"
 
-#: cdk-pixbuf/io-tiff.c:188 cdk-pixbuf/io-tiff.c:197
+#: cdk-pixbuf/io-tiff.c:141 cdk-pixbuf/io-tiff.c:151
 msgid "Dimensions of TIFF image too large"
 msgstr "Bogolo bja seswantšho sa TIFF ke bjo bogolo kudu"
 
-#: cdk-pixbuf/io-tiff.c:221 cdk-pixbuf/io-tiff.c:233 cdk-pixbuf/io-tiff.c:560
+#: cdk-pixbuf/io-tiff.c:177 cdk-pixbuf/io-tiff.c:189 cdk-pixbuf/io-tiff.c:585
 msgid "Insufficient memory to open TIFF file"
 msgstr "Ga go na kgopolo e lekanego go ka bula faele ya TIFF"
 
-#: cdk-pixbuf/io-tiff.c:294
+#: cdk-pixbuf/io-tiff.c:287
 msgid "Failed to load RGB data from TIFF file"
 msgstr "E paletšwe go laiša tsebišo ya RGB go tšwa faeleng ya TIFF"
 
-#: cdk-pixbuf/io-tiff.c:350
+#: cdk-pixbuf/io-tiff.c:378
 msgid "Failed to open TIFF image"
 msgstr "E paletšwe go bula seswantšho sa TIFF"
 
-#: cdk-pixbuf/io-tiff.c:362 cdk-pixbuf/io-tiff.c:777
-msgid "TIFFClose operation failed"
-msgstr "Mošomo wa go tswalela TIFF o padile"
-
-#: cdk-pixbuf/io-tiff.c:492 cdk-pixbuf/io-tiff.c:505
+#: cdk-pixbuf/io-tiff.c:516 cdk-pixbuf/io-tiff.c:528
 msgid "Failed to load TIFF image"
 msgstr "E paletšwe go laiša seswantšho sa TIFF"
 
-#: cdk-pixbuf/io-tiff.c:691
+#: cdk-pixbuf/io-tiff.c:760
 #, fuzzy
 msgid "Failed to save TIFF image"
 msgstr "E paletšwe go bula seswantšho sa TIFF"
 
-#: cdk-pixbuf/io-tiff.c:726
-msgid "TIFF compression doesn't refer to a valid codec."
+#: cdk-pixbuf/io-tiff.c:821
+msgid "TIFF compression doesn’t refer to a valid codec."
 msgstr ""
 
-#: cdk-pixbuf/io-tiff.c:766
+#: cdk-pixbuf/io-tiff.c:851
+#, c-format
+msgid "Color profile has invalid length %d."
+msgstr ""
+
+#: cdk-pixbuf/io-tiff.c:866
+msgid "TIFF bits-per-sample doesn’t contain a supported value."
+msgstr ""
+
+#: cdk-pixbuf/io-tiff.c:947
 #, fuzzy
 msgid "Failed to write TIFF data"
 msgstr "E paletšwe go bula seswantšho sa TIFF"
 
-#: cdk-pixbuf/io-tiff.c:813
+#: cdk-pixbuf/io-tiff.c:965
+#, fuzzy, c-format
+msgid "TIFF x-dpi must be greater than zero; value “%s” is not allowed."
+msgstr ""
+"Khwaliti ya JPEG e swanetše go ba boleng magareng ga 0 le 100; boleng bja "
+"'%d' ga bo a dumelelwa."
+
+#: cdk-pixbuf/io-tiff.c:977
+#, fuzzy, c-format
+msgid "TIFF y-dpi must be greater than zero; value “%s” is not allowed."
+msgstr ""
+"Khwaliti ya JPEG e swanetše go ba boleng magareng ga 0 le 100; boleng bja "
+"'%d' ga bo a dumelelwa."
+
+#: cdk-pixbuf/io-tiff.c:1018
 #, fuzzy
-msgid "Couldn't write to TIFF file"
+msgid "Couldn’t write to TIFF file"
 msgstr "E be e ka se fetole leina la faele"
 
-#: cdk-pixbuf/io-tiff.c:868
-msgid "The TIFF image format"
-msgstr "Sebopego sa seswantšho sa TIFF"
-
-#: cdk-pixbuf/io-wbmp.c:245
-msgid "Image has zero width"
-msgstr "Seswantšho se na le bophara bja lefeela"
-
-#: cdk-pixbuf/io-wbmp.c:263
-msgid "Image has zero height"
-msgstr "Seswantšho se na le bophagamo bja lefeela"
-
-#: cdk-pixbuf/io-wbmp.c:274
-msgid "Not enough memory to load image"
-msgstr "Ga go na kgopolo e lekanego go ka laiša seswantšho"
-
-#: cdk-pixbuf/io-wbmp.c:333
-msgid "Couldn't save the rest"
-msgstr "Ga e kgone go e boloka ka moka"
-
-#: cdk-pixbuf/io-wbmp.c:374
-msgid "The WBMP image format"
-msgstr "Sebopego sa seswantšho sa WBMP"
-
-#: cdk-pixbuf/io-xbm.c:296
+#: cdk-pixbuf/io-xbm.c:320
 msgid "Invalid XBM file"
 msgstr "Faele yeo e sego ya kgonthe ya XBM"
 
-#: cdk-pixbuf/io-xbm.c:306
+#: cdk-pixbuf/io-xbm.c:331
 msgid "Insufficient memory to load XBM image file"
 msgstr "Kgopolo e sa lekanago go ka laiša faele ya seswantšho ya XBM"
 
-#: cdk-pixbuf/io-xbm.c:454
+#: cdk-pixbuf/io-xbm.c:482
 msgid "Failed to write to temporary file when loading XBM image"
 msgstr ""
 "E paletšwe go ngwala faele ya motšwa-o-swere ge e be e laiša seswantšho sa "
 "XBM"
 
-#: cdk-pixbuf/io-xbm.c:493
-msgid "The XBM image format"
-msgstr "Sebopego sa seswantšho sa XBM"
+#: cdk-pixbuf/io-xbm.c:521
+msgctxt "image format"
+msgid "XBM"
+msgstr ""
 
-#: cdk-pixbuf/io-xpm.c:469
+#: cdk-pixbuf/io-xpm.c:472
 msgid "No XPM header found"
 msgstr "Ga go na hlogwana ya XPM yeo e hweditšwego"
 
-#: cdk-pixbuf/io-xpm.c:478
+#: cdk-pixbuf/io-xpm.c:481 cdk-pixbuf/io-xpm.c:507
 #, fuzzy
 msgid "Invalid XPM header"
 msgstr "Faele yeo e sego ya kgonthe ya XBM"
 
-#: cdk-pixbuf/io-xpm.c:486
+#: cdk-pixbuf/io-xpm.c:489
 msgid "XPM file has image width <= 0"
 msgstr "Faele ya XPM e na le bophara bja seswantšho bja <= 0"
 
-#: cdk-pixbuf/io-xpm.c:494
+#: cdk-pixbuf/io-xpm.c:497
 msgid "XPM file has image height <= 0"
 msgstr "Faele ya XPM e na le bophagamo bja seswantšho bja <= 0"
 
-#: cdk-pixbuf/io-xpm.c:502
+#: cdk-pixbuf/io-xpm.c:514
 msgid "XPM has invalid number of chars per pixel"
 msgstr ""
 "XPM e na le nomoro yeo e sego ya kgonthe ya ditlhaka go ya ka dikarolwana "
 "tše bopago seswantšho"
 
-#: cdk-pixbuf/io-xpm.c:511
+#: cdk-pixbuf/io-xpm.c:523
 msgid "XPM file has invalid number of colors"
 msgstr "Faele ya XPM e na le nomoro yeo e sa dumelelwago ya mebala"
 
-#: cdk-pixbuf/io-xpm.c:523 cdk-pixbuf/io-xpm.c:532 cdk-pixbuf/io-xpm.c:584
+#: cdk-pixbuf/io-xpm.c:535 cdk-pixbuf/io-xpm.c:544 cdk-pixbuf/io-xpm.c:593
 #, fuzzy
 msgid "Cannot allocate memory for loading XPM image"
 msgstr "Ga e kgone go šupa kgopolo bakeng sa go laiša seswantšho sa XPM"
 
-#: cdk-pixbuf/io-xpm.c:546
+#: cdk-pixbuf/io-xpm.c:558
 #, fuzzy
 msgid "Cannot read XPM colormap"
 msgstr "Ga e kgone go bala mmapa wa mmala wa XPM"
 
-#: cdk-pixbuf/io-xpm.c:778
+#: cdk-pixbuf/io-xpm.c:610
+#, fuzzy
+msgid "Dimensions do not match data"
+msgstr "Bogolo bja seswantšho sa TIFF ke bjo bogolo kudu"
+
+#: cdk-pixbuf/io-xpm.c:806
 msgid "Failed to write to temporary file when loading XPM image"
 msgstr ""
 "E paletšwe go ngwala faeleng ya motšwa-o-swere ge e be e laiša seswantšho sa "
 "XPM"
 
-#: cdk-pixbuf/io-xpm.c:817
-msgid "The XPM image format"
-msgstr "Sebopego sa seswantšho sa XPM"
+#: cdk-pixbuf/io-xpm.c:845
+msgctxt "image format"
+msgid "XPM"
+msgstr ""
+
+#~ msgid "Unsupported animation type"
+#~ msgstr "Mohuta wa tsošološo o sa thekgwego"
+
+#~ msgid "The ANI image format"
+#~ msgstr "Sebopego sa seswantšho sa ANI"
+
+#~ msgid "The BMP image format"
+#~ msgstr "Sebopego sa seswantšho sa BMP"
+
+#, fuzzy
+#~ msgid "The EMF image format"
+#~ msgstr "Sebopego sa seswantšho sa BMP"
+
+#~ msgid "The GIF image format"
+#~ msgstr "Sebopego sa seswantšho sa GIF"
+
+#~ msgid "The ICO image format"
+#~ msgstr "Sebopego sa seswantšho sa ICO"
+
+#~ msgid "The JPEG image format"
+#~ msgstr "Sebopego sa seswantšho sa JPEG"
+
+#, fuzzy
+#~ msgid "The WMF image format"
+#~ msgstr "Sebopego sa seswantšho sa WBMP"
+
+#, c-format
+#~ msgid "Internal error in the GIF loader (%s)"
+#~ msgstr "Phošo ya ka gare selaišing sa GIF (%s)"
+
+#~ msgid "Stack overflow"
+#~ msgstr "Go elela ga mokgobo"
+
+#, fuzzy
+#~ msgid "GIF image loader cannot understand this image."
+#~ msgstr "Selaiši sa seswantšho sa GIF ga se kwešiše seswantšho se."
+
+#~ msgid "Bad code encountered"
+#~ msgstr "Go kopanwe le khoutu e mpe"
+
+#~ msgid "Circular table entry in GIF file"
+#~ msgstr "Tseno e dikologago ya lenaneo faeleng ya GIF"
+
+#, fuzzy
+#~ msgid "Not enough memory to composite a frame in GIF file"
+#~ msgstr "Ga go na kgopolo e lekanego go laiša faele ya GIF"
+
+#, fuzzy
+#~ msgid "The ICNS image format"
+#~ msgstr "Sebopego sa seswantšho sa ICO"
+
+#~ msgid "Icon has zero width"
+#~ msgstr "Leswao le na bophara bja lefeela"
+
+#~ msgid "Icon has zero height"
+#~ msgstr "Leswao le na le bophagamo bja lefeela"
+
+#, fuzzy
+#~ msgid "Couldn't allocate memory for stream"
+#~ msgstr "Ga e kgone go šupa kgopolo bakeng sa hlogwana"
+
+#, fuzzy
+#~ msgid "Couldn't decode image"
+#~ msgstr "E be e ka se fetole leina la faele"
+
+#, fuzzy
+#~ msgid "Transformed JPEG2000 has zero width or height"
+#~ msgstr "PNG e fetotšwego e na bophara goba bophagamo bja lefeela."
+
+#, fuzzy
+#~ msgid "Image type currently not supported"
+#~ msgstr "Mohuta wa seswantšho wa '%s' ga o thekgwe"
+
+#, fuzzy
+#~ msgid "Couldn't allocate memory for color profile"
+#~ msgstr "E ka se kgone go bea kgopolo bakeng sa go laiša faele ya JPEG"
+
+#, fuzzy
+#~ msgid "Insufficient memory to open JPEG 2000 file"
+#~ msgstr "Ga go na kgopolo e lekanego go ka bula faele ya TIFF"
+
+#, fuzzy
+#~ msgid "Couldn't allocate memory to buffer image data"
+#~ msgstr "Ga e kgone go šupa kgopolo bakeng sa tsebišo ya mothaladi"
+
+#, fuzzy
+#~ msgid "The JPEG 2000 image format"
+#~ msgstr "Sebopego sa seswantšho sa JPEG"
+
+#~ msgid "Couldn't allocate memory for header"
+#~ msgstr "Ga e kgone go šupa kgopolo bakeng sa hlogwana"
+
+#~ msgid "Couldn't allocate memory for context buffer"
+#~ msgstr "Ga e kgone go šupa kgopolo bakeng sa sešireletši sa dikagare"
+
+#~ msgid "Image has invalid width and/or height"
+#~ msgstr ""
+#~ "Seswantšho se na le bophara le/goba bophagamo tšeo e sego tša kgonthe"
+
+#~ msgid "Image has unsupported bpp"
+#~ msgstr "Seswantšho se na le bpp yeo e sa thekgwego"
+
+#, c-format
+#~ msgid "Image has unsupported number of %d-bit planes"
+#~ msgstr ""
+#~ "Seswantšho se na le nomoro e sa thekgwego ya difofane tša dibiti tša %d"
+
+#~ msgid "Couldn't create new pixbuf"
+#~ msgstr "Ga e kgone go bopa pixbuf e mpsha"
+
+#~ msgid "Couldn't allocate memory for line data"
+#~ msgstr "Ga e kgone go šupa kgopolo bakeng sa tsebišo ya mothaladi"
+
+#, fuzzy
+#~ msgid "Couldn't allocate memory for PCX image"
+#~ msgstr "Ga e kgone go šupa kgopolo bakeng sa hlogwana"
+
+#~ msgid "Didn't get all lines of PCX image"
+#~ msgstr "Ga se ya hwetša methaladi ka moka ya seswantšho ya PCX"
+
+#~ msgid "No palette found at end of PCX data"
+#~ msgstr ""
+#~ "Ga go na seo se hweditšwego seo se bolokilwego mafelelong ga tsebišo ya "
+#~ "PCX"
+
+#~ msgid "The PCX image format"
+#~ msgstr "Sebopego sa seswantšho sa PCX"
+
+#, fuzzy
+#~ msgid "Transformed pixbuf has zero width or height."
+#~ msgstr "PNG e fetotšwego e na bophara goba bophagamo bja lefeela."
+
+#, fuzzy
+#~ msgid "The CdkPixdata format"
+#~ msgstr "Sebopego sa seswantšho sa GIF"
+
+#, fuzzy, c-format
+#~ msgid ""
+#~ "PNG compression level must be a value between 0 and 9; value '%s' could "
+#~ "not be parsed."
+#~ msgstr ""
+#~ "Khwaliti ya JPEG e swanetše go ba boleng magareng ga 0 le 100; boleng bja "
+#~ "'%s' bo ka se arolwe."
+
+#~ msgid "The PNG image format"
+#~ msgstr "Sebopego sa seswantšho sa PNG"
+
+#~ msgid "The PNM/PBM/PGM/PPM image format family"
+#~ msgstr "Lapa la sebopego sa seswantšho la PNM/PBM/PGM/PPM"
+
+#, fuzzy
+#~ msgid "The QTIF image format"
+#~ msgstr "Sebopego sa seswantšho sa TIFF"
+
+#~ msgid "RAS image has bogus header data"
+#~ msgstr ""
+#~ "Seswantšho sa RAS se na le tsebišo ya hlogwana yeo e sego ya kgonthe"
+
+#~ msgid "RAS image has unknown type"
+#~ msgstr "Seswantšo sa RAS se na le mohuta o sa tsebjwego"
+
+#~ msgid "unsupported RAS image variation"
+#~ msgstr "Go fapana ga seswantšho sa RAS mo go sa thekgwego"
+
+#~ msgid "Not enough memory to load RAS image"
+#~ msgstr "Ga go na kgopolo e lekanego go laiša seswantšho sa RAS"
+
+#~ msgid "The Sun raster image format"
+#~ msgstr "Sebopego sa seswantšho sa dikhutlo tše bopago seswantšho tša Sun"
+
+#, fuzzy
+#~ msgid "Cannot allocate memory for IOBuffer struct"
+#~ msgstr "Ga e kgone go šupa kgopolo ya struct sa IOBuffer"
+
+#, fuzzy
+#~ msgid "Cannot allocate memory for IOBuffer data"
+#~ msgstr "Ga e kgone go šupa kgopolo bakeng sa tsebišo ya IOBuffer"
+
+#, fuzzy
+#~ msgid "Cannot realloc IOBuffer data"
+#~ msgstr "Ga e kgone go šupa tsebišo ya IOBuffer"
+
+#, fuzzy
+#~ msgid "Cannot allocate temporary IOBuffer data"
+#~ msgstr "Ga e kgone go šupa tsebišo ya motšwa-o-swere ya IOBuffer"
+
+#, fuzzy
+#~ msgid "Image is corrupted or truncated"
+#~ msgstr "Seswantšho sa GIF se lekanyeditšwe goba ga se a felela."
+
+#, fuzzy
+#~ msgid "Cannot allocate colormap structure"
+#~ msgstr "Ga e kgone go šupa sebopego sa mmapa wa mmala"
+
+#~ msgid "Excess data in file"
+#~ msgstr "Tsebišo e oketšegilego ka faeleng"
+
+#~ msgid "The Targa image format"
+#~ msgstr "Sebopego sa seswantšho sa Targa"
+
+#~ msgid "TIFFClose operation failed"
+#~ msgstr "Mošomo wa go tswalela TIFF o padile"
+
+#~ msgid "The TIFF image format"
+#~ msgstr "Sebopego sa seswantšho sa TIFF"
+
+#~ msgid "Image has zero height"
+#~ msgstr "Seswantšho se na le bophagamo bja lefeela"
+
+#~ msgid "Not enough memory to load image"
+#~ msgstr "Ga go na kgopolo e lekanego go ka laiša seswantšho"
+
+#~ msgid "Couldn't save the rest"
+#~ msgstr "Ga e kgone go e boloka ka moka"
+
+#~ msgid "The WBMP image format"
+#~ msgstr "Sebopego sa seswantšho sa WBMP"
+
+#~ msgid "The XBM image format"
+#~ msgstr "Sebopego sa seswantšho sa XBM"
+
+#~ msgid "The XPM image format"
+#~ msgstr "Sebopego sa seswantšho sa XPM"
 
 #~ msgid "Couldn't allocate memory for paletted data"
 #~ msgstr "Ga e kgone go šupa kgopolo bakeng sa tsebišo e bolokilwego"

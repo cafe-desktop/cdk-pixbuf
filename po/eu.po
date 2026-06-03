@@ -8,9 +8,10 @@
 # Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2019, 2021.
 #
 msgid ""
-msgstr "Project-Id-Version: cdk-pixbuf master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/cdk-pixbuf/issues\n"
-"POT-Creation-Date: 2021-01-10 12:23+0000\n"
+msgstr ""
+"Project-Id-Version: cdk-pixbuf master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 08:56+0200\n"
 "PO-Revision-Date: 2021-04-05 10:00+0100\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
@@ -20,211 +21,224 @@ msgstr "Project-Id-Version: cdk-pixbuf master\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:175 cdk-pixbuf/cdk-pixbuf-io.c:1125
-#: cdk-pixbuf/cdk-pixbuf-io.c:1387
+#: cdk-pixbuf/cdk-pixbuf-animation.c:190 cdk-pixbuf/cdk-pixbuf-io.c:1224
+#: cdk-pixbuf/cdk-pixbuf-io.c:1497
 #, c-format
 msgid "Failed to open file “%s”: %s"
 msgstr "Ezin izan da “%s“ fitxategia ireki: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:188 cdk-pixbuf/cdk-pixbuf-io.c:992
+#: cdk-pixbuf/cdk-pixbuf-animation.c:203 cdk-pixbuf/cdk-pixbuf-io.c:1085
 #, c-format
 msgid "Image file “%s” contains no data"
 msgstr "“%s“ irudi-fitxategiak ez du daturik"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:226
+#: cdk-pixbuf/cdk-pixbuf-animation.c:241
 #, c-format
 msgid ""
 "Failed to load animation “%s”: reason not known, probably a corrupt "
 "animation file"
-msgstr "Ezin izan da “%s“ animazioa kargatu: arrazoia ez dakigu, beharbada hondatutako animazio-fitxategia izango da"
+msgstr ""
+"Ezin izan da “%s“ animazioa kargatu: arrazoia ez dakigu, beharbada "
+"hondatutako animazio-fitxategia izango da"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:294 cdk-pixbuf/cdk-pixbuf-io.c:1161
-#: cdk-pixbuf/cdk-pixbuf-io.c:1439
+#: cdk-pixbuf/cdk-pixbuf-animation.c:309 cdk-pixbuf/cdk-pixbuf-io.c:1260
+#: cdk-pixbuf/cdk-pixbuf-io.c:1549
 #, c-format
 msgid ""
 "Failed to load image “%s”: reason not known, probably a corrupt image file"
-msgstr "Ezin izan da “%s“ irudia kargatu: arrazoia ez dakigu, beharbada hondatutako irudi-fitxategia izango da"
+msgstr ""
+"Ezin izan da “%s“ irudia kargatu: arrazoia ez dakigu, beharbada hondatutako "
+"irudi-fitxategia izango da"
 
-#: cdk-pixbuf/cdk-pixbuf.c:237
+#: cdk-pixbuf/cdk-pixbuf.c:248
 msgid "Number of Channels"
 msgstr "Kanal kopurua"
 
-#: cdk-pixbuf/cdk-pixbuf.c:238
+#: cdk-pixbuf/cdk-pixbuf.c:249
 msgid "The number of samples per pixel"
 msgstr "Lagin kopurua pixeleko"
 
-#: cdk-pixbuf/cdk-pixbuf.c:247
+#: cdk-pixbuf/cdk-pixbuf.c:264
 msgid "Colorspace"
 msgstr "Kolore-espazioa"
 
-#: cdk-pixbuf/cdk-pixbuf.c:248
+#: cdk-pixbuf/cdk-pixbuf.c:265
 msgid "The colorspace in which the samples are interpreted"
 msgstr "Laginak interpretatzen diren kolore-espazioa"
 
-#: cdk-pixbuf/cdk-pixbuf.c:256
+#: cdk-pixbuf/cdk-pixbuf.c:277
 msgid "Has Alpha"
 msgstr "Alfa dauka"
 
-#: cdk-pixbuf/cdk-pixbuf.c:257
+#: cdk-pixbuf/cdk-pixbuf.c:278
 msgid "Whether the pixbuf has an alpha channel"
 msgstr "Pixbuf-ek alfa kanala duen ala ez adierazten du"
 
-#: cdk-pixbuf/cdk-pixbuf.c:270
+#: cdk-pixbuf/cdk-pixbuf.c:291
 msgid "Bits per Sample"
 msgstr "Lagin bakoitzeko bitak"
 
-#: cdk-pixbuf/cdk-pixbuf.c:271
+#: cdk-pixbuf/cdk-pixbuf.c:292
 msgid "The number of bits per sample"
 msgstr "Lagin bakoitzeko bit-kopurua"
 
-#: cdk-pixbuf/cdk-pixbuf.c:280
+#: cdk-pixbuf/cdk-pixbuf.c:305
 msgid "Width"
 msgstr "Zabalera"
 
-#: cdk-pixbuf/cdk-pixbuf.c:281
+#: cdk-pixbuf/cdk-pixbuf.c:306
 msgid "The number of columns of the pixbuf"
 msgstr "Pixbuf-eko zutabe-kopurua"
 
-#: cdk-pixbuf/cdk-pixbuf.c:290
+#: cdk-pixbuf/cdk-pixbuf.c:319
 msgid "Height"
 msgstr "Altuera"
 
-#: cdk-pixbuf/cdk-pixbuf.c:291
+#: cdk-pixbuf/cdk-pixbuf.c:320
 msgid "The number of rows of the pixbuf"
 msgstr "Pixbuf-eko errenkada-kopurua"
 
-#: cdk-pixbuf/cdk-pixbuf.c:307
+#: cdk-pixbuf/cdk-pixbuf.c:337
 msgid "Rowstride"
 msgstr "Errenkada-luzera"
 
-#: cdk-pixbuf/cdk-pixbuf.c:308
+#: cdk-pixbuf/cdk-pixbuf.c:338
 msgid ""
 "The number of bytes between the start of a row and the start of the next row"
-msgstr "Errenkada baten hasieratik hurrengo errenkadaren hasierara arte dagoen byte kopurua"
+msgstr ""
+"Errenkada baten hasieratik hurrengo errenkadaren hasierara arte dagoen byte "
+"kopurua"
 
-#: cdk-pixbuf/cdk-pixbuf.c:317
+#: cdk-pixbuf/cdk-pixbuf.c:351
 msgid "Pixels"
 msgstr "Pixelak"
 
-#: cdk-pixbuf/cdk-pixbuf.c:318
+#: cdk-pixbuf/cdk-pixbuf.c:352
 msgid "A pointer to the pixel data of the pixbuf"
 msgstr "Pixbuf-eko pixel-datuetarako erakuslea"
 
-#: cdk-pixbuf/cdk-pixbuf.c:332
+#: cdk-pixbuf/cdk-pixbuf.c:366
 msgid "Pixel Bytes"
 msgstr "Pixelaren byteak"
 
-#: cdk-pixbuf/cdk-pixbuf.c:333
+#: cdk-pixbuf/cdk-pixbuf.c:367
 msgid "Readonly pixel data"
 msgstr "Pixelen datuak irakurtzekosoilik"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:812
+#: cdk-pixbuf/cdk-pixbuf-io.c:901
 #, c-format
 msgid "Unable to load image-loading module: %s: %s"
 msgstr "Ezin da irudiak kargatzeko modulua kargatu: %s: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:827
+#: cdk-pixbuf/cdk-pixbuf-io.c:919
 #, c-format
 msgid ""
 "Image-loading module %s does not export the proper interface; perhaps it’s "
 "from a different cdk-pixbuf version?"
-msgstr "%s irudiak kargatzeko moduluak ez du interfaze egokia esportatzen; agian beste cdk-pixbuf bertsio batekoa da?"
+msgstr ""
+"%s irudiak kargatzeko moduluak ez du interfaze egokia esportatzen; agian "
+"beste cdk-pixbuf bertsio batekoa da?"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:836 cdk-pixbuf/cdk-pixbuf-io.c:879
+#: cdk-pixbuf/cdk-pixbuf-io.c:929 cdk-pixbuf/cdk-pixbuf-io.c:972
 #, c-format
 msgid "Image type “%s” is not supported"
 msgstr "“%s“ motako irudia ez dira onartzen"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:964
+#: cdk-pixbuf/cdk-pixbuf-io.c:1057
 #, c-format
 msgid "Couldn’t recognize the image file format for file “%s”"
 msgstr "Ezin izan da “%s“ fitxategiaren irudi-formatua ezagutu"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:972
+#: cdk-pixbuf/cdk-pixbuf-io.c:1065
 msgid "Unrecognized image file format"
 msgstr "Irudi-fitxategiaren formatu ezezaguna"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:1172
+#: cdk-pixbuf/cdk-pixbuf-io.c:1271
 #, c-format
 msgid "Failed to load image “%s”: %s"
 msgstr "Huts egin du “%s“ irudia kargatzean: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2242 cdk-pixbuf/io-gdip-utils.c:840
+#: cdk-pixbuf/cdk-pixbuf-io.c:2346 cdk-pixbuf/io-gdip-utils.c:840
 #, c-format
 msgid "Error writing to image file: %s"
 msgstr "Errorea irudi-fitxategia idaztean: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2284 cdk-pixbuf/cdk-pixbuf-io.c:2405
+#: cdk-pixbuf/cdk-pixbuf-io.c:2388 cdk-pixbuf/cdk-pixbuf-io.c:2509
 #, c-format
 msgid "This build of cdk-pixbuf does not support saving the image format: %s"
-msgstr "cdk-pixbuf-en bertsio honek ez du irudi-formatu hau gordetzea onartzen: %s"
+msgstr ""
+"cdk-pixbuf-en bertsio honek ez du irudi-formatu hau gordetzea onartzen: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2315
+#: cdk-pixbuf/cdk-pixbuf-io.c:2419
 msgid "Insufficient memory to save image to callback"
 msgstr "Ez dago irudi-fitxategia atzeradeian gordetzeko behar adina memoria"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2328
+#: cdk-pixbuf/cdk-pixbuf-io.c:2432
 msgid "Failed to open temporary file"
 msgstr "Huts egin du aldi baterako fitxategia irekitzean"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2351
+#: cdk-pixbuf/cdk-pixbuf-io.c:2455
 msgid "Failed to read from temporary file"
 msgstr "Huts egin du aldi baterako fitxategitik irakurtzean"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2561
+#: cdk-pixbuf/cdk-pixbuf-io.c:2677
 #, c-format
 msgid "Failed to open “%s” for writing: %s"
 msgstr "Huts egin du “%s“ idazteko irekitzean: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2587
+#: cdk-pixbuf/cdk-pixbuf-io.c:2703
 #, c-format
 msgid ""
 "Failed to close “%s” while writing image, all data may not have been saved: "
 "%s"
-msgstr "Ezin izan da “%s“ itxi irudia idatzi bitartean, baliteke datu guztiak ez gorde izana: %s"
+msgstr ""
+"Ezin izan da “%s“ itxi irudia idatzi bitartean, baliteke datu guztiak ez "
+"gorde izana: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2808 cdk-pixbuf/cdk-pixbuf-io.c:2860
+#: cdk-pixbuf/cdk-pixbuf-io.c:2937 cdk-pixbuf/cdk-pixbuf-io.c:2992
 msgid "Insufficient memory to save image into a buffer"
 msgstr "Ez dago irudi-fitxategia bufferrean gordetzeko behar adina memoria"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2906
+#: cdk-pixbuf/cdk-pixbuf-io.c:3038
 msgid "Error writing to image stream"
 msgstr "Errorea irudi-korrontean idaztean"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:406
+#: cdk-pixbuf/cdk-pixbuf-loader.c:426
 #, c-format
 msgid ""
 "Internal error: Image loader module “%s” failed to complete an operation, "
 "but didn’t give a reason for the failure"
-msgstr "Barne-errorea: “%s“ irudi kargatzailearen moduluak ezin izan du eragiketa burutu, baina ez du hutsegitearen arrazoirik eman"
+msgstr ""
+"Barne-errorea: “%s“ irudi kargatzailearen moduluak ezin izan du eragiketa "
+"burutu, baina ez du hutsegitearen arrazoirik eman"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:448
+#: cdk-pixbuf/cdk-pixbuf-loader.c:468
 #, c-format
 msgid "Incremental loading of image type “%s” is not supported"
 msgstr "“%s“ motako irudien kargatze inkrementala ez da onartzen"
 
-#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:162
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:166
 msgid "Loop"
 msgstr "Begizta"
 
-#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:163
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:167
 msgid "Whether the animation should loop when it reaches the end"
 msgstr "Animazioa begizta batean errepikatuko den amaierara iristean edo ez"
 
-#: cdk-pixbuf/cdk-pixdata.c:165
+#: cdk-pixbuf/cdk-pixdata.c:178
 msgid "Image header corrupt"
 msgstr "Irudi-goiburua hondatuta"
 
-#: cdk-pixbuf/cdk-pixdata.c:170
+#: cdk-pixbuf/cdk-pixdata.c:183
 msgid "Image format unknown"
 msgstr "Irudi-formatu ezezaguna"
 
-#: cdk-pixbuf/cdk-pixdata.c:175 cdk-pixbuf/cdk-pixdata.c:470
-#: cdk-pixbuf/cdk-pixdata.c:480 cdk-pixbuf/cdk-pixdata.c:576
+#: cdk-pixbuf/cdk-pixdata.c:188 cdk-pixbuf/cdk-pixdata.c:491
+#: cdk-pixbuf/cdk-pixdata.c:501 cdk-pixbuf/cdk-pixdata.c:597
 msgid "Image pixel data corrupt"
 msgstr "Irudiko pixelen datuak hondatuta"
 
-#: cdk-pixbuf/cdk-pixdata.c:492
+#: cdk-pixbuf/cdk-pixdata.c:513
 #, c-format
 msgid "failed to allocate image buffer of %u byte"
 msgid_plural "failed to allocate image buffer of %u bytes"
@@ -235,82 +249,83 @@ msgstr[1] "huts egin du irudiaren bufferra %u byte-rekin esleitzean"
 msgid "Unexpected icon chunk in animation"
 msgstr "Ustekabeko ikono-puska animazioan"
 
-#: cdk-pixbuf/io-ani.c:337 cdk-pixbuf/io-ani.c:395 cdk-pixbuf/io-ani.c:421
-#: cdk-pixbuf/io-ani.c:444 cdk-pixbuf/io-ani.c:471 cdk-pixbuf/io-ani.c:558
-msgid "Invalid header in animation"
-msgstr "Goiburu baliogabea animazioan"
-
-#: cdk-pixbuf/io-ani.c:347 cdk-pixbuf/io-ani.c:369 cdk-pixbuf/io-ani.c:453
-#: cdk-pixbuf/io-ani.c:480 cdk-pixbuf/io-ani.c:531 cdk-pixbuf/io-ani.c:607
-msgid "Not enough memory to load animation"
-msgstr "Ez dago animazioa kargatzeko adina memoria"
-
-#: cdk-pixbuf/io-ani.c:387 cdk-pixbuf/io-ani.c:413 cdk-pixbuf/io-ani.c:432
+#: cdk-pixbuf/io-ani.c:303 cdk-pixbuf/io-ani.c:404 cdk-pixbuf/io-ani.c:430
+#: cdk-pixbuf/io-ani.c:449
 msgid "Malformed chunk in animation"
 msgstr "Gaizki osatutako puska animazioan"
 
-#: cdk-pixbuf/io-ani.c:629
+#: cdk-pixbuf/io-ani.c:311 cdk-pixbuf/io-ani.c:354 cdk-pixbuf/io-ani.c:412
+#: cdk-pixbuf/io-ani.c:438 cdk-pixbuf/io-ani.c:461 cdk-pixbuf/io-ani.c:488
+#: cdk-pixbuf/io-ani.c:575
+msgid "Invalid header in animation"
+msgstr "Goiburu baliogabea animazioan"
+
+#: cdk-pixbuf/io-ani.c:364 cdk-pixbuf/io-ani.c:386 cdk-pixbuf/io-ani.c:470
+#: cdk-pixbuf/io-ani.c:497 cdk-pixbuf/io-ani.c:548 cdk-pixbuf/io-ani.c:624
+msgid "Not enough memory to load animation"
+msgstr "Ez dago animazioa kargatzeko adina memoria"
+
+#: cdk-pixbuf/io-ani.c:646
 msgid "ANI image was truncated or incomplete."
 msgstr "ANI irudia trunkatuta edo osatu gabe zegoen."
 
-#: cdk-pixbuf/io-ani.c:670
+#: cdk-pixbuf/io-ani.c:687
 msgctxt "image format"
 msgid "Windows animated cursor"
 msgstr "Leihoaren kurtsore animatua"
 
-#: cdk-pixbuf/io-bmp.c:231 cdk-pixbuf/io-bmp.c:269 cdk-pixbuf/io-bmp.c:376
-#: cdk-pixbuf/io-bmp.c:403 cdk-pixbuf/io-bmp.c:428 cdk-pixbuf/io-bmp.c:463
-#: cdk-pixbuf/io-bmp.c:485 cdk-pixbuf/io-bmp.c:563
+#: cdk-pixbuf/io-bmp.c:234 cdk-pixbuf/io-bmp.c:275 cdk-pixbuf/io-bmp.c:385
+#: cdk-pixbuf/io-bmp.c:412 cdk-pixbuf/io-bmp.c:437 cdk-pixbuf/io-bmp.c:472
+#: cdk-pixbuf/io-bmp.c:494 cdk-pixbuf/io-bmp.c:572
 msgid "BMP image has bogus header data"
 msgstr "BMP irudiak goiburu-datu akastunak ditu"
 
-#: cdk-pixbuf/io-bmp.c:242 cdk-pixbuf/io-bmp.c:498
+#: cdk-pixbuf/io-bmp.c:245 cdk-pixbuf/io-bmp.c:507
 msgid "Not enough memory to load bitmap image"
 msgstr "Ez dago bit-mapen irudia kargatzeko adina memoria"
 
-#: cdk-pixbuf/io-bmp.c:333
+#: cdk-pixbuf/io-bmp.c:339
 msgid "BMP image has unsupported header size"
 msgstr "BMP irudiaren goiburu-tamaina ez da onartzen"
 
-#: cdk-pixbuf/io-bmp.c:343
+#: cdk-pixbuf/io-bmp.c:348
 msgid "BMP image has unsupported depth"
 msgstr "BMP irudiaren onartu gabeko sakonera du"
 
-#: cdk-pixbuf/io-bmp.c:358
+#: cdk-pixbuf/io-bmp.c:367
 msgid "BMP image has oversize palette"
 msgstr "BMP irudiak gehiegizko tamainako paleta du"
 
-#: cdk-pixbuf/io-bmp.c:390
+#: cdk-pixbuf/io-bmp.c:399
 msgid "Topdown BMP images cannot be compressed"
 msgstr "BMP 'Topdown' irudiak ezin dira konprimatu"
 
-#: cdk-pixbuf/io-bmp.c:415
+#: cdk-pixbuf/io-bmp.c:424
 msgid "BMP image width too large"
 msgstr "BMP irudiaren zabalera handiegia"
 
-#: cdk-pixbuf/io-bmp.c:792 cdk-pixbuf/io-png.c:564 cdk-pixbuf/io-pnm.c:722
+#: cdk-pixbuf/io-bmp.c:814 cdk-pixbuf/io-png.c:587 cdk-pixbuf/io-pnm.c:722
 #: cdk-pixbuf/io-pnm.c:879
 msgid "Premature end-of-file encountered"
 msgstr "Fitxategiaren amaiera uste baino lehen aurkitu da"
 
-#: cdk-pixbuf/io-bmp.c:1313
-#, c-format
+#: cdk-pixbuf/io-bmp.c:1340
 msgid "Error while decoding colormap"
 msgstr "Errorea kolore-mapa deskodetzean"
 
-#: cdk-pixbuf/io-bmp.c:1376 cdk-pixbuf/io-bmp.c:1388
+#: cdk-pixbuf/io-bmp.c:1403 cdk-pixbuf/io-bmp.c:1415
 msgid "Image is too wide for BMP format."
 msgstr "Irudia handiegia da BMP formaturako."
 
-#: cdk-pixbuf/io-bmp.c:1421
+#: cdk-pixbuf/io-bmp.c:1448
 msgid "Couldn’t allocate memory for saving BMP file"
 msgstr "Ezin izan da BMP fitxategia gordetzeko memoriarik esleitu"
 
-#: cdk-pixbuf/io-bmp.c:1462
+#: cdk-pixbuf/io-bmp.c:1489
 msgid "Couldn’t write to BMP file"
 msgstr "Ezin izan da BMP fitxategian idatzi"
 
-#: cdk-pixbuf/io-bmp.c:1515 cdk-pixbuf/io-gdip-bmp.c:83
+#: cdk-pixbuf/io-bmp.c:1542 cdk-pixbuf/io-gdip-bmp.c:83
 msgctxt "image format"
 msgid "BMP"
 msgstr "BMP"
@@ -320,35 +335,39 @@ msgctxt "image format"
 msgid "EMF"
 msgstr "EMF"
 
-#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1037
+#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1039
 msgctxt "image format"
 msgid "GIF"
 msgstr "GIF"
 
-#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1412
+#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1418
 msgctxt "image format"
 msgid "Windows icon"
 msgstr "Windows-eko ikonoa"
 
-#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1382
+#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1409
 #, c-format
 msgid ""
 "JPEG quality must be a value between 0 and 100; value “%s” could not be "
 "parsed."
-msgstr "JPEG kalitatearen balioak 0 eta 100 artean egon behar du; “%s“ balioa ezin izan da analizatu."
+msgstr ""
+"JPEG kalitatearen balioak 0 eta 100 artean egon behar du; “%s“ balioa ezin "
+"izan da analizatu."
 
-#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1398
+#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1425
 #, c-format
 msgid ""
 "JPEG quality must be a value between 0 and 100; value “%d” is not allowed."
-msgstr "JPEG kalitatearen balioak 0 eta 100 artean egon behar du; “%d“ balioa ez da onartzen."
+msgstr ""
+"JPEG kalitatearen balioak 0 eta 100 artean egon behar du; “%d“ balioa ez da "
+"onartzen."
 
-#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1682
+#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1710
 msgctxt "image format"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: cdk-pixbuf/io-gdip-tiff.c:83 cdk-pixbuf/io-tiff.c:1086
+#: cdk-pixbuf/io-gdip-tiff.c:83 cdk-pixbuf/io-tiff.c:1087
 msgctxt "image format"
 msgid "TIFF"
 msgstr "TIFF"
@@ -395,48 +414,51 @@ msgctxt "image format"
 msgid "WMF"
 msgstr "WMF"
 
-#: cdk-pixbuf/io-gif.c:158
+#: cdk-pixbuf/io-gif.c:160
 #, c-format
 msgid "Failure reading GIF: %s"
 msgstr "Ezin izan da GIF irakurri: %s"
 
-#: cdk-pixbuf/io-gif.c:381 cdk-pixbuf/io-gif.c:848 cdk-pixbuf/io-gif.c:901
-#: cdk-pixbuf/io-gif.c:974
+#: cdk-pixbuf/io-gif.c:383 cdk-pixbuf/io-gif.c:850 cdk-pixbuf/io-gif.c:903
+#: cdk-pixbuf/io-gif.c:976
 msgid "Not enough memory to load GIF file"
 msgstr "Ez dago GIF fitxategia kargatzeko adina memoria"
 
-#: cdk-pixbuf/io-gif.c:507
+#: cdk-pixbuf/io-gif.c:509
 msgid "GIF image is corrupt (incorrect LZW compression)"
 msgstr "GIF irudia hondatuta dago (LZW konpresio okerra)"
 
-#: cdk-pixbuf/io-gif.c:543
+#: cdk-pixbuf/io-gif.c:545
 msgid "File does not appear to be a GIF file"
 msgstr "Fitxategiak ez dirudi GIF fitxategia"
 
-#: cdk-pixbuf/io-gif.c:558
+#: cdk-pixbuf/io-gif.c:560
 #, c-format
 msgid "Version %s of the GIF file format is not supported"
 msgstr "GIF fitxategi-formatuaren %s bertsioa ez da onartzen"
 
-#: cdk-pixbuf/io-gif.c:587
+#: cdk-pixbuf/io-gif.c:589
 msgid "Resulting GIF image has zero size"
 msgstr "Emaitzako GIF irudiaren tamaina zero da"
 
-#: cdk-pixbuf/io-gif.c:657
+#: cdk-pixbuf/io-gif.c:659
 msgid ""
 "GIF image has no global colormap, and a frame inside it has no local "
 "colormap."
-msgstr "GIF irudiak ez du kolore-mapa orokorrik, eta bere barruko markoak ez du kolore-mapa lokalik."
+msgstr ""
+"GIF irudiak ez du kolore-mapa orokorrik, eta bere barruko markoak ez du "
+"kolore-mapa lokalik."
 
-#: cdk-pixbuf/io-gif.c:861 cdk-pixbuf/io-gif.c:986
+#: cdk-pixbuf/io-gif.c:863 cdk-pixbuf/io-gif.c:988
 msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
-msgstr "GIF fitxategian datu batzuk falta dira (agian nolabait trunkatuta zegoen?)"
+msgstr ""
+"GIF fitxategian datu batzuk falta dira (agian nolabait trunkatuta zegoen?)"
 
-#: cdk-pixbuf/io-gif.c:920
+#: cdk-pixbuf/io-gif.c:922
 msgid "GIF image was truncated or incomplete."
 msgstr "GIF irudia trunkatuta edo osatu gabe zegoen."
 
-#: cdk-pixbuf/io-gif.c:927
+#: cdk-pixbuf/io-gif.c:929
 msgid "Not all frames of the GIF image were loaded."
 msgstr "Ez dira GIF irudiaren fotograma guztiak kargatu."
 
@@ -498,137 +520,152 @@ msgstr "Kurtsorearen puntu-beroa iruditik kanpo"
 msgid "Unsupported depth for ICO file: %d"
 msgstr "ICO fitxategiko kolore-sakonera ez da onartzen: %d"
 
-#: cdk-pixbuf/io-jpeg.c:129
+#: cdk-pixbuf/io-jpeg.c:131
 #, c-format
 msgid "Error interpreting JPEG image file (%s)"
 msgstr "Errorea JPEG irudi-fitxategia (%s) interpretatzen"
 
-#: cdk-pixbuf/io-jpeg.c:637
+#: cdk-pixbuf/io-jpeg.c:647
 msgid ""
 "Insufficient memory to load image, try exiting some applications to free "
 "memory"
-msgstr "Ez dago nahikoa memoria irudia kargatzeko, saiatu aplikazio batzuetatik irteten memoria libratzeko"
+msgstr ""
+"Ez dago nahikoa memoria irudia kargatzeko, saiatu aplikazio batzuetatik "
+"irteten memoria libratzeko"
 
-#: cdk-pixbuf/io-jpeg.c:710 cdk-pixbuf/io-jpeg.c:947
+#: cdk-pixbuf/io-jpeg.c:720 cdk-pixbuf/io-jpeg.c:970
 #, c-format
 msgid "Unsupported JPEG color space (%s)"
 msgstr "Onartzen ez den JPEGren kolore-area (%s)"
 
-#: cdk-pixbuf/io-jpeg.c:825 cdk-pixbuf/io-jpeg.c:1142 cdk-pixbuf/io-jpeg.c:1489
-#: cdk-pixbuf/io-jpeg.c:1499
+#: cdk-pixbuf/io-jpeg.c:845 cdk-pixbuf/io-jpeg.c:1169 cdk-pixbuf/io-jpeg.c:1516
+#: cdk-pixbuf/io-jpeg.c:1526
 msgid "Couldn’t allocate memory for loading JPEG file"
 msgstr "Ezin izan da memoriarik esleitu JPEG fitxategia kargatzeko"
 
-#: cdk-pixbuf/io-jpeg.c:1100
+#: cdk-pixbuf/io-jpeg.c:1127
 msgid "Transformed JPEG has zero width or height."
 msgstr "Bihurtutako JPEGren zabalera edo altuera zero da."
 
-#: cdk-pixbuf/io-jpeg.c:1126
+#: cdk-pixbuf/io-jpeg.c:1153
 #, c-format
 msgid "Unsupported number of color components (%d)"
 msgstr "Onartzen ez den kolore-osagaien kopurua (%d)"
 
-#: cdk-pixbuf/io-jpeg.c:1419
+#: cdk-pixbuf/io-jpeg.c:1446
 #, c-format
 msgid ""
 "JPEG x-dpi must be a value between 1 and 65535; value “%s” is not allowed."
-msgstr "JPEG 'x-dpi'-ren balioa 1 eta 65535 artean egon behar du; “%s“ balioa ez da onartzen."
+msgstr ""
+"JPEG 'x-dpi'-ren balioa 1 eta 65535 artean egon behar du; “%s“ balioa ez da "
+"onartzen."
 
-#: cdk-pixbuf/io-jpeg.c:1440
+#: cdk-pixbuf/io-jpeg.c:1467
 #, c-format
 msgid ""
 "JPEG y-dpi must be a value between 1 and 65535; value “%s” is not allowed."
-msgstr "JPEG 'y-dpi'-ren balioa 1 eta 65535 artean egon behar du; “%s“ balioa ez da onartzen."
+msgstr ""
+"JPEG 'y-dpi'-ren balioa 1 eta 65535 artean egon behar du; “%s“ balioa ez da "
+"onartzen."
 
-#: cdk-pixbuf/io-jpeg.c:1454
+#: cdk-pixbuf/io-jpeg.c:1481
 #, c-format
 msgid "Color profile has invalid length “%u”."
 msgstr "Kolore-profilak luzera baliogabea du: “%u“."
 
-#: cdk-pixbuf/io-png.c:63
+#: cdk-pixbuf/io-png.c:64
 msgid "Bits per channel of PNG image is invalid."
 msgstr "PNG irudiaren kanal bakoitzeko bitak baliogabeak dira."
 
-#: cdk-pixbuf/io-png.c:144 cdk-pixbuf/io-png.c:703
+#: cdk-pixbuf/io-png.c:145 cdk-pixbuf/io-png.c:730
 msgid "Transformed PNG has zero width or height."
 msgstr "Bihurtutako PNGren zabalera edo altuera zero da."
 
-#: cdk-pixbuf/io-png.c:152
+#: cdk-pixbuf/io-png.c:153
 msgid "Bits per channel of transformed PNG is not 8."
 msgstr "Bihurtutako PNGren kanal bakoitzeko bitak ez dira 8."
 
-#: cdk-pixbuf/io-png.c:161
+#: cdk-pixbuf/io-png.c:162
 msgid "Transformed PNG not RGB or RGBA."
 msgstr "Bihurtutako PNG ez da RGB edo RGBA."
 
-#: cdk-pixbuf/io-png.c:170
+#: cdk-pixbuf/io-png.c:171
 msgid "Transformed PNG has unsupported number of channels, must be 3 or 4."
-msgstr "Bihurtutako PNGk duen kanal-kopurua ez da onartzen; 3 edo 4 izan behar ditu."
+msgstr ""
+"Bihurtutako PNGk duen kanal-kopurua ez da onartzen; 3 edo 4 izan behar ditu."
 
-#: cdk-pixbuf/io-png.c:191
+#: cdk-pixbuf/io-png.c:193
 #, c-format
 msgid "Fatal error in PNG image file: %s"
 msgstr "Errore larria PNG irudi-fitxategian: %s"
 
-#: cdk-pixbuf/io-png.c:329
+#: cdk-pixbuf/io-png.c:338
 msgid "Insufficient memory to load PNG file"
 msgstr "Ez dago PNG fitxategia kargatzeko adina memoria"
 
-#: cdk-pixbuf/io-png.c:498 cdk-pixbuf/io-png.c:519
+#: cdk-pixbuf/io-png.c:519 cdk-pixbuf/io-png.c:540
 msgid "Couldn’t allocate memory for loading PNG"
 msgstr "Ezin izan da PNG fitxategia kargatzeko memoriarik esleitu"
 
-#: cdk-pixbuf/io-png.c:716
+#: cdk-pixbuf/io-png.c:743
 #, c-format
 msgid ""
 "Insufficient memory to store a %lu by %lu image; try exiting some "
 "applications to reduce memory usage"
-msgstr "Ez dago %2$lu irudiak %1$lu bat gordetzeko adina memoria; saiatu aplikazio batzuetatik irteten memoria-erabilera murrizteko"
+msgstr ""
+"Ez dago %2$lu irudiak %1$lu bat gordetzeko adina memoria; saiatu aplikazio "
+"batzuetatik irteten memoria-erabilera murrizteko"
 
-#: cdk-pixbuf/io-png.c:791
+#: cdk-pixbuf/io-png.c:820
 msgid "Fatal error reading PNG image file"
 msgstr "Errore larria PNG irudi-fitxategia irakurtzean"
 
-#: cdk-pixbuf/io-png.c:840
+#: cdk-pixbuf/io-png.c:873
 #, c-format
 msgid "Fatal error reading PNG image file: %s"
 msgstr "Errore larria PNG irudi-fitxategia irakurtzean: %s"
 
-#: cdk-pixbuf/io-png.c:937
+#: cdk-pixbuf/io-png.c:972
 #, c-format
 msgid ""
 "Invalid key “%s”. Keys for PNG text chunks must have at least 1 and at most "
 "79 characters."
-msgstr "“%s” gako baliogabea. PNG testu-puskek gutxienez karaktere bat eta gehienez 79 karaktere eduki behar dituzte."
+msgstr ""
+"“%s” gako baliogabea. PNG testu-puskek gutxienez karaktere bat eta gehienez "
+"79 karaktere eduki behar dituzte."
 
-#: cdk-pixbuf/io-png.c:950
+#: cdk-pixbuf/io-png.c:985
 #, c-format
 msgid "Invalid key “%s”. Keys for PNG text chunks must be ASCII characters."
-msgstr "“%s” gako baliogabea. PNG testu-puskek ASCII karaktereak izan behar dute.."
+msgstr ""
+"“%s” gako baliogabea. PNG testu-puskek ASCII karaktereak izan behar dute.."
 
-#: cdk-pixbuf/io-png.c:980
+#: cdk-pixbuf/io-png.c:1015
 #, c-format
 msgid ""
 "Value for PNG text chunk '%s' cannot be converted to ISO-8859-1 encoding."
 msgstr "'%s' PNG testu-puskaren balioa ezin da bihurtu ISO-8859-1 kodeketara."
 
-#: cdk-pixbuf/io-png.c:992
+#: cdk-pixbuf/io-png.c:1027
 #, c-format
 msgid "Color profile has invalid length %d"
 msgstr "Kolore-profilak luzera baliogabea du: %d."
 
-#: cdk-pixbuf/io-png.c:1004
+#: cdk-pixbuf/io-png.c:1039
 #, c-format
 msgid ""
 "PNG compression level must be a value between 0 and 9; value “%s” is invalid"
-msgstr "PNG konpresioaren balioak 0 eta 9 artean egon behar du; “%s“ balioa baliogabea da."
+msgstr ""
+"PNG konpresioaren balioak 0 eta 9 artean egon behar du; “%s“ balioa "
+"baliogabea da."
 
-#: cdk-pixbuf/io-png.c:1018
+#: cdk-pixbuf/io-png.c:1053
 #, c-format
 msgid "PNG %s must be greater than zero; value “%s” is not allowed"
-msgstr "%s PNGak zero baino handiagoa izan behar du; “%s” balioa ez da onartzen"
+msgstr ""
+"%s PNGak zero baino handiagoa izan behar du; “%s” balioa ez da onartzen"
 
-#: cdk-pixbuf/io-png.c:1246
+#: cdk-pixbuf/io-png.c:1283
 msgctxt "image format"
 msgid "PNG"
 msgstr "PNG"
@@ -679,7 +716,8 @@ msgstr "PNM irudi kargatzaileak ez du PNM azpiformatu hau onartzen"
 
 #: cdk-pixbuf/io-pnm.c:754 cdk-pixbuf/io-pnm.c:991
 msgid "Raw PNM formats require exactly one whitespace before sample data"
-msgstr "PNM formatu gordinek zuriune bat behar dute lagin-informazioaren aurretik"
+msgstr ""
+"PNM formatu gordinek zuriune bat behar dute lagin-informazioaren aurretik"
 
 #: cdk-pixbuf/io-pnm.c:781
 msgid "Cannot allocate memory for loading PNM image"
@@ -721,8 +759,10 @@ msgstr[1] "QTIF elementuaren tamaina handiegia da (%d byte)"
 #, c-format
 msgid "Failed to allocate %d byte for file read buffer"
 msgid_plural "Failed to allocate %d bytes for file read buffer"
-msgstr[0] "Huts egin du %d byte esleitzean fitxategia irakurtzeko bufferrarentzako"
-msgstr[1] "Huts egin du %d byte esleitzean fitxategia irakurtzeko bufferrarentzako"
+msgstr[0] ""
+"Huts egin du %d byte esleitzean fitxategia irakurtzeko bufferrarentzako"
+msgstr[1] ""
+"Huts egin du %d byte esleitzean fitxategia irakurtzeko bufferrarentzako"
 
 #: cdk-pixbuf/io-qtif.c:201
 #, c-format
@@ -794,70 +834,74 @@ msgctxt "image format"
 msgid "Targa"
 msgstr "Targa"
 
-#: cdk-pixbuf/io-tiff.c:116
+#: cdk-pixbuf/io-tiff.c:117
 msgid "Could not get image width (bad TIFF file)"
 msgstr "Ezin izan da irudiaren zabalera lortu (TIFF fitxategi hondatua)"
 
-#: cdk-pixbuf/io-tiff.c:124
+#: cdk-pixbuf/io-tiff.c:125
 msgid "Could not get image height (bad TIFF file)"
 msgstr "Ezin izan da irudiaren altuera lortu (TIFF fitxategi hondatua)"
 
-#: cdk-pixbuf/io-tiff.c:132
+#: cdk-pixbuf/io-tiff.c:133
 msgid "Width or height of TIFF image is zero"
 msgstr "TIFF irudiaren zabalera edo altuera zero da"
 
-#: cdk-pixbuf/io-tiff.c:140 cdk-pixbuf/io-tiff.c:150
+#: cdk-pixbuf/io-tiff.c:141 cdk-pixbuf/io-tiff.c:151
 msgid "Dimensions of TIFF image too large"
 msgstr "TIFF irudiaren neurriak handiegiak dira"
 
-#: cdk-pixbuf/io-tiff.c:176 cdk-pixbuf/io-tiff.c:188 cdk-pixbuf/io-tiff.c:584
+#: cdk-pixbuf/io-tiff.c:177 cdk-pixbuf/io-tiff.c:189 cdk-pixbuf/io-tiff.c:585
 msgid "Insufficient memory to open TIFF file"
 msgstr "Ez dago TIFF fitxategia irekitzeko behar adina memoria"
 
-#: cdk-pixbuf/io-tiff.c:286
+#: cdk-pixbuf/io-tiff.c:287
 msgid "Failed to load RGB data from TIFF file"
 msgstr "Ezin izan dira RGB datuak kargatu TIFF fitxategitik"
 
-#: cdk-pixbuf/io-tiff.c:377
+#: cdk-pixbuf/io-tiff.c:378
 msgid "Failed to open TIFF image"
 msgstr "Ezin izan da TIFF irudia ireki"
 
-#: cdk-pixbuf/io-tiff.c:515 cdk-pixbuf/io-tiff.c:527
+#: cdk-pixbuf/io-tiff.c:516 cdk-pixbuf/io-tiff.c:528
 msgid "Failed to load TIFF image"
 msgstr "Ezin izan da TIFF irudia kargatu"
 
-#: cdk-pixbuf/io-tiff.c:759
+#: cdk-pixbuf/io-tiff.c:760
 msgid "Failed to save TIFF image"
 msgstr "Ezin izan da TIFF irudia gorde"
 
-#: cdk-pixbuf/io-tiff.c:820
+#: cdk-pixbuf/io-tiff.c:821
 msgid "TIFF compression doesn’t refer to a valid codec."
 msgstr "TIFF konpresioak ez du baliozko koderik adierazten."
 
-#: cdk-pixbuf/io-tiff.c:850
+#: cdk-pixbuf/io-tiff.c:851
 #, c-format
 msgid "Color profile has invalid length %d."
 msgstr "Kolore-profilak luzera baliogabea du: %d."
 
-#: cdk-pixbuf/io-tiff.c:865
+#: cdk-pixbuf/io-tiff.c:866
 msgid "TIFF bits-per-sample doesn’t contain a supported value."
 msgstr "TIFF 'bits-per-sample' (bit lagineko) ez dauka onartutako baliorik."
 
-#: cdk-pixbuf/io-tiff.c:946
+#: cdk-pixbuf/io-tiff.c:947
 msgid "Failed to write TIFF data"
 msgstr "Ezin izan da TIFF irudia idatzi"
 
-#: cdk-pixbuf/io-tiff.c:964
+#: cdk-pixbuf/io-tiff.c:965
 #, c-format
 msgid "TIFF x-dpi must be greater than zero; value “%s” is not allowed."
-msgstr "TIFF 'x-dpi'-ren balioa zero baino handiagoa izan behar du; “%s“ balioa ez da onartzen."
+msgstr ""
+"TIFF 'x-dpi'-ren balioa zero baino handiagoa izan behar du; “%s“ balioa ez "
+"da onartzen."
 
-#: cdk-pixbuf/io-tiff.c:976
+#: cdk-pixbuf/io-tiff.c:977
 #, c-format
 msgid "TIFF y-dpi must be greater than zero; value “%s” is not allowed."
-msgstr "TIFF 'y-dpi'-ren balioa zero baino handiagoa izan behar du; “%s“ balioa ez da onartzen."
+msgstr ""
+"TIFF 'y-dpi'-ren balioa zero baino handiagoa izan behar du; “%s“ balioa ez "
+"da onartzen."
 
-#: cdk-pixbuf/io-tiff.c:1017
+#: cdk-pixbuf/io-tiff.c:1018
 msgid "Couldn’t write to TIFF file"
 msgstr "Ezin izan da TIFF fitxategian idatzi"
 

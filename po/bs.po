@@ -1,9 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ctk+.ctk-2-4.bs\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=ctk%"
-"2b&keywords=I18N+L10N&component=cdk\n"
-"POT-Creation-Date: 2015-02-27 05:50+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 08:56+0200\n"
 "PO-Revision-Date: 2015-02-04 15:13+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: Bosnian <lokal@linux.org.ba>\n"
@@ -11,228 +10,229 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Launchpad-Export-Date: 2015-02-05 06:53+0000\n"
 "X-Generator: Launchpad (build 17331)\n"
 
-#: ../cdk-pixbuf/cdk-pixbuf-animation.c:158 ../cdk-pixbuf/cdk-pixbuf-io.c:1101
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:1357
-#, c-format
-msgid "Failed to open file '%s': %s"
+#: cdk-pixbuf/cdk-pixbuf-animation.c:190 cdk-pixbuf/cdk-pixbuf-io.c:1224
+#: cdk-pixbuf/cdk-pixbuf-io.c:1497
+#, fuzzy, c-format
+msgid "Failed to open file “%s”: %s"
 msgstr "Nisam uspio otvoriti datoteku '%s': %s"
 
-#: ../cdk-pixbuf/cdk-pixbuf-animation.c:171 ../cdk-pixbuf/cdk-pixbuf-io.c:986
-#, c-format
-msgid "Image file '%s' contains no data"
+#: cdk-pixbuf/cdk-pixbuf-animation.c:203 cdk-pixbuf/cdk-pixbuf-io.c:1085
+#, fuzzy, c-format
+msgid "Image file “%s” contains no data"
 msgstr "Grafička datoteka '%s' ne sadrži podatke"
 
-#: ../cdk-pixbuf/cdk-pixbuf-animation.c:210
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-animation.c:241
+#, fuzzy, c-format
 msgid ""
-"Failed to load animation '%s': reason not known, probably a corrupt "
+"Failed to load animation “%s”: reason not known, probably a corrupt "
 "animation file"
 msgstr ""
 "Nisam uspio učitati animaciju '%s': nepoznat razlog, vjerovatno je oštećena "
 "datoteka"
 
-#: ../cdk-pixbuf/cdk-pixbuf-animation.c:278 ../cdk-pixbuf/cdk-pixbuf-io.c:1137
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:1409
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-animation.c:309 cdk-pixbuf/cdk-pixbuf-io.c:1260
+#: cdk-pixbuf/cdk-pixbuf-io.c:1549
+#, fuzzy, c-format
 msgid ""
-"Failed to load image '%s': reason not known, probably a corrupt image file"
+"Failed to load image “%s”: reason not known, probably a corrupt image file"
 msgstr ""
 "Nisam mogao učitati sliku '%s': nepoznat razlog, vjerovatno je oštećena "
 "datoteka"
 
-#: ../cdk-pixbuf/cdk-pixbuf.c:161
+#: cdk-pixbuf/cdk-pixbuf.c:248
 msgid "Number of Channels"
 msgstr "Broj kanala"
 
 # ili možda pikselu?
-#: ../cdk-pixbuf/cdk-pixbuf.c:162
+#: cdk-pixbuf/cdk-pixbuf.c:249
 msgid "The number of samples per pixel"
 msgstr "Broj uzoraka po tačkici"
 
-#: ../cdk-pixbuf/cdk-pixbuf.c:171
+#: cdk-pixbuf/cdk-pixbuf.c:264
 msgid "Colorspace"
 msgstr "Prostor boja"
 
-#: ../cdk-pixbuf/cdk-pixbuf.c:172
+#: cdk-pixbuf/cdk-pixbuf.c:265
 msgid "The colorspace in which the samples are interpreted"
 msgstr "Prostor boja u kome se tumače uzorci"
 
-#: ../cdk-pixbuf/cdk-pixbuf.c:180
+#: cdk-pixbuf/cdk-pixbuf.c:277
 msgid "Has Alpha"
 msgstr "Posjeduje providnost"
 
-#: ../cdk-pixbuf/cdk-pixbuf.c:181
+#: cdk-pixbuf/cdk-pixbuf.c:278
 msgid "Whether the pixbuf has an alpha channel"
 msgstr "Da li sličica posjeduje kanal providnosti"
 
-#: ../cdk-pixbuf/cdk-pixbuf.c:194
+#: cdk-pixbuf/cdk-pixbuf.c:291
 msgid "Bits per Sample"
 msgstr "Bitova po uzorku"
 
-#: ../cdk-pixbuf/cdk-pixbuf.c:195
+#: cdk-pixbuf/cdk-pixbuf.c:292
 msgid "The number of bits per sample"
 msgstr "Broj bitova po uzorku"
 
-#: ../cdk-pixbuf/cdk-pixbuf.c:204
+#: cdk-pixbuf/cdk-pixbuf.c:305
 msgid "Width"
 msgstr "Širina"
 
-#: ../cdk-pixbuf/cdk-pixbuf.c:205
+#: cdk-pixbuf/cdk-pixbuf.c:306
 msgid "The number of columns of the pixbuf"
 msgstr "Broj stubaca za sličicu"
 
-#: ../cdk-pixbuf/cdk-pixbuf.c:214
+#: cdk-pixbuf/cdk-pixbuf.c:319
 msgid "Height"
 msgstr "Visina"
 
-#: ../cdk-pixbuf/cdk-pixbuf.c:215
+#: cdk-pixbuf/cdk-pixbuf.c:320
 msgid "The number of rows of the pixbuf"
 msgstr "Broj redova za sličicu"
 
-#: ../cdk-pixbuf/cdk-pixbuf.c:231
+#: cdk-pixbuf/cdk-pixbuf.c:337
 msgid "Rowstride"
 msgstr "Razmak redova"
 
-#: ../cdk-pixbuf/cdk-pixbuf.c:232
+#: cdk-pixbuf/cdk-pixbuf.c:338
 msgid ""
 "The number of bytes between the start of a row and the start of the next row"
 msgstr "Broj bajtova između početka jednog reda i početka drugog reda"
 
-#: ../cdk-pixbuf/cdk-pixbuf.c:241
+#: cdk-pixbuf/cdk-pixbuf.c:351
 msgid "Pixels"
 msgstr "Tačkica"
 
-#: ../cdk-pixbuf/cdk-pixbuf.c:242
+#: cdk-pixbuf/cdk-pixbuf.c:352
 msgid "A pointer to the pixel data of the pixbuf"
 msgstr "Pokazivač na podatke tačkice za sličicu"
 
-#: ../cdk-pixbuf/cdk-pixbuf.c:256
+#: cdk-pixbuf/cdk-pixbuf.c:366
 msgid "Pixel Bytes"
 msgstr "Bajtovi tačkice"
 
-#: ../cdk-pixbuf/cdk-pixbuf.c:257
+#: cdk-pixbuf/cdk-pixbuf.c:367
 msgid "Readonly pixel data"
 msgstr "Podaci tačkice samo za čitanje"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:798
+#: cdk-pixbuf/cdk-pixbuf-io.c:901
 #, c-format
 msgid "Unable to load image-loading module: %s: %s"
 msgstr "Ne mogu učitati modul za učitavanje slika: %s: %s"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:813
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-io.c:919
+#, fuzzy, c-format
 msgid ""
-"Image-loading module %s does not export the proper interface; perhaps it's "
+"Image-loading module %s does not export the proper interface; perhaps it’s "
 "from a different cdk-pixbuf version?"
 msgstr ""
 "Modul za učitavanje slike %s ne izvozi odgovarajući interfejs; možda je iz "
 "različite cdk-pixbuf verzije?"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:822 ../cdk-pixbuf/cdk-pixbuf-io.c:873
-#, c-format
-msgid "Image type '%s' is not supported"
+#: cdk-pixbuf/cdk-pixbuf-io.c:929 cdk-pixbuf/cdk-pixbuf-io.c:972
+#, fuzzy, c-format
+msgid "Image type “%s” is not supported"
 msgstr "'%s' tip grafičke datoteke nije podržan"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:958
-#, c-format
-msgid "Couldn't recognize the image file format for file '%s'"
+#: cdk-pixbuf/cdk-pixbuf-io.c:1057
+#, fuzzy, c-format
+msgid "Couldn’t recognize the image file format for file “%s”"
 msgstr "Nisam mogao prepoznati oblik grafičke datoteke od '%s'"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:966
+#: cdk-pixbuf/cdk-pixbuf-io.c:1065
 msgid "Unrecognized image file format"
 msgstr "Nepoznat oblik grafičke datoteke"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:1148
-#, c-format
-msgid "Failed to load image '%s': %s"
+#: cdk-pixbuf/cdk-pixbuf-io.c:1271
+#, fuzzy, c-format
+msgid "Failed to load image “%s”: %s"
 msgstr "Nisam uspio učitati sliku '%s': %s"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:2175 ../cdk-pixbuf/io-gdip-utils.c:835
+#: cdk-pixbuf/cdk-pixbuf-io.c:2346 cdk-pixbuf/io-gdip-utils.c:840
 #, c-format
 msgid "Error writing to image file: %s"
 msgstr "Greška tokom pisanja u grafičku datoteku: %s"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:2217 ../cdk-pixbuf/cdk-pixbuf-io.c:2338
+#: cdk-pixbuf/cdk-pixbuf-io.c:2388 cdk-pixbuf/cdk-pixbuf-io.c:2509
 #, c-format
 msgid "This build of cdk-pixbuf does not support saving the image format: %s"
 msgstr ""
 "Ova kompilacija cdk-pixbuf paketa ne podržava snimanje oblika grafičke "
 "datoteke: %s"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:2248
+#: cdk-pixbuf/cdk-pixbuf-io.c:2419
 msgid "Insufficient memory to save image to callback"
 msgstr "Nedovoljno memorije za snimanje slike u callback"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:2261
+#: cdk-pixbuf/cdk-pixbuf-io.c:2432
 msgid "Failed to open temporary file"
 msgstr "Nisam uspio otvoriti privremenu datoteku"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:2284
+#: cdk-pixbuf/cdk-pixbuf-io.c:2455
 msgid "Failed to read from temporary file"
 msgstr "Neuspješno čitanje iz privremene datoteke"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:2534
-#, c-format
-msgid "Failed to open '%s' for writing: %s"
+#: cdk-pixbuf/cdk-pixbuf-io.c:2677
+#, fuzzy, c-format
+msgid "Failed to open “%s” for writing: %s"
 msgstr "Nisam uspio otvoriti '%s' za upisivanje: %s"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:2560
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-io.c:2703
+#, fuzzy, c-format
 msgid ""
-"Failed to close '%s' while writing image, all data may not have been saved: %"
-"s"
+"Failed to close “%s” while writing image, all data may not have been saved: "
+"%s"
 msgstr ""
 "Nisam uspio zatvoriti '%s' pri upisivanju slike, moguće je da nisu svi "
 "podaci pohranjeni: %s"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:2781 ../cdk-pixbuf/cdk-pixbuf-io.c:2833
+#: cdk-pixbuf/cdk-pixbuf-io.c:2937 cdk-pixbuf/cdk-pixbuf-io.c:2992
 msgid "Insufficient memory to save image into a buffer"
 msgstr "Nedovoljno memorije za snimanje slike u buffer"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:2879
+#: cdk-pixbuf/cdk-pixbuf-io.c:3038
 msgid "Error writing to image stream"
 msgstr "Greška pri upisu u tok slike"
 
-#: ../cdk-pixbuf/cdk-pixbuf-loader.c:382
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-loader.c:426
+#, fuzzy, c-format
 msgid ""
-"Internal error: Image loader module '%s' failed to complete an operation, "
-"but didn't give a reason for the failure"
+"Internal error: Image loader module “%s” failed to complete an operation, "
+"but didn’t give a reason for the failure"
 msgstr ""
 "Unutrašnja greška: dio za učitavanje slika „%s“ nije uspeo da obavi "
 "operaciju, a nije naveo ni razlog neuspjeha"
 
-#: ../cdk-pixbuf/cdk-pixbuf-loader.c:424
-#, c-format
-msgid "Incremental loading of image type '%s' is not supported"
+#: cdk-pixbuf/cdk-pixbuf-loader.c:468
+#, fuzzy, c-format
+msgid "Incremental loading of image type “%s” is not supported"
 msgstr "Postepeno učitavanje '%s' tipa slike nije podržano"
 
-#: ../cdk-pixbuf/cdk-pixbuf-simple-anim.c:161
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:166
 msgid "Loop"
 msgstr "Petlja"
 
-#: ../cdk-pixbuf/cdk-pixbuf-simple-anim.c:162
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:167
 msgid "Whether the animation should loop when it reaches the end"
 msgstr "Da li animacija treba da se počne iz početka kada stigne do kraja"
 
-#: ../cdk-pixbuf/cdk-pixdata.c:163
+#: cdk-pixbuf/cdk-pixdata.c:178
 msgid "Image header corrupt"
 msgstr "Zaglavlje slike oštećeno"
 
-#: ../cdk-pixbuf/cdk-pixdata.c:168
+#: cdk-pixbuf/cdk-pixdata.c:183
 msgid "Image format unknown"
 msgstr "Nepoznat oblik grafičke datoteke"
 
-#: ../cdk-pixbuf/cdk-pixdata.c:173 ../cdk-pixbuf/cdk-pixdata.c:511
+#: cdk-pixbuf/cdk-pixdata.c:188 cdk-pixbuf/cdk-pixdata.c:491
+#: cdk-pixbuf/cdk-pixdata.c:501 cdk-pixbuf/cdk-pixdata.c:597
 msgid "Image pixel data corrupt"
 msgstr "Oštećeni podaci o pikslama na slici"
 
-#: ../cdk-pixbuf/cdk-pixdata.c:455
+#: cdk-pixbuf/cdk-pixdata.c:513
 #, c-format
 msgid "failed to allocate image buffer of %u byte"
 msgid_plural "failed to allocate image buffer of %u bytes"
@@ -240,314 +240,293 @@ msgstr[0] "neuspješna dodjela buffera slike od %u bajt"
 msgstr[1] "neuspješna dodjela buffera slike od %u bajta"
 msgstr[2] "neuspješna dodjela buffera slike od %u bajtova"
 
-#: ../cdk-pixbuf/io-ani.c:242
+#: cdk-pixbuf/io-ani.c:239
 msgid "Unexpected icon chunk in animation"
 msgstr "Neočekivani dio ikone u animaciji"
 
-#: ../cdk-pixbuf/io-ani.c:340 ../cdk-pixbuf/io-ani.c:398
-#: ../cdk-pixbuf/io-ani.c:424 ../cdk-pixbuf/io-ani.c:447
-#: ../cdk-pixbuf/io-ani.c:474 ../cdk-pixbuf/io-ani.c:561
-msgid "Invalid header in animation"
-msgstr "Neispravno zaglavlje u animaciji"
-
-#: ../cdk-pixbuf/io-ani.c:350 ../cdk-pixbuf/io-ani.c:372
-#: ../cdk-pixbuf/io-ani.c:456 ../cdk-pixbuf/io-ani.c:483
-#: ../cdk-pixbuf/io-ani.c:534 ../cdk-pixbuf/io-ani.c:606
-msgid "Not enough memory to load animation"
-msgstr "Nedovoljno memorije za učitavanje animacije"
-
-#: ../cdk-pixbuf/io-ani.c:390 ../cdk-pixbuf/io-ani.c:416
-#: ../cdk-pixbuf/io-ani.c:435
+#: cdk-pixbuf/io-ani.c:303 cdk-pixbuf/io-ani.c:404 cdk-pixbuf/io-ani.c:430
+#: cdk-pixbuf/io-ani.c:449
 msgid "Malformed chunk in animation"
 msgstr "Neispravan dio u animaciji"
 
-#: ../cdk-pixbuf/io-ani.c:628
+#: cdk-pixbuf/io-ani.c:311 cdk-pixbuf/io-ani.c:354 cdk-pixbuf/io-ani.c:412
+#: cdk-pixbuf/io-ani.c:438 cdk-pixbuf/io-ani.c:461 cdk-pixbuf/io-ani.c:488
+#: cdk-pixbuf/io-ani.c:575
+msgid "Invalid header in animation"
+msgstr "Neispravno zaglavlje u animaciji"
+
+#: cdk-pixbuf/io-ani.c:364 cdk-pixbuf/io-ani.c:386 cdk-pixbuf/io-ani.c:470
+#: cdk-pixbuf/io-ani.c:497 cdk-pixbuf/io-ani.c:548 cdk-pixbuf/io-ani.c:624
+msgid "Not enough memory to load animation"
+msgstr "Nedovoljno memorije za učitavanje animacije"
+
+#: cdk-pixbuf/io-ani.c:646
 msgid "ANI image was truncated or incomplete."
 msgstr "ANI slika je odsječena ili nekompletna."
 
-#: ../cdk-pixbuf/io-ani.c:669
+#: cdk-pixbuf/io-ani.c:687
 msgctxt "image format"
 msgid "Windows animated cursor"
 msgstr "Animirani kursor prozora"
 
-#: ../cdk-pixbuf/io-bmp.c:227 ../cdk-pixbuf/io-bmp.c:264
-#: ../cdk-pixbuf/io-bmp.c:358 ../cdk-pixbuf/io-bmp.c:381
-#: ../cdk-pixbuf/io-bmp.c:484
+#: cdk-pixbuf/io-bmp.c:234 cdk-pixbuf/io-bmp.c:275 cdk-pixbuf/io-bmp.c:385
+#: cdk-pixbuf/io-bmp.c:412 cdk-pixbuf/io-bmp.c:437 cdk-pixbuf/io-bmp.c:472
+#: cdk-pixbuf/io-bmp.c:494 cdk-pixbuf/io-bmp.c:572
 msgid "BMP image has bogus header data"
 msgstr "BMP slika ima neispravne podatke u zaglavlju"
 
-#: ../cdk-pixbuf/io-bmp.c:238 ../cdk-pixbuf/io-bmp.c:421
+#: cdk-pixbuf/io-bmp.c:245 cdk-pixbuf/io-bmp.c:507
 msgid "Not enough memory to load bitmap image"
 msgstr "Nedovoljno memorije za učitavanje bitmap slike"
 
-#: ../cdk-pixbuf/io-bmp.c:316
+#: cdk-pixbuf/io-bmp.c:339
 msgid "BMP image has unsupported header size"
 msgstr "BMP slika ima veličinu zaglavlja koja nije podržana"
 
-#: ../cdk-pixbuf/io-bmp.c:345
+#: cdk-pixbuf/io-bmp.c:348
+#, fuzzy
+msgid "BMP image has unsupported depth"
+msgstr "BMP slika ima veličinu zaglavlja koja nije podržana"
+
+#: cdk-pixbuf/io-bmp.c:367
+#, fuzzy
+msgid "BMP image has oversize palette"
+msgstr "BMP slika ima neispravne podatke u zaglavlju"
+
+#: cdk-pixbuf/io-bmp.c:399
 msgid "Topdown BMP images cannot be compressed"
 msgstr "Odozgo-nadole BMP slike se ne mogu kompresovati"
 
-#: ../cdk-pixbuf/io-bmp.c:705 ../cdk-pixbuf/io-png.c:530
-#: ../cdk-pixbuf/io-pnm.c:705
+#: cdk-pixbuf/io-bmp.c:424
+msgid "BMP image width too large"
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:814 cdk-pixbuf/io-png.c:587 cdk-pixbuf/io-pnm.c:722
+#: cdk-pixbuf/io-pnm.c:879
 msgid "Premature end-of-file encountered"
 msgstr "Prerani kraj datoteke"
 
-#: ../cdk-pixbuf/io-bmp.c:1317
-msgid "Couldn't allocate memory for saving BMP file"
+#: cdk-pixbuf/io-bmp.c:1340
+msgid "Error while decoding colormap"
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:1403 cdk-pixbuf/io-bmp.c:1415
+msgid "Image is too wide for BMP format."
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:1448
+#, fuzzy
+msgid "Couldn’t allocate memory for saving BMP file"
 msgstr "Ne mogu obezbjediti memoriju za čuvanje BMP datoteke"
 
-#: ../cdk-pixbuf/io-bmp.c:1358
-msgid "Couldn't write to BMP file"
+#: cdk-pixbuf/io-bmp.c:1489
+#, fuzzy
+msgid "Couldn’t write to BMP file"
 msgstr "Ne mogu da upišem u BMP datoteku"
 
-#: ../cdk-pixbuf/io-bmp.c:1411 ../cdk-pixbuf/io-gdip-bmp.c:80
+#: cdk-pixbuf/io-bmp.c:1542 cdk-pixbuf/io-gdip-bmp.c:83
 msgctxt "image format"
 msgid "BMP"
 msgstr "BMP"
 
-#: ../cdk-pixbuf/io-gdip-emf.c:57
+#: cdk-pixbuf/io-gdip-emf.c:61
 msgctxt "image format"
 msgid "EMF"
 msgstr "EMF"
 
-#: ../cdk-pixbuf/io-gdip-gif.c:78 ../cdk-pixbuf/io-gif.c:1719
+#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1039
 msgctxt "image format"
 msgid "GIF"
 msgstr "GIF"
 
-#: ../cdk-pixbuf/io-gdip-ico.c:57 ../cdk-pixbuf/io-ico.c:1268
+#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1418
 msgctxt "image format"
 msgid "Windows icon"
 msgstr "Ikonica prozora"
 
-#: ../cdk-pixbuf/io-gdip-jpeg.c:51 ../cdk-pixbuf/io-jpeg.c:1292
-#, c-format
+#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1409
+#, fuzzy, c-format
 msgid ""
-"JPEG quality must be a value between 0 and 100; value '%s' could not be "
+"JPEG quality must be a value between 0 and 100; value “%s” could not be "
 "parsed."
 msgstr ""
 "JPEG kvalitet mora biti vrijednost između 0 i 100; vrijednost '%s' nije "
 "mogla biti protumačena."
 
-#: ../cdk-pixbuf/io-gdip-jpeg.c:66 ../cdk-pixbuf/io-jpeg.c:1308
-#, c-format
+#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1425
+#, fuzzy, c-format
 msgid ""
-"JPEG quality must be a value between 0 and 100; value '%d' is not allowed."
+"JPEG quality must be a value between 0 and 100; value “%d” is not allowed."
 msgstr ""
 "JPEG kvaliteta mora imati vrijednost između 0 i 100; vrijednost '%d' nije "
 "dopuštena."
 
-#: ../cdk-pixbuf/io-gdip-jpeg.c:134 ../cdk-pixbuf/io-jpeg.c:1570
+#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1710
 msgctxt "image format"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: ../cdk-pixbuf/io-gdip-tiff.c:80 ../cdk-pixbuf/io-tiff.c:1018
+#: cdk-pixbuf/io-gdip-tiff.c:83 cdk-pixbuf/io-tiff.c:1087
 msgctxt "image format"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: ../cdk-pixbuf/io-gdip-utils.c:152
+#: cdk-pixbuf/io-gdip-utils.c:155
 #, c-format
 msgid "Could not allocate memory: %s"
 msgstr "Ne mogu da obezbjedim memoriju: %s"
 
-#: ../cdk-pixbuf/io-gdip-utils.c:177 ../cdk-pixbuf/io-gdip-utils.c:291
-#: ../cdk-pixbuf/io-gdip-utils.c:331
+#: cdk-pixbuf/io-gdip-utils.c:180 cdk-pixbuf/io-gdip-utils.c:294
+#: cdk-pixbuf/io-gdip-utils.c:334
 #, c-format
 msgid "Could not create stream: %s"
 msgstr "Ne mogu da napravim tok: %s"
 
-#: ../cdk-pixbuf/io-gdip-utils.c:191
+#: cdk-pixbuf/io-gdip-utils.c:194
 #, c-format
 msgid "Could not seek stream: %s"
 msgstr "Ne mogu da se krećem po toku: %s"
 
-#: ../cdk-pixbuf/io-gdip-utils.c:203
+#: cdk-pixbuf/io-gdip-utils.c:206
 #, c-format
 msgid "Could not read from stream: %s"
 msgstr "Ne mogu da čitam iz toka: %s"
 
-#: ../cdk-pixbuf/io-gdip-utils.c:615
-msgid "Couldn't load bitmap"
+#: cdk-pixbuf/io-gdip-utils.c:620
+#, fuzzy
+msgid "Couldn’t load bitmap"
 msgstr "Ne mogu da otvorim bitmapu"
 
-#: ../cdk-pixbuf/io-gdip-utils.c:771
-msgid "Couldn't load metafile"
+#: cdk-pixbuf/io-gdip-utils.c:776
+#, fuzzy
+msgid "Couldn’t load metafile"
 msgstr "Ne mogu da otvorim metafile"
 
-#: ../cdk-pixbuf/io-gdip-utils.c:876
+#: cdk-pixbuf/io-gdip-utils.c:881
 msgid "Unsupported image format for GDI+"
 msgstr "Nepodržana vrsta slike za GDI+"
 
-#: ../cdk-pixbuf/io-gdip-utils.c:883
-msgid "Couldn't save"
+#: cdk-pixbuf/io-gdip-utils.c:888
+#, fuzzy
+msgid "Couldn’t save"
 msgstr "Ne mogu da sačuvam"
 
-#: ../cdk-pixbuf/io-gdip-wmf.c:56
+#: cdk-pixbuf/io-gdip-wmf.c:60
 msgctxt "image format"
 msgid "WMF"
 msgstr "VMF"
 
-#: ../cdk-pixbuf/io-gif.c:220
+#: cdk-pixbuf/io-gif.c:160
 #, c-format
 msgid "Failure reading GIF: %s"
 msgstr "Neuspjeh pri učitavanju GIF: %s"
 
-#: ../cdk-pixbuf/io-gif.c:494 ../cdk-pixbuf/io-gif.c:1501
-#: ../cdk-pixbuf/io-gif.c:1668
-msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
-msgstr "GIF datoteka ima nepotpune podatke (možda je odsječena nekako?)"
-
-#: ../cdk-pixbuf/io-gif.c:503
-#, c-format
-msgid "Internal error in the GIF loader (%s)"
-msgstr "Interna greška u GIF čitaču (%s)"
-
-#: ../cdk-pixbuf/io-gif.c:577
-msgid "Stack overflow"
-msgstr "Prekoračenje steka"
-
-#: ../cdk-pixbuf/io-gif.c:637
-msgid "GIF image loader cannot understand this image."
-msgstr "Dio za učitavanje GIF slika ne prepoznaje ovu sliku."
-
-#: ../cdk-pixbuf/io-gif.c:666
-msgid "Bad code encountered"
-msgstr "Loš kod pronađen"
-
-#: ../cdk-pixbuf/io-gif.c:676
-msgid "Circular table entry in GIF file"
-msgstr "Kružni unos u tabeli GIF datoteke"
-
-#: ../cdk-pixbuf/io-gif.c:864 ../cdk-pixbuf/io-gif.c:1487
-#: ../cdk-pixbuf/io-gif.c:1540 ../cdk-pixbuf/io-gif.c:1656
+#: cdk-pixbuf/io-gif.c:383 cdk-pixbuf/io-gif.c:850 cdk-pixbuf/io-gif.c:903
+#: cdk-pixbuf/io-gif.c:976
 msgid "Not enough memory to load GIF file"
 msgstr "Nedovoljno memorije za učitavanje GIF datoteke"
 
-#: ../cdk-pixbuf/io-gif.c:958
-msgid "Not enough memory to composite a frame in GIF file"
-msgstr "Nema dovoljno memorije za slaganje kadra u GIF datoteci"
-
-#: ../cdk-pixbuf/io-gif.c:1130
+#: cdk-pixbuf/io-gif.c:509
 msgid "GIF image is corrupt (incorrect LZW compression)"
 msgstr "GIF slika je oštećena (neispravna LZW kompresija)"
 
-#: ../cdk-pixbuf/io-gif.c:1180
+#: cdk-pixbuf/io-gif.c:545
 msgid "File does not appear to be a GIF file"
 msgstr "Datoteka izgleda nije GIF datoteka"
 
-#: ../cdk-pixbuf/io-gif.c:1192
+#: cdk-pixbuf/io-gif.c:560
 #, c-format
 msgid "Version %s of the GIF file format is not supported"
 msgstr "Verzija %s GIF oblika grafičke datoteke nije podržana"
 
-#: ../cdk-pixbuf/io-gif.c:1239
+#: cdk-pixbuf/io-gif.c:589
 msgid "Resulting GIF image has zero size"
 msgstr "Rezultujuća GIF slika je nulte dužine"
 
-#: ../cdk-pixbuf/io-gif.c:1318
+#: cdk-pixbuf/io-gif.c:659
 msgid ""
 "GIF image has no global colormap, and a frame inside it has no local "
 "colormap."
 msgstr ""
 "GIF slika nema globalnu paletu boja, a okvir unutar nema lokalnu paletu boja."
 
-#: ../cdk-pixbuf/io-gif.c:1563
+#: cdk-pixbuf/io-gif.c:863 cdk-pixbuf/io-gif.c:988
+msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
+msgstr "GIF datoteka ima nepotpune podatke (možda je odsječena nekako?)"
+
+#: cdk-pixbuf/io-gif.c:922
 msgid "GIF image was truncated or incomplete."
 msgstr "GIF slika je odsječena ili nekompletna."
 
-#: ../cdk-pixbuf/io-icns.c:358
+#: cdk-pixbuf/io-gif.c:929
+msgid "Not all frames of the GIF image were loaded."
+msgstr ""
+
+#: cdk-pixbuf/io-icns.c:363
 #, c-format
 msgid "Error reading ICNS image: %s"
 msgstr "Greška pri čitanju ICNS slike: %s"
 
-#: ../cdk-pixbuf/io-icns.c:375 ../cdk-pixbuf/io-icns.c:452
+#: cdk-pixbuf/io-icns.c:380 cdk-pixbuf/io-icns.c:461
 msgid "Could not decode ICNS file"
 msgstr "Ne mogu da dekodiram ICNS datoteku"
 
-#: ../cdk-pixbuf/io-icns.c:511
+#: cdk-pixbuf/io-icns.c:517
 msgctxt "image format"
 msgid "MacOS X icon"
 msgstr "Ikonica MekOS H-a"
 
-#: ../cdk-pixbuf/io-ico.c:226 ../cdk-pixbuf/io-ico.c:240
-#: ../cdk-pixbuf/io-ico.c:291 ../cdk-pixbuf/io-ico.c:302
-#: ../cdk-pixbuf/io-ico.c:386
-msgid "Invalid header in icon"
+#: cdk-pixbuf/io-ico.c:238 cdk-pixbuf/io-ico.c:252 cdk-pixbuf/io-ico.c:342
+#: cdk-pixbuf/io-ico.c:426 cdk-pixbuf/io-ico.c:451
+#, fuzzy, c-format
+msgid "Invalid header in icon (%s)"
 msgstr "Neipravno zaglavlje u ikoni"
 
-#: ../cdk-pixbuf/io-ico.c:255 ../cdk-pixbuf/io-ico.c:312
-#: ../cdk-pixbuf/io-ico.c:396 ../cdk-pixbuf/io-ico.c:449
-#: ../cdk-pixbuf/io-ico.c:479
+#: cdk-pixbuf/io-ico.c:268 cdk-pixbuf/io-ico.c:355 cdk-pixbuf/io-ico.c:461
+#: cdk-pixbuf/io-ico.c:504 cdk-pixbuf/io-ico.c:532
 msgid "Not enough memory to load icon"
 msgstr "Nedovoljno memorije za učitavanje ikone"
 
-#: ../cdk-pixbuf/io-ico.c:338
+#: cdk-pixbuf/io-ico.c:386
+msgid "Invalid header in icon"
+msgstr "Neipravno zaglavlje u ikoni"
+
+#: cdk-pixbuf/io-ico.c:387
 msgid "Compressed icons are not supported"
 msgstr "Kompresovane ikone nisu podržane"
 
-#: ../cdk-pixbuf/io-ico.c:434
+#: cdk-pixbuf/io-ico.c:489
 msgid "Unsupported icon type"
 msgstr "Tip ikone nije podržan"
 
-#: ../cdk-pixbuf/io-ico.c:528
+#: cdk-pixbuf/io-ico.c:583
 msgid "Not enough memory to load ICO file"
 msgstr "Nedovoljno memorije za učitavanje ICO datoteke"
 
-#: ../cdk-pixbuf/io-ico.c:993
+#: cdk-pixbuf/io-ico.c:629
+#, fuzzy
+msgid "ICO image was truncated or incomplete."
+msgstr "ANI slika je odsječena ili nekompletna."
+
+#: cdk-pixbuf/io-ico.c:1070
 msgid "Image too large to be saved as ICO"
 msgstr "Slika je prevelika da bi se mogla snimiti kao ICO"
 
-#: ../cdk-pixbuf/io-ico.c:1004
+#: cdk-pixbuf/io-ico.c:1081
 msgid "Cursor hotspot outside image"
 msgstr "Kursor hotspot izvan slike"
 
-#: ../cdk-pixbuf/io-ico.c:1027
+#: cdk-pixbuf/io-ico.c:1104
 #, c-format
 msgid "Unsupported depth for ICO file: %d"
 msgstr "Dubina ICO datoteke nije podržana: %d"
 
-#: ../cdk-pixbuf/io-jasper.c:73
-msgid "Couldn't allocate memory for stream"
-msgstr "Ne mogu da obezbjedim memoriju za tok"
-
-#: ../cdk-pixbuf/io-jasper.c:103
-msgid "Couldn't decode image"
-msgstr "Ne mogu da dekodiram sliku"
-
-#: ../cdk-pixbuf/io-jasper.c:121
-msgid "Transformed JPEG2000 has zero width or height"
-msgstr "Preinačeni JPEG2000 ima visinu ili širinu nula."
-
-#: ../cdk-pixbuf/io-jasper.c:135
-msgid "Image type currently not supported"
-msgstr "Vrsta slike za sada nije podržana"
-
-#: ../cdk-pixbuf/io-jasper.c:147 ../cdk-pixbuf/io-jasper.c:155
-msgid "Couldn't allocate memory for color profile"
-msgstr "Ne mogu da obezbjedim memoriju za paletu boja"
-
-#: ../cdk-pixbuf/io-jasper.c:181
-msgid "Insufficient memory to open JPEG 2000 file"
-msgstr "Nedovoljno memorije za otvaranje JPEG2000 datoteke"
-
-#: ../cdk-pixbuf/io-jasper.c:260
-msgid "Couldn't allocate memory to buffer image data"
-msgstr "Ne mogu da obezbjedim memoriju za bafer podataka slike"
-
-#: ../cdk-pixbuf/io-jasper.c:304
-msgctxt "image format"
-msgid "JPEG 2000"
-msgstr "JPEG 2000"
-
-#: ../cdk-pixbuf/io-jpeg.c:124
+#: cdk-pixbuf/io-jpeg.c:131
 #, c-format
 msgid "Error interpreting JPEG image file (%s)"
 msgstr "Greška pri tumačenju JPEG grafičke datoteke (%s)"
 
-#: ../cdk-pixbuf/io-jpeg.c:595
+#: cdk-pixbuf/io-jpeg.c:647
 msgid ""
 "Insufficient memory to load image, try exiting some applications to free "
 "memory"
@@ -555,126 +534,82 @@ msgstr ""
 "Nedovoljno memorije za učitavanje slike, probajte zatvoriti neke aplikacije "
 "da bi oslobodili memoriju"
 
-#: ../cdk-pixbuf/io-jpeg.c:664 ../cdk-pixbuf/io-jpeg.c:877
+#: cdk-pixbuf/io-jpeg.c:720 cdk-pixbuf/io-jpeg.c:970
 #, c-format
 msgid "Unsupported JPEG color space (%s)"
 msgstr "JPEG color space nije podržano (%s)"
 
-#: ../cdk-pixbuf/io-jpeg.c:776 ../cdk-pixbuf/io-jpeg.c:1057
-#: ../cdk-pixbuf/io-jpeg.c:1393 ../cdk-pixbuf/io-jpeg.c:1403
-msgid "Couldn't allocate memory for loading JPEG file"
+#: cdk-pixbuf/io-jpeg.c:845 cdk-pixbuf/io-jpeg.c:1169 cdk-pixbuf/io-jpeg.c:1516
+#: cdk-pixbuf/io-jpeg.c:1526
+#, fuzzy
+msgid "Couldn’t allocate memory for loading JPEG file"
 msgstr "Nisam mogao dodijeliti memoriju za učitavanje JPEG datoteke"
 
-#: ../cdk-pixbuf/io-jpeg.c:1031
+#: cdk-pixbuf/io-jpeg.c:1127
 msgid "Transformed JPEG has zero width or height."
 msgstr "Preinačeni JPEG ima visinu ili širinu nula."
 
-#: ../cdk-pixbuf/io-jpeg.c:1329
-#, c-format
+#: cdk-pixbuf/io-jpeg.c:1153
+#, fuzzy, c-format
+msgid "Unsupported number of color components (%d)"
+msgstr "JPEG color space nije podržano (%s)"
+
+#: cdk-pixbuf/io-jpeg.c:1446
+#, fuzzy, c-format
 msgid ""
-"JPEG x-dpi must be a value between 1 and 65535; value '%s' is not allowed."
+"JPEG x-dpi must be a value between 1 and 65535; value “%s” is not allowed."
 msgstr ""
 "Broj vodoravnih tačaka po inču JPEG-a mora biti vrijednost između 1 i 65535; "
 "vrijednost „%s“ nije dozvoljena."
 
-#: ../cdk-pixbuf/io-jpeg.c:1350
-#, c-format
+#: cdk-pixbuf/io-jpeg.c:1467
+#, fuzzy, c-format
 msgid ""
-"JPEG y-dpi must be a value between 1 and 65535; value '%s' is not allowed."
+"JPEG y-dpi must be a value between 1 and 65535; value “%s” is not allowed."
 msgstr ""
 "Broj uspravnih tačaka po inču JPEG-a mora biti vrijednost između 1 i 65535; "
 "vrijednost „%s“ nije dozvoljena."
 
-#: ../cdk-pixbuf/io-jpeg.c:1364
-#, c-format
-msgid "Color profile has invalid length '%u'."
+#: cdk-pixbuf/io-jpeg.c:1481
+#, fuzzy, c-format
+msgid "Color profile has invalid length “%u”."
 msgstr "Profil boja ima pogrešnu dužinu '%u'."
 
-#: ../cdk-pixbuf/io-pcx.c:184
-msgid "Couldn't allocate memory for header"
-msgstr "Nisam mogao dodijeliti memoriju za zaglavlje"
-
-#: ../cdk-pixbuf/io-pcx.c:199 ../cdk-pixbuf/io-pcx.c:557
-msgid "Couldn't allocate memory for context buffer"
-msgstr "Nisam mogao dodijeliti memoriju za buffer konteksta"
-
-#: ../cdk-pixbuf/io-pcx.c:598
-msgid "Image has invalid width and/or height"
-msgstr "Slika ima nevažeću širinu i/ili visinu"
-
-#: ../cdk-pixbuf/io-pcx.c:610 ../cdk-pixbuf/io-pcx.c:671
-msgid "Image has unsupported bpp"
-msgstr "Slika ima nepodržani bpp"
-
-#: ../cdk-pixbuf/io-pcx.c:615 ../cdk-pixbuf/io-pcx.c:623
-#, c-format
-msgid "Image has unsupported number of %d-bit planes"
-msgstr "Slika ima nepodržan broj %d-bitnih ravni"
-
-#: ../cdk-pixbuf/io-pcx.c:639
-msgid "Couldn't create new pixbuf"
-msgstr "Nisam mogao napraviti novi pixbuf"
-
-#: ../cdk-pixbuf/io-pcx.c:647
-msgid "Couldn't allocate memory for line data"
-msgstr "Nisam mogao dodijeliti memoriju za linijske podatke"
-
-#: ../cdk-pixbuf/io-pcx.c:654
-msgid "Couldn't allocate memory for PCX image"
-msgstr "Ne mogu alocirati memoriju za PCX sliku"
-
-#: ../cdk-pixbuf/io-pcx.c:701
-msgid "Didn't get all lines of PCX image"
-msgstr "Nisam dobio sve linije PCX slike"
-
-#: ../cdk-pixbuf/io-pcx.c:708
-msgid "No palette found at end of PCX data"
-msgstr "Nije nađena paleta na kraju PCX podataka"
-
-#: ../cdk-pixbuf/io-pcx.c:753
-msgctxt "image format"
-msgid "PCX"
-msgstr "PCIks"
-
-#: ../cdk-pixbuf/io-pixdata.c:146
-msgid "Transformed pixbuf has zero width or height."
-msgstr "Transformisani pixbuf ima nultu širinu ili visinu."
-
-#: ../cdk-pixbuf/io-pixdata.c:184
-msgctxt "image format"
-msgid "CdkPixdata"
-msgstr "Cdk Piksdata"
-
-#: ../cdk-pixbuf/io-png.c:54
+#: cdk-pixbuf/io-png.c:64
 msgid "Bits per channel of PNG image is invalid."
 msgstr "Broj bitova po kanalu u PNG slici je nevažeći."
 
-#: ../cdk-pixbuf/io-png.c:135 ../cdk-pixbuf/io-png.c:670
+#: cdk-pixbuf/io-png.c:145 cdk-pixbuf/io-png.c:730
 msgid "Transformed PNG has zero width or height."
 msgstr "Transformiran PNG ima 0 širinu ili visinu."
 
-#: ../cdk-pixbuf/io-png.c:143
+#: cdk-pixbuf/io-png.c:153
 msgid "Bits per channel of transformed PNG is not 8."
 msgstr "Broj bitova po kanalu u transformiranoj PNG slici nije 8."
 
-#: ../cdk-pixbuf/io-png.c:152
+#: cdk-pixbuf/io-png.c:162
 msgid "Transformed PNG not RGB or RGBA."
 msgstr "Transformiran PNG nije RGB ili RGBA."
 
-#: ../cdk-pixbuf/io-png.c:161
+#: cdk-pixbuf/io-png.c:171
 msgid "Transformed PNG has unsupported number of channels, must be 3 or 4."
 msgstr "Broj kanala u transformiranom PNG nije podržan, mora biti 3 ili 4."
 
-#: ../cdk-pixbuf/io-png.c:182
+#: cdk-pixbuf/io-png.c:193
 #, c-format
 msgid "Fatal error in PNG image file: %s"
 msgstr "Fatalna greška u PNG grafičkoj datoteci: %s"
 
-#: ../cdk-pixbuf/io-png.c:319
+#: cdk-pixbuf/io-png.c:338
 msgid "Insufficient memory to load PNG file"
 msgstr "Nedovoljno memorije za učitavanje PNG datoteke"
 
-#: ../cdk-pixbuf/io-png.c:685
+#: cdk-pixbuf/io-png.c:519 cdk-pixbuf/io-png.c:540
+#, fuzzy
+msgid "Couldn’t allocate memory for loading PNG"
+msgstr "Nisam mogao dodijeliti memoriju za učitavanje JPEG datoteke"
+
+#: cdk-pixbuf/io-png.c:743
 #, c-format
 msgid ""
 "Insufficient memory to store a %lu by %lu image; try exiting some "
@@ -683,148 +618,144 @@ msgstr ""
 "Nedovoljna memorija za smjestiti %lu sa %lu sliku; napustite programe da "
 "smanjite upotrebu memorije"
 
-#: ../cdk-pixbuf/io-png.c:760
+#: cdk-pixbuf/io-png.c:820
 msgid "Fatal error reading PNG image file"
 msgstr "Fatalna greška pri čitanju PNG grafičke datoteke"
 
-#: ../cdk-pixbuf/io-png.c:809
+#: cdk-pixbuf/io-png.c:873
 #, c-format
 msgid "Fatal error reading PNG image file: %s"
 msgstr "Fatalna greška pri čitanju PNG grafičke datoteke: %s"
 
-#: ../cdk-pixbuf/io-png.c:901
+#: cdk-pixbuf/io-png.c:972
+#, fuzzy, c-format
 msgid ""
-"Keys for PNG text chunks must have at least 1 and at most 79 characters."
+"Invalid key “%s”. Keys for PNG text chunks must have at least 1 and at most "
+"79 characters."
 msgstr ""
 "Ključevi za PNG tekstualne dijelove moraju imati između 1 i 79 znakova."
 
-#: ../cdk-pixbuf/io-png.c:910
-msgid "Keys for PNG text chunks must be ASCII characters."
+#: cdk-pixbuf/io-png.c:985
+#, fuzzy, c-format
+msgid "Invalid key “%s”. Keys for PNG text chunks must be ASCII characters."
 msgstr "Ključevi za tekstualne dijelove PNG datoteke moraju biti ASCII zakovi."
 
-#: ../cdk-pixbuf/io-png.c:924 ../cdk-pixbuf/io-tiff.c:796
-#, c-format
-msgid "Color profile has invalid length %d."
-msgstr "Profil boja nije ispravne dužine %d."
-
-#: ../cdk-pixbuf/io-png.c:937
-#, c-format
+#: cdk-pixbuf/io-png.c:1015
+#, fuzzy, c-format
 msgid ""
-"PNG compression level must be a value between 0 and 9; value '%s' could not "
-"be parsed."
-msgstr ""
-"Nivo kompresije PNG-a mora biti vrijednost između 0 i 9; ne razumijem "
-"vrijednost „%s“."
-
-#: ../cdk-pixbuf/io-png.c:950
-#, c-format
-msgid ""
-"PNG compression level must be a value between 0 and 9; value '%d' is not "
-"allowed."
-msgstr ""
-"Nivo kompresije PNG-a mora biti vrijednost između 0 i 9; vrijednost „%d“ "
-"nije dopuštena."
-
-#: ../cdk-pixbuf/io-png.c:969
-#, c-format
-msgid "PNG x-dpi must be greater than zero; value '%s' is not allowed."
-msgstr ""
-"Broj vodoravnih tačaka po inču PNG-a mora biti vrijednost veća od nule; "
-"vrijednost „%s“ nije dozvoljena."
-
-#: ../cdk-pixbuf/io-png.c:989
-#, c-format
-msgid "PNG y-dpi must be greater than zero; value '%s' is not allowed."
-msgstr ""
-"Broj uspravnih tačaka po inču PNG-a mora biti vrijednost veća od nule; "
-"vrijednost „%s“ nije dozvoljena."
-
-#: ../cdk-pixbuf/io-png.c:1038
-#, c-format
-msgid "Value for PNG text chunk %s cannot be converted to ISO-8859-1 encoding."
+"Value for PNG text chunk '%s' cannot be converted to ISO-8859-1 encoding."
 msgstr ""
 "Vrijednost tekstualnog odjeljka PNG-a %s se ne može pretvoriti u ISO-8859-1 "
 "zapis."
 
-#: ../cdk-pixbuf/io-png.c:1206
+#: cdk-pixbuf/io-png.c:1027
+#, fuzzy, c-format
+msgid "Color profile has invalid length %d"
+msgstr "Profil boja nije ispravne dužine %d."
+
+#: cdk-pixbuf/io-png.c:1039
+#, fuzzy, c-format
+msgid ""
+"PNG compression level must be a value between 0 and 9; value “%s” is invalid"
+msgstr ""
+"Nivo kompresije PNG-a mora biti vrijednost između 0 i 9; vrijednost „%d“ "
+"nije dopuštena."
+
+#: cdk-pixbuf/io-png.c:1053
+#, fuzzy, c-format
+msgid "PNG %s must be greater than zero; value “%s” is not allowed"
+msgstr ""
+"Broj vodoravnih tačaka po inču PNG-a mora biti vrijednost veća od nule; "
+"vrijednost „%s“ nije dozvoljena."
+
+#: cdk-pixbuf/io-png.c:1283
 msgctxt "image format"
 msgid "PNG"
 msgstr "PNG"
 
-#: ../cdk-pixbuf/io-pnm.c:246
-msgid "PNM loader expected to find an integer, but didn't"
+#: cdk-pixbuf/io-pnm.c:247
+#, fuzzy
+msgid "PNM loader expected to find an integer, but didn’t"
 msgstr "PNM-čitač nije našao očekivani cijeli broj"
 
-#: ../cdk-pixbuf/io-pnm.c:278
+#: cdk-pixbuf/io-pnm.c:279
 msgid "PNM file has an incorrect initial byte"
 msgstr "PNM datoteka ima neispravan početni bajt"
 
-#: ../cdk-pixbuf/io-pnm.c:308
+#: cdk-pixbuf/io-pnm.c:309
 msgid "PNM file is not in a recognized PNM subformat"
 msgstr "PNM datoteka nije prepoznat PNM podoblik"
 
-#: ../cdk-pixbuf/io-pnm.c:333
+#: cdk-pixbuf/io-pnm.c:334
+#, fuzzy
+msgid "PNM file has an invalid width"
+msgstr "PNM datoteka ima širinu slike 0"
+
+#: cdk-pixbuf/io-pnm.c:342
 msgid "PNM file has an image width of 0"
 msgstr "PNM datoteka ima širinu slike 0"
 
-#: ../cdk-pixbuf/io-pnm.c:354
+#: cdk-pixbuf/io-pnm.c:363
+#, fuzzy
+msgid "PNM file has an invalid height"
+msgstr "PNM datoteka ima visinu slike 0"
+
+#: cdk-pixbuf/io-pnm.c:371
 msgid "PNM file has an image height of 0"
 msgstr "PNM datoteka ima visinu slike 0"
 
-#: ../cdk-pixbuf/io-pnm.c:377
+#: cdk-pixbuf/io-pnm.c:394
 msgid "Maximum color value in PNM file is 0"
 msgstr "Maksimalna vrijednost boje u PNM datoteci je 0"
 
-#: ../cdk-pixbuf/io-pnm.c:385
+#: cdk-pixbuf/io-pnm.c:402
 msgid "Maximum color value in PNM file is too large"
 msgstr "Maksimalna vrijednost boje u PNM datoteci je prevelika"
 
-#: ../cdk-pixbuf/io-pnm.c:425 ../cdk-pixbuf/io-pnm.c:455
-#: ../cdk-pixbuf/io-pnm.c:500
+#: cdk-pixbuf/io-pnm.c:442 cdk-pixbuf/io-pnm.c:472 cdk-pixbuf/io-pnm.c:517
 msgid "Raw PNM image type is invalid"
 msgstr "Neobrađeni tip PNM slike je nevažeći"
 
-#: ../cdk-pixbuf/io-pnm.c:650
+#: cdk-pixbuf/io-pnm.c:667
 msgid "PNM image loader does not support this PNM subformat"
 msgstr "Čitač za PNM slike ne podržava ovaj PNM podoblik"
 
-#: ../cdk-pixbuf/io-pnm.c:737 ../cdk-pixbuf/io-pnm.c:964
+#: cdk-pixbuf/io-pnm.c:754 cdk-pixbuf/io-pnm.c:991
 msgid "Raw PNM formats require exactly one whitespace before sample data"
 msgstr ""
 "Neobrađeni PNM oblici zahtijevaju tačno jedno prazno polje prije podataka "
 "uzorka"
 
-#: ../cdk-pixbuf/io-pnm.c:764
+#: cdk-pixbuf/io-pnm.c:781
 msgid "Cannot allocate memory for loading PNM image"
 msgstr "Ne mogu da obezbjedim memoriju za učitavanje PNM slike"
 
-#: ../cdk-pixbuf/io-pnm.c:814
+#: cdk-pixbuf/io-pnm.c:835
 msgid "Insufficient memory to load PNM context struct"
 msgstr "Nedovoljno memorije za učitavanje PNM context struct"
 
-#: ../cdk-pixbuf/io-pnm.c:865
+#: cdk-pixbuf/io-pnm.c:892
 msgid "Unexpected end of PNM image data"
 msgstr "Neočekivani kraj podataka u PNM slici"
 
-#: ../cdk-pixbuf/io-pnm.c:993
+#: cdk-pixbuf/io-pnm.c:1020
 msgid "Insufficient memory to load PNM file"
 msgstr "Nedovoljno memorije za učitavanje PNM datoteke"
 
-#: ../cdk-pixbuf/io-pnm.c:1077
+#: cdk-pixbuf/io-pnm.c:1103
 msgctxt "image format"
 msgid "PNM/PBM/PGM/PPM"
 msgstr "PNM/PBM/PGM/PPM"
 
-#: ../cdk-pixbuf/io-qtif.c:126
+#: cdk-pixbuf/io-qtif.c:126
 msgid "Input file descriptor is NULL."
 msgstr "Opisivač ulazne datoteke je NULL."
 
-#: ../cdk-pixbuf/io-qtif.c:141
+#: cdk-pixbuf/io-qtif.c:141
 msgid "Failed to read QTIF header"
 msgstr "Ne mogu da pročitam QTIF zaglavlje"
 
-#: ../cdk-pixbuf/io-qtif.c:150 ../cdk-pixbuf/io-qtif.c:187
-#: ../cdk-pixbuf/io-qtif.c:454
+#: cdk-pixbuf/io-qtif.c:150 cdk-pixbuf/io-qtif.c:187 cdk-pixbuf/io-qtif.c:449
 #, c-format
 msgid "QTIF atom size too large (%d byte)"
 msgid_plural "QTIF atom size too large (%d bytes)"
@@ -832,7 +763,7 @@ msgstr[0] "QTIF atomska veličina prevelika (%d bajt)"
 msgstr[1] "QTIF atomska veličina prevelika (%d bajta)"
 msgstr[2] "QTIF atomska veličina prevelika (%d bajtovq)"
 
-#: ../cdk-pixbuf/io-qtif.c:173
+#: cdk-pixbuf/io-qtif.c:173
 #, c-format
 msgid "Failed to allocate %d byte for file read buffer"
 msgid_plural "Failed to allocate %d bytes for file read buffer"
@@ -840,12 +771,12 @@ msgstr[0] "Neuspjelo alociranje %d bajta za bafer za čitanje datoteka"
 msgstr[1] "Neuspjelo alociranje %d bajta za bafer za čitanje datoteka"
 msgstr[2] "Neuspjelo alociranje %d bajtova za bafer za čitanje datoteka"
 
-#: ../cdk-pixbuf/io-qtif.c:201
+#: cdk-pixbuf/io-qtif.c:201
 #, c-format
 msgid "File error when reading QTIF atom: %s"
 msgstr "Greška u datoteci pri čitanju QTIF atoma: %s"
 
-#: ../cdk-pixbuf/io-qtif.c:238
+#: cdk-pixbuf/io-qtif.c:238
 #, c-format
 msgid "Failed to skip the next %d byte with seek()."
 msgid_plural "Failed to skip the next %d bytes with seek()."
@@ -853,250 +784,352 @@ msgstr[0] "Neuspjelo preskakanje sljedećeg %d bajta sa seek()."
 msgstr[1] "Neuspjelo preskakanje sljedeća %d bajta sa seek()."
 msgstr[2] "Neuspjelo preskakanje sljedećih %d bajtova sa seek()."
 
-#: ../cdk-pixbuf/io-qtif.c:265
+#: cdk-pixbuf/io-qtif.c:269
 msgid "Failed to allocate QTIF context structure."
 msgstr "Ne mogu da obezbjedim QTIF strukturu za  kontekst."
 
-#: ../cdk-pixbuf/io-qtif.c:325
+#: cdk-pixbuf/io-qtif.c:329
 msgid "Failed to create CdkPixbufLoader object."
 msgstr "Ne mogu da obrazujem CdkPixbufLoader objekat."
 
-#: ../cdk-pixbuf/io-qtif.c:429
+#: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
 msgstr "Ne mogu da pronađem atom sa podacima slike."
 
-#: ../cdk-pixbuf/io-qtif.c:613
+#: cdk-pixbuf/io-qtif.c:599
 msgctxt "image format"
 msgid "QuickTime"
 msgstr "Kvik tajm"
 
-#: ../cdk-pixbuf/io-ras.c:123
-msgid "RAS image has bogus header data"
-msgstr "RAS slika ima neispravne podatke u zaglavlju"
+#: cdk-pixbuf/io-tga.c:346
+#, fuzzy
+msgid "Cannot allocate colormap"
+msgstr "Ne mogu da obezbjedim stavke za mapu boja"
 
-#: ../cdk-pixbuf/io-ras.c:145
-msgid "RAS image has unknown type"
-msgstr "RAS slika je nepoznatog tipa"
-
-#: ../cdk-pixbuf/io-ras.c:153
-msgid "unsupported RAS image variation"
-msgstr "nepodržana varijacija RAS slike"
-
-#: ../cdk-pixbuf/io-ras.c:168 ../cdk-pixbuf/io-ras.c:197
-msgid "Not enough memory to load RAS image"
-msgstr "Nedovoljno memorije za učitavanje RAS slike"
-
-#: ../cdk-pixbuf/io-ras.c:542
-msgctxt "image format"
-msgid "Sun raster"
-msgstr "Sanov raster"
-
-#: ../cdk-pixbuf/io-tga.c:151
-msgid "Cannot allocate memory for IOBuffer struct"
-msgstr "Ne mogu da obezbjedim memoriju za IOBuffer strukturu"
-
-#: ../cdk-pixbuf/io-tga.c:170
-msgid "Cannot allocate memory for IOBuffer data"
-msgstr "Ne mogu da obezbjedim memoriju za IOBuffer podatke"
-
-#: ../cdk-pixbuf/io-tga.c:181
-msgid "Cannot realloc IOBuffer data"
-msgstr "Ne mogu da realociram IOBuffer podatke"
-
-#: ../cdk-pixbuf/io-tga.c:211
-msgid "Cannot allocate temporary IOBuffer data"
-msgstr "Ne mogu da obezbjedim privremene IOBuffer podatke"
-
-#: ../cdk-pixbuf/io-tga.c:339
+#: cdk-pixbuf/io-tga.c:371
 msgid "Cannot allocate new pixbuf"
 msgstr "Ne mogu da obezbjedim novi pixbuf"
 
-#: ../cdk-pixbuf/io-tga.c:678
-msgid "Image is corrupted or truncated"
-msgstr "Slika je odsječena ili neispravna."
-
-#: ../cdk-pixbuf/io-tga.c:685
-msgid "Cannot allocate colormap structure"
-msgstr "Ne mogu da obezbjedim strukturu za mapu boja"
-
-#: ../cdk-pixbuf/io-tga.c:692
-msgid "Cannot allocate colormap entries"
-msgstr "Ne mogu da obezbjedim stavke za mapu boja"
-
-#: ../cdk-pixbuf/io-tga.c:714
+#: cdk-pixbuf/io-tga.c:519
 msgid "Unexpected bitdepth for colormap entries"
 msgstr "Neočekivan broj boja za unose mape boja"
 
-#: ../cdk-pixbuf/io-tga.c:732
+#: cdk-pixbuf/io-tga.c:535
+msgid "Pseudocolor image does not contain a colormap"
+msgstr ""
+
+#: cdk-pixbuf/io-tga.c:578
 msgid "Cannot allocate TGA header memory"
 msgstr "Ne mogu da obezbjedim memoriju za TGA zaglavlje"
 
-#: ../cdk-pixbuf/io-tga.c:765
+#: cdk-pixbuf/io-tga.c:609
 msgid "TGA image has invalid dimensions"
 msgstr "TGA slika je nevažeće veličine"
 
-#: ../cdk-pixbuf/io-tga.c:771 ../cdk-pixbuf/io-tga.c:780
-#: ../cdk-pixbuf/io-tga.c:790 ../cdk-pixbuf/io-tga.c:800
-#: ../cdk-pixbuf/io-tga.c:807
+#: cdk-pixbuf/io-tga.c:615 cdk-pixbuf/io-tga.c:622
 msgid "TGA image type not supported"
 msgstr "TGA tip slike nije podržan"
 
-#: ../cdk-pixbuf/io-tga.c:854
+#: cdk-pixbuf/io-tga.c:650
 msgid "Cannot allocate memory for TGA context struct"
 msgstr "Ne mogu da obezbjedim memoriju za TGA podatke o kontekstu"
 
-#: ../cdk-pixbuf/io-tga.c:919
-msgid "Excess data in file"
-msgstr "Višak podataka u datoteci"
+#: cdk-pixbuf/io-tga.c:712
+#, fuzzy
+msgid "TGA image was truncated or incomplete."
+msgstr "ANI slika je odsječena ili nekompletna."
 
-#: ../cdk-pixbuf/io-tga.c:1000
+#: cdk-pixbuf/io-tga.c:764
 msgctxt "image format"
 msgid "Targa"
 msgstr "Targa"
 
-#: ../cdk-pixbuf/io-tiff.c:107
+#: cdk-pixbuf/io-tiff.c:117
 msgid "Could not get image width (bad TIFF file)"
 msgstr "Nisam mogao dobaviti širinu slike (neispravna TIFF datoteka)"
 
-#: ../cdk-pixbuf/io-tiff.c:115
+#: cdk-pixbuf/io-tiff.c:125
 msgid "Could not get image height (bad TIFF file)"
 msgstr "Nisam mogao dobaviti visinu slike (neispravna TIFF datoteka)"
 
-#: ../cdk-pixbuf/io-tiff.c:123
+#: cdk-pixbuf/io-tiff.c:133
 msgid "Width or height of TIFF image is zero"
 msgstr "Širina ili visina TIFF slike je nula"
 
-#: ../cdk-pixbuf/io-tiff.c:132 ../cdk-pixbuf/io-tiff.c:141
+#: cdk-pixbuf/io-tiff.c:141 cdk-pixbuf/io-tiff.c:151
 msgid "Dimensions of TIFF image too large"
 msgstr "TIFF slika je prevelika"
 
-#: ../cdk-pixbuf/io-tiff.c:165 ../cdk-pixbuf/io-tiff.c:177
-#: ../cdk-pixbuf/io-tiff.c:535
+#: cdk-pixbuf/io-tiff.c:177 cdk-pixbuf/io-tiff.c:189 cdk-pixbuf/io-tiff.c:585
 msgid "Insufficient memory to open TIFF file"
 msgstr "Nedovoljno memorije za otvaranje TIFF datoteke"
 
-#: ../cdk-pixbuf/io-tiff.c:275
+#: cdk-pixbuf/io-tiff.c:287
 msgid "Failed to load RGB data from TIFF file"
 msgstr "Nisam uspio učitati RGB podatke iz TIFF datoteke"
 
-#: ../cdk-pixbuf/io-tiff.c:337
+#: cdk-pixbuf/io-tiff.c:378
 msgid "Failed to open TIFF image"
 msgstr "Nisam uspio otvoriti TIFF sliku"
 
-#: ../cdk-pixbuf/io-tiff.c:471 ../cdk-pixbuf/io-tiff.c:484
+#: cdk-pixbuf/io-tiff.c:516 cdk-pixbuf/io-tiff.c:528
 msgid "Failed to load TIFF image"
 msgstr "Nisam uspio učitati TIFF sliku"
 
-#: ../cdk-pixbuf/io-tiff.c:710
+#: cdk-pixbuf/io-tiff.c:760
 msgid "Failed to save TIFF image"
 msgstr "Neuspjelo čuvanje TIFF slike"
 
-#: ../cdk-pixbuf/io-tiff.c:766
-msgid "TIFF compression doesn't refer to a valid codec."
+#: cdk-pixbuf/io-tiff.c:821
+#, fuzzy
+msgid "TIFF compression doesn’t refer to a valid codec."
 msgstr "Pakovanje TIFF podataka se ne odnosi na odgovarajući kodek."
 
-#: ../cdk-pixbuf/io-tiff.c:811
-msgid "TIFF bits-per-sample doesn't contain a supported value."
+#: cdk-pixbuf/io-tiff.c:851
+#, c-format
+msgid "Color profile has invalid length %d."
+msgstr "Profil boja nije ispravne dužine %d."
+
+#: cdk-pixbuf/io-tiff.c:866
+#, fuzzy
+msgid "TIFF bits-per-sample doesn’t contain a supported value."
 msgstr "Vrijednost bitova-po-uzorku TIFF-a ne sadrži podržanu vrijednost."
 
-#: ../cdk-pixbuf/io-tiff.c:892
+#: cdk-pixbuf/io-tiff.c:947
 msgid "Failed to write TIFF data"
 msgstr "Neuspio upis TIFF slike"
 
-#: ../cdk-pixbuf/io-tiff.c:910
-#, c-format
-msgid "TIFF x-dpi must be greater than zero; value '%s' is not allowed."
+#: cdk-pixbuf/io-tiff.c:965
+#, fuzzy, c-format
+msgid "TIFF x-dpi must be greater than zero; value “%s” is not allowed."
 msgstr ""
 "Broj vodoravnih tačaka po inču TIFF-a mora biti vrijednost veća od nule; "
 "vrijednost „%s“ nije dozvoljena."
 
-#: ../cdk-pixbuf/io-tiff.c:922
-#, c-format
-msgid "TIFF y-dpi must be greater than zero; value '%s' is not allowed."
+#: cdk-pixbuf/io-tiff.c:977
+#, fuzzy, c-format
+msgid "TIFF y-dpi must be greater than zero; value “%s” is not allowed."
 msgstr ""
 "Broj uspravnih tačaka po inču TIFF-a mora biti vrijednost veća od nule; "
 "vrijednost „%s“ nije dozvoljena."
 
-#: ../cdk-pixbuf/io-tiff.c:963
-msgid "Couldn't write to TIFF file"
+#: cdk-pixbuf/io-tiff.c:1018
+#, fuzzy
+msgid "Couldn’t write to TIFF file"
 msgstr "Ne mogu da upišem u TIFF datoteku"
 
-#: ../cdk-pixbuf/io-wbmp.c:243
-msgid "Image has zero width"
-msgstr "Slika ima nula širinu"
-
-#: ../cdk-pixbuf/io-wbmp.c:261
-msgid "Image has zero height"
-msgstr "Slika ima nula visinu"
-
-#: ../cdk-pixbuf/io-wbmp.c:272
-msgid "Not enough memory to load image"
-msgstr "Nedovoljno memorije za učitavanje slike"
-
-#: ../cdk-pixbuf/io-wbmp.c:331
-msgid "Couldn't save the rest"
-msgstr "Nisam uspio snimiti ostatak"
-
-#: ../cdk-pixbuf/io-wbmp.c:372
-msgctxt "image format"
-msgid "WBMP"
-msgstr "VBMP"
-
-#: ../cdk-pixbuf/io-xbm.c:302
+#: cdk-pixbuf/io-xbm.c:320
 msgid "Invalid XBM file"
 msgstr "Nevažeća XBM datoteka"
 
-#: ../cdk-pixbuf/io-xbm.c:312
+#: cdk-pixbuf/io-xbm.c:331
 msgid "Insufficient memory to load XBM image file"
 msgstr "Nedovoljno memorije za učitavanje XBM grafičke datoteke"
 
-#: ../cdk-pixbuf/io-xbm.c:460
+#: cdk-pixbuf/io-xbm.c:482
 msgid "Failed to write to temporary file when loading XBM image"
 msgstr "Neuspješno upisivanje privremene datoteke tokom učitavanja XBM slike"
 
-#: ../cdk-pixbuf/io-xbm.c:499
+#: cdk-pixbuf/io-xbm.c:521
 msgctxt "image format"
 msgid "XBM"
 msgstr "IksBM"
 
-#: ../cdk-pixbuf/io-xpm.c:467
+#: cdk-pixbuf/io-xpm.c:472
 msgid "No XPM header found"
 msgstr "Nedostaje XPM zaglavlje"
 
-#: ../cdk-pixbuf/io-xpm.c:476
+#: cdk-pixbuf/io-xpm.c:481 cdk-pixbuf/io-xpm.c:507
 msgid "Invalid XPM header"
 msgstr "Neispravno XPM zaglavlje"
 
-#: ../cdk-pixbuf/io-xpm.c:484
+#: cdk-pixbuf/io-xpm.c:489
 msgid "XPM file has image width <= 0"
 msgstr "XPM datoteka ima sliku širine <= 0"
 
-#: ../cdk-pixbuf/io-xpm.c:492
+#: cdk-pixbuf/io-xpm.c:497
 msgid "XPM file has image height <= 0"
 msgstr "XPM datoteka ima sliku visine <= 0"
 
-#: ../cdk-pixbuf/io-xpm.c:500
+#: cdk-pixbuf/io-xpm.c:514
 msgid "XPM has invalid number of chars per pixel"
 msgstr "XPM ima nevažeći broj znakova po piksli"
 
-#: ../cdk-pixbuf/io-xpm.c:509
+#: cdk-pixbuf/io-xpm.c:523
 msgid "XPM file has invalid number of colors"
 msgstr "XPM datoteka ima nevažeći broj boja"
 
-#: ../cdk-pixbuf/io-xpm.c:521 ../cdk-pixbuf/io-xpm.c:530
-#: ../cdk-pixbuf/io-xpm.c:582
+#: cdk-pixbuf/io-xpm.c:535 cdk-pixbuf/io-xpm.c:544 cdk-pixbuf/io-xpm.c:593
 msgid "Cannot allocate memory for loading XPM image"
 msgstr "Ne mogu da obezbjedim memoriju za učitavanje XPM slike"
 
-#: ../cdk-pixbuf/io-xpm.c:544
+#: cdk-pixbuf/io-xpm.c:558
 msgid "Cannot read XPM colormap"
 msgstr "Ne mogu da učitam XPM mapu boja"
 
-#: ../cdk-pixbuf/io-xpm.c:776
+#: cdk-pixbuf/io-xpm.c:610
+#, fuzzy
+msgid "Dimensions do not match data"
+msgstr "TIFF slika je prevelika"
+
+#: cdk-pixbuf/io-xpm.c:806
 msgid "Failed to write to temporary file when loading XPM image"
 msgstr "Neuspješno upisivanje privremene datoteke tokom učitavanja XPM slike"
 
-#: ../cdk-pixbuf/io-xpm.c:815
+#: cdk-pixbuf/io-xpm.c:845
 msgctxt "image format"
 msgid "XPM"
 msgstr "IksPM"
+
+#, c-format
+#~ msgid "Internal error in the GIF loader (%s)"
+#~ msgstr "Interna greška u GIF čitaču (%s)"
+
+#~ msgid "Stack overflow"
+#~ msgstr "Prekoračenje steka"
+
+#~ msgid "GIF image loader cannot understand this image."
+#~ msgstr "Dio za učitavanje GIF slika ne prepoznaje ovu sliku."
+
+#~ msgid "Bad code encountered"
+#~ msgstr "Loš kod pronađen"
+
+#~ msgid "Circular table entry in GIF file"
+#~ msgstr "Kružni unos u tabeli GIF datoteke"
+
+#~ msgid "Not enough memory to composite a frame in GIF file"
+#~ msgstr "Nema dovoljno memorije za slaganje kadra u GIF datoteci"
+
+#~ msgid "Couldn't allocate memory for stream"
+#~ msgstr "Ne mogu da obezbjedim memoriju za tok"
+
+#~ msgid "Couldn't decode image"
+#~ msgstr "Ne mogu da dekodiram sliku"
+
+#~ msgid "Transformed JPEG2000 has zero width or height"
+#~ msgstr "Preinačeni JPEG2000 ima visinu ili širinu nula."
+
+#~ msgid "Image type currently not supported"
+#~ msgstr "Vrsta slike za sada nije podržana"
+
+#~ msgid "Couldn't allocate memory for color profile"
+#~ msgstr "Ne mogu da obezbjedim memoriju za paletu boja"
+
+#~ msgid "Insufficient memory to open JPEG 2000 file"
+#~ msgstr "Nedovoljno memorije za otvaranje JPEG2000 datoteke"
+
+#~ msgid "Couldn't allocate memory to buffer image data"
+#~ msgstr "Ne mogu da obezbjedim memoriju za bafer podataka slike"
+
+#~ msgctxt "image format"
+#~ msgid "JPEG 2000"
+#~ msgstr "JPEG 2000"
+
+#~ msgid "Couldn't allocate memory for header"
+#~ msgstr "Nisam mogao dodijeliti memoriju za zaglavlje"
+
+#~ msgid "Couldn't allocate memory for context buffer"
+#~ msgstr "Nisam mogao dodijeliti memoriju za buffer konteksta"
+
+#~ msgid "Image has invalid width and/or height"
+#~ msgstr "Slika ima nevažeću širinu i/ili visinu"
+
+#~ msgid "Image has unsupported bpp"
+#~ msgstr "Slika ima nepodržani bpp"
+
+#, c-format
+#~ msgid "Image has unsupported number of %d-bit planes"
+#~ msgstr "Slika ima nepodržan broj %d-bitnih ravni"
+
+#~ msgid "Couldn't create new pixbuf"
+#~ msgstr "Nisam mogao napraviti novi pixbuf"
+
+#~ msgid "Couldn't allocate memory for line data"
+#~ msgstr "Nisam mogao dodijeliti memoriju za linijske podatke"
+
+#~ msgid "Couldn't allocate memory for PCX image"
+#~ msgstr "Ne mogu alocirati memoriju za PCX sliku"
+
+#~ msgid "Didn't get all lines of PCX image"
+#~ msgstr "Nisam dobio sve linije PCX slike"
+
+#~ msgid "No palette found at end of PCX data"
+#~ msgstr "Nije nađena paleta na kraju PCX podataka"
+
+#~ msgctxt "image format"
+#~ msgid "PCX"
+#~ msgstr "PCIks"
+
+#~ msgid "Transformed pixbuf has zero width or height."
+#~ msgstr "Transformisani pixbuf ima nultu širinu ili visinu."
+
+#~ msgctxt "image format"
+#~ msgid "CdkPixdata"
+#~ msgstr "Cdk Piksdata"
+
+#, c-format
+#~ msgid ""
+#~ "PNG compression level must be a value between 0 and 9; value '%s' could "
+#~ "not be parsed."
+#~ msgstr ""
+#~ "Nivo kompresije PNG-a mora biti vrijednost između 0 i 9; ne razumijem "
+#~ "vrijednost „%s“."
+
+#, c-format
+#~ msgid "PNG y-dpi must be greater than zero; value '%s' is not allowed."
+#~ msgstr ""
+#~ "Broj uspravnih tačaka po inču PNG-a mora biti vrijednost veća od nule; "
+#~ "vrijednost „%s“ nije dozvoljena."
+
+#~ msgid "RAS image has bogus header data"
+#~ msgstr "RAS slika ima neispravne podatke u zaglavlju"
+
+#~ msgid "RAS image has unknown type"
+#~ msgstr "RAS slika je nepoznatog tipa"
+
+#~ msgid "unsupported RAS image variation"
+#~ msgstr "nepodržana varijacija RAS slike"
+
+#~ msgid "Not enough memory to load RAS image"
+#~ msgstr "Nedovoljno memorije za učitavanje RAS slike"
+
+#~ msgctxt "image format"
+#~ msgid "Sun raster"
+#~ msgstr "Sanov raster"
+
+#~ msgid "Cannot allocate memory for IOBuffer struct"
+#~ msgstr "Ne mogu da obezbjedim memoriju za IOBuffer strukturu"
+
+#~ msgid "Cannot allocate memory for IOBuffer data"
+#~ msgstr "Ne mogu da obezbjedim memoriju za IOBuffer podatke"
+
+#~ msgid "Cannot realloc IOBuffer data"
+#~ msgstr "Ne mogu da realociram IOBuffer podatke"
+
+#~ msgid "Cannot allocate temporary IOBuffer data"
+#~ msgstr "Ne mogu da obezbjedim privremene IOBuffer podatke"
+
+#~ msgid "Image is corrupted or truncated"
+#~ msgstr "Slika je odsječena ili neispravna."
+
+#~ msgid "Cannot allocate colormap structure"
+#~ msgstr "Ne mogu da obezbjedim strukturu za mapu boja"
+
+#~ msgid "Excess data in file"
+#~ msgstr "Višak podataka u datoteci"
+
+#~ msgid "Image has zero width"
+#~ msgstr "Slika ima nula širinu"
+
+#~ msgid "Image has zero height"
+#~ msgstr "Slika ima nula visinu"
+
+#~ msgid "Not enough memory to load image"
+#~ msgstr "Nedovoljno memorije za učitavanje slike"
+
+#~ msgid "Couldn't save the rest"
+#~ msgstr "Nisam uspio snimiti ostatak"
+
+#~ msgctxt "image format"
+#~ msgid "WBMP"
+#~ msgstr "VBMP"

@@ -7,9 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ctk+.master.kn\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=cdk-"
-"pixbuf\n"
-"POT-Creation-Date: 2012-02-04 18:44-0500\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 08:56+0200\n"
 "PO-Revision-Date: 2010-04-21 22:38+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: kn-IN <>\n"
@@ -21,331 +20,431 @@ msgstr ""
 "\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:146 cdk-pixbuf/cdk-pixbuf-io.c:1083
-#: cdk-pixbuf/cdk-pixbuf-io.c:1349
-#, c-format
-msgid "Failed to open file '%s': %s"
+#: cdk-pixbuf/cdk-pixbuf-animation.c:190 cdk-pixbuf/cdk-pixbuf-io.c:1224
+#: cdk-pixbuf/cdk-pixbuf-io.c:1497
+#, fuzzy, c-format
+msgid "Failed to open file “%s”: %s"
 msgstr "'%s' ಕಡತವನ್ನು ತೆರೆಯುವಲ್ಲಿ ವಿಫಲತೆ: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:159 cdk-pixbuf/cdk-pixbuf-io.c:1095
-#, c-format
-msgid "Image file '%s' contains no data"
+#: cdk-pixbuf/cdk-pixbuf-animation.c:203 cdk-pixbuf/cdk-pixbuf-io.c:1085
+#, fuzzy, c-format
+msgid "Image file “%s” contains no data"
 msgstr "ಚಿತ್ರ ಕಡತ '%s' ದಲ್ಲಿ ಯಾವುದೇ ದತ್ತಾಂಶವಿಲ್ಲ"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:201 cdk-pixbuf/cdk-pixbuf-io.c:1131
-#: cdk-pixbuf/cdk-pixbuf-io.c:1401
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-animation.c:241
+#, fuzzy, c-format
 msgid ""
-"Failed to load image '%s': reason not known, probably a corrupt image file"
-msgstr ""
-"ಚಿತ್ರ '%s'ವನ್ನು ಲೋಡ್ ಮಾಡುವಲ್ಲಿ ವಿಫಲತೆ: ಕಾರಣ ತಿಳಿದಿಲ್ಲ, ಬಹುಷಃ ಒಂದು ಭ್ರಷ್ಟಗೊಂಡ ಚಿತ್ರ "
-"ಕಡತದಿಂದಾಗಿರಬಹುದು"
-
-#: cdk-pixbuf/cdk-pixbuf-animation.c:234
-#, c-format
-msgid ""
-"Failed to load animation '%s': reason not known, probably a corrupt "
+"Failed to load animation “%s”: reason not known, probably a corrupt "
 "animation file"
 msgstr ""
 "ಸಜೀವನ (animation) '%s'ಯನ್ನು ಲೋಡ್ ಮಾಡುವಲ್ಲಿ ವಿಫಲತೆ: ಕಾರಣ ತಿಳಿದಿಲ್ಲ, ಬಹುಷಃ ಒಂದು "
 "ಭ್ರಷ್ಟಗೊಂಡ ಸಜೀವನ (animation) ಕಡತದಿಂದಾಗಿರಬಹುದು"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:809
+#: cdk-pixbuf/cdk-pixbuf-animation.c:309 cdk-pixbuf/cdk-pixbuf-io.c:1260
+#: cdk-pixbuf/cdk-pixbuf-io.c:1549
+#, fuzzy, c-format
+msgid ""
+"Failed to load image “%s”: reason not known, probably a corrupt image file"
+msgstr ""
+"ಚಿತ್ರ '%s'ವನ್ನು ಲೋಡ್ ಮಾಡುವಲ್ಲಿ ವಿಫಲತೆ: ಕಾರಣ ತಿಳಿದಿಲ್ಲ, ಬಹುಷಃ ಒಂದು ಭ್ರಷ್ಟಗೊಂಡ ಚಿತ್ರ "
+"ಕಡತದಿಂದಾಗಿರಬಹುದು"
+
+#: cdk-pixbuf/cdk-pixbuf.c:248
+msgid "Number of Channels"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:249
+#, fuzzy
+msgid "The number of samples per pixel"
+msgstr "XPM ಪ್ರತಿ ಪಿಕ್ಸೆಲ್ಲಿನಲ್ಲಿ ಒಂದು ಅಮಾನ್ಯ ಸಂಖ್ಯೆಯ ಅಕ್ಷರಗಳನ್ನು ಹೊಂದಿದೆ"
+
+#: cdk-pixbuf/cdk-pixbuf.c:264
+msgid "Colorspace"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:265
+msgid "The colorspace in which the samples are interpreted"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:277
+msgid "Has Alpha"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:278
+msgid "Whether the pixbuf has an alpha channel"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:291
+msgid "Bits per Sample"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:292
+msgid "The number of bits per sample"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:305
+msgid "Width"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:306
+msgid "The number of columns of the pixbuf"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:319
+msgid "Height"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:320
+msgid "The number of rows of the pixbuf"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:337
+msgid "Rowstride"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:338
+msgid ""
+"The number of bytes between the start of a row and the start of the next row"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:351
+msgid "Pixels"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:352
+msgid "A pointer to the pixel data of the pixbuf"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:366
+msgid "Pixel Bytes"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:367
+msgid "Readonly pixel data"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf-io.c:901
 #, c-format
 msgid "Unable to load image-loading module: %s: %s"
 msgstr "ಚಿತ್ರವನ್ನು ಲೋಡ್ ಮಾಡುವ ಘಟಕವನ್ನು ಲೋಡ್ ಮಾಡಲಾಗಿಲ್ಲ: %s: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:824
+#: cdk-pixbuf/cdk-pixbuf-io.c:919
 #, fuzzy, c-format
 msgid ""
-"Image-loading module %s does not export the proper interface; perhaps it's "
+"Image-loading module %s does not export the proper interface; perhaps it’s "
 "from a different cdk-pixbuf version?"
 msgstr ""
 "ಚಿತ್ರ-ಲೋಡ್ ಮಾಡುವ ಘಟಕ %s ವು ಸರಿಯಾದ ಸಂಪರ್ಕಸಾಧನವನ್ನು ರವಾನಿಸುವುದಿಲ್ಲ; ಬಹುಷಃ ಅದು "
 "ಬೇರೊಂದು CTK ಆವೃತ್ತಿಯದ್ದಾಗಿರಬೇಕು?"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:833 cdk-pixbuf/cdk-pixbuf-io.c:884
-#, c-format
-msgid "Image type '%s' is not supported"
+#: cdk-pixbuf/cdk-pixbuf-io.c:929 cdk-pixbuf/cdk-pixbuf-io.c:972
+#, fuzzy, c-format
+msgid "Image type “%s” is not supported"
 msgstr "ಚಿತ್ರ '%s'ವು ರೀತಿಯು ಬೆಂಬಲಿತವಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:964
-#, c-format
-msgid "Couldn't recognize the image file format for file '%s'"
+#: cdk-pixbuf/cdk-pixbuf-io.c:1057
+#, fuzzy, c-format
+msgid "Couldn’t recognize the image file format for file “%s”"
 msgstr "ಕಡತ '%s'ಕ್ಕಾಗಿನ ಚಿತ್ರ ಕಡತ ವಿನ್ಯಾಸವನ್ನು ಗುರುತಿಸಲಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:972
+#: cdk-pixbuf/cdk-pixbuf-io.c:1065
 msgid "Unrecognized image file format"
 msgstr "ಗುರುತಿಸಲಾಗದ ಚಿತ್ರ ಕಡತ ರಚನೆ"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:1140
-#, c-format
-msgid "Failed to load image '%s': %s"
+#: cdk-pixbuf/cdk-pixbuf-io.c:1271
+#, fuzzy, c-format
+msgid "Failed to load image “%s”: %s"
 msgstr "ಚಿತ್ರ '%s'ವನ್ನು ಲೋಡ್ ಮಾಡುವಲ್ಲಿ ವಿಫಲತೆ: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2028 cdk-pixbuf/io-gdip-utils.c:888
+#: cdk-pixbuf/cdk-pixbuf-io.c:2346 cdk-pixbuf/io-gdip-utils.c:840
 #, c-format
 msgid "Error writing to image file: %s"
 msgstr "ಚಿತ್ರ ಕಡತಕ್ಕೆ ಬರೆಯುವಲ್ಲಿ ವಿಫಲತೆ: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2073 cdk-pixbuf/cdk-pixbuf-io.c:2203
+#: cdk-pixbuf/cdk-pixbuf-io.c:2388 cdk-pixbuf/cdk-pixbuf-io.c:2509
 #, c-format
 msgid "This build of cdk-pixbuf does not support saving the image format: %s"
 msgstr ""
 "cdk-pixbuf ನ ಈ ನಿರ್ಮಿತಿಯು ಚಿತ್ರ ವಿನ್ಯಾಸವನ್ನು ಉಳಿಸುವುದನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2107
+#: cdk-pixbuf/cdk-pixbuf-io.c:2419
 msgid "Insufficient memory to save image to callback"
 msgstr "ಚಿತ್ರವನ್ನು ಕಾಲ್-ಬ್ಯಾಕಿಗೆ ಉಳಿಸಲು ಸಾಕಷ್ತು ಮೆಮೊರಿ ಇಲ್ಲ"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2120
+#: cdk-pixbuf/cdk-pixbuf-io.c:2432
 msgid "Failed to open temporary file"
 msgstr "ತಾತ್ಕಾಲಿಕ ಕಡತವನ್ನು ತೆಗೆಯುವಲ್ಲಿ ವಿಫಲತೆ"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2146
+#: cdk-pixbuf/cdk-pixbuf-io.c:2455
 msgid "Failed to read from temporary file"
 msgstr "ತಾತ್ಕಾಲಿಕ ಕಡತದಿಂದ ಓದುವಲ್ಲಿ ವಿಫಲತೆ"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2399
-#, c-format
-msgid "Failed to open '%s' for writing: %s"
+#: cdk-pixbuf/cdk-pixbuf-io.c:2677
+#, fuzzy, c-format
+msgid "Failed to open “%s” for writing: %s"
 msgstr "'%s' ಅನ್ನು ಬರೆಯಲು ತೆರೆಯುವಲ್ಲಿ ವಿಫಲತೆ: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2425
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-io.c:2703
+#, fuzzy, c-format
 msgid ""
-"Failed to close '%s' while writing image, all data may not have been saved: "
+"Failed to close “%s” while writing image, all data may not have been saved: "
 "%s"
 msgstr ""
 "ಚಿತ್ರವನ್ನು ಬರೆಯುವಾಗ '%s' ಅನ್ನ್ನು ಮುಚ್ಚುವಲ್ಲಿ ವಿಫಲತೆ, ಎಲ್ಲಾ ದತ್ತಾಂಶಗಳು ಉಳಿಸಲ್ಪಡದೆ "
 "ಇರಬಹುದು: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2646 cdk-pixbuf/cdk-pixbuf-io.c:2698
+#: cdk-pixbuf/cdk-pixbuf-io.c:2937 cdk-pixbuf/cdk-pixbuf-io.c:2992
 msgid "Insufficient memory to save image into a buffer"
 msgstr "ಚಿತ್ರವನ್ನು ಬಫರಿಗೆ ಉಳಿಸಲು ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಇಲ್ಲ"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2744
+#: cdk-pixbuf/cdk-pixbuf-io.c:3038
 msgid "Error writing to image stream"
 msgstr "ಚಿತ್ರ ಸ್ಟ್ರೀಮ್‍ಗೆ ಬರೆಯುವಲ್ಲಿ ವಿಫಲತೆ:"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:395
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-loader.c:426
+#, fuzzy, c-format
 msgid ""
-"Internal error: Image loader module '%s' failed to complete an operation, "
-"but didn't give a reason for the failure"
+"Internal error: Image loader module “%s” failed to complete an operation, "
+"but didn’t give a reason for the failure"
 msgstr ""
 "ಆಂತರಿಕ ದೋಷ: ಚಿತ್ರ ಲೋಡ್ ಮಾಡುವ ಘಟಕ '%s'ವು ಒಂದು ಕಾರ್ಯಾಚರಣೆಯನ್ನು ಪೂರ್ಣಗೊಳಿಸುವಲ್ಲಿ "
 "ವಿಫಲತೆ ಎದುರಾಗಿದೆ, ಆದರೆ ಯಾವುದೆ ಕಾರಣವನ್ನು ನೀಡಲಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:437
-#, c-format
-msgid "Incremental loading of image type '%s' is not supported"
+#: cdk-pixbuf/cdk-pixbuf-loader.c:468
+#, fuzzy, c-format
+msgid "Incremental loading of image type “%s” is not supported"
 msgstr "'%s' ಪ್ರಕಾರದ ಚಿತ್ರವನ್ನು ಏರಿಕೆ ಕ್ರಮದಲ್ಲಿ ಲೋಡ್ ಮಾಡುವುದು ಬೆಂಬಲಿತವಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/cdk-pixdata.c:160
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:166
+msgid "Loop"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:167
+msgid "Whether the animation should loop when it reaches the end"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixdata.c:178
 msgid "Image header corrupt"
 msgstr "ಚಿತ್ರ ಶೀರ್ಷಿಕೆಯು ಭ್ರಷ್ಟಗೊಂಡಿದೆ"
 
-#: cdk-pixbuf/cdk-pixdata.c:165
+#: cdk-pixbuf/cdk-pixdata.c:183
 msgid "Image format unknown"
 msgstr "ಚಿತ್ರ ರಚನೆಯು ತಿಳಿದಿಲ್ಲ"
 
-#: cdk-pixbuf/cdk-pixdata.c:170 cdk-pixbuf/cdk-pixdata.c:502
+#: cdk-pixbuf/cdk-pixdata.c:188 cdk-pixbuf/cdk-pixdata.c:491
+#: cdk-pixbuf/cdk-pixdata.c:501 cdk-pixbuf/cdk-pixdata.c:597
 msgid "Image pixel data corrupt"
 msgstr "ಚಿತ್ರದ ಪಿಕ್ಸೆಲ್ ದತ್ತಾಂಶ ಭ್ರಷ್ಟಗೊಂಡಿದೆ"
 
-#: cdk-pixbuf/cdk-pixdata.c:446
+#: cdk-pixbuf/cdk-pixdata.c:513
 #, c-format
 msgid "failed to allocate image buffer of %u byte"
 msgid_plural "failed to allocate image buffer of %u bytes"
 msgstr[0] "ಚಿತ್ರ ಬಫರಿಗೆ %u ಬೈಟನ್ನು ನಿಯೋಜಿಸುವಲ್ಲಿ ವಿಫಲತೆ "
 msgstr[1] "ಚಿತ್ರ ಬಫರಿಗೆ %u ಬೈಟುಗಳನ್ನು ನಿಯೋಜಿಸುವಲ್ಲಿ ವಿಫಲತೆ"
 
-#: cdk-pixbuf/io-ani.c:244
+#: cdk-pixbuf/io-ani.c:239
 msgid "Unexpected icon chunk in animation"
 msgstr "ಸಜೀವನದಲ್ಲಿ (ಅನಿಮೇಶನ್) ಅನಿರೀಕ್ಷಿತ ಲಾಂಛನ ತುಂಡು ಎದುರಾಗಿದೆ"
 
-#: cdk-pixbuf/io-ani.c:337
-msgid "Unsupported animation type"
-msgstr "ಬೆಂಬಲಿತವಿಲ್ಲದ ಸಜೀವನದ (animation) ರೀತಿ"
-
-#: cdk-pixbuf/io-ani.c:348 cdk-pixbuf/io-ani.c:406 cdk-pixbuf/io-ani.c:432
-#: cdk-pixbuf/io-ani.c:455 cdk-pixbuf/io-ani.c:482 cdk-pixbuf/io-ani.c:569
-msgid "Invalid header in animation"
-msgstr "ಸಜೀವನದ ಅಮಾನ್ಯ ಶೀರ್ಷಿಕೆ"
-
-#: cdk-pixbuf/io-ani.c:358 cdk-pixbuf/io-ani.c:380 cdk-pixbuf/io-ani.c:464
-#: cdk-pixbuf/io-ani.c:491 cdk-pixbuf/io-ani.c:542 cdk-pixbuf/io-ani.c:614
-msgid "Not enough memory to load animation"
-msgstr "ಸಜೀವನವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಇಲ್ಲ"
-
-#: cdk-pixbuf/io-ani.c:398 cdk-pixbuf/io-ani.c:424 cdk-pixbuf/io-ani.c:443
+#: cdk-pixbuf/io-ani.c:303 cdk-pixbuf/io-ani.c:404 cdk-pixbuf/io-ani.c:430
+#: cdk-pixbuf/io-ani.c:449
 msgid "Malformed chunk in animation"
 msgstr "ಸಜೀವನದಲ್ಲಿ (ಅನಿಮೇಶನ್) ವೈರೂಪ್ಯಗೊಂಡ ತುಂಡು"
 
-#: cdk-pixbuf/io-ani.c:711
-msgid "The ANI image format"
-msgstr "ANI ಚಿತ್ರದ ವಿನ್ಯಾಸ"
+#: cdk-pixbuf/io-ani.c:311 cdk-pixbuf/io-ani.c:354 cdk-pixbuf/io-ani.c:412
+#: cdk-pixbuf/io-ani.c:438 cdk-pixbuf/io-ani.c:461 cdk-pixbuf/io-ani.c:488
+#: cdk-pixbuf/io-ani.c:575
+msgid "Invalid header in animation"
+msgstr "ಸಜೀವನದ ಅಮಾನ್ಯ ಶೀರ್ಷಿಕೆ"
 
-#: cdk-pixbuf/io-bmp.c:229 cdk-pixbuf/io-bmp.c:266 cdk-pixbuf/io-bmp.c:337
-#: cdk-pixbuf/io-bmp.c:369 cdk-pixbuf/io-bmp.c:392 cdk-pixbuf/io-bmp.c:495
+#: cdk-pixbuf/io-ani.c:364 cdk-pixbuf/io-ani.c:386 cdk-pixbuf/io-ani.c:470
+#: cdk-pixbuf/io-ani.c:497 cdk-pixbuf/io-ani.c:548 cdk-pixbuf/io-ani.c:624
+msgid "Not enough memory to load animation"
+msgstr "ಸಜೀವನವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಇಲ್ಲ"
+
+#: cdk-pixbuf/io-ani.c:646
+#, fuzzy
+msgid "ANI image was truncated or incomplete."
+msgstr "GIF ಚಿತ್ರವು ತುಂಡರಿಸಲ್ಪಟ್ಟಿದೆ ಅಥವ ಅಪೂರ್ಣಗೊಂಡಿದೆ"
+
+#: cdk-pixbuf/io-ani.c:687
+msgctxt "image format"
+msgid "Windows animated cursor"
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:234 cdk-pixbuf/io-bmp.c:275 cdk-pixbuf/io-bmp.c:385
+#: cdk-pixbuf/io-bmp.c:412 cdk-pixbuf/io-bmp.c:437 cdk-pixbuf/io-bmp.c:472
+#: cdk-pixbuf/io-bmp.c:494 cdk-pixbuf/io-bmp.c:572
 msgid "BMP image has bogus header data"
 msgstr "BMP ಚಿತ್ರವು (ಇಮೇಜ್) ನಕಲಿ ಶೀರ್ಷಿಕಾ ದತ್ತಾಂಶವನ್ನು ಹೊಂದಿದೆ"
 
-#: cdk-pixbuf/io-bmp.c:240 cdk-pixbuf/io-bmp.c:432
+#: cdk-pixbuf/io-bmp.c:245 cdk-pixbuf/io-bmp.c:507
 msgid "Not enough memory to load bitmap image"
 msgstr "ಬಿಟ್-ಮ್ಯಾಪ್ ಚಿತ್ರವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಇಲ್ಲ"
 
-#: cdk-pixbuf/io-bmp.c:318
+#: cdk-pixbuf/io-bmp.c:339
 msgid "BMP image has unsupported header size"
 msgstr "BMP ಚಿತ್ರವು ಬೆಂಬಲವಿಲ್ಲದ ಶೀರ್ಷಿಕೆಯ ಗಾತ್ರವನ್ನು ಹೊಂದಿದೆ"
 
-#: cdk-pixbuf/io-bmp.c:356
+#: cdk-pixbuf/io-bmp.c:348
+#, fuzzy
+msgid "BMP image has unsupported depth"
+msgstr "BMP ಚಿತ್ರವು ಬೆಂಬಲವಿಲ್ಲದ ಶೀರ್ಷಿಕೆಯ ಗಾತ್ರವನ್ನು ಹೊಂದಿದೆ"
+
+#: cdk-pixbuf/io-bmp.c:367
+#, fuzzy
+msgid "BMP image has oversize palette"
+msgstr "BMP ಚಿತ್ರವು (ಇಮೇಜ್) ನಕಲಿ ಶೀರ್ಷಿಕಾ ದತ್ತಾಂಶವನ್ನು ಹೊಂದಿದೆ"
+
+#: cdk-pixbuf/io-bmp.c:399
 msgid "Topdown BMP images cannot be compressed"
 msgstr "ಟಾಪ್-ಡೌನ್ BMP ಚಿತ್ರಗಳನ್ನು ಸಂಕುಚಿತಗೊಳಿಸಲಾಗುವುದಿಲ್ಲ"
 
-#: cdk-pixbuf/io-bmp.c:716 cdk-pixbuf/io-pnm.c:707
+#: cdk-pixbuf/io-bmp.c:424
+msgid "BMP image width too large"
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:814 cdk-pixbuf/io-png.c:587 cdk-pixbuf/io-pnm.c:722
+#: cdk-pixbuf/io-pnm.c:879
 msgid "Premature end-of-file encountered"
 msgstr "ಅಕಾಲಿಕ ಕಡತದ ಕೊನೆ ಎದುರಾಗಿದೆ"
 
-#: cdk-pixbuf/io-bmp.c:1328
-msgid "Couldn't allocate memory for saving BMP file"
+#: cdk-pixbuf/io-bmp.c:1340
+msgid "Error while decoding colormap"
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:1403 cdk-pixbuf/io-bmp.c:1415
+msgid "Image is too wide for BMP format."
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:1448
+#, fuzzy
+msgid "Couldn’t allocate memory for saving BMP file"
 msgstr "BMP ಕಡತವನ್ನು ಉಳಿಸಲು ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/io-bmp.c:1369
-msgid "Couldn't write to BMP file"
+#: cdk-pixbuf/io-bmp.c:1489
+#, fuzzy
+msgid "Couldn’t write to BMP file"
 msgstr "BMP ಕಡತಕ್ಕೆ ಬರೆಯಲಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/io-bmp.c:1422 cdk-pixbuf/io-gdip-bmp.c:82
-msgid "The BMP image format"
-msgstr "BMP ಚಿತ್ರ ವಿನ್ಯಾಸ"
+#: cdk-pixbuf/io-bmp.c:1542 cdk-pixbuf/io-gdip-bmp.c:83
+msgctxt "image format"
+msgid "BMP"
+msgstr ""
 
-#: cdk-pixbuf/io-gdip-emf.c:59
-msgid "The EMF image format"
-msgstr "EMF ಚಿತ್ರ ವಿನ್ಯಾಸ"
+#: cdk-pixbuf/io-gdip-emf.c:61
+msgctxt "image format"
+msgid "EMF"
+msgstr ""
 
-#: cdk-pixbuf/io-gdip-gif.c:80 cdk-pixbuf/io-gif.c:1699
-msgid "The GIF image format"
-msgstr "GIF ಚಿತ್ರ ವಿನ್ಯಾಸ"
+#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1039
+msgctxt "image format"
+msgid "GIF"
+msgstr ""
 
-#: cdk-pixbuf/io-gdip-ico.c:59 cdk-pixbuf/io-ico.c:1271
-msgid "The ICO image format"
-msgstr "ICO ಚಿತ್ರ ವಿನ್ಯಾಸ"
+#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1418
+msgctxt "image format"
+msgid "Windows icon"
+msgstr ""
 
-#: cdk-pixbuf/io-gdip-jpeg.c:53 cdk-pixbuf/io-jpeg.c:1139
-#, c-format
+#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1409
+#, fuzzy, c-format
 msgid ""
-"JPEG quality must be a value between 0 and 100; value '%s' could not be "
+"JPEG quality must be a value between 0 and 100; value “%s” could not be "
 "parsed."
 msgstr "JPEG ಗುಣ ಮಟ್ಟವು ೦ ಹಾಗು ೧೦೦; ಮೌಲ್ಯ '%s' ವನ್ನು ಬಿಡಿಸಲಾಗಿಲ್ಲ(parse)."
 
-#: cdk-pixbuf/io-gdip-jpeg.c:68 cdk-pixbuf/io-jpeg.c:1154
-#, c-format
+#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1425
+#, fuzzy, c-format
 msgid ""
-"JPEG quality must be a value between 0 and 100; value '%d' is not allowed."
+"JPEG quality must be a value between 0 and 100; value “%d” is not allowed."
 msgstr "JPEG ಗುಣ ಮಟ್ತವು ೦ ಹಾಗು ೧೦೦; ಮಾಲ್ಯ '%d' ವು ಬೆಂಬಲಿತವಾಗಿಲ್ಲ."
 
-#: cdk-pixbuf/io-gdip-jpeg.c:136 cdk-pixbuf/io-jpeg.c:1316
-msgid "The JPEG image format"
-msgstr "JPEG ಚಿತ್ರ ವಿನ್ಯಾಸ"
+#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1710
+msgctxt "image format"
+msgid "JPEG"
+msgstr ""
 
-#: cdk-pixbuf/io-gdip-utils.c:154
+#: cdk-pixbuf/io-gdip-tiff.c:83 cdk-pixbuf/io-tiff.c:1087
+msgctxt "image format"
+msgid "TIFF"
+msgstr ""
+
+#: cdk-pixbuf/io-gdip-utils.c:155
 #, c-format
 msgid "Could not allocate memory: %s"
 msgstr "ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ: %s"
 
-#: cdk-pixbuf/io-gdip-utils.c:179 cdk-pixbuf/io-gdip-utils.c:293
-#: cdk-pixbuf/io-gdip-utils.c:333
+#: cdk-pixbuf/io-gdip-utils.c:180 cdk-pixbuf/io-gdip-utils.c:294
+#: cdk-pixbuf/io-gdip-utils.c:334
 #, c-format
 msgid "Could not create stream: %s"
 msgstr "ಸ್ಟ್ರೀಮ್ ಅನ್ನು ನಿರ್ಮಿಸಲಾಗಿಲ್ಲ: %s"
 
-#: cdk-pixbuf/io-gdip-utils.c:193
+#: cdk-pixbuf/io-gdip-utils.c:194
 #, c-format
 msgid "Could not seek stream: %s"
 msgstr "ಸ್ಟ್ರೀಮ್‌ಗಾಗಿ ಪ್ರಯತ್ನಿಸಲಾಗಿಲ್ಲ: %s"
 
-#: cdk-pixbuf/io-gdip-utils.c:205
+#: cdk-pixbuf/io-gdip-utils.c:206
 #, c-format
 msgid "Could not read from stream: %s"
 msgstr "ಸ್ಟ್ರೀಮ್‌ನಿಂದ ಓದಲಾಗಿಲ್ಲ: %s"
 
-#: cdk-pixbuf/io-gdip-utils.c:617 cdk-pixbuf/io-gdip-utils.c:752
-msgid "Couldn't load bitmap"
+#: cdk-pixbuf/io-gdip-utils.c:620
+#, fuzzy
+msgid "Couldn’t load bitmap"
 msgstr "ಬಿಟ್‌ಮ್ಯಾಪನ್ನು ಲೋಡ್ ಮಾಡಲಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/io-gdip-utils.c:774
-msgid "Couldn't load metafile"
+#: cdk-pixbuf/io-gdip-utils.c:776
+#, fuzzy
+msgid "Couldn’t load metafile"
 msgstr "ಮೆಟಾಫೈಲನ್ನು ಲೋಡ್ ಮಾಡಲಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/io-gdip-utils.c:933
+#: cdk-pixbuf/io-gdip-utils.c:881
 msgid "Unsupported image format for GDI+"
 msgstr "GDI+ ಗೆ ಬೆಂಬಲವಿಲ್ಲದ ಚಿತ್ರ ವಿನ್ಯಾಸ"
 
-#: cdk-pixbuf/io-gdip-utils.c:940
-msgid "Couldn't save"
+#: cdk-pixbuf/io-gdip-utils.c:888
+#, fuzzy
+msgid "Couldn’t save"
 msgstr "ಉಳಿಸಲಾಗಲಿಲ್ಲ"
 
-#: cdk-pixbuf/io-gdip-wmf.c:58
-msgid "The WMF image format"
-msgstr "WMF ಚಿತ್ರ ವಿನ್ಯಾಸ"
+#: cdk-pixbuf/io-gdip-wmf.c:60
+msgctxt "image format"
+msgid "WMF"
+msgstr ""
 
-#: cdk-pixbuf/io-gif.c:221
+#: cdk-pixbuf/io-gif.c:160
 #, c-format
 msgid "Failure reading GIF: %s"
 msgstr "GIF ಅನ್ನು ಓದುವಲ್ಲಿ ವಿಫಲತೆ: %s"
 
-#: cdk-pixbuf/io-gif.c:495 cdk-pixbuf/io-gif.c:1482 cdk-pixbuf/io-gif.c:1648
-msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
-msgstr ""
-"GIF ಕಡತದಿಂದ ಕೆಲವೊಂದು ದತ್ತಾಂಶಗಳು ಕಾಣೆಯಾಗಿವೆ (ಬಹುಷಃ ಯಾವುದಾದರೂ ಬಗೆಯಲ್ಲಿ ಅದು "
-"ಕತ್ತರಿಸಲ್ಪಟ್ಟಿದೆಯೆ?)"
-
-#: cdk-pixbuf/io-gif.c:504
-#, c-format
-msgid "Internal error in the GIF loader (%s)"
-msgstr "GIF ಲೋಡರಿನಲ್ಲಿ ಆಂತರಿಕ ದೋಷ (%s)"
-
-#: cdk-pixbuf/io-gif.c:578
-msgid "Stack overflow"
-msgstr "ಕಲೆಹಾಕಿದ್ದು ಮಿತಿಮೀರಿದೆ"
-
-#: cdk-pixbuf/io-gif.c:638
-msgid "GIF image loader cannot understand this image."
-msgstr "GIF ಚಿತ್ರ ಲೋಡರಿಗೆ ಈ ಚಿತ್ರವನ್ನು ಅರ್ಥ ಮಾಡಿಕೊಳ್ಳಲ್ಲಾಗಿಲ್ಲ."
-
-#: cdk-pixbuf/io-gif.c:667
-msgid "Bad code encountered"
-msgstr "ಸರಿಯಲ್ಲದ ಸಂಕೇತ ಎದುರಾಗಿದೆ"
-
-#: cdk-pixbuf/io-gif.c:677
-msgid "Circular table entry in GIF file"
-msgstr "GIF ಕಡತದಲ್ಲಿನ ವೃತ್ತಾಕಾರದ ಟೇಬಲ್ ನಮೂದು"
-
-#: cdk-pixbuf/io-gif.c:865 cdk-pixbuf/io-gif.c:1468 cdk-pixbuf/io-gif.c:1521
-#: cdk-pixbuf/io-gif.c:1636
+#: cdk-pixbuf/io-gif.c:383 cdk-pixbuf/io-gif.c:850 cdk-pixbuf/io-gif.c:903
+#: cdk-pixbuf/io-gif.c:976
 msgid "Not enough memory to load GIF file"
 msgstr "GIF ಕಡತವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಲಭ್ಯವಿಲ್ಲ"
 
-#: cdk-pixbuf/io-gif.c:959
-msgid "Not enough memory to composite a frame in GIF file"
-msgstr ""
-"GIF ಕಡತದಲ್ಲಿನ ಒಂದು ಚೌಕಟ್ಟನ್ನು ಸಂಯುಕ್ತಗೊಳಿಸಲು (composite) ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಲಭ್ಯವಿಲ್ಲ"
-
-#: cdk-pixbuf/io-gif.c:1131
+#: cdk-pixbuf/io-gif.c:509
 msgid "GIF image is corrupt (incorrect LZW compression)"
 msgstr "GIF ಚಿತ್ರವು ಭ್ರಷ್ಟಗೊಂಡಿದೆ (ತಪ್ಪಾದ LZW ಸಂಕೋಚನೆ)"
 
-#: cdk-pixbuf/io-gif.c:1181
+#: cdk-pixbuf/io-gif.c:545
 msgid "File does not appear to be a GIF file"
 msgstr "ಕಡತವು ಒಂದು GIF ಕಡತ ಎಂದು ತೋರುತ್ತಿಲ್ಲ"
 
-#: cdk-pixbuf/io-gif.c:1193
+#: cdk-pixbuf/io-gif.c:560
 #, c-format
 msgid "Version %s of the GIF file format is not supported"
 msgstr "GIF ಕಡತ ವಿನ್ಯಾಸದ %s ಆವೃತ್ತಿಯು ಬೆಂಬಲಿತವಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/io-gif.c:1302
+#: cdk-pixbuf/io-gif.c:589
+#, fuzzy
+msgid "Resulting GIF image has zero size"
+msgstr "ಚಿತ್ರವು ಶೂನ್ಯ ಅಗಲವನ್ನು ಹೊಂದಿದೆ"
+
+#: cdk-pixbuf/io-gif.c:659
 msgid ""
 "GIF image has no global colormap, and a frame inside it has no local "
 "colormap."
@@ -353,104 +452,85 @@ msgstr ""
 "GIF ಚಿತ್ರವು ಜಾಗತಿಕ ಕಲರ್-ಮ್ಯಾಪ್ ಹೊಂದಿಲ್ಲ, ಹಾಗು ಅದರಲ್ಲಿನ ಒಂದು ಚೌಕಟ್ಟು ಸ್ಥಳೀಯ ಕಲರ್-"
 "ಮ್ಯಾಪನ್ನು ಹೊಂದಿಲ್ಲ."
 
-#: cdk-pixbuf/io-gif.c:1543
+#: cdk-pixbuf/io-gif.c:863 cdk-pixbuf/io-gif.c:988
+msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
+msgstr ""
+"GIF ಕಡತದಿಂದ ಕೆಲವೊಂದು ದತ್ತಾಂಶಗಳು ಕಾಣೆಯಾಗಿವೆ (ಬಹುಷಃ ಯಾವುದಾದರೂ ಬಗೆಯಲ್ಲಿ ಅದು "
+"ಕತ್ತರಿಸಲ್ಪಟ್ಟಿದೆಯೆ?)"
+
+#: cdk-pixbuf/io-gif.c:922
 msgid "GIF image was truncated or incomplete."
 msgstr "GIF ಚಿತ್ರವು ತುಂಡರಿಸಲ್ಪಟ್ಟಿದೆ ಅಥವ ಅಪೂರ್ಣಗೊಂಡಿದೆ"
 
-#: cdk-pixbuf/io-icns.c:347
+#: cdk-pixbuf/io-gif.c:929
+msgid "Not all frames of the GIF image were loaded."
+msgstr ""
+
+#: cdk-pixbuf/io-icns.c:363
 #, c-format
 msgid "Error reading ICNS image: %s"
 msgstr "ICNS ಚಿತ್ರ ಕಡತವನ್ನು ಓದುವಲ್ಲಿ ದೋಷ: %s"
 
-#: cdk-pixbuf/io-icns.c:364
+#: cdk-pixbuf/io-icns.c:380 cdk-pixbuf/io-icns.c:461
 msgid "Could not decode ICNS file"
 msgstr "ICNS ಕಡತವನ್ನು ಡೀಕೋಡ್ ಮಾಡಲಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/io-icns.c:397
-msgid "The ICNS image format"
-msgstr "ICNS ಚಿತ್ರ ವಿನ್ಯಾಸ"
+#: cdk-pixbuf/io-icns.c:517
+msgctxt "image format"
+msgid "MacOS X icon"
+msgstr ""
 
-#: cdk-pixbuf/io-ico.c:228 cdk-pixbuf/io-ico.c:242 cdk-pixbuf/io-ico.c:291
-#: cdk-pixbuf/io-ico.c:302 cdk-pixbuf/io-ico.c:395
-msgid "Invalid header in icon"
+#: cdk-pixbuf/io-ico.c:238 cdk-pixbuf/io-ico.c:252 cdk-pixbuf/io-ico.c:342
+#: cdk-pixbuf/io-ico.c:426 cdk-pixbuf/io-ico.c:451
+#, fuzzy, c-format
+msgid "Invalid header in icon (%s)"
 msgstr "ಲಾಂಛನದಲ್ಲಿನ ಅಮಾನ್ಯ ಶೀರ್ಷಿಕೆ"
 
-#: cdk-pixbuf/io-ico.c:257 cdk-pixbuf/io-ico.c:312 cdk-pixbuf/io-ico.c:405
-#: cdk-pixbuf/io-ico.c:458 cdk-pixbuf/io-ico.c:488
+#: cdk-pixbuf/io-ico.c:268 cdk-pixbuf/io-ico.c:355 cdk-pixbuf/io-ico.c:461
+#: cdk-pixbuf/io-ico.c:504 cdk-pixbuf/io-ico.c:532
 msgid "Not enough memory to load icon"
 msgstr "ಲಾಂಛನವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಲಭ್ಯವಿಲ್ಲ"
 
-#: cdk-pixbuf/io-ico.c:338
+#: cdk-pixbuf/io-ico.c:386
+msgid "Invalid header in icon"
+msgstr "ಲಾಂಛನದಲ್ಲಿನ ಅಮಾನ್ಯ ಶೀರ್ಷಿಕೆ"
+
+#: cdk-pixbuf/io-ico.c:387
 msgid "Compressed icons are not supported"
 msgstr "ಸಂಕುಚಿತಗೊಂಡ ಲಾಂಛನವು ಬೆಂಬಲಿತವಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/io-ico.c:358
-msgid "Icon has zero width"
-msgstr "ಲಾಂಛನವು ಶೂನ್ಯ ಅಗಲವನ್ನು ಹೊಂದಿದೆ"
-
-#: cdk-pixbuf/io-ico.c:368
-msgid "Icon has zero height"
-msgstr "ಲಾಂಛನವು ಶೂನ್ಯ ಎತ್ತರವನ್ನು ಹೊಂದಿದೆ"
-
-#: cdk-pixbuf/io-ico.c:443
+#: cdk-pixbuf/io-ico.c:489
 msgid "Unsupported icon type"
 msgstr "ಬೆಂಬಲವಿಲ್ಲದ ಲಾಂಛನದ ಪ್ರಕಾರ"
 
-#: cdk-pixbuf/io-ico.c:537
+#: cdk-pixbuf/io-ico.c:583
 msgid "Not enough memory to load ICO file"
 msgstr "ICO ಕಡತವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಇಲ್ಲ"
 
-#: cdk-pixbuf/io-ico.c:1002
+#: cdk-pixbuf/io-ico.c:629
+#, fuzzy
+msgid "ICO image was truncated or incomplete."
+msgstr "GIF ಚಿತ್ರವು ತುಂಡರಿಸಲ್ಪಟ್ಟಿದೆ ಅಥವ ಅಪೂರ್ಣಗೊಂಡಿದೆ"
+
+#: cdk-pixbuf/io-ico.c:1070
 msgid "Image too large to be saved as ICO"
 msgstr "ICO ಆಗಿ ಉಳಿಸಲು ಚಿತ್ರವು ಬಹಳ ದೊಡ್ಡದಾಗಿದೆ"
 
-#: cdk-pixbuf/io-ico.c:1013
+#: cdk-pixbuf/io-ico.c:1081
 msgid "Cursor hotspot outside image"
 msgstr "ಚಿತ್ರದ ಹೊರಗಿನ ತೆರೆಸೂಚಕ(cursor) ಹಾಟ್ ಸ್ಪಾಟ್"
 
-#: cdk-pixbuf/io-ico.c:1036
+#: cdk-pixbuf/io-ico.c:1104
 #, c-format
 msgid "Unsupported depth for ICO file: %d"
 msgstr "ICO ಕಡತಕ್ಕೆ ಬೆಂಬಲವಿಲ್ಲದ ಆಳ: %d"
 
-#: cdk-pixbuf/io-jasper.c:74
-msgid "Couldn't allocate memory for stream"
-msgstr "ಸ್ಟ್ರೀಮ್‍ಗೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
-
-#: cdk-pixbuf/io-jasper.c:104
-msgid "Couldn't decode image"
-msgstr "ಚಿತ್ರವನ್ನು ಡೀಕೊಡ್ ಮಾಡಲಾಗಿಲ್ಲ"
-
-#: cdk-pixbuf/io-jasper.c:122
-msgid "Transformed JPEG2000 has zero width or height"
-msgstr "ರೂಪಾಂತರಗೊಂಡ JPEG2000 ವು ಶೂನ್ಯ ಅಗಲ ಅಥವ ಎತ್ತರವನ್ನು ಹೊಂದಿದೆ"
-
-#: cdk-pixbuf/io-jasper.c:136
-msgid "Image type currently not supported"
-msgstr "ಈ ಬಗೆಯ ಚಿತ್ರ ವಿನ್ಯಾಸವು ಪ್ರಸಕ್ತ ಬೆಂಬಲಿತವಾಗಿಲ್ಲ"
-
-#: cdk-pixbuf/io-jasper.c:148 cdk-pixbuf/io-jasper.c:156
-msgid "Couldn't allocate memory for color profile"
-msgstr "ಬಣ್ಣದ ಪ್ರೊಫೈಲ್‍ಗೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
-
-#: cdk-pixbuf/io-jasper.c:182
-msgid "Insufficient memory to open JPEG 2000 file"
-msgstr "JPEG 2000 ಕಡತವನ್ನು ತೆರೆಯಲು ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಇಲ್ಲ"
-
-#: cdk-pixbuf/io-jasper.c:261
-msgid "Couldn't allocate memory to buffer image data"
-msgstr "ಬಫರ್ ಚಿತ್ರ ದತ್ತಾಂಶಕ್ಕೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
-
-#: cdk-pixbuf/io-jasper.c:305
-msgid "The JPEG 2000 image format"
-msgstr "JPEG 2000 ಚಿತ್ರ ವಿನ್ಯಾಸ"
-
-#: cdk-pixbuf/io-jpeg.c:116
+#: cdk-pixbuf/io-jpeg.c:131
 #, c-format
 msgid "Error interpreting JPEG image file (%s)"
 msgstr "JPEG ಚಿತ್ರ ಕಡತವನ್ನು ವಿವರಿಸುವಲ್ಲಿ ದೋಷ (%s)"
 
-#: cdk-pixbuf/io-jpeg.c:527
+#: cdk-pixbuf/io-jpeg.c:647
 msgid ""
 "Insufficient memory to load image, try exiting some applications to free "
 "memory"
@@ -458,495 +538,641 @@ msgstr ""
 "ಚಿತ್ರವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಇಲ್ಲ, ಮೆಮೊರಿಯನ್ನು ತೆರವುಗೊಳಿಸಲು ಕೆಲವೊಂದು "
 "ಅನ್ವಯಗಳಿಂದ ನಿರ್ಗಮಿಸುವ ಮೂಲಕ ಪ್ರಯತ್ನಿಸಿ"
 
-#: cdk-pixbuf/io-jpeg.c:568 cdk-pixbuf/io-jpeg.c:781
+#: cdk-pixbuf/io-jpeg.c:720 cdk-pixbuf/io-jpeg.c:970
 #, c-format
 msgid "Unsupported JPEG color space (%s)"
 msgstr "ಬೆಂಬಲವಿಲ್ಲದ JPEG ವರ್ಣ ಸ್ಥಳ (%s)"
 
-#: cdk-pixbuf/io-jpeg.c:680 cdk-pixbuf/io-jpeg.c:950 cdk-pixbuf/io-jpeg.c:1183
-#: cdk-pixbuf/io-jpeg.c:1192
-msgid "Couldn't allocate memory for loading JPEG file"
+#: cdk-pixbuf/io-jpeg.c:845 cdk-pixbuf/io-jpeg.c:1169 cdk-pixbuf/io-jpeg.c:1516
+#: cdk-pixbuf/io-jpeg.c:1526
+#, fuzzy
+msgid "Couldn’t allocate memory for loading JPEG file"
 msgstr "JPEG ಕಡತವನ್ನು ಲೋಡ್ ಮಾಡಲು ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/io-jpeg.c:925
+#: cdk-pixbuf/io-jpeg.c:1127
 msgid "Transformed JPEG has zero width or height."
 msgstr "ರೂಪಾಂತರಗೊಂಡ JPEGಯು ಶೂನ್ಯ ಅಗಲ ಅಥವ ಎತ್ತರವನ್ನು ಹೊಂದಿದೆ"
 
-#: cdk-pixbuf/io-pcx.c:186
-msgid "Couldn't allocate memory for header"
-msgstr "ಶೀರ್ಷಿಕೆಗೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
+#: cdk-pixbuf/io-jpeg.c:1153
+#, fuzzy, c-format
+msgid "Unsupported number of color components (%d)"
+msgstr "ಬೆಂಬಲವಿಲ್ಲದ JPEG ವರ್ಣ ಸ್ಥಳ (%s)"
 
-#: cdk-pixbuf/io-pcx.c:201 cdk-pixbuf/io-pcx.c:559
-msgid "Couldn't allocate memory for context buffer"
-msgstr "ಸನ್ನಿವೇಶ ಬಫರಿಗೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
+#: cdk-pixbuf/io-jpeg.c:1446
+#, fuzzy, c-format
+msgid ""
+"JPEG x-dpi must be a value between 1 and 65535; value “%s” is not allowed."
+msgstr "JPEG ಗುಣ ಮಟ್ತವು ೦ ಹಾಗು ೧೦೦; ಮಾಲ್ಯ '%d' ವು ಬೆಂಬಲಿತವಾಗಿಲ್ಲ."
 
-#: cdk-pixbuf/io-pcx.c:600
-msgid "Image has invalid width and/or height"
-msgstr "ಚಿತ್ರವು ಅಮಾನ್ಯ ಅಗಲ ಹಾಗು/ಅಥವ ಎತ್ತರವನ್ನು ಹೊಂದಿದೆ"
+#: cdk-pixbuf/io-jpeg.c:1467
+#, fuzzy, c-format
+msgid ""
+"JPEG y-dpi must be a value between 1 and 65535; value “%s” is not allowed."
+msgstr "JPEG ಗುಣ ಮಟ್ತವು ೦ ಹಾಗು ೧೦೦; ಮಾಲ್ಯ '%d' ವು ಬೆಂಬಲಿತವಾಗಿಲ್ಲ."
 
-#: cdk-pixbuf/io-pcx.c:612 cdk-pixbuf/io-pcx.c:673
-msgid "Image has unsupported bpp"
-msgstr "ಚಿತ್ರವು ಬೆಂಬಲವಿಲ್ಲದ bpp ಯನ್ನು ಹೊಂದಿದೆ"
-
-#: cdk-pixbuf/io-pcx.c:617 cdk-pixbuf/io-pcx.c:625
+#: cdk-pixbuf/io-jpeg.c:1481
 #, c-format
-msgid "Image has unsupported number of %d-bit planes"
-msgstr "ಚಿತ್ರವು ಬೆಂಬಲವಿಲ್ಲದ %d-ಬಿಟ್ ಸಮತಲಗಳ ಸಂಖ್ಯೆಯನ್ನು ಹೊಂದಿದೆ"
+msgid "Color profile has invalid length “%u”."
+msgstr ""
 
-#: cdk-pixbuf/io-pcx.c:641
-msgid "Couldn't create new pixbuf"
-msgstr "ಹೊಸ pixbuf ಅನ್ನು ಸೃಷ್ಟಿಸಲಾಗಿಲ್ಲ"
-
-#: cdk-pixbuf/io-pcx.c:649
-msgid "Couldn't allocate memory for line data"
-msgstr "ಸಾಲು ದತ್ತಾಂಶಕ್ಕೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
-
-#: cdk-pixbuf/io-pcx.c:656
-#, fuzzy
-msgid "Couldn't allocate memory for PCX image"
-msgstr "ಶೀರ್ಷಿಕೆಗೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
-
-#: cdk-pixbuf/io-pcx.c:703
-msgid "Didn't get all lines of PCX image"
-msgstr "PCX ಚಿತ್ರದ ಎಲ್ಲಾ ಸಾಲುಗಳು ಅರ್ಥವಾಗಲಿಲ್ಲ"
-
-#: cdk-pixbuf/io-pcx.c:710
-msgid "No palette found at end of PCX data"
-msgstr "PCX ದತ್ತಾಂಶದ ಕೊನೆಯಲ್ಲಿ ಯಾವುದೇ ವರ್ಣಫಲಕ ಕಂಡು ಬಂದಿಲ್ಲ"
-
-#: cdk-pixbuf/io-pcx.c:755
-msgid "The PCX image format"
-msgstr "PCX ಚಿತ್ರ ವಿನ್ಯಾಸ"
-
-#: cdk-pixbuf/io-pixdata.c:148
-#, fuzzy
-msgid "Transformed pixbuf has zero width or height."
-msgstr "ರೂಪಾಂತರಗೊಳಿಸಲಾದ PNGಯು ಶೂನ್ಯ ಅಗಲ ಅಥವ ಎತ್ತರವನ್ನು ಹೊಂದಿದೆ."
-
-#: cdk-pixbuf/io-pixdata.c:186
-#, fuzzy
-msgid "The CdkPixdata format"
-msgstr "GIF ಚಿತ್ರ ವಿನ್ಯಾಸ"
-
-#: cdk-pixbuf/io-png.c:54
+#: cdk-pixbuf/io-png.c:64
 msgid "Bits per channel of PNG image is invalid."
 msgstr "PNG ಯ ಪ್ರತಿ ಚಾನಲ್ಲಿನ ದ್ವಿಮಾನಾಂಕಗಳು(bits) ಅಮಾನ್ಯವಾಗಿವೆ."
 
-#: cdk-pixbuf/io-png.c:135 cdk-pixbuf/io-png.c:641
+#: cdk-pixbuf/io-png.c:145 cdk-pixbuf/io-png.c:730
 msgid "Transformed PNG has zero width or height."
 msgstr "ರೂಪಾಂತರಗೊಳಿಸಲಾದ PNGಯು ಶೂನ್ಯ ಅಗಲ ಅಥವ ಎತ್ತರವನ್ನು ಹೊಂದಿದೆ."
 
-#: cdk-pixbuf/io-png.c:143
+#: cdk-pixbuf/io-png.c:153
 msgid "Bits per channel of transformed PNG is not 8."
 msgstr "ರೂಪಾಂತರಗೊಂಡ PNG ಯ ಪ್ರತಿ ಚಾನಲ್ಲಿನ ದ್ವಿಮಾನಾಂಕಗಳು(bits) ೮ ಅಲ್ಲ."
 
-#: cdk-pixbuf/io-png.c:152
+#: cdk-pixbuf/io-png.c:162
 msgid "Transformed PNG not RGB or RGBA."
 msgstr "ರೂಪಾಂತರಗೊಂಡ PNG ಯು RGB ಅಥವ RGBA ಆಗಿಲ್ಲ."
 
-#: cdk-pixbuf/io-png.c:161
+#: cdk-pixbuf/io-png.c:171
 msgid "Transformed PNG has unsupported number of channels, must be 3 or 4."
 msgstr ""
 "ರೂಪಾಂತರಗೊಂಡ PNG ಯು ಬೆಂಬಲವಿಲ್ಲದ ಸಂಖ್ಯೆಯ ಚಾನಲ್ಲುಗಳನ್ನು ಹೊಂದಿದೆ, ೩ ಅಥವ ೪ ಆಗಿರಬೇಕು."
 
-#: cdk-pixbuf/io-png.c:182
+#: cdk-pixbuf/io-png.c:193
 #, c-format
 msgid "Fatal error in PNG image file: %s"
 msgstr "PNG ಚಿತ್ರಕಡತದಲ್ಲಿ ಮಾರಕ ದೋಷ: %s"
 
-#: cdk-pixbuf/io-png.c:315
+#: cdk-pixbuf/io-png.c:338
 msgid "Insufficient memory to load PNG file"
 msgstr "PNG ಕಡತವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಇಲ್ಲ"
 
-#: cdk-pixbuf/io-png.c:656
-#, c-format
+#: cdk-pixbuf/io-png.c:519 cdk-pixbuf/io-png.c:540
+#, fuzzy
+msgid "Couldn’t allocate memory for loading PNG"
+msgstr "JPEG ಕಡತವನ್ನು ಲೋಡ್ ಮಾಡಲು ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
+
+#: cdk-pixbuf/io-png.c:743
+#, fuzzy, c-format
 msgid ""
-"Insufficient memory to store a %ld by %ld image; try exiting some "
+"Insufficient memory to store a %lu by %lu image; try exiting some "
 "applications to reduce memory usage"
 msgstr ""
 "%ld ಅನ್ನು %ld ಚಿತ್ರದಲ್ಲಿ ಉಳಿಸುಲು ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಲಭ್ಯವಿಲ್ಲ; ಕೆಲವೊಂದು ಅನ್ವಯಗಳಿಂದ "
 "ನಿರ್ಗಮಿಸಿ ಪ್ರಯತ್ನಿಸು ಮೂಲಕ ಮೆಮೊರಿಯ ಬಳಕೆಯನ್ನು ಕಡಿಮೆ ಮಾಡಿ"
 
-#: cdk-pixbuf/io-png.c:719
+#: cdk-pixbuf/io-png.c:820
 msgid "Fatal error reading PNG image file"
 msgstr "PNG ಚಿತ್ರ ಕಡತವನ್ನು ಓದುವಲ್ಲಿ ಮಾರಕ ದೋಷ"
 
-#: cdk-pixbuf/io-png.c:768
+#: cdk-pixbuf/io-png.c:873
 #, c-format
 msgid "Fatal error reading PNG image file: %s"
 msgstr "PNG ಚಿತ್ರ ಕಡತವನ್ನು ಓದುವಲ್ಲಿ ಮಾರಕ ದೋಷ: %s"
 
-#: cdk-pixbuf/io-png.c:862
+#: cdk-pixbuf/io-png.c:972
+#, fuzzy, c-format
 msgid ""
-"Keys for PNG text chunks must have at least 1 and at most 79 characters."
+"Invalid key “%s”. Keys for PNG text chunks must have at least 1 and at most "
+"79 characters."
 msgstr "PNG ಪಠ್ಯದ ತುಣುಕುಗಳ ಕೀಲಿಗಳು ಕನಿಷ್ಠ ೧ ಹಾಗು ಗರಿಷ್ಟ ೭೮ ಅಕ್ಷರಗಳನ್ನು ಹೊಂದಿರಬೇಕು."
 
-#: cdk-pixbuf/io-png.c:871
-msgid "Keys for PNG text chunks must be ASCII characters."
+#: cdk-pixbuf/io-png.c:985
+#, fuzzy, c-format
+msgid "Invalid key “%s”. Keys for PNG text chunks must be ASCII characters."
 msgstr "PNG ಪಠ್ಯದ ತುಣುಕುಗಳ ಕೀಲಿಗಳು ASCII ಅಕ್ಷರಗಳಲ್ಲಿರಬೇಕು."
 
-#: cdk-pixbuf/io-png.c:885 cdk-pixbuf/io-tiff.c:737
+#: cdk-pixbuf/io-png.c:1015
+#, fuzzy, c-format
+msgid ""
+"Value for PNG text chunk '%s' cannot be converted to ISO-8859-1 encoding."
+msgstr ""
+"PNG ಪಠ್ಯ ತುಣುಕು %s ನ ಮೌಲ್ಯವನ್ನು ISO-8859-1 ಸಂಕೇತಿಕರಣಕ್ಕೆ(encoding) ಬದಲಾಯಿಸಲಾಗಿಲ್ಲ."
+
+#: cdk-pixbuf/io-png.c:1027
 #, c-format
-msgid "Color profile has invalid length %d."
+msgid "Color profile has invalid length %d"
 msgstr ""
 
-#: cdk-pixbuf/io-png.c:898
-#, c-format
+#: cdk-pixbuf/io-png.c:1039
+#, fuzzy, c-format
 msgid ""
-"PNG compression level must be a value between 0 and 9; value '%s' could not "
-"be parsed."
-msgstr ""
-"JPEG ಸಂಕುಚನ ಮಟ್ಟವು ೦ ಹಾಗು ೯ ರ ನಡುವಿನ ಮೌಲ್ಯವನ್ನು ಹೊಂದಿರಬೇಕು; ಮೌಲ್ಯ '%s' ವನ್ನು "
-"ಬಿಡಿಸಲಾಗಿಲ್ಲ(parse)."
-
-#: cdk-pixbuf/io-png.c:911
-#, c-format
-msgid ""
-"PNG compression level must be a value between 0 and 9; value '%d' is not "
-"allowed."
+"PNG compression level must be a value between 0 and 9; value “%s” is invalid"
 msgstr ""
 "JPEG ಸಂಕುಚನ ಮಟ್ಟವು ೦ ಹಾಗು ೯ ರ ನಡುವಿನ ಮೌಲ್ಯವನ್ನು ಹೊಂದಿರಬೇಕು; ಮೌಲ್ಯ '%d' ಕ್ಕೆ ಅನುಮತಿ "
 "ಇಲ್ಲ."
 
-#: cdk-pixbuf/io-png.c:959
-#, c-format
-msgid "Value for PNG text chunk %s cannot be converted to ISO-8859-1 encoding."
+#: cdk-pixbuf/io-png.c:1053
+#, fuzzy, c-format
+msgid "PNG %s must be greater than zero; value “%s” is not allowed"
+msgstr "JPEG ಗುಣ ಮಟ್ತವು ೦ ಹಾಗು ೧೦೦; ಮಾಲ್ಯ '%d' ವು ಬೆಂಬಲಿತವಾಗಿಲ್ಲ."
+
+#: cdk-pixbuf/io-png.c:1283
+msgctxt "image format"
+msgid "PNG"
 msgstr ""
-"PNG ಪಠ್ಯ ತುಣುಕು %s ನ ಮೌಲ್ಯವನ್ನು ISO-8859-1 ಸಂಕೇತಿಕರಣಕ್ಕೆ(encoding) ಬದಲಾಯಿಸಲಾಗಿಲ್ಲ."
 
-#: cdk-pixbuf/io-png.c:1122
-msgid "The PNG image format"
-msgstr "PNG ಚಿತ್ರ ವಿನ್ಯಾಸ"
-
-#: cdk-pixbuf/io-pnm.c:248
-msgid "PNM loader expected to find an integer, but didn't"
+#: cdk-pixbuf/io-pnm.c:247
+#, fuzzy
+msgid "PNM loader expected to find an integer, but didn’t"
 msgstr "PNM ಲೋಡರನ್ನು ಒಂದು ಪೂರ್ಣಾಂಕಕ್ಕೆ ನಿರೀಕ್ಷಿಸಲಾಗಿತ್ತು, ಆದರೆ ಹಾಗಾಗಲಿಲ್ಲ"
 
-#: cdk-pixbuf/io-pnm.c:280
+#: cdk-pixbuf/io-pnm.c:279
 msgid "PNM file has an incorrect initial byte"
 msgstr "PNM ಕಡತವು ಒಂದು ಸರಿಯಲ್ಲದ ಆರಂಭಿಕ ಅಷ್ಟಕವನ್ನು(byte) ಹೊಂದಿದೆ"
 
-#: cdk-pixbuf/io-pnm.c:310
+#: cdk-pixbuf/io-pnm.c:309
 msgid "PNM file is not in a recognized PNM subformat"
 msgstr "PNM ಕಡತವು ಗುರುತಿಸಬಹುದಾದ ಒಂದು PNM ಉಪವಿನ್ಯಾಸದಲ್ಲಿ ಇಲ್ಲ"
 
-#: cdk-pixbuf/io-pnm.c:335
+#: cdk-pixbuf/io-pnm.c:334
+#, fuzzy
+msgid "PNM file has an invalid width"
+msgstr "PNM ಕಡತವು ೦ ಚಿತ್ರ ಅಗಲವನ್ನು ಹೊಂದಿದೆ"
+
+#: cdk-pixbuf/io-pnm.c:342
 msgid "PNM file has an image width of 0"
 msgstr "PNM ಕಡತವು ೦ ಚಿತ್ರ ಅಗಲವನ್ನು ಹೊಂದಿದೆ"
 
-#: cdk-pixbuf/io-pnm.c:356
+#: cdk-pixbuf/io-pnm.c:363
+#, fuzzy
+msgid "PNM file has an invalid height"
+msgstr "PNM ಕಡತವು ೦ ಚಿತ್ರ ಎತ್ತರವನ್ನು ಹೊಂದಿದೆ"
+
+#: cdk-pixbuf/io-pnm.c:371
 msgid "PNM file has an image height of 0"
 msgstr "PNM ಕಡತವು ೦ ಚಿತ್ರ ಎತ್ತರವನ್ನು ಹೊಂದಿದೆ"
 
-#: cdk-pixbuf/io-pnm.c:379
+#: cdk-pixbuf/io-pnm.c:394
 msgid "Maximum color value in PNM file is 0"
 msgstr "PNM ಕಡತದಲ್ಲಿನ ಗರಿಷ್ಠ ವರ್ಣ ಮೌಲ್ಯವು ೦ ಆಗಿದೆ"
 
-#: cdk-pixbuf/io-pnm.c:387
+#: cdk-pixbuf/io-pnm.c:402
 msgid "Maximum color value in PNM file is too large"
 msgstr "PNM ಕಡತದಲ್ಲಿನ ಗರಿಷ್ಠ ವರ್ಣ ಮೌಲ್ಯವು ಬಹಳ ದೊಡ್ಡದಾಗಿದೆ"
 
-#: cdk-pixbuf/io-pnm.c:427 cdk-pixbuf/io-pnm.c:457 cdk-pixbuf/io-pnm.c:502
+#: cdk-pixbuf/io-pnm.c:442 cdk-pixbuf/io-pnm.c:472 cdk-pixbuf/io-pnm.c:517
 msgid "Raw PNM image type is invalid"
 msgstr "ಕಚ್ಚಾ(raw) PNM ಚಿತ್ರದ ಪ್ರಕಾರವು ಅಮಾನ್ಯವಾಗಿದೆ"
 
-#: cdk-pixbuf/io-pnm.c:652
+#: cdk-pixbuf/io-pnm.c:667
 msgid "PNM image loader does not support this PNM subformat"
 msgstr "PNM ಚಿತ್ರ ಲೋಡರ್ ಈ PNM ಉಪವಿನ್ಯಾಸವನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ"
 
-#: cdk-pixbuf/io-pnm.c:739 cdk-pixbuf/io-pnm.c:966
+#: cdk-pixbuf/io-pnm.c:754 cdk-pixbuf/io-pnm.c:991
 msgid "Raw PNM formats require exactly one whitespace before sample data"
 msgstr ""
 "PNM ವಿನ್ಯಾಸಗಳಿಗೆ ನಮೂನಾ ದತ್ತಾಂಶದ(sample data) ಮೊದಲು ಕರಾರುವಕ್ಕಾಗಿ ಒಂದು ಖಾಲಿಜಾಗದ "
 "(whitespace) ಅಗತ್ಯವಿರುತ್ತದೆ"
 
-#: cdk-pixbuf/io-pnm.c:766
+#: cdk-pixbuf/io-pnm.c:781
 msgid "Cannot allocate memory for loading PNM image"
 msgstr "PNM ಚಿತ್ರವನ್ನು ಲೋಡ್ ಮಾಡಲು ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/io-pnm.c:816
+#: cdk-pixbuf/io-pnm.c:835
 msgid "Insufficient memory to load PNM context struct"
 msgstr "PNM ಸನ್ನಿವೇಶ ರಚನೆಯನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಇಲ್ಲ"
 
-#: cdk-pixbuf/io-pnm.c:867
+#: cdk-pixbuf/io-pnm.c:892
 msgid "Unexpected end of PNM image data"
 msgstr "PNM ಚಿತ್ರ ದತ್ತಾಂಶದ ಅನಿರೀಕ್ಷಿತ ಮುಕ್ತಾಯ"
 
-#: cdk-pixbuf/io-pnm.c:995
+#: cdk-pixbuf/io-pnm.c:1020
 msgid "Insufficient memory to load PNM file"
 msgstr "PNM ಕಡತವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಇಲ್ಲ"
 
-#: cdk-pixbuf/io-pnm.c:1079
-msgid "The PNM/PBM/PGM/PPM image format family"
-msgstr "PNM/PBM/PGM/PPM ಚಿತ್ರ ವಿನ್ಯಾಸ ಪರಿವಾರ"
+#: cdk-pixbuf/io-pnm.c:1103
+msgctxt "image format"
+msgid "PNM/PBM/PGM/PPM"
+msgstr ""
 
-#: cdk-pixbuf/io-qtif.c:128
+#: cdk-pixbuf/io-qtif.c:126
 msgid "Input file descriptor is NULL."
 msgstr ""
 
-#: cdk-pixbuf/io-qtif.c:143
+#: cdk-pixbuf/io-qtif.c:141
 #, fuzzy
 msgid "Failed to read QTIF header"
 msgstr "ಶೀರ್ಷಿಕೆಯನ್ನು ಬರೆಯುವಲ್ಲಿ ವಿಫಲತೆ\n"
 
-#: cdk-pixbuf/io-qtif.c:152 cdk-pixbuf/io-qtif.c:189 cdk-pixbuf/io-qtif.c:460
+#: cdk-pixbuf/io-qtif.c:150 cdk-pixbuf/io-qtif.c:187 cdk-pixbuf/io-qtif.c:449
 #, c-format
 msgid "QTIF atom size too large (%d byte)"
 msgid_plural "QTIF atom size too large (%d bytes)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: cdk-pixbuf/io-qtif.c:175
+#: cdk-pixbuf/io-qtif.c:173
 #, fuzzy, c-format
 msgid "Failed to allocate %d byte for file read buffer"
 msgid_plural "Failed to allocate %d bytes for file read buffer"
 msgstr[0] "ಚಿತ್ರ ಬಫರಿಗೆ %u ಬೈಟನ್ನು ನಿಯೋಜಿಸುವಲ್ಲಿ ವಿಫಲತೆ "
 msgstr[1] "ಚಿತ್ರ ಬಫರಿಗೆ %u ಬೈಟನ್ನು ನಿಯೋಜಿಸುವಲ್ಲಿ ವಿಫಲತೆ "
 
-#: cdk-pixbuf/io-qtif.c:206
+#: cdk-pixbuf/io-qtif.c:201
 #, fuzzy, c-format
 msgid "File error when reading QTIF atom: %s"
 msgstr "GIF ಅನ್ನು ಓದುವಲ್ಲಿ ವಿಫಲತೆ: %s"
 
-#: cdk-pixbuf/io-qtif.c:243
+#: cdk-pixbuf/io-qtif.c:238
 #, c-format
 msgid "Failed to skip the next %d byte with seek()."
 msgid_plural "Failed to skip the next %d bytes with seek()."
 msgstr[0] ""
 msgstr[1] ""
 
-#: cdk-pixbuf/io-qtif.c:270
+#: cdk-pixbuf/io-qtif.c:269
 #, fuzzy
 msgid "Failed to allocate QTIF context structure."
 msgstr "TGA ಸನ್ನಿವೇಶ ರಚನೆಗೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/io-qtif.c:330
+#: cdk-pixbuf/io-qtif.c:329
 #, fuzzy
 msgid "Failed to create CdkPixbufLoader object."
 msgstr "ಕಡತಕೋಶ ಸೂಚಿಗೆ ಬರೆಯುವಲ್ಲಿ ವಿಫಲತೆ\n"
 
-#: cdk-pixbuf/io-qtif.c:434
+#: cdk-pixbuf/io-qtif.c:424
 #, fuzzy
 msgid "Failed to find an image data atom."
 msgstr "TIFF ಚಿತ್ರವನ್ನು ತೆರೆಯಲು ವಿಫಲ"
 
-#: cdk-pixbuf/io-qtif.c:619
-#, fuzzy
-msgid "The QTIF image format"
-msgstr "TIFF ಚಿತ್ರ ವಿನ್ಯಾಸ"
-
-#: cdk-pixbuf/io-ras.c:125
-msgid "RAS image has bogus header data"
-msgstr "RAS ಚಿತ್ರವು (ಇಮೇಜ್) ನಕಲಿ ಶೀರ್ಷಿಕಾ ದತ್ತಾಂಶವನ್ನು ಹೊಂದಿದೆ"
-
-#: cdk-pixbuf/io-ras.c:147
-msgid "RAS image has unknown type"
-msgstr "RAS ಚಿತ್ರವು ಗೊತ್ತಿರದ ಬಗೆಯದ್ದಾಗಿದೆ"
-
-#: cdk-pixbuf/io-ras.c:155
-msgid "unsupported RAS image variation"
-msgstr "ಬೆಂಬಲವಿಲ್ಲದ RAS ಚಿತ್ರ ಬದಲಾವಣೆ(variation)"
-
-#: cdk-pixbuf/io-ras.c:170 cdk-pixbuf/io-ras.c:199
-msgid "Not enough memory to load RAS image"
-msgstr "RAS ಚಿತ್ರವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಇಲ್ಲ"
-
-#: cdk-pixbuf/io-ras.c:544
-msgid "The Sun raster image format"
-msgstr "Sun ರಾಸ್ಟರ್ ಚಿತ್ರ ವಿನ್ಯಾಸ"
-
-#: cdk-pixbuf/io-tga.c:153
-msgid "Cannot allocate memory for IOBuffer struct"
-msgstr "IOBuffer struct ಗೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
-
-#: cdk-pixbuf/io-tga.c:172
-msgid "Cannot allocate memory for IOBuffer data"
-msgstr "IOBuffer ದತ್ತಾಂಶಕ್ಕೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
-
-#: cdk-pixbuf/io-tga.c:183
-msgid "Cannot realloc IOBuffer data"
-msgstr "realloc IOBuffer ದತ್ತಾಂಶವನ್ನು ಪುನರ್ ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
-
-#: cdk-pixbuf/io-tga.c:213
-msgid "Cannot allocate temporary IOBuffer data"
-msgstr "IOBuffer ದತ್ತಾಂಶವನ್ನು ಪುನರ್ ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
+#: cdk-pixbuf/io-qtif.c:599
+msgctxt "image format"
+msgid "QuickTime"
+msgstr ""
 
 #: cdk-pixbuf/io-tga.c:346
+#, fuzzy
+msgid "Cannot allocate colormap"
+msgstr "ವರ್ಣನಕ್ಷೆ ನಮೂದುಗಳನ್ನು (colormap structure) ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
+
+#: cdk-pixbuf/io-tga.c:371
 msgid "Cannot allocate new pixbuf"
 msgstr "ಹೊಸ pixbuf ಅನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/io-tga.c:685
-msgid "Image is corrupted or truncated"
-msgstr "ಚಿತ್ರವು ತುಂಡರಿಸಲ್ಪಟ್ಟಿದೆ ಅಥವ ಅಪೂರ್ಣಗೊಂಡಿದೆ"
-
-#: cdk-pixbuf/io-tga.c:692
-msgid "Cannot allocate colormap structure"
-msgstr "ವರ್ಣನಕ್ಷೆ ರಚನೆಯನ್ನು (colormap structure) ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
-
-#: cdk-pixbuf/io-tga.c:699
-msgid "Cannot allocate colormap entries"
-msgstr "ವರ್ಣನಕ್ಷೆ ನಮೂದುಗಳನ್ನು (colormap structure) ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
-
-#: cdk-pixbuf/io-tga.c:721
+#: cdk-pixbuf/io-tga.c:519
 msgid "Unexpected bitdepth for colormap entries"
 msgstr "ವರ್ಣನಕ್ಷೆ ನಮೂದುಗಳಿಗೆ ಅನಿರೀಕ್ಷಿತ ದ್ವಿಮಾನ-ಆಳ(bitdepth)"
 
-#: cdk-pixbuf/io-tga.c:739
+#: cdk-pixbuf/io-tga.c:535
+msgid "Pseudocolor image does not contain a colormap"
+msgstr ""
+
+#: cdk-pixbuf/io-tga.c:578
 msgid "Cannot allocate TGA header memory"
 msgstr "TGA ಶೀರ್ಷಿಕಾ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/io-tga.c:772
+#: cdk-pixbuf/io-tga.c:609
 msgid "TGA image has invalid dimensions"
 msgstr "TGA ಚಿತ್ರ ಅಮಾನ್ಯ ಆಯಾಮಗಳನ್ನು ಹೊಂದಿದೆ"
 
-#: cdk-pixbuf/io-tga.c:778 cdk-pixbuf/io-tga.c:787 cdk-pixbuf/io-tga.c:797
-#: cdk-pixbuf/io-tga.c:807 cdk-pixbuf/io-tga.c:814
+#: cdk-pixbuf/io-tga.c:615 cdk-pixbuf/io-tga.c:622
 msgid "TGA image type not supported"
 msgstr "TGA ಚಿತ್ರವು ಬೆಂಬಲಿತವಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/io-tga.c:861
+#: cdk-pixbuf/io-tga.c:650
 msgid "Cannot allocate memory for TGA context struct"
 msgstr "TGA ಸನ್ನಿವೇಶ ರಚನೆಗೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/io-tga.c:926
-msgid "Excess data in file"
-msgstr "ಕಡತದಲ್ಲಿ ವಿಪರೀತ ದತ್ತಾಂಶವಿದೆ"
+#: cdk-pixbuf/io-tga.c:712
+#, fuzzy
+msgid "TGA image was truncated or incomplete."
+msgstr "GIF ಚಿತ್ರವು ತುಂಡರಿಸಲ್ಪಟ್ಟಿದೆ ಅಥವ ಅಪೂರ್ಣಗೊಂಡಿದೆ"
 
-#: cdk-pixbuf/io-tga.c:1007
-msgid "The Targa image format"
-msgstr "Targa ಚಿತ್ರ ವಿನ್ಯಾಸ"
+#: cdk-pixbuf/io-tga.c:764
+msgctxt "image format"
+msgid "Targa"
+msgstr ""
 
-#: cdk-pixbuf/io-tiff.c:164
+#: cdk-pixbuf/io-tiff.c:117
 msgid "Could not get image width (bad TIFF file)"
 msgstr "ಚಿತ್ರ ಎತ್ತರವನ್ನು ಪಡೆಯಲಾಗಿಲ್ಲ (ಸರಿ ಇಲ್ಲದ TIFF ಕಡತ)"
 
-#: cdk-pixbuf/io-tiff.c:171
+#: cdk-pixbuf/io-tiff.c:125
 msgid "Could not get image height (bad TIFF file)"
 msgstr "ಚಿತ್ರದ ಎತ್ತರವನ್ನು ಪಡೆಯಲಾಗಿಲ್ಲ (ಸರಿ ಇಲ್ಲದ TIFF ಕಡತ)"
 
-#: cdk-pixbuf/io-tiff.c:179
+#: cdk-pixbuf/io-tiff.c:133
 msgid "Width or height of TIFF image is zero"
 msgstr "TIFF ಚಿತ್ರದ ಅಗಲ ಅಥವ ಎತ್ತರವು ಶೂನ್ಯವಾಗಿದೆ"
 
-#: cdk-pixbuf/io-tiff.c:188 cdk-pixbuf/io-tiff.c:197
+#: cdk-pixbuf/io-tiff.c:141 cdk-pixbuf/io-tiff.c:151
 msgid "Dimensions of TIFF image too large"
 msgstr "TIFF ಚಿತ್ರದ ಆಯಾಮಗಳು ಬಹಳ ದೊಡ್ಡದಾಗಿವೆ"
 
-#: cdk-pixbuf/io-tiff.c:221 cdk-pixbuf/io-tiff.c:233 cdk-pixbuf/io-tiff.c:560
+#: cdk-pixbuf/io-tiff.c:177 cdk-pixbuf/io-tiff.c:189 cdk-pixbuf/io-tiff.c:585
 msgid "Insufficient memory to open TIFF file"
 msgstr "TIFF ಕಡತವನ್ನು ತೆರೆಯಲು ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಇಲ್ಲ"
 
-#: cdk-pixbuf/io-tiff.c:294
+#: cdk-pixbuf/io-tiff.c:287
 msgid "Failed to load RGB data from TIFF file"
 msgstr "RGB ದತ್ತಾಂಶವನ್ನು TIFF ಕಡತದಿಂದ ಲೋಡ್ ಮಾಡುವಲ್ಲಿ ವಿಫಲವಾಗಿದೆ"
 
-#: cdk-pixbuf/io-tiff.c:350
+#: cdk-pixbuf/io-tiff.c:378
 msgid "Failed to open TIFF image"
 msgstr "TIFF ಚಿತ್ರವನ್ನು ತೆರೆಯಲು ವಿಫಲ"
 
-#: cdk-pixbuf/io-tiff.c:362 cdk-pixbuf/io-tiff.c:777
-msgid "TIFFClose operation failed"
-msgstr "TIFFClose ಕಾರ್ಯಾಚರಣೆಯು ವಿಫಲವಾಗಿದೆ"
-
-#: cdk-pixbuf/io-tiff.c:492 cdk-pixbuf/io-tiff.c:505
+#: cdk-pixbuf/io-tiff.c:516 cdk-pixbuf/io-tiff.c:528
 msgid "Failed to load TIFF image"
 msgstr "TIFF ಚಿತ್ರವನ್ನು ಲೋಡ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ"
 
-#: cdk-pixbuf/io-tiff.c:691
+#: cdk-pixbuf/io-tiff.c:760
 msgid "Failed to save TIFF image"
 msgstr "TIFF ಚಿತ್ರವನ್ನು ಉಳಿಸಲು ವಿಫಲ"
 
-#: cdk-pixbuf/io-tiff.c:726
-msgid "TIFF compression doesn't refer to a valid codec."
+#: cdk-pixbuf/io-tiff.c:821
+msgid "TIFF compression doesn’t refer to a valid codec."
 msgstr ""
 
-#: cdk-pixbuf/io-tiff.c:766
+#: cdk-pixbuf/io-tiff.c:851
+#, c-format
+msgid "Color profile has invalid length %d."
+msgstr ""
+
+#: cdk-pixbuf/io-tiff.c:866
+msgid "TIFF bits-per-sample doesn’t contain a supported value."
+msgstr ""
+
+#: cdk-pixbuf/io-tiff.c:947
 msgid "Failed to write TIFF data"
 msgstr "TIFF ದತ್ತಾಂಶವನ್ನು ಬರೆಯುವಲ್ಲಿ ವಿಫಲ"
 
-#: cdk-pixbuf/io-tiff.c:813
-msgid "Couldn't write to TIFF file"
+#: cdk-pixbuf/io-tiff.c:965
+#, fuzzy, c-format
+msgid "TIFF x-dpi must be greater than zero; value “%s” is not allowed."
+msgstr "JPEG ಗುಣ ಮಟ್ತವು ೦ ಹಾಗು ೧೦೦; ಮಾಲ್ಯ '%d' ವು ಬೆಂಬಲಿತವಾಗಿಲ್ಲ."
+
+#: cdk-pixbuf/io-tiff.c:977
+#, fuzzy, c-format
+msgid "TIFF y-dpi must be greater than zero; value “%s” is not allowed."
+msgstr "JPEG ಗುಣ ಮಟ್ತವು ೦ ಹಾಗು ೧೦೦; ಮಾಲ್ಯ '%d' ವು ಬೆಂಬಲಿತವಾಗಿಲ್ಲ."
+
+#: cdk-pixbuf/io-tiff.c:1018
+#, fuzzy
+msgid "Couldn’t write to TIFF file"
 msgstr "TIFF ಕಡತಕ್ಕೆ ಬರೆಯಲಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/io-tiff.c:868
-msgid "The TIFF image format"
-msgstr "TIFF ಚಿತ್ರ ವಿನ್ಯಾಸ"
-
-#: cdk-pixbuf/io-wbmp.c:245
-msgid "Image has zero width"
-msgstr "ಚಿತ್ರವು ಶೂನ್ಯ ಅಗಲವನ್ನು ಹೊಂದಿದೆ"
-
-#: cdk-pixbuf/io-wbmp.c:263
-msgid "Image has zero height"
-msgstr "ಚಿತ್ರವು ಶೂನ್ಯ ಎತ್ತರವನ್ನು ಹೊಂದಿದೆ"
-
-#: cdk-pixbuf/io-wbmp.c:274
-msgid "Not enough memory to load image"
-msgstr "ಚಿತ್ರವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಇಲ್ಲ"
-
-#: cdk-pixbuf/io-wbmp.c:333
-msgid "Couldn't save the rest"
-msgstr "ಬಾಕಿಯದನ್ನು ಉಳಿಸಲಾಗಲಿಲ್ಲ"
-
-#: cdk-pixbuf/io-wbmp.c:374
-msgid "The WBMP image format"
-msgstr "WBMP ಚಿತ್ರ ವಿನ್ಯಾಸ"
-
-#: cdk-pixbuf/io-xbm.c:296
+#: cdk-pixbuf/io-xbm.c:320
 msgid "Invalid XBM file"
 msgstr "ಅಮಾನ್ಯ XBM ಕಡತ"
 
-#: cdk-pixbuf/io-xbm.c:306
+#: cdk-pixbuf/io-xbm.c:331
 msgid "Insufficient memory to load XBM image file"
 msgstr "XBM ಚಿತ್ರ ಕಡತವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಇಲ್ಲ"
 
-#: cdk-pixbuf/io-xbm.c:454
+#: cdk-pixbuf/io-xbm.c:482
 msgid "Failed to write to temporary file when loading XBM image"
 msgstr "XBM ಚಿತ್ರವನ್ನು ಲೋಡ್ ಮಾಡುವಾಗ ತಾತ್ಕಾಲಿಕ ಕಡತಕ್ಕೆ ಬರೆಯವಲ್ಲಿ ವಿಫಲವಾಗಿದೆ"
 
-#: cdk-pixbuf/io-xbm.c:493
-msgid "The XBM image format"
-msgstr "XBM ಚಿತ್ರ ವಿನ್ಯಾಸ"
+#: cdk-pixbuf/io-xbm.c:521
+msgctxt "image format"
+msgid "XBM"
+msgstr ""
 
-#: cdk-pixbuf/io-xpm.c:469
+#: cdk-pixbuf/io-xpm.c:472
 msgid "No XPM header found"
 msgstr "XPM ಶೀರ್ಷಿಕೆ ಪತ್ತೆಯಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/io-xpm.c:478
+#: cdk-pixbuf/io-xpm.c:481 cdk-pixbuf/io-xpm.c:507
 msgid "Invalid XPM header"
 msgstr "ಅಮಾನ್ಯ XPM ಶೀರ್ಷಿಕೆ"
 
-#: cdk-pixbuf/io-xpm.c:486
+#: cdk-pixbuf/io-xpm.c:489
 msgid "XPM file has image width <= 0"
 msgstr "XPM ಕಡತದಲ್ಲಿನ ಚಿತ್ರದ ಅಗಲವು <= 0"
 
-#: cdk-pixbuf/io-xpm.c:494
+#: cdk-pixbuf/io-xpm.c:497
 msgid "XPM file has image height <= 0"
 msgstr "XPM ಕಡತದಲ್ಲಿನ ಚಿತ್ರದ ಎತ್ತರವು <= 0"
 
-#: cdk-pixbuf/io-xpm.c:502
+#: cdk-pixbuf/io-xpm.c:514
 msgid "XPM has invalid number of chars per pixel"
 msgstr "XPM ಪ್ರತಿ ಪಿಕ್ಸೆಲ್ಲಿನಲ್ಲಿ ಒಂದು ಅಮಾನ್ಯ ಸಂಖ್ಯೆಯ ಅಕ್ಷರಗಳನ್ನು ಹೊಂದಿದೆ"
 
-#: cdk-pixbuf/io-xpm.c:511
+#: cdk-pixbuf/io-xpm.c:523
 msgid "XPM file has invalid number of colors"
 msgstr "XPM ಕಡತದಲ್ಲಿ ಅಮಾನ್ಯ ಸಂಖ್ಯೆಯ ಬಣ್ಣಗಳನ್ನು ಹೊಂದಿದೆ"
 
-#: cdk-pixbuf/io-xpm.c:523 cdk-pixbuf/io-xpm.c:532 cdk-pixbuf/io-xpm.c:584
+#: cdk-pixbuf/io-xpm.c:535 cdk-pixbuf/io-xpm.c:544 cdk-pixbuf/io-xpm.c:593
 msgid "Cannot allocate memory for loading XPM image"
 msgstr "XPM ಚಿತ್ರವನ್ನು ಲೋಡ್ ಮಾಡಲು ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/io-xpm.c:546
+#: cdk-pixbuf/io-xpm.c:558
 msgid "Cannot read XPM colormap"
 msgstr "XPM ಬಣ್ಣನಕ್ಷೆಯನ್ನು(colormap) ಓದಲಾಗಿಲ್ಲ"
 
-#: cdk-pixbuf/io-xpm.c:778
+#: cdk-pixbuf/io-xpm.c:610
+#, fuzzy
+msgid "Dimensions do not match data"
+msgstr "TIFF ಚಿತ್ರದ ಆಯಾಮಗಳು ಬಹಳ ದೊಡ್ಡದಾಗಿವೆ"
+
+#: cdk-pixbuf/io-xpm.c:806
 msgid "Failed to write to temporary file when loading XPM image"
 msgstr "XPM ಚಿತ್ರವನ್ನು ಲೋಡ್ ಮಾಡುವಾಗ ತಾತ್ಕಾಲಿಕ ಕಡತಕ್ಕೆ ಬರೆಯವಲ್ಲಿ ವಿಫಲವಾಗಿದೆ"
 
-#: cdk-pixbuf/io-xpm.c:817
-msgid "The XPM image format"
-msgstr "XPM ಚಿತ್ರ ವಿನ್ಯಾಸ"
+#: cdk-pixbuf/io-xpm.c:845
+msgctxt "image format"
+msgid "XPM"
+msgstr ""
+
+#~ msgid "Unsupported animation type"
+#~ msgstr "ಬೆಂಬಲಿತವಿಲ್ಲದ ಸಜೀವನದ (animation) ರೀತಿ"
+
+#~ msgid "The ANI image format"
+#~ msgstr "ANI ಚಿತ್ರದ ವಿನ್ಯಾಸ"
+
+#~ msgid "The BMP image format"
+#~ msgstr "BMP ಚಿತ್ರ ವಿನ್ಯಾಸ"
+
+#~ msgid "The EMF image format"
+#~ msgstr "EMF ಚಿತ್ರ ವಿನ್ಯಾಸ"
+
+#~ msgid "The GIF image format"
+#~ msgstr "GIF ಚಿತ್ರ ವಿನ್ಯಾಸ"
+
+#~ msgid "The ICO image format"
+#~ msgstr "ICO ಚಿತ್ರ ವಿನ್ಯಾಸ"
+
+#~ msgid "The JPEG image format"
+#~ msgstr "JPEG ಚಿತ್ರ ವಿನ್ಯಾಸ"
+
+#~ msgid "The WMF image format"
+#~ msgstr "WMF ಚಿತ್ರ ವಿನ್ಯಾಸ"
+
+#, c-format
+#~ msgid "Internal error in the GIF loader (%s)"
+#~ msgstr "GIF ಲೋಡರಿನಲ್ಲಿ ಆಂತರಿಕ ದೋಷ (%s)"
+
+#~ msgid "Stack overflow"
+#~ msgstr "ಕಲೆಹಾಕಿದ್ದು ಮಿತಿಮೀರಿದೆ"
+
+#~ msgid "GIF image loader cannot understand this image."
+#~ msgstr "GIF ಚಿತ್ರ ಲೋಡರಿಗೆ ಈ ಚಿತ್ರವನ್ನು ಅರ್ಥ ಮಾಡಿಕೊಳ್ಳಲ್ಲಾಗಿಲ್ಲ."
+
+#~ msgid "Bad code encountered"
+#~ msgstr "ಸರಿಯಲ್ಲದ ಸಂಕೇತ ಎದುರಾಗಿದೆ"
+
+#~ msgid "Circular table entry in GIF file"
+#~ msgstr "GIF ಕಡತದಲ್ಲಿನ ವೃತ್ತಾಕಾರದ ಟೇಬಲ್ ನಮೂದು"
+
+#~ msgid "Not enough memory to composite a frame in GIF file"
+#~ msgstr ""
+#~ "GIF ಕಡತದಲ್ಲಿನ ಒಂದು ಚೌಕಟ್ಟನ್ನು ಸಂಯುಕ್ತಗೊಳಿಸಲು (composite) ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಲಭ್ಯವಿಲ್ಲ"
+
+#~ msgid "The ICNS image format"
+#~ msgstr "ICNS ಚಿತ್ರ ವಿನ್ಯಾಸ"
+
+#~ msgid "Icon has zero width"
+#~ msgstr "ಲಾಂಛನವು ಶೂನ್ಯ ಅಗಲವನ್ನು ಹೊಂದಿದೆ"
+
+#~ msgid "Icon has zero height"
+#~ msgstr "ಲಾಂಛನವು ಶೂನ್ಯ ಎತ್ತರವನ್ನು ಹೊಂದಿದೆ"
+
+#~ msgid "Couldn't allocate memory for stream"
+#~ msgstr "ಸ್ಟ್ರೀಮ್‍ಗೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
+
+#~ msgid "Couldn't decode image"
+#~ msgstr "ಚಿತ್ರವನ್ನು ಡೀಕೊಡ್ ಮಾಡಲಾಗಿಲ್ಲ"
+
+#~ msgid "Transformed JPEG2000 has zero width or height"
+#~ msgstr "ರೂಪಾಂತರಗೊಂಡ JPEG2000 ವು ಶೂನ್ಯ ಅಗಲ ಅಥವ ಎತ್ತರವನ್ನು ಹೊಂದಿದೆ"
+
+#~ msgid "Image type currently not supported"
+#~ msgstr "ಈ ಬಗೆಯ ಚಿತ್ರ ವಿನ್ಯಾಸವು ಪ್ರಸಕ್ತ ಬೆಂಬಲಿತವಾಗಿಲ್ಲ"
+
+#~ msgid "Couldn't allocate memory for color profile"
+#~ msgstr "ಬಣ್ಣದ ಪ್ರೊಫೈಲ್‍ಗೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
+
+#~ msgid "Insufficient memory to open JPEG 2000 file"
+#~ msgstr "JPEG 2000 ಕಡತವನ್ನು ತೆರೆಯಲು ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಇಲ್ಲ"
+
+#~ msgid "Couldn't allocate memory to buffer image data"
+#~ msgstr "ಬಫರ್ ಚಿತ್ರ ದತ್ತಾಂಶಕ್ಕೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
+
+#~ msgid "The JPEG 2000 image format"
+#~ msgstr "JPEG 2000 ಚಿತ್ರ ವಿನ್ಯಾಸ"
+
+#~ msgid "Couldn't allocate memory for header"
+#~ msgstr "ಶೀರ್ಷಿಕೆಗೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
+
+#~ msgid "Couldn't allocate memory for context buffer"
+#~ msgstr "ಸನ್ನಿವೇಶ ಬಫರಿಗೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
+
+#~ msgid "Image has invalid width and/or height"
+#~ msgstr "ಚಿತ್ರವು ಅಮಾನ್ಯ ಅಗಲ ಹಾಗು/ಅಥವ ಎತ್ತರವನ್ನು ಹೊಂದಿದೆ"
+
+#~ msgid "Image has unsupported bpp"
+#~ msgstr "ಚಿತ್ರವು ಬೆಂಬಲವಿಲ್ಲದ bpp ಯನ್ನು ಹೊಂದಿದೆ"
+
+#, c-format
+#~ msgid "Image has unsupported number of %d-bit planes"
+#~ msgstr "ಚಿತ್ರವು ಬೆಂಬಲವಿಲ್ಲದ %d-ಬಿಟ್ ಸಮತಲಗಳ ಸಂಖ್ಯೆಯನ್ನು ಹೊಂದಿದೆ"
+
+#~ msgid "Couldn't create new pixbuf"
+#~ msgstr "ಹೊಸ pixbuf ಅನ್ನು ಸೃಷ್ಟಿಸಲಾಗಿಲ್ಲ"
+
+#~ msgid "Couldn't allocate memory for line data"
+#~ msgstr "ಸಾಲು ದತ್ತಾಂಶಕ್ಕೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
+
+#, fuzzy
+#~ msgid "Couldn't allocate memory for PCX image"
+#~ msgstr "ಶೀರ್ಷಿಕೆಗೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
+
+#~ msgid "Didn't get all lines of PCX image"
+#~ msgstr "PCX ಚಿತ್ರದ ಎಲ್ಲಾ ಸಾಲುಗಳು ಅರ್ಥವಾಗಲಿಲ್ಲ"
+
+#~ msgid "No palette found at end of PCX data"
+#~ msgstr "PCX ದತ್ತಾಂಶದ ಕೊನೆಯಲ್ಲಿ ಯಾವುದೇ ವರ್ಣಫಲಕ ಕಂಡು ಬಂದಿಲ್ಲ"
+
+#~ msgid "The PCX image format"
+#~ msgstr "PCX ಚಿತ್ರ ವಿನ್ಯಾಸ"
+
+#, fuzzy
+#~ msgid "Transformed pixbuf has zero width or height."
+#~ msgstr "ರೂಪಾಂತರಗೊಳಿಸಲಾದ PNGಯು ಶೂನ್ಯ ಅಗಲ ಅಥವ ಎತ್ತರವನ್ನು ಹೊಂದಿದೆ."
+
+#, fuzzy
+#~ msgid "The CdkPixdata format"
+#~ msgstr "GIF ಚಿತ್ರ ವಿನ್ಯಾಸ"
+
+#, c-format
+#~ msgid ""
+#~ "PNG compression level must be a value between 0 and 9; value '%s' could "
+#~ "not be parsed."
+#~ msgstr ""
+#~ "JPEG ಸಂಕುಚನ ಮಟ್ಟವು ೦ ಹಾಗು ೯ ರ ನಡುವಿನ ಮೌಲ್ಯವನ್ನು ಹೊಂದಿರಬೇಕು; ಮೌಲ್ಯ '%s' ವನ್ನು "
+#~ "ಬಿಡಿಸಲಾಗಿಲ್ಲ(parse)."
+
+#~ msgid "The PNG image format"
+#~ msgstr "PNG ಚಿತ್ರ ವಿನ್ಯಾಸ"
+
+#~ msgid "The PNM/PBM/PGM/PPM image format family"
+#~ msgstr "PNM/PBM/PGM/PPM ಚಿತ್ರ ವಿನ್ಯಾಸ ಪರಿವಾರ"
+
+#, fuzzy
+#~ msgid "The QTIF image format"
+#~ msgstr "TIFF ಚಿತ್ರ ವಿನ್ಯಾಸ"
+
+#~ msgid "RAS image has bogus header data"
+#~ msgstr "RAS ಚಿತ್ರವು (ಇಮೇಜ್) ನಕಲಿ ಶೀರ್ಷಿಕಾ ದತ್ತಾಂಶವನ್ನು ಹೊಂದಿದೆ"
+
+#~ msgid "RAS image has unknown type"
+#~ msgstr "RAS ಚಿತ್ರವು ಗೊತ್ತಿರದ ಬಗೆಯದ್ದಾಗಿದೆ"
+
+#~ msgid "unsupported RAS image variation"
+#~ msgstr "ಬೆಂಬಲವಿಲ್ಲದ RAS ಚಿತ್ರ ಬದಲಾವಣೆ(variation)"
+
+#~ msgid "Not enough memory to load RAS image"
+#~ msgstr "RAS ಚಿತ್ರವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಇಲ್ಲ"
+
+#~ msgid "The Sun raster image format"
+#~ msgstr "Sun ರಾಸ್ಟರ್ ಚಿತ್ರ ವಿನ್ಯಾಸ"
+
+#~ msgid "Cannot allocate memory for IOBuffer struct"
+#~ msgstr "IOBuffer struct ಗೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
+
+#~ msgid "Cannot allocate memory for IOBuffer data"
+#~ msgstr "IOBuffer ದತ್ತಾಂಶಕ್ಕೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
+
+#~ msgid "Cannot realloc IOBuffer data"
+#~ msgstr "realloc IOBuffer ದತ್ತಾಂಶವನ್ನು ಪುನರ್ ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
+
+#~ msgid "Cannot allocate temporary IOBuffer data"
+#~ msgstr "IOBuffer ದತ್ತಾಂಶವನ್ನು ಪುನರ್ ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
+
+#~ msgid "Image is corrupted or truncated"
+#~ msgstr "ಚಿತ್ರವು ತುಂಡರಿಸಲ್ಪಟ್ಟಿದೆ ಅಥವ ಅಪೂರ್ಣಗೊಂಡಿದೆ"
+
+#~ msgid "Cannot allocate colormap structure"
+#~ msgstr "ವರ್ಣನಕ್ಷೆ ರಚನೆಯನ್ನು (colormap structure) ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"
+
+#~ msgid "Excess data in file"
+#~ msgstr "ಕಡತದಲ್ಲಿ ವಿಪರೀತ ದತ್ತಾಂಶವಿದೆ"
+
+#~ msgid "The Targa image format"
+#~ msgstr "Targa ಚಿತ್ರ ವಿನ್ಯಾಸ"
+
+#~ msgid "TIFFClose operation failed"
+#~ msgstr "TIFFClose ಕಾರ್ಯಾಚರಣೆಯು ವಿಫಲವಾಗಿದೆ"
+
+#~ msgid "The TIFF image format"
+#~ msgstr "TIFF ಚಿತ್ರ ವಿನ್ಯಾಸ"
+
+#~ msgid "Image has zero height"
+#~ msgstr "ಚಿತ್ರವು ಶೂನ್ಯ ಎತ್ತರವನ್ನು ಹೊಂದಿದೆ"
+
+#~ msgid "Not enough memory to load image"
+#~ msgstr "ಚಿತ್ರವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಇಲ್ಲ"
+
+#~ msgid "Couldn't save the rest"
+#~ msgstr "ಬಾಕಿಯದನ್ನು ಉಳಿಸಲಾಗಲಿಲ್ಲ"
+
+#~ msgid "The WBMP image format"
+#~ msgstr "WBMP ಚಿತ್ರ ವಿನ್ಯಾಸ"
+
+#~ msgid "The XBM image format"
+#~ msgstr "XBM ಚಿತ್ರ ವಿನ್ಯಾಸ"
+
+#~ msgid "The XPM image format"
+#~ msgstr "XPM ಚಿತ್ರ ವಿನ್ಯಾಸ"
 
 #~ msgid "Couldn't allocate memory for paletted data"
 #~ msgstr "ವರ್ಣಫಲಕ(palette) ಮಾಡಲಾದ ದತ್ತಾಂಶಕ್ಕೆ ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ"

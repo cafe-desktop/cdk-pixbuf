@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cdk-pixbuf.master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/cdk-pixbuf/issues\n"
-"POT-Creation-Date: 2018-06-29 18:32+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 08:56+0200\n"
 "PO-Revision-Date: 2018-09-06 16:15+0300\n"
 "Last-Translator: Yuras Shumovich <shumovichy@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
@@ -15,22 +15,22 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 2.1.1\n"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:157 cdk-pixbuf/cdk-pixbuf-io.c:1052
-#: cdk-pixbuf/cdk-pixbuf-io.c:1314
+#: cdk-pixbuf/cdk-pixbuf-animation.c:190 cdk-pixbuf/cdk-pixbuf-io.c:1224
+#: cdk-pixbuf/cdk-pixbuf-io.c:1497
 #, c-format
 msgid "Failed to open file “%s”: %s"
 msgstr "Не ўдалося адкрыць файл \"%s\": %s"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:170 cdk-pixbuf/cdk-pixbuf-io.c:936
+#: cdk-pixbuf/cdk-pixbuf-animation.c:203 cdk-pixbuf/cdk-pixbuf-io.c:1085
 #, c-format
 msgid "Image file “%s” contains no data"
 msgstr "Файл выявы \"%s\" не змяшчае даных"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:208
+#: cdk-pixbuf/cdk-pixbuf-animation.c:241
 #, c-format
 msgid ""
 "Failed to load animation “%s”: reason not known, probably a corrupt "
@@ -39,8 +39,8 @@ msgstr ""
 "Не ўдалося загрузіць анімацыйны файл \"%s\": прычына невядомая, відаць, файл "
 "пашкоджаны"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:276 cdk-pixbuf/cdk-pixbuf-io.c:1088
-#: cdk-pixbuf/cdk-pixbuf-io.c:1366
+#: cdk-pixbuf/cdk-pixbuf-animation.c:309 cdk-pixbuf/cdk-pixbuf-io.c:1260
+#: cdk-pixbuf/cdk-pixbuf-io.c:1549
 #, c-format
 msgid ""
 "Failed to load image “%s”: reason not known, probably a corrupt image file"
@@ -48,85 +48,85 @@ msgstr ""
 "Не ўдалося загрузіць выяву \"%s\": прычына невядомая, відаць, выява "
 "пашкоджана."
 
-#: cdk-pixbuf/cdk-pixbuf.c:166
+#: cdk-pixbuf/cdk-pixbuf.c:248
 msgid "Number of Channels"
 msgstr "Колькасць каналаў"
 
-#: cdk-pixbuf/cdk-pixbuf.c:167
+#: cdk-pixbuf/cdk-pixbuf.c:249
 msgid "The number of samples per pixel"
 msgstr "Колькасць узораў на піксел"
 
-#: cdk-pixbuf/cdk-pixbuf.c:176
+#: cdk-pixbuf/cdk-pixbuf.c:264
 msgid "Colorspace"
 msgstr "Прастора колераў"
 
-#: cdk-pixbuf/cdk-pixbuf.c:177
+#: cdk-pixbuf/cdk-pixbuf.c:265
 msgid "The colorspace in which the samples are interpreted"
 msgstr "Прастора колераў, у якой інтэрпрэтаваць узоры"
 
-#: cdk-pixbuf/cdk-pixbuf.c:185
+#: cdk-pixbuf/cdk-pixbuf.c:277
 msgid "Has Alpha"
 msgstr "Мае альфу"
 
-#: cdk-pixbuf/cdk-pixbuf.c:186
+#: cdk-pixbuf/cdk-pixbuf.c:278
 msgid "Whether the pixbuf has an alpha channel"
 msgstr "Ці мае растравы буфер альфа канал"
 
-#: cdk-pixbuf/cdk-pixbuf.c:199
+#: cdk-pixbuf/cdk-pixbuf.c:291
 msgid "Bits per Sample"
 msgstr "Біт на сэмпл"
 
-#: cdk-pixbuf/cdk-pixbuf.c:200
+#: cdk-pixbuf/cdk-pixbuf.c:292
 msgid "The number of bits per sample"
 msgstr "Колькасць біт на сэмпл"
 
-#: cdk-pixbuf/cdk-pixbuf.c:209
+#: cdk-pixbuf/cdk-pixbuf.c:305
 msgid "Width"
 msgstr "Шырыня"
 
-#: cdk-pixbuf/cdk-pixbuf.c:210
+#: cdk-pixbuf/cdk-pixbuf.c:306
 msgid "The number of columns of the pixbuf"
 msgstr "Колькасць слупкоў у растравым буферы"
 
-#: cdk-pixbuf/cdk-pixbuf.c:219
+#: cdk-pixbuf/cdk-pixbuf.c:319
 msgid "Height"
 msgstr "Вышыня"
 
-#: cdk-pixbuf/cdk-pixbuf.c:220
+#: cdk-pixbuf/cdk-pixbuf.c:320
 msgid "The number of rows of the pixbuf"
 msgstr "Колькасць радкоў у растравым буферы"
 
-#: cdk-pixbuf/cdk-pixbuf.c:236
+#: cdk-pixbuf/cdk-pixbuf.c:337
 msgid "Rowstride"
 msgstr "Крок радкоў"
 
-#: cdk-pixbuf/cdk-pixbuf.c:237
+#: cdk-pixbuf/cdk-pixbuf.c:338
 msgid ""
 "The number of bytes between the start of a row and the start of the next row"
 msgstr "Колькасць байтаў паміж канцом папярэдняга радка і пачаткам наступнага"
 
-#: cdk-pixbuf/cdk-pixbuf.c:246
+#: cdk-pixbuf/cdk-pixbuf.c:351
 msgid "Pixels"
 msgstr "Пікселі"
 
-#: cdk-pixbuf/cdk-pixbuf.c:247
+#: cdk-pixbuf/cdk-pixbuf.c:352
 msgid "A pointer to the pixel data of the pixbuf"
 msgstr "Паказальнік на піксельныя даныя растравага буфера"
 
-#: cdk-pixbuf/cdk-pixbuf.c:261
+#: cdk-pixbuf/cdk-pixbuf.c:366
 msgid "Pixel Bytes"
 msgstr "Піксельныя даныя"
 
-#: cdk-pixbuf/cdk-pixbuf.c:262
+#: cdk-pixbuf/cdk-pixbuf.c:367
 msgid "Readonly pixel data"
 msgstr "Піксельныя даныя толькі для чытання"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:756
+#: cdk-pixbuf/cdk-pixbuf-io.c:901
 #, c-format
 msgid "Unable to load image-loading module: %s: %s"
 msgstr "Не ўдалося загрузіць модуль чытання выяў: %s: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:771
+#: cdk-pixbuf/cdk-pixbuf-io.c:919
 #, c-format
 msgid ""
 "Image-loading module %s does not export the proper interface; perhaps it’s "
@@ -135,53 +135,53 @@ msgstr ""
 "Модуль чытання выяў %s не экспартаваў прыдатны інтэрфейс. Можа, ён належыць "
 "іншай версіі cdk-pixbuf?"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:780 cdk-pixbuf/cdk-pixbuf-io.c:823
+#: cdk-pixbuf/cdk-pixbuf-io.c:929 cdk-pixbuf/cdk-pixbuf-io.c:972
 #, c-format
 msgid "Image type “%s” is not supported"
 msgstr "Тып выявы \"%s\" не падтрымліваецца"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:908
+#: cdk-pixbuf/cdk-pixbuf-io.c:1057
 #, c-format
 msgid "Couldn’t recognize the image file format for file “%s”"
 msgstr "Не ўдалося апазнаць фармат файла выявы для файла \"%s\""
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:916
+#: cdk-pixbuf/cdk-pixbuf-io.c:1065
 msgid "Unrecognized image file format"
 msgstr "Неапазнаны фармат файла выявы"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:1099
+#: cdk-pixbuf/cdk-pixbuf-io.c:1271
 #, c-format
 msgid "Failed to load image “%s”: %s"
 msgstr "Не ўдалося загрузіць выяву \"%s\": %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2169 cdk-pixbuf/io-gdip-utils.c:838
+#: cdk-pixbuf/cdk-pixbuf-io.c:2346 cdk-pixbuf/io-gdip-utils.c:840
 #, c-format
 msgid "Error writing to image file: %s"
 msgstr "Памылка запісу ў файл выявы: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2211 cdk-pixbuf/cdk-pixbuf-io.c:2332
+#: cdk-pixbuf/cdk-pixbuf-io.c:2388 cdk-pixbuf/cdk-pixbuf-io.c:2509
 #, c-format
 msgid "This build of cdk-pixbuf does not support saving the image format: %s"
 msgstr "Гэта зборка cdk-pixbuf не ўмее захоўваць выявы ў такім фармаце: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2242
+#: cdk-pixbuf/cdk-pixbuf-io.c:2419
 msgid "Insufficient memory to save image to callback"
 msgstr "Не стае памяці для захавання выявы для функцыі зваротнага выкліку"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2255
+#: cdk-pixbuf/cdk-pixbuf-io.c:2432
 msgid "Failed to open temporary file"
 msgstr "Не ўдалося адкрыць часовы файл"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2278
+#: cdk-pixbuf/cdk-pixbuf-io.c:2455
 msgid "Failed to read from temporary file"
 msgstr "Не ўдалося прачытаць з часовага файла"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2488
+#: cdk-pixbuf/cdk-pixbuf-io.c:2677
 #, c-format
 msgid "Failed to open “%s” for writing: %s"
 msgstr "Не ўдалося адкрыць \"%s\" для запісу: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2514
+#: cdk-pixbuf/cdk-pixbuf-io.c:2703
 #, c-format
 msgid ""
 "Failed to close “%s” while writing image, all data may not have been saved: "
@@ -190,15 +190,15 @@ msgstr ""
 "Не ўдалося закрыць \"%s\" падчас запісу выявы. Магчыма, не ўсе даныя былі "
 "захаваны: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2735 cdk-pixbuf/cdk-pixbuf-io.c:2787
+#: cdk-pixbuf/cdk-pixbuf-io.c:2937 cdk-pixbuf/cdk-pixbuf-io.c:2992
 msgid "Insufficient memory to save image into a buffer"
 msgstr "Не стае памяці для захавання выявы ў буферы"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2833
+#: cdk-pixbuf/cdk-pixbuf-io.c:3038
 msgid "Error writing to image stream"
 msgstr "Памылка запісу ў струмень выявы"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:406
+#: cdk-pixbuf/cdk-pixbuf-loader.c:426
 #, c-format
 msgid ""
 "Internal error: Image loader module “%s” failed to complete an operation, "
@@ -207,33 +207,33 @@ msgstr ""
 "Унутраная памылка: модуль чытання выяў \"%s\" не здолеў закончыць дзеянне, "
 "але не падаў прычыну няўдачы"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:448
+#: cdk-pixbuf/cdk-pixbuf-loader.c:468
 #, c-format
 msgid "Incremental loading of image type “%s” is not supported"
 msgstr "Паступовая загрузка выявы тыпу \"%s\" не падтрымліваецца"
 
-#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:161
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:166
 msgid "Loop"
 msgstr "Зацыкліць"
 
-#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:162
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:167
 msgid "Whether the animation should loop when it reaches the end"
 msgstr "Ці паўтараць анімацыю пасля таго, як яна дасягнула канца"
 
-#: cdk-pixbuf/cdk-pixdata.c:165
+#: cdk-pixbuf/cdk-pixdata.c:178
 msgid "Image header corrupt"
 msgstr "Загаловак выявы пашкоджаны"
 
-#: cdk-pixbuf/cdk-pixdata.c:170
+#: cdk-pixbuf/cdk-pixdata.c:183
 msgid "Image format unknown"
 msgstr "Невядомы фармат выявы"
 
-#: cdk-pixbuf/cdk-pixdata.c:175 cdk-pixbuf/cdk-pixdata.c:467
-#: cdk-pixbuf/cdk-pixdata.c:477 cdk-pixbuf/cdk-pixdata.c:573
+#: cdk-pixbuf/cdk-pixdata.c:188 cdk-pixbuf/cdk-pixdata.c:491
+#: cdk-pixbuf/cdk-pixdata.c:501 cdk-pixbuf/cdk-pixdata.c:597
 msgid "Image pixel data corrupt"
 msgstr "Пікселныя даныя выявы пашкоджаны"
 
-#: cdk-pixbuf/cdk-pixdata.c:489
+#: cdk-pixbuf/cdk-pixdata.c:513
 #, c-format
 msgid "failed to allocate image buffer of %u byte"
 msgid_plural "failed to allocate image buffer of %u bytes"
@@ -241,85 +241,87 @@ msgstr[0] "не ўдалося выдзеліць буфер выявы ў %u б
 msgstr[1] "не ўдалося выдзеліць буфер выявы ў %u байты"
 msgstr[2] "не ўдалося выдзеліць буфер выявы ў %u байтаў"
 
-#: cdk-pixbuf/io-ani.c:242
+#: cdk-pixbuf/io-ani.c:239
 msgid "Unexpected icon chunk in animation"
 msgstr "Нечаканы кадр значка ў анімацыі"
 
-#: cdk-pixbuf/io-ani.c:340 cdk-pixbuf/io-ani.c:398 cdk-pixbuf/io-ani.c:424
-#: cdk-pixbuf/io-ani.c:447 cdk-pixbuf/io-ani.c:474 cdk-pixbuf/io-ani.c:561
-msgid "Invalid header in animation"
-msgstr "Хібны загаловак анімацыі"
-
-#: cdk-pixbuf/io-ani.c:350 cdk-pixbuf/io-ani.c:372 cdk-pixbuf/io-ani.c:456
-#: cdk-pixbuf/io-ani.c:483 cdk-pixbuf/io-ani.c:534 cdk-pixbuf/io-ani.c:606
-msgid "Not enough memory to load animation"
-msgstr "Не стае памяці для загрузкі анімацыі"
-
-#: cdk-pixbuf/io-ani.c:390 cdk-pixbuf/io-ani.c:416 cdk-pixbuf/io-ani.c:435
+#: cdk-pixbuf/io-ani.c:303 cdk-pixbuf/io-ani.c:404 cdk-pixbuf/io-ani.c:430
+#: cdk-pixbuf/io-ani.c:449
 msgid "Malformed chunk in animation"
 msgstr "Кадр анімацыі ў хібным фармаце"
 
-#: cdk-pixbuf/io-ani.c:628
+#: cdk-pixbuf/io-ani.c:311 cdk-pixbuf/io-ani.c:354 cdk-pixbuf/io-ani.c:412
+#: cdk-pixbuf/io-ani.c:438 cdk-pixbuf/io-ani.c:461 cdk-pixbuf/io-ani.c:488
+#: cdk-pixbuf/io-ani.c:575
+msgid "Invalid header in animation"
+msgstr "Хібны загаловак анімацыі"
+
+#: cdk-pixbuf/io-ani.c:364 cdk-pixbuf/io-ani.c:386 cdk-pixbuf/io-ani.c:470
+#: cdk-pixbuf/io-ani.c:497 cdk-pixbuf/io-ani.c:548 cdk-pixbuf/io-ani.c:624
+msgid "Not enough memory to load animation"
+msgstr "Не стае памяці для загрузкі анімацыі"
+
+#: cdk-pixbuf/io-ani.c:646
 msgid "ANI image was truncated or incomplete."
 msgstr "Выява ANI была абрэзана або не закончана."
 
-#: cdk-pixbuf/io-ani.c:669
+#: cdk-pixbuf/io-ani.c:687
 msgctxt "image format"
 msgid "Windows animated cursor"
 msgstr "Анімацыйны курсор Windows"
 
-#: cdk-pixbuf/io-bmp.c:227 cdk-pixbuf/io-bmp.c:265 cdk-pixbuf/io-bmp.c:372
-#: cdk-pixbuf/io-bmp.c:399 cdk-pixbuf/io-bmp.c:424 cdk-pixbuf/io-bmp.c:459
-#: cdk-pixbuf/io-bmp.c:481 cdk-pixbuf/io-bmp.c:558
+#: cdk-pixbuf/io-bmp.c:234 cdk-pixbuf/io-bmp.c:275 cdk-pixbuf/io-bmp.c:385
+#: cdk-pixbuf/io-bmp.c:412 cdk-pixbuf/io-bmp.c:437 cdk-pixbuf/io-bmp.c:472
+#: cdk-pixbuf/io-bmp.c:494 cdk-pixbuf/io-bmp.c:572
 msgid "BMP image has bogus header data"
 msgstr "Выява BMP мае дзіўныя даныя ў загалоўку"
 
-#: cdk-pixbuf/io-bmp.c:238 cdk-pixbuf/io-bmp.c:494
+#: cdk-pixbuf/io-bmp.c:245 cdk-pixbuf/io-bmp.c:507
 msgid "Not enough memory to load bitmap image"
 msgstr "Не стае памяці для загрузкі растравай выявы"
 
-#: cdk-pixbuf/io-bmp.c:329
+#: cdk-pixbuf/io-bmp.c:339
 msgid "BMP image has unsupported header size"
 msgstr "Выява BMP мае непрымальны памер загалоўка"
 
-#: cdk-pixbuf/io-bmp.c:339
+#: cdk-pixbuf/io-bmp.c:348
 msgid "BMP image has unsupported depth"
 msgstr "Выява BMP мае непрымальную глыбіню"
 
-#: cdk-pixbuf/io-bmp.c:354
+#: cdk-pixbuf/io-bmp.c:367
 msgid "BMP image has oversize palette"
 msgstr "Выява BMP мае завялікую палітру"
 
-#: cdk-pixbuf/io-bmp.c:386
+#: cdk-pixbuf/io-bmp.c:399
 msgid "Topdown BMP images cannot be compressed"
 msgstr "Немагчыма сціснуць перакуленыя выявы BMP"
 
-#: cdk-pixbuf/io-bmp.c:411
+#: cdk-pixbuf/io-bmp.c:424
 msgid "BMP image width too large"
 msgstr "Памер выявы BMP надта вялікі"
 
-#: cdk-pixbuf/io-bmp.c:782 cdk-pixbuf/io-png.c:528 cdk-pixbuf/io-pnm.c:721
+#: cdk-pixbuf/io-bmp.c:814 cdk-pixbuf/io-png.c:587 cdk-pixbuf/io-pnm.c:722
+#: cdk-pixbuf/io-pnm.c:879
 msgid "Premature end-of-file encountered"
 msgstr "Заўчасна сустрэты канец файла"
 
-#: cdk-pixbuf/io-bmp.c:1310
-#, c-format
+#: cdk-pixbuf/io-bmp.c:1340
 msgid "Error while decoding colormap"
 msgstr "Памылка падчас дэкадавання карты колераў"
 
-#: cdk-pixbuf/io-bmp.c:1373 cdk-pixbuf/io-bmp.c:1385
+#: cdk-pixbuf/io-bmp.c:1403 cdk-pixbuf/io-bmp.c:1415
 msgid "Image is too wide for BMP format."
 msgstr "Выява зашырокая для фармату BMP"
 
-#: cdk-pixbuf/io-bmp.c:1418
+#: cdk-pixbuf/io-bmp.c:1448
 msgid "Couldn’t allocate memory for saving BMP file"
 msgstr "Не ўдалося выдзеліць памяць для захавання файла BMP"
 
-#: cdk-pixbuf/io-bmp.c:1459
+#: cdk-pixbuf/io-bmp.c:1489
 msgid "Couldn’t write to BMP file"
 msgstr "Не ўдалося запісаць у файл BMP"
 
-#: cdk-pixbuf/io-bmp.c:1512 cdk-pixbuf/io-gdip-bmp.c:83
+#: cdk-pixbuf/io-bmp.c:1542 cdk-pixbuf/io-gdip-bmp.c:83
 msgctxt "image format"
 msgid "BMP"
 msgstr "BMP"
@@ -329,17 +331,17 @@ msgctxt "image format"
 msgid "EMF"
 msgstr "EMF"
 
-#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1757
+#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1039
 msgctxt "image format"
 msgid "GIF"
 msgstr "GIF"
 
-#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1416
+#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1418
 msgctxt "image format"
 msgid "Windows icon"
 msgstr "Значок Windows"
 
-#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1380
+#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1409
 #, c-format
 msgid ""
 "JPEG quality must be a value between 0 and 100; value “%s” could not be "
@@ -348,20 +350,20 @@ msgstr ""
 "Якасць выявы JPEG мусіць мець значэнне ў дыяпазоне ад 0 да 100. Не ўдалося "
 "разабраць значэнне \"%s\"."
 
-#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1396
+#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1425
 #, c-format
 msgid ""
 "JPEG quality must be a value between 0 and 100; value “%d” is not allowed."
 msgstr ""
-"Якасць выявы JPEG мусіць мець значэнне ў дыяпазоне ад 0 да 100. Значэнне \"%d"
-"\" не дазволена."
+"Якасць выявы JPEG мусіць мець значэнне ў дыяпазоне ад 0 да 100. Значэнне "
+"\"%d\" не дазволена."
 
-#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1680
+#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1710
 msgctxt "image format"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: cdk-pixbuf/io-gdip-tiff.c:83 cdk-pixbuf/io-tiff.c:1069
+#: cdk-pixbuf/io-gdip-tiff.c:83 cdk-pixbuf/io-tiff.c:1087
 msgctxt "image format"
 msgid "TIFF"
 msgstr "TIFF"
@@ -387,19 +389,19 @@ msgstr "Не ўдалося перанесці курсор у струмені:
 msgid "Could not read from stream: %s"
 msgstr "Не ўдалося прачытаць са струменя: %s"
 
-#: cdk-pixbuf/io-gdip-utils.c:618
+#: cdk-pixbuf/io-gdip-utils.c:620
 msgid "Couldn’t load bitmap"
 msgstr "Не ўдалося загрузіць растравую карту"
 
-#: cdk-pixbuf/io-gdip-utils.c:774
+#: cdk-pixbuf/io-gdip-utils.c:776
 msgid "Couldn’t load metafile"
 msgstr "Не ўдалося загрузіць метафайл"
 
-#: cdk-pixbuf/io-gdip-utils.c:879
+#: cdk-pixbuf/io-gdip-utils.c:881
 msgid "Unsupported image format for GDI+"
 msgstr "Фармат выявы не падтрымліваецца для GDI+"
 
-#: cdk-pixbuf/io-gdip-utils.c:886
+#: cdk-pixbuf/io-gdip-utils.c:888
 msgid "Couldn’t save"
 msgstr "Не ўдалося захаваць"
 
@@ -408,63 +410,34 @@ msgctxt "image format"
 msgid "WMF"
 msgstr "WMF"
 
-#: cdk-pixbuf/io-gif.c:221
+#: cdk-pixbuf/io-gif.c:160
 #, c-format
 msgid "Failure reading GIF: %s"
 msgstr "Не ўдалося прачытаць GIF: %s"
 
-#: cdk-pixbuf/io-gif.c:496 cdk-pixbuf/io-gif.c:1532 cdk-pixbuf/io-gif.c:1706
-msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
-msgstr "У файле GIF адсутнічаюць некаторыя даныя (магчыма, яго абрэзалі?)"
-
-#: cdk-pixbuf/io-gif.c:505
-#, c-format
-msgid "Internal error in the GIF loader (%s)"
-msgstr "Унутраная памылка ў модулі чытання GIF (%s)"
-
-#: cdk-pixbuf/io-gif.c:515 cdk-pixbuf/io-gif.c:676
-msgid "Bad code encountered"
-msgstr "Сустрэты кепскі код"
-
-#: cdk-pixbuf/io-gif.c:587
-msgid "Stack overflow"
-msgstr "Перапаўненне стосу памяці"
-
-#: cdk-pixbuf/io-gif.c:647
-msgid "GIF image loader cannot understand this image."
-msgstr "Модуль чытання GIF не зразумеў гэту выяву."
-
-#: cdk-pixbuf/io-gif.c:686
-msgid "Circular table entry in GIF file"
-msgstr "У файле GIF сустрэты зацыклены таблічны запіс"
-
-#: cdk-pixbuf/io-gif.c:890 cdk-pixbuf/io-gif.c:1518 cdk-pixbuf/io-gif.c:1571
-#: cdk-pixbuf/io-gif.c:1694
+#: cdk-pixbuf/io-gif.c:383 cdk-pixbuf/io-gif.c:850 cdk-pixbuf/io-gif.c:903
+#: cdk-pixbuf/io-gif.c:976
 msgid "Not enough memory to load GIF file"
 msgstr "Не стае памяці для загрузкі файла GIF"
 
-#: cdk-pixbuf/io-gif.c:984
-msgid "Not enough memory to composite a frame in GIF file"
-msgstr "Не стае памяці для кампазіцыі кадра ў файле GIF"
-
-#: cdk-pixbuf/io-gif.c:1156
+#: cdk-pixbuf/io-gif.c:509
 msgid "GIF image is corrupt (incorrect LZW compression)"
 msgstr "Выява GIF пашкоджана (хібны сціск LZW)"
 
-#: cdk-pixbuf/io-gif.c:1211
+#: cdk-pixbuf/io-gif.c:545
 msgid "File does not appear to be a GIF file"
 msgstr "Файл не з'яўляецца GIF"
 
-#: cdk-pixbuf/io-gif.c:1223
+#: cdk-pixbuf/io-gif.c:560
 #, c-format
 msgid "Version %s of the GIF file format is not supported"
 msgstr "Версія %s фармату файлаў GIF не падтрымліваецца"
 
-#: cdk-pixbuf/io-gif.c:1270
+#: cdk-pixbuf/io-gif.c:589
 msgid "Resulting GIF image has zero size"
 msgstr "Выніковая GIF-выява мае нулявы памер"
 
-#: cdk-pixbuf/io-gif.c:1349
+#: cdk-pixbuf/io-gif.c:659
 msgid ""
 "GIF image has no global colormap, and a frame inside it has no local "
 "colormap."
@@ -472,111 +445,82 @@ msgstr ""
 "Выява GIF не мае глабальнай карты колераў, а яго кадр не мае лакальнай карты "
 "колераў."
 
-#: cdk-pixbuf/io-gif.c:1594
+#: cdk-pixbuf/io-gif.c:863 cdk-pixbuf/io-gif.c:988
+msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
+msgstr "У файле GIF адсутнічаюць некаторыя даныя (магчыма, яго абрэзалі?)"
+
+#: cdk-pixbuf/io-gif.c:922
 msgid "GIF image was truncated or incomplete."
 msgstr "Выява GIF была абрэзана або не закончана."
 
-#: cdk-pixbuf/io-gif.c:1601
+#: cdk-pixbuf/io-gif.c:929
 msgid "Not all frames of the GIF image were loaded."
 msgstr "Не ўсе кадры GIF выявы загрузіліся."
 
-#: cdk-pixbuf/io-icns.c:359
+#: cdk-pixbuf/io-icns.c:363
 #, c-format
 msgid "Error reading ICNS image: %s"
 msgstr "Памылка чытання выявы ICNS: %s"
 
-#: cdk-pixbuf/io-icns.c:376 cdk-pixbuf/io-icns.c:453
+#: cdk-pixbuf/io-icns.c:380 cdk-pixbuf/io-icns.c:461
 msgid "Could not decode ICNS file"
 msgstr "Не ўдалося дэкадаваць файл ICNS"
 
-#: cdk-pixbuf/io-icns.c:512
+#: cdk-pixbuf/io-icns.c:517
 msgctxt "image format"
 msgid "MacOS X icon"
 msgstr "Значок MacOS X"
 
-#: cdk-pixbuf/io-ico.c:237 cdk-pixbuf/io-ico.c:251 cdk-pixbuf/io-ico.c:341
-#: cdk-pixbuf/io-ico.c:425 cdk-pixbuf/io-ico.c:450
+#: cdk-pixbuf/io-ico.c:238 cdk-pixbuf/io-ico.c:252 cdk-pixbuf/io-ico.c:342
+#: cdk-pixbuf/io-ico.c:426 cdk-pixbuf/io-ico.c:451
 #, c-format
 msgid "Invalid header in icon (%s)"
 msgstr "Хібны загаловак значка (%s)"
 
-#: cdk-pixbuf/io-ico.c:267 cdk-pixbuf/io-ico.c:354 cdk-pixbuf/io-ico.c:460
-#: cdk-pixbuf/io-ico.c:503 cdk-pixbuf/io-ico.c:531
+#: cdk-pixbuf/io-ico.c:268 cdk-pixbuf/io-ico.c:355 cdk-pixbuf/io-ico.c:461
+#: cdk-pixbuf/io-ico.c:504 cdk-pixbuf/io-ico.c:532
 msgid "Not enough memory to load icon"
 msgstr "Не стае памяці для загрузкі значка"
 
-#: cdk-pixbuf/io-ico.c:385
+#: cdk-pixbuf/io-ico.c:386
 msgid "Invalid header in icon"
 msgstr "Хібны загаловак значка"
 
-#: cdk-pixbuf/io-ico.c:386
+#: cdk-pixbuf/io-ico.c:387
 msgid "Compressed icons are not supported"
 msgstr "Сціснутыя значкі не падтрымліваюцца"
 
-#: cdk-pixbuf/io-ico.c:488
+#: cdk-pixbuf/io-ico.c:489
 msgid "Unsupported icon type"
 msgstr "Тып значка не падтрымліваецца"
 
-#: cdk-pixbuf/io-ico.c:580
+#: cdk-pixbuf/io-ico.c:583
 msgid "Not enough memory to load ICO file"
 msgstr "Не стае памяці для загрузкі файла ICO"
 
-#: cdk-pixbuf/io-ico.c:626
+#: cdk-pixbuf/io-ico.c:629
 msgid "ICO image was truncated or incomplete."
 msgstr "Выява ICO была абрэзана або не закончана."
 
-#: cdk-pixbuf/io-ico.c:1074
+#: cdk-pixbuf/io-ico.c:1070
 msgid "Image too large to be saved as ICO"
 msgstr "Выява надта вялікая, каб быць захаванай як ICO"
 
-#: cdk-pixbuf/io-ico.c:1085
+#: cdk-pixbuf/io-ico.c:1081
 msgid "Cursor hotspot outside image"
 msgstr "Курсор па-за выявай"
 
-#: cdk-pixbuf/io-ico.c:1108
+#: cdk-pixbuf/io-ico.c:1104
 #, c-format
 msgid "Unsupported depth for ICO file: %d"
 msgstr "Глыбіня колераў файла ICO не падтрымліваецца: %d"
 
-#: cdk-pixbuf/io-jasper.c:73
-msgid "Couldn’t allocate memory for stream"
-msgstr "Не ўдалося выдзеліць памяць для струменя"
-
-#: cdk-pixbuf/io-jasper.c:124
-msgid "Couldn’t decode image"
-msgstr "Не ўдалося дэкадаваць выяву"
-
-#: cdk-pixbuf/io-jasper.c:142
-msgid "Transformed JPEG2000 has zero width or height"
-msgstr "Трансфармаваная выява JPEG2000 мае нулявую шырыню ці вышыню"
-
-#: cdk-pixbuf/io-jasper.c:158
-msgid "Image type currently not supported"
-msgstr "Тып выявы пакуль не падтрымліваецца"
-
-#: cdk-pixbuf/io-jasper.c:170 cdk-pixbuf/io-jasper.c:178
-msgid "Couldn’t allocate memory for color profile"
-msgstr "Не ўдалося выдзеліць памяць для профіля колераў"
-
-#: cdk-pixbuf/io-jasper.c:204
-msgid "Insufficient memory to open JPEG 2000 file"
-msgstr "Не стае памяці, каб адкрыць файл JPEG 2000"
-
-#: cdk-pixbuf/io-jasper.c:283
-msgid "Couldn’t allocate memory to buffer image data"
-msgstr "Не ўдалося выдзеліць памяць для буфера даных выявы"
-
-#: cdk-pixbuf/io-jasper.c:327
-msgctxt "image format"
-msgid "JPEG 2000"
-msgstr "JPEG 2000"
-
-#: cdk-pixbuf/io-jpeg.c:126
+#: cdk-pixbuf/io-jpeg.c:131
 #, c-format
 msgid "Error interpreting JPEG image file (%s)"
 msgstr "Памылка інтэрпрэтацыі файла выявы JPEG (%s)"
 
-#: cdk-pixbuf/io-jpeg.c:634
+#: cdk-pixbuf/io-jpeg.c:647
 msgid ""
 "Insufficient memory to load image, try exiting some applications to free "
 "memory"
@@ -584,26 +528,26 @@ msgstr ""
 "Не стае памяці для загрузкі выявы, паспрабуйце выйсці з некаторых праграм, "
 "каб вызваліць памяць"
 
-#: cdk-pixbuf/io-jpeg.c:707 cdk-pixbuf/io-jpeg.c:940
+#: cdk-pixbuf/io-jpeg.c:720 cdk-pixbuf/io-jpeg.c:970
 #, c-format
 msgid "Unsupported JPEG color space (%s)"
 msgstr "Колеравая прастора JPEG (%s) не падтрымліваецца"
 
-#: cdk-pixbuf/io-jpeg.c:818 cdk-pixbuf/io-jpeg.c:1139 cdk-pixbuf/io-jpeg.c:1487
-#: cdk-pixbuf/io-jpeg.c:1497
+#: cdk-pixbuf/io-jpeg.c:845 cdk-pixbuf/io-jpeg.c:1169 cdk-pixbuf/io-jpeg.c:1516
+#: cdk-pixbuf/io-jpeg.c:1526
 msgid "Couldn’t allocate memory for loading JPEG file"
 msgstr "Не ўдалося выдзеліць памяць для загрузкі файла JPEG"
 
-#: cdk-pixbuf/io-jpeg.c:1096
+#: cdk-pixbuf/io-jpeg.c:1127
 msgid "Transformed JPEG has zero width or height."
 msgstr "Трансфармаваная выява JPEG мае нулявую шырыню ці вышыню."
 
-#: cdk-pixbuf/io-jpeg.c:1123
+#: cdk-pixbuf/io-jpeg.c:1153
 #, c-format
 msgid "Unsupported number of color components (%d)"
 msgstr "Непадтрымліваемая колькасць складнікаў колеру (%d)"
 
-#: cdk-pixbuf/io-jpeg.c:1417
+#: cdk-pixbuf/io-jpeg.c:1446
 #, c-format
 msgid ""
 "JPEG x-dpi must be a value between 1 and 65535; value “%s” is not allowed."
@@ -611,7 +555,7 @@ msgstr ""
 "Значэнне JPEG x-dpi мусіць быць у дыяпазоне ад 1 да 65535. Значэнне \"%s\" "
 "не дазволена."
 
-#: cdk-pixbuf/io-jpeg.c:1438
+#: cdk-pixbuf/io-jpeg.c:1467
 #, c-format
 msgid ""
 "JPEG y-dpi must be a value between 1 and 65535; value “%s” is not allowed."
@@ -619,44 +563,49 @@ msgstr ""
 "Значэнне JPEG y-dpi мусіць быць у дыяпазоне ад 1 да 65535. Значэнне \"%s\" "
 "не дазволена."
 
-#: cdk-pixbuf/io-jpeg.c:1452
+#: cdk-pixbuf/io-jpeg.c:1481
 #, c-format
 msgid "Color profile has invalid length “%u”."
 msgstr "Профіль колераў мае хібную даўжыню \"%u\"."
 
-#: cdk-pixbuf/io-png.c:53
+#: cdk-pixbuf/io-png.c:64
 msgid "Bits per channel of PNG image is invalid."
 msgstr "Хібная колькасць бітаў на канал выявы PNG."
 
-#: cdk-pixbuf/io-png.c:134 cdk-pixbuf/io-png.c:666
+#: cdk-pixbuf/io-png.c:145 cdk-pixbuf/io-png.c:730
 msgid "Transformed PNG has zero width or height."
 msgstr "Трансфармаваная выява PNG мае нулявую шырыню ці вышыню."
 
-#: cdk-pixbuf/io-png.c:142
+#: cdk-pixbuf/io-png.c:153
 msgid "Bits per channel of transformed PNG is not 8."
 msgstr ""
 "Колькасць бітаў на канал у трансфармаванай выяве PNG адрозніваецца ад 8."
 
-#: cdk-pixbuf/io-png.c:151
+#: cdk-pixbuf/io-png.c:162
 msgid "Transformed PNG not RGB or RGBA."
 msgstr "Трансфармаваная выява PNG не з'яўляецца ні RGB, ні RGBA."
 
-#: cdk-pixbuf/io-png.c:160
+#: cdk-pixbuf/io-png.c:171
 msgid "Transformed PNG has unsupported number of channels, must be 3 or 4."
 msgstr ""
 "Трансфармаваная выява PNG мае невядомую колькасць каналаў, якая мусіць быць "
 "3 ці 4."
 
-#: cdk-pixbuf/io-png.c:181
+#: cdk-pixbuf/io-png.c:193
 #, c-format
 msgid "Fatal error in PNG image file: %s"
 msgstr "Фатальная памылка ў файле выявы PNG: %s"
 
-#: cdk-pixbuf/io-png.c:318
+#: cdk-pixbuf/io-png.c:338
 msgid "Insufficient memory to load PNG file"
 msgstr "Не стае памяці для загрузкі файла PNG"
 
-#: cdk-pixbuf/io-png.c:679
+#: cdk-pixbuf/io-png.c:519 cdk-pixbuf/io-png.c:540
+#, fuzzy
+msgid "Couldn’t allocate memory for loading PNG"
+msgstr "Не ўдалося выдзеліць памяць для загрузкі файла JPEG"
+
+#: cdk-pixbuf/io-png.c:743
 #, c-format
 msgid ""
 "Insufficient memory to store a %lu by %lu image; try exiting some "
@@ -665,139 +614,127 @@ msgstr ""
 "Не стае памяці для захавання выявы %lux%lu. Каб зменшыць узровень "
 "выкарыстання памяці, паспрабуйце выйсці з некаторых праграм"
 
-#: cdk-pixbuf/io-png.c:755
+#: cdk-pixbuf/io-png.c:820
 msgid "Fatal error reading PNG image file"
 msgstr "Фатальная памылка пры чытанні файла выявы PNG"
 
-#: cdk-pixbuf/io-png.c:804
+#: cdk-pixbuf/io-png.c:873
 #, c-format
 msgid "Fatal error reading PNG image file: %s"
 msgstr "Фатальная памылка пры чытанні файла выявы PNG: %s"
 
-#: cdk-pixbuf/io-png.c:896
+#: cdk-pixbuf/io-png.c:972
+#, fuzzy, c-format
 msgid ""
-"Keys for PNG text chunks must have at least 1 and at most 79 characters."
+"Invalid key “%s”. Keys for PNG text chunks must have at least 1 and at most "
+"79 characters."
 msgstr ""
 "Ключы да тэкставых урыўкаў выявы PNG мусяць мець даўжыню ад 1 да 79 знакаў."
 
-#: cdk-pixbuf/io-png.c:905
-msgid "Keys for PNG text chunks must be ASCII characters."
+#: cdk-pixbuf/io-png.c:985
+#, fuzzy, c-format
+msgid "Invalid key “%s”. Keys for PNG text chunks must be ASCII characters."
 msgstr "Ключы да тэкставых урыўкаў выявы PNG мусяць быць знакамі ASCII."
 
-#: cdk-pixbuf/io-png.c:919 cdk-pixbuf/io-tiff.c:833
-#, c-format
-msgid "Color profile has invalid length %d."
-msgstr "Профіль колераў мае хібную даўжыню %d."
-
-#: cdk-pixbuf/io-png.c:932
-#, c-format
+#: cdk-pixbuf/io-png.c:1015
+#, fuzzy, c-format
 msgid ""
-"PNG compression level must be a value between 0 and 9; value “%s” could not "
-"be parsed."
-msgstr ""
-"Ступень сціску выявы PNG мусіць мець значэнне ў дыяпазоне ад 0 да 9. Не "
-"ўдалося разабраць значэнне \"%s\"."
-
-#: cdk-pixbuf/io-png.c:945
-#, c-format
-msgid ""
-"PNG compression level must be a value between 0 and 9; value “%d” is not "
-"allowed."
-msgstr ""
-"Ступень сціску выявы PNG мусіць мець значэнне ў дыяпазоне ад 0 і 9. Значэнне "
-"\"%d\" не дазволена."
-
-#: cdk-pixbuf/io-png.c:964
-#, c-format
-msgid "PNG x-dpi must be greater than zero; value “%s” is not allowed."
-msgstr ""
-"Значэнне JPEG x-dpi мусіць быць больш на нуль. Значэнне \"%s\" не дазволена."
-
-#: cdk-pixbuf/io-png.c:984
-#, c-format
-msgid "PNG y-dpi must be greater than zero; value “%s” is not allowed."
-msgstr ""
-"Значэнне JPEG y-dpi мусіць быць больш на нуль. Значэнне \"%s\" не дазволена."
-
-#: cdk-pixbuf/io-png.c:1033
-#, c-format
-msgid "Value for PNG text chunk %s cannot be converted to ISO-8859-1 encoding."
+"Value for PNG text chunk '%s' cannot be converted to ISO-8859-1 encoding."
 msgstr ""
 "Не ўдалося пераўтварыць значэнне тэкставага ўрыўка %s выявы PNG у кадаванне "
 "ISO-8859-1."
 
-#: cdk-pixbuf/io-png.c:1218
+#: cdk-pixbuf/io-png.c:1027
+#, fuzzy, c-format
+msgid "Color profile has invalid length %d"
+msgstr "Профіль колераў мае хібную даўжыню %d."
+
+#: cdk-pixbuf/io-png.c:1039
+#, fuzzy, c-format
+msgid ""
+"PNG compression level must be a value between 0 and 9; value “%s” is invalid"
+msgstr ""
+"Ступень сціску выявы PNG мусіць мець значэнне ў дыяпазоне ад 0 і 9. Значэнне "
+"\"%d\" не дазволена."
+
+#: cdk-pixbuf/io-png.c:1053
+#, fuzzy, c-format
+msgid "PNG %s must be greater than zero; value “%s” is not allowed"
+msgstr ""
+"Значэнне JPEG x-dpi мусіць быць больш на нуль. Значэнне \"%s\" не дазволена."
+
+#: cdk-pixbuf/io-png.c:1283
 msgctxt "image format"
 msgid "PNG"
 msgstr "PNG"
 
-#: cdk-pixbuf/io-pnm.c:246
+#: cdk-pixbuf/io-pnm.c:247
 msgid "PNM loader expected to find an integer, but didn’t"
 msgstr "Модуль чытання PNM чакаў цэлы лік"
 
-#: cdk-pixbuf/io-pnm.c:278
+#: cdk-pixbuf/io-pnm.c:279
 msgid "PNM file has an incorrect initial byte"
 msgstr "Файл PNM мае хібны першы байт"
 
-#: cdk-pixbuf/io-pnm.c:308
+#: cdk-pixbuf/io-pnm.c:309
 msgid "PNM file is not in a recognized PNM subformat"
 msgstr "Файл PNM мае неапазнаны падфармат PNM"
 
-#: cdk-pixbuf/io-pnm.c:333
+#: cdk-pixbuf/io-pnm.c:334
 msgid "PNM file has an invalid width"
 msgstr "Файл PNM мае хібную шырыню"
 
-#: cdk-pixbuf/io-pnm.c:341
+#: cdk-pixbuf/io-pnm.c:342
 msgid "PNM file has an image width of 0"
 msgstr "Файл PNM мае нулявую шырыню выявы"
 
-#: cdk-pixbuf/io-pnm.c:362
+#: cdk-pixbuf/io-pnm.c:363
 msgid "PNM file has an invalid height"
 msgstr "Файл PNM мае хібную вышыню"
 
-#: cdk-pixbuf/io-pnm.c:370
+#: cdk-pixbuf/io-pnm.c:371
 msgid "PNM file has an image height of 0"
 msgstr "Файл PNM мае нулявую вышыню выявы"
 
-#: cdk-pixbuf/io-pnm.c:393
+#: cdk-pixbuf/io-pnm.c:394
 msgid "Maximum color value in PNM file is 0"
 msgstr "Максімальнае значэнне колеру ў файле PNM роўна 0"
 
-#: cdk-pixbuf/io-pnm.c:401
+#: cdk-pixbuf/io-pnm.c:402
 msgid "Maximum color value in PNM file is too large"
 msgstr "Максімальнае значэнне колеру ў файле PNM надта вялікае"
 
-#: cdk-pixbuf/io-pnm.c:441 cdk-pixbuf/io-pnm.c:471 cdk-pixbuf/io-pnm.c:516
+#: cdk-pixbuf/io-pnm.c:442 cdk-pixbuf/io-pnm.c:472 cdk-pixbuf/io-pnm.c:517
 msgid "Raw PNM image type is invalid"
 msgstr "Хібны тып сырой выявы PNM"
 
-#: cdk-pixbuf/io-pnm.c:666
+#: cdk-pixbuf/io-pnm.c:667
 msgid "PNM image loader does not support this PNM subformat"
 msgstr "Модуль чытання PNM не падтрымлівае гэтага падфармату PNM"
 
-#: cdk-pixbuf/io-pnm.c:753 cdk-pixbuf/io-pnm.c:980
+#: cdk-pixbuf/io-pnm.c:754 cdk-pixbuf/io-pnm.c:991
 msgid "Raw PNM formats require exactly one whitespace before sample data"
 msgstr ""
 "Сырыя фарматы выяў PNM патрабуюць дакладна аднаго прабелу перад узорнымі "
 "данымі"
 
-#: cdk-pixbuf/io-pnm.c:780
+#: cdk-pixbuf/io-pnm.c:781
 msgid "Cannot allocate memory for loading PNM image"
 msgstr "Не ўдалося выдзеліць памяць для загрузкі выявы PNM"
 
-#: cdk-pixbuf/io-pnm.c:830
+#: cdk-pixbuf/io-pnm.c:835
 msgid "Insufficient memory to load PNM context struct"
 msgstr "Не стае памяці для загрузкі структуры кантэксту PNM"
 
-#: cdk-pixbuf/io-pnm.c:881
+#: cdk-pixbuf/io-pnm.c:892
 msgid "Unexpected end of PNM image data"
 msgstr "Нечаканае заканчэнне даных выявы PNM"
 
-#: cdk-pixbuf/io-pnm.c:1009
+#: cdk-pixbuf/io-pnm.c:1020
 msgid "Insufficient memory to load PNM file"
 msgstr "Не стае памяці для загрузкі файла PNM"
 
-#: cdk-pixbuf/io-pnm.c:1093
+#: cdk-pixbuf/io-pnm.c:1103
 msgctxt "image format"
 msgid "PNM/PBM/PGM/PPM"
 msgstr "PNM/PBM/PGM/PPM"
@@ -810,7 +747,7 @@ msgstr "Дэскрыптар уваходнага файла роўны NULL."
 msgid "Failed to read QTIF header"
 msgstr "Не ўдалося прачытаць загаловак QTIF"
 
-#: cdk-pixbuf/io-qtif.c:150 cdk-pixbuf/io-qtif.c:187 cdk-pixbuf/io-qtif.c:454
+#: cdk-pixbuf/io-qtif.c:150 cdk-pixbuf/io-qtif.c:187 cdk-pixbuf/io-qtif.c:449
 #, c-format
 msgid "QTIF atom size too large (%d byte)"
 msgid_plural "QTIF atom size too large (%d bytes)"
@@ -841,185 +778,253 @@ msgstr[1] ""
 msgstr[2] ""
 "Не ўдалося прапусціць наступныя %d байтаў з дапамогай функцыі seek()."
 
-#: cdk-pixbuf/io-qtif.c:265
+#: cdk-pixbuf/io-qtif.c:269
 msgid "Failed to allocate QTIF context structure."
 msgstr "Не ўдалося выдзеліць структуру кантэксту QTIF."
 
-#: cdk-pixbuf/io-qtif.c:325
+#: cdk-pixbuf/io-qtif.c:329
 msgid "Failed to create CdkPixbufLoader object."
 msgstr "Не ўдалося стварыць аб'ект CdkPixbufLoader."
 
-#: cdk-pixbuf/io-qtif.c:429
+#: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
 msgstr "Не ўдалося адшукаць кадр даных выявы."
 
-#: cdk-pixbuf/io-qtif.c:613
+#: cdk-pixbuf/io-qtif.c:599
 msgctxt "image format"
 msgid "QuickTime"
 msgstr "QuickTime"
 
-#: cdk-pixbuf/io-tga.c:333
+#: cdk-pixbuf/io-tga.c:346
 msgid "Cannot allocate colormap"
 msgstr "Не ўдалося выдзеліць памяць для карты колераў"
 
-#: cdk-pixbuf/io-tga.c:358
+#: cdk-pixbuf/io-tga.c:371
 msgid "Cannot allocate new pixbuf"
 msgstr "Не ўдалося выдзеліць памяць для новага растравага буфера"
 
-#: cdk-pixbuf/io-tga.c:506
+#: cdk-pixbuf/io-tga.c:519
 msgid "Unexpected bitdepth for colormap entries"
 msgstr "Нечаканая глыбіня колераў для элементаў карты колераў"
 
-#: cdk-pixbuf/io-tga.c:522
+#: cdk-pixbuf/io-tga.c:535
 msgid "Pseudocolor image does not contain a colormap"
 msgstr "Псеўдакаляровая выява без карты колераў"
 
-#: cdk-pixbuf/io-tga.c:565
+#: cdk-pixbuf/io-tga.c:578
 msgid "Cannot allocate TGA header memory"
 msgstr "Не ўдалося выдзеліць памяць для загалоўка выявы TGA"
 
-#: cdk-pixbuf/io-tga.c:596
+#: cdk-pixbuf/io-tga.c:609
 msgid "TGA image has invalid dimensions"
 msgstr "Выява TGA мае хібны памер"
 
-#: cdk-pixbuf/io-tga.c:602 cdk-pixbuf/io-tga.c:609
+#: cdk-pixbuf/io-tga.c:615 cdk-pixbuf/io-tga.c:622
 msgid "TGA image type not supported"
 msgstr "Тып выявы TGA не падтрымліваецца"
 
-#: cdk-pixbuf/io-tga.c:634
+#: cdk-pixbuf/io-tga.c:650
 msgid "Cannot allocate memory for TGA context struct"
 msgstr "Не ўдалося выдзеліць памяць для структуры кантэксту TGA"
 
-#: cdk-pixbuf/io-tga.c:695
+#: cdk-pixbuf/io-tga.c:712
 msgid "TGA image was truncated or incomplete."
 msgstr "Выява TGA была абрэзана або не закончана."
 
-#: cdk-pixbuf/io-tga.c:747
+#: cdk-pixbuf/io-tga.c:764
 msgctxt "image format"
 msgid "Targa"
 msgstr "Targa"
 
-#: cdk-pixbuf/io-tiff.c:109
+#: cdk-pixbuf/io-tiff.c:117
 msgid "Could not get image width (bad TIFF file)"
 msgstr "Не ўдалося атрымаць даныя аб шырыні выявы (хібны файл TIFF)"
 
-#: cdk-pixbuf/io-tiff.c:117
+#: cdk-pixbuf/io-tiff.c:125
 msgid "Could not get image height (bad TIFF file)"
 msgstr "Не ўдалося атрымаць даныя аб вышыні выявы (хібны файл TIFF)"
 
-#: cdk-pixbuf/io-tiff.c:125
+#: cdk-pixbuf/io-tiff.c:133
 msgid "Width or height of TIFF image is zero"
 msgstr "Нулявая шырыня ці вышыня выявы TIFF"
 
-#: cdk-pixbuf/io-tiff.c:133 cdk-pixbuf/io-tiff.c:143
+#: cdk-pixbuf/io-tiff.c:141 cdk-pixbuf/io-tiff.c:151
 msgid "Dimensions of TIFF image too large"
 msgstr "Памер выявы TIFF надта вялікі"
 
-#: cdk-pixbuf/io-tiff.c:169 cdk-pixbuf/io-tiff.c:181 cdk-pixbuf/io-tiff.c:567
+#: cdk-pixbuf/io-tiff.c:177 cdk-pixbuf/io-tiff.c:189 cdk-pixbuf/io-tiff.c:585
 msgid "Insufficient memory to open TIFF file"
 msgstr "Не стае памяці, каб адкрыць файл TIFF"
 
-#: cdk-pixbuf/io-tiff.c:279
+#: cdk-pixbuf/io-tiff.c:287
 msgid "Failed to load RGB data from TIFF file"
 msgstr "Не ўдалося загрузіць RGB-даныя з файла TIFF"
 
-#: cdk-pixbuf/io-tiff.c:364
+#: cdk-pixbuf/io-tiff.c:378
 msgid "Failed to open TIFF image"
 msgstr "Не ўдалося адкрыць выяву"
 
-#: cdk-pixbuf/io-tiff.c:498 cdk-pixbuf/io-tiff.c:510
+#: cdk-pixbuf/io-tiff.c:516 cdk-pixbuf/io-tiff.c:528
 msgid "Failed to load TIFF image"
 msgstr "Не ўдалося загрузіць выяву TIFF"
 
-#: cdk-pixbuf/io-tiff.c:742
+#: cdk-pixbuf/io-tiff.c:760
 msgid "Failed to save TIFF image"
 msgstr "Не ўдалося захаваць выяву TIFF"
 
-#: cdk-pixbuf/io-tiff.c:803
+#: cdk-pixbuf/io-tiff.c:821
 msgid "TIFF compression doesn’t refer to a valid codec."
 msgstr "Сціск выявы TIFF не адпавядае ні аднаму прыдатнаму кодэку."
 
-#: cdk-pixbuf/io-tiff.c:848
+#: cdk-pixbuf/io-tiff.c:851
+#, c-format
+msgid "Color profile has invalid length %d."
+msgstr "Профіль колераў мае хібную даўжыню %d."
+
+#: cdk-pixbuf/io-tiff.c:866
 msgid "TIFF bits-per-sample doesn’t contain a supported value."
 msgstr "Значэнне TIFF bits-per-sample не падтрымліваецца"
 
-#: cdk-pixbuf/io-tiff.c:929
+#: cdk-pixbuf/io-tiff.c:947
 msgid "Failed to write TIFF data"
 msgstr "Не ўдалося запісаць даныя выявы TIFF"
 
-#: cdk-pixbuf/io-tiff.c:947
+#: cdk-pixbuf/io-tiff.c:965
 #, c-format
 msgid "TIFF x-dpi must be greater than zero; value “%s” is not allowed."
 msgstr ""
 "Значэнне TIFF x-dpi мусіць быць больш на нуль. Значэнне \"%s\" не дазволена."
 
-#: cdk-pixbuf/io-tiff.c:959
+#: cdk-pixbuf/io-tiff.c:977
 #, c-format
 msgid "TIFF y-dpi must be greater than zero; value “%s” is not allowed."
 msgstr ""
 "Значэнне TIFF у-dpi мусіць быць больш на нуль. Значэнне \"%s\" не дазволена."
 
-#: cdk-pixbuf/io-tiff.c:1000
+#: cdk-pixbuf/io-tiff.c:1018
 msgid "Couldn’t write to TIFF file"
 msgstr "Не ўдалося запісаць у файл TIFF"
 
-#: cdk-pixbuf/io-xbm.c:318
+#: cdk-pixbuf/io-xbm.c:320
 msgid "Invalid XBM file"
 msgstr "Хібны файл XBM"
 
-#: cdk-pixbuf/io-xbm.c:328
+#: cdk-pixbuf/io-xbm.c:331
 msgid "Insufficient memory to load XBM image file"
 msgstr "Не стае памяці для загрузкі файла выявы XBM"
 
-#: cdk-pixbuf/io-xbm.c:476
+#: cdk-pixbuf/io-xbm.c:482
 msgid "Failed to write to temporary file when loading XBM image"
 msgstr "Не ўдалося запісаць у часовы файл пры загрузцы выявы XBM"
 
-#: cdk-pixbuf/io-xbm.c:515
+#: cdk-pixbuf/io-xbm.c:521
 msgctxt "image format"
 msgid "XBM"
 msgstr "XBM"
 
-#: cdk-pixbuf/io-xpm.c:469
+#: cdk-pixbuf/io-xpm.c:472
 msgid "No XPM header found"
 msgstr "Загаловак выявы XPM адсутнічае"
 
-#: cdk-pixbuf/io-xpm.c:478
+#: cdk-pixbuf/io-xpm.c:481 cdk-pixbuf/io-xpm.c:507
 msgid "Invalid XPM header"
 msgstr "Хібны загаловак выявы XPM"
 
-#: cdk-pixbuf/io-xpm.c:486
+#: cdk-pixbuf/io-xpm.c:489
 msgid "XPM file has image width <= 0"
 msgstr "Файл XPM мае недадатную шырыню выявы"
 
-#: cdk-pixbuf/io-xpm.c:494
+#: cdk-pixbuf/io-xpm.c:497
 msgid "XPM file has image height <= 0"
 msgstr "Файл XPM мае недадатную вышыню выявы"
 
-#: cdk-pixbuf/io-xpm.c:502
+#: cdk-pixbuf/io-xpm.c:514
 msgid "XPM has invalid number of chars per pixel"
 msgstr "Выява XPM мае хібную колькасць знакаў на піксел"
 
-#: cdk-pixbuf/io-xpm.c:511
+#: cdk-pixbuf/io-xpm.c:523
 msgid "XPM file has invalid number of colors"
 msgstr "Файл XPM мае хібную колькасць колераў"
 
-#: cdk-pixbuf/io-xpm.c:523 cdk-pixbuf/io-xpm.c:532 cdk-pixbuf/io-xpm.c:584
+#: cdk-pixbuf/io-xpm.c:535 cdk-pixbuf/io-xpm.c:544 cdk-pixbuf/io-xpm.c:593
 msgid "Cannot allocate memory for loading XPM image"
 msgstr "Неўдалося выдзеліць памяць для загрузкі выявы XPM"
 
-#: cdk-pixbuf/io-xpm.c:546
+#: cdk-pixbuf/io-xpm.c:558
 msgid "Cannot read XPM colormap"
 msgstr "Не ўдалося прачытаць карту колераў выявы XPM"
 
-#: cdk-pixbuf/io-xpm.c:778
+#: cdk-pixbuf/io-xpm.c:610
+#, fuzzy
+msgid "Dimensions do not match data"
+msgstr "Памер выявы TIFF надта вялікі"
+
+#: cdk-pixbuf/io-xpm.c:806
 msgid "Failed to write to temporary file when loading XPM image"
 msgstr "Не ўдалося запісаць у часовы файл пры загрузцы выявы XPM"
 
-#: cdk-pixbuf/io-xpm.c:817
+#: cdk-pixbuf/io-xpm.c:845
 msgctxt "image format"
 msgid "XPM"
 msgstr "XPM"
+
+#, c-format
+#~ msgid "Internal error in the GIF loader (%s)"
+#~ msgstr "Унутраная памылка ў модулі чытання GIF (%s)"
+
+#~ msgid "Bad code encountered"
+#~ msgstr "Сустрэты кепскі код"
+
+#~ msgid "Stack overflow"
+#~ msgstr "Перапаўненне стосу памяці"
+
+#~ msgid "GIF image loader cannot understand this image."
+#~ msgstr "Модуль чытання GIF не зразумеў гэту выяву."
+
+#~ msgid "Circular table entry in GIF file"
+#~ msgstr "У файле GIF сустрэты зацыклены таблічны запіс"
+
+#~ msgid "Not enough memory to composite a frame in GIF file"
+#~ msgstr "Не стае памяці для кампазіцыі кадра ў файле GIF"
+
+#~ msgid "Couldn’t allocate memory for stream"
+#~ msgstr "Не ўдалося выдзеліць памяць для струменя"
+
+#~ msgid "Couldn’t decode image"
+#~ msgstr "Не ўдалося дэкадаваць выяву"
+
+#~ msgid "Transformed JPEG2000 has zero width or height"
+#~ msgstr "Трансфармаваная выява JPEG2000 мае нулявую шырыню ці вышыню"
+
+#~ msgid "Image type currently not supported"
+#~ msgstr "Тып выявы пакуль не падтрымліваецца"
+
+#~ msgid "Couldn’t allocate memory for color profile"
+#~ msgstr "Не ўдалося выдзеліць памяць для профіля колераў"
+
+#~ msgid "Insufficient memory to open JPEG 2000 file"
+#~ msgstr "Не стае памяці, каб адкрыць файл JPEG 2000"
+
+#~ msgid "Couldn’t allocate memory to buffer image data"
+#~ msgstr "Не ўдалося выдзеліць памяць для буфера даных выявы"
+
+#~ msgctxt "image format"
+#~ msgid "JPEG 2000"
+#~ msgstr "JPEG 2000"
+
+#, c-format
+#~ msgid ""
+#~ "PNG compression level must be a value between 0 and 9; value “%s” could "
+#~ "not be parsed."
+#~ msgstr ""
+#~ "Ступень сціску выявы PNG мусіць мець значэнне ў дыяпазоне ад 0 да 9. Не "
+#~ "ўдалося разабраць значэнне \"%s\"."
+
+#, c-format
+#~ msgid "PNG y-dpi must be greater than zero; value “%s” is not allowed."
+#~ msgstr ""
+#~ "Значэнне JPEG y-dpi мусіць быць больш на нуль. Значэнне \"%s\" не "
+#~ "дазволена."
 
 #~ msgid "The ANI image format"
 #~ msgstr "Фармат выяў ANI"

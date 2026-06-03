@@ -10,8 +10,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cdk-pixbuf master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/cdk-pixbuf/issues\n"
-"POT-Creation-Date: 2020-12-12 18:15+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 08:56+0200\n"
 "PO-Revision-Date: 2021-12-22 15:56+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
@@ -22,18 +22,18 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.0\n"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:175 cdk-pixbuf/cdk-pixbuf-io.c:1125
-#: cdk-pixbuf/cdk-pixbuf-io.c:1387
+#: cdk-pixbuf/cdk-pixbuf-animation.c:190 cdk-pixbuf/cdk-pixbuf-io.c:1224
+#: cdk-pixbuf/cdk-pixbuf-io.c:1497
 #, c-format
 msgid "Failed to open file “%s”: %s"
 msgstr "Gagal membuka berkas “%s”: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:188 cdk-pixbuf/cdk-pixbuf-io.c:992
+#: cdk-pixbuf/cdk-pixbuf-animation.c:203 cdk-pixbuf/cdk-pixbuf-io.c:1085
 #, c-format
 msgid "Image file “%s” contains no data"
 msgstr "Berkas citra “%s” tak memuat data"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:226
+#: cdk-pixbuf/cdk-pixbuf-animation.c:241
 #, c-format
 msgid ""
 "Failed to load animation “%s”: reason not known, probably a corrupt "
@@ -42,8 +42,8 @@ msgstr ""
 "Gagal memuat animasi “%s”: alasan tak diketahui, mungkin berkas animasi yang "
 "rusak"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:294 cdk-pixbuf/cdk-pixbuf-io.c:1161
-#: cdk-pixbuf/cdk-pixbuf-io.c:1439
+#: cdk-pixbuf/cdk-pixbuf-animation.c:309 cdk-pixbuf/cdk-pixbuf-io.c:1260
+#: cdk-pixbuf/cdk-pixbuf-io.c:1549
 #, c-format
 msgid ""
 "Failed to load image “%s”: reason not known, probably a corrupt image file"
@@ -51,86 +51,86 @@ msgstr ""
 "Gagal memuat citra “%s”: alasan tak diketahui, mungkin berkas citra yang "
 "rusak"
 
-#: cdk-pixbuf/cdk-pixbuf.c:237
+#: cdk-pixbuf/cdk-pixbuf.c:248
 msgid "Number of Channels"
 msgstr "Banyaknya Kanal"
 
-#: cdk-pixbuf/cdk-pixbuf.c:238
+#: cdk-pixbuf/cdk-pixbuf.c:249
 msgid "The number of samples per pixel"
 msgstr "Banyaknya cuplikan per piksel"
 
-#: cdk-pixbuf/cdk-pixbuf.c:247
+#: cdk-pixbuf/cdk-pixbuf.c:264
 msgid "Colorspace"
 msgstr "Ruang warna"
 
-#: cdk-pixbuf/cdk-pixbuf.c:248
+#: cdk-pixbuf/cdk-pixbuf.c:265
 msgid "The colorspace in which the samples are interpreted"
 msgstr "Ruang warna tempat cuplikan diinterpretasi"
 
-#: cdk-pixbuf/cdk-pixbuf.c:256
+#: cdk-pixbuf/cdk-pixbuf.c:277
 msgid "Has Alpha"
 msgstr "Punya Alfa"
 
-#: cdk-pixbuf/cdk-pixbuf.c:257
+#: cdk-pixbuf/cdk-pixbuf.c:278
 msgid "Whether the pixbuf has an alpha channel"
 msgstr "Apakah pixbuf punya kanal alfa"
 
-#: cdk-pixbuf/cdk-pixbuf.c:270
+#: cdk-pixbuf/cdk-pixbuf.c:291
 msgid "Bits per Sample"
 msgstr "Bit per Cuplikan"
 
-#: cdk-pixbuf/cdk-pixbuf.c:271
+#: cdk-pixbuf/cdk-pixbuf.c:292
 msgid "The number of bits per sample"
 msgstr "Banyaknya bit per cuplikan"
 
-#: cdk-pixbuf/cdk-pixbuf.c:280
+#: cdk-pixbuf/cdk-pixbuf.c:305
 msgid "Width"
 msgstr "Lebar"
 
-#: cdk-pixbuf/cdk-pixbuf.c:281
+#: cdk-pixbuf/cdk-pixbuf.c:306
 msgid "The number of columns of the pixbuf"
 msgstr "Banyaknya kolom dari pixbuf"
 
-#: cdk-pixbuf/cdk-pixbuf.c:290
+#: cdk-pixbuf/cdk-pixbuf.c:319
 msgid "Height"
 msgstr "Tinggi"
 
-#: cdk-pixbuf/cdk-pixbuf.c:291
+#: cdk-pixbuf/cdk-pixbuf.c:320
 msgid "The number of rows of the pixbuf"
 msgstr "Banyaknya baris pixbuf"
 
-#: cdk-pixbuf/cdk-pixbuf.c:307
+#: cdk-pixbuf/cdk-pixbuf.c:337
 msgid "Rowstride"
 msgstr "Rowstride"
 
-#: cdk-pixbuf/cdk-pixbuf.c:308
+#: cdk-pixbuf/cdk-pixbuf.c:338
 msgid ""
 "The number of bytes between the start of a row and the start of the next row"
 msgstr ""
 "Banyaknya byte antara awal dari suatu baris dan awal dari baris berikutnya"
 
-#: cdk-pixbuf/cdk-pixbuf.c:317
+#: cdk-pixbuf/cdk-pixbuf.c:351
 msgid "Pixels"
 msgstr "Piksel"
 
-#: cdk-pixbuf/cdk-pixbuf.c:318
+#: cdk-pixbuf/cdk-pixbuf.c:352
 msgid "A pointer to the pixel data of the pixbuf"
 msgstr "Penunjuk ke data piksel dari pixbuf"
 
-#: cdk-pixbuf/cdk-pixbuf.c:332
+#: cdk-pixbuf/cdk-pixbuf.c:366
 msgid "Pixel Bytes"
 msgstr "Byte Piksel"
 
-#: cdk-pixbuf/cdk-pixbuf.c:333
+#: cdk-pixbuf/cdk-pixbuf.c:367
 msgid "Readonly pixel data"
 msgstr "Data piksel hanya-baca"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:812
+#: cdk-pixbuf/cdk-pixbuf-io.c:901
 #, c-format
 msgid "Unable to load image-loading module: %s: %s"
 msgstr "Tak dapat memuat modul pemuat citra: %s: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:827
+#: cdk-pixbuf/cdk-pixbuf-io.c:919
 #, c-format
 msgid ""
 "Image-loading module %s does not export the proper interface; perhaps it’s "
@@ -139,53 +139,53 @@ msgstr ""
 "Modul pemuat citra %s tak mengekspor antar muka yang benar; mungkin itu "
 "berasal dari cdk-pixbuf versi lain?"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:836 cdk-pixbuf/cdk-pixbuf-io.c:879
+#: cdk-pixbuf/cdk-pixbuf-io.c:929 cdk-pixbuf/cdk-pixbuf-io.c:972
 #, c-format
 msgid "Image type “%s” is not supported"
 msgstr "Tipe citra “%s” tak didukung"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:964
+#: cdk-pixbuf/cdk-pixbuf-io.c:1057
 #, c-format
 msgid "Couldn’t recognize the image file format for file “%s”"
 msgstr "Tak dapat mengenali format berkas citra bagi berkas “%s”"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:972
+#: cdk-pixbuf/cdk-pixbuf-io.c:1065
 msgid "Unrecognized image file format"
 msgstr "Format berkas citra tak dikenali"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:1172
+#: cdk-pixbuf/cdk-pixbuf-io.c:1271
 #, c-format
 msgid "Failed to load image “%s”: %s"
 msgstr "Gagal memuat berkas citra “%s”: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2242 cdk-pixbuf/io-gdip-utils.c:840
+#: cdk-pixbuf/cdk-pixbuf-io.c:2346 cdk-pixbuf/io-gdip-utils.c:840
 #, c-format
 msgid "Error writing to image file: %s"
 msgstr "Galat saat menulis ke berkas citra: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2284 cdk-pixbuf/cdk-pixbuf-io.c:2405
+#: cdk-pixbuf/cdk-pixbuf-io.c:2388 cdk-pixbuf/cdk-pixbuf-io.c:2509
 #, c-format
 msgid "This build of cdk-pixbuf does not support saving the image format: %s"
 msgstr "Build cdk-pixbuf ini tak mendukung penyimpanan format citra: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2315
+#: cdk-pixbuf/cdk-pixbuf-io.c:2419
 msgid "Insufficient memory to save image to callback"
 msgstr "Tak cukup memori untuk menyimpan citra ke callback"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2328
+#: cdk-pixbuf/cdk-pixbuf-io.c:2432
 msgid "Failed to open temporary file"
 msgstr "Gagal membuka berkas sementara"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2351
+#: cdk-pixbuf/cdk-pixbuf-io.c:2455
 msgid "Failed to read from temporary file"
 msgstr "Gagal membaca dari berkas sementara"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2561
+#: cdk-pixbuf/cdk-pixbuf-io.c:2677
 #, c-format
 msgid "Failed to open “%s” for writing: %s"
 msgstr "Gagal membuka “%s” untuk menulis: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2587
+#: cdk-pixbuf/cdk-pixbuf-io.c:2703
 #, c-format
 msgid ""
 "Failed to close “%s” while writing image, all data may not have been saved: "
@@ -194,15 +194,15 @@ msgstr ""
 "Tak bisa menutup “%s” saat menulis citra, mungkin tak semua data tersimpan: "
 "%s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2808 cdk-pixbuf/cdk-pixbuf-io.c:2860
+#: cdk-pixbuf/cdk-pixbuf-io.c:2937 cdk-pixbuf/cdk-pixbuf-io.c:2992
 msgid "Insufficient memory to save image into a buffer"
 msgstr "Tak cukup memori untuk menyimpan citra ke dalam suatu penyangga"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2906
+#: cdk-pixbuf/cdk-pixbuf-io.c:3038
 msgid "Error writing to image stream"
 msgstr "Galat menulis ke stream citra"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:406
+#: cdk-pixbuf/cdk-pixbuf-loader.c:426
 #, c-format
 msgid ""
 "Internal error: Image loader module “%s” failed to complete an operation, "
@@ -211,33 +211,33 @@ msgstr ""
 "Galat internal: Modul pembuka citra “%s” gagal menyelesaikan suatu operasi, "
 "tapi tak menyebutkan alasan kegagalan"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:448
+#: cdk-pixbuf/cdk-pixbuf-loader.c:468
 #, c-format
 msgid "Incremental loading of image type “%s” is not supported"
 msgstr "Pemuatan bertahap citra tipe “%s” tak didukung"
 
-#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:162
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:166
 msgid "Loop"
 msgstr "Pengulangan"
 
-#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:163
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:167
 msgid "Whether the animation should loop when it reaches the end"
 msgstr "Apakah animasi mesti mengulang ketika mencapai akhir"
 
-#: cdk-pixbuf/cdk-pixdata.c:165
+#: cdk-pixbuf/cdk-pixdata.c:178
 msgid "Image header corrupt"
 msgstr "Kepala berkas citra rusak"
 
-#: cdk-pixbuf/cdk-pixdata.c:170
+#: cdk-pixbuf/cdk-pixdata.c:183
 msgid "Image format unknown"
 msgstr "Format citra tak dikenal"
 
-#: cdk-pixbuf/cdk-pixdata.c:175 cdk-pixbuf/cdk-pixdata.c:470
-#: cdk-pixbuf/cdk-pixdata.c:480 cdk-pixbuf/cdk-pixdata.c:576
+#: cdk-pixbuf/cdk-pixdata.c:188 cdk-pixbuf/cdk-pixdata.c:491
+#: cdk-pixbuf/cdk-pixdata.c:501 cdk-pixbuf/cdk-pixdata.c:597
 msgid "Image pixel data corrupt"
 msgstr "Data piksel citra rusak"
 
-#: cdk-pixbuf/cdk-pixdata.c:492
+#: cdk-pixbuf/cdk-pixdata.c:513
 #, c-format
 msgid "failed to allocate image buffer of %u byte"
 msgid_plural "failed to allocate image buffer of %u bytes"
@@ -247,82 +247,83 @@ msgstr[0] "gagal mengalokasikan penyangga citra sebesar %u byte"
 msgid "Unexpected icon chunk in animation"
 msgstr "Pecahan ikon yang tak diharapkan dalam animasi"
 
-#: cdk-pixbuf/io-ani.c:337 cdk-pixbuf/io-ani.c:395 cdk-pixbuf/io-ani.c:421
-#: cdk-pixbuf/io-ani.c:444 cdk-pixbuf/io-ani.c:471 cdk-pixbuf/io-ani.c:558
-msgid "Invalid header in animation"
-msgstr "Header tak valid dalam animasi"
-
-#: cdk-pixbuf/io-ani.c:347 cdk-pixbuf/io-ani.c:369 cdk-pixbuf/io-ani.c:453
-#: cdk-pixbuf/io-ani.c:480 cdk-pixbuf/io-ani.c:531 cdk-pixbuf/io-ani.c:607
-msgid "Not enough memory to load animation"
-msgstr "Tak cukup memori untuk memuat animasi"
-
-#: cdk-pixbuf/io-ani.c:387 cdk-pixbuf/io-ani.c:413 cdk-pixbuf/io-ani.c:432
+#: cdk-pixbuf/io-ani.c:303 cdk-pixbuf/io-ani.c:404 cdk-pixbuf/io-ani.c:430
+#: cdk-pixbuf/io-ani.c:449
 msgid "Malformed chunk in animation"
 msgstr "Pecahan rusak bentuk dalam animasi"
 
-#: cdk-pixbuf/io-ani.c:629
+#: cdk-pixbuf/io-ani.c:311 cdk-pixbuf/io-ani.c:354 cdk-pixbuf/io-ani.c:412
+#: cdk-pixbuf/io-ani.c:438 cdk-pixbuf/io-ani.c:461 cdk-pixbuf/io-ani.c:488
+#: cdk-pixbuf/io-ani.c:575
+msgid "Invalid header in animation"
+msgstr "Header tak valid dalam animasi"
+
+#: cdk-pixbuf/io-ani.c:364 cdk-pixbuf/io-ani.c:386 cdk-pixbuf/io-ani.c:470
+#: cdk-pixbuf/io-ani.c:497 cdk-pixbuf/io-ani.c:548 cdk-pixbuf/io-ani.c:624
+msgid "Not enough memory to load animation"
+msgstr "Tak cukup memori untuk memuat animasi"
+
+#: cdk-pixbuf/io-ani.c:646
 msgid "ANI image was truncated or incomplete."
 msgstr "Citra ANI terpotong atau tak lengkap."
 
-#: cdk-pixbuf/io-ani.c:670
+#: cdk-pixbuf/io-ani.c:687
 msgctxt "image format"
 msgid "Windows animated cursor"
 msgstr "Kursor teranimasi Windows"
 
-#: cdk-pixbuf/io-bmp.c:231 cdk-pixbuf/io-bmp.c:269 cdk-pixbuf/io-bmp.c:376
-#: cdk-pixbuf/io-bmp.c:403 cdk-pixbuf/io-bmp.c:428 cdk-pixbuf/io-bmp.c:463
-#: cdk-pixbuf/io-bmp.c:485 cdk-pixbuf/io-bmp.c:563
+#: cdk-pixbuf/io-bmp.c:234 cdk-pixbuf/io-bmp.c:275 cdk-pixbuf/io-bmp.c:385
+#: cdk-pixbuf/io-bmp.c:412 cdk-pixbuf/io-bmp.c:437 cdk-pixbuf/io-bmp.c:472
+#: cdk-pixbuf/io-bmp.c:494 cdk-pixbuf/io-bmp.c:572
 msgid "BMP image has bogus header data"
 msgstr "Citra BMP memiliki data header yang palsu"
 
-#: cdk-pixbuf/io-bmp.c:242 cdk-pixbuf/io-bmp.c:498
+#: cdk-pixbuf/io-bmp.c:245 cdk-pixbuf/io-bmp.c:507
 msgid "Not enough memory to load bitmap image"
 msgstr "Tak cukup memori untuk memuat citra bitmap"
 
-#: cdk-pixbuf/io-bmp.c:333
+#: cdk-pixbuf/io-bmp.c:339
 msgid "BMP image has unsupported header size"
 msgstr "Citra BMP memiliki ukuran header yang tak didukung"
 
-#: cdk-pixbuf/io-bmp.c:343
+#: cdk-pixbuf/io-bmp.c:348
 msgid "BMP image has unsupported depth"
 msgstr "Citra BMP memiliki kedalaman yang tak didukung"
 
-#: cdk-pixbuf/io-bmp.c:358
+#: cdk-pixbuf/io-bmp.c:367
 msgid "BMP image has oversize palette"
 msgstr "Citra BMP memiliki palet yang terlalu besar"
 
-#: cdk-pixbuf/io-bmp.c:390
+#: cdk-pixbuf/io-bmp.c:399
 msgid "Topdown BMP images cannot be compressed"
 msgstr "Citra BMP topdown tak dapat dikompresi"
 
-#: cdk-pixbuf/io-bmp.c:415
+#: cdk-pixbuf/io-bmp.c:424
 msgid "BMP image width too large"
 msgstr "Lebar citra BMP terlalu besar"
 
-#: cdk-pixbuf/io-bmp.c:792 cdk-pixbuf/io-png.c:564 cdk-pixbuf/io-pnm.c:722
+#: cdk-pixbuf/io-bmp.c:814 cdk-pixbuf/io-png.c:587 cdk-pixbuf/io-pnm.c:722
 #: cdk-pixbuf/io-pnm.c:879
 msgid "Premature end-of-file encountered"
 msgstr "Akhir berkas dijumpai secara dini"
 
-#: cdk-pixbuf/io-bmp.c:1313
-#, c-format
+#: cdk-pixbuf/io-bmp.c:1340
 msgid "Error while decoding colormap"
 msgstr "Kesalahan saat mendekode peta warna"
 
-#: cdk-pixbuf/io-bmp.c:1376 cdk-pixbuf/io-bmp.c:1388
+#: cdk-pixbuf/io-bmp.c:1403 cdk-pixbuf/io-bmp.c:1415
 msgid "Image is too wide for BMP format."
 msgstr "Citra terlalu lebar untuk format BMP."
 
-#: cdk-pixbuf/io-bmp.c:1421
+#: cdk-pixbuf/io-bmp.c:1448
 msgid "Couldn’t allocate memory for saving BMP file"
 msgstr "Tak bisa mengalokasikan memori untuk menyimpan berkas BMP"
 
-#: cdk-pixbuf/io-bmp.c:1462
+#: cdk-pixbuf/io-bmp.c:1489
 msgid "Couldn’t write to BMP file"
 msgstr "Tak dapat menulis ke berkas BMP"
 
-#: cdk-pixbuf/io-bmp.c:1515 cdk-pixbuf/io-gdip-bmp.c:83
+#: cdk-pixbuf/io-bmp.c:1542 cdk-pixbuf/io-gdip-bmp.c:83
 msgctxt "image format"
 msgid "BMP"
 msgstr "BMP"
@@ -332,17 +333,17 @@ msgctxt "image format"
 msgid "EMF"
 msgstr "EMF"
 
-#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1044
+#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1039
 msgctxt "image format"
 msgid "GIF"
 msgstr "GIF"
 
-#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1412
+#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1418
 msgctxt "image format"
 msgid "Windows icon"
 msgstr "Ikon Windows"
 
-#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1382
+#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1409
 #, c-format
 msgid ""
 "JPEG quality must be a value between 0 and 100; value “%s” could not be "
@@ -350,18 +351,18 @@ msgid ""
 msgstr ""
 "Kualitas JPEG harus bernilai antara 0 dan 100; nilai “%s” tidak bisa diurai."
 
-#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1398
+#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1425
 #, c-format
 msgid ""
 "JPEG quality must be a value between 0 and 100; value “%d” is not allowed."
 msgstr "Kualitas JPEG harus bernilai antara 0 dan 100; nilai “%d” tidak boleh."
 
-#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1682
+#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1710
 msgctxt "image format"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: cdk-pixbuf/io-gdip-tiff.c:83 cdk-pixbuf/io-tiff.c:1086
+#: cdk-pixbuf/io-gdip-tiff.c:83 cdk-pixbuf/io-tiff.c:1087
 msgctxt "image format"
 msgid "TIFF"
 msgstr "TIFF"
@@ -408,34 +409,34 @@ msgctxt "image format"
 msgid "WMF"
 msgstr "WMF"
 
-#: cdk-pixbuf/io-gif.c:158
+#: cdk-pixbuf/io-gif.c:160
 #, c-format
 msgid "Failure reading GIF: %s"
 msgstr "Kegagalan saat membaca GIF: %s"
 
-#: cdk-pixbuf/io-gif.c:381 cdk-pixbuf/io-gif.c:855 cdk-pixbuf/io-gif.c:908
-#: cdk-pixbuf/io-gif.c:981
+#: cdk-pixbuf/io-gif.c:383 cdk-pixbuf/io-gif.c:850 cdk-pixbuf/io-gif.c:903
+#: cdk-pixbuf/io-gif.c:976
 msgid "Not enough memory to load GIF file"
 msgstr "Tak cukup memori untuk membuka berkas GIF"
 
-#: cdk-pixbuf/io-gif.c:507
+#: cdk-pixbuf/io-gif.c:509
 msgid "GIF image is corrupt (incorrect LZW compression)"
 msgstr "Gambar dalam berkas GIF rusak (kompresi LZWnya salah)"
 
-#: cdk-pixbuf/io-gif.c:536
+#: cdk-pixbuf/io-gif.c:545
 msgid "File does not appear to be a GIF file"
 msgstr "Berkas ini bukan berkas GIF"
 
-#: cdk-pixbuf/io-gif.c:551
+#: cdk-pixbuf/io-gif.c:560
 #, c-format
 msgid "Version %s of the GIF file format is not supported"
 msgstr "Versi %s berkas GIF ini tidak bisa dibuka"
 
-#: cdk-pixbuf/io-gif.c:586
+#: cdk-pixbuf/io-gif.c:589
 msgid "Resulting GIF image has zero size"
 msgstr "Gambar GIF yang dihasilkan berukuran nol"
 
-#: cdk-pixbuf/io-gif.c:664
+#: cdk-pixbuf/io-gif.c:659
 msgid ""
 "GIF image has no global colormap, and a frame inside it has no local "
 "colormap."
@@ -443,15 +444,15 @@ msgstr ""
 "Gambar GIF tidak memiliki peta warna global, dan frame di dalamnya tidak "
 "memiliki peta warna lokal."
 
-#: cdk-pixbuf/io-gif.c:868 cdk-pixbuf/io-gif.c:993
+#: cdk-pixbuf/io-gif.c:863 cdk-pixbuf/io-gif.c:988
 msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
 msgstr "Ada data yang hilang pada berkas GIF ini (mungkin rusak?)"
 
-#: cdk-pixbuf/io-gif.c:927
+#: cdk-pixbuf/io-gif.c:922
 msgid "GIF image was truncated or incomplete."
 msgstr "Gambar GIF rusak atau tidak lengkap."
 
-#: cdk-pixbuf/io-gif.c:934
+#: cdk-pixbuf/io-gif.c:929
 msgid "Not all frames of the GIF image were loaded."
 msgstr "Tidak semua rangka dari citra GIF dimuat."
 
@@ -513,12 +514,12 @@ msgstr "Kursor hotspot di luar gambar"
 msgid "Unsupported depth for ICO file: %d"
 msgstr "Kedalaman warna berkas ICO ini tidak didukung: %d"
 
-#: cdk-pixbuf/io-jpeg.c:129
+#: cdk-pixbuf/io-jpeg.c:131
 #, c-format
 msgid "Error interpreting JPEG image file (%s)"
 msgstr "Galat menginterpretasi berkas citra JPEG (%s)"
 
-#: cdk-pixbuf/io-jpeg.c:637
+#: cdk-pixbuf/io-jpeg.c:647
 msgid ""
 "Insufficient memory to load image, try exiting some applications to free "
 "memory"
@@ -526,79 +527,79 @@ msgstr ""
 "Tak cukup memori untuk membuka gambar, cobalah untuk menutup aplikasi "
 "lainnya untuk mengosongkan memori"
 
-#: cdk-pixbuf/io-jpeg.c:710 cdk-pixbuf/io-jpeg.c:947
+#: cdk-pixbuf/io-jpeg.c:720 cdk-pixbuf/io-jpeg.c:970
 #, c-format
 msgid "Unsupported JPEG color space (%s)"
 msgstr "Ruang warna JPEG tidak bisa ditampilkan (%s)"
 
-#: cdk-pixbuf/io-jpeg.c:825 cdk-pixbuf/io-jpeg.c:1142 cdk-pixbuf/io-jpeg.c:1489
-#: cdk-pixbuf/io-jpeg.c:1499
+#: cdk-pixbuf/io-jpeg.c:845 cdk-pixbuf/io-jpeg.c:1169 cdk-pixbuf/io-jpeg.c:1516
+#: cdk-pixbuf/io-jpeg.c:1526
 msgid "Couldn’t allocate memory for loading JPEG file"
 msgstr "Tak bisa mengalokasikan memori untuk membuka berkas JPEG"
 
-#: cdk-pixbuf/io-jpeg.c:1100
+#: cdk-pixbuf/io-jpeg.c:1127
 msgid "Transformed JPEG has zero width or height."
 msgstr "JPEG yang telah ditransformasi memiliki lebar atau tinggi 0."
 
-#: cdk-pixbuf/io-jpeg.c:1126
+#: cdk-pixbuf/io-jpeg.c:1153
 #, c-format
 msgid "Unsupported number of color components (%d)"
 msgstr "Banyaknya komponen warna yang tidak didukung (%d)"
 
-#: cdk-pixbuf/io-jpeg.c:1419
+#: cdk-pixbuf/io-jpeg.c:1446
 #, c-format
 msgid ""
 "JPEG x-dpi must be a value between 1 and 65535; value “%s” is not allowed."
 msgstr "x-dpi JPEG harus bernilai antara 1 dan 65535; nilai “%s” tidak boleh."
 
-#: cdk-pixbuf/io-jpeg.c:1440
+#: cdk-pixbuf/io-jpeg.c:1467
 #, c-format
 msgid ""
 "JPEG y-dpi must be a value between 1 and 65535; value “%s” is not allowed."
 msgstr "y-dpi JPEG harus bernilai antara 1 dan 65535; nilai “%s” tidak boleh."
 
-#: cdk-pixbuf/io-jpeg.c:1454
+#: cdk-pixbuf/io-jpeg.c:1481
 #, c-format
 msgid "Color profile has invalid length “%u”."
 msgstr "Panjang profil warna \"%u\" tidak sah."
 
-#: cdk-pixbuf/io-png.c:63
+#: cdk-pixbuf/io-png.c:64
 msgid "Bits per channel of PNG image is invalid."
 msgstr "Nilai bit per kanal pada gambar PNG salah."
 
-#: cdk-pixbuf/io-png.c:144 cdk-pixbuf/io-png.c:703
+#: cdk-pixbuf/io-png.c:145 cdk-pixbuf/io-png.c:730
 msgid "Transformed PNG has zero width or height."
 msgstr "PNG tertransformasi memiliki lebar atau tinggi 0."
 
-#: cdk-pixbuf/io-png.c:152
+#: cdk-pixbuf/io-png.c:153
 msgid "Bits per channel of transformed PNG is not 8."
 msgstr ""
 "Nilai bit ber channel pada berkas PNG tertransformasi tidak bernilai 8."
 
-#: cdk-pixbuf/io-png.c:161
+#: cdk-pixbuf/io-png.c:162
 msgid "Transformed PNG not RGB or RGBA."
 msgstr "PNG tertransformasi bukan dalam mode RGB atau RGBA."
 
-#: cdk-pixbuf/io-png.c:170
+#: cdk-pixbuf/io-png.c:171
 msgid "Transformed PNG has unsupported number of channels, must be 3 or 4."
 msgstr ""
 "PNG tertransformasi berisi nilai channel yang salah, seharusnya bernilai 3 "
 "atau 4."
 
-#: cdk-pixbuf/io-png.c:191
+#: cdk-pixbuf/io-png.c:193
 #, c-format
 msgid "Fatal error in PNG image file: %s"
 msgstr "Error fatal pada berkas gambar PNG: %s"
 
-#: cdk-pixbuf/io-png.c:329
+#: cdk-pixbuf/io-png.c:338
 msgid "Insufficient memory to load PNG file"
 msgstr "Tak cukup memori untuk memuat berkas PNG"
 
-#: cdk-pixbuf/io-png.c:498 cdk-pixbuf/io-png.c:519
+#: cdk-pixbuf/io-png.c:519 cdk-pixbuf/io-png.c:540
 msgid "Couldn’t allocate memory for loading PNG"
 msgstr "Tak bisa mengalokasikan memori untuk memuat PNG"
 
-#: cdk-pixbuf/io-png.c:716
+#: cdk-pixbuf/io-png.c:743
 #, c-format
 msgid ""
 "Insufficient memory to store a %lu by %lu image; try exiting some "
@@ -607,16 +608,16 @@ msgstr ""
 "Memori tidak cukup untuk menyimpan gambar %lu x %lu; coba tutup beberapa "
 "aplikasi untuk mengurangi penggunaan memori"
 
-#: cdk-pixbuf/io-png.c:791
+#: cdk-pixbuf/io-png.c:820
 msgid "Fatal error reading PNG image file"
 msgstr "Error fatal saat membaca berkas gambar PNG"
 
-#: cdk-pixbuf/io-png.c:840
+#: cdk-pixbuf/io-png.c:873
 #, c-format
 msgid "Fatal error reading PNG image file: %s"
 msgstr "Error fatal saat membaca berkas gambar PNG: %s"
 
-#: cdk-pixbuf/io-png.c:937
+#: cdk-pixbuf/io-png.c:972
 #, c-format
 msgid ""
 "Invalid key “%s”. Keys for PNG text chunks must have at least 1 and at most "
@@ -625,14 +626,14 @@ msgstr ""
 "Kunci tidak valid \"%s\". Kunci untuk teks pecahan PNG harus berukuran "
 "antara 1 dan 79 karakter."
 
-#: cdk-pixbuf/io-png.c:950
+#: cdk-pixbuf/io-png.c:985
 #, c-format
 msgid "Invalid key “%s”. Keys for PNG text chunks must be ASCII characters."
 msgstr ""
 "Kunci tidak valid \"%s\". Kunci untuk teks pecahan PNG harus dalam karakter "
 "ASCII."
 
-#: cdk-pixbuf/io-png.c:980
+#: cdk-pixbuf/io-png.c:1015
 #, c-format
 msgid ""
 "Value for PNG text chunk '%s' cannot be converted to ISO-8859-1 encoding."
@@ -640,24 +641,24 @@ msgstr ""
 "Nilai untuk teks pecahan PNG '%s' tidak bisa dikonversikan ke gugus karakter "
 "ISO-8859-1."
 
-#: cdk-pixbuf/io-png.c:992
+#: cdk-pixbuf/io-png.c:1027
 #, c-format
 msgid "Color profile has invalid length %d"
 msgstr "Panjang profil warna %d tak valid"
 
-#: cdk-pixbuf/io-png.c:1004
+#: cdk-pixbuf/io-png.c:1039
 #, c-format
 msgid ""
 "PNG compression level must be a value between 0 and 9; value “%s” is invalid"
 msgstr ""
 "Tingkat kompresi PNG harus bernilai antara 0 dan 9; Nilai “%s” tidak valid"
 
-#: cdk-pixbuf/io-png.c:1018
+#: cdk-pixbuf/io-png.c:1053
 #, c-format
 msgid "PNG %s must be greater than zero; value “%s” is not allowed"
 msgstr "%s PNG harus lebih dari 0; nilai “%s” tidak boleh."
 
-#: cdk-pixbuf/io-png.c:1246
+#: cdk-pixbuf/io-png.c:1283
 msgctxt "image format"
 msgid "PNG"
 msgstr "PNG"
@@ -821,70 +822,70 @@ msgctxt "image format"
 msgid "Targa"
 msgstr "Targa"
 
-#: cdk-pixbuf/io-tiff.c:116
+#: cdk-pixbuf/io-tiff.c:117
 msgid "Could not get image width (bad TIFF file)"
 msgstr "Tak dapat menentukan lebar gambar (file TIFFnya rusak)"
 
-#: cdk-pixbuf/io-tiff.c:124
+#: cdk-pixbuf/io-tiff.c:125
 msgid "Could not get image height (bad TIFF file)"
 msgstr "Tak dapat menentukan tinggi gambar (file TIFFnya rusak)"
 
-#: cdk-pixbuf/io-tiff.c:132
+#: cdk-pixbuf/io-tiff.c:133
 msgid "Width or height of TIFF image is zero"
 msgstr "Lebar atau tinggi gambar TIFF ini bernilai nol"
 
-#: cdk-pixbuf/io-tiff.c:140 cdk-pixbuf/io-tiff.c:150
+#: cdk-pixbuf/io-tiff.c:141 cdk-pixbuf/io-tiff.c:151
 msgid "Dimensions of TIFF image too large"
 msgstr "Dimensi gambar TIFF ini terlampau besar"
 
-#: cdk-pixbuf/io-tiff.c:176 cdk-pixbuf/io-tiff.c:188 cdk-pixbuf/io-tiff.c:584
+#: cdk-pixbuf/io-tiff.c:177 cdk-pixbuf/io-tiff.c:189 cdk-pixbuf/io-tiff.c:585
 msgid "Insufficient memory to open TIFF file"
 msgstr "Memori yang tersedia tidak mencukupi untuk membuka berkas TIFF"
 
-#: cdk-pixbuf/io-tiff.c:286
+#: cdk-pixbuf/io-tiff.c:287
 msgid "Failed to load RGB data from TIFF file"
 msgstr "Data RGB gagal dibaca dari berkas TIFF"
 
-#: cdk-pixbuf/io-tiff.c:377
+#: cdk-pixbuf/io-tiff.c:378
 msgid "Failed to open TIFF image"
 msgstr "Gambar TIFF ini tidak dapat dibuka"
 
-#: cdk-pixbuf/io-tiff.c:515 cdk-pixbuf/io-tiff.c:527
+#: cdk-pixbuf/io-tiff.c:516 cdk-pixbuf/io-tiff.c:528
 msgid "Failed to load TIFF image"
 msgstr "Berkas TIFF tidak dapat dibuka"
 
-#: cdk-pixbuf/io-tiff.c:759
+#: cdk-pixbuf/io-tiff.c:760
 msgid "Failed to save TIFF image"
 msgstr "Gambar TIFF ini tidak dapat disimpan"
 
-#: cdk-pixbuf/io-tiff.c:820
+#: cdk-pixbuf/io-tiff.c:821
 msgid "TIFF compression doesn’t refer to a valid codec."
 msgstr "Kompresi TIFF tidak mengacu ke suatu codec yang valid."
 
-#: cdk-pixbuf/io-tiff.c:850
+#: cdk-pixbuf/io-tiff.c:851
 #, c-format
 msgid "Color profile has invalid length %d."
 msgstr "Panjang profil warna %d tak valid."
 
-#: cdk-pixbuf/io-tiff.c:865
+#: cdk-pixbuf/io-tiff.c:866
 msgid "TIFF bits-per-sample doesn’t contain a supported value."
 msgstr "bits-per-sample TIFF tak memuat suatu nilai yang didukung."
 
-#: cdk-pixbuf/io-tiff.c:946
+#: cdk-pixbuf/io-tiff.c:947
 msgid "Failed to write TIFF data"
 msgstr "Gambar TIFF ini tidak dapat ditulis"
 
-#: cdk-pixbuf/io-tiff.c:964
+#: cdk-pixbuf/io-tiff.c:965
 #, c-format
 msgid "TIFF x-dpi must be greater than zero; value “%s” is not allowed."
 msgstr "x-dpi TIFF harus lebih dari nol; nilai “%s” tidak diizinkan."
 
-#: cdk-pixbuf/io-tiff.c:976
+#: cdk-pixbuf/io-tiff.c:977
 #, c-format
 msgid "TIFF y-dpi must be greater than zero; value “%s” is not allowed."
 msgstr "y-dpi TIFF harus lebih dari nol; nilai “%s” tidak boleh."
 
-#: cdk-pixbuf/io-tiff.c:1017
+#: cdk-pixbuf/io-tiff.c:1018
 msgid "Couldn’t write to TIFF file"
 msgstr "Tak dapat menulis ke berkas TIFF"
 

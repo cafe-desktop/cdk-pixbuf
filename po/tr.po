@@ -20,8 +20,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cdk-pixbuf\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/cdk-pixbuf/issues\n"
-"POT-Creation-Date: 2023-02-22 11:55+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 08:56+0200\n"
 "PO-Revision-Date: 2023-02-20 17:24+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Türkçe <takim@gnome.org.tr>\n"
@@ -34,20 +34,20 @@ msgstr ""
 "X-POOTLE-MTIME: 1419206017.000000\n"
 
 # cdk-pixbuf/cdk-pixbuf-animation.c:144 cdk-pixbuf/cdk-pixbuf-io.c:516
-#: cdk-pixbuf/cdk-pixbuf-animation.c:185 cdk-pixbuf/cdk-pixbuf-io.c:1129
-#: cdk-pixbuf/cdk-pixbuf-io.c:1402
+#: cdk-pixbuf/cdk-pixbuf-animation.c:190 cdk-pixbuf/cdk-pixbuf-io.c:1224
+#: cdk-pixbuf/cdk-pixbuf-io.c:1497
 #, c-format
 msgid "Failed to open file “%s”: %s"
 msgstr "“%s” dosyası açılamadı: %s"
 
 # cdk-pixbuf/cdk-pixbuf-animation.c:155 cdk-pixbuf/cdk-pixbuf-io.c:526
-#: cdk-pixbuf/cdk-pixbuf-animation.c:198 cdk-pixbuf/cdk-pixbuf-io.c:990
+#: cdk-pixbuf/cdk-pixbuf-animation.c:203 cdk-pixbuf/cdk-pixbuf-io.c:1085
 #, c-format
 msgid "Image file “%s” contains no data"
 msgstr "Resim dosyası “%s” hiç bilgi içermiyor"
 
 # cdk-pixbuf/cdk-pixbuf-animation.c:233
-#: cdk-pixbuf/cdk-pixbuf-animation.c:236
+#: cdk-pixbuf/cdk-pixbuf-animation.c:241
 #, c-format
 msgid ""
 "Failed to load animation “%s”: reason not known, probably a corrupt "
@@ -57,8 +57,8 @@ msgstr ""
 "bozulmuş olabilir"
 
 # cdk-pixbuf/cdk-pixbuf-animation.c:205 cdk-pixbuf/cdk-pixbuf-io.c:571
-#: cdk-pixbuf/cdk-pixbuf-animation.c:304 cdk-pixbuf/cdk-pixbuf-io.c:1165
-#: cdk-pixbuf/cdk-pixbuf-io.c:1454
+#: cdk-pixbuf/cdk-pixbuf-animation.c:309 cdk-pixbuf/cdk-pixbuf-io.c:1260
+#: cdk-pixbuf/cdk-pixbuf-io.c:1549
 #, c-format
 msgid ""
 "Failed to load image “%s”: reason not known, probably a corrupt image file"
@@ -140,13 +140,13 @@ msgid "Readonly pixel data"
 msgstr "Salt okunur piksel verisi"
 
 # cdk-pixbuf/cdk-pixbuf-io.c:295
-#: cdk-pixbuf/cdk-pixbuf-io.c:807
+#: cdk-pixbuf/cdk-pixbuf-io.c:901
 #, c-format
 msgid "Unable to load image-loading module: %s: %s"
 msgstr "Resim yükleme modülü bulunamadı: %s: %s"
 
 # cdk-pixbuf/cdk-pixbuf-io.c:314
-#: cdk-pixbuf/cdk-pixbuf-io.c:824
+#: cdk-pixbuf/cdk-pixbuf-io.c:919
 #, c-format
 msgid ""
 "Image-loading module %s does not export the proper interface; perhaps it’s "
@@ -156,63 +156,63 @@ msgstr ""
 "sürümünden olabilir mi?"
 
 # cdk-pixbuf/cdk-pixbuf-io.c:425 cdk-pixbuf/cdk-pixbuf-io.c:451
-#: cdk-pixbuf/cdk-pixbuf-io.c:834 cdk-pixbuf/cdk-pixbuf-io.c:877
+#: cdk-pixbuf/cdk-pixbuf-io.c:929 cdk-pixbuf/cdk-pixbuf-io.c:972
 #, c-format
 msgid "Image type “%s” is not supported"
 msgstr "“%s” resim türü desteklenmiyor"
 
 # cdk-pixbuf/cdk-pixbuf-io.c:473
-#: cdk-pixbuf/cdk-pixbuf-io.c:962
+#: cdk-pixbuf/cdk-pixbuf-io.c:1057
 #, c-format
 msgid "Couldn’t recognize the image file format for file “%s”"
 msgstr "“%s” dosyasındaki resmin biçimi anlaşılamadı"
 
 # cdk-pixbuf/cdk-pixbuf-io.c:479
-#: cdk-pixbuf/cdk-pixbuf-io.c:970
+#: cdk-pixbuf/cdk-pixbuf-io.c:1065
 msgid "Unrecognized image file format"
 msgstr "Bilinmeyen resim dosyası biçimi"
 
 # cdk-pixbuf/cdk-pixbuf-io.c:582
-#: cdk-pixbuf/cdk-pixbuf-io.c:1176
+#: cdk-pixbuf/cdk-pixbuf-io.c:1271
 #, c-format
 msgid "Failed to load image “%s”: %s"
 msgstr "“%s” resmi yüklenemedi: %s"
 
 # cdk-pixbuf/io-jpeg.c:125
-#: cdk-pixbuf/cdk-pixbuf-io.c:2244 cdk-pixbuf/io-gdip-utils.c:840
+#: cdk-pixbuf/cdk-pixbuf-io.c:2346 cdk-pixbuf/io-gdip-utils.c:840
 #, c-format
 msgid "Error writing to image file: %s"
 msgstr "JPEG resim dosyası işlenirken hata: %s"
 
 # cdk-pixbuf/cdk-pixbuf-io.c:687
-#: cdk-pixbuf/cdk-pixbuf-io.c:2286 cdk-pixbuf/cdk-pixbuf-io.c:2407
+#: cdk-pixbuf/cdk-pixbuf-io.c:2388 cdk-pixbuf/cdk-pixbuf-io.c:2509
 #, c-format
 msgid "This build of cdk-pixbuf does not support saving the image format: %s"
 msgstr "cdk-pixbuf'un bu inşası resim biçimi kaydını desteklemiyor: %s"
 
 # cdk-pixbuf/io-xbm.c:295
-#: cdk-pixbuf/cdk-pixbuf-io.c:2317
+#: cdk-pixbuf/cdk-pixbuf-io.c:2419
 msgid "Insufficient memory to save image to callback"
 msgstr "Geri çağırım için resim kaydedilirken yetersiz bellek"
 
 # cdk-pixbuf/io-tiff.c:264
-#: cdk-pixbuf/cdk-pixbuf-io.c:2330
+#: cdk-pixbuf/cdk-pixbuf-io.c:2432
 msgid "Failed to open temporary file"
 msgstr "Geçici dosya açılamadı"
 
 # cdk-pixbuf/io-xbm.c:429
-#: cdk-pixbuf/cdk-pixbuf-io.c:2353
+#: cdk-pixbuf/cdk-pixbuf-io.c:2455
 msgid "Failed to read from temporary file"
 msgstr "Geçici dosya okumak için açılamadı"
 
 # cdk-pixbuf/cdk-pixbuf-io.c:790
-#: cdk-pixbuf/cdk-pixbuf-io.c:2575
+#: cdk-pixbuf/cdk-pixbuf-io.c:2677
 #, c-format
 msgid "Failed to open “%s” for writing: %s"
 msgstr "“%s” dosyası yazmak için açılamadı: %s"
 
 # cdk-pixbuf/cdk-pixbuf-io.c:811
-#: cdk-pixbuf/cdk-pixbuf-io.c:2601
+#: cdk-pixbuf/cdk-pixbuf-io.c:2703
 #, c-format
 msgid ""
 "Failed to close “%s” while writing image, all data may not have been saved: "
@@ -221,17 +221,17 @@ msgstr ""
 "Resim yazılırken “%s” kapatılamadı, tüm veri kaydedilememiş olabilir: %s"
 
 # cdk-pixbuf/io-xbm.c:295
-#: cdk-pixbuf/cdk-pixbuf-io.c:2835 cdk-pixbuf/cdk-pixbuf-io.c:2890
+#: cdk-pixbuf/cdk-pixbuf-io.c:2937 cdk-pixbuf/cdk-pixbuf-io.c:2992
 msgid "Insufficient memory to save image into a buffer"
 msgstr "Resmi tampona kaydetmek için yetersiz bellek"
 
 # cdk-pixbuf/io-jpeg.c:125
-#: cdk-pixbuf/cdk-pixbuf-io.c:2936
+#: cdk-pixbuf/cdk-pixbuf-io.c:3038
 msgid "Error writing to image stream"
 msgstr "Resim akışına yazılırken hata"
 
 # cdk-pixbuf/cdk-pixbuf-loader.c:275 cdk-pixbuf/cdk-pixbuf-loader.c:376
-#: cdk-pixbuf/cdk-pixbuf-loader.c:416
+#: cdk-pixbuf/cdk-pixbuf-loader.c:426
 #, c-format
 msgid ""
 "Internal error: Image loader module “%s” failed to complete an operation, "
@@ -241,16 +241,16 @@ msgstr ""
 "başarısızlık nedeni de vermedi"
 
 # cdk-pixbuf/cdk-pixbuf-loader.c:252
-#: cdk-pixbuf/cdk-pixbuf-loader.c:458
+#: cdk-pixbuf/cdk-pixbuf-loader.c:468
 #, c-format
 msgid "Incremental loading of image type “%s” is not supported"
 msgstr "Resim türü “%s” için arttırımlı yükleme desteklenmiyor"
 
-#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:162
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:166
 msgid "Loop"
 msgstr "Döngü"
 
-#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:163
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:167
 msgid "Whether the animation should loop when it reaches the end"
 msgstr "Canlandırmanın bittikten sonra tekrar başa dönüp dönmeyeceği"
 
@@ -281,91 +281,93 @@ msgstr[0] "%u baytlık resim tamponu ayrılamadı"
 msgid "Unexpected icon chunk in animation"
 msgstr "Canlandırmada beklenmeyen simge yığını"
 
-#: cdk-pixbuf/io-ani.c:337 cdk-pixbuf/io-ani.c:395 cdk-pixbuf/io-ani.c:421
-#: cdk-pixbuf/io-ani.c:444 cdk-pixbuf/io-ani.c:471 cdk-pixbuf/io-ani.c:558
+#: cdk-pixbuf/io-ani.c:303 cdk-pixbuf/io-ani.c:404 cdk-pixbuf/io-ani.c:430
+#: cdk-pixbuf/io-ani.c:449
+msgid "Malformed chunk in animation"
+msgstr "Canlandırmada yanlış biçimlendirilmiş yığın"
+
+#: cdk-pixbuf/io-ani.c:311 cdk-pixbuf/io-ani.c:354 cdk-pixbuf/io-ani.c:412
+#: cdk-pixbuf/io-ani.c:438 cdk-pixbuf/io-ani.c:461 cdk-pixbuf/io-ani.c:488
+#: cdk-pixbuf/io-ani.c:575
 msgid "Invalid header in animation"
 msgstr "Canlandırma içinde geçersiz başlık"
 
 # cdk-pixbuf/io-gif.c:746 cdk-pixbuf/io-gif.c:1340 cdk-pixbuf/io-gif.c:1385
 # cdk-pixbuf/io-gif.c:1499
-#: cdk-pixbuf/io-ani.c:347 cdk-pixbuf/io-ani.c:369 cdk-pixbuf/io-ani.c:453
-#: cdk-pixbuf/io-ani.c:480 cdk-pixbuf/io-ani.c:531 cdk-pixbuf/io-ani.c:607
+#: cdk-pixbuf/io-ani.c:364 cdk-pixbuf/io-ani.c:386 cdk-pixbuf/io-ani.c:470
+#: cdk-pixbuf/io-ani.c:497 cdk-pixbuf/io-ani.c:548 cdk-pixbuf/io-ani.c:624
 msgid "Not enough memory to load animation"
 msgstr "Canlandırma dosyasını yüklemek için yetersiz bellek"
 
-#: cdk-pixbuf/io-ani.c:387 cdk-pixbuf/io-ani.c:413 cdk-pixbuf/io-ani.c:432
-msgid "Malformed chunk in animation"
-msgstr "Canlandırmada yanlış biçimlendirilmiş yığın"
-
 # cdk-pixbuf/io-gif.c:1407
-#: cdk-pixbuf/io-ani.c:629
+#: cdk-pixbuf/io-ani.c:646
 msgid "ANI image was truncated or incomplete."
 msgstr "ANI resmi ya kırpılmış ya da tamamlanmamış."
 
-#: cdk-pixbuf/io-ani.c:670
+#: cdk-pixbuf/io-ani.c:687
 msgctxt "image format"
 msgid "Windows animated cursor"
 msgstr "Pencere canlandırmalı imleç"
 
 # cdk-pixbuf/io-bmp.c:278 cdk-pixbuf/io-bmp.c:300
-#: cdk-pixbuf/io-bmp.c:231 cdk-pixbuf/io-bmp.c:269 cdk-pixbuf/io-bmp.c:376
-#: cdk-pixbuf/io-bmp.c:403 cdk-pixbuf/io-bmp.c:428 cdk-pixbuf/io-bmp.c:463
-#: cdk-pixbuf/io-bmp.c:485 cdk-pixbuf/io-bmp.c:563
+#: cdk-pixbuf/io-bmp.c:234 cdk-pixbuf/io-bmp.c:275 cdk-pixbuf/io-bmp.c:385
+#: cdk-pixbuf/io-bmp.c:412 cdk-pixbuf/io-bmp.c:437 cdk-pixbuf/io-bmp.c:472
+#: cdk-pixbuf/io-bmp.c:494 cdk-pixbuf/io-bmp.c:572
 msgid "BMP image has bogus header data"
 msgstr "BMP resmi başlığı hatalı veri içeriyor"
 
 # cdk-pixbuf/io-bmp.c:325
-#: cdk-pixbuf/io-bmp.c:242 cdk-pixbuf/io-bmp.c:498
+#: cdk-pixbuf/io-bmp.c:245 cdk-pixbuf/io-bmp.c:507
 msgid "Not enough memory to load bitmap image"
 msgstr "Biteşlem resmi yüklemek için bellek yetersiz"
 
 # cdk-pixbuf/io-bmp.c:255
-#: cdk-pixbuf/io-bmp.c:333
+#: cdk-pixbuf/io-bmp.c:339
 msgid "BMP image has unsupported header size"
 msgstr "BMP resmi desteklenmeyen bir başlık büyüklüğüne sahip"
 
 # cdk-pixbuf/io-bmp.c:255
-#: cdk-pixbuf/io-bmp.c:343
+#: cdk-pixbuf/io-bmp.c:348
 msgid "BMP image has unsupported depth"
 msgstr "BMP resmi desteklenmeyen bir derinliğe sahip"
 
 # cdk-pixbuf/io-bmp.c:278 cdk-pixbuf/io-bmp.c:300
-#: cdk-pixbuf/io-bmp.c:358
+#: cdk-pixbuf/io-bmp.c:367
 msgid "BMP image has oversize palette"
 msgstr "BMP resmi olağandan büyük palete sahip"
 
-#: cdk-pixbuf/io-bmp.c:390
+#: cdk-pixbuf/io-bmp.c:399
 msgid "Topdown BMP images cannot be compressed"
 msgstr "Yukarıdan aşağıya BMP resimleri sıkıştırılamıyor"
 
-#: cdk-pixbuf/io-bmp.c:415
+#: cdk-pixbuf/io-bmp.c:424
 msgid "BMP image width too large"
 msgstr "BMP resminin genişliği çok büyük"
 
-#: cdk-pixbuf/io-bmp.c:792 cdk-pixbuf/io-png.c:564 cdk-pixbuf/io-pnm.c:722
+#: cdk-pixbuf/io-bmp.c:814 cdk-pixbuf/io-png.c:587 cdk-pixbuf/io-pnm.c:722
 #: cdk-pixbuf/io-pnm.c:879
 msgid "Premature end-of-file encountered"
 msgstr "Erken dosya sonu ile karşılaşıldı"
 
-#: cdk-pixbuf/io-bmp.c:1313
+#: cdk-pixbuf/io-bmp.c:1340
 msgid "Error while decoding colormap"
 msgstr "Renk eşlemi çözümlenirken hata"
 
-#: cdk-pixbuf/io-bmp.c:1376 cdk-pixbuf/io-bmp.c:1388
+#: cdk-pixbuf/io-bmp.c:1403 cdk-pixbuf/io-bmp.c:1415
 msgid "Image is too wide for BMP format."
 msgstr "Resim BMP formatı için çok geniş."
 
 # cdk-pixbuf/io-jpeg.c:529
-#: cdk-pixbuf/io-bmp.c:1421
+#: cdk-pixbuf/io-bmp.c:1448
 msgid "Couldn’t allocate memory for saving BMP file"
 msgstr "BMP dosyasını kaydetmek için bellek ayrılamadı"
 
 # ctk/ctkfilesel.c:3277
-#: cdk-pixbuf/io-bmp.c:1462
+#: cdk-pixbuf/io-bmp.c:1489
 msgid "Couldn’t write to BMP file"
 msgstr "BMP dosyasına yazılamadı"
 
-#: cdk-pixbuf/io-bmp.c:1515 cdk-pixbuf/io-gdip-bmp.c:83
+#: cdk-pixbuf/io-bmp.c:1542 cdk-pixbuf/io-gdip-bmp.c:83
 msgctxt "image format"
 msgid "BMP"
 msgstr "BMP"
@@ -375,18 +377,18 @@ msgctxt "image format"
 msgid "EMF"
 msgstr "EMF"
 
-#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1037
+#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1039
 msgctxt "image format"
 msgid "GIF"
 msgstr "GIF"
 
-#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1412
+#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1418
 msgctxt "image format"
 msgid "Windows icon"
 msgstr "Windows simgesi"
 
 # cdk-pixbuf/io-jpeg.c:655
-#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1394
+#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1409
 #, c-format
 msgid ""
 "JPEG quality must be a value between 0 and 100; value “%s” could not be "
@@ -396,7 +398,7 @@ msgstr ""
 "ayrıştırılamadı."
 
 # cdk-pixbuf/io-jpeg.c:670
-#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1410
+#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1425
 #, c-format
 msgid ""
 "JPEG quality must be a value between 0 and 100; value “%d” is not allowed."
@@ -404,7 +406,7 @@ msgstr ""
 "JPEG kalitesi 0 ile 100 arasında bir değer olmalı; “%d” değeri kabul "
 "edilmiyor."
 
-#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1694
+#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1710
 msgctxt "image format"
 msgid "JPEG"
 msgstr "JPEG"
@@ -462,40 +464,40 @@ msgid "WMF"
 msgstr "WMF"
 
 # cdk-pixbuf/io-gif.c:218
-#: cdk-pixbuf/io-gif.c:158
+#: cdk-pixbuf/io-gif.c:160
 #, c-format
 msgid "Failure reading GIF: %s"
 msgstr "GIF okunamadı: %s"
 
 # cdk-pixbuf/io-gif.c:746 cdk-pixbuf/io-gif.c:1340 cdk-pixbuf/io-gif.c:1385
 # cdk-pixbuf/io-gif.c:1499
-#: cdk-pixbuf/io-gif.c:381 cdk-pixbuf/io-gif.c:848 cdk-pixbuf/io-gif.c:901
-#: cdk-pixbuf/io-gif.c:974
+#: cdk-pixbuf/io-gif.c:383 cdk-pixbuf/io-gif.c:850 cdk-pixbuf/io-gif.c:903
+#: cdk-pixbuf/io-gif.c:976
 msgid "Not enough memory to load GIF file"
 msgstr "GIF dosyasını yüklemek için yetersiz bellek"
 
 # cdk-pixbuf/io-gif.c:990
-#: cdk-pixbuf/io-gif.c:507
+#: cdk-pixbuf/io-gif.c:509
 msgid "GIF image is corrupt (incorrect LZW compression)"
 msgstr "Bozuk GIF dosyası (LZW sıkıştırması yanlış)"
 
 # cdk-pixbuf/io-gif.c:1040
-#: cdk-pixbuf/io-gif.c:543
+#: cdk-pixbuf/io-gif.c:545
 msgid "File does not appear to be a GIF file"
 msgstr "Dosya bir GIF dosyası gibi görünmüyor"
 
 # cdk-pixbuf/io-gif.c:1052
-#: cdk-pixbuf/io-gif.c:558
+#: cdk-pixbuf/io-gif.c:560
 #, c-format
 msgid "Version %s of the GIF file format is not supported"
 msgstr "%s sürümü GIF dosya biçimi desteklenmiyor"
 
-#: cdk-pixbuf/io-gif.c:587
+#: cdk-pixbuf/io-gif.c:589
 msgid "Resulting GIF image has zero size"
 msgstr "Oluşan GIF resim boyutu sıfır"
 
 # cdk-pixbuf/io-gif.c:1178
-#: cdk-pixbuf/io-gif.c:657
+#: cdk-pixbuf/io-gif.c:659
 msgid ""
 "GIF image has no global colormap, and a frame inside it has no local "
 "colormap."
@@ -504,16 +506,16 @@ msgstr ""
 "de yok."
 
 # cdk-pixbuf/io-gif.c:460 cdk-pixbuf/io-gif.c:1352 cdk-pixbuf/io-gif.c:1511
-#: cdk-pixbuf/io-gif.c:861 cdk-pixbuf/io-gif.c:986
+#: cdk-pixbuf/io-gif.c:863 cdk-pixbuf/io-gif.c:988
 msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
 msgstr "GIF dosyasında veri eksik (dosya kırpılmış olabilir mi?)"
 
 # cdk-pixbuf/io-gif.c:1407
-#: cdk-pixbuf/io-gif.c:920
+#: cdk-pixbuf/io-gif.c:922
 msgid "GIF image was truncated or incomplete."
 msgstr "GIF resmi ya kırpılmış ya da tamamlanmamış."
 
-#: cdk-pixbuf/io-gif.c:927
+#: cdk-pixbuf/io-gif.c:929
 msgid "Not all frames of the GIF image were loaded."
 msgstr "GIF resminin tüm kareleri yüklenmedi."
 
@@ -583,13 +585,13 @@ msgid "Unsupported depth for ICO file: %d"
 msgstr "ICO dosyası için desteklenmeyen derinlik: %d"
 
 # cdk-pixbuf/io-jpeg.c:125
-#: cdk-pixbuf/io-jpeg.c:129
+#: cdk-pixbuf/io-jpeg.c:131
 #, c-format
 msgid "Error interpreting JPEG image file (%s)"
 msgstr "JPEG resim dosyası işlenirken hata (%s)"
 
 # cdk-pixbuf/io-jpeg.c:234
-#: cdk-pixbuf/io-jpeg.c:638
+#: cdk-pixbuf/io-jpeg.c:647
 msgid ""
 "Insufficient memory to load image, try exiting some applications to free "
 "memory"
@@ -597,28 +599,28 @@ msgstr ""
 "Resim yüklemek için bellek yetersiz, diğer uygulamaları kapatarak belleği "
 "boşaltmayı deneyin"
 
-#: cdk-pixbuf/io-jpeg.c:711 cdk-pixbuf/io-jpeg.c:956
+#: cdk-pixbuf/io-jpeg.c:720 cdk-pixbuf/io-jpeg.c:970
 #, c-format
 msgid "Unsupported JPEG color space (%s)"
 msgstr "Desteklenmeyen JPEG renk uzayı (%s)"
 
 # cdk-pixbuf/io-jpeg.c:529
-#: cdk-pixbuf/io-jpeg.c:834 cdk-pixbuf/io-jpeg.c:1154 cdk-pixbuf/io-jpeg.c:1501
-#: cdk-pixbuf/io-jpeg.c:1511
+#: cdk-pixbuf/io-jpeg.c:845 cdk-pixbuf/io-jpeg.c:1169 cdk-pixbuf/io-jpeg.c:1516
+#: cdk-pixbuf/io-jpeg.c:1526
 msgid "Couldn’t allocate memory for loading JPEG file"
 msgstr "JPEG dosyasını yüklemek için bellek ayrılamadı"
 
-#: cdk-pixbuf/io-jpeg.c:1112
+#: cdk-pixbuf/io-jpeg.c:1127
 msgid "Transformed JPEG has zero width or height."
 msgstr "Dönüştürülmüş JPEG resminin genişliği ve yüksekliği sıfır."
 
-#: cdk-pixbuf/io-jpeg.c:1138
+#: cdk-pixbuf/io-jpeg.c:1153
 #, c-format
 msgid "Unsupported number of color components (%d)"
 msgstr "Desteklenmeyen sayıda renk bileşeni (%d)"
 
 # cdk-pixbuf/io-jpeg.c:670
-#: cdk-pixbuf/io-jpeg.c:1431
+#: cdk-pixbuf/io-jpeg.c:1446
 #, c-format
 msgid ""
 "JPEG x-dpi must be a value between 1 and 65535; value “%s” is not allowed."
@@ -627,7 +629,7 @@ msgstr ""
 "edilmiyor."
 
 # cdk-pixbuf/io-jpeg.c:670
-#: cdk-pixbuf/io-jpeg.c:1452
+#: cdk-pixbuf/io-jpeg.c:1467
 #, c-format
 msgid ""
 "JPEG y-dpi must be a value between 1 and 65535; value “%s” is not allowed."
@@ -635,50 +637,50 @@ msgstr ""
 "JPEG y-dpi 0 ile 65535 arasında bir değer olmalıdır; “%s” değeri kabul "
 "edilmiyor."
 
-#: cdk-pixbuf/io-jpeg.c:1466
+#: cdk-pixbuf/io-jpeg.c:1481
 #, c-format
 msgid "Color profile has invalid length “%u”."
 msgstr "Renk profili için geçersiz uzunluk “%u”."
 
 # cdk-pixbuf/io-pnm.c:423 cdk-pixbuf/io-pnm.c:451 cdk-pixbuf/io-pnm.c:483
-#: cdk-pixbuf/io-png.c:63
+#: cdk-pixbuf/io-png.c:64
 msgid "Bits per channel of PNG image is invalid."
 msgstr "PNG dosyasının kanal başına bit sayısı geçersiz."
 
-#: cdk-pixbuf/io-png.c:144 cdk-pixbuf/io-png.c:703
+#: cdk-pixbuf/io-png.c:145 cdk-pixbuf/io-png.c:730
 msgid "Transformed PNG has zero width or height."
 msgstr "Dönüştürülmüş PNG resminin genişliği ve yüksekliği sıfır."
 
-#: cdk-pixbuf/io-png.c:152
+#: cdk-pixbuf/io-png.c:153
 msgid "Bits per channel of transformed PNG is not 8."
 msgstr "Dönüştürülmüş PNG'nin kanal başına bit sayısı 8 değil."
 
-#: cdk-pixbuf/io-png.c:161
+#: cdk-pixbuf/io-png.c:162
 msgid "Transformed PNG not RGB or RGBA."
 msgstr "Dönüştürülen PNG,  RGB veya RGBA değil."
 
-#: cdk-pixbuf/io-png.c:170
+#: cdk-pixbuf/io-png.c:171
 msgid "Transformed PNG has unsupported number of channels, must be 3 or 4."
 msgstr "Dönüştürülmüş PNG'de desteklenmeyen sayıda kanal var, 3 veya 4 olmalı."
 
 # cdk-pixbuf/io-png.c:161
-#: cdk-pixbuf/io-png.c:191
+#: cdk-pixbuf/io-png.c:193
 #, c-format
 msgid "Fatal error in PNG image file: %s"
 msgstr "PNG resim dosyasında ölümcül hata: %s"
 
 # cdk-pixbuf/io-png.c:245
-#: cdk-pixbuf/io-png.c:329
+#: cdk-pixbuf/io-png.c:338
 msgid "Insufficient memory to load PNG file"
 msgstr "PNG dosyasını yüklemek için yetersiz bellek"
 
 # cdk-pixbuf/io-jpeg.c:529
-#: cdk-pixbuf/io-png.c:498 cdk-pixbuf/io-png.c:519
+#: cdk-pixbuf/io-png.c:519 cdk-pixbuf/io-png.c:540
 msgid "Couldn’t allocate memory for loading PNG"
 msgstr "PNG yüklemek için bellek ayrılamadı"
 
 # cdk-pixbuf/io-png.c:536
-#: cdk-pixbuf/io-png.c:716
+#: cdk-pixbuf/io-png.c:743
 #, c-format
 msgid ""
 "Insufficient memory to store a %lu by %lu image; try exiting some "
@@ -688,17 +690,17 @@ msgstr ""
 "kapatarak bellek kullanımını düşürmeyi deneyin"
 
 # cdk-pixbuf/io-png.c:610
-#: cdk-pixbuf/io-png.c:791
+#: cdk-pixbuf/io-png.c:820
 msgid "Fatal error reading PNG image file"
 msgstr "PNG resim dosyası okunurken ölümcül hata"
 
 # cdk-pixbuf/io-png.c:610
-#: cdk-pixbuf/io-png.c:840
+#: cdk-pixbuf/io-png.c:873
 #, c-format
 msgid "Fatal error reading PNG image file: %s"
 msgstr "PNG resim dosyası okunurken ölümcül hata: %s"
 
-#: cdk-pixbuf/io-png.c:937
+#: cdk-pixbuf/io-png.c:972
 #, c-format
 msgid ""
 "Invalid key “%s”. Keys for PNG text chunks must have at least 1 and at most "
@@ -707,25 +709,25 @@ msgstr ""
 "Geçersiz anahtar “%s”. PNG metin yığın anahtarları en az 1 en çok 79 "
 "karakter olabilirler."
 
-#: cdk-pixbuf/io-png.c:950
+#: cdk-pixbuf/io-png.c:985
 #, c-format
 msgid "Invalid key “%s”. Keys for PNG text chunks must be ASCII characters."
 msgstr ""
 "Geçersiz anahtar “%s”. PNG metin yığın anahtarları ASCII karakter olmalıdır."
 
-#: cdk-pixbuf/io-png.c:980
+#: cdk-pixbuf/io-png.c:1015
 #, c-format
 msgid ""
 "Value for PNG text chunk '%s' cannot be converted to ISO-8859-1 encoding."
 msgstr "'%s' PNG metin yığın değerleri ISO-8859-1 kodlamaya dönüştürülemiyor."
 
-#: cdk-pixbuf/io-png.c:992
+#: cdk-pixbuf/io-png.c:1027
 #, c-format
 msgid "Color profile has invalid length %d"
 msgstr "Renk profili %d geçersiz uzunlukta"
 
 # cdk-pixbuf/io-jpeg.c:670
-#: cdk-pixbuf/io-png.c:1004
+#: cdk-pixbuf/io-png.c:1039
 #, c-format
 msgid ""
 "PNG compression level must be a value between 0 and 9; value “%s” is invalid"
@@ -733,12 +735,12 @@ msgstr ""
 "PNG sıkıştırma düzeyi 0 ile 9 arasında bir değer olmalı; “%s” değeri geçersiz"
 
 # cdk-pixbuf/io-jpeg.c:670
-#: cdk-pixbuf/io-png.c:1018
+#: cdk-pixbuf/io-png.c:1053
 #, c-format
 msgid "PNG %s must be greater than zero; value “%s” is not allowed"
 msgstr "PNG %s sıfırdan büyük olmalıdır; “%s” değeri kabul edilmiyor"
 
-#: cdk-pixbuf/io-png.c:1246
+#: cdk-pixbuf/io-png.c:1283
 msgctxt "image format"
 msgid "PNG"
 msgstr "PNG"

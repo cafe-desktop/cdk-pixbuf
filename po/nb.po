@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cdk-pixbuf 2.40.x\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/cdk-pixbuf/issues/new\n"
-"POT-Creation-Date: 2025-12-10 13:36+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 08:56+0200\n"
 "PO-Revision-Date: 2026-01-09 00:18+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
@@ -17,13 +17,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:190 cdk-pixbuf/cdk-pixbuf-io.c:1216
-#: cdk-pixbuf/cdk-pixbuf-io.c:1489
+#: cdk-pixbuf/cdk-pixbuf-animation.c:190 cdk-pixbuf/cdk-pixbuf-io.c:1224
+#: cdk-pixbuf/cdk-pixbuf-io.c:1497
 #, c-format
 msgid "Failed to open file “%s”: %s"
 msgstr "Klarte ikke å åpne fil «%s»: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:203 cdk-pixbuf/cdk-pixbuf-io.c:1077
+#: cdk-pixbuf/cdk-pixbuf-animation.c:203 cdk-pixbuf/cdk-pixbuf-io.c:1085
 #, c-format
 msgid "Image file “%s” contains no data"
 msgstr "Bildefil «%s» inneholder ikke data"
@@ -37,8 +37,8 @@ msgstr ""
 "Klarte ikke å laste animasjon «%s»: årsak ikke kjent, sannsynligvis korrupt "
 "animasjonsfil"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:309 cdk-pixbuf/cdk-pixbuf-io.c:1252
-#: cdk-pixbuf/cdk-pixbuf-io.c:1541
+#: cdk-pixbuf/cdk-pixbuf-animation.c:309 cdk-pixbuf/cdk-pixbuf-io.c:1260
+#: cdk-pixbuf/cdk-pixbuf-io.c:1549
 #, c-format
 msgid ""
 "Failed to load image “%s”: reason not known, probably a corrupt image file"
@@ -119,12 +119,12 @@ msgstr "Pixelbytes"
 msgid "Readonly pixel data"
 msgstr "Skrivebeskyttede pikseldata"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:893
+#: cdk-pixbuf/cdk-pixbuf-io.c:901
 #, c-format
 msgid "Unable to load image-loading module: %s: %s"
 msgstr "Kan ikke laste modul for innlesing av bilder: %s: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:911
+#: cdk-pixbuf/cdk-pixbuf-io.c:919
 #, c-format
 msgid ""
 "Image-loading module %s does not export the proper interface; perhaps it’s "
@@ -133,54 +133,54 @@ msgstr ""
 "Modul %s for bildelasting eksporterer ikke riktig grensesnitt; kanskje den "
 "er fra en annen versjon av cdk-pixbuf?"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:921 cdk-pixbuf/cdk-pixbuf-io.c:964
+#: cdk-pixbuf/cdk-pixbuf-io.c:929 cdk-pixbuf/cdk-pixbuf-io.c:972
 #, c-format
 msgid "Image type “%s” is not supported"
 msgstr "Bildetype «%s» er ikke støttet"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:1049
+#: cdk-pixbuf/cdk-pixbuf-io.c:1057
 #, c-format
 msgid "Couldn’t recognize the image file format for file “%s”"
 msgstr "Kunne ikke gjenkjenne bildeformatet for fil «%s»"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:1057
+#: cdk-pixbuf/cdk-pixbuf-io.c:1065
 msgid "Unrecognized image file format"
 msgstr "Ikke-gjenkjent bildeformat"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:1263
+#: cdk-pixbuf/cdk-pixbuf-io.c:1271
 #, c-format
 msgid "Failed to load image “%s”: %s"
 msgstr "Feil under lasting av bilde «%s»: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2338 cdk-pixbuf/io-gdip-utils.c:840
+#: cdk-pixbuf/cdk-pixbuf-io.c:2346 cdk-pixbuf/io-gdip-utils.c:840
 #, c-format
 msgid "Error writing to image file: %s"
 msgstr "Feil under skriving til bildefil: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2380 cdk-pixbuf/cdk-pixbuf-io.c:2501
+#: cdk-pixbuf/cdk-pixbuf-io.c:2388 cdk-pixbuf/cdk-pixbuf-io.c:2509
 #, c-format
 msgid "This build of cdk-pixbuf does not support saving the image format: %s"
 msgstr ""
 "Dette versjonen av cdk-pixbuf støtter ikke lagring av bildeformatet: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2411
+#: cdk-pixbuf/cdk-pixbuf-io.c:2419
 msgid "Insufficient memory to save image to callback"
 msgstr "Ikke nok minne til å lagre bilde til callback"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2424
+#: cdk-pixbuf/cdk-pixbuf-io.c:2432
 msgid "Failed to open temporary file"
 msgstr "Kunne ikke åpne midlertidig fil"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2447
+#: cdk-pixbuf/cdk-pixbuf-io.c:2455
 msgid "Failed to read from temporary file"
 msgstr "Kunne ikke lese fra midlertidig fil"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2669
+#: cdk-pixbuf/cdk-pixbuf-io.c:2677
 #, c-format
 msgid "Failed to open “%s” for writing: %s"
 msgstr "Feil under åpning av «%s» for skriving: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2695
+#: cdk-pixbuf/cdk-pixbuf-io.c:2703
 #, c-format
 msgid ""
 "Failed to close “%s” while writing image, all data may not have been saved: "
@@ -189,11 +189,11 @@ msgstr ""
 "Feil under lukking av «%s» under skriving av bilde. Det er ikke sikkert at "
 "alle data er lagret: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2929 cdk-pixbuf/cdk-pixbuf-io.c:2984
+#: cdk-pixbuf/cdk-pixbuf-io.c:2937 cdk-pixbuf/cdk-pixbuf-io.c:2992
 msgid "Insufficient memory to save image into a buffer"
 msgstr "Ikke nok minne til å lagre bilde til buffer"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:3030
+#: cdk-pixbuf/cdk-pixbuf-io.c:3038
 msgid "Error writing to image stream"
 msgstr "Feil under skriving til bildestrøm"
 
@@ -620,7 +620,9 @@ msgstr "Fatal feil under lesing av PNG-bildefil: %s"
 msgid ""
 "Invalid key “%s”. Keys for PNG text chunks must have at least 1 and at most "
 "79 characters."
-msgstr "Ugyldig nøkkel «%s». Nøkler for PNG tekstbiter må minst ha mellom 1 og 79 tegn."
+msgstr ""
+"Ugyldig nøkkel «%s». Nøkler for PNG tekstbiter må minst ha mellom 1 og 79 "
+"tegn."
 
 #: cdk-pixbuf/io-png.c:985
 #, c-format
@@ -631,7 +633,8 @@ msgstr "Ugyldig nøkkel «%s». Nøkler for PNG tekstbiter må bestå av ASCII-t
 #, c-format
 msgid ""
 "Value for PNG text chunk '%s' cannot be converted to ISO-8859-1 encoding."
-msgstr "Verdi for PNG-tekstbit «%s» kan ikke konverteres til ISO-8859-1-koding."
+msgstr ""
+"Verdi for PNG-tekstbit «%s» kan ikke konverteres til ISO-8859-1-koding."
 
 #: cdk-pixbuf/io-png.c:1027
 #, c-format
@@ -642,7 +645,9 @@ msgstr "Fargeprofilen har ugyldig lengde %d"
 #, c-format
 msgid ""
 "PNG compression level must be a value between 0 and 9; value “%s” is invalid"
-msgstr "Nivået på PNG-komprimering må være en verdi mellom 0 og 9; verdien «%s» er ikke tillatt"
+msgstr ""
+"Nivået på PNG-komprimering må være en verdi mellom 0 og 9; verdien «%s» er "
+"ikke tillatt"
 
 #: cdk-pixbuf/io-png.c:1053
 #, c-format

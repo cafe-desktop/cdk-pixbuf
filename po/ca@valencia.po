@@ -30,9 +30,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ctk+ 2.8.2\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=cdk-"
-"pixbuf&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-09-10 06:41+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 08:56+0200\n"
 "PO-Revision-Date: 2017-03-20 21:26+0100\n"
 "Last-Translator: Xavi Ivars <xavi.ivars@gmail.com>\n"
 "Language-Team: Catalan <Catalan <info@softcatala.org>>\n"
@@ -43,310 +42,314 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 1.8.9\n"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:156 cdk-pixbuf/cdk-pixbuf-io.c:1070
-#: cdk-pixbuf/cdk-pixbuf-io.c:1330
-#, c-format
-msgid "Failed to open file '%s': %s"
+#: cdk-pixbuf/cdk-pixbuf-animation.c:190 cdk-pixbuf/cdk-pixbuf-io.c:1224
+#: cdk-pixbuf/cdk-pixbuf-io.c:1497
+#, fuzzy, c-format
+msgid "Failed to open file “%s”: %s"
 msgstr "No s'ha pogut obrir el fitxer «%s»: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:169 cdk-pixbuf/cdk-pixbuf-io.c:955
-#, c-format
-msgid "Image file '%s' contains no data"
+#: cdk-pixbuf/cdk-pixbuf-animation.c:203 cdk-pixbuf/cdk-pixbuf-io.c:1085
+#, fuzzy, c-format
+msgid "Image file “%s” contains no data"
 msgstr "El fitxer gràfic «%s» no conté dades"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:207
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-animation.c:241
+#, fuzzy, c-format
 msgid ""
-"Failed to load animation '%s': reason not known, probably a corrupt "
+"Failed to load animation “%s”: reason not known, probably a corrupt "
 "animation file"
 msgstr ""
 "No es pot carregar l'animació «%s»: se'n desconeix el motiu; probablement es "
 "tracta d'un fitxer d'animació malmés"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:275 cdk-pixbuf/cdk-pixbuf-io.c:1106
-#: cdk-pixbuf/cdk-pixbuf-io.c:1382
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-animation.c:309 cdk-pixbuf/cdk-pixbuf-io.c:1260
+#: cdk-pixbuf/cdk-pixbuf-io.c:1549
+#, fuzzy, c-format
 msgid ""
-"Failed to load image '%s': reason not known, probably a corrupt image file"
+"Failed to load image “%s”: reason not known, probably a corrupt image file"
 msgstr ""
 "No es pot carregar la imatge «%s»: se'n desconeix el motiu; probablement es "
 "tracta d'un fitxer d'imatge malmés"
 
-#: cdk-pixbuf/cdk-pixbuf.c:166
+#: cdk-pixbuf/cdk-pixbuf.c:248
 msgid "Number of Channels"
 msgstr "Nombre de canals"
 
-#: cdk-pixbuf/cdk-pixbuf.c:167
+#: cdk-pixbuf/cdk-pixbuf.c:249
 msgid "The number of samples per pixel"
 msgstr "El nombre de mostres per píxel"
 
-#: cdk-pixbuf/cdk-pixbuf.c:176
+#: cdk-pixbuf/cdk-pixbuf.c:264
 msgid "Colorspace"
 msgstr "Espai de color"
 
-#: cdk-pixbuf/cdk-pixbuf.c:177
+#: cdk-pixbuf/cdk-pixbuf.c:265
 msgid "The colorspace in which the samples are interpreted"
 msgstr "L'espai de color on les mostres s'interpreten"
 
-#: cdk-pixbuf/cdk-pixbuf.c:185
+#: cdk-pixbuf/cdk-pixbuf.c:277
 msgid "Has Alpha"
 msgstr "Té alfa"
 
-#: cdk-pixbuf/cdk-pixbuf.c:186
+#: cdk-pixbuf/cdk-pixbuf.c:278
 msgid "Whether the pixbuf has an alpha channel"
 msgstr "Si el pixbuf té una canal alfa"
 
-#: cdk-pixbuf/cdk-pixbuf.c:199
+#: cdk-pixbuf/cdk-pixbuf.c:291
 msgid "Bits per Sample"
 msgstr "Bits per mostra"
 
-#: cdk-pixbuf/cdk-pixbuf.c:200
+#: cdk-pixbuf/cdk-pixbuf.c:292
 msgid "The number of bits per sample"
 msgstr "El nombre de bits per mostra"
 
-#: cdk-pixbuf/cdk-pixbuf.c:209
+#: cdk-pixbuf/cdk-pixbuf.c:305
 msgid "Width"
 msgstr "Amplària"
 
-#: cdk-pixbuf/cdk-pixbuf.c:210
+#: cdk-pixbuf/cdk-pixbuf.c:306
 msgid "The number of columns of the pixbuf"
 msgstr "El nombre de columnes de pixbuf"
 
-#: cdk-pixbuf/cdk-pixbuf.c:219
+#: cdk-pixbuf/cdk-pixbuf.c:319
 msgid "Height"
 msgstr "Alçària"
 
-#: cdk-pixbuf/cdk-pixbuf.c:220
+#: cdk-pixbuf/cdk-pixbuf.c:320
 msgid "The number of rows of the pixbuf"
 msgstr "El nombre de files de pixbuf"
 
-#: cdk-pixbuf/cdk-pixbuf.c:236
+#: cdk-pixbuf/cdk-pixbuf.c:337
 msgid "Rowstride"
 msgstr "Amplària fila"
 
-#: cdk-pixbuf/cdk-pixbuf.c:237
+#: cdk-pixbuf/cdk-pixbuf.c:338
 msgid ""
 "The number of bytes between the start of a row and the start of the next row"
 msgstr ""
 "El nombre de bits entre el començament d'una fila i el començament de la "
 "següent"
 
-#: cdk-pixbuf/cdk-pixbuf.c:246
+#: cdk-pixbuf/cdk-pixbuf.c:351
 msgid "Pixels"
 msgstr "Píxels"
 
-#: cdk-pixbuf/cdk-pixbuf.c:247
+#: cdk-pixbuf/cdk-pixbuf.c:352
 msgid "A pointer to the pixel data of the pixbuf"
 msgstr "Un punter a les dades del píxel de pixbuf"
 
-#: cdk-pixbuf/cdk-pixbuf.c:261
+#: cdk-pixbuf/cdk-pixbuf.c:366
 msgid "Pixel Bytes"
 msgstr "Bytes del píxel"
 
-#: cdk-pixbuf/cdk-pixbuf.c:262
+#: cdk-pixbuf/cdk-pixbuf.c:367
 msgid "Readonly pixel data"
 msgstr "Dades del píxel de només lectura"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:775
+#: cdk-pixbuf/cdk-pixbuf-io.c:901
 #, c-format
 msgid "Unable to load image-loading module: %s: %s"
 msgstr "No és possible carregar el mòdul per a la càrrega d'imatges: %s: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:790
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-io.c:919
+#, fuzzy, c-format
 msgid ""
-"Image-loading module %s does not export the proper interface; perhaps it's "
+"Image-loading module %s does not export the proper interface; perhaps it’s "
 "from a different cdk-pixbuf version?"
 msgstr ""
 "El mòdul %s per carregar imatges no exporta la interfície adequada: potser "
 "és d'una versió de cdk-pixbuf diferent?"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:799 cdk-pixbuf/cdk-pixbuf-io.c:842
-#, c-format
-msgid "Image type '%s' is not supported"
+#: cdk-pixbuf/cdk-pixbuf-io.c:929 cdk-pixbuf/cdk-pixbuf-io.c:972
+#, fuzzy, c-format
+msgid "Image type “%s” is not supported"
 msgstr "El tipus d'imatge «%s» no està implementat"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:927
-#, c-format
-msgid "Couldn't recognize the image file format for file '%s'"
+#: cdk-pixbuf/cdk-pixbuf-io.c:1057
+#, fuzzy, c-format
+msgid "Couldn’t recognize the image file format for file “%s”"
 msgstr "No s'ha pogut reconèixer el format gràfic del fitxer «%s»"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:935
+#: cdk-pixbuf/cdk-pixbuf-io.c:1065
 msgid "Unrecognized image file format"
 msgstr "No es coneix el format del fitxer gràfic"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:1117
-#, c-format
-msgid "Failed to load image '%s': %s"
+#: cdk-pixbuf/cdk-pixbuf-io.c:1271
+#, fuzzy, c-format
+msgid "Failed to load image “%s”: %s"
 msgstr "No s'ha pogut carregar la imatge «%s»: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2143 cdk-pixbuf/io-gdip-utils.c:838
+#: cdk-pixbuf/cdk-pixbuf-io.c:2346 cdk-pixbuf/io-gdip-utils.c:840
 #, c-format
 msgid "Error writing to image file: %s"
 msgstr "S'ha produït un error en escriure al fitxer d'imatge: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2185 cdk-pixbuf/cdk-pixbuf-io.c:2306
+#: cdk-pixbuf/cdk-pixbuf-io.c:2388 cdk-pixbuf/cdk-pixbuf-io.c:2509
 #, c-format
 msgid "This build of cdk-pixbuf does not support saving the image format: %s"
 msgstr "Este muntatge de cdk-pixbuf no permet guardar el format d'imatge: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2216
+#: cdk-pixbuf/cdk-pixbuf-io.c:2419
 msgid "Insufficient memory to save image to callback"
 msgstr "No hi ha memòria suficient per guardar la imatge a la crida de retorn"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2229
+#: cdk-pixbuf/cdk-pixbuf-io.c:2432
 msgid "Failed to open temporary file"
 msgstr "No s'ha pogut obrir el fitxer temporal"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2252
+#: cdk-pixbuf/cdk-pixbuf-io.c:2455
 msgid "Failed to read from temporary file"
 msgstr "No s'ha pogut llegir el fitxer temporal"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2462
-#, c-format
-msgid "Failed to open '%s' for writing: %s"
+#: cdk-pixbuf/cdk-pixbuf-io.c:2677
+#, fuzzy, c-format
+msgid "Failed to open “%s” for writing: %s"
 msgstr "No s'ha pogut obrir «%s» per a l'escriptura: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2488
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-io.c:2703
+#, fuzzy, c-format
 msgid ""
-"Failed to close '%s' while writing image, all data may not have been saved: "
+"Failed to close “%s” while writing image, all data may not have been saved: "
 "%s"
 msgstr ""
 "No s'ha pogut guardar «%s» en escriure la imatge, és probable que no s'hagen "
 "guardat totes les dades: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2709 cdk-pixbuf/cdk-pixbuf-io.c:2761
+#: cdk-pixbuf/cdk-pixbuf-io.c:2937 cdk-pixbuf/cdk-pixbuf-io.c:2992
 msgid "Insufficient memory to save image into a buffer"
 msgstr ""
 "No hi ha memòria suficient per guardar la imatge en una memòria intermèdia"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2807
+#: cdk-pixbuf/cdk-pixbuf-io.c:3038
 msgid "Error writing to image stream"
 msgstr "S'ha produït un error en escriure al flux d'imatge"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:382
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-loader.c:426
+#, fuzzy, c-format
 msgid ""
-"Internal error: Image loader module '%s' failed to complete an operation, "
-"but didn't give a reason for the failure"
+"Internal error: Image loader module “%s” failed to complete an operation, "
+"but didn’t give a reason for the failure"
 msgstr ""
 "Error intern: El carregador d'imatge «%s» no ha pogut acabar una operació, "
 "però no ha donat cap raó per a la fallada"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:424
-#, c-format
-msgid "Incremental loading of image type '%s' is not supported"
+#: cdk-pixbuf/cdk-pixbuf-loader.c:468
+#, fuzzy, c-format
+msgid "Incremental loading of image type “%s” is not supported"
 msgstr "No està implementada la càrrega incremental del tipus d'imatge «%s»"
 
-#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:161
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:166
 msgid "Loop"
 msgstr "Bucle"
 
-#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:162
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:167
 msgid "Whether the animation should loop when it reaches the end"
 msgstr "Si l'animació cal que es repetisca quan arriba al final"
 
-#: cdk-pixbuf/cdk-pixdata.c:165
+#: cdk-pixbuf/cdk-pixdata.c:178
 msgid "Image header corrupt"
 msgstr "La capçalera de la imatge està malmesa"
 
-#: cdk-pixbuf/cdk-pixdata.c:170
+#: cdk-pixbuf/cdk-pixdata.c:183
 msgid "Image format unknown"
 msgstr "El format de la imatge és desconegut"
 
-#: cdk-pixbuf/cdk-pixdata.c:175 cdk-pixbuf/cdk-pixdata.c:467
-#: cdk-pixbuf/cdk-pixdata.c:477 cdk-pixbuf/cdk-pixdata.c:573
+#: cdk-pixbuf/cdk-pixdata.c:188 cdk-pixbuf/cdk-pixdata.c:491
+#: cdk-pixbuf/cdk-pixdata.c:501 cdk-pixbuf/cdk-pixdata.c:597
 msgid "Image pixel data corrupt"
 msgstr "Les dades de píxels de la imatge estan malmeses"
 
-#: cdk-pixbuf/cdk-pixdata.c:489
+#: cdk-pixbuf/cdk-pixdata.c:513
 #, c-format
 msgid "failed to allocate image buffer of %u byte"
 msgid_plural "failed to allocate image buffer of %u bytes"
 msgstr[0] "no s'ha pogut assignar una memòria intermèdia d'imatge de %u byte"
 msgstr[1] "no s'ha pogut assignar una memòria intermèdia d'imatge de %u bytes"
 
-#: cdk-pixbuf/io-ani.c:242
+#: cdk-pixbuf/io-ani.c:239
 msgid "Unexpected icon chunk in animation"
 msgstr "Bloc d'icona inesperat en l'animació"
 
-#: cdk-pixbuf/io-ani.c:340 cdk-pixbuf/io-ani.c:398 cdk-pixbuf/io-ani.c:424
-#: cdk-pixbuf/io-ani.c:447 cdk-pixbuf/io-ani.c:474 cdk-pixbuf/io-ani.c:561
-msgid "Invalid header in animation"
-msgstr "La capçalera de l'animació no és vàlida"
-
-#: cdk-pixbuf/io-ani.c:350 cdk-pixbuf/io-ani.c:372 cdk-pixbuf/io-ani.c:456
-#: cdk-pixbuf/io-ani.c:483 cdk-pixbuf/io-ani.c:534 cdk-pixbuf/io-ani.c:606
-msgid "Not enough memory to load animation"
-msgstr "No hi ha memòria suficient per carregar l'animació"
-
-#: cdk-pixbuf/io-ani.c:390 cdk-pixbuf/io-ani.c:416 cdk-pixbuf/io-ani.c:435
+#: cdk-pixbuf/io-ani.c:303 cdk-pixbuf/io-ani.c:404 cdk-pixbuf/io-ani.c:430
+#: cdk-pixbuf/io-ani.c:449
 msgid "Malformed chunk in animation"
 msgstr "Bloc erroni en l'animació"
 
-#: cdk-pixbuf/io-ani.c:628
+#: cdk-pixbuf/io-ani.c:311 cdk-pixbuf/io-ani.c:354 cdk-pixbuf/io-ani.c:412
+#: cdk-pixbuf/io-ani.c:438 cdk-pixbuf/io-ani.c:461 cdk-pixbuf/io-ani.c:488
+#: cdk-pixbuf/io-ani.c:575
+msgid "Invalid header in animation"
+msgstr "La capçalera de l'animació no és vàlida"
+
+#: cdk-pixbuf/io-ani.c:364 cdk-pixbuf/io-ani.c:386 cdk-pixbuf/io-ani.c:470
+#: cdk-pixbuf/io-ani.c:497 cdk-pixbuf/io-ani.c:548 cdk-pixbuf/io-ani.c:624
+msgid "Not enough memory to load animation"
+msgstr "No hi ha memòria suficient per carregar l'animació"
+
+#: cdk-pixbuf/io-ani.c:646
 msgid "ANI image was truncated or incomplete."
 msgstr "Imatge ANI truncada o incompleta."
 
-#: cdk-pixbuf/io-ani.c:669
+#: cdk-pixbuf/io-ani.c:687
 msgctxt "image format"
 msgid "Windows animated cursor"
 msgstr "Cursor animat de Windows"
 
-#: cdk-pixbuf/io-bmp.c:227 cdk-pixbuf/io-bmp.c:265 cdk-pixbuf/io-bmp.c:372
-#: cdk-pixbuf/io-bmp.c:399 cdk-pixbuf/io-bmp.c:424 cdk-pixbuf/io-bmp.c:459
-#: cdk-pixbuf/io-bmp.c:481 cdk-pixbuf/io-bmp.c:558
+#: cdk-pixbuf/io-bmp.c:234 cdk-pixbuf/io-bmp.c:275 cdk-pixbuf/io-bmp.c:385
+#: cdk-pixbuf/io-bmp.c:412 cdk-pixbuf/io-bmp.c:437 cdk-pixbuf/io-bmp.c:472
+#: cdk-pixbuf/io-bmp.c:494 cdk-pixbuf/io-bmp.c:572
 msgid "BMP image has bogus header data"
 msgstr "La imatge BMP conté dades de capçalera errònies"
 
-#: cdk-pixbuf/io-bmp.c:238 cdk-pixbuf/io-bmp.c:494
+#: cdk-pixbuf/io-bmp.c:245 cdk-pixbuf/io-bmp.c:507
 msgid "Not enough memory to load bitmap image"
 msgstr "No hi ha memòria suficient per carregar la imatge de mapa de bits"
 
-#: cdk-pixbuf/io-bmp.c:329
+#: cdk-pixbuf/io-bmp.c:339
 msgid "BMP image has unsupported header size"
 msgstr "La imatge BMP té una mida de capçalera no permesa"
 
-#: cdk-pixbuf/io-bmp.c:339
+#: cdk-pixbuf/io-bmp.c:348
 msgid "BMP image has unsupported depth"
 msgstr "La imatge BMP té una profunditat no permesa"
 
-#: cdk-pixbuf/io-bmp.c:354
+#: cdk-pixbuf/io-bmp.c:367
 msgid "BMP image has oversize palette"
 msgstr "La imatge BMP té una paleta massa gran"
 
 # Topdown és un BMP amb la primera "scanline" al principi del fitxer. jm
-#: cdk-pixbuf/io-bmp.c:386
+#: cdk-pixbuf/io-bmp.c:399
 msgid "Topdown BMP images cannot be compressed"
 msgstr "No es poden comprimir les imatges BMP «topdown»"
 
-#: cdk-pixbuf/io-bmp.c:411
+#: cdk-pixbuf/io-bmp.c:424
 msgid "BMP image width too large"
 msgstr "L'amplària de la imatge BMP és massa gran"
 
-#: cdk-pixbuf/io-bmp.c:782 cdk-pixbuf/io-png.c:528 cdk-pixbuf/io-pnm.c:721
+#: cdk-pixbuf/io-bmp.c:814 cdk-pixbuf/io-png.c:587 cdk-pixbuf/io-pnm.c:722
+#: cdk-pixbuf/io-pnm.c:879
 msgid "Premature end-of-file encountered"
 msgstr "S'ha trobat un final de fitxer abans d'hora"
 
-#: cdk-pixbuf/io-bmp.c:1310
-#, c-format
+#: cdk-pixbuf/io-bmp.c:1340
 msgid "Error while decoding colormap"
 msgstr "S'ha produït un error mentre es descodificava el mapa de colors"
 
-#: cdk-pixbuf/io-bmp.c:1373 cdk-pixbuf/io-bmp.c:1385
+#: cdk-pixbuf/io-bmp.c:1403 cdk-pixbuf/io-bmp.c:1415
 msgid "Image is too wide for BMP format."
 msgstr "La imatge és massa ampla pel format BMP"
 
-#: cdk-pixbuf/io-bmp.c:1418
-msgid "Couldn't allocate memory for saving BMP file"
+#: cdk-pixbuf/io-bmp.c:1448
+#, fuzzy
+msgid "Couldn’t allocate memory for saving BMP file"
 msgstr "No s'ha pogut obtindre memòria per guardar el fitxer BMP"
 
-#: cdk-pixbuf/io-bmp.c:1459
-msgid "Couldn't write to BMP file"
+#: cdk-pixbuf/io-bmp.c:1489
+#, fuzzy
+msgid "Couldn’t write to BMP file"
 msgstr "No s'ha pogut escriure al fitxer BMP"
 
-#: cdk-pixbuf/io-bmp.c:1512 cdk-pixbuf/io-gdip-bmp.c:83
+#: cdk-pixbuf/io-bmp.c:1542 cdk-pixbuf/io-gdip-bmp.c:83
 msgctxt "image format"
 msgid "BMP"
 msgstr "BMP"
@@ -356,39 +359,39 @@ msgctxt "image format"
 msgid "EMF"
 msgstr "EMF"
 
-#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1728
+#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1039
 msgctxt "image format"
 msgid "GIF"
 msgstr "GIF"
 
-#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1415
+#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1418
 msgctxt "image format"
 msgid "Windows icon"
 msgstr "Icona de Windows"
 
-#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1357
-#, c-format
+#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1409
+#, fuzzy, c-format
 msgid ""
-"JPEG quality must be a value between 0 and 100; value '%s' could not be "
+"JPEG quality must be a value between 0 and 100; value “%s” could not be "
 "parsed."
 msgstr ""
 "La qualitat de JPEG ha de ser un valor entre 0 i 100; el valor «%s» no es "
 "pot analitzar."
 
-#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1373
-#, c-format
+#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1425
+#, fuzzy, c-format
 msgid ""
-"JPEG quality must be a value between 0 and 100; value '%d' is not allowed."
+"JPEG quality must be a value between 0 and 100; value “%d” is not allowed."
 msgstr ""
 "La qualitat JPEG ha de ser un valor entre 0 i 100; el valor «%d» no és "
 "permés."
 
-#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1657
+#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1710
 msgctxt "image format"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: cdk-pixbuf/io-gdip-tiff.c:83 cdk-pixbuf/io-tiff.c:1038
+#: cdk-pixbuf/io-gdip-tiff.c:83 cdk-pixbuf/io-tiff.c:1087
 msgctxt "image format"
 msgid "TIFF"
 msgstr "TIFF"
@@ -414,20 +417,23 @@ msgstr "No s'ha pogut buscar en el flux: %s"
 msgid "Could not read from stream: %s"
 msgstr "No s'ha pogut llegir el flux: %s"
 
-#: cdk-pixbuf/io-gdip-utils.c:618
-msgid "Couldn't load bitmap"
+#: cdk-pixbuf/io-gdip-utils.c:620
+#, fuzzy
+msgid "Couldn’t load bitmap"
 msgstr "No s'ha pogut carregar el mapa de bits"
 
-#: cdk-pixbuf/io-gdip-utils.c:774
-msgid "Couldn't load metafile"
+#: cdk-pixbuf/io-gdip-utils.c:776
+#, fuzzy
+msgid "Couldn’t load metafile"
 msgstr "No s'ha pogut carregar el metafitxer"
 
-#: cdk-pixbuf/io-gdip-utils.c:879
+#: cdk-pixbuf/io-gdip-utils.c:881
 msgid "Unsupported image format for GDI+"
 msgstr "El GDI+ no funciona amb este format d'imatge"
 
-#: cdk-pixbuf/io-gdip-utils.c:886
-msgid "Couldn't save"
+#: cdk-pixbuf/io-gdip-utils.c:888
+#, fuzzy
+msgid "Couldn’t save"
 msgstr "No s'ha pogut guardar"
 
 #: cdk-pixbuf/io-gdip-wmf.c:60
@@ -435,64 +441,34 @@ msgctxt "image format"
 msgid "WMF"
 msgstr "WMF"
 
-#: cdk-pixbuf/io-gif.c:221
+#: cdk-pixbuf/io-gif.c:160
 #, c-format
 msgid "Failure reading GIF: %s"
 msgstr "No s'ha pogut llegir el GIF: %s"
 
-#: cdk-pixbuf/io-gif.c:496 cdk-pixbuf/io-gif.c:1503 cdk-pixbuf/io-gif.c:1677
-msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
-msgstr ""
-"Al fitxer GIF li falten algunes dades (potser s'han truncat d'alguna manera)"
-
-#: cdk-pixbuf/io-gif.c:505
-#, c-format
-msgid "Internal error in the GIF loader (%s)"
-msgstr "Error intern en el carregador de GIF (%s)"
-
-#: cdk-pixbuf/io-gif.c:579
-msgid "Stack overflow"
-msgstr "Sobreeiximent de la pila"
-
-#: cdk-pixbuf/io-gif.c:639
-msgid "GIF image loader cannot understand this image."
-msgstr "El carregador d'imatges GIF no entén esta imatge."
-
-#: cdk-pixbuf/io-gif.c:668
-msgid "Bad code encountered"
-msgstr "S'ha trobat un codi incorrecte"
-
-#: cdk-pixbuf/io-gif.c:678
-msgid "Circular table entry in GIF file"
-msgstr "Entrada de taula circular al fitxer GIF"
-
-#: cdk-pixbuf/io-gif.c:866 cdk-pixbuf/io-gif.c:1489 cdk-pixbuf/io-gif.c:1542
-#: cdk-pixbuf/io-gif.c:1665
+#: cdk-pixbuf/io-gif.c:383 cdk-pixbuf/io-gif.c:850 cdk-pixbuf/io-gif.c:903
+#: cdk-pixbuf/io-gif.c:976
 msgid "Not enough memory to load GIF file"
 msgstr "No hi ha memòria suficient per carregar el fitxer GIF"
 
-#: cdk-pixbuf/io-gif.c:960
-msgid "Not enough memory to composite a frame in GIF file"
-msgstr "No hi ha memòria suficient per compondre un marc al fitxer GIF"
-
-#: cdk-pixbuf/io-gif.c:1132
+#: cdk-pixbuf/io-gif.c:509
 msgid "GIF image is corrupt (incorrect LZW compression)"
 msgstr "La imatge GIF està malmesa (la compressió LZW és incorrecte)"
 
-#: cdk-pixbuf/io-gif.c:1182
+#: cdk-pixbuf/io-gif.c:545
 msgid "File does not appear to be a GIF file"
 msgstr "El fitxer no pareix ser un fitxer GIF"
 
-#: cdk-pixbuf/io-gif.c:1194
+#: cdk-pixbuf/io-gif.c:560
 #, c-format
 msgid "Version %s of the GIF file format is not supported"
 msgstr "No s'ha implementat la versió %s del format del fitxer GIF"
 
-#: cdk-pixbuf/io-gif.c:1241
+#: cdk-pixbuf/io-gif.c:589
 msgid "Resulting GIF image has zero size"
 msgstr "La imatge GIF generada ocupa zero bytes"
 
-#: cdk-pixbuf/io-gif.c:1320
+#: cdk-pixbuf/io-gif.c:659
 msgid ""
 "GIF image has no global colormap, and a frame inside it has no local "
 "colormap."
@@ -500,113 +476,83 @@ msgstr ""
 "La imatge GIF no té mapa de color global, i un marc de dins no té mapa de "
 "color local."
 
-#: cdk-pixbuf/io-gif.c:1565
+#: cdk-pixbuf/io-gif.c:863 cdk-pixbuf/io-gif.c:988
+msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
+msgstr ""
+"Al fitxer GIF li falten algunes dades (potser s'han truncat d'alguna manera)"
+
+#: cdk-pixbuf/io-gif.c:922
 msgid "GIF image was truncated or incomplete."
 msgstr "Imatge GIF truncada o incompleta."
 
-#: cdk-pixbuf/io-gif.c:1572
+#: cdk-pixbuf/io-gif.c:929
 msgid "Not all frames of the GIF image were loaded."
 msgstr "No s'han pogut carregar tots els fotogrames de la imatge GIF."
 
-#: cdk-pixbuf/io-icns.c:358
+#: cdk-pixbuf/io-icns.c:363
 #, c-format
 msgid "Error reading ICNS image: %s"
 msgstr "S'ha produït un error en llegir la imatge ICNS: %s"
 
-#: cdk-pixbuf/io-icns.c:375 cdk-pixbuf/io-icns.c:452
+#: cdk-pixbuf/io-icns.c:380 cdk-pixbuf/io-icns.c:461
 msgid "Could not decode ICNS file"
 msgstr "No s'ha pogut descodificar el fitxer ICNS"
 
-#: cdk-pixbuf/io-icns.c:511
+#: cdk-pixbuf/io-icns.c:517
 msgctxt "image format"
 msgid "MacOS X icon"
 msgstr "Icona de Mac OS X"
 
-#: cdk-pixbuf/io-ico.c:237 cdk-pixbuf/io-ico.c:251 cdk-pixbuf/io-ico.c:343
-#: cdk-pixbuf/io-ico.c:424 cdk-pixbuf/io-ico.c:449
+#: cdk-pixbuf/io-ico.c:238 cdk-pixbuf/io-ico.c:252 cdk-pixbuf/io-ico.c:342
+#: cdk-pixbuf/io-ico.c:426 cdk-pixbuf/io-ico.c:451
 #, c-format
 msgid "Invalid header in icon (%s)"
 msgstr "La capçalera de la icona no és vàlida (%s)"
 
-#: cdk-pixbuf/io-ico.c:267 cdk-pixbuf/io-ico.c:353 cdk-pixbuf/io-ico.c:459
-#: cdk-pixbuf/io-ico.c:502 cdk-pixbuf/io-ico.c:530
+#: cdk-pixbuf/io-ico.c:268 cdk-pixbuf/io-ico.c:355 cdk-pixbuf/io-ico.c:461
+#: cdk-pixbuf/io-ico.c:504 cdk-pixbuf/io-ico.c:532
 msgid "Not enough memory to load icon"
 msgstr "No hi ha memòria suficient per carregar la icona"
 
-#: cdk-pixbuf/io-ico.c:384
+#: cdk-pixbuf/io-ico.c:386
 msgid "Invalid header in icon"
 msgstr "La capçalera de la icona no és vàlida"
 
-#: cdk-pixbuf/io-ico.c:385
+#: cdk-pixbuf/io-ico.c:387
 msgid "Compressed icons are not supported"
 msgstr "Les icones comprimides no estan implementades"
 
-#: cdk-pixbuf/io-ico.c:487
+#: cdk-pixbuf/io-ico.c:489
 msgid "Unsupported icon type"
 msgstr "Tipus d'icona no implementada"
 
-#: cdk-pixbuf/io-ico.c:579
+#: cdk-pixbuf/io-ico.c:583
 msgid "Not enough memory to load ICO file"
 msgstr "No hi ha memòria suficient per carregar el fitxer ICO"
 
-#: cdk-pixbuf/io-ico.c:625
+#: cdk-pixbuf/io-ico.c:629
 msgid "ICO image was truncated or incomplete."
 msgstr "Imatge ICO truncada o incompleta."
 
-#: cdk-pixbuf/io-ico.c:1073
+#: cdk-pixbuf/io-ico.c:1070
 msgid "Image too large to be saved as ICO"
 msgstr "La imatge és massa gran per guardar-la com a ICO"
 
-#: cdk-pixbuf/io-ico.c:1084
+#: cdk-pixbuf/io-ico.c:1081
 msgid "Cursor hotspot outside image"
 msgstr "Lloc calent del cursor fora de la imatge"
 
-#: cdk-pixbuf/io-ico.c:1107
+#: cdk-pixbuf/io-ico.c:1104
 #, c-format
 msgid "Unsupported depth for ICO file: %d"
 msgstr "No es permet una profunditat per al fitxer ICO: %d"
 
-#: cdk-pixbuf/io-jasper.c:73
-msgid "Couldn't allocate memory for stream"
-msgstr "No s'ha pogut assignar memòria per al flux"
-
-#: cdk-pixbuf/io-jasper.c:124
-msgid "Couldn't decode image"
-msgstr "No s'ha pogut descodificar la imatge"
-
-#: cdk-pixbuf/io-jasper.c:142
-msgid "Transformed JPEG2000 has zero width or height"
-msgstr "El JPEG 2000 transformat té amplària o alçària zero"
-
-#: cdk-pixbuf/io-jasper.c:158
-msgid "Image type currently not supported"
-msgstr "El tipus d'imatge no està implementat actualment"
-
-#: cdk-pixbuf/io-jasper.c:170 cdk-pixbuf/io-jasper.c:178
-msgid "Couldn't allocate memory for color profile"
-msgstr "No s'ha pogut assignar memòria per al perfil de color"
-
-#: cdk-pixbuf/io-jasper.c:204
-msgid "Insufficient memory to open JPEG 2000 file"
-msgstr "No hi ha memòria suficient per obrir el fitxer JPEG 2000"
-
-#: cdk-pixbuf/io-jasper.c:283
-msgid "Couldn't allocate memory to buffer image data"
-msgstr ""
-"No s'ha pogut assignar memòria per ubicar les dades d'imatge a la memòria "
-"intermèdia"
-
-#: cdk-pixbuf/io-jasper.c:327
-msgctxt "image format"
-msgid "JPEG 2000"
-msgstr "JPEG 2000"
-
-#: cdk-pixbuf/io-jpeg.c:125
+#: cdk-pixbuf/io-jpeg.c:131
 #, c-format
 msgid "Error interpreting JPEG image file (%s)"
 msgstr "S'ha produït un error en interpretar el fitxer gràfic JPEG (%s)"
 
-#: cdk-pixbuf/io-jpeg.c:633
+#: cdk-pixbuf/io-jpeg.c:647
 msgid ""
 "Insufficient memory to load image, try exiting some applications to free "
 "memory"
@@ -614,216 +560,211 @@ msgstr ""
 "La memòria per carregar la imatge és insuficient, proveu d'eixir d'algunes "
 "aplicacions per alliberar memòria"
 
-#: cdk-pixbuf/io-jpeg.c:706 cdk-pixbuf/io-jpeg.c:917
+#: cdk-pixbuf/io-jpeg.c:720 cdk-pixbuf/io-jpeg.c:970
 #, c-format
 msgid "Unsupported JPEG color space (%s)"
 msgstr "Espai de color JPEG no implementat (%s)"
 
-#: cdk-pixbuf/io-jpeg.c:817 cdk-pixbuf/io-jpeg.c:1116 cdk-pixbuf/io-jpeg.c:1464
-#: cdk-pixbuf/io-jpeg.c:1474
-msgid "Couldn't allocate memory for loading JPEG file"
+#: cdk-pixbuf/io-jpeg.c:845 cdk-pixbuf/io-jpeg.c:1169 cdk-pixbuf/io-jpeg.c:1516
+#: cdk-pixbuf/io-jpeg.c:1526
+#, fuzzy
+msgid "Couldn’t allocate memory for loading JPEG file"
 msgstr "No es pot obtindre memòria per carregar el fitxer JPEG"
 
-#: cdk-pixbuf/io-jpeg.c:1073
+#: cdk-pixbuf/io-jpeg.c:1127
 msgid "Transformed JPEG has zero width or height."
 msgstr "El JPEG transformat té amplària o alçària zero."
 
-#: cdk-pixbuf/io-jpeg.c:1100
+#: cdk-pixbuf/io-jpeg.c:1153
 #, c-format
 msgid "Unsupported number of color components (%d)"
 msgstr "Número de components de color no implementat (%d)"
 
-#: cdk-pixbuf/io-jpeg.c:1394
-#, c-format
+#: cdk-pixbuf/io-jpeg.c:1446
+#, fuzzy, c-format
 msgid ""
-"JPEG x-dpi must be a value between 1 and 65535; value '%s' is not allowed."
+"JPEG x-dpi must be a value between 1 and 65535; value “%s” is not allowed."
 msgstr ""
 "JPEG x-dpi ha de tindre un valor entre 1 i 65535; el valor «%s» no és permés."
 
-#: cdk-pixbuf/io-jpeg.c:1415
-#, c-format
+#: cdk-pixbuf/io-jpeg.c:1467
+#, fuzzy, c-format
 msgid ""
-"JPEG y-dpi must be a value between 1 and 65535; value '%s' is not allowed."
+"JPEG y-dpi must be a value between 1 and 65535; value “%s” is not allowed."
 msgstr ""
 "JPEG y-dpi ha de tindre un valor entre 1 i 65535; el valor «%s» no és permés."
 
-#: cdk-pixbuf/io-jpeg.c:1429
-#, c-format
-msgid "Color profile has invalid length '%u'."
+#: cdk-pixbuf/io-jpeg.c:1481
+#, fuzzy, c-format
+msgid "Color profile has invalid length “%u”."
 msgstr "La llargada del perfil de color no és vàlida «%u»."
 
-#: cdk-pixbuf/io-png.c:53
+#: cdk-pixbuf/io-png.c:64
 msgid "Bits per channel of PNG image is invalid."
 msgstr "Els bits per canal de la imatge PNG no són vàlids."
 
-#: cdk-pixbuf/io-png.c:134 cdk-pixbuf/io-png.c:666
+#: cdk-pixbuf/io-png.c:145 cdk-pixbuf/io-png.c:730
 msgid "Transformed PNG has zero width or height."
 msgstr "El PNG transformat té amplària o alçària zero."
 
-#: cdk-pixbuf/io-png.c:142
+#: cdk-pixbuf/io-png.c:153
 msgid "Bits per channel of transformed PNG is not 8."
 msgstr "Els bits per canal del PNG transformat no són 8."
 
-#: cdk-pixbuf/io-png.c:151
+#: cdk-pixbuf/io-png.c:162
 msgid "Transformed PNG not RGB or RGBA."
 msgstr "El PNG transformat no és RGB o RGBA."
 
-#: cdk-pixbuf/io-png.c:160
+#: cdk-pixbuf/io-png.c:171
 msgid "Transformed PNG has unsupported number of channels, must be 3 or 4."
 msgstr ""
 "El PNG transformat té un nombre no implementat de canals, ha de ser 3 o 4."
 
-#: cdk-pixbuf/io-png.c:181
+#: cdk-pixbuf/io-png.c:193
 #, c-format
 msgid "Fatal error in PNG image file: %s"
 msgstr "Error fatal al fitxer d'imatge PNG: %s"
 
-#: cdk-pixbuf/io-png.c:318
+#: cdk-pixbuf/io-png.c:338
 msgid "Insufficient memory to load PNG file"
 msgstr "No hi ha memòria suficient per carregar el fitxer PNG"
 
-#: cdk-pixbuf/io-png.c:679
+#: cdk-pixbuf/io-png.c:519 cdk-pixbuf/io-png.c:540
+#, fuzzy
+msgid "Couldn’t allocate memory for loading PNG"
+msgstr "No es pot obtindre memòria per carregar el fitxer JPEG"
+
+#: cdk-pixbuf/io-png.c:743
 #, c-format
 msgid ""
 "Insufficient memory to store a %lu by %lu image; try exiting some "
 "applications to reduce memory usage"
 msgstr ""
-"No hi ha suficient memòria per emmagatzemar una imatge de %lu per %lu. "
-"Eixiu d'algunes aplicacions per alliberar memòria"
+"No hi ha suficient memòria per emmagatzemar una imatge de %lu per %lu. Eixiu "
+"d'algunes aplicacions per alliberar memòria"
 
-#: cdk-pixbuf/io-png.c:755
+#: cdk-pixbuf/io-png.c:820
 msgid "Fatal error reading PNG image file"
 msgstr "Error fatal en llegir el fitxer gràfic PNG"
 
-#: cdk-pixbuf/io-png.c:804
+#: cdk-pixbuf/io-png.c:873
 #, c-format
 msgid "Fatal error reading PNG image file: %s"
 msgstr "Error fatal en llegir el fitxer gràfic PNG: %s"
 
-#: cdk-pixbuf/io-png.c:896
+#: cdk-pixbuf/io-png.c:972
+#, fuzzy, c-format
 msgid ""
-"Keys for PNG text chunks must have at least 1 and at most 79 characters."
+"Invalid key “%s”. Keys for PNG text chunks must have at least 1 and at most "
+"79 characters."
 msgstr ""
 "Les claus per als blocs text de PNG han de tindre entre 1 i 79 caràcters."
 
-#: cdk-pixbuf/io-png.c:905
-msgid "Keys for PNG text chunks must be ASCII characters."
+#: cdk-pixbuf/io-png.c:985
+#, fuzzy, c-format
+msgid "Invalid key “%s”. Keys for PNG text chunks must be ASCII characters."
 msgstr "Les claus per als blocs text de PNG han de ser caràcters ASCII."
 
-#: cdk-pixbuf/io-png.c:919 cdk-pixbuf/io-tiff.c:802
-#, c-format
-msgid "Color profile has invalid length %d."
-msgstr "El perfil de color té una llargada no vàlida (%d)."
-
-#: cdk-pixbuf/io-png.c:932
-#, c-format
+#: cdk-pixbuf/io-png.c:1015
+#, fuzzy, c-format
 msgid ""
-"PNG compression level must be a value between 0 and 9; value '%s' could not "
-"be parsed."
-msgstr ""
-"El nivell de compressió de PNG ha de ser un valor entre 0 i 9; el valor «%s» "
-"no es pot analitzar."
-
-#: cdk-pixbuf/io-png.c:945
-#, c-format
-msgid ""
-"PNG compression level must be a value between 0 and 9; value '%d' is not "
-"allowed."
-msgstr ""
-"El nivell de compressió de PNG ha de ser un valor entre 0 i 9; el valor «%d» "
-"no és permés."
-
-#: cdk-pixbuf/io-png.c:964
-#, c-format
-msgid "PNG x-dpi must be greater than zero; value '%s' is not allowed."
-msgstr ""
-"PNG x-dpi ha de tindre un valor major de zero; el valor «%s» no és permés."
-
-#: cdk-pixbuf/io-png.c:984
-#, c-format
-msgid "PNG y-dpi must be greater than zero; value '%s' is not allowed."
-msgstr ""
-"PNG y-dpi ha de tindre un valor major de zero; el valor «%s» no és permés."
-
-#: cdk-pixbuf/io-png.c:1033
-#, c-format
-msgid "Value for PNG text chunk %s cannot be converted to ISO-8859-1 encoding."
+"Value for PNG text chunk '%s' cannot be converted to ISO-8859-1 encoding."
 msgstr ""
 "El valor per al fragment de text PNG %s no es pot convertir a la codificació "
 "ISO-8859-1."
 
-#: cdk-pixbuf/io-png.c:1218
+#: cdk-pixbuf/io-png.c:1027
+#, fuzzy, c-format
+msgid "Color profile has invalid length %d"
+msgstr "El perfil de color té una llargada no vàlida (%d)."
+
+#: cdk-pixbuf/io-png.c:1039
+#, fuzzy, c-format
+msgid ""
+"PNG compression level must be a value between 0 and 9; value “%s” is invalid"
+msgstr ""
+"El nivell de compressió de PNG ha de ser un valor entre 0 i 9; el valor «%d» "
+"no és permés."
+
+#: cdk-pixbuf/io-png.c:1053
+#, fuzzy, c-format
+msgid "PNG %s must be greater than zero; value “%s” is not allowed"
+msgstr ""
+"PNG x-dpi ha de tindre un valor major de zero; el valor «%s» no és permés."
+
+#: cdk-pixbuf/io-png.c:1283
 msgctxt "image format"
 msgid "PNG"
 msgstr "PNG"
 
-#: cdk-pixbuf/io-pnm.c:246
-msgid "PNM loader expected to find an integer, but didn't"
+#: cdk-pixbuf/io-pnm.c:247
+#, fuzzy
+msgid "PNM loader expected to find an integer, but didn’t"
 msgstr "El carregador PNM esperava trobar un enter, però no l'ha trobat"
 
-#: cdk-pixbuf/io-pnm.c:278
+#: cdk-pixbuf/io-pnm.c:279
 msgid "PNM file has an incorrect initial byte"
 msgstr "El fitxer PNM té un byte inicial incorrecte"
 
-#: cdk-pixbuf/io-pnm.c:308
+#: cdk-pixbuf/io-pnm.c:309
 msgid "PNM file is not in a recognized PNM subformat"
 msgstr "El fitxer PNM no és en un subformat reconegut"
 
-#: cdk-pixbuf/io-pnm.c:333
+#: cdk-pixbuf/io-pnm.c:334
 msgid "PNM file has an invalid width"
 msgstr "El fitxer PNM té una amplària no vàlida"
 
-#: cdk-pixbuf/io-pnm.c:341
+#: cdk-pixbuf/io-pnm.c:342
 msgid "PNM file has an image width of 0"
 msgstr "El fitxer PNM té una amplària d'imatge de 0"
 
-#: cdk-pixbuf/io-pnm.c:362
+#: cdk-pixbuf/io-pnm.c:363
 msgid "PNM file has an invalid height"
 msgstr "El fitxer PNM té una alçària no vàlida"
 
-#: cdk-pixbuf/io-pnm.c:370
+#: cdk-pixbuf/io-pnm.c:371
 msgid "PNM file has an image height of 0"
 msgstr "El fitxer PNM té una alçària d'imatge zero"
 
-#: cdk-pixbuf/io-pnm.c:393
+#: cdk-pixbuf/io-pnm.c:394
 msgid "Maximum color value in PNM file is 0"
 msgstr "El valor màxim de color al fitxer PNM és zero"
 
-#: cdk-pixbuf/io-pnm.c:401
+#: cdk-pixbuf/io-pnm.c:402
 msgid "Maximum color value in PNM file is too large"
 msgstr "El valor màxim de color al fitxer PNM és massa alt"
 
-#: cdk-pixbuf/io-pnm.c:441 cdk-pixbuf/io-pnm.c:471 cdk-pixbuf/io-pnm.c:516
+#: cdk-pixbuf/io-pnm.c:442 cdk-pixbuf/io-pnm.c:472 cdk-pixbuf/io-pnm.c:517
 msgid "Raw PNM image type is invalid"
 msgstr "El tipus d'imatge PNM en brut no és vàlid"
 
-#: cdk-pixbuf/io-pnm.c:666
+#: cdk-pixbuf/io-pnm.c:667
 msgid "PNM image loader does not support this PNM subformat"
 msgstr "El carregador d'imatges PNM no permet este subformat PNM"
 
-#: cdk-pixbuf/io-pnm.c:753 cdk-pixbuf/io-pnm.c:980
+#: cdk-pixbuf/io-pnm.c:754 cdk-pixbuf/io-pnm.c:991
 msgid "Raw PNM formats require exactly one whitespace before sample data"
 msgstr ""
 "Els formats PNM en brut requereixen exactament un espai en blanc abans de "
 "les dades de mostra"
 
-#: cdk-pixbuf/io-pnm.c:780
+#: cdk-pixbuf/io-pnm.c:781
 msgid "Cannot allocate memory for loading PNM image"
 msgstr "No es pot obtindre memòria per carregar la imatge PNM"
 
-#: cdk-pixbuf/io-pnm.c:830
+#: cdk-pixbuf/io-pnm.c:835
 msgid "Insufficient memory to load PNM context struct"
 msgstr "No hi ha memòria suficient per carregar l'estructura de context PNM"
 
-#: cdk-pixbuf/io-pnm.c:881
+#: cdk-pixbuf/io-pnm.c:892
 msgid "Unexpected end of PNM image data"
 msgstr "Final inesperat de les dades de la imatge PNM"
 
-#: cdk-pixbuf/io-pnm.c:1009
+#: cdk-pixbuf/io-pnm.c:1020
 msgid "Insufficient memory to load PNM file"
 msgstr "No hi ha memòria suficient per carregar el fitxer PNM"
 
-#: cdk-pixbuf/io-pnm.c:1093
+#: cdk-pixbuf/io-pnm.c:1103
 msgctxt "image format"
 msgid "PNM/PBM/PGM/PPM"
 msgstr "PNM/PBM/PGM/PPM"
@@ -836,7 +777,7 @@ msgstr "El descriptor del fitxer d'entrada és nul."
 msgid "Failed to read QTIF header"
 msgstr "Ha fallat la lectura de la capçalera QTIF"
 
-#: cdk-pixbuf/io-qtif.c:150 cdk-pixbuf/io-qtif.c:187 cdk-pixbuf/io-qtif.c:454
+#: cdk-pixbuf/io-qtif.c:150 cdk-pixbuf/io-qtif.c:187 cdk-pixbuf/io-qtif.c:449
 #, c-format
 msgid "QTIF atom size too large (%d byte)"
 msgid_plural "QTIF atom size too large (%d bytes)"
@@ -866,185 +807,257 @@ msgid_plural "Failed to skip the next %d bytes with seek()."
 msgstr[0] "No s'ha pogut ometre el següent %d byte amb la crida seek()."
 msgstr[1] "No s'han pogut ometre els següents %d bytes amb la crida seek()."
 
-#: cdk-pixbuf/io-qtif.c:265
+#: cdk-pixbuf/io-qtif.c:269
 msgid "Failed to allocate QTIF context structure."
 msgstr "No s'ha pogut obtindre memòria per al context de l'estructura QTIF."
 
-#: cdk-pixbuf/io-qtif.c:325
+#: cdk-pixbuf/io-qtif.c:329
 msgid "Failed to create CdkPixbufLoader object."
 msgstr "No s'ha pogut crear l'objecte CdkPixbufLoader."
 
-#: cdk-pixbuf/io-qtif.c:429
+#: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
 msgstr "No s'ha trobat un àtom de dades d'imatge."
 
-#: cdk-pixbuf/io-qtif.c:613
+#: cdk-pixbuf/io-qtif.c:599
 msgctxt "image format"
 msgid "QuickTime"
 msgstr "QuickTime"
 
-#: cdk-pixbuf/io-tga.c:333
+#: cdk-pixbuf/io-tga.c:346
 msgid "Cannot allocate colormap"
 msgstr "No es pot assignar el mapa de colors"
 
-#: cdk-pixbuf/io-tga.c:358
+#: cdk-pixbuf/io-tga.c:371
 msgid "Cannot allocate new pixbuf"
 msgstr "No es pot ubicar una memòria de píxels nova"
 
-#: cdk-pixbuf/io-tga.c:506
+#: cdk-pixbuf/io-tga.c:519
 msgid "Unexpected bitdepth for colormap entries"
 msgstr "Profunditat de bit inesperada per a les entrades del mapa de color"
 
-#: cdk-pixbuf/io-tga.c:522
+#: cdk-pixbuf/io-tga.c:535
 msgid "Pseudocolor image does not contain a colormap"
 msgstr "La imatge amb pseudocolors no conté un mapa de colors"
 
-#: cdk-pixbuf/io-tga.c:565
+#: cdk-pixbuf/io-tga.c:578
 msgid "Cannot allocate TGA header memory"
 msgstr "No es pot obtindre memòria per les capçaleres TGA"
 
-#: cdk-pixbuf/io-tga.c:596
+#: cdk-pixbuf/io-tga.c:609
 msgid "TGA image has invalid dimensions"
 msgstr "La imatge TGA té unes dimensions no vàlides"
 
-#: cdk-pixbuf/io-tga.c:602 cdk-pixbuf/io-tga.c:609
+#: cdk-pixbuf/io-tga.c:615 cdk-pixbuf/io-tga.c:622
 msgid "TGA image type not supported"
 msgstr "El tipus d'imatge TGA no està permés"
 
-#: cdk-pixbuf/io-tga.c:634
+#: cdk-pixbuf/io-tga.c:650
 msgid "Cannot allocate memory for TGA context struct"
 msgstr "No es pot obtindre memòria per al context de l'estructura TGA"
 
-#: cdk-pixbuf/io-tga.c:695
+#: cdk-pixbuf/io-tga.c:712
 msgid "TGA image was truncated or incomplete."
 msgstr "Imatge TGA està truncada o incompleta."
 
-#: cdk-pixbuf/io-tga.c:747
+#: cdk-pixbuf/io-tga.c:764
 msgctxt "image format"
 msgid "Targa"
 msgstr "Targa"
 
-#: cdk-pixbuf/io-tiff.c:108
+#: cdk-pixbuf/io-tiff.c:117
 msgid "Could not get image width (bad TIFF file)"
 msgstr "No es pot obtindre l'amplària de la imatge (fitxer TIFF incorrecte)"
 
-#: cdk-pixbuf/io-tiff.c:116
+#: cdk-pixbuf/io-tiff.c:125
 msgid "Could not get image height (bad TIFF file)"
 msgstr "No es pot obtindre l'alçària de la imatge (fitxer TIFF incorrecte)"
 
-#: cdk-pixbuf/io-tiff.c:124
+#: cdk-pixbuf/io-tiff.c:133
 msgid "Width or height of TIFF image is zero"
 msgstr "L'amplària o l'alçària de la imatge TIFF és zero"
 
-#: cdk-pixbuf/io-tiff.c:132 cdk-pixbuf/io-tiff.c:142
+#: cdk-pixbuf/io-tiff.c:141 cdk-pixbuf/io-tiff.c:151
 msgid "Dimensions of TIFF image too large"
 msgstr "Les dimensions de la imatge TIFF són massa grans"
 
-#: cdk-pixbuf/io-tiff.c:168 cdk-pixbuf/io-tiff.c:180 cdk-pixbuf/io-tiff.c:536
+#: cdk-pixbuf/io-tiff.c:177 cdk-pixbuf/io-tiff.c:189 cdk-pixbuf/io-tiff.c:585
 msgid "Insufficient memory to open TIFF file"
 msgstr "No hi ha memòria suficient per obrir el fitxer TIFF"
 
-#: cdk-pixbuf/io-tiff.c:278
+#: cdk-pixbuf/io-tiff.c:287
 msgid "Failed to load RGB data from TIFF file"
 msgstr "No s'han pogut carregar les dades RGB des del fitxer TIFF"
 
-#: cdk-pixbuf/io-tiff.c:340
+#: cdk-pixbuf/io-tiff.c:378
 msgid "Failed to open TIFF image"
 msgstr "No s'ha pogut obrir la imatge TIFF"
 
-#: cdk-pixbuf/io-tiff.c:474 cdk-pixbuf/io-tiff.c:486
+#: cdk-pixbuf/io-tiff.c:516 cdk-pixbuf/io-tiff.c:528
 msgid "Failed to load TIFF image"
 msgstr "No s'ha pogut carregar la imatge TIFF"
 
-#: cdk-pixbuf/io-tiff.c:711
+#: cdk-pixbuf/io-tiff.c:760
 msgid "Failed to save TIFF image"
 msgstr "No s'ha pogut guardar la imatge TIFF"
 
-#: cdk-pixbuf/io-tiff.c:772
-msgid "TIFF compression doesn't refer to a valid codec."
+#: cdk-pixbuf/io-tiff.c:821
+#, fuzzy
+msgid "TIFF compression doesn’t refer to a valid codec."
 msgstr "La compressió TIFF no es refereix a un còdec vàlid."
 
-#: cdk-pixbuf/io-tiff.c:817
-msgid "TIFF bits-per-sample doesn't contain a supported value."
+#: cdk-pixbuf/io-tiff.c:851
+#, c-format
+msgid "Color profile has invalid length %d."
+msgstr "El perfil de color té una llargada no vàlida (%d)."
+
+#: cdk-pixbuf/io-tiff.c:866
+#, fuzzy
+msgid "TIFF bits-per-sample doesn’t contain a supported value."
 msgstr "Els bits per mostra de la imatge TIFF no contenen cap valor suportat. "
 
-#: cdk-pixbuf/io-tiff.c:898
+#: cdk-pixbuf/io-tiff.c:947
 msgid "Failed to write TIFF data"
 msgstr "No s'han pogut escriure dades TIFF"
 
-#: cdk-pixbuf/io-tiff.c:916
-#, c-format
-msgid "TIFF x-dpi must be greater than zero; value '%s' is not allowed."
+#: cdk-pixbuf/io-tiff.c:965
+#, fuzzy, c-format
+msgid "TIFF x-dpi must be greater than zero; value “%s” is not allowed."
 msgstr ""
 "TIFF x-dpi ha de tindre un valor major de zero; el valor «%s» no és permés."
 
-#: cdk-pixbuf/io-tiff.c:928
-#, c-format
-msgid "TIFF y-dpi must be greater than zero; value '%s' is not allowed."
+#: cdk-pixbuf/io-tiff.c:977
+#, fuzzy, c-format
+msgid "TIFF y-dpi must be greater than zero; value “%s” is not allowed."
 msgstr ""
 "TIFF x-dpi ha de tindre un valor major de zero; el valor «%s» no és permés."
 
-#: cdk-pixbuf/io-tiff.c:969
-msgid "Couldn't write to TIFF file"
+#: cdk-pixbuf/io-tiff.c:1018
+#, fuzzy
+msgid "Couldn’t write to TIFF file"
 msgstr "No s'ha pogut escriure al fitxer TIFF"
 
-#: cdk-pixbuf/io-xbm.c:318
+#: cdk-pixbuf/io-xbm.c:320
 msgid "Invalid XBM file"
 msgstr "El fitxer XBM no és vàlid"
 
-#: cdk-pixbuf/io-xbm.c:328
+#: cdk-pixbuf/io-xbm.c:331
 msgid "Insufficient memory to load XBM image file"
 msgstr "No hi ha memòria suficient per carregar el fitxer gràfic XBM"
 
-#: cdk-pixbuf/io-xbm.c:476
+#: cdk-pixbuf/io-xbm.c:482
 msgid "Failed to write to temporary file when loading XBM image"
 msgstr "No s'ha pogut escriure al fitxer temporal en carregar la imatge XBM"
 
-#: cdk-pixbuf/io-xbm.c:515
+#: cdk-pixbuf/io-xbm.c:521
 msgctxt "image format"
 msgid "XBM"
 msgstr "XBM"
 
-#: cdk-pixbuf/io-xpm.c:469
+#: cdk-pixbuf/io-xpm.c:472
 msgid "No XPM header found"
 msgstr "No s'ha trobat la capçalera XPM"
 
-#: cdk-pixbuf/io-xpm.c:478
+#: cdk-pixbuf/io-xpm.c:481 cdk-pixbuf/io-xpm.c:507
 msgid "Invalid XPM header"
 msgstr "La capçalera XPM no és vàlida"
 
-#: cdk-pixbuf/io-xpm.c:486
+#: cdk-pixbuf/io-xpm.c:489
 msgid "XPM file has image width <= 0"
 msgstr "El fitxer XPM té una amplària d'imatge menor o igual que 0"
 
-#: cdk-pixbuf/io-xpm.c:494
+#: cdk-pixbuf/io-xpm.c:497
 msgid "XPM file has image height <= 0"
 msgstr "El fitxer XPM té una alçària d'imatge menor o igual que 0"
 
-#: cdk-pixbuf/io-xpm.c:502
+#: cdk-pixbuf/io-xpm.c:514
 msgid "XPM has invalid number of chars per pixel"
 msgstr "XPM té un nombre de caràcters per píxel no vàlid"
 
-#: cdk-pixbuf/io-xpm.c:511
+#: cdk-pixbuf/io-xpm.c:523
 msgid "XPM file has invalid number of colors"
 msgstr "El fitxer XPM té un nombre de colors no vàlid"
 
-#: cdk-pixbuf/io-xpm.c:523 cdk-pixbuf/io-xpm.c:532 cdk-pixbuf/io-xpm.c:584
+#: cdk-pixbuf/io-xpm.c:535 cdk-pixbuf/io-xpm.c:544 cdk-pixbuf/io-xpm.c:593
 msgid "Cannot allocate memory for loading XPM image"
 msgstr "No es pot obtindre memòria per carregar la imatge XPM"
 
-#: cdk-pixbuf/io-xpm.c:546
+#: cdk-pixbuf/io-xpm.c:558
 msgid "Cannot read XPM colormap"
 msgstr "No es pot llegir el mapa de color d'XPM"
 
-#: cdk-pixbuf/io-xpm.c:778
+#: cdk-pixbuf/io-xpm.c:610
+#, fuzzy
+msgid "Dimensions do not match data"
+msgstr "Les dimensions de la imatge TIFF són massa grans"
+
+#: cdk-pixbuf/io-xpm.c:806
 msgid "Failed to write to temporary file when loading XPM image"
 msgstr "No s'ha pogut escriure al fitxer temporal en carregar la imatge XPM"
 
-#: cdk-pixbuf/io-xpm.c:817
+#: cdk-pixbuf/io-xpm.c:845
 msgctxt "image format"
 msgid "XPM"
 msgstr "XPM"
+
+#, c-format
+#~ msgid "Internal error in the GIF loader (%s)"
+#~ msgstr "Error intern en el carregador de GIF (%s)"
+
+#~ msgid "Stack overflow"
+#~ msgstr "Sobreeiximent de la pila"
+
+#~ msgid "GIF image loader cannot understand this image."
+#~ msgstr "El carregador d'imatges GIF no entén esta imatge."
+
+#~ msgid "Bad code encountered"
+#~ msgstr "S'ha trobat un codi incorrecte"
+
+#~ msgid "Circular table entry in GIF file"
+#~ msgstr "Entrada de taula circular al fitxer GIF"
+
+#~ msgid "Not enough memory to composite a frame in GIF file"
+#~ msgstr "No hi ha memòria suficient per compondre un marc al fitxer GIF"
+
+#~ msgid "Couldn't allocate memory for stream"
+#~ msgstr "No s'ha pogut assignar memòria per al flux"
+
+#~ msgid "Couldn't decode image"
+#~ msgstr "No s'ha pogut descodificar la imatge"
+
+#~ msgid "Transformed JPEG2000 has zero width or height"
+#~ msgstr "El JPEG 2000 transformat té amplària o alçària zero"
+
+#~ msgid "Image type currently not supported"
+#~ msgstr "El tipus d'imatge no està implementat actualment"
+
+#~ msgid "Couldn't allocate memory for color profile"
+#~ msgstr "No s'ha pogut assignar memòria per al perfil de color"
+
+#~ msgid "Insufficient memory to open JPEG 2000 file"
+#~ msgstr "No hi ha memòria suficient per obrir el fitxer JPEG 2000"
+
+#~ msgid "Couldn't allocate memory to buffer image data"
+#~ msgstr ""
+#~ "No s'ha pogut assignar memòria per ubicar les dades d'imatge a la memòria "
+#~ "intermèdia"
+
+#~ msgctxt "image format"
+#~ msgid "JPEG 2000"
+#~ msgstr "JPEG 2000"
+
+#, c-format
+#~ msgid ""
+#~ "PNG compression level must be a value between 0 and 9; value '%s' could "
+#~ "not be parsed."
+#~ msgstr ""
+#~ "El nivell de compressió de PNG ha de ser un valor entre 0 i 9; el valor "
+#~ "«%s» no es pot analitzar."
+
+#, c-format
+#~ msgid "PNG y-dpi must be greater than zero; value '%s' is not allowed."
+#~ msgstr ""
+#~ "PNG y-dpi ha de tindre un valor major de zero; el valor «%s» no és permés."
 
 #~ msgid "Couldn't allocate memory for header"
 #~ msgstr "No es pot obtenir memòria per a la capçalera"

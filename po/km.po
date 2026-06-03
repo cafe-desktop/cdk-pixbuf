@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cdk-pixbuf.master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=ctk%2b&keywords=I18N+L10N&component=cdk\n"
-"POT-Creation-Date: 2012-01-09 15:21+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 08:56+0200\n"
 "PO-Revision-Date: 2012-02-15 11:52+0700\n"
 "Last-Translator: Seng Sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <supprot@khmeros.info>\n"
@@ -19,945 +19,1138 @@ msgstr ""
 "X-Generator: WordForge 0.8 RC1\n"
 "X-Language: km-KH\n"
 
-#: ../cdk-pixbuf/cdk-pixbuf-animation.c:146 ../cdk-pixbuf/cdk-pixbuf-io.c:1070
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:1336
-#, c-format
-msgid "Failed to open file '%s': %s"
+#: cdk-pixbuf/cdk-pixbuf-animation.c:190 cdk-pixbuf/cdk-pixbuf-io.c:1224
+#: cdk-pixbuf/cdk-pixbuf-io.c:1497
+#, fuzzy, c-format
+msgid "Failed to open file “%s”: %s"
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បើក​ឯកសារ '%s' ៖ %s"
 
-#: ../cdk-pixbuf/cdk-pixbuf-animation.c:159 ../cdk-pixbuf/cdk-pixbuf-io.c:1082
-#, c-format
-msgid "Image file '%s' contains no data"
+#: cdk-pixbuf/cdk-pixbuf-animation.c:203 cdk-pixbuf/cdk-pixbuf-io.c:1085
+#, fuzzy, c-format
+msgid "Image file “%s” contains no data"
 msgstr "គ្មាន​ទិន្នន័យ​ឯកសារ​រូបភាព '%s' ឡើយ"
 
-#: ../cdk-pixbuf/cdk-pixbuf-animation.c:201 ../cdk-pixbuf/cdk-pixbuf-io.c:1118
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:1388
-#, c-format
-msgid "Failed to load image '%s': reason not known, probably a corrupt image file"
-msgstr ""
-"បាន​បរាជ័យ​ក្នុង​ការ​ផ្ទុក​រូបភាព '%s' ៖ មិន​ដឹង​​ហេតុផល ។ ប្រហែល​ជា "
-"ឯកសារ​រូបភាព​ខូច"
-
-#: ../cdk-pixbuf/cdk-pixbuf-animation.c:234
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-animation.c:241
+#, fuzzy, c-format
 msgid ""
-"Failed to load animation '%s': reason not known, probably a corrupt "
+"Failed to load animation “%s”: reason not known, probably a corrupt "
 "animation file"
-msgstr ""
-"បាន​បរាជ័យ​ក្នុង​ការ​ផ្ទុក​ចលនា '%s' ៖ មិន​ដឹង​ហេតុផល "
-"ប្រហែល​ជា​ឯកសារ​​របស់​ចលនា​ខូច"
+msgstr "បាន​បរាជ័យ​ក្នុង​ការ​ផ្ទុក​ចលនា '%s' ៖ មិន​ដឹង​ហេតុផល ប្រហែល​ជា​ឯកសារ​​របស់​ចលនា​ខូច"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:803
+#: cdk-pixbuf/cdk-pixbuf-animation.c:309 cdk-pixbuf/cdk-pixbuf-io.c:1260
+#: cdk-pixbuf/cdk-pixbuf-io.c:1549
+#, fuzzy, c-format
+msgid ""
+"Failed to load image “%s”: reason not known, probably a corrupt image file"
+msgstr "បាន​បរាជ័យ​ក្នុង​ការ​ផ្ទុក​រូបភាព '%s' ៖ មិន​ដឹង​​ហេតុផល ។ ប្រហែល​ជា ឯកសារ​រូបភាព​ខូច"
+
+#: cdk-pixbuf/cdk-pixbuf.c:248
+msgid "Number of Channels"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:249
+#, fuzzy
+msgid "The number of samples per pixel"
+msgstr "XPM មាន​ចំនួន​តួអក្សរ​មិន​​ត្រឹមត្រូវ​​ក្នុង​មួយ​ភីកសែល"
+
+#: cdk-pixbuf/cdk-pixbuf.c:264
+msgid "Colorspace"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:265
+msgid "The colorspace in which the samples are interpreted"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:277
+msgid "Has Alpha"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:278
+msgid "Whether the pixbuf has an alpha channel"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:291
+msgid "Bits per Sample"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:292
+msgid "The number of bits per sample"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:305
+msgid "Width"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:306
+msgid "The number of columns of the pixbuf"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:319
+msgid "Height"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:320
+msgid "The number of rows of the pixbuf"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:337
+msgid "Rowstride"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:338
+msgid ""
+"The number of bytes between the start of a row and the start of the next row"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:351
+msgid "Pixels"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:352
+msgid "A pointer to the pixel data of the pixbuf"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:366
+msgid "Pixel Bytes"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf.c:367
+msgid "Readonly pixel data"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf-io.c:901
 #, c-format
 msgid "Unable to load image-loading module: %s: %s"
 msgstr "មិន​អាច​ផ្ទុក​រូបភាព ម៉ូឌុល​ដែល​​ផ្ទុក​ឡើយ ៖ %s: %s"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:818
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-io.c:919
+#, fuzzy, c-format
 msgid ""
-"Image-loading module %s does not export the proper interface; perhaps it's "
+"Image-loading module %s does not export the proper interface; perhaps it’s "
 "from a different cdk-pixbuf version?"
 msgstr ""
-"ម៉ូឌុល​រូបភាព​ដែល​ផ្ទុក %s មិន​នាំចេញ​ចំណុច​ប្រទាក់​ត្រឹមត្រូវ​ឡើយ "
-"ប្រហែល​ជា​​មក​ពី​​កំណែ​របស់ cdk-pixbuf ខុស​គ្នា​ឬ ?"
+"ម៉ូឌុល​រូបភាព​ដែល​ផ្ទុក %s មិន​នាំចេញ​ចំណុច​ប្រទាក់​ត្រឹមត្រូវ​ឡើយ ប្រហែល​ជា​​មក​ពី​​កំណែ​របស់ cdk-pixbuf ខុស​គ្នា​"
+"ឬ ?"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:827 ../cdk-pixbuf/cdk-pixbuf-io.c:878
-#, c-format
-msgid "Image type '%s' is not supported"
+#: cdk-pixbuf/cdk-pixbuf-io.c:929 cdk-pixbuf/cdk-pixbuf-io.c:972
+#, fuzzy, c-format
+msgid "Image type “%s” is not supported"
 msgstr "មិន​គាំទ្រ​ប្រភេទ​រូបភាព '%s' ឡើយ"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:951
-#, c-format
-msgid "Couldn't recognize the image file format for file '%s'"
+#: cdk-pixbuf/cdk-pixbuf-io.c:1057
+#, fuzzy, c-format
+msgid "Couldn’t recognize the image file format for file “%s”"
 msgstr "មិន​អាច​ទទួល​ស្គាល់​ទ្រង់ទ្រាយ​ឯកសារ​រូបភាព​​សម្រាប់​ឯកសារ '%s' ឡើយ"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:959
+#: cdk-pixbuf/cdk-pixbuf-io.c:1065
 msgid "Unrecognized image file format"
 msgstr "ទ្រង់ទ្រាយ​ឯកសារ​រូបភាព​ដែល​មិន​ទទួលស្គាល់"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:1127
-#, c-format
-msgid "Failed to load image '%s': %s"
+#: cdk-pixbuf/cdk-pixbuf-io.c:1271
+#, fuzzy, c-format
+msgid "Failed to load image “%s”: %s"
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​ផ្ទុក​រូបភាព '%s' ៖ %s"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:1905 ../cdk-pixbuf/io-gdip-utils.c:888
+#: cdk-pixbuf/cdk-pixbuf-io.c:2346 cdk-pixbuf/io-gdip-utils.c:840
 #, c-format
 msgid "Error writing to image file: %s"
 msgstr "កំហុស​ក្នុង​ការ​សរសេរ​ទៅកាន់​ឯកសារ​រូបភាព ៖ %s"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:1950 ../cdk-pixbuf/cdk-pixbuf-io.c:2080
+#: cdk-pixbuf/cdk-pixbuf-io.c:2388 cdk-pixbuf/cdk-pixbuf-io.c:2509
 #, c-format
 msgid "This build of cdk-pixbuf does not support saving the image format: %s"
-msgstr ""
-"ស្ថាបនា cdk-pixbuf ​នេះ​មិន​គាំទ្រ​ការ​រក្សាទុក​ទ្រង់ទ្រាយ​ឯកសារ​ឡើយ ៖ %s"
+msgstr "ស្ថាបនា cdk-pixbuf ​នេះ​មិន​គាំទ្រ​ការ​រក្សាទុក​ទ្រង់ទ្រាយ​ឯកសារ​ឡើយ ៖ %s"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:1984
+#: cdk-pixbuf/cdk-pixbuf-io.c:2419
 msgid "Insufficient memory to save image to callback"
 msgstr "អង្គ​ចងចាំ​មិន​គ្រប់គ្រាន់​ក្នុង​ការ​រក្សាទុក​រូបភាព ដើម្បី​​ហៅ​​ទៅ​វិញ"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:1997
+#: cdk-pixbuf/cdk-pixbuf-io.c:2432
 msgid "Failed to open temporary file"
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បើក​ឯកសារ​បណ្ដោះ​អាសន្ន"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:2023
+#: cdk-pixbuf/cdk-pixbuf-io.c:2455
 msgid "Failed to read from temporary file"
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​អាន​ពី​ឯកសារ​បណ្ដោះ​អាសន្ន"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:2276
-#, c-format
-msgid "Failed to open '%s' for writing: %s"
+#: cdk-pixbuf/cdk-pixbuf-io.c:2677
+#, fuzzy, c-format
+msgid "Failed to open “%s” for writing: %s"
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បើក '%s' សម្រាប់​សរសេរ ៖ %s"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:2302
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-io.c:2703
+#, fuzzy, c-format
 msgid ""
-"Failed to close '%s' while writing image, all data may not have been saved: %"
-"s"
+"Failed to close “%s” while writing image, all data may not have been saved: "
+"%s"
 msgstr ""
-"បាន​បរាជ័យ​ក្នុង​ការ​បិទ '%s' ខណៈ​ពេល​គូរ​រូបភាព "
-"ទិន្នន័យ​ទាំងអស់​​អាច​​មិន​ត្រូវ​បាន​រក្សាទុក​ឡើយ ៖ %s"
+"បាន​បរាជ័យ​ក្នុង​ការ​បិទ '%s' ខណៈ​ពេល​គូរ​រូបភាព ទិន្នន័យ​ទាំងអស់​​អាច​​មិន​ត្រូវ​បាន​រក្សាទុក​ឡើយ ៖ %s"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:2523 ../cdk-pixbuf/cdk-pixbuf-io.c:2575
+#: cdk-pixbuf/cdk-pixbuf-io.c:2937 cdk-pixbuf/cdk-pixbuf-io.c:2992
 msgid "Insufficient memory to save image into a buffer"
-msgstr ""
-"អង្គ​ចងចាំ​មិន​គ្រប់គ្រាន់​ក្នុង​ការ​រក្សាទុក​រូបភាព​​ក្នុង​អង្គ​ចងចាំ​បណ្ដោ"
-"ះ​អាសន្ន​ឡើយ"
+msgstr "អង្គ​ចងចាំ​មិន​គ្រប់គ្រាន់​ក្នុង​ការ​រក្សាទុក​រូបភាព​​ក្នុង​អង្គ​ចងចាំ​បណ្ដោះ​អាសន្ន​ឡើយ"
 
-#: ../cdk-pixbuf/cdk-pixbuf-io.c:2621
+#: cdk-pixbuf/cdk-pixbuf-io.c:3038
 msgid "Error writing to image stream"
 msgstr "កំហុស​ក្នុង​ការ​សរសេរ​អំពី​ស្ទ្រីម"
 
-#: ../cdk-pixbuf/cdk-pixbuf-loader.c:395
-#, c-format
+#: cdk-pixbuf/cdk-pixbuf-loader.c:426
+#, fuzzy, c-format
 msgid ""
-"Internal error: Image loader module '%s' failed to complete an operation, "
-"but didn't give a reason for the failure"
+"Internal error: Image loader module “%s” failed to complete an operation, "
+"but didn’t give a reason for the failure"
 msgstr ""
-"កំហុស​ខាងក្នុង ៖ ម៉ូឌុល​កម្មវិធី​ផ្ទុក​រូបភាព '%s' "
-"បាន​បរាជ័យ​ក្នុង​ការ​បំពេញ​ប្រតិបត្តិការ "
-"ប៉ុន្តែ​​មិន​បាន​ផ្ដល់​ហេតុ​ចំពោះ​ភាព​បរាជ័យ​ឡើយ"
+"កំហុស​ខាងក្នុង ៖ ម៉ូឌុល​កម្មវិធី​ផ្ទុក​រូបភាព '%s' បាន​បរាជ័យ​ក្នុង​ការ​បំពេញ​ប្រតិបត្តិការ ប៉ុន្តែ​​មិន​បាន​ផ្ដល់​ហេតុ​"
+"ចំពោះ​ភាព​បរាជ័យ​ឡើយ"
 
-#: ../cdk-pixbuf/cdk-pixbuf-loader.c:437
-#, c-format
-msgid "Incremental loading of image type '%s' is not supported"
+#: cdk-pixbuf/cdk-pixbuf-loader.c:468
+#, fuzzy, c-format
+msgid "Incremental loading of image type “%s” is not supported"
 msgstr "មិន​គាំទ្រ​ការ​ផ្ទុក​ប្រភេទ​រូបភាព​​នៃ​ចំនួន​បន្ថែម '%s' ឡើយ"
 
-#: ../cdk-pixbuf/cdk-pixdata.c:160
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:166
+msgid "Loop"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:167
+msgid "Whether the animation should loop when it reaches the end"
+msgstr ""
+
+#: cdk-pixbuf/cdk-pixdata.c:178
 msgid "Image header corrupt"
 msgstr "បឋម​កថារបស់​​រូបភាព​ខូច"
 
-#: ../cdk-pixbuf/cdk-pixdata.c:165
+#: cdk-pixbuf/cdk-pixdata.c:183
 msgid "Image format unknown"
 msgstr "មិន​ស្គាល់​ទ្រង់ទ្រាយ​រូបភាព"
 
-#: ../cdk-pixbuf/cdk-pixdata.c:170 ../cdk-pixbuf/cdk-pixdata.c:502
+#: cdk-pixbuf/cdk-pixdata.c:188 cdk-pixbuf/cdk-pixdata.c:491
+#: cdk-pixbuf/cdk-pixdata.c:501 cdk-pixbuf/cdk-pixdata.c:597
 msgid "Image pixel data corrupt"
 msgstr "ទិន្នន័យ​ភីកសែល​រូបភាព​ខូច"
 
-#: ../cdk-pixbuf/cdk-pixdata.c:446
+#: cdk-pixbuf/cdk-pixdata.c:513
 #, c-format
 msgid "failed to allocate image buffer of %u byte"
 msgid_plural "failed to allocate image buffer of %u bytes"
 msgstr[0] ""
 msgstr[1] "បាន​បរាជ័យ​ក្នុងការ​បម្រុង​ទុក​អង្គ​ចងចាំ​បណ្ដោះ​អាសន្ន​​រូបភាព​​ %u បៃ"
 
-#: ../cdk-pixbuf/io-ani.c:244
+#: cdk-pixbuf/io-ani.c:239
 msgid "Unexpected icon chunk in animation"
 msgstr "ផ្នែក​នៃ​ចលនា​របស់​រូបតំណាង​ដែល​មិន​រំពឹង"
 
-#: ../cdk-pixbuf/io-ani.c:337
-msgid "Unsupported animation type"
-msgstr "ប្រភេទ​ចលនា​ដែល​មិនគាំទ្រ"
-
-#: ../cdk-pixbuf/io-ani.c:348 ../cdk-pixbuf/io-ani.c:406
-#: ../cdk-pixbuf/io-ani.c:432 ../cdk-pixbuf/io-ani.c:455
-#: ../cdk-pixbuf/io-ani.c:482 ../cdk-pixbuf/io-ani.c:569
-msgid "Invalid header in animation"
-msgstr "បឋម​កថា​ក្នុង​ចលនា​មិន​ត្រឹមត្រូវ"
-
-#: ../cdk-pixbuf/io-ani.c:358 ../cdk-pixbuf/io-ani.c:380
-#: ../cdk-pixbuf/io-ani.c:464 ../cdk-pixbuf/io-ani.c:491
-#: ../cdk-pixbuf/io-ani.c:542 ../cdk-pixbuf/io-ani.c:614
-msgid "Not enough memory to load animation"
-msgstr "គ្មាន​អង្គ​ចងចាំ​គ្រប់គ្រាន់​ក្នុង​ការ​ផ្ទុក​ចលនា​ឡើយ"
-
-#: ../cdk-pixbuf/io-ani.c:398 ../cdk-pixbuf/io-ani.c:424
-#: ../cdk-pixbuf/io-ani.c:443
+#: cdk-pixbuf/io-ani.c:303 cdk-pixbuf/io-ani.c:404 cdk-pixbuf/io-ani.c:430
+#: cdk-pixbuf/io-ani.c:449
 msgid "Malformed chunk in animation"
 msgstr "ផ្នែក​នៃ​ចលនា​មិន​ត្រឹមត្រូវ"
 
-#: ../cdk-pixbuf/io-ani.c:711
-msgid "The ANI image format"
-msgstr "ទ្រង់ទ្រាយ​រូបភាព​របស់ ANI"
+#: cdk-pixbuf/io-ani.c:311 cdk-pixbuf/io-ani.c:354 cdk-pixbuf/io-ani.c:412
+#: cdk-pixbuf/io-ani.c:438 cdk-pixbuf/io-ani.c:461 cdk-pixbuf/io-ani.c:488
+#: cdk-pixbuf/io-ani.c:575
+msgid "Invalid header in animation"
+msgstr "បឋម​កថា​ក្នុង​ចលនា​មិន​ត្រឹមត្រូវ"
 
-#: ../cdk-pixbuf/io-bmp.c:229 ../cdk-pixbuf/io-bmp.c:266
-#: ../cdk-pixbuf/io-bmp.c:337 ../cdk-pixbuf/io-bmp.c:369
-#: ../cdk-pixbuf/io-bmp.c:392 ../cdk-pixbuf/io-bmp.c:495
+#: cdk-pixbuf/io-ani.c:364 cdk-pixbuf/io-ani.c:386 cdk-pixbuf/io-ani.c:470
+#: cdk-pixbuf/io-ani.c:497 cdk-pixbuf/io-ani.c:548 cdk-pixbuf/io-ani.c:624
+msgid "Not enough memory to load animation"
+msgstr "គ្មាន​អង្គ​ចងចាំ​គ្រប់គ្រាន់​ក្នុង​ការ​ផ្ទុក​ចលនា​ឡើយ"
+
+#: cdk-pixbuf/io-ani.c:646
+#, fuzzy
+msgid "ANI image was truncated or incomplete."
+msgstr "រូបភាព​របស់ GIF ត្រូវ​បាន​​កាត់​ឲ្យ​ខ្លី ឬ​មិន​ពេញ​លេញ ។"
+
+#: cdk-pixbuf/io-ani.c:687
+msgctxt "image format"
+msgid "Windows animated cursor"
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:234 cdk-pixbuf/io-bmp.c:275 cdk-pixbuf/io-bmp.c:385
+#: cdk-pixbuf/io-bmp.c:412 cdk-pixbuf/io-bmp.c:437 cdk-pixbuf/io-bmp.c:472
+#: cdk-pixbuf/io-bmp.c:494 cdk-pixbuf/io-bmp.c:572
 msgid "BMP image has bogus header data"
 msgstr "រូបភាព​របស់ BMP ​មាន​ទិន្នន័យ​បឋម​កថា​ក្លែងក្លាយ"
 
-#: ../cdk-pixbuf/io-bmp.c:240 ../cdk-pixbuf/io-bmp.c:432
+#: cdk-pixbuf/io-bmp.c:245 cdk-pixbuf/io-bmp.c:507
 msgid "Not enough memory to load bitmap image"
 msgstr "គ្មាន​អង្គ​ចងចាំ​គ្រប់គ្រាន់​ក្នុង​ការ​ផ្ទុក​រូបភាព​​ឡើយ"
 
-#: ../cdk-pixbuf/io-bmp.c:318
+#: cdk-pixbuf/io-bmp.c:339
 msgid "BMP image has unsupported header size"
 msgstr "រូបភាព​របស់ BMP ​មាន​ទំហំ​បឋម​កថា​ដែល​មិន​គាំទ្រ"
 
-#: ../cdk-pixbuf/io-bmp.c:356
+#: cdk-pixbuf/io-bmp.c:348
+#, fuzzy
+msgid "BMP image has unsupported depth"
+msgstr "រូបភាព​របស់ BMP ​មាន​ទំហំ​បឋម​កថា​ដែល​មិន​គាំទ្រ"
+
+#: cdk-pixbuf/io-bmp.c:367
+#, fuzzy
+msgid "BMP image has oversize palette"
+msgstr "រូបភាព​របស់ BMP ​មាន​ទិន្នន័យ​បឋម​កថា​ក្លែងក្លាយ"
+
+#: cdk-pixbuf/io-bmp.c:399
 msgid "Topdown BMP images cannot be compressed"
 msgstr "មិន​អាច​បង្ហាប់​រូបភាព Topdown BMP ឡើយ"
 
-#: ../cdk-pixbuf/io-bmp.c:716 ../cdk-pixbuf/io-pnm.c:707
+#: cdk-pixbuf/io-bmp.c:424
+msgid "BMP image width too large"
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:814 cdk-pixbuf/io-png.c:587 cdk-pixbuf/io-pnm.c:722
+#: cdk-pixbuf/io-pnm.c:879
 msgid "Premature end-of-file encountered"
 msgstr "ចុង​របស់​ឯកសារ​មុន​កាល​កំណត់​ដែល​បាន​ជួបប្រទះ"
 
-#: ../cdk-pixbuf/io-bmp.c:1328
-msgid "Couldn't allocate memory for saving BMP file"
+#: cdk-pixbuf/io-bmp.c:1340
+msgid "Error while decoding colormap"
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:1403 cdk-pixbuf/io-bmp.c:1415
+msgid "Image is too wide for BMP format."
+msgstr ""
+
+#: cdk-pixbuf/io-bmp.c:1448
+#, fuzzy
+msgid "Couldn’t allocate memory for saving BMP file"
 msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​សម្រាប់​ការ​រក្សាទុក​ឯកសារ​របស់ BMP ឡើយ"
 
-#: ../cdk-pixbuf/io-bmp.c:1369
-msgid "Couldn't write to BMP file"
+#: cdk-pixbuf/io-bmp.c:1489
+#, fuzzy
+msgid "Couldn’t write to BMP file"
 msgstr "មិន​អាច​សរសេរ​អំពី​​ឯកសារ​របស់ BMP បាន​​ទេ"
 
-#: ../cdk-pixbuf/io-bmp.c:1422 ../cdk-pixbuf/io-gdip-bmp.c:82
-msgid "The BMP image format"
-msgstr "ទ្រង់ទ្រាយ​ឯកសារ​របស់ BMP"
+#: cdk-pixbuf/io-bmp.c:1542 cdk-pixbuf/io-gdip-bmp.c:83
+msgctxt "image format"
+msgid "BMP"
+msgstr ""
 
-#: ../cdk-pixbuf/io-gif.c:221
+#: cdk-pixbuf/io-gdip-emf.c:61
+msgctxt "image format"
+msgid "EMF"
+msgstr ""
+
+#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1039
+msgctxt "image format"
+msgid "GIF"
+msgstr ""
+
+#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1418
+msgctxt "image format"
+msgid "Windows icon"
+msgstr ""
+
+#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1409
+#, fuzzy, c-format
+msgid ""
+"JPEG quality must be a value between 0 and 100; value “%s” could not be "
+"parsed."
+msgstr "គុណភាព​របស់ JPEG ត្រូវ​តែ​​មាន​តម្លៃ​ចន្លោះ ០ ដល់ ១០០ តម្លៃ '%s' មិន​អាច​ត្រូវ​បាន​ញែក​ឡើយ ។"
+
+#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1425
+#, fuzzy, c-format
+msgid ""
+"JPEG quality must be a value between 0 and 100; value “%d” is not allowed."
+msgstr ""
+"គុណភាព​របស់ JPEG  ត្រូវ​តែ​មាន​តម្លៃ​​​ចន្លោះ ០ ដល់ ១០០ តម្លៃ '%d' មិន​ត្រូវ​បាន​អនុញ្ញាត​ឡើយ ។"
+
+#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1710
+msgctxt "image format"
+msgid "JPEG"
+msgstr ""
+
+#: cdk-pixbuf/io-gdip-tiff.c:83 cdk-pixbuf/io-tiff.c:1087
+msgctxt "image format"
+msgid "TIFF"
+msgstr ""
+
+#: cdk-pixbuf/io-gdip-utils.c:155
+#, c-format
+msgid "Could not allocate memory: %s"
+msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​បាន​ទេ ៖ %s"
+
+#: cdk-pixbuf/io-gdip-utils.c:180 cdk-pixbuf/io-gdip-utils.c:294
+#: cdk-pixbuf/io-gdip-utils.c:334
+#, c-format
+msgid "Could not create stream: %s"
+msgstr "មិន​អាច​បង្កើត​ស្ទ្រីម​បាន​ទេ ៖ %s"
+
+#: cdk-pixbuf/io-gdip-utils.c:194
+#, c-format
+msgid "Could not seek stream: %s"
+msgstr "មិន​អាច​ស្វែងរក​ស្ទ្រីម​បាន​ទេ ៖ %s"
+
+#: cdk-pixbuf/io-gdip-utils.c:206
+#, c-format
+msgid "Could not read from stream: %s"
+msgstr "មិន​អាច​អាន​ពី​ស្ទ្រីម​បាន​ទេ ៖ %s"
+
+#: cdk-pixbuf/io-gdip-utils.c:620
+#, fuzzy
+msgid "Couldn’t load bitmap"
+msgstr "មិន​អាច​ផ្ទុក​រូបភាព​បាន​ទេ"
+
+#: cdk-pixbuf/io-gdip-utils.c:776
+#, fuzzy
+msgid "Couldn’t load metafile"
+msgstr "មិន​អាច​ផ្ទុក​ឯកសារ​មេតា​បាន​ទេ"
+
+#: cdk-pixbuf/io-gdip-utils.c:881
+msgid "Unsupported image format for GDI+"
+msgstr "ទ្រង់ទ្រាយ​រូបភាព​ដែល​មិន​បាន​គាំទ្រ​សម្រាប់ GDI+"
+
+#: cdk-pixbuf/io-gdip-utils.c:888
+#, fuzzy
+msgid "Couldn’t save"
+msgstr "មិន​អាច​រក្សាទុក​បាន​ទេ"
+
+#: cdk-pixbuf/io-gdip-wmf.c:60
+msgctxt "image format"
+msgid "WMF"
+msgstr ""
+
+#: cdk-pixbuf/io-gif.c:160
 #, c-format
 msgid "Failure reading GIF: %s"
 msgstr "ភាព​បរាជ័យ​ក្នុង​ការ​អាន GIF ៖ %s"
 
-#: ../cdk-pixbuf/io-gif.c:495 ../cdk-pixbuf/io-gif.c:1482
-#: ../cdk-pixbuf/io-gif.c:1648
-#, fuzzy
-msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
-msgstr ""
-"បាត់​ទិន្នន័យ​​ឯកសារ​មួយ​ចំនួន​របស់ GIF "
-"(ប្រហែល​ជា​វា​ត្រូវ​បាន​កាត់​ឲ្យ​ខ្លី​ somehow?)"
-
-#: ../cdk-pixbuf/io-gif.c:504
-#, c-format
-msgid "Internal error in the GIF loader (%s)"
-msgstr "កំហុស​ខាង​ក្នុង​​ក្នុង​កម្មវិធី​ផ្ទុក​របស់ GIF (%s)"
-
-#: ../cdk-pixbuf/io-gif.c:578
-msgid "Stack overflow"
-msgstr "លើស​ចំនួន​ជង់"
-
-#: ../cdk-pixbuf/io-gif.c:638
-msgid "GIF image loader cannot understand this image."
-msgstr "កម្មវិធី​ផ្ទុក​រូបភាព​របស់ GIF មិន​អាច​ចំណាំ​រូបភាព​នេះ​បាន​ទេ ។"
-
-#: ../cdk-pixbuf/io-gif.c:667
-msgid "Bad code encountered"
-msgstr "បាន​ជួប​ប្រទះ​កូដ​មិន​ត្រឹមត្រូវ"
-
-#: ../cdk-pixbuf/io-gif.c:677
-msgid "Circular table entry in GIF file"
-msgstr "ធាតុ​របស់ Circular table នៅ​ក្នុង​ឯកសារ​របស់ GIF"
-
-#: ../cdk-pixbuf/io-gif.c:865 ../cdk-pixbuf/io-gif.c:1468
-#: ../cdk-pixbuf/io-gif.c:1521 ../cdk-pixbuf/io-gif.c:1636
+#: cdk-pixbuf/io-gif.c:383 cdk-pixbuf/io-gif.c:850 cdk-pixbuf/io-gif.c:903
+#: cdk-pixbuf/io-gif.c:976
 msgid "Not enough memory to load GIF file"
 msgstr "គ្មាន​អង្គ​ចងចាំ​គ្រប់គ្រាន់​ក្នុង​ការ​ផ្ទុក​ឯកសារ​របស់ GIF ឡើយ"
 
-#: ../cdk-pixbuf/io-gif.c:959
-msgid "Not enough memory to composite a frame in GIF file"
-msgstr ""
-"គ្មាន​អង្គ​ចងចាំ​គ្រប់គ្រាន់​ ដើម្បី​ប្រមូលផ្ដុំ​ស៊ុម​នៅ​ក្នុង​ឯកសារ​របស់ "
-"GIF បាន​ឡើយ"
-
-#: ../cdk-pixbuf/io-gif.c:1131
+#: cdk-pixbuf/io-gif.c:509
 msgid "GIF image is corrupt (incorrect LZW compression)"
 msgstr "រូបភាព​របស់ GIF គឺ​ខូច (ការ​បង្ហាប់​របស់ LZW មិន​ត្រឹមត្រូវ)"
 
-#: ../cdk-pixbuf/io-gif.c:1181
+#: cdk-pixbuf/io-gif.c:545
 msgid "File does not appear to be a GIF file"
 msgstr "ឯកសារ​​មិន​លេចឡើង​​​ជា​ឯកសារ​របស់ GIF ឡើយ"
 
-#: ../cdk-pixbuf/io-gif.c:1193
+#: cdk-pixbuf/io-gif.c:560
 #, c-format
 msgid "Version %s of the GIF file format is not supported"
 msgstr "មិន​គាំទ្រ​កំណែ %s នៃ​ទ្រង់ទ្រាយ​ឯកសារ​របស់ GIF ឡើយ"
 
-#: ../cdk-pixbuf/io-gif.c:1302
+#: cdk-pixbuf/io-gif.c:589
+#, fuzzy
+msgid "Resulting GIF image has zero size"
+msgstr "រូបភាព​មាន​ទទឹង ០"
+
+#: cdk-pixbuf/io-gif.c:659
 msgid ""
 "GIF image has no global colormap, and a frame inside it has no local "
 "colormap."
 msgstr ""
-"រូបភាព​របស់ GIF ​គ្មាន​ colormap សាកល​ឡើយ ហើយ​ស៊ុម​ខាង​ក្នុង​វា​គ្មាន "
-"colormap មូលដ្ឋាន​ទេ ។"
+"រូបភាព​របស់ GIF ​គ្មាន​ colormap សាកល​ឡើយ ហើយ​ស៊ុម​ខាង​ក្នុង​វា​គ្មាន colormap មូលដ្ឋាន​ទេ ។"
 
-#: ../cdk-pixbuf/io-gif.c:1543
+#: cdk-pixbuf/io-gif.c:863 cdk-pixbuf/io-gif.c:988
+#, fuzzy
+msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
+msgstr "បាត់​ទិន្នន័យ​​ឯកសារ​មួយ​ចំនួន​របស់ GIF (ប្រហែល​ជា​វា​ត្រូវ​បាន​កាត់​ឲ្យ​ខ្លី​ somehow?)"
+
+#: cdk-pixbuf/io-gif.c:922
 msgid "GIF image was truncated or incomplete."
 msgstr "រូបភាព​របស់ GIF ត្រូវ​បាន​​កាត់​ឲ្យ​ខ្លី ឬ​មិន​ពេញ​លេញ ។"
 
-#: ../cdk-pixbuf/io-gif.c:1699 ../cdk-pixbuf/io-gdip-gif.c:80
-msgid "The GIF image format"
-msgstr "ទ្រង់ទ្រាយ​រូបភាព​របស់ GIF"
+#: cdk-pixbuf/io-gif.c:929
+msgid "Not all frames of the GIF image were loaded."
+msgstr ""
 
-#: ../cdk-pixbuf/io-ico.c:228 ../cdk-pixbuf/io-ico.c:242
-#: ../cdk-pixbuf/io-ico.c:291 ../cdk-pixbuf/io-ico.c:302
-#: ../cdk-pixbuf/io-ico.c:395
-msgid "Invalid header in icon"
-msgstr "បឋម​កថា​ក្នុង​រូបតំណាង​មិន​ត្រឹមត្រូវ"
-
-#: ../cdk-pixbuf/io-ico.c:257 ../cdk-pixbuf/io-ico.c:312
-#: ../cdk-pixbuf/io-ico.c:405 ../cdk-pixbuf/io-ico.c:458
-#: ../cdk-pixbuf/io-ico.c:488
-msgid "Not enough memory to load icon"
-msgstr "គ្មាន​អង្គ​ចងចាំ​គ្រប់គ្រាន់​ត្រូវ​ផ្ទុក​រូបតំណាង​ឡើយ"
-
-#: ../cdk-pixbuf/io-ico.c:338
-msgid "Compressed icons are not supported"
-msgstr "គ្មាន​រូបតំណាង​ដែល​បាន​បង្ហាញ​ឡើយ"
-
-#: ../cdk-pixbuf/io-ico.c:358
-msgid "Icon has zero width"
-msgstr "រូបតំណាង​មាន​ទទឹង ០"
-
-#: ../cdk-pixbuf/io-ico.c:368
-msgid "Icon has zero height"
-msgstr "រូបតំណាង​មាន​កម្ពស់​ ០"
-
-#: ../cdk-pixbuf/io-ico.c:443
-msgid "Unsupported icon type"
-msgstr "ប្រភេទ​រូបតំណាង​ដែល​មិន​គាំទ្រ"
-
-#: ../cdk-pixbuf/io-ico.c:537
-msgid "Not enough memory to load ICO file"
-msgstr "គ្មាន​អង្គ​ចងចាំ​គ្រប់គ្រាន់​ក្នុង​ការ​ផ្ទុក​ឯកសារ​របស់ ICO"
-
-#: ../cdk-pixbuf/io-ico.c:1002
-msgid "Image too large to be saved as ICO"
-msgstr "រូបភាព​ធំ​ពេក​​ត្រូវ​បាន​រក្សាទុក​ជា ICO"
-
-#: ../cdk-pixbuf/io-ico.c:1013
-#, fuzzy
-msgid "Cursor hotspot outside image"
-msgstr "រូបភាព​ខាងក្រៅ Cursor hotspot"
-
-#: ../cdk-pixbuf/io-ico.c:1036
-#, c-format
-msgid "Unsupported depth for ICO file: %d"
-msgstr "កម្រិត​ដែល​មិន​បាន​គាំទ្រ​សម្រាប់​ឯកសារ ICO ៖ %d"
-
-#: ../cdk-pixbuf/io-ico.c:1271 ../cdk-pixbuf/io-gdip-ico.c:59
-msgid "The ICO image format"
-msgstr "ទ្រង់ទ្រាយ​ឯកសារ​របស់ ICO"
-
-#: ../cdk-pixbuf/io-icns.c:347
+#: cdk-pixbuf/io-icns.c:363
 #, c-format
 msgid "Error reading ICNS image: %s"
 msgstr "កំហុស​ក្នុង​ការ​មើល​រូបភាព​របស់ ICNS ៖ %s"
 
-#: ../cdk-pixbuf/io-icns.c:364
+#: cdk-pixbuf/io-icns.c:380 cdk-pixbuf/io-icns.c:461
 msgid "Could not decode ICNS file"
 msgstr "មិន​អាច​ឌិកូដ​ឯកសារ​របស់ ICNS បាន​ទេ"
 
-#: ../cdk-pixbuf/io-icns.c:397
-msgid "The ICNS image format"
-msgstr "ទ្រង់ទ្រាយ​រូបភាព​របស់ ICNS បាន​ទេ"
-
-#: ../cdk-pixbuf/io-jasper.c:74
-msgid "Couldn't allocate memory for stream"
-msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​សម្រាប់​ស្ទ្រីម​បាន​ទេ"
-
-#: ../cdk-pixbuf/io-jasper.c:104
-msgid "Couldn't decode image"
-msgstr "មិន​អាច​ឌិកូដ​រូបភាព​បាន​ទេ"
-
-#: ../cdk-pixbuf/io-jasper.c:122
-msgid "Transformed JPEG2000 has zero width or height"
-msgstr "JPEG2000 ដែល​បាន​​​ប្លែង​​មាន​កម្ពស់ ឬ ទទឹង ០"
-
-#: ../cdk-pixbuf/io-jasper.c:136
-msgid "Image type currently not supported"
-msgstr "មិន​គាំទ្រ​ប្រភេទ​រូបភាព​បច្ចុប្បន្ន"
-
-#: ../cdk-pixbuf/io-jasper.c:148 ../cdk-pixbuf/io-jasper.c:156
-msgid "Couldn't allocate memory for color profile"
-msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​សម្រាប់​ទម្រង់​ពណ៌​ឡើយ"
-
-#: ../cdk-pixbuf/io-jasper.c:182
-msgid "Insufficient memory to open JPEG 2000 file"
-msgstr "អង្គ​ចងចាំ​មិន​គ្រប់គ្រាន់​ក្នុង​ការ​បើក​ឯកសារ​របស់ JPEG 2000"
-
-#: ../cdk-pixbuf/io-jasper.c:261
-msgid "Couldn't allocate memory to buffer image data"
+#: cdk-pixbuf/io-icns.c:517
+msgctxt "image format"
+msgid "MacOS X icon"
 msgstr ""
-"មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​​​សម្រាប់​​ទិន្នន័យ​រូបភាព​នៃ​អង្គ​ចងចាំ​​បណ្ដ"
-"ោះ​អាសន្ន​ឡើយ"
 
-#: ../cdk-pixbuf/io-jasper.c:305
-msgid "The JPEG 2000 image format"
-msgstr "ទ្រង់ទ្រាយ​រូបភាព​របស់ JPEG 2000"
+#: cdk-pixbuf/io-ico.c:238 cdk-pixbuf/io-ico.c:252 cdk-pixbuf/io-ico.c:342
+#: cdk-pixbuf/io-ico.c:426 cdk-pixbuf/io-ico.c:451
+#, fuzzy, c-format
+msgid "Invalid header in icon (%s)"
+msgstr "បឋម​កថា​ក្នុង​រូបតំណាង​មិន​ត្រឹមត្រូវ"
 
-#: ../cdk-pixbuf/io-jpeg.c:116
+#: cdk-pixbuf/io-ico.c:268 cdk-pixbuf/io-ico.c:355 cdk-pixbuf/io-ico.c:461
+#: cdk-pixbuf/io-ico.c:504 cdk-pixbuf/io-ico.c:532
+msgid "Not enough memory to load icon"
+msgstr "គ្មាន​អង្គ​ចងចាំ​គ្រប់គ្រាន់​ត្រូវ​ផ្ទុក​រូបតំណាង​ឡើយ"
+
+#: cdk-pixbuf/io-ico.c:386
+msgid "Invalid header in icon"
+msgstr "បឋម​កថា​ក្នុង​រូបតំណាង​មិន​ត្រឹមត្រូវ"
+
+#: cdk-pixbuf/io-ico.c:387
+msgid "Compressed icons are not supported"
+msgstr "គ្មាន​រូបតំណាង​ដែល​បាន​បង្ហាញ​ឡើយ"
+
+#: cdk-pixbuf/io-ico.c:489
+msgid "Unsupported icon type"
+msgstr "ប្រភេទ​រូបតំណាង​ដែល​មិន​គាំទ្រ"
+
+#: cdk-pixbuf/io-ico.c:583
+msgid "Not enough memory to load ICO file"
+msgstr "គ្មាន​អង្គ​ចងចាំ​គ្រប់គ្រាន់​ក្នុង​ការ​ផ្ទុក​ឯកសារ​របស់ ICO"
+
+#: cdk-pixbuf/io-ico.c:629
+#, fuzzy
+msgid "ICO image was truncated or incomplete."
+msgstr "រូបភាព​របស់ GIF ត្រូវ​បាន​​កាត់​ឲ្យ​ខ្លី ឬ​មិន​ពេញ​លេញ ។"
+
+#: cdk-pixbuf/io-ico.c:1070
+msgid "Image too large to be saved as ICO"
+msgstr "រូបភាព​ធំ​ពេក​​ត្រូវ​បាន​រក្សាទុក​ជា ICO"
+
+#: cdk-pixbuf/io-ico.c:1081
+#, fuzzy
+msgid "Cursor hotspot outside image"
+msgstr "រូបភាព​ខាងក្រៅ Cursor hotspot"
+
+#: cdk-pixbuf/io-ico.c:1104
+#, c-format
+msgid "Unsupported depth for ICO file: %d"
+msgstr "កម្រិត​ដែល​មិន​បាន​គាំទ្រ​សម្រាប់​ឯកសារ ICO ៖ %d"
+
+#: cdk-pixbuf/io-jpeg.c:131
 #, c-format
 msgid "Error interpreting JPEG image file (%s)"
 msgstr "កំហុស​ក្នុង​ការ​​បកប្រែ​ឯកសារ​រូបភាព JPEG (%s)"
 
-#: ../cdk-pixbuf/io-jpeg.c:527
+#: cdk-pixbuf/io-jpeg.c:647
 msgid ""
 "Insufficient memory to load image, try exiting some applications to free "
 "memory"
 msgstr ""
-"អង្គ​ចងចាំ​មិន​គ្រប់គ្រាន់​ក្នុង​ការ​ផ្ទុក​រូបភាព "
-"សាកល្បង​កម្មវិធី​មួយ​ចំនួន​ដែល​មាន​ស្រាប់​ទៅកាន់​អង្គ​ចងចាំ​ដែល​ទំនេរ"
+"អង្គ​ចងចាំ​មិន​គ្រប់គ្រាន់​ក្នុង​ការ​ផ្ទុក​រូបភាព សាកល្បង​កម្មវិធី​មួយ​ចំនួន​ដែល​មាន​ស្រាប់​ទៅកាន់​អង្គ​ចងចាំ​ដែល​ទំនេរ"
 
-#: ../cdk-pixbuf/io-jpeg.c:568 ../cdk-pixbuf/io-jpeg.c:781
+#: cdk-pixbuf/io-jpeg.c:720 cdk-pixbuf/io-jpeg.c:970
 #, c-format
 msgid "Unsupported JPEG color space (%s)"
 msgstr "គំរូ​ពណ៌​របស់ JPEG ដែល​មិន​គាំទ្រ (%s)"
 
-#: ../cdk-pixbuf/io-jpeg.c:680 ../cdk-pixbuf/io-jpeg.c:950
-#: ../cdk-pixbuf/io-jpeg.c:1183 ../cdk-pixbuf/io-jpeg.c:1192
-msgid "Couldn't allocate memory for loading JPEG file"
+#: cdk-pixbuf/io-jpeg.c:845 cdk-pixbuf/io-jpeg.c:1169 cdk-pixbuf/io-jpeg.c:1516
+#: cdk-pixbuf/io-jpeg.c:1526
+#, fuzzy
+msgid "Couldn’t allocate memory for loading JPEG file"
 msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​សម្រាប់​​ផ្ទុក​រូបភាព​របស់ JPEG ឡើយ"
 
-#: ../cdk-pixbuf/io-jpeg.c:925
+#: cdk-pixbuf/io-jpeg.c:1127
 msgid "Transformed JPEG has zero width or height."
 msgstr "បាន​បម្លែង JPEG មាន​កម្ពស់ ឬ​ទទឹង ០ ។"
 
-#: ../cdk-pixbuf/io-jpeg.c:1139 ../cdk-pixbuf/io-gdip-jpeg.c:53
-#, c-format
+#: cdk-pixbuf/io-jpeg.c:1153
+#, fuzzy, c-format
+msgid "Unsupported number of color components (%d)"
+msgstr "គំរូ​ពណ៌​របស់ JPEG ដែល​មិន​គាំទ្រ (%s)"
+
+#: cdk-pixbuf/io-jpeg.c:1446
+#, fuzzy, c-format
 msgid ""
-"JPEG quality must be a value between 0 and 100; value '%s' could not be "
-"parsed."
+"JPEG x-dpi must be a value between 1 and 65535; value “%s” is not allowed."
 msgstr ""
-"គុណភាព​របស់ JPEG ត្រូវ​តែ​​មាន​តម្លៃ​ចន្លោះ ០ ដល់ ១០០ តម្លៃ '%s' "
-"មិន​អាច​ត្រូវ​បាន​ញែក​ឡើយ ។"
+"គុណភាព​របស់ JPEG  ត្រូវ​តែ​មាន​តម្លៃ​​​ចន្លោះ ០ ដល់ ១០០ តម្លៃ '%d' មិន​ត្រូវ​បាន​អនុញ្ញាត​ឡើយ ។"
 
-#: ../cdk-pixbuf/io-jpeg.c:1154 ../cdk-pixbuf/io-gdip-jpeg.c:68
-#, c-format
-msgid "JPEG quality must be a value between 0 and 100; value '%d' is not allowed."
+#: cdk-pixbuf/io-jpeg.c:1467
+#, fuzzy, c-format
+msgid ""
+"JPEG y-dpi must be a value between 1 and 65535; value “%s” is not allowed."
 msgstr ""
-"គុណភាព​របស់ JPEG  ត្រូវ​តែ​មាន​តម្លៃ​​​ចន្លោះ ០ ដល់ ១០០ តម្លៃ '%d' "
-"មិន​ត្រូវ​បាន​អនុញ្ញាត​ឡើយ ។"
+"គុណភាព​របស់ JPEG  ត្រូវ​តែ​មាន​តម្លៃ​​​ចន្លោះ ០ ដល់ ១០០ តម្លៃ '%d' មិន​ត្រូវ​បាន​អនុញ្ញាត​ឡើយ ។"
 
-#: ../cdk-pixbuf/io-jpeg.c:1316 ../cdk-pixbuf/io-gdip-jpeg.c:136
-msgid "The JPEG image format"
-msgstr "ទ្រង់ទ្រាយ​រូបភាព​របស់ JPEG"
+#: cdk-pixbuf/io-jpeg.c:1481
+#, fuzzy, c-format
+msgid "Color profile has invalid length “%u”."
+msgstr "ទម្រង់​ពណ៌​មាន​ប្រវែង​មិន​ត្រឹមត្រូវ %d ។"
 
-#: ../cdk-pixbuf/io-pcx.c:186
-msgid "Couldn't allocate memory for header"
-msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​សម្រាប់​បឋមកថា​ឡើយ"
-
-#: ../cdk-pixbuf/io-pcx.c:201 ../cdk-pixbuf/io-pcx.c:559
-msgid "Couldn't allocate memory for context buffer"
-msgstr ""
-"មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​សម្រាប់​អង្គ​ចងចាំ​បណ្ដោះ​អាសន្ន​នៃ​បរិបទ​ឡើយ"
-
-#: ../cdk-pixbuf/io-pcx.c:600
-msgid "Image has invalid width and/or height"
-msgstr "រូបភាព​មាន​ទទឹង និង​/​ឬ កម្ពស់​មិន​ត្រឹមត្រូវ"
-
-#: ../cdk-pixbuf/io-pcx.c:612 ../cdk-pixbuf/io-pcx.c:673
-msgid "Image has unsupported bpp"
-msgstr "រូបភាព​មាន bpp ដែល​មិន​គាំទ្រ"
-
-#: ../cdk-pixbuf/io-pcx.c:617 ../cdk-pixbuf/io-pcx.c:625
-#, c-format
-msgid "Image has unsupported number of %d-bit planes"
-msgstr "រូបភាព​មាន​​ចំនួន​ផ្ទៃ​រាប %d ប៊ីត​ដែល​មិន​បាន​គាំទ្រ"
-
-#: ../cdk-pixbuf/io-pcx.c:641
-msgid "Couldn't create new pixbuf"
-msgstr "មិន​អាច​បង្កើត​ pixbuf ថ្មី​បាន​ទេ"
-
-#: ../cdk-pixbuf/io-pcx.c:649
-msgid "Couldn't allocate memory for line data"
-msgstr "មិន​អាច​បម្រុងទុក​​អង្គ​ចងចាំ​សម្រាប់​ទិន្នន័យ​ឡើយ"
-
-#: ../cdk-pixbuf/io-pcx.c:656
-msgid "Couldn't allocate memory for PCX image"
-msgstr "មិន​អាច​បម្រុងទុក​អង្គ​ចងចាំ​សម្រាប់​រូបភាព​របស់ PCX ឡើយ"
-
-#: ../cdk-pixbuf/io-pcx.c:703
-msgid "Didn't get all lines of PCX image"
-msgstr "កុំ​យក​ជួរ​ទាំងអស់​របស់​រូបភាព PCX"
-
-#: ../cdk-pixbuf/io-pcx.c:710
-msgid "No palette found at end of PCX data"
-msgstr "រក​មិន​ឃើញ​ក្ដារ​ពណ៌​នៅ​ចុង​នៃ​ទិន្នន័យ​របស់ PCX ឡើយ"
-
-#: ../cdk-pixbuf/io-pcx.c:755
-msgid "The PCX image format"
-msgstr "ទ្រង់ទ្រាយ​រូបភាព​របស់ PCX"
-
-#: ../cdk-pixbuf/io-png.c:54
+#: cdk-pixbuf/io-png.c:64
 msgid "Bits per channel of PNG image is invalid."
 msgstr "ប៊ីត​តាម​ឆានែល​របស់​រូបភាព PNG មិន​ត្រឹមត្រូវ​ឡើយ ។"
 
-#: ../cdk-pixbuf/io-png.c:135 ../cdk-pixbuf/io-png.c:641
+#: cdk-pixbuf/io-png.c:145 cdk-pixbuf/io-png.c:730
 msgid "Transformed PNG has zero width or height."
 msgstr "PNG ដែល​បាន​​ប្លែង​មាន​កម្ពស់ ឬ​ទទឹង ០ ។"
 
-#: ../cdk-pixbuf/io-png.c:143
+#: cdk-pixbuf/io-png.c:153
 msgid "Bits per channel of transformed PNG is not 8."
 msgstr "ប៊ីត​តាម​ឆានែល​របស់ PNG ដែល​បាន​បម្លែង​គឺ​មិន ៨ ឡើយ ។"
 
-#: ../cdk-pixbuf/io-png.c:152
+#: cdk-pixbuf/io-png.c:162
 msgid "Transformed PNG not RGB or RGBA."
 msgstr "PNG ដែល​បាន​បម្លែង មិន​មែន RGB ឬ RGBA ឡើយ ។"
 
-#: ../cdk-pixbuf/io-png.c:161
+#: cdk-pixbuf/io-png.c:171
 msgid "Transformed PNG has unsupported number of channels, must be 3 or 4."
 msgstr "PNG ដែល​បម្លែង​មិន​គាំទ្រ​ចំនួន​ឆានែល ត្រូវ​តែ​ ៣ ឬ ៤ ។"
 
-#: ../cdk-pixbuf/io-png.c:182
+#: cdk-pixbuf/io-png.c:193
 #, c-format
 msgid "Fatal error in PNG image file: %s"
 msgstr "កំហុស​ធ្ងន់ធ្ងរ​នៅ​ក្នុង​ឯកសារ​រូបភាព​ PNG ៖ %s"
 
-#: ../cdk-pixbuf/io-png.c:315
+#: cdk-pixbuf/io-png.c:338
 msgid "Insufficient memory to load PNG file"
 msgstr "អង្គ​ចងចាំ​មិន​គ្រប់គ្រាន់​ក្នុង​ការ​ផ្ទុក​ឯកសារ PNG ឡើយ"
 
-#: ../cdk-pixbuf/io-png.c:656
-#, c-format
+#: cdk-pixbuf/io-png.c:519 cdk-pixbuf/io-png.c:540
+#, fuzzy
+msgid "Couldn’t allocate memory for loading PNG"
+msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​សម្រាប់​​ផ្ទុក​រូបភាព​របស់ JPEG ឡើយ"
+
+#: cdk-pixbuf/io-png.c:743
+#, fuzzy, c-format
 msgid ""
-"Insufficient memory to store a %ld by %ld image; try exiting some "
+"Insufficient memory to store a %lu by %lu image; try exiting some "
 "applications to reduce memory usage"
 msgstr ""
-"អង្គ​ចងចាំ​មិន​គ្រប់គ្រាន់​ក្នុង​ការ​ទុក %ld តាម​រូបភាព %ld ៖ "
-"សាកល្បង​កម្មវិធី​មួយ​ចំនួន​ដែល​មាន​ស្រាប់ "
-"ដើម្បី​កាត់​បន្ថយ​ការ​ប្រើប្រាស់​អង្គ​ចងចាំ"
+"អង្គ​ចងចាំ​មិន​គ្រប់គ្រាន់​ក្នុង​ការ​ទុក %ld តាម​រូបភាព %ld ៖ សាកល្បង​កម្មវិធី​មួយ​ចំនួន​ដែល​មាន​ស្រាប់ ដើម្បី​"
+"កាត់​បន្ថយ​ការ​ប្រើប្រាស់​អង្គ​ចងចាំ"
 
-#: ../cdk-pixbuf/io-png.c:719
+#: cdk-pixbuf/io-png.c:820
 msgid "Fatal error reading PNG image file"
 msgstr "កំហុស​ធ្ងន់ធ្ងរ​ក្នុង​ការ​​អាន​ឯកសារ​រូបភាព PNG"
 
-#: ../cdk-pixbuf/io-png.c:768
+#: cdk-pixbuf/io-png.c:873
 #, c-format
 msgid "Fatal error reading PNG image file: %s"
 msgstr "កំហុស​ធ្ងន់ធ្ងរ​ក្នុង​ការ​អាន​ឯកសារ​រូបភាព PNG ៖ %s"
 
-#: ../cdk-pixbuf/io-png.c:862
-msgid "Keys for PNG text chunks must have at least 1 and at most 79 characters."
-msgstr ""
-"សោ​សម្រាប់​សង្ខេប​អត្ថបទ​របស់ PNG មាន​តួអក្សរ​​យ៉ាងហោចណាស់ ១ ហើយ​ច្រើន​បំផុត "
-"៧៩ ។"
+#: cdk-pixbuf/io-png.c:972
+#, fuzzy, c-format
+msgid ""
+"Invalid key “%s”. Keys for PNG text chunks must have at least 1 and at most "
+"79 characters."
+msgstr "សោ​សម្រាប់​សង្ខេប​អត្ថបទ​របស់ PNG មាន​តួអក្សរ​​យ៉ាងហោចណាស់ ១ ហើយ​ច្រើន​បំផុត ៧៩ ។"
 
-#: ../cdk-pixbuf/io-png.c:871
-msgid "Keys for PNG text chunks must be ASCII characters."
+#: cdk-pixbuf/io-png.c:985
+#, fuzzy, c-format
+msgid "Invalid key “%s”. Keys for PNG text chunks must be ASCII characters."
 msgstr "សោ​សម្រាប់​សង្ខេប​អត្ថបទ​របស់ PNG ​ត្រូវ​តែ​មាន​តួអក្សរ ASCII ។"
 
-#: ../cdk-pixbuf/io-png.c:885 ../cdk-pixbuf/io-tiff.c:737
-#, c-format
-msgid "Color profile has invalid length %d."
+#: cdk-pixbuf/io-png.c:1015
+#, fuzzy, c-format
+msgid ""
+"Value for PNG text chunk '%s' cannot be converted to ISO-8859-1 encoding."
+msgstr ""
+"តម្លៃ​សម្រាប់​សង្ខេប​អត្ថបទ​​អត្ថបទ​របស់​​ PNG  %s មិន​អាច​ត្រូវ​បាន​បម្លែង​ទៅ​ជា​ការ​អ៊ិនកូដ ISO-8859-1 "
+"ឡើយ ។"
+
+#: cdk-pixbuf/io-png.c:1027
+#, fuzzy, c-format
+msgid "Color profile has invalid length %d"
 msgstr "ទម្រង់​ពណ៌​មាន​ប្រវែង​មិន​ត្រឹមត្រូវ %d ។"
 
-#: ../cdk-pixbuf/io-png.c:898
-#, c-format
+#: cdk-pixbuf/io-png.c:1039
+#, fuzzy, c-format
 msgid ""
-"PNG compression level must be a value between 0 and 9; value '%s' could not "
-"be parsed."
+"PNG compression level must be a value between 0 and 9; value “%s” is invalid"
 msgstr ""
-"កម្រិត​ការ​បង្ហាប់​​របស់ PNG ត្រូវ​តែ​មាន​តម្លៃ​ចន្លោះ ០ ដល់ ៩ តម្លៃ '%s' "
-"មិន​អាច​ត្រូវ​បាន​ញែក​ឡើយ ។"
+"កម្រិត​ការ​បង្ហាញ PNG ត្រូវ​តែ​មាន​តម្លៃ​ចន្លោះ ០ ដល់ ៩ តម្លៃ '%d' មិន​ត្រូវ​បាន​អនុញ្ញាត​ឡើយ ។"
 
-#: ../cdk-pixbuf/io-png.c:911
-#, c-format
-msgid ""
-"PNG compression level must be a value between 0 and 9; value '%d' is not "
-"allowed."
+#: cdk-pixbuf/io-png.c:1053
+#, fuzzy, c-format
+msgid "PNG %s must be greater than zero; value “%s” is not allowed"
 msgstr ""
-"កម្រិត​ការ​បង្ហាញ PNG ត្រូវ​តែ​មាន​តម្លៃ​ចន្លោះ ០ ដល់ ៩ តម្លៃ '%d' "
-"មិន​ត្រូវ​បាន​អនុញ្ញាត​ឡើយ ។"
+"គុណភាព​របស់ JPEG  ត្រូវ​តែ​មាន​តម្លៃ​​​ចន្លោះ ០ ដល់ ១០០ តម្លៃ '%d' មិន​ត្រូវ​បាន​អនុញ្ញាត​ឡើយ ។"
 
-#: ../cdk-pixbuf/io-png.c:959
-#, c-format
-msgid "Value for PNG text chunk %s cannot be converted to ISO-8859-1 encoding."
+#: cdk-pixbuf/io-png.c:1283
+msgctxt "image format"
+msgid "PNG"
 msgstr ""
-"តម្លៃ​សម្រាប់​សង្ខេប​អត្ថបទ​​អត្ថបទ​របស់​​ PNG  %s "
-"មិន​អាច​ត្រូវ​បាន​បម្លែង​ទៅ​ជា​ការ​អ៊ិនកូដ ISO-8859-1 ឡើយ ។"
 
-#: ../cdk-pixbuf/io-png.c:1122
-msgid "The PNG image format"
-msgstr "ទ្រង់ទ្រាយ​រូបភាព​ PNG"
-
-#: ../cdk-pixbuf/io-pnm.c:248
-msgid "PNM loader expected to find an integer, but didn't"
+#: cdk-pixbuf/io-pnm.c:247
+#, fuzzy
+msgid "PNM loader expected to find an integer, but didn’t"
 msgstr "កម្មវិធី​ផ្ទុក​របស់ PNM ដែល​រំពឹង​ក្នុង​ការ​រក​លេខគត់ ប៉ុន្តែ​​​មិន​ឡើយ"
 
-#: ../cdk-pixbuf/io-pnm.c:280
+#: cdk-pixbuf/io-pnm.c:279
 msgid "PNM file has an incorrect initial byte"
 msgstr "ឯកសារ​របស់ PNM មាន​បៃ​ដំបូង​មិន​ត្រឹមត្រូវ"
 
-#: ../cdk-pixbuf/io-pnm.c:310
+#: cdk-pixbuf/io-pnm.c:309
 msgid "PNM file is not in a recognized PNM subformat"
 msgstr "ឯកសារ​របស់ PNM មិន​​ទទួល​ស្គាល់​ទ្រង់ទ្រាយ​​រង​​របស់ PNM ឡើយ"
 
-#: ../cdk-pixbuf/io-pnm.c:335
+#: cdk-pixbuf/io-pnm.c:334
+#, fuzzy
+msgid "PNM file has an invalid width"
+msgstr "ឯកសារ​របស់ PNM ​មាន​ទទឹង​រូបភាព​ ០"
+
+#: cdk-pixbuf/io-pnm.c:342
 msgid "PNM file has an image width of 0"
 msgstr "ឯកសារ​របស់ PNM ​មាន​ទទឹង​រូបភាព​ ០"
 
-#: ../cdk-pixbuf/io-pnm.c:356
+#: cdk-pixbuf/io-pnm.c:363
+#, fuzzy
+msgid "PNM file has an invalid height"
+msgstr "ឯកសារ​របស់ PNM មាន​កម្ពស់​រូបភាព ០"
+
+#: cdk-pixbuf/io-pnm.c:371
 msgid "PNM file has an image height of 0"
 msgstr "ឯកសារ​របស់ PNM មាន​កម្ពស់​រូបភាព ០"
 
-#: ../cdk-pixbuf/io-pnm.c:379
+#: cdk-pixbuf/io-pnm.c:394
 msgid "Maximum color value in PNM file is 0"
 msgstr "តម្លៃ​ពណ៌​អតិបរមា​នៅ​​ក្នុង​ឯកសារ​របស់ PNM គឺ ០"
 
-#: ../cdk-pixbuf/io-pnm.c:387
+#: cdk-pixbuf/io-pnm.c:402
 msgid "Maximum color value in PNM file is too large"
 msgstr "តម្លៃ​ពណ៌​អតិបរមា​នៅ​ក្នុង​ឯកសារ​របស់ PNM គឺ​ធំពេក"
 
-#: ../cdk-pixbuf/io-pnm.c:427 ../cdk-pixbuf/io-pnm.c:457
-#: ../cdk-pixbuf/io-pnm.c:502
+#: cdk-pixbuf/io-pnm.c:442 cdk-pixbuf/io-pnm.c:472 cdk-pixbuf/io-pnm.c:517
 msgid "Raw PNM image type is invalid"
 msgstr "ប្រភេទ​រូបភាព​របស់ PNM ដើម​គឺ​មិន​ត្រឹមត្រូវ​ឡើយ"
 
-#: ../cdk-pixbuf/io-pnm.c:652
+#: cdk-pixbuf/io-pnm.c:667
 msgid "PNM image loader does not support this PNM subformat"
 msgstr "កម្មវិធី​ផ្ទុក​រូបភាព PNM ​មិន​គាំទ្រ​ទ្រង់ទ្រាយ​រង​​របស់ PNM នេះ​ឡើយ"
 
-#: ../cdk-pixbuf/io-pnm.c:739 ../cdk-pixbuf/io-pnm.c:966
+#: cdk-pixbuf/io-pnm.c:754 cdk-pixbuf/io-pnm.c:991
 msgid "Raw PNM formats require exactly one whitespace before sample data"
-msgstr ""
-"ទ្រង់ទ្រាយ​របស់ PNM ដើម​ទាមទារ​ចន្លោះ​មិន​ឃើញ​មួយ ខាង​មុខ​​ទិន្នន័យ​គំរូ"
+msgstr "ទ្រង់ទ្រាយ​របស់ PNM ដើម​ទាមទារ​ចន្លោះ​មិន​ឃើញ​មួយ ខាង​មុខ​​ទិន្នន័យ​គំរូ"
 
-#: ../cdk-pixbuf/io-pnm.c:766
+#: cdk-pixbuf/io-pnm.c:781
 msgid "Cannot allocate memory for loading PNM image"
 msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​សម្រាប់​​ផ្ទុក​រូបភាព PNM ឡើយ"
 
-#: ../cdk-pixbuf/io-pnm.c:816
+#: cdk-pixbuf/io-pnm.c:835
 msgid "Insufficient memory to load PNM context struct"
 msgstr "អង្គ​ចងចាំ​មិន​គ្រប់គ្រាន់​ក្នុង​ការ​ផ្ទុក​រចនាសម្ព័ន្ធ​បរិបទ​របស់ PNM"
 
-#: ../cdk-pixbuf/io-pnm.c:867
+#: cdk-pixbuf/io-pnm.c:892
 msgid "Unexpected end of PNM image data"
 msgstr "ចុង​ដែល​មិន​រំពឹង​​នៃ​ទិន្នន័យ​រូបភាព​របស់ PNM"
 
-#: ../cdk-pixbuf/io-pnm.c:995
+#: cdk-pixbuf/io-pnm.c:1020
 msgid "Insufficient memory to load PNM file"
 msgstr "អង្គ​ចងចាំ​មិន​គ្រប់គ្រាន់​ក្នុង​ការ​ផ្ទុក​ឯកសារ​ PNM"
 
-#: ../cdk-pixbuf/io-pnm.c:1079
-msgid "The PNM/PBM/PGM/PPM image format family"
-msgstr "ក្រុម​ទ្រង់ទ្រាយ​រូបភាព PNM/PBM/PGM/PPM"
+#: cdk-pixbuf/io-pnm.c:1103
+msgctxt "image format"
+msgid "PNM/PBM/PGM/PPM"
+msgstr ""
 
-#: ../cdk-pixbuf/io-qtif.c:128
+#: cdk-pixbuf/io-qtif.c:126
 msgid "Input file descriptor is NULL."
 msgstr "កម្មវិធី​ពណ៌នា​​​ឯកសារ​​អំពី​ព័ត៌មាន​បញ្ចូល​គឺ​គ្មាន​ឡើយ ។"
 
-#: ../cdk-pixbuf/io-qtif.c:143
+#: cdk-pixbuf/io-qtif.c:141
 msgid "Failed to read QTIF header"
 msgstr "បាន​បរាជ័យ​ក្នុង​អាន​បឋមកថា QTIF"
 
-#: ../cdk-pixbuf/io-qtif.c:152 ../cdk-pixbuf/io-qtif.c:189
-#: ../cdk-pixbuf/io-qtif.c:460
+#: cdk-pixbuf/io-qtif.c:150 cdk-pixbuf/io-qtif.c:187 cdk-pixbuf/io-qtif.c:449
 #, c-format
 msgid "QTIF atom size too large (%d byte)"
 msgid_plural "QTIF atom size too large (%d bytes)"
 msgstr[0] ""
 msgstr[1] "ទំហំ​អាតូម​របស់ QTIF ធំ​ពេក (%d បៃ)"
 
-#: ../cdk-pixbuf/io-qtif.c:175
+#: cdk-pixbuf/io-qtif.c:173
 #, c-format
 msgid "Failed to allocate %d byte for file read buffer"
 msgid_plural "Failed to allocate %d bytes for file read buffer"
 msgstr[0] ""
-msgstr[1] ""
-"បាន​បរាជ័យ​ក្នុង​ការ​បម្រុង​ទុក %d "
-"បៃ​សម្រាប់​អង្គ​ចងចាំ​​ក្នុង​ការ​អាន​ឯកសារ"
+msgstr[1] "បាន​បរាជ័យ​ក្នុង​ការ​បម្រុង​ទុក %d បៃ​សម្រាប់​អង្គ​ចងចាំ​​ក្នុង​ការ​អាន​ឯកសារ"
 
-#: ../cdk-pixbuf/io-qtif.c:206
+#: cdk-pixbuf/io-qtif.c:201
 #, c-format
 msgid "File error when reading QTIF atom: %s"
 msgstr "កំហុស​ឯកសារ​ នៅ​ពេល​​មើល​អាតូម​របស់ QTIF ៖ %s"
 
-#: ../cdk-pixbuf/io-qtif.c:243
+#: cdk-pixbuf/io-qtif.c:238
 #, c-format
 msgid "Failed to skip the next %d byte with seek()."
 msgid_plural "Failed to skip the next %d bytes with seek()."
 msgstr[0] ""
 msgstr[1] "បាន​បរាជ័យ​ក្នុង​ការរំលង %d បៃ​បន្ទាប់​ដោយ​មាន​ seek() ។"
 
-#: ../cdk-pixbuf/io-qtif.c:270
+#: cdk-pixbuf/io-qtif.c:269
 msgid "Failed to allocate QTIF context structure."
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បម្រុង​ទុក​រចនាសម្ព័ន្ធ​បរិបទ​របស់ QTIF ។"
 
-#: ../cdk-pixbuf/io-qtif.c:330
+#: cdk-pixbuf/io-qtif.c:329
 msgid "Failed to create CdkPixbufLoader object."
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បង្កើត​វត្ថុ CdkPixbufLoader ។"
 
-#: ../cdk-pixbuf/io-qtif.c:434
+#: cdk-pixbuf/io-qtif.c:424
 msgid "Failed to find an image data atom."
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​រក​​អាតូម​ទិន្នន័យ​រូបភាព ។"
 
-#: ../cdk-pixbuf/io-qtif.c:619
-msgid "The QTIF image format"
-msgstr "ទ្រង់ទ្រាយ​រូបភាព​​របស់ QTIF"
+#: cdk-pixbuf/io-qtif.c:599
+msgctxt "image format"
+msgid "QuickTime"
+msgstr ""
 
-#: ../cdk-pixbuf/io-ras.c:125
-msgid "RAS image has bogus header data"
-msgstr "រូបភាព​របស់ RAS មាន​ទិន្នន័យ​បឋមកថា​ក្លែងក្លាយ"
+#: cdk-pixbuf/io-tga.c:346
+#, fuzzy
+msgid "Cannot allocate colormap"
+msgstr "មិន​អាច​បម្រុង​ទុក​ធាតុ colormap បាន​ទេ"
 
-#: ../cdk-pixbuf/io-ras.c:147
-msgid "RAS image has unknown type"
-msgstr "រូបភាព​របស់ RAS ​មាន​បៃ​ដែល​មិន​ស្គាល់"
-
-#: ../cdk-pixbuf/io-ras.c:155
-msgid "unsupported RAS image variation"
-msgstr "បម្រែបម្រួល​រូបភាព​របស់ RAS ដែល​មិន​គាំទ្រ"
-
-#: ../cdk-pixbuf/io-ras.c:170 ../cdk-pixbuf/io-ras.c:199
-msgid "Not enough memory to load RAS image"
-msgstr "គ្មាន​អង្គ​ចងចាំ​គ្រប់គ្រាន់​ក្នុង​ការ​ផ្ទុក​រូបភាព​របស់ RAS ឡើយ"
-
-#: ../cdk-pixbuf/io-ras.c:544
-msgid "The Sun raster image format"
-msgstr "ទ្រង់ទ្រាយ​រូបភាព​ Sun raster"
-
-#: ../cdk-pixbuf/io-tga.c:153
-msgid "Cannot allocate memory for IOBuffer struct"
-msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​សម្រាប់​រចនាសម្ព័ន្ធ IOBuffer ឡើយ"
-
-#: ../cdk-pixbuf/io-tga.c:172
-msgid "Cannot allocate memory for IOBuffer data"
-msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​សម្រាប់​ទិន្នន័យ IOBuffer ឡើយ"
-
-#: ../cdk-pixbuf/io-tga.c:183
-msgid "Cannot realloc IOBuffer data"
-msgstr "មិន​អាច​ជា​ទិន្នន័យ realloc IOBuffer"
-
-#: ../cdk-pixbuf/io-tga.c:213
-msgid "Cannot allocate temporary IOBuffer data"
-msgstr "មិន​អាច​បម្រុង​ទុក​ទិន្នន័យ​របស់ IOBuffer បណ្ដោះ​អាសន្ន​បាន​ទេ"
-
-#: ../cdk-pixbuf/io-tga.c:346
+#: cdk-pixbuf/io-tga.c:371
 msgid "Cannot allocate new pixbuf"
 msgstr "មិន​អាច​បម្រុង​ទុក pixbuf ថ្មី​បាន​ទេ"
 
-#: ../cdk-pixbuf/io-tga.c:685
-msgid "Image is corrupted or truncated"
-msgstr "រូបភាព​ត្រូវ​បាន​កាត់​ឲ្យ​ខ្លី ឬ​ខូច"
-
-#: ../cdk-pixbuf/io-tga.c:692
-msgid "Cannot allocate colormap structure"
-msgstr "មិន​អាច​បម្រុង​ទុក​រចនាសម្ព័ន្ធ​ colormap បាន​ទេ"
-
-#: ../cdk-pixbuf/io-tga.c:699
-msgid "Cannot allocate colormap entries"
-msgstr "មិន​អាច​បម្រុង​ទុក​ធាតុ colormap បាន​ទេ"
-
-#: ../cdk-pixbuf/io-tga.c:721
+#: cdk-pixbuf/io-tga.c:519
 msgid "Unexpected bitdepth for colormap entries"
 msgstr "bitdepth ដែល​មិន​រំពឹង​សម្រាប់​ធាតុ colormap"
 
-#: ../cdk-pixbuf/io-tga.c:739
+#: cdk-pixbuf/io-tga.c:535
+msgid "Pseudocolor image does not contain a colormap"
+msgstr ""
+
+#: cdk-pixbuf/io-tga.c:578
 msgid "Cannot allocate TGA header memory"
 msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​បឋមកថា​របស់ TGA បាន​ទេ"
 
-#: ../cdk-pixbuf/io-tga.c:772
+#: cdk-pixbuf/io-tga.c:609
 msgid "TGA image has invalid dimensions"
 msgstr "រូបភាព​របស់ TGA មាន​ទំហំ​មិន​ត្រឹមត្រូវ"
 
-#: ../cdk-pixbuf/io-tga.c:778 ../cdk-pixbuf/io-tga.c:787
-#: ../cdk-pixbuf/io-tga.c:797 ../cdk-pixbuf/io-tga.c:807
-#: ../cdk-pixbuf/io-tga.c:814
+#: cdk-pixbuf/io-tga.c:615 cdk-pixbuf/io-tga.c:622
 msgid "TGA image type not supported"
 msgstr "មិន​គាំទ្រ​ប្រភេទ​រូបភាព​របស់ TGA ឡើយ"
 
-#: ../cdk-pixbuf/io-tga.c:861
+#: cdk-pixbuf/io-tga.c:650
 msgid "Cannot allocate memory for TGA context struct"
+msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​សម្រាប់​រចនាសម្ព័ន្ធ​បរិបទ​របស់ TGA បាន​ទេ"
+
+#: cdk-pixbuf/io-tga.c:712
+#, fuzzy
+msgid "TGA image was truncated or incomplete."
+msgstr "រូបភាព​របស់ GIF ត្រូវ​បាន​​កាត់​ឲ្យ​ខ្លី ឬ​មិន​ពេញ​លេញ ។"
+
+#: cdk-pixbuf/io-tga.c:764
+msgctxt "image format"
+msgid "Targa"
 msgstr ""
-"មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​សម្រាប់​រចនាសម្ព័ន្ធ​បរិបទ​របស់ TGA បាន​ទេ"
 
-#: ../cdk-pixbuf/io-tga.c:926
-msgid "Excess data in file"
-msgstr "ទិន្នន័យ​ដែល​លើស​នៅ​ក្នុង​ឯកសារ"
-
-#: ../cdk-pixbuf/io-tga.c:1007
-msgid "The Targa image format"
-msgstr "ទ្រង់ទ្រាយ​រូបភាព​ Targa"
-
-#: ../cdk-pixbuf/io-tiff.c:164
+#: cdk-pixbuf/io-tiff.c:117
 msgid "Could not get image width (bad TIFF file)"
 msgstr "មិន​អាច​យក​ទទឹង​រូបភាព​បាន​ទេ (ឯកសារ​របស់ TIFF មិន​ត្រឹម​ត្រូវ)"
 
-#: ../cdk-pixbuf/io-tiff.c:171
+#: cdk-pixbuf/io-tiff.c:125
 msgid "Could not get image height (bad TIFF file)"
 msgstr "មិន​អាច​យក​កម្ពស់​រូបភាព​បាន​ទេ (ឯកសារ​របស់ TIFF មិន​ត្រឹមត្រូវ)"
 
-#: ../cdk-pixbuf/io-tiff.c:179
+#: cdk-pixbuf/io-tiff.c:133
 msgid "Width or height of TIFF image is zero"
 msgstr "ទទឹង ឬ​កម្ពស់​​​របស់​​រូបភាព TIFF គឺ ០"
 
-#: ../cdk-pixbuf/io-tiff.c:188 ../cdk-pixbuf/io-tiff.c:197
+#: cdk-pixbuf/io-tiff.c:141 cdk-pixbuf/io-tiff.c:151
 msgid "Dimensions of TIFF image too large"
 msgstr "ទំហំ​របស់​រូបភាព TIFF ធំពេក"
 
-#: ../cdk-pixbuf/io-tiff.c:221 ../cdk-pixbuf/io-tiff.c:233
-#: ../cdk-pixbuf/io-tiff.c:560
+#: cdk-pixbuf/io-tiff.c:177 cdk-pixbuf/io-tiff.c:189 cdk-pixbuf/io-tiff.c:585
 msgid "Insufficient memory to open TIFF file"
 msgstr "អង្គ​ចងចាំ​មិន​គ្រប់គ្រាន់​​ក្នុង​ការ​បើក​ឯកសារ​របស់ TIFF"
 
-#: ../cdk-pixbuf/io-tiff.c:294
+#: cdk-pixbuf/io-tiff.c:287
 msgid "Failed to load RGB data from TIFF file"
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​ផ្ទុក​ទិន្នន័យ​របស់ RGB ពី​ឯកសារ​របស់ TIFF"
 
-#: ../cdk-pixbuf/io-tiff.c:350
+#: cdk-pixbuf/io-tiff.c:378
 msgid "Failed to open TIFF image"
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បើក​រូបភាព TIFF"
 
-#: ../cdk-pixbuf/io-tiff.c:362 ../cdk-pixbuf/io-tiff.c:777
-msgid "TIFFClose operation failed"
-msgstr "បាន​បរាជ័យ​ក្នុង​ការ​ប្រតិបត្តិការ TIFFClose"
-
-#: ../cdk-pixbuf/io-tiff.c:492 ../cdk-pixbuf/io-tiff.c:505
+#: cdk-pixbuf/io-tiff.c:516 cdk-pixbuf/io-tiff.c:528
 msgid "Failed to load TIFF image"
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​ផ្ទុក​រូបភាព​ TIFF"
 
-#: ../cdk-pixbuf/io-tiff.c:691
+#: cdk-pixbuf/io-tiff.c:760
 msgid "Failed to save TIFF image"
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​រក្សាទុក​រូបភាព TIFF"
 
-#: ../cdk-pixbuf/io-tiff.c:726
-msgid "TIFF compression doesn't refer to a valid codec."
+#: cdk-pixbuf/io-tiff.c:821
+#, fuzzy
+msgid "TIFF compression doesn’t refer to a valid codec."
 msgstr "ការ​បង្ហាប់​របស់ TIFF មិន​​សំដៅ​កូដឌិក​​ត្រឹមត្រូវ​ឡើយ ។"
 
-#: ../cdk-pixbuf/io-tiff.c:766
+#: cdk-pixbuf/io-tiff.c:851
+#, c-format
+msgid "Color profile has invalid length %d."
+msgstr "ទម្រង់​ពណ៌​មាន​ប្រវែង​មិន​ត្រឹមត្រូវ %d ។"
+
+#: cdk-pixbuf/io-tiff.c:866
+msgid "TIFF bits-per-sample doesn’t contain a supported value."
+msgstr ""
+
+#: cdk-pixbuf/io-tiff.c:947
 msgid "Failed to write TIFF data"
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​សរសេរ​ទិន្នន័យ​របស់ TIFF"
 
-#: ../cdk-pixbuf/io-tiff.c:813
-msgid "Couldn't write to TIFF file"
+#: cdk-pixbuf/io-tiff.c:965
+#, fuzzy, c-format
+msgid "TIFF x-dpi must be greater than zero; value “%s” is not allowed."
+msgstr ""
+"គុណភាព​របស់ JPEG  ត្រូវ​តែ​មាន​តម្លៃ​​​ចន្លោះ ០ ដល់ ១០០ តម្លៃ '%d' មិន​ត្រូវ​បាន​អនុញ្ញាត​ឡើយ ។"
+
+#: cdk-pixbuf/io-tiff.c:977
+#, fuzzy, c-format
+msgid "TIFF y-dpi must be greater than zero; value “%s” is not allowed."
+msgstr ""
+"គុណភាព​របស់ JPEG  ត្រូវ​តែ​មាន​តម្លៃ​​​ចន្លោះ ០ ដល់ ១០០ តម្លៃ '%d' មិន​ត្រូវ​បាន​អនុញ្ញាត​ឡើយ ។"
+
+#: cdk-pixbuf/io-tiff.c:1018
+#, fuzzy
+msgid "Couldn’t write to TIFF file"
 msgstr "មិន​អាច​សរសេរ​ទៅកាន់​ឯកសារ​របស់ TIFF បាន​ទេ"
 
-#: ../cdk-pixbuf/io-tiff.c:868
-msgid "The TIFF image format"
-msgstr "ទ្រង់ទ្រាយ​ឯកសារ​របស់ TIFF"
-
-#: ../cdk-pixbuf/io-wbmp.c:245
-msgid "Image has zero width"
-msgstr "រូបភាព​មាន​ទទឹង ០"
-
-#: ../cdk-pixbuf/io-wbmp.c:263
-msgid "Image has zero height"
-msgstr "រូបភាព​មាន​កម្ពស់ ០"
-
-#: ../cdk-pixbuf/io-wbmp.c:274
-msgid "Not enough memory to load image"
-msgstr "គ្មាន​អង្គ​ចងចាំ​គ្រប់គ្រាន់​ក្នុង​ការ​ផ្ទុក​រូបភាព​ឡើយ"
-
-#: ../cdk-pixbuf/io-wbmp.c:333
-#, fuzzy
-msgid "Couldn't save the rest"
-msgstr "មិន​អាច​រក្សាទុក rest បាន​ទេ"
-
-#: ../cdk-pixbuf/io-wbmp.c:374
-msgid "The WBMP image format"
-msgstr "ទ្រង់ទ្រាយ​រូបភាព​របស់ WBMP"
-
-#: ../cdk-pixbuf/io-xbm.c:296
+#: cdk-pixbuf/io-xbm.c:320
 msgid "Invalid XBM file"
 msgstr "ឯកសារ​របស់ XBM មិន​ត្រឹមត្រូវ​ទេ"
 
-#: ../cdk-pixbuf/io-xbm.c:306
+#: cdk-pixbuf/io-xbm.c:331
 msgid "Insufficient memory to load XBM image file"
 msgstr "អង្គ​ចងចាំ​មិន​គ្រប់គ្រាន់​ក្នុង​ការ​ផ្ទុក​ឯកសារ​រូបភាព​របស់ XBM"
 
-#: ../cdk-pixbuf/io-xbm.c:454
+#: cdk-pixbuf/io-xbm.c:482
 msgid "Failed to write to temporary file when loading XBM image"
+msgstr "បាន​បរាជ័យ​ក្នុង​ការ​សរសេរ​អំពី​​​ឯកសារ​បណ្ដោះ​អាសន្ន នៅ​ពេល​ផ្ទុក​រូបភាព XBM"
+
+#: cdk-pixbuf/io-xbm.c:521
+msgctxt "image format"
+msgid "XBM"
 msgstr ""
-"បាន​បរាជ័យ​ក្នុង​ការ​សរសេរ​អំពី​​​ឯកសារ​បណ្ដោះ​អាសន្ន នៅ​ពេល​ផ្ទុក​រូបភាព "
-"XBM"
 
-#: ../cdk-pixbuf/io-xbm.c:493
-msgid "The XBM image format"
-msgstr "ទ្រង់ទ្រាយ​រូបភាព XBM"
-
-#: ../cdk-pixbuf/io-xpm.c:469
+#: cdk-pixbuf/io-xpm.c:472
 msgid "No XPM header found"
 msgstr "រក​មិន​ឃើញ​បឋមកថា​របស់ XPM ឡើយ"
 
-#: ../cdk-pixbuf/io-xpm.c:478
+#: cdk-pixbuf/io-xpm.c:481 cdk-pixbuf/io-xpm.c:507
 msgid "Invalid XPM header"
 msgstr "បឋមកថា​របស់ XPM មិន​ត្រឹមត្រូវ​ឡើយ"
 
-#: ../cdk-pixbuf/io-xpm.c:486
+#: cdk-pixbuf/io-xpm.c:489
 msgid "XPM file has image width <= 0"
 msgstr "ឯកសារ​របស់ XPM មាន​ទទឹង​រូបភាព <= ០"
 
-#: ../cdk-pixbuf/io-xpm.c:494
+#: cdk-pixbuf/io-xpm.c:497
 msgid "XPM file has image height <= 0"
 msgstr "ឯកសារ​របស់ XPM មាន​កម្ពស់​រូបភាព <= ០"
 
-#: ../cdk-pixbuf/io-xpm.c:502
+#: cdk-pixbuf/io-xpm.c:514
 #, fuzzy
 msgid "XPM has invalid number of chars per pixel"
 msgstr "XPM មាន​ចំនួន​តួអក្សរ​មិន​​ត្រឹមត្រូវ​​ក្នុង​មួយ​ភីកសែល"
 
-#: ../cdk-pixbuf/io-xpm.c:511
+#: cdk-pixbuf/io-xpm.c:523
 msgid "XPM file has invalid number of colors"
 msgstr "ឯកសារ​របស់ XPM មាន​ចំនួន​ពណ៌​​មិន​ត្រឹមត្រូវ"
 
-#: ../cdk-pixbuf/io-xpm.c:523 ../cdk-pixbuf/io-xpm.c:532
-#: ../cdk-pixbuf/io-xpm.c:584
+#: cdk-pixbuf/io-xpm.c:535 cdk-pixbuf/io-xpm.c:544 cdk-pixbuf/io-xpm.c:593
 msgid "Cannot allocate memory for loading XPM image"
 msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​សម្រាប់​ផ្ទុក​រូបភាព XPM បាន​ទេ"
 
-#: ../cdk-pixbuf/io-xpm.c:546
+#: cdk-pixbuf/io-xpm.c:558
 msgid "Cannot read XPM colormap"
 msgstr "មិន​អាច​អាន​ XPM colormap បាន​ទេ"
 
-#: ../cdk-pixbuf/io-xpm.c:778
+#: cdk-pixbuf/io-xpm.c:610
+#, fuzzy
+msgid "Dimensions do not match data"
+msgstr "ទំហំ​របស់​រូបភាព TIFF ធំពេក"
+
+#: cdk-pixbuf/io-xpm.c:806
 msgid "Failed to write to temporary file when loading XPM image"
+msgstr "បាន​បរាជ័យ​ក្នុង​ការ​សរសេរ​អំពី​ឯកសារ​បណ្ដោះ​អាសន្ន នៅ​ពេល​ផ្ទុក​រូបភាព XPM"
+
+#: cdk-pixbuf/io-xpm.c:845
+msgctxt "image format"
+msgid "XPM"
 msgstr ""
-"បាន​បរាជ័យ​ក្នុង​ការ​សរសេរ​អំពី​ឯកសារ​បណ្ដោះ​អាសន្ន នៅ​ពេល​ផ្ទុក​រូបភាព XPM"
 
-#: ../cdk-pixbuf/io-xpm.c:817
-msgid "The XPM image format"
-msgstr "ទ្រង់ទ្រាយ​រូបភាព XPM"
+#~ msgid "Unsupported animation type"
+#~ msgstr "ប្រភេទ​ចលនា​ដែល​មិនគាំទ្រ"
 
-#: ../cdk-pixbuf/io-gdip-emf.c:59
-msgid "The EMF image format"
-msgstr "ទ្រង់ទ្រាយ​រូបភាព EMF"
+#~ msgid "The ANI image format"
+#~ msgstr "ទ្រង់ទ្រាយ​រូបភាព​របស់ ANI"
 
-#: ../cdk-pixbuf/io-gdip-utils.c:154
+#~ msgid "The BMP image format"
+#~ msgstr "ទ្រង់ទ្រាយ​ឯកសារ​របស់ BMP"
+
 #, c-format
-msgid "Could not allocate memory: %s"
-msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​បាន​ទេ ៖ %s"
+#~ msgid "Internal error in the GIF loader (%s)"
+#~ msgstr "កំហុស​ខាង​ក្នុង​​ក្នុង​កម្មវិធី​ផ្ទុក​របស់ GIF (%s)"
 
-#: ../cdk-pixbuf/io-gdip-utils.c:179 ../cdk-pixbuf/io-gdip-utils.c:293
-#: ../cdk-pixbuf/io-gdip-utils.c:333
+#~ msgid "Stack overflow"
+#~ msgstr "លើស​ចំនួន​ជង់"
+
+#~ msgid "GIF image loader cannot understand this image."
+#~ msgstr "កម្មវិធី​ផ្ទុក​រូបភាព​របស់ GIF មិន​អាច​ចំណាំ​រូបភាព​នេះ​បាន​ទេ ។"
+
+#~ msgid "Bad code encountered"
+#~ msgstr "បាន​ជួប​ប្រទះ​កូដ​មិន​ត្រឹមត្រូវ"
+
+#~ msgid "Circular table entry in GIF file"
+#~ msgstr "ធាតុ​របស់ Circular table នៅ​ក្នុង​ឯកសារ​របស់ GIF"
+
+#~ msgid "Not enough memory to composite a frame in GIF file"
+#~ msgstr "គ្មាន​អង្គ​ចងចាំ​គ្រប់គ្រាន់​ ដើម្បី​ប្រមូលផ្ដុំ​ស៊ុម​នៅ​ក្នុង​ឯកសារ​របស់ GIF បាន​ឡើយ"
+
+#~ msgid "The GIF image format"
+#~ msgstr "ទ្រង់ទ្រាយ​រូបភាព​របស់ GIF"
+
+#~ msgid "Icon has zero width"
+#~ msgstr "រូបតំណាង​មាន​ទទឹង ០"
+
+#~ msgid "Icon has zero height"
+#~ msgstr "រូបតំណាង​មាន​កម្ពស់​ ០"
+
+#~ msgid "The ICO image format"
+#~ msgstr "ទ្រង់ទ្រាយ​ឯកសារ​របស់ ICO"
+
+#~ msgid "The ICNS image format"
+#~ msgstr "ទ្រង់ទ្រាយ​រូបភាព​របស់ ICNS បាន​ទេ"
+
+#~ msgid "Couldn't allocate memory for stream"
+#~ msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​សម្រាប់​ស្ទ្រីម​បាន​ទេ"
+
+#~ msgid "Couldn't decode image"
+#~ msgstr "មិន​អាច​ឌិកូដ​រូបភាព​បាន​ទេ"
+
+#~ msgid "Transformed JPEG2000 has zero width or height"
+#~ msgstr "JPEG2000 ដែល​បាន​​​ប្លែង​​មាន​កម្ពស់ ឬ ទទឹង ០"
+
+#~ msgid "Image type currently not supported"
+#~ msgstr "មិន​គាំទ្រ​ប្រភេទ​រូបភាព​បច្ចុប្បន្ន"
+
+#~ msgid "Couldn't allocate memory for color profile"
+#~ msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​សម្រាប់​ទម្រង់​ពណ៌​ឡើយ"
+
+#~ msgid "Insufficient memory to open JPEG 2000 file"
+#~ msgstr "អង្គ​ចងចាំ​មិន​គ្រប់គ្រាន់​ក្នុង​ការ​បើក​ឯកសារ​របស់ JPEG 2000"
+
+#~ msgid "Couldn't allocate memory to buffer image data"
+#~ msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​​​សម្រាប់​​ទិន្នន័យ​រូបភាព​នៃ​អង្គ​ចងចាំ​​បណ្ដោះ​អាសន្ន​ឡើយ"
+
+#~ msgid "The JPEG 2000 image format"
+#~ msgstr "ទ្រង់ទ្រាយ​រូបភាព​របស់ JPEG 2000"
+
+#~ msgid "The JPEG image format"
+#~ msgstr "ទ្រង់ទ្រាយ​រូបភាព​របស់ JPEG"
+
+#~ msgid "Couldn't allocate memory for header"
+#~ msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​សម្រាប់​បឋមកថា​ឡើយ"
+
+#~ msgid "Couldn't allocate memory for context buffer"
+#~ msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​សម្រាប់​អង្គ​ចងចាំ​បណ្ដោះ​អាសន្ន​នៃ​បរិបទ​ឡើយ"
+
+#~ msgid "Image has invalid width and/or height"
+#~ msgstr "រូបភាព​មាន​ទទឹង និង​/​ឬ កម្ពស់​មិន​ត្រឹមត្រូវ"
+
+#~ msgid "Image has unsupported bpp"
+#~ msgstr "រូបភាព​មាន bpp ដែល​មិន​គាំទ្រ"
+
 #, c-format
-msgid "Could not create stream: %s"
-msgstr "មិន​អាច​បង្កើត​ស្ទ្រីម​បាន​ទេ ៖ %s"
+#~ msgid "Image has unsupported number of %d-bit planes"
+#~ msgstr "រូបភាព​មាន​​ចំនួន​ផ្ទៃ​រាប %d ប៊ីត​ដែល​មិន​បាន​គាំទ្រ"
 
-#: ../cdk-pixbuf/io-gdip-utils.c:193
+#~ msgid "Couldn't create new pixbuf"
+#~ msgstr "មិន​អាច​បង្កើត​ pixbuf ថ្មី​បាន​ទេ"
+
+#~ msgid "Couldn't allocate memory for line data"
+#~ msgstr "មិន​អាច​បម្រុងទុក​​អង្គ​ចងចាំ​សម្រាប់​ទិន្នន័យ​ឡើយ"
+
+#~ msgid "Couldn't allocate memory for PCX image"
+#~ msgstr "មិន​អាច​បម្រុងទុក​អង្គ​ចងចាំ​សម្រាប់​រូបភាព​របស់ PCX ឡើយ"
+
+#~ msgid "Didn't get all lines of PCX image"
+#~ msgstr "កុំ​យក​ជួរ​ទាំងអស់​របស់​រូបភាព PCX"
+
+#~ msgid "No palette found at end of PCX data"
+#~ msgstr "រក​មិន​ឃើញ​ក្ដារ​ពណ៌​នៅ​ចុង​នៃ​ទិន្នន័យ​របស់ PCX ឡើយ"
+
+#~ msgid "The PCX image format"
+#~ msgstr "ទ្រង់ទ្រាយ​រូបភាព​របស់ PCX"
+
 #, c-format
-msgid "Could not seek stream: %s"
-msgstr "មិន​អាច​ស្វែងរក​ស្ទ្រីម​បាន​ទេ ៖ %s"
+#~ msgid ""
+#~ "PNG compression level must be a value between 0 and 9; value '%s' could "
+#~ "not be parsed."
+#~ msgstr ""
+#~ "កម្រិត​ការ​បង្ហាប់​​របស់ PNG ត្រូវ​តែ​មាន​តម្លៃ​ចន្លោះ ០ ដល់ ៩ តម្លៃ '%s' មិន​អាច​ត្រូវ​បាន​ញែក​ឡើយ ។"
 
-#: ../cdk-pixbuf/io-gdip-utils.c:205
-#, c-format
-msgid "Could not read from stream: %s"
-msgstr "មិន​អាច​អាន​ពី​ស្ទ្រីម​បាន​ទេ ៖ %s"
+#~ msgid "The PNG image format"
+#~ msgstr "ទ្រង់ទ្រាយ​រូបភាព​ PNG"
 
-#: ../cdk-pixbuf/io-gdip-utils.c:617 ../cdk-pixbuf/io-gdip-utils.c:752
-msgid "Couldn't load bitmap"
-msgstr "មិន​អាច​ផ្ទុក​រូបភាព​បាន​ទេ"
+#~ msgid "The PNM/PBM/PGM/PPM image format family"
+#~ msgstr "ក្រុម​ទ្រង់ទ្រាយ​រូបភាព PNM/PBM/PGM/PPM"
 
-#: ../cdk-pixbuf/io-gdip-utils.c:774
-msgid "Couldn't load metafile"
-msgstr "មិន​អាច​ផ្ទុក​ឯកសារ​មេតា​បាន​ទេ"
+#~ msgid "The QTIF image format"
+#~ msgstr "ទ្រង់ទ្រាយ​រូបភាព​​របស់ QTIF"
 
-#: ../cdk-pixbuf/io-gdip-utils.c:933
-msgid "Unsupported image format for GDI+"
-msgstr "ទ្រង់ទ្រាយ​រូបភាព​ដែល​មិន​បាន​គាំទ្រ​សម្រាប់ GDI+"
+#~ msgid "RAS image has bogus header data"
+#~ msgstr "រូបភាព​របស់ RAS មាន​ទិន្នន័យ​បឋមកថា​ក្លែងក្លាយ"
 
-#: ../cdk-pixbuf/io-gdip-utils.c:940
-msgid "Couldn't save"
-msgstr "មិន​អាច​រក្សាទុក​បាន​ទេ"
+#~ msgid "RAS image has unknown type"
+#~ msgstr "រូបភាព​របស់ RAS ​មាន​បៃ​ដែល​មិន​ស្គាល់"
 
-#: ../cdk-pixbuf/io-gdip-wmf.c:58
-msgid "The WMF image format"
-msgstr "ទ្រង់ទ្រាយ​រូបភាព WMF"
+#~ msgid "unsupported RAS image variation"
+#~ msgstr "បម្រែបម្រួល​រូបភាព​របស់ RAS ដែល​មិន​គាំទ្រ"
+
+#~ msgid "Not enough memory to load RAS image"
+#~ msgstr "គ្មាន​អង្គ​ចងចាំ​គ្រប់គ្រាន់​ក្នុង​ការ​ផ្ទុក​រូបភាព​របស់ RAS ឡើយ"
+
+#~ msgid "The Sun raster image format"
+#~ msgstr "ទ្រង់ទ្រាយ​រូបភាព​ Sun raster"
+
+#~ msgid "Cannot allocate memory for IOBuffer struct"
+#~ msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​សម្រាប់​រចនាសម្ព័ន្ធ IOBuffer ឡើយ"
+
+#~ msgid "Cannot allocate memory for IOBuffer data"
+#~ msgstr "មិន​អាច​បម្រុង​ទុក​អង្គ​ចងចាំ​សម្រាប់​ទិន្នន័យ IOBuffer ឡើយ"
+
+#~ msgid "Cannot realloc IOBuffer data"
+#~ msgstr "មិន​អាច​ជា​ទិន្នន័យ realloc IOBuffer"
+
+#~ msgid "Cannot allocate temporary IOBuffer data"
+#~ msgstr "មិន​អាច​បម្រុង​ទុក​ទិន្នន័យ​របស់ IOBuffer បណ្ដោះ​អាសន្ន​បាន​ទេ"
+
+#~ msgid "Image is corrupted or truncated"
+#~ msgstr "រូបភាព​ត្រូវ​បាន​កាត់​ឲ្យ​ខ្លី ឬ​ខូច"
+
+#~ msgid "Cannot allocate colormap structure"
+#~ msgstr "មិន​អាច​បម្រុង​ទុក​រចនាសម្ព័ន្ធ​ colormap បាន​ទេ"
+
+#~ msgid "Excess data in file"
+#~ msgstr "ទិន្នន័យ​ដែល​លើស​នៅ​ក្នុង​ឯកសារ"
+
+#~ msgid "The Targa image format"
+#~ msgstr "ទ្រង់ទ្រាយ​រូបភាព​ Targa"
+
+#~ msgid "TIFFClose operation failed"
+#~ msgstr "បាន​បរាជ័យ​ក្នុង​ការ​ប្រតិបត្តិការ TIFFClose"
+
+#~ msgid "The TIFF image format"
+#~ msgstr "ទ្រង់ទ្រាយ​ឯកសារ​របស់ TIFF"
+
+#~ msgid "Image has zero height"
+#~ msgstr "រូបភាព​មាន​កម្ពស់ ០"
+
+#~ msgid "Not enough memory to load image"
+#~ msgstr "គ្មាន​អង្គ​ចងចាំ​គ្រប់គ្រាន់​ក្នុង​ការ​ផ្ទុក​រូបភាព​ឡើយ"
+
+#, fuzzy
+#~ msgid "Couldn't save the rest"
+#~ msgstr "មិន​អាច​រក្សាទុក rest បាន​ទេ"
+
+#~ msgid "The WBMP image format"
+#~ msgstr "ទ្រង់ទ្រាយ​រូបភាព​របស់ WBMP"
+
+#~ msgid "The XBM image format"
+#~ msgstr "ទ្រង់ទ្រាយ​រូបភាព XBM"
+
+#~ msgid "The XPM image format"
+#~ msgstr "ទ្រង់ទ្រាយ​រូបភាព XPM"
+
+#~ msgid "The EMF image format"
+#~ msgstr "ទ្រង់ទ្រាយ​រូបភាព EMF"
+
+#~ msgid "The WMF image format"
+#~ msgstr "ទ្រង់ទ្រាយ​រូបភាព WMF"

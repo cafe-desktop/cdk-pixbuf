@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: uz@cyrillic\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/cdk-pixbuf/issues/new\n"
-"POT-Creation-Date: 2024-09-03 21:05+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-22 08:56+0200\n"
 "PO-Revision-Date: 2025-04-07 08:52+0500\n"
 "Last-Translator: Nurali Abdurahmonov <mavnur@gmail.com>\n"
 "Language-Team: Uzbek\n"
@@ -18,18 +18,18 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.6\n"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:185 cdk-pixbuf/cdk-pixbuf-io.c:1129
-#: cdk-pixbuf/cdk-pixbuf-io.c:1402
+#: cdk-pixbuf/cdk-pixbuf-animation.c:190 cdk-pixbuf/cdk-pixbuf-io.c:1224
+#: cdk-pixbuf/cdk-pixbuf-io.c:1497
 #, c-format
 msgid "Failed to open file “%s”: %s"
 msgstr "“%s” faylini ochib bo‘lmadi: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:198 cdk-pixbuf/cdk-pixbuf-io.c:990
+#: cdk-pixbuf/cdk-pixbuf-animation.c:203 cdk-pixbuf/cdk-pixbuf-io.c:1085
 #, c-format
 msgid "Image file “%s” contains no data"
 msgstr "“%s” rasm faylida maʼlumotlar yoʻq"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:236
+#: cdk-pixbuf/cdk-pixbuf-animation.c:241
 #, c-format
 msgid ""
 "Failed to load animation “%s”: reason not known, probably a corrupt "
@@ -38,8 +38,8 @@ msgstr ""
 "'%s' : animatsiyasini yuklab boʻlmadi: sababi nomaʼlum, balki fayl buzuq "
 "boʻlishi mumkin"
 
-#: cdk-pixbuf/cdk-pixbuf-animation.c:304 cdk-pixbuf/cdk-pixbuf-io.c:1165
-#: cdk-pixbuf/cdk-pixbuf-io.c:1454
+#: cdk-pixbuf/cdk-pixbuf-animation.c:309 cdk-pixbuf/cdk-pixbuf-io.c:1260
+#: cdk-pixbuf/cdk-pixbuf-io.c:1549
 #, c-format
 msgid ""
 "Failed to load image “%s”: reason not known, probably a corrupt image file"
@@ -120,12 +120,12 @@ msgstr "Piksel bayt"
 msgid "Readonly pixel data"
 msgstr "Faqat o'qish uchun piksel ma'lumotlari"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:807
+#: cdk-pixbuf/cdk-pixbuf-io.c:901
 #, c-format
 msgid "Unable to load image-loading module: %s: %s"
 msgstr "Rasm yuklash modulini yuklab boʻlmadi: %s: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:824
+#: cdk-pixbuf/cdk-pixbuf-io.c:919
 #, c-format
 msgid ""
 "Image-loading module %s does not export the proper interface; perhaps it’s "
@@ -134,54 +134,54 @@ msgstr ""
 "Rasmni yuklash moduli %s tegishli interfeysni eksport qilmaydi; ehtimol u "
 "boshqa cdk-pixbuf versiyasidandir?"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:834 cdk-pixbuf/cdk-pixbuf-io.c:877
+#: cdk-pixbuf/cdk-pixbuf-io.c:929 cdk-pixbuf/cdk-pixbuf-io.c:972
 #, c-format
 msgid "Image type “%s” is not supported"
 msgstr "'%s' rasm turi qoʻllanilmaydi"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:962
+#: cdk-pixbuf/cdk-pixbuf-io.c:1057
 #, c-format
 msgid "Couldn’t recognize the image file format for file “%s”"
 msgstr "'%s' faylidagi rasm formatini aniqlab boʻlmadi"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:970
+#: cdk-pixbuf/cdk-pixbuf-io.c:1065
 msgid "Unrecognized image file format"
 msgstr "Nomaʼlum rasm formati"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:1176
+#: cdk-pixbuf/cdk-pixbuf-io.c:1271
 #, c-format
 msgid "Failed to load image “%s”: %s"
 msgstr "'%s' rasmi yuklanmadi: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2244 cdk-pixbuf/io-gdip-utils.c:840
+#: cdk-pixbuf/cdk-pixbuf-io.c:2346 cdk-pixbuf/io-gdip-utils.c:840
 #, c-format
 msgid "Error writing to image file: %s"
 msgstr "Rasm fayliga yozishda xatolik yuz berdi: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2286 cdk-pixbuf/cdk-pixbuf-io.c:2407
+#: cdk-pixbuf/cdk-pixbuf-io.c:2388 cdk-pixbuf/cdk-pixbuf-io.c:2509
 #, c-format
 msgid "This build of cdk-pixbuf does not support saving the image format: %s"
 msgstr ""
 "Ushbu cdk-pixbuf qurilmasi rasm formatini saqlashni qo‘llab-quvvatlamaydi: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2317
+#: cdk-pixbuf/cdk-pixbuf-io.c:2419
 msgid "Insufficient memory to save image to callback"
 msgstr "Rasmni qayta qo'ng'iroq qilish uchun saqlash uchun xotira yetarli emas"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2330
+#: cdk-pixbuf/cdk-pixbuf-io.c:2432
 msgid "Failed to open temporary file"
 msgstr "Vaqtinchalik faylni ochib boʻlmadi"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2353
+#: cdk-pixbuf/cdk-pixbuf-io.c:2455
 msgid "Failed to read from temporary file"
 msgstr "Vaqtinchalik fayldan oʻqib boʻlmadi"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2575
+#: cdk-pixbuf/cdk-pixbuf-io.c:2677
 #, c-format
 msgid "Failed to open “%s” for writing: %s"
 msgstr "'%s' faylini yozish uchun ochib boʻlmadi: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2601
+#: cdk-pixbuf/cdk-pixbuf-io.c:2703
 #, c-format
 msgid ""
 "Failed to close “%s” while writing image, all data may not have been saved: "
@@ -190,15 +190,15 @@ msgstr ""
 "Rasm yozish paytida “%s” yopilmadi, barcha maʼlumotlar saqlanmagan boʻlishi "
 "mumkin: %s"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2835 cdk-pixbuf/cdk-pixbuf-io.c:2890
+#: cdk-pixbuf/cdk-pixbuf-io.c:2937 cdk-pixbuf/cdk-pixbuf-io.c:2992
 msgid "Insufficient memory to save image into a buffer"
 msgstr "Rasmni buferga saqlash uchun xotira yetishmaydi"
 
-#: cdk-pixbuf/cdk-pixbuf-io.c:2936
+#: cdk-pixbuf/cdk-pixbuf-io.c:3038
 msgid "Error writing to image stream"
 msgstr "Rasm oqimiga yozishda xatolik yuz berdi"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:416
+#: cdk-pixbuf/cdk-pixbuf-loader.c:426
 #, c-format
 msgid ""
 "Internal error: Image loader module “%s” failed to complete an operation, "
@@ -207,16 +207,16 @@ msgstr ""
 "Ichki xato: “%s” tasvir yuklash moduli operatsiyani yakunlay olmadi, lekin "
 "xato sababini ko‘rsatmadi"
 
-#: cdk-pixbuf/cdk-pixbuf-loader.c:458
+#: cdk-pixbuf/cdk-pixbuf-loader.c:468
 #, c-format
 msgid "Incremental loading of image type “%s” is not supported"
 msgstr "'%s' rasm turi qoʻllanilmaydi"
 
-#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:162
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:166
 msgid "Loop"
 msgstr "Loop"
 
-#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:163
+#: cdk-pixbuf/cdk-pixbuf-simple-anim.c:167
 msgid "Whether the animation should loop when it reaches the end"
 msgstr "Animatsiya oxiriga yetganda aylanish kerakmi"
 
@@ -269,58 +269,58 @@ msgctxt "image format"
 msgid "Windows animated cursor"
 msgstr "Windows animatsion kursor"
 
-#: cdk-pixbuf/io-bmp.c:231 cdk-pixbuf/io-bmp.c:269 cdk-pixbuf/io-bmp.c:376
-#: cdk-pixbuf/io-bmp.c:403 cdk-pixbuf/io-bmp.c:428 cdk-pixbuf/io-bmp.c:463
-#: cdk-pixbuf/io-bmp.c:485 cdk-pixbuf/io-bmp.c:563
+#: cdk-pixbuf/io-bmp.c:234 cdk-pixbuf/io-bmp.c:275 cdk-pixbuf/io-bmp.c:385
+#: cdk-pixbuf/io-bmp.c:412 cdk-pixbuf/io-bmp.c:437 cdk-pixbuf/io-bmp.c:472
+#: cdk-pixbuf/io-bmp.c:494 cdk-pixbuf/io-bmp.c:572
 msgid "BMP image has bogus header data"
 msgstr "BMP tasvirida soxta sarlavha ma'lumotlari mavjud"
 
-#: cdk-pixbuf/io-bmp.c:242 cdk-pixbuf/io-bmp.c:498
+#: cdk-pixbuf/io-bmp.c:245 cdk-pixbuf/io-bmp.c:507
 msgid "Not enough memory to load bitmap image"
 msgstr "Bitmap tasvirni yuklash uchun xotira yetarli emas"
 
-#: cdk-pixbuf/io-bmp.c:333
+#: cdk-pixbuf/io-bmp.c:339
 msgid "BMP image has unsupported header size"
 msgstr "BMP tasviri qoʻllab-quvvatlanmaydigan sarlavha hajmiga ega"
 
-#: cdk-pixbuf/io-bmp.c:343
+#: cdk-pixbuf/io-bmp.c:348
 msgid "BMP image has unsupported depth"
 msgstr "BMP tasviri qoʻllab-quvvatlanmaydigan chuqurlikka ega"
 
-#: cdk-pixbuf/io-bmp.c:358
+#: cdk-pixbuf/io-bmp.c:367
 msgid "BMP image has oversize palette"
 msgstr "BMP tasviri katta hajmli palitraga ega"
 
-#: cdk-pixbuf/io-bmp.c:390
+#: cdk-pixbuf/io-bmp.c:399
 msgid "Topdown BMP images cannot be compressed"
 msgstr "Yuqoridan pastga BMP tasvirlarni siqib bo'lmaydi"
 
-#: cdk-pixbuf/io-bmp.c:415
+#: cdk-pixbuf/io-bmp.c:424
 msgid "BMP image width too large"
 msgstr "BMP tasvir kengligi juda katta"
 
-#: cdk-pixbuf/io-bmp.c:792 cdk-pixbuf/io-png.c:564 cdk-pixbuf/io-pnm.c:722
+#: cdk-pixbuf/io-bmp.c:814 cdk-pixbuf/io-png.c:587 cdk-pixbuf/io-pnm.c:722
 #: cdk-pixbuf/io-pnm.c:879
 msgid "Premature end-of-file encountered"
 msgstr "Faylning muddatidan oldin tugashiga duch keldi"
 
-#: cdk-pixbuf/io-bmp.c:1313
+#: cdk-pixbuf/io-bmp.c:1340
 msgid "Error while decoding colormap"
 msgstr "Rang xaritasini dekodlashda xatolik yuz berdi"
 
-#: cdk-pixbuf/io-bmp.c:1376 cdk-pixbuf/io-bmp.c:1388
+#: cdk-pixbuf/io-bmp.c:1403 cdk-pixbuf/io-bmp.c:1415
 msgid "Image is too wide for BMP format."
 msgstr "Rasm BMP formati uchun juda keng."
 
-#: cdk-pixbuf/io-bmp.c:1421
+#: cdk-pixbuf/io-bmp.c:1448
 msgid "Couldn’t allocate memory for saving BMP file"
 msgstr "Meta-faylni yuklab boʻlmadi"
 
-#: cdk-pixbuf/io-bmp.c:1462
+#: cdk-pixbuf/io-bmp.c:1489
 msgid "Couldn’t write to BMP file"
 msgstr "BMP fayliga yozib boʻlmadi"
 
-#: cdk-pixbuf/io-bmp.c:1515 cdk-pixbuf/io-gdip-bmp.c:83
+#: cdk-pixbuf/io-bmp.c:1542 cdk-pixbuf/io-gdip-bmp.c:83
 msgctxt "image format"
 msgid "BMP"
 msgstr "BMP"
@@ -330,17 +330,17 @@ msgctxt "image format"
 msgid "EMF"
 msgstr "EMF"
 
-#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1037
+#: cdk-pixbuf/io-gdip-gif.c:81 cdk-pixbuf/io-gif.c:1039
 msgctxt "image format"
 msgid "GIF"
 msgstr "GIF"
 
-#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1412
+#: cdk-pixbuf/io-gdip-ico.c:60 cdk-pixbuf/io-ico.c:1418
 msgctxt "image format"
 msgid "Windows icon"
 msgstr "Windows belgisi"
 
-#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1394
+#: cdk-pixbuf/io-gdip-jpeg.c:54 cdk-pixbuf/io-jpeg.c:1409
 #, c-format
 msgid ""
 "JPEG quality must be a value between 0 and 100; value “%s” could not be "
@@ -349,7 +349,7 @@ msgstr ""
 "JPEG sifati 0 dan 100 gacha bo'lgan qiymat bo'lishi kerak; “%s” qiymatini "
 "tahlil qilib bo‘lmadi."
 
-#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1410
+#: cdk-pixbuf/io-gdip-jpeg.c:69 cdk-pixbuf/io-jpeg.c:1425
 #, c-format
 msgid ""
 "JPEG quality must be a value between 0 and 100; value “%d” is not allowed."
@@ -357,7 +357,7 @@ msgstr ""
 "JPEG sifati 0 dan 100 gacha bo'lgan qiymat bo'lishi kerak; “%d” qiymatiga "
 "ruxsat berilmagan."
 
-#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1694
+#: cdk-pixbuf/io-gdip-jpeg.c:147 cdk-pixbuf/io-jpeg.c:1710
 msgctxt "image format"
 msgid "JPEG"
 msgstr "JPEG"
@@ -409,34 +409,34 @@ msgctxt "image format"
 msgid "WMF"
 msgstr "WMF"
 
-#: cdk-pixbuf/io-gif.c:158
+#: cdk-pixbuf/io-gif.c:160
 #, c-format
 msgid "Failure reading GIF: %s"
 msgstr "GIF o‘qilmadi: %s"
 
-#: cdk-pixbuf/io-gif.c:381 cdk-pixbuf/io-gif.c:848 cdk-pixbuf/io-gif.c:901
-#: cdk-pixbuf/io-gif.c:974
+#: cdk-pixbuf/io-gif.c:383 cdk-pixbuf/io-gif.c:850 cdk-pixbuf/io-gif.c:903
+#: cdk-pixbuf/io-gif.c:976
 msgid "Not enough memory to load GIF file"
 msgstr "GIF faylini yuklash uchun xotira yetarli emas"
 
-#: cdk-pixbuf/io-gif.c:507
+#: cdk-pixbuf/io-gif.c:509
 msgid "GIF image is corrupt (incorrect LZW compression)"
 msgstr "GIF tasviri buzilgan (noto'g'ri LZW siqish)"
 
-#: cdk-pixbuf/io-gif.c:543
+#: cdk-pixbuf/io-gif.c:545
 msgid "File does not appear to be a GIF file"
 msgstr "Fayl GIF fayli emas"
 
-#: cdk-pixbuf/io-gif.c:558
+#: cdk-pixbuf/io-gif.c:560
 #, c-format
 msgid "Version %s of the GIF file format is not supported"
 msgstr "GIF fayl formatining %s-versiyasi qo‘llab-quvvatlanmaydi"
 
-#: cdk-pixbuf/io-gif.c:587
+#: cdk-pixbuf/io-gif.c:589
 msgid "Resulting GIF image has zero size"
 msgstr "Natijadagi GIF tasviri nolga teng"
 
-#: cdk-pixbuf/io-gif.c:657
+#: cdk-pixbuf/io-gif.c:659
 msgid ""
 "GIF image has no global colormap, and a frame inside it has no local "
 "colormap."
@@ -444,17 +444,17 @@ msgstr ""
 "GIF rasmida global rang xaritasi yo'q va uning ichidagi ramkada mahalliy "
 "rang xaritasi yo'q."
 
-#: cdk-pixbuf/io-gif.c:861 cdk-pixbuf/io-gif.c:986
+#: cdk-pixbuf/io-gif.c:863 cdk-pixbuf/io-gif.c:988
 msgid "GIF file was missing some data (perhaps it was truncated somehow?)"
 msgstr ""
 "GIF faylida ba'zi ma'lumotlar yo'q edi (ehtimol u qandaydir tarzda "
 "kesilganmi?)"
 
-#: cdk-pixbuf/io-gif.c:920
+#: cdk-pixbuf/io-gif.c:922
 msgid "GIF image was truncated or incomplete."
 msgstr "GIF tasviri kesilgan yoki toʻliq boʻlmagan."
 
-#: cdk-pixbuf/io-gif.c:927
+#: cdk-pixbuf/io-gif.c:929
 msgid "Not all frames of the GIF image were loaded."
 msgstr "GIF tasvirining barcha ramkalari yuklanmagan."
 
@@ -516,12 +516,12 @@ msgstr "Kursorning kirish nuqtasi tasvir tashqarisi"
 msgid "Unsupported depth for ICO file: %d"
 msgstr "ICO fayli uchun qoʻllab-quvvatlanmaydigan chuqurlik: %d"
 
-#: cdk-pixbuf/io-jpeg.c:129
+#: cdk-pixbuf/io-jpeg.c:131
 #, c-format
 msgid "Error interpreting JPEG image file (%s)"
 msgstr "JPEG rasm faylini talqin qilishda xatolik yuz berdi (%s)"
 
-#: cdk-pixbuf/io-jpeg.c:638
+#: cdk-pixbuf/io-jpeg.c:647
 msgid ""
 "Insufficient memory to load image, try exiting some applications to free "
 "memory"
@@ -529,26 +529,26 @@ msgstr ""
 "Rasmni yuklash uchun xotira yetarli emas, xotirani boʻshatish uchun baʼzi "
 "ilovalardan chiqib koʻring"
 
-#: cdk-pixbuf/io-jpeg.c:711 cdk-pixbuf/io-jpeg.c:956
+#: cdk-pixbuf/io-jpeg.c:720 cdk-pixbuf/io-jpeg.c:970
 #, c-format
 msgid "Unsupported JPEG color space (%s)"
 msgstr "Qo'llab-quvvatlanmaydigan JPEG rang maydoni (%s)"
 
-#: cdk-pixbuf/io-jpeg.c:834 cdk-pixbuf/io-jpeg.c:1154 cdk-pixbuf/io-jpeg.c:1501
-#: cdk-pixbuf/io-jpeg.c:1511
+#: cdk-pixbuf/io-jpeg.c:845 cdk-pixbuf/io-jpeg.c:1169 cdk-pixbuf/io-jpeg.c:1516
+#: cdk-pixbuf/io-jpeg.c:1526
 msgid "Couldn’t allocate memory for loading JPEG file"
 msgstr "Meta-faylni yuklab boʻlmadi"
 
-#: cdk-pixbuf/io-jpeg.c:1112
+#: cdk-pixbuf/io-jpeg.c:1127
 msgid "Transformed JPEG has zero width or height."
 msgstr "O'zgartirilgan JPEG kengligi yoki balandligi nolga teng."
 
-#: cdk-pixbuf/io-jpeg.c:1138
+#: cdk-pixbuf/io-jpeg.c:1153
 #, c-format
 msgid "Unsupported number of color components (%d)"
 msgstr "Rang komponentlarining qoʻllab-quvvatlanmaydigan soni (%d)"
 
-#: cdk-pixbuf/io-jpeg.c:1431
+#: cdk-pixbuf/io-jpeg.c:1446
 #, c-format
 msgid ""
 "JPEG x-dpi must be a value between 1 and 65535; value “%s” is not allowed."
@@ -556,7 +556,7 @@ msgstr ""
 "JPEG x-dpi qiymati 1 va 65535 oralig'ida bo'lishi kerak; “%s” qiymatiga "
 "ruxsat berilmagan."
 
-#: cdk-pixbuf/io-jpeg.c:1452
+#: cdk-pixbuf/io-jpeg.c:1467
 #, c-format
 msgid ""
 "JPEG y-dpi must be a value between 1 and 65535; value “%s” is not allowed."
@@ -564,47 +564,47 @@ msgstr ""
 "JPEG y-dpi 1 dan 65535 gacha bo'lgan qiymat bo'lishi kerak; “%s” qiymatiga "
 "ruxsat berilmagan."
 
-#: cdk-pixbuf/io-jpeg.c:1466
+#: cdk-pixbuf/io-jpeg.c:1481
 #, c-format
 msgid "Color profile has invalid length “%u”."
 msgstr "Rang profilining uzunligi “%u” yaroqsiz."
 
-#: cdk-pixbuf/io-png.c:63
+#: cdk-pixbuf/io-png.c:64
 msgid "Bits per channel of PNG image is invalid."
 msgstr "PNG tasvirining har bir kanali uchun bitlar yaroqsiz."
 
-#: cdk-pixbuf/io-png.c:144 cdk-pixbuf/io-png.c:703
+#: cdk-pixbuf/io-png.c:145 cdk-pixbuf/io-png.c:730
 msgid "Transformed PNG has zero width or height."
 msgstr "O'zgartirilgan PNG kengligi yoki balandligi nolga teng."
 
-#: cdk-pixbuf/io-png.c:152
+#: cdk-pixbuf/io-png.c:153
 msgid "Bits per channel of transformed PNG is not 8."
 msgstr "O'zgartirilgan PNG kanali uchun bitlar 8 emas."
 
-#: cdk-pixbuf/io-png.c:161
+#: cdk-pixbuf/io-png.c:162
 msgid "Transformed PNG not RGB or RGBA."
 msgstr "RGB yoki RGBA emas, o'zgartirilgan PNG."
 
-#: cdk-pixbuf/io-png.c:170
+#: cdk-pixbuf/io-png.c:171
 msgid "Transformed PNG has unsupported number of channels, must be 3 or 4."
 msgstr ""
 "Oʻzgartirilgan PNG formatida qoʻllab-quvvatlanmaydigan kanallar soni 3 yoki "
 "4 ta boʻlishi kerak."
 
-#: cdk-pixbuf/io-png.c:191
+#: cdk-pixbuf/io-png.c:193
 #, c-format
 msgid "Fatal error in PNG image file: %s"
 msgstr "PNG rasm faylida jiddiy xatolik: %s"
 
-#: cdk-pixbuf/io-png.c:329
+#: cdk-pixbuf/io-png.c:338
 msgid "Insufficient memory to load PNG file"
 msgstr "PNG faylini yuklash uchun xotira yetarli emas"
 
-#: cdk-pixbuf/io-png.c:498 cdk-pixbuf/io-png.c:519
+#: cdk-pixbuf/io-png.c:519 cdk-pixbuf/io-png.c:540
 msgid "Couldn’t allocate memory for loading PNG"
 msgstr "Meta-faylni yuklab boʻlmadi"
 
-#: cdk-pixbuf/io-png.c:716
+#: cdk-pixbuf/io-png.c:743
 #, c-format
 msgid ""
 "Insufficient memory to store a %lu by %lu image; try exiting some "
@@ -613,16 +613,16 @@ msgstr ""
 "%lu x %lu tasvirni saqlash uchun xotira yetarli emas; xotiradan "
 "foydalanishni kamaytirish uchun ba'zi ilovalardan chiqishga harakat qiling"
 
-#: cdk-pixbuf/io-png.c:791
+#: cdk-pixbuf/io-png.c:820
 msgid "Fatal error reading PNG image file"
 msgstr "PNG rasm faylini oʻqishda jiddiy xato"
 
-#: cdk-pixbuf/io-png.c:840
+#: cdk-pixbuf/io-png.c:873
 #, c-format
 msgid "Fatal error reading PNG image file: %s"
 msgstr "PNG rasm faylini oʻqishda jiddiy xatolik: %s"
 
-#: cdk-pixbuf/io-png.c:937
+#: cdk-pixbuf/io-png.c:972
 #, c-format
 msgid ""
 "Invalid key “%s”. Keys for PNG text chunks must have at least 1 and at most "
@@ -631,26 +631,26 @@ msgstr ""
 "“%s” kaliti noto‘g‘ri. PNG matn qismlari uchun kalitlar kamida 1 va koʻpi "
 "bilan 79 ta belgidan iborat boʻlishi kerak."
 
-#: cdk-pixbuf/io-png.c:950
+#: cdk-pixbuf/io-png.c:985
 #, c-format
 msgid "Invalid key “%s”. Keys for PNG text chunks must be ASCII characters."
 msgstr ""
 "“%s” kaliti noto‘g‘ri. PNG matn qismlari uchun kalitlar ASCII belgilar "
 "boʻlishi kerak."
 
-#: cdk-pixbuf/io-png.c:980
+#: cdk-pixbuf/io-png.c:1015
 #, c-format
 msgid ""
 "Value for PNG text chunk '%s' cannot be converted to ISO-8859-1 encoding."
 msgstr ""
 "“%s” PNG matn qismi qiymatini ISO-8859-1 kodlashiga aylantirib bo‘lmaydi."
 
-#: cdk-pixbuf/io-png.c:992
+#: cdk-pixbuf/io-png.c:1027
 #, c-format
 msgid "Color profile has invalid length %d"
 msgstr "Rang profilining uzunligi %d yaroqsiz"
 
-#: cdk-pixbuf/io-png.c:1004
+#: cdk-pixbuf/io-png.c:1039
 #, c-format
 msgid ""
 "PNG compression level must be a value between 0 and 9; value “%s” is invalid"
@@ -658,12 +658,12 @@ msgstr ""
 "PNG siqish darajasi 0 dan 9 gacha bo'lgan qiymat bo'lishi kerak; “%s” "
 "qiymati noto‘g‘ri"
 
-#: cdk-pixbuf/io-png.c:1018
+#: cdk-pixbuf/io-png.c:1053
 #, c-format
 msgid "PNG %s must be greater than zero; value “%s” is not allowed"
 msgstr "PNG %s noldan katta boʻlishi kerak; “%s” qiymatiga ruxsat berilmagan"
 
-#: cdk-pixbuf/io-png.c:1246
+#: cdk-pixbuf/io-png.c:1283
 msgctxt "image format"
 msgid "PNG"
 msgstr "PNG"
