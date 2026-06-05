@@ -1,3 +1,8 @@
+### cdk-pixbuf 2.45.1
+
+  * meson_options: disable builtin_loaders and enable jpeg and png
+
+
 ### cdk-pixbuf 2.45.0
 
   * initial release forked from gdk-pixbuf 2.44.5

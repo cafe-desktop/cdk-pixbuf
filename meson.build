@@ -1,5 +1,5 @@
 project('cdk-pixbuf', 'c',
-  version: '2.45.0',
+  version: '2.45.1',
   license: 'LGPL-2.1-or-later',
   default_options: [
     'buildtype=debugoptimized',
