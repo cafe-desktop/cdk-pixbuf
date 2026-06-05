@@ -1,7 +1,7 @@
 option('png',
        description: 'Enable PNG loader (requires libpng)',
        type: 'feature',
-       value: 'auto')
+       value: 'enabled')
 option('tiff',
        description: 'Enable TIFF loader (requires libtiff), disabled on Windows if "native_windows_loaders" is used',
        type: 'feature',
@@ -9,7 +9,7 @@ option('tiff',
 option('jpeg',
        description: 'Enable JPEG loader (requires libjpeg), disabled on Windows if "native_windows_loaders" is used',
        type: 'feature',
-       value: 'auto')
+       value: 'enabled')
 option('gif',
        description: 'Enable GIF loader, disabled on Windows if "native_windows_loaders" is used',
        type: 'feature',
@@ -30,7 +30,7 @@ option('builtin_loaders',
        description: 'Comma-separated list of loaders to build into cdk-pixbuf',
        type: 'array',
        choices: ['default', 'all', 'none', 'windows', 'png', 'bmp', 'gif', 'ico', 'ani', 'jpeg', 'pnm', 'tiff', 'xpm', 'xbm', 'tga', 'icns', 'qtif', 'glycin', 'svg'],
-       value: ['png','jpeg'])
+       value: ['none'])
 option('svg',
        description: 'Enable SVG loader (requires librsvg-2.0)',
        type: 'feature',
