@@ -687,15 +687,17 @@ cdk_pixbuf_animation_get_height (CdkPixbufAnimation *animation)
 /**
  * cdk_pixbuf_animation_get_iter:
  * @animation: a #CdkPixbufAnimation
- * @start_time: (allow-none): time when the animation starts playing
+ * @start_time: (allow-none): time in microseconds since the epoch, as
+ *   returned by g_get_real_time(), when the animation starts playing
  *
  * Get an iterator for displaying an animation.
  *
  * The iterator provides the frames that should be displayed at a
  * given time.
  *
- * @start_time would normally come from g_get_current_time(), and marks
- * the beginning of animation playback. After creating an iterator, you
+ * @start_time is expressed in microseconds since the epoch, as returned
+ * by g_get_real_time(), and marks the beginning of animation playback.
+ * After creating an iterator, you
  * should immediately display the pixbuf returned by
  * cdk_pixbuf_animation_iter_get_pixbuf(). Then, you should install
  * a timeout (with g_timeout_add()) or by some other mechanism ensure
@@ -704,8 +706,8 @@ cdk_pixbuf_animation_get_height (CdkPixbufAnimation *animation)
  * the image is updated, you should reinstall the timeout with the new,
  * possibly-changed delay time.
  *
- * As a shortcut, if @start_time is `NULL`, the result of
- * g_get_current_time() will be used automatically.
+ * As a shortcut, if @start_time is `NULL`, the current time, as returned
+ * by g_get_real_time(), will be used automatically.
  *
  * To update the image (i.e. possibly change the result of
  * cdk_pixbuf_animation_iter_get_pixbuf() to a new frame of the animation),
@@ -730,9 +732,9 @@ cdk_pixbuf_animation_get_height (CdkPixbufAnimation *animation)
  */
 CdkPixbufAnimationIter*
 cdk_pixbuf_animation_get_iter (CdkPixbufAnimation *animation,
-                               const GTimeVal     *start_time)
+                               const gint64       *start_time)
 {
-        GTimeVal val;
+        gint64 val;
 
         g_return_val_if_fail (CDK_IS_PIXBUF_ANIMATION (animation), NULL);
 
@@ -740,9 +742,9 @@ cdk_pixbuf_animation_get_iter (CdkPixbufAnimation *animation,
         if (start_time)
                 val = *start_time;
         else
-                g_get_current_time (&val);
+                val = g_get_real_time ();
 
-        return CDK_PIXBUF_ANIMATION_GET_CLASS (animation)->get_iter (animation, &val);
+        return CDK_PIXBUF_ANIMATION_GET_CLASS (animation)->get_iter (animation, val);
 }
 
 G_DEFINE_TYPE (CdkPixbufAnimationIter, cdk_pixbuf_animation_iter, G_TYPE_OBJECT);
@@ -844,21 +846,23 @@ cdk_pixbuf_animation_iter_on_currently_loading_frame (CdkPixbufAnimationIter *it
 /**
  * cdk_pixbuf_animation_iter_advance:
  * @iter: a #CdkPixbufAnimationIter
- * @current_time: (allow-none): current time
+ * @current_time: (allow-none): current time in microseconds since the
+ *   epoch, as returned by g_get_real_time()
  *
  * Possibly advances an animation to a new frame.
  *
  * Chooses the frame based on the start time passed to
  * cdk_pixbuf_animation_get_iter().
  *
- * @current_time would normally come from g_get_current_time(), and
- * must be greater than or equal to the time passed to
+ * @current_time is expressed in microseconds since the epoch, as
+ * returned by g_get_real_time(), and must be greater than or equal to
+ * the time passed to
  * cdk_pixbuf_animation_get_iter(), and must increase or remain
  * unchanged each time cdk_pixbuf_animation_iter_get_pixbuf() is
  * called. That is, you can't go backward in time; animations only
  * play forward.
  *
- * As a shortcut, pass `NULL` for the current time and g_get_current_time()
+ * As a shortcut, pass `NULL` for the current time and g_get_real_time()
  * will be invoked on your behalf. So you only need to explicitly pass
  * @current_time if you're doing something odd like playing the animation
  * at double speed.
@@ -874,9 +878,9 @@ cdk_pixbuf_animation_iter_on_currently_loading_frame (CdkPixbufAnimationIter *it
  */
 gboolean
 cdk_pixbuf_animation_iter_advance (CdkPixbufAnimationIter *iter,
-                                   const GTimeVal         *current_time)
+                                   const gint64           *current_time)
 {
-        GTimeVal val;
+        gint64 val;
 
         g_return_val_if_fail (CDK_IS_PIXBUF_ANIMATION_ITER (iter), FALSE);
         g_return_val_if_fail (CDK_PIXBUF_ANIMATION_ITER_GET_CLASS (iter)->advance, FALSE);
@@ -884,9 +888,9 @@ cdk_pixbuf_animation_iter_advance (CdkPixbufAnimationIter *iter,
         if (current_time)
                 val = *current_time;
         else
-                g_get_current_time (&val);
+                val = g_get_real_time ();
 
-        return CDK_PIXBUF_ANIMATION_ITER_GET_CLASS (iter)->advance (iter, &val);
+        return CDK_PIXBUF_ANIMATION_ITER_GET_CLASS (iter)->advance (iter, val);
 }
 
 static void                    cdk_pixbuf_non_anim_finalize         (GObject            *object);
@@ -896,7 +900,7 @@ static void                    cdk_pixbuf_non_anim_get_size         (CdkPixbufAn
                                                                      gint               *width,
                                                                      gint               *height);
 static CdkPixbufAnimationIter* cdk_pixbuf_non_anim_get_iter         (CdkPixbufAnimation *anim,
-                                                                     const GTimeVal     *start_time);
+                                                                     gint64             start_time);
 
 G_DEFINE_TYPE (CdkPixbufNonAnim, cdk_pixbuf_non_anim, CDK_TYPE_PIXBUF_ANIMATION);
 
@@ -980,7 +984,7 @@ cdk_pixbuf_non_anim_get_size (CdkPixbufAnimation *anim,
 
 static CdkPixbufAnimationIter*
 cdk_pixbuf_non_anim_get_iter (CdkPixbufAnimation *anim,
-                              const GTimeVal     *start_time)
+                              gint64             start_time)
 {
         CdkPixbufNonAnimIter *iter;
 
@@ -998,7 +1002,7 @@ static gint       cdk_pixbuf_non_anim_iter_get_delay_time             (CdkPixbuf
 static CdkPixbuf* cdk_pixbuf_non_anim_iter_get_pixbuf                 (CdkPixbufAnimationIter *iter);
 static gboolean   cdk_pixbuf_non_anim_iter_on_currently_loading_frame (CdkPixbufAnimationIter *iter);
 static gboolean   cdk_pixbuf_non_anim_iter_advance                    (CdkPixbufAnimationIter *iter,
-                                                                       const GTimeVal         *current_time);
+                                                                       gint64                 current_time);
 
 G_DEFINE_TYPE (CdkPixbufNonAnimIter, cdk_pixbuf_non_anim_iter, CDK_TYPE_PIXBUF_ANIMATION_ITER)
 
@@ -1053,7 +1057,7 @@ cdk_pixbuf_non_anim_iter_on_currently_loading_frame (CdkPixbufAnimationIter *ite
 
 static gboolean
 cdk_pixbuf_non_anim_iter_advance (CdkPixbufAnimationIter *iter,
-                                  const GTimeVal         *current_time)
+                                  gint64                 current_time)
 {
 
         /* Advancing never requires a refresh */

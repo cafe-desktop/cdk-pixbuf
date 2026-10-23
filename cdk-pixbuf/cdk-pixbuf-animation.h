@@ -92,11 +92,9 @@ gboolean            cdk_pixbuf_animation_is_static_image  (CdkPixbufAnimation *a
 CDK_PIXBUF_DEPRECATED_IN_2_44
 CdkPixbuf          *cdk_pixbuf_animation_get_static_image (CdkPixbufAnimation *animation);
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 CDK_PIXBUF_DEPRECATED_IN_2_44
 CdkPixbufAnimationIter *cdk_pixbuf_animation_get_iter                        (CdkPixbufAnimation     *animation,
-                                                                              const GTimeVal         *start_time);
-G_GNUC_END_IGNORE_DEPRECATIONS
+                                                                              const gint64           *start_time);
 
 CDK_PIXBUF_DEPRECATED_IN_2_44
 GType                   cdk_pixbuf_animation_iter_get_type                   (void) G_GNUC_CONST;
@@ -106,11 +104,9 @@ CDK_PIXBUF_DEPRECATED_IN_2_44
 CdkPixbuf              *cdk_pixbuf_animation_iter_get_pixbuf                 (CdkPixbufAnimationIter *iter);
 CDK_PIXBUF_DEPRECATED_IN_2_44
 gboolean                cdk_pixbuf_animation_iter_on_currently_loading_frame (CdkPixbufAnimationIter *iter);
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 CDK_PIXBUF_DEPRECATED_IN_2_44
 gboolean                cdk_pixbuf_animation_iter_advance                    (CdkPixbufAnimationIter *iter,
-                                                                              const GTimeVal         *current_time);
-G_GNUC_END_IGNORE_DEPRECATIONS
+                                                                              const gint64           *current_time);
 
 
 #ifdef CDK_PIXBUF_ENABLE_BACKEND
@@ -143,7 +139,6 @@ struct _CdkPixbufAnimation {
 
 };
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 struct _CdkPixbufAnimationClass {
         GObjectClass parent_class;
 
@@ -157,10 +152,11 @@ struct _CdkPixbufAnimationClass {
                                              int                 *width,
                                              int                 *height);
 
+        /* @start_time is in microseconds since the epoch, as returned by
+         * g_get_real_time() */
         CdkPixbufAnimationIter* (*get_iter) (CdkPixbufAnimation *animation,
-                                             const GTimeVal     *start_time);
+                                             gint64             start_time);
 };
-G_GNUC_END_IGNORE_DEPRECATIONS
 
 
 
@@ -192,7 +188,6 @@ struct _CdkPixbufAnimationIter {
 
 };
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 struct _CdkPixbufAnimationIterClass {
         GObjectClass parent_class;
 
@@ -204,10 +199,11 @@ struct _CdkPixbufAnimationIterClass {
 
         gboolean   (*on_currently_loading_frame) (CdkPixbufAnimationIter *iter);
 
+        /* @current_time is in microseconds since the epoch, as returned by
+         * g_get_real_time() */
         gboolean   (*advance)          (CdkPixbufAnimationIter *iter,
-                                        const GTimeVal         *current_time);
+                                        gint64                 current_time);
 };
-G_GNUC_END_IGNORE_DEPRECATIONS
 
 #define CDK_TYPE_PIXBUF_NON_ANIM              (cdk_pixbuf_non_anim_get_type ())
 #define CDK_PIXBUF_NON_ANIM(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), CDK_TYPE_PIXBUF_NON_ANIM, CdkPixbufNonAnim))
