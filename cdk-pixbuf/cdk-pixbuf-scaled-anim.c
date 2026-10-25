@@ -173,10 +173,9 @@ get_size (CdkPixbufAnimation *anim,
 		*height = (int)(*height * scaled->yscale + .5);
 }
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 static CdkPixbufAnimationIter *
 get_iter (CdkPixbufAnimation *anim,
-          const GTimeVal     *start_time)
+          gint64             start_time)
 {
 	CdkPixbufScaledAnim *scaled = (CdkPixbufScaledAnim *)anim;
 	CdkPixbufScaledAnimIter *iter;
@@ -184,11 +183,10 @@ get_iter (CdkPixbufAnimation *anim,
 	iter = g_object_new (CDK_TYPE_PIXBUF_SCALED_ANIM_ITER, NULL);
 
 	iter->scaled = g_object_ref (scaled);
-	iter->iter = cdk_pixbuf_animation_get_iter (scaled->anim, start_time);
+	iter->iter = cdk_pixbuf_animation_get_iter (scaled->anim, &start_time);
 	
 	return (CdkPixbufAnimationIter*)iter;
 }
-G_GNUC_END_IGNORE_DEPRECATIONS
 
 static void
 cdk_pixbuf_scaled_anim_class_init (CdkPixbufScaledAnimClass *klass)
@@ -245,16 +243,14 @@ on_currently_loading_frame (CdkPixbufAnimationIter *iter)
 	return cdk_pixbuf_animation_iter_on_currently_loading_frame (scaled->iter);
 }
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 static gboolean
 advance (CdkPixbufAnimationIter *iter,
-	 const GTimeVal         *current_time)
+	 gint64                 current_time)
 {
 	CdkPixbufScaledAnimIter *scaled = (CdkPixbufScaledAnimIter *)iter;
 
-	return cdk_pixbuf_animation_iter_advance (scaled->iter, current_time);
+	return cdk_pixbuf_animation_iter_advance (scaled->iter, &current_time);
 }
-G_GNUC_END_IGNORE_DEPRECATIONS
 
 static void
 cdk_pixbuf_scaled_anim_iter_finalize (GObject *object)

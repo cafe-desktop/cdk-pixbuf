@@ -36,7 +36,7 @@
  */
 typedef struct {
     CdkPixbufAnimationIter* iter; /* iterator pointed to the frame */
-    GTimeVal time; /* time when this frame appears */
+    gint64 time; /* time when this frame appears */
     CdkPixbuf *pixbuf; /* current content of the frame */
 } FrameData;
 
@@ -243,7 +243,7 @@ update_currently_loaded_frame (FrameData* frame)
             /* this is last frame in the animation */
             return;
         }
-        g_time_val_add (&frame->time, delay_time * 1000);
+        frame->time += delay_time * 1000;
         cdk_pixbuf_animation_iter_advance (frame->iter, &frame->time);
     } while (!cdk_pixbuf_animation_iter_on_currently_loading_frame (frame->iter));
     /* store current content of the frame */
@@ -290,7 +290,7 @@ callback_area_prepared_anim (CdkPixbufLoader* loader)
     g_signal_connect (loader, "closed",
                       (GCallback) callback_closed_anim, (gpointer) frame_copy);
 
-    frame_copy->time.tv_sec = frame_copy->time.tv_usec = 0; /* some time */
+    frame_copy->time = 0; /* some time */
 
     anim = cdk_pixbuf_loader_get_animation (loader);
     frame_copy->iter = cdk_pixbuf_animation_get_iter (anim, &frame_copy->time);

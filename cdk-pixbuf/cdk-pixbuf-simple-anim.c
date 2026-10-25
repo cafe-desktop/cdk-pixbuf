@@ -108,7 +108,7 @@ static void       get_size         (CdkPixbufAnimation *anim,
                                     gint               *width, 
                                     gint               *height);
 static CdkPixbufAnimationIter *get_iter (CdkPixbufAnimation *anim,
-                                         const GTimeVal     *start_time);
+                                         gint64             start_time);
 
 
 static void cdk_pixbuf_simple_anim_set_property (GObject        *object,
@@ -244,7 +244,7 @@ iter_restart (CdkPixbufSimpleAnimIter *iter)
 
 static CdkPixbufAnimationIter *
 get_iter (CdkPixbufAnimation *anim,
-          const GTimeVal    *start_time)
+          gint64            start_time)
 {
         CdkPixbufSimpleAnimIter *iter;
         
@@ -256,8 +256,9 @@ get_iter (CdkPixbufAnimation *anim,
         
         iter_restart (iter);
         
-        iter->start_time = *start_time;
-        iter->current_time = *start_time;
+        iter->start_time.tv_sec = start_time / G_USEC_PER_SEC;
+        iter->start_time.tv_usec = start_time % G_USEC_PER_SEC;
+        iter->current_time = iter->start_time;
         
         return CDK_PIXBUF_ANIMATION_ITER (iter);
 }
@@ -268,7 +269,7 @@ static gint       get_delay_time             (CdkPixbufAnimationIter *iter);
 static CdkPixbuf *get_pixbuf                 (CdkPixbufAnimationIter *iter);
 static gboolean   on_currently_loading_frame (CdkPixbufAnimationIter *iter);
 static gboolean   advance                    (CdkPixbufAnimationIter *iter,
-                                              const GTimeVal         *current_time);
+                                              gint64                 current_time);
 
 G_DEFINE_TYPE (CdkPixbufSimpleAnimIter, cdk_pixbuf_simple_anim_iter, CDK_TYPE_PIXBUF_ANIMATION_ITER)
 
@@ -309,7 +310,7 @@ cdk_pixbuf_simple_anim_iter_finalize (GObject *object)
 
 static gboolean
 advance (CdkPixbufAnimationIter *anim_iter,
-         const GTimeVal         *current_time)
+         gint64                 current_time)
 {
         CdkPixbufSimpleAnimIter *iter;
         gint elapsed;
@@ -319,7 +320,8 @@ advance (CdkPixbufAnimationIter *anim_iter,
         
         iter = CDK_PIXBUF_SIMPLE_ANIM_ITER (anim_iter);
         
-        iter->current_time = *current_time;
+        iter->current_time.tv_sec = current_time / G_USEC_PER_SEC;
+        iter->current_time.tv_usec = current_time % G_USEC_PER_SEC;
         
         /* We use milliseconds for all times */
         elapsed = (((iter->current_time.tv_sec - iter->start_time.tv_sec) * G_USEC_PER_SEC +

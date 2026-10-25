@@ -76,7 +76,7 @@ run_gif_test (gconstpointer data)
   CdkPixbufLoader *loader;
   CdkPixbufAnimation *animation = NULL;
   CdkPixbufAnimationIter *iter = NULL;
-  GTimeVal animation_time;
+  gint64 animation_time;
   GStrv frames;
   int i;
   GError *error = NULL;
@@ -125,8 +125,7 @@ run_gif_test (gconstpointer data)
 
   frames = g_key_file_get_string_list (config_file, "config", "frames", NULL, &error);
   g_assert_no_error (error);
-  animation_time.tv_sec = 0;
-  animation_time.tv_usec = 0;
+  animation_time = 0;
   for (i = 0; frames[i]; i++)
     {
       const gchar *frame = frames[i];
@@ -143,7 +142,7 @@ run_gif_test (gconstpointer data)
       else
         cdk_pixbuf_animation_iter_advance (iter, &animation_time);
       delay_time = cdk_pixbuf_animation_iter_get_delay_time (iter);
-      g_time_val_add (&animation_time, cdk_pixbuf_animation_iter_get_delay_time (iter) * 1000);
+      animation_time += cdk_pixbuf_animation_iter_get_delay_time (iter) * 1000;
 
       if (g_key_file_has_key (config_file, frame, "delay", &error))
         expected_delay_time = g_key_file_get_integer (config_file, frame, "delay", &error) * 10;

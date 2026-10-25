@@ -32,10 +32,8 @@ static CdkPixbuf*              cdk_pixbuf_ani_anim_get_static_image (CdkPixbufAn
 static void                    cdk_pixbuf_ani_anim_get_size (CdkPixbufAnimation *anim,
                                                              int                *width,
                                                              int                *height);
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 static CdkPixbufAnimationIter* cdk_pixbuf_ani_anim_get_iter (CdkPixbufAnimation *anim,
-                                                             const GTimeVal     *start_time);
-G_GNUC_END_IGNORE_DEPRECATIONS
+                                                             gint64             start_time);
 
 
 
@@ -125,10 +123,9 @@ iter_restart (CdkPixbufAniAnimIter *iter)
         iter->elapsed = 0;
 }
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 static CdkPixbufAnimationIter*
 cdk_pixbuf_ani_anim_get_iter (CdkPixbufAnimation *anim,
-                              const GTimeVal     *start_time)
+                              gint64             start_time)
 {
         CdkPixbufAniAnimIter *iter;
 
@@ -140,12 +137,12 @@ cdk_pixbuf_ani_anim_get_iter (CdkPixbufAnimation *anim,
 
         iter_restart (iter);
 
-        iter->start_time = *start_time;
-        iter->current_time = *start_time;
+        iter->start_time.tv_sec = start_time / G_USEC_PER_SEC;
+        iter->start_time.tv_usec = start_time % G_USEC_PER_SEC;
+        iter->current_time = iter->start_time;
 
         return CDK_PIXBUF_ANIMATION_ITER (iter);
 }
-G_GNUC_END_IGNORE_DEPRECATIONS
 
 
 
@@ -154,10 +151,8 @@ static void cdk_pixbuf_ani_anim_iter_finalize   (GObject                   *obje
 static int        cdk_pixbuf_ani_anim_iter_get_delay_time             (CdkPixbufAnimationIter *iter);
 static CdkPixbuf* cdk_pixbuf_ani_anim_iter_get_pixbuf                 (CdkPixbufAnimationIter *iter);
 static gboolean   cdk_pixbuf_ani_anim_iter_on_currently_loading_frame (CdkPixbufAnimationIter *iter);
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 static gboolean   cdk_pixbuf_ani_anim_iter_advance                    (CdkPixbufAnimationIter *iter,
-                                                                       const GTimeVal         *current_time);
-G_GNUC_END_IGNORE_DEPRECATIONS
+                                                                       gint64                 current_time);
 
 
 
@@ -193,10 +188,9 @@ cdk_pixbuf_ani_anim_iter_finalize (GObject *object)
         G_OBJECT_CLASS (cdk_pixbuf_ani_anim_iter_parent_class)->finalize (object);
 }
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 static gboolean
 cdk_pixbuf_ani_anim_iter_advance (CdkPixbufAnimationIter *anim_iter,
-                                  const GTimeVal         *current_time)
+                                  gint64                 current_time)
 {
         CdkPixbufAniAnimIter *iter;
         gint elapsed;
@@ -205,7 +199,8 @@ cdk_pixbuf_ani_anim_iter_advance (CdkPixbufAnimationIter *anim_iter,
 
         iter = CDK_PIXBUF_ANI_ANIM_ITER (anim_iter);
 
-        iter->current_time = *current_time;
+        iter->current_time.tv_sec = current_time / G_USEC_PER_SEC;
+        iter->current_time.tv_usec = current_time % G_USEC_PER_SEC;
 
         /* We use milliseconds for all times */
         elapsed =
@@ -245,7 +240,6 @@ cdk_pixbuf_ani_anim_iter_advance (CdkPixbufAnimationIter *anim_iter,
 
         return iter->current_frame != old;
 }
-G_GNUC_END_IGNORE_DEPRECATIONS
 
 int
 cdk_pixbuf_ani_anim_iter_get_delay_time (CdkPixbufAnimationIter *anim_iter)
