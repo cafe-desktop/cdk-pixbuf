@@ -137,8 +137,7 @@ cdk_pixbuf_ani_anim_get_iter (CdkPixbufAnimation *anim,
 
         iter_restart (iter);
 
-        iter->start_time.tv_sec = start_time / G_USEC_PER_SEC;
-        iter->start_time.tv_usec = start_time % G_USEC_PER_SEC;
+        iter->start_time = start_time;
         iter->current_time = iter->start_time;
 
         return CDK_PIXBUF_ANIMATION_ITER (iter);
@@ -199,13 +198,10 @@ cdk_pixbuf_ani_anim_iter_advance (CdkPixbufAnimationIter *anim_iter,
 
         iter = CDK_PIXBUF_ANI_ANIM_ITER (anim_iter);
 
-        iter->current_time.tv_sec = current_time / G_USEC_PER_SEC;
-        iter->current_time.tv_usec = current_time % G_USEC_PER_SEC;
+        iter->current_time = current_time;
 
         /* We use milliseconds for all times */
-        elapsed =
-          (((iter->current_time.tv_sec - iter->start_time.tv_sec) * G_USEC_PER_SEC +
-            iter->current_time.tv_usec - iter->start_time.tv_usec)) / 1000;
+        elapsed = (iter->current_time - iter->start_time) / 1000;
 
         if (elapsed < 0) {
                 /* Try to compensate; probably the system clock

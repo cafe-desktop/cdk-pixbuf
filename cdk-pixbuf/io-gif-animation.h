@@ -106,8 +106,8 @@ struct _CdkPixbufGifAnimIter {
         
         CdkPixbufGifAnim   *gif_anim;
 
-        GTimeVal            start_time;
-        GTimeVal            current_time;
+        gint64              start_time;
+        gint64              current_time;
 
         /* Time in milliseconds into this run of the animation */
         gint                position;
