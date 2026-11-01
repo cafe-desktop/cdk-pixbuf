@@ -43,26 +43,7 @@
 #define _CDK_PIXBUF_EXTERN extern
 #endif
 
-/* We prefix variable declarations so they can
- * properly get exported/imported from Windows DLLs.
- */
-#ifdef G_PLATFORM_WIN32
-#  ifdef CDK_PIXBUF_STATIC_COMPILATION
-#    define CDK_PIXBUF_VAR extern
-#  else /* !CDK_PIXBUF_STATIC_COMPILATION */
-#    ifdef CDK_PIXBUF_C_COMPILATION
-#      ifdef DLL_EXPORT
-#        define CDK_PIXBUF_VAR _CDK_PIXBUF_EXTERN
-#      else /* !DLL_EXPORT */
-#        define CDK_PIXBUF_VAR extern
-#      endif /* !DLL_EXPORT */
-#    else /* !CDK_PIXBUF_C_COMPILATION */
-#      define CDK_PIXBUF_VAR extern __declspec(dllimport)
-#    endif /* !CDK_PIXBUF_C_COMPILATION */
-#  endif /* !CDK_PIXBUF_STATIC_COMPILATION */
-#else /* !G_PLATFORM_WIN32 */
-#  define CDK_PIXBUF_VAR _CDK_PIXBUF_EXTERN
-#endif /* !G_PLATFORM_WIN32 */
+#define CDK_PIXBUF_VAR _CDK_PIXBUF_EXTERN
 
 /**
  * cdk_pixbuf_major_version:

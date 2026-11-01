@@ -123,12 +123,7 @@ cdk_pixbuf_conf.set('HAVE_SIGSETJMP',
 common_cflags = []
 common_ldflags = []
 
-if cc.get_id() == 'msvc'
-  # For Visual Studio, just force-include msvc_reommended_pragmas.h
-  # so that we silence unwanted noise and track potential issues
-  test_cflags = [ '-FImsvc_recommended_pragmas.h', '-utf-8' ]
-  add_project_arguments(cc.get_supported_arguments(test_cflags), language: 'c')
-elif cc.get_id() == 'gcc' or cc.get_id() == 'clang'
+if cc.get_id() == 'gcc' or cc.get_id() == 'clang'
   test_cflags = [
     '-Wpointer-arith',
     '-Wformat=2',
@@ -163,26 +158,14 @@ elif cc.get_id() == 'gcc' or cc.get_id() == 'clang'
     '-Werror=tautological-unsigned-zero-compare',
   ]
 
-  # Ensure we have the correct bit packing on Windows
-  if host_system == 'windows'
-    test_cflags += '-mms-bitfields'
-  endif
 else
   test_cflags = []
 endif
 
 # Symbol visibility
 if get_option('default_library') != 'static'
-  if host_system == 'windows'
-    cdk_pixbuf_conf.set('DLL_EXPORT', true)
-    cdk_pixbuf_conf.set('_CDK_PIXBUF_EXTERN', '__declspec(dllexport) extern')
-    if cc.get_id() != 'msvc'
-      test_cflags += ['-fvisibility=hidden']
-    endif
-  else
-    cdk_pixbuf_conf.set('_CDK_PIXBUF_EXTERN', '__attribute__((visibility("default"))) extern')
-    test_cflags += ['-fvisibility=hidden']
-  endif
+  cdk_pixbuf_conf.set('_CDK_PIXBUF_EXTERN', '__attribute__((visibility("default"))) extern')
+  test_cflags += ['-fvisibility=hidden']
 endif
 
 common_cflags += cc.get_supported_arguments(test_cflags)
@@ -198,11 +181,11 @@ if host_machine.system() == 'darwin'
   cdk_pixbuf_conf.set('OS_DARWIN', 1)
 endif
 
-# On non-Windows/macOS/android systems we always required shared-mime-info and GIO
+# On non-macOS/android systems we always required shared-mime-info and GIO
 # shared_mime_dep = []
 shared_mime_dep = []
 use_gio_mime = false
-if get_option('gio_sniffing') and host_system not in ['windows', 'darwin', 'android']
+if get_option('gio_sniffing') and host_system not in ['darwin', 'android']
   shared_mime_dep += dependency('shared-mime-info')
   cdk_pixbuf_conf.set('CDK_PIXBUF_USE_GIO_MIME', 1)
   use_gio_mime = true
@@ -274,12 +257,10 @@ elif builtin_loaders.contains('none')
   builtin_loaders = []
 endif
 
-is_msvc_like = cc.get_argument_syntax() == 'msvc'
-
 png_opt = get_option('png').disable_auto_if(glycin_dep.found())
 
 if not png_opt.disabled()
-  png_dep = dependency(is_msvc_like ? 'png' : 'libpng', required: false)
+  png_dep = dependency('libpng', required: false)
 
   # Finally, look for the dependency in a fallback subproject if allowed by
   # the --wrap-mode option. We don't directly call subproject() here because
@@ -324,26 +305,9 @@ if not others_opt.disabled()
   ]
 endif
 
-# On Windows, check whether we are building the native Windows loaders
-# (it is an "all-or-nothing" option for BMP, EMF, GIF, ICO, JPEG, TIFF and WMF)
-# Note that we currently do not use the native Windows loaders to handle PNG and
-# JPEG2000 images
-if host_system == 'windows'
-  native_windows_loaders = get_option('native_windows_loaders')
-else
-  native_windows_loaders = false
-endif
-
-if native_windows_loaders
-  loaders_deps += cc.find_library('gdiplus')
-  loaders_deps += cc.find_library('ole32')
-  enabled_loaders += 'gdiplus'
-endif
-
-# Don't check and build the jpeg loader if native_windows_loaders is true
 jpeg_opt = get_option('jpeg').disable_auto_if(glycin_dep.found())
-if not jpeg_opt.disabled() and not native_windows_loaders
-  jpeg_dep = dependency(is_msvc_like ? 'jpeg' : 'libjpeg', required: false)
+if not jpeg_opt.disabled()
+  jpeg_dep = dependency('libjpeg', required: false)
 
   # Finally, look for the dependency in a fallback
   if not jpeg_dep.found()
@@ -371,12 +335,11 @@ if not jpeg_opt.disabled() and not native_windows_loaders
   endif
 endif
 
-# Don't check and build the tiff loader if native_windows_loaders is true
 tiff_opt = get_option('tiff').disable_auto_if(glycin_dep.found())
-if not tiff_opt.disabled() and not native_windows_loaders
+if not tiff_opt.disabled()
   # We currently don't have a fallback subproject, but this handles error
   # reporting if tiff_opt is enabled.
-  tiff_dep = dependency(is_msvc_like ? 'tiff' : 'libtiff-4', required: tiff_opt)
+  tiff_dep = dependency('libtiff-4', required: tiff_opt)
 
   if tiff_dep.found()
     enabled_loaders += 'tiff'
@@ -393,13 +356,8 @@ if svg_dep.found()
   loaders_deps += svg_dep
 endif
 
-# Determine whether we enable application bundle relocation support, and we use
-# this always on Windows
-if host_system == 'windows'
-  relocatable = (get_option('default_library') != 'static')
-else
-  relocatable = get_option('relocatable')
-endif
+# Determine whether we enable application bundle relocation support
+relocatable = get_option('relocatable')
 
 if relocatable
   add_project_arguments([ '-DCDK_PIXBUF_RELOCATABLE' ], language: 'c')

@@ -64,17 +64,9 @@ main (int   argc,
       return 1;
     }
 
-#ifdef G_OS_WIN32
-  infilename = g_locale_to_utf8 (argv[1], -1, NULL, NULL, NULL);
-#else
   infilename = argv[1];
-#endif
 
-#ifdef G_OS_WIN32
-  outfilename = g_locale_to_utf8 (argv[2], -1, NULL, NULL, NULL);
-#else
   outfilename = argv[2];
-#endif
 
   pixbuf = cdk_pixbuf_new_from_file (infilename, &error);
   if (error != NULL)

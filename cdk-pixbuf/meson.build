@@ -12,15 +12,15 @@ loaders = {
   },
   'bmp': {
     'sources': [ 'io-bmp.c' ],
-    'enabled': enabled_loaders.contains('bmp') and not native_windows_loaders,
+    'enabled': enabled_loaders.contains('bmp'),
   },
   'gif': {
     'sources': [ 'io-gif.c', 'io-gif-animation.c', 'lzw.c' ],
-    'enabled': enabled_loaders.contains('gif') and not native_windows_loaders,
+    'enabled': enabled_loaders.contains('gif'),
   },
   'ico': {
     'sources': [ 'io-ico.c' ],
-    'enabled': enabled_loaders.contains('ico') and not native_windows_loaders,
+    'enabled': enabled_loaders.contains('ico'),
   },
   'ani': {
     'sources': [ 'io-ani.c', 'io-ani-animation.c' ],
@@ -137,16 +137,6 @@ cdkpixbuf_enums = gnome.mkenums('cdk-pixbuf-enum-types',
                                 install_dir: join_paths(cdk_pixbuf_includedir, cdk_pixbuf_api_path))
 cdkpixbuf_enum_h = cdkpixbuf_enums[1]
 
-if host_system == 'windows'
-  cdk_pixbuf_win_rc = configure_file(
-    input: 'cdk_pixbuf.rc.in',
-    output: 'cdk_pixbuf.rc',
-    configuration: cdkpixbuf_features_conf,
-  )
-  cdk_pixbuf_win_res = import('windows').compile_resources(cdk_pixbuf_win_rc)
-  cdkpixbuf_sources += cdk_pixbuf_win_res
-endif
-
 # Check if we need to build loaders as built-in functionality
 included_loaders_cflags = []
 included_loaders_deps = []
@@ -170,31 +160,6 @@ foreach name, loader: loaders
     included_loaders_deps += declare_dependency(link_with: mod)
   endif
 endforeach
-
-# List of formats supported by the native Windows components-based loader(s)
-windows_native_loader_formats = [ 'bmp', 'emf', 'gif', 'ico', 'jpeg', 'tiff', 'wmf' ]
-windows_base_loader_sources = [ 'io-gdip-utils.c', 'io-gdip-animation.c' ]
-
-# Build the loaders using native Windows components as static modules, if requested
-if native_windows_loaders
-  if builtin_loaders.contains('windows') or builtin_all_loaders
-    cflag_for_included_loader = ['-DINCLUDE_gdiplus']
-    included_loaders_cflags += cflag_for_included_loader
-    win_loader_sources = windows_base_loader_sources
-    foreach loader: windows_native_loader_formats
-      win_loader_sources += 'io-gdip-@0@.c'.format(loader)
-    endforeach
-
-    mod = static_library('staticpixbufloader-gdiplus',
-                         win_loader_sources,
-                         cdkpixbuf_enum_h,
-                         dependencies: loaders_deps + cdk_pixbuf_deps,
-                         include_directories: [ root_inc, cdk_pixbuf_inc ],
-                         c_args: common_cflags + cdk_pixbuf_cflags + cflag_for_included_loader)
-
-    included_loaders_deps += declare_dependency(link_with: mod)
-  endif
-endif
 
 if enabled_loaders.contains('glycin')
   # List of formats supported by the glycin-based loader(s)
@@ -354,26 +319,6 @@ foreach name, loader: loaders
     dynamic_loaders_dep += mod
   endif
 endforeach
-
-# Build the loaders using native Windows components as dynamic modules, if requested
-if native_windows_loaders
-  if not (builtin_loaders.contains('windows') or builtin_all_loaders)
-    foreach loader: windows_native_loader_formats
-      loader_sources = windows_base_loader_sources + [ 'io-gdip-@0@.c'.format(loader) ]
-
-      mod = shared_module('pixbufloader-gdip-@0@'.format(loader),
-                          loader_sources,
-                          cdkpixbuf_enum_h,
-                          dependencies: loaders_deps + cdk_pixbuf_deps + [ cdkpixbuf_dep ],
-                          include_directories: [ root_inc, cdk_pixbuf_inc ],
-                          c_args: common_cflags + cdk_pixbuf_cflags + cflags,
-                          install: true,
-                          install_dir: cdk_pixbuf_loaderdir)
-      dynamic_loaders += mod.full_path()
-      dynamic_loaders_dep = mod
-    endforeach
-  endif
-endif
 
 cdkpixbuf_bin = [
   [ 'cdk-pixbuf-csource' ],

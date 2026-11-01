@@ -22,10 +22,6 @@ args = argparser.parse_args()
 newenv = os.environ.copy()
 newenv['CDK_PIXBUF_PIXDATA'] = args.pixdata
 newenv['CDK_PIXBUF_MODULE_FILE'] = args.loaders
-# 'nt': NT-based Windows, see https://docs.python.org/3/library/os.html
-if os.name == 'nt':
-    cdk_pixbuf_dll_buildpath = os.path.dirname(args.pixdata)
-    newenv['PATH'] = cdk_pixbuf_dll_buildpath + os.pathsep + newenv['PATH']
 
 cmd = args.printer
 

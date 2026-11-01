@@ -43,15 +43,6 @@
 #include "cdk-pixbuf-io.h"
 #include "fallback-c89.c"
 
-#ifdef G_OS_WIN32
-#include <fcntl.h>
-#include <io.h>
-#include <windows.h>
-#define lseek(a,b,c) _lseek(a,b,c)
-#define O_RDWR _O_RDWR
-#endif
-
-
 /* Helper macros to convert between density units */
 #define DPCM_TO_DPI(value) ((int) round ((value) * 2.54))
 
@@ -346,30 +337,7 @@ cdk_pixbuf__tiff_image_load (FILE *f, GError **error)
          * before using it. (#60840)
          */
         lseek (fd, 0, SEEK_SET);
-#ifndef G_OS_WIN32
         tiff = TIFFFdOpen (fd, "libpixbuf-tiff", "r");
-#else
-        /* W32 version of this function takes HANDLE.
-         * What's worse, the caller will close the file,
-         * but TIFFClose() will *also* close it, so we
-         * need to make a duplicate.
-         */
-        {
-                HANDLE h;
-
-                if (DuplicateHandle (GetCurrentProcess (),
-                                     (HANDLE) _get_osfhandle (fd),
-                                     GetCurrentProcess (),
-                                     &h,
-                                     0,
-                                     FALSE,
-                                     DUPLICATE_SAME_ACCESS)) {
-                        tiff = TIFFFdOpen ((intptr_t) h, "libpixbuf-tiff", "r");
-                        if (tiff == NULL)
-                                CloseHandle (h);
-                }
-        }
-#endif
 
         if (!tiff) {
                 g_set_error_literal (error,

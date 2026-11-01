@@ -327,29 +327,6 @@ fail_begin_load:
 	return animation;
 }
 
-#ifdef G_OS_WIN32
-/**
- * cdk_pixbuf_animation_new_from_file_utf8:
- * @filename: (type filename): Name of file to load, in the GLib file name encoding
- * @error: return location for error
- *
- * Same as cdk_pixbuf_animation_new_from_file()
- *
- * Return value: A newly-created animation with a reference count of 1, or `NULL`
- *   if any of several error conditions ocurred:  the file could not be opened,
- *   there was no loader for the file's format, there was not enough memory to
- *   allocate the image buffer, or the image file contained invalid data.
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
- */
-CdkPixbufAnimation *
-cdk_pixbuf_animation_new_from_file_utf8 (const gchar  *filename,
-                                         GError      **error)
-{
-    return cdk_pixbuf_animation_new_from_file (filename, error);
-}
-#endif
-
 /**
  * cdk_pixbuf_animation_new_from_stream:
  * @stream:  a `GInputStream` to load the pixbuf from

@@ -52,12 +52,6 @@ typedef struct _CdkPixbufAnimationIter CdkPixbufAnimationIter;
 CDK_PIXBUF_AVAILABLE_IN_ALL
 GType               cdk_pixbuf_animation_get_type        (void) G_GNUC_CONST;
 
-#ifdef G_OS_WIN32
-/* API/ABI compat, see cdk-pixbuf-core.h for details */
-CDK_PIXBUF_DEPRECATED_IN_2_44
-CdkPixbufAnimation *cdk_pixbuf_animation_new_from_file_utf8   (const char         *filename,
-                                                               GError            **error);
-#endif
 
 CDK_PIXBUF_DEPRECATED_IN_2_44
 CdkPixbufAnimation *cdk_pixbuf_animation_new_from_file   (const char         *filename,

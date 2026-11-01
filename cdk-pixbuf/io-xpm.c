@@ -70,8 +70,8 @@ struct mem_handle {
 	int offset;
 };
 
-/* The following 2 routines (parse_color, find_color) come from Tk, via the Win32
- * port of CDK. The licensing terms on these (longer than the functions) is:
+/* The following 2 routines (parse_color, find_color) come from Tk.
+ * The licensing terms on these (longer than the functions) is:
  *
  * This software is copyrighted by the Regents of the University of
  * California, Sun Microsystems, Inc., and other parties.  The following

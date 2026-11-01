@@ -8,14 +8,6 @@ cdk-pixbuf/cdk-pixbuf-simple-anim.c
 cdk-pixbuf/cdk-pixdata.c
 cdk-pixbuf/io-ani.c
 cdk-pixbuf/io-bmp.c
-cdk-pixbuf/io-gdip-bmp.c
-cdk-pixbuf/io-gdip-emf.c
-cdk-pixbuf/io-gdip-gif.c
-cdk-pixbuf/io-gdip-ico.c
-cdk-pixbuf/io-gdip-jpeg.c
-cdk-pixbuf/io-gdip-tiff.c
-cdk-pixbuf/io-gdip-utils.c
-cdk-pixbuf/io-gdip-wmf.c
 cdk-pixbuf/io-gif.c
 cdk-pixbuf/io-icns.c
 cdk-pixbuf/io-ico.c

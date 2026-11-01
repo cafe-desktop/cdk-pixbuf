@@ -42,9 +42,6 @@
 #endif
 #define SOEXT_LEN (strlen (SOEXT))
 
-#ifdef G_OS_WIN32
-#include <windows.h>
-#endif
 
 #ifdef OS_DARWIN
 #include <mach-o/dyld.h>
@@ -129,9 +126,7 @@ get_toplevel (void)
         static gchar *toplevel = NULL;
 
         if (toplevel == NULL) {
-#if defined (G_OS_WIN32)
-                toplevel = g_win32_get_package_installation_directory_of_module (NULL);
-#elif defined(OS_DARWIN)
+#if defined(OS_DARWIN)
                 char pathbuf[PATH_MAX + 1];
                 uint32_t bufsize = sizeof (pathbuf);
                 gchar *bin_dir;
@@ -140,7 +135,7 @@ get_toplevel (void)
                 bin_dir = g_dirname (pathbuf);
                 toplevel = g_build_path (G_DIR_SEPARATOR_S, bin_dir, "..", NULL);
                 g_free (bin_dir);
-#elif defined (OS_LINUX) || defined (__MINGW32__)
+#elif defined (OS_LINUX)
                 gchar *exe_path, *bin_dir;
 
                 exe_path = g_file_read_link ("/proc/self/exe", NULL);
@@ -238,19 +233,6 @@ query_module (GString *contents, const char *dir, const char *file)
                 CdkPixbufFormat *info;
                 CdkPixbufModule *vtable;
 
-#ifdef G_OS_WIN32
-                /* Replace backslashes in path with forward slashes, so that
-                 * it reads in without problems.
-                 */
-                {
-                        char *p = path;
-                        while (*p) {
-                                if (*p == '\\')
-                                        *p = '/';
-                                p++;
-                        }
-                }
-#endif
                 info = g_new0 (CdkPixbufFormat, 1);
                 vtable = g_new0 (CdkPixbufModule, 1);
 
@@ -280,24 +262,6 @@ query_module (GString *contents, const char *dir, const char *file)
         g_free (path);
 }
 
-#if defined(G_OS_WIN32) && defined(CDK_PIXBUF_RELOCATABLE)
-
-static char *
-get_libdir (void)
-{
-  static char *libdir = NULL;
-
-  if (libdir == NULL)
-          libdir = g_build_filename (get_toplevel (), "lib", NULL);
-
-  return libdir;
-}
-
-#undef CDK_PIXBUF_LIBDIR
-#define CDK_PIXBUF_LIBDIR get_libdir()
-
-#endif
-
 static gchar *
 cdk_pixbuf_get_module_file (void)
 {
@@ -319,11 +283,6 @@ int main (int argc, char **argv)
         GFile *pixbuf_libdir_file;
         gchar *pixbuf_libdir;
 
-#ifdef G_OS_WIN32
-        gchar *libdir;
-        GFile *pixbuf_prefix_file;
-        gchar *pixbuf_prefix;
-#endif
 
         /* An intermediate GFile here will convert all the path separators
          * to the right one used by the platform
@@ -332,62 +291,6 @@ int main (int argc, char **argv)
         pixbuf_libdir = g_file_get_path (pixbuf_libdir_file);
         g_object_unref (pixbuf_libdir_file);
 
-#ifdef G_OS_WIN32
-        pixbuf_prefix_file = g_file_new_for_path (CDK_PIXBUF_PREFIX);
-        pixbuf_prefix = g_file_get_path (pixbuf_prefix_file);
-        g_object_unref (pixbuf_prefix_file);
-
-        if (g_ascii_strncasecmp (pixbuf_libdir, pixbuf_prefix, strlen (pixbuf_prefix)) == 0 &&
-            G_IS_DIR_SEPARATOR (pixbuf_libdir[strlen (pixbuf_prefix)])) {
-                gchar *runtime_prefix;
-                gchar *slash;
-
-                /* pixbuf_prefix is a prefix of pixbuf_libdir, as it
-                 * normally is. Replace that prefix in pixbuf_libdir
-                 * with the installation directory on this machine.
-                 * We assume this invokation of
-                 * cdk-pixbuf-query-loaders is run from either a "bin"
-                 * subdirectory of the installation directory, or in
-                 * the installation directory itself.
-                 */
-                wchar_t fn[1000];
-                GetModuleFileNameW (NULL, fn, G_N_ELEMENTS (fn));
-                runtime_prefix = g_utf16_to_utf8 (fn, -1, NULL, NULL, NULL);
-                slash = strrchr (runtime_prefix, '\\');
-                *slash = '\0';
-                slash = strrchr (runtime_prefix, '\\');
-                /* If running from some weird location, or from the
-                 * build directory (either in the .libs folder where
-                 * libtool places the real executable when using a
-                 * wrapper, or directly from the cdk-pixbuf folder),
-                 * use the compile-time libdir.
-                 */
-                if (slash == NULL ||
-                    g_ascii_strcasecmp (slash + 1, ".libs") == 0 ||
-                    g_ascii_strcasecmp (slash + 1, "cdk-pixbuf") == 0) {
-                        libdir = NULL;
-                }
-                else {
-                        if (slash != NULL && g_ascii_strcasecmp (slash + 1, "bin") == 0) {
-                                *slash = '\0';
-                        }
-
-                        libdir = g_build_filename (runtime_prefix,
-                                                   pixbuf_libdir + strlen (pixbuf_prefix) + 1,
-                                                   NULL);
-                }
-        }
-        else {
-                libdir = NULL;
-        }
-
-        g_free (pixbuf_prefix);
-
-        if (libdir != NULL) {
-                g_free (pixbuf_libdir);
-                pixbuf_libdir = libdir;
-        }
-#endif
 
 	/* This call is necessary to ensure we actually link against libgobject;
 	 * otherwise it may be stripped if -Wl,--as-needed is in use.
@@ -423,15 +326,6 @@ int main (int argc, char **argv)
                 GList *l, *modules;
 
                 moduledir = g_strdup (g_getenv ("CDK_PIXBUF_MODULEDIR"));
-#ifdef G_OS_WIN32
-                if (moduledir != NULL && *moduledir != '\0') {
-                        gchar *path;
-
-                        path = g_locale_to_utf8 (moduledir, -1, NULL, NULL, NULL);
-                        g_free (moduledir);
-                        moduledir = path;
-                }
-#endif
                 if (moduledir == NULL || *moduledir == '\0') {
                         g_free (moduledir);
                         moduledir = g_strdup (pixbuf_libdir);
@@ -468,10 +362,6 @@ int main (int argc, char **argv)
 
                 for (i = first_file; i < argc; i++) {
                         char *infilename = argv[i];
-#ifdef G_OS_WIN32
-                        infilename = g_locale_to_utf8 (infilename,
-                                                       -1, NULL, NULL, NULL);
-#endif
                         query_module (contents, cwd, infilename);
                 }
                 g_free (cwd);

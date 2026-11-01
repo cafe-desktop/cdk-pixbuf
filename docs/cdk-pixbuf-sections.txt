@@ -168,9 +168,6 @@ cdk_pixbuf_new_from_stream_finish
 cdk_pixbuf_new_from_stream_at_scale
 cdk_pixbuf_new_from_stream_at_scale_async
 <SUBSECTION Private>
-cdk_pixbuf_new_from_file_at_scale_utf8
-cdk_pixbuf_new_from_file_at_size_utf8
-cdk_pixbuf_new_from_file_utf8
 </SECTION>
 
 <SECTION>
@@ -188,7 +185,6 @@ cdk_pixbuf_save_to_stream_async
 cdk_pixbuf_save_to_streamv_async
 cdk_pixbuf_save_to_stream_finish
 <SUBSECTION Private>
-cdk_pixbuf_savev_utf8
 </SECTION>
 
 <SECTION>
@@ -284,7 +280,6 @@ cdk_pixbuf_scaled_anim_get_type
 cdk_pixbuf_scaled_anim_iter_get_type
 CdkPixbufScaledAnimClass
 CdkPixbufScaledAnim
-cdk_pixbuf_animation_new_from_file_utf8
 </SECTION>
 
 <SECTION>

@@ -90,11 +90,7 @@ main (int   argc,
 	  return 1;
 	}
       
-#ifdef G_OS_WIN32
-      infilename = g_locale_to_utf8 (argv[1], -1, NULL, NULL, NULL);
-#else
       infilename = argv[1];
-#endif
 
       pixbuf = cdk_pixbuf_new_from_file (infilename, &error);
       if (!pixbuf)
@@ -117,11 +113,7 @@ main (int   argc,
 
       while (j--)
 	{
-#ifdef G_OS_WIN32
-	  infilename = g_locale_to_utf8 (*p, -1, NULL, NULL, NULL);
-#else
 	  infilename = *p;
-#endif
 
 	  if (!toggle)
 	    {

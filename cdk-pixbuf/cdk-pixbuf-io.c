@@ -38,11 +38,6 @@
 
 #include <glib/gstdio.h>
 
-#ifdef G_OS_WIN32
-#define STRICT
-#include <windows.h>
-#undef STRICT
-#endif
 #ifdef OS_DARWIN
 #include <mach-o/dyld.h>
 #endif
@@ -184,28 +179,7 @@ get_file_formats (void)
         return file_formats;
 }
 
-#ifdef CDK_PIXBUF_RELOCATABLE // implies that cdk-pixbuf is built as a dll on windows
-
-#ifdef G_OS_WIN32
-
-/* DllMain function needed to tuck away the cdk-pixbuf DLL handle */
-
-static HMODULE cdk_pixbuf_dll;
-
-BOOL WINAPI
-DllMain (HINSTANCE hinstDLL,
-         DWORD     fdwReason,
-         LPVOID    lpvReserved)
-{
-        switch (fdwReason) {
-        case DLL_PROCESS_ATTACH:
-                cdk_pixbuf_dll = (HMODULE) hinstDLL;
-                break;
-        }
-
-  return TRUE;
-}
-#endif
+#ifdef CDK_PIXBUF_RELOCATABLE
 
 gchar *
 cdk_pixbuf_get_toplevel (void)
@@ -213,9 +187,7 @@ cdk_pixbuf_get_toplevel (void)
   static gchar *toplevel = NULL;
 
   if (toplevel == NULL) {
-#if defined(G_OS_WIN32)
-    toplevel = g_win32_get_package_installation_directory_of_module (cdk_pixbuf_dll);
-#elif defined(OS_DARWIN)
+#if defined(OS_DARWIN)
     char pathbuf[PATH_MAX + 1];
     uint32_t  bufsize = sizeof(pathbuf);
     gchar *bin_dir;
@@ -645,22 +617,6 @@ cdk_pixbuf_io_init_builtin (void)
 #ifdef INCLUDE_qtif
         load_one_builtin_module (qtif);
 #endif
-#ifdef INCLUDE_gdiplus
-        /* We don't bother having the GDI+ loaders individually selectable
-         * for building in or not.
-         */
-        load_one_builtin_module (ico);
-        load_one_builtin_module (wmf);
-        load_one_builtin_module (emf);
-        load_one_builtin_module (bmp);
-        load_one_builtin_module (gif);
-        load_one_builtin_module (jpeg);
-        load_one_builtin_module (tiff);
-#endif
-#ifdef INCLUDE_gdip_png
-        /* Except the gdip-png loader which normally isn't built at all even */
-        load_one_builtin_module (png);
-#endif
 #ifdef INCLUDE_glycin
         load_one_builtin_module (avif);
         load_one_builtin_module (bmp);
@@ -719,14 +675,6 @@ module (xbm);
 module (tga);
 module (icns);
 module (qtif);
-module (gdip_ico);
-module (gdip_wmf);
-module (gdip_emf);
-module (gdip_bmp);
-module (gdip_gif);
-module (gdip_jpeg);
-module (gdip_png);
-module (gdip_tiff);
 
 module (glycin_avif);
 module (glycin_bmp);
@@ -770,18 +718,6 @@ cdk_pixbuf_load_module_unlocked (CdkPixbufModule *image_module,
                 fill_vtable = _cdk_pixbuf__##id##_fill_vtable;  \
         }
 
-#ifdef INCLUDE_gdiplus
-        try_module (ico,gdip_ico);
-        try_module (wmf,gdip_wmf);
-        try_module (emf,gdip_emf);
-        try_module (bmp,gdip_bmp);
-        try_module (gif,gdip_gif);
-        try_module (jpeg,gdip_jpeg);
-        try_module (tiff,gdip_tiff);
-#endif
-#ifdef INCLUDE_gdip_png
-        try_module (png,gdip_png);
-#endif
 #ifdef INCLUDE_glycin
         try_module (avif,    glycin_avif);
         try_module (bmp,     glycin_bmp);
@@ -1249,30 +1185,6 @@ cdk_pixbuf_new_from_file (const char *filename,
         return pixbuf;
 }
 
-#ifdef G_OS_WIN32
-
-/**
- * cdk_pixbuf_new_from_file_utf8: (constructor)
- * @filename: (type filename): Name of file to load, in the GLib file name encoding
- * @error: Return location for an error
- *
- * Same as cdk_pixbuf_new_from_file()
- *
- * Returns: (nullable): A newly-created pixbuf with a reference count of 1,
- * or `NULL` if any of several error conditions occurred:  the file could not be opened,
- * there was no loader for the file's format, there was not enough memory to
- * allocate the image buffer, or the image file contained invalid data.
- **/
-CdkPixbuf *
-cdk_pixbuf_new_from_file_utf8 (const char *filename,
-                                GError    **error)
-{
-    return cdk_pixbuf_new_from_file (filename, error);
-}
-
-#endif
-
-
 /**
  * cdk_pixbuf_new_from_file_at_size: (constructor)
  * @filename: (type filename): Name of file to load, in the GLib file
@@ -1314,36 +1226,6 @@ cdk_pixbuf_new_from_file_at_size (const char *filename,
                                                   width, height, 
                                                   TRUE, error);
 }
-
-#ifdef G_OS_WIN32
-
-/**
- * cdk_pixbuf_new_from_file_at_size_utf8: (constructor)
- * @filename: (type filename): Name of file to load, in the GLib file name encoding
- * @width: The width the image should have or -1 to not constrain the width
- * @height: The height the image should have or -1 to not constrain the height
- * @error: Return location for an error
- *
- * Same as cdk_pixbuf_new_from_file_at_size()
- *
- * Returns: (nullable): A newly-created pixbuf with a reference count of 1, or
- * `NULL` if any of several error conditions occurred:  the file could not
- * be opened, there was no loader for the file's format, there was not
- * enough memory to allocate the image buffer, or the image file contained
- * invalid data.
- *
- * Since: 2.4
- **/
-CdkPixbuf *
-cdk_pixbuf_new_from_file_at_size_utf8 (const char *filename,
-                                       int         width,
-                                       int         height,
-                                       GError    **error)
-{
-    return cdk_pixbuf_new_from_file_at_size (filename, width, height, error);
-}
-
-#endif
 
 typedef struct {
         gint width;
@@ -1529,38 +1411,6 @@ cdk_pixbuf_new_from_file_at_scale (const char *filename,
 
         return pixbuf;
 }
-
-#ifdef G_OS_WIN32
-
-/**
- * cdk_pixbuf_new_from_file_at_scale_utf8: (constructor)
- * @filename: (type filename): Name of file to load, in the GLib file name encoding
- * @width: The width the image should have or -1 to not constrain the width
- * @height: The height the image should have or -1 to not constrain the height
- * @preserve_aspect_ratio: `TRUE` to preserve the image's aspect ratio
- * @error: Return location for an error
- *
- * Same as cdk_pixbuf_new_from_file_at_scale().
- *
- * Returns: (nullable): A newly-created pixbuf with a reference count of 1,
- * or `NULL` if any of several error conditions occurred:  the file could not be opened,
- * there was no loader for the file's format, there was not enough memory to
- * allocate the image buffer, or the image file contained invalid data.
- *
- * Since: 2.6
- **/
-CdkPixbuf *
-cdk_pixbuf_new_from_file_at_scale_utf8 (const char *filename,
-                                        int         width,
-                                        int         height,
-                                        gboolean    preserve_aspect_ratio,
-                                        GError    **error)
-{
-    return cdk_pixbuf_new_from_file_at_scale (filename, width, height,
-                                              preserve_aspect_ratio, error);
-}
-#endif
-
 
 static CdkPixbuf *
 load_from_stream (CdkPixbufLoader  *loader,
@@ -2680,35 +2530,6 @@ cdk_pixbuf_savev (CdkPixbuf  *pixbuf,
        
        return TRUE;
 }
-
-#ifdef G_OS_WIN32
-
-/**
- * cdk_pixbuf_savev_utf8:
- * @pixbuf: a `CdkPixbuf`.
- * @filename: name of file to save.
- * @type: name of file format.
- * @option_keys: (array zero-terminated=1) (element-type utf8) (nullable): name of options to set
- * @option_values: (array zero-terminated=1) (element-type utf8) (nullable): values for named options
- * @error: (allow-none): return location for error, or `NULL`
- *
- * Same as cdk_pixbuf_savev()
- *
- * Returns: whether an error was set
- **/
-gboolean
-cdk_pixbuf_savev_utf8 (CdkPixbuf  *pixbuf,
-                       const char *filename,
-                       const char *type,
-                       char      **option_keys,
-                       char      **option_values,
-                       GError    **error)
-{
-    return cdk_pixbuf_savev (pixbuf, filename, type, option_keys,
-                             option_values, error);
-}
-
-#endif
 
 /**
  * cdk_pixbuf_save_to_callback:

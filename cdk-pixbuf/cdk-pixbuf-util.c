@@ -360,19 +360,7 @@ get_localedir (void)
     
     temp = g_build_filename (cdk_pixbuf_get_toplevel (), "share/locale", NULL);
 
-#ifdef G_OS_WIN32
-    {
-      gchar *retval;
-      /* The localedir is passed to bindtextdomain() which isn't
-      * UTF-8-aware.
-      */
-      retval = g_win32_locale_filename_from_utf8 (temp);
-      g_free (temp);
-      return retval;
-    }
-#else
     return temp;
-#endif
 }
 
 #undef CDK_PIXBUF_LOCALEDIR

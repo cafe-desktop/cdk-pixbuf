@@ -135,4 +135,4 @@ void _cdk_pixbuf_init_gettext (void);
 
 gchar * cdk_pixbuf_get_toplevel (void);
 
-#endif /* G_OS_WIN32 */
+#endif /* CDK_PIXBUF_RELOCATABLE */

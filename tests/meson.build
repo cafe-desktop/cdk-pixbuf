@@ -1,10 +1,6 @@
 # Resources contain PNG and BMP files, so we need these two loaders
 # enabled in order to build them
-# FIXME: On Windows glib-compile-resources will fail to execute
-# cdk-pixbuf-pixdata from build directory because it needs all DLL locations in
-# $PATH. Ideally we should use gnome.compile_resources() and let Meson deal with
-# this problem: See https://github.com/mesonbuild/meson/issues/8266.
-if (enabled_loaders.contains('png') or enabled_loaders.contains('glycin')) and host_system != 'windows'
+if enabled_loaders.contains('png') or enabled_loaders.contains('glycin')
   # Resources; we cannot use gnome.compile_resources() here, because we need to
   # override the environment in order to use the utilities we just built instead
   # of the system ones

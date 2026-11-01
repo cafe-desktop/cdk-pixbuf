@@ -163,11 +163,7 @@ main (int argc, char **argv)
         usage ();
     }
 
-#ifdef G_OS_WIN32
-  outfilename = g_locale_to_utf8 (argv[i], -1, NULL, NULL, NULL)
-#else
   outfilename = argv[i];
-#endif
 
   outfile = g_fopen (outfilename, "w");
   if (outfile == NULL)
@@ -196,11 +192,7 @@ main (int argc, char **argv)
       g_assert ((i + 1) < argc);
 
       error = NULL;
-#ifdef G_OS_WIN32
-      infilename = g_locale_to_utf8 (argv[i+1], -1, NULL, NULL, &error);
-#else
       infilename = argv[i+1];
-#endif
       if (infilename)
 	pixbuf = cdk_pixbuf_new_from_file (infilename, &error);
 

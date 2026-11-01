@@ -3,15 +3,15 @@ option('png',
        type: 'feature',
        value: 'enabled')
 option('tiff',
-       description: 'Enable TIFF loader (requires libtiff), disabled on Windows if "native_windows_loaders" is used',
+       description: 'Enable TIFF loader (requires libtiff)',
        type: 'feature',
        value: 'enabled')
 option('jpeg',
-       description: 'Enable JPEG loader (requires libjpeg), disabled on Windows if "native_windows_loaders" is used',
+       description: 'Enable JPEG loader (requires libjpeg)',
        type: 'feature',
        value: 'enabled')
 option('gif',
-       description: 'Enable GIF loader, disabled on Windows if "native_windows_loaders" is used',
+       description: 'Enable GIF loader',
        type: 'feature',
        value: 'enabled')
 option('glycin',
@@ -25,7 +25,7 @@ option('others',
 option('builtin_loaders',
        description: 'Comma-separated list of loaders to build into cdk-pixbuf',
        type: 'array',
-       choices: ['default', 'all', 'none', 'windows', 'png', 'bmp', 'gif', 'ico', 'ani', 'jpeg', 'pnm', 'tiff', 'xpm', 'xbm', 'tga', 'icns', 'qtif', 'glycin', 'svg'],
+       choices: ['default', 'all', 'none', 'png', 'bmp', 'gif', 'ico', 'ani', 'jpeg', 'pnm', 'tiff', 'xpm', 'xbm', 'tga', 'icns', 'qtif', 'glycin', 'svg'],
        value: ['none'])
 option('svg',
        description: 'Enable SVG loader (requires librsvg-2.0)',
@@ -55,10 +55,6 @@ option('relocatable',
        description: 'Whether to enable application bundle relocation support',
        type: 'boolean',
        value: false)
-option('native_windows_loaders',
-       description: 'Use Windows system components to handle BMP, EMF, GIF, ICO, JPEG, TIFF and WMF images, overriding jpeg and tiff.  To build this into cdk-pixbuf, pass in windows" with the other loaders to build in or use "all" with the builtin_loaders option',
-       type: 'boolean',
-       value: false)
 option('tests',
        description: 'Build the test suite',
        type: 'boolean',
@@ -68,7 +64,7 @@ option('installed_tests',
        type: 'boolean',
        value: true)
 option('gio_sniffing',
-       description: 'Perform file type detection using GIO (Unused on MacOS and Windows)',
+       description: 'Perform file type detection using GIO (Unused on MacOS)',
        type: 'boolean',
        value: true)
 option('thumbnailer',

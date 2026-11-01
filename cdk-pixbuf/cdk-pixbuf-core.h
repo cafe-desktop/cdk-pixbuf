@@ -225,26 +225,6 @@ CdkPixbuf *cdk_pixbuf_new_subpixbuf (CdkPixbuf *src_pixbuf,
 
 /* Simple loading */
 
-#ifdef G_OS_WIN32
-/* In previous versions these _utf8 variants where exported and linked to
- * by default. Export them here for ABI (and gi API) compat.
- */
-
-CDK_PIXBUF_AVAILABLE_IN_ALL
-CdkPixbuf *cdk_pixbuf_new_from_file_utf8 (const char *filename,
-                                          GError    **error);
-CDK_PIXBUF_AVAILABLE_IN_2_4
-CdkPixbuf *cdk_pixbuf_new_from_file_at_size_utf8 (const char *filename,
-                                                  int         width,
-                                                  int         height,
-                                                  GError    **error);
-CDK_PIXBUF_AVAILABLE_IN_2_6
-CdkPixbuf *cdk_pixbuf_new_from_file_at_scale_utf8 (const char *filename,
-                                                   int         width,
-                                                   int         height,
-                                                   gboolean    preserve_aspect_ratio,
-                                                   GError    **error);
-#endif
 
 CDK_PIXBUF_AVAILABLE_IN_ALL
 CdkPixbuf *cdk_pixbuf_new_from_file (const char *filename,
@@ -303,12 +283,6 @@ void       cdk_pixbuf_fill              (CdkPixbuf    *pixbuf,
 
 /* Saving */
 
-#ifndef __GTK_DOC_IGNORE__
-#ifdef G_OS_WIN32
-/* DLL ABI stability hack. */
-#define cdk_pixbuf_save cdk_pixbuf_save_utf8
-#endif
-#endif
 
 CDK_PIXBUF_AVAILABLE_IN_ALL
 gboolean cdk_pixbuf_save           (CdkPixbuf  *pixbuf, 
@@ -325,15 +299,6 @@ gboolean cdk_pixbuf_savev          (CdkPixbuf  *pixbuf,
                                     char      **option_values,
                                     GError    **error);
 
-#ifdef G_OS_WIN32
-CDK_PIXBUF_AVAILABLE_IN_ALL
-gboolean cdk_pixbuf_savev_utf8     (CdkPixbuf  *pixbuf,
-                                    const char *filename,
-                                    const char *type,
-                                    char      **option_keys,
-                                    char      **option_values,
-                                    GError    **error);
-#endif
 
 /* Saving to a callback function */
 

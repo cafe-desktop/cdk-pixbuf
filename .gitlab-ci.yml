@@ -320,23 +320,6 @@ macos-build:
       - "${CI_PROJECT_DIR}/_build/meson-logs"
   allow_failure: true
 
-msys2-mingw64-build:
-  stage: build
-  needs: []
-  tags:
-    - win32-ps
-  variables:
-    MSYSTEM: "MINGW64"
-    CHERE_INVOKING: "yes"
-  script:
-    - C:\msys64\usr\bin\pacman --noconfirm -Syyuu
-    - C:\msys64\usr\bin\bash -lc "bash -x ./.gitlab/ci/test-msys2.sh"
-  artifacts:
-    name: "cdk-pixbuf-${env:CI_JOB_NAME}-${env:CI_COMMIT_REF_NAME}"
-    when: always
-    paths:
-      - _build/meson-logs
-
 reference:
   extends:
     - .build-fedora-default
