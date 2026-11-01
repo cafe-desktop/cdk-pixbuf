@@ -4,7 +4,6 @@
 
 #include "test-common.h"
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 
 /*
  * Reads count_bytes from the channel and write them to the loader.

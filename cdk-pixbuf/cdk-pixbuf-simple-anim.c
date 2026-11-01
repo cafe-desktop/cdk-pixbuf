@@ -32,7 +32,6 @@
 #include "cdk-pixbuf-private.h"
 #include "cdk-pixbuf-simple-anim.h"
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 
 struct _CdkPixbufSimpleAnimClass
 {

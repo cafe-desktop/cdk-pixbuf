@@ -324,14 +324,12 @@ cdk_pixbuf_loader_prepare (CdkPixbuf          *pixbuf,
         gint width, height;
         g_return_if_fail (pixbuf != NULL);
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 
         width = anim ? cdk_pixbuf_animation_get_width (anim) :
                 cdk_pixbuf_get_width (pixbuf);
         height = anim ? cdk_pixbuf_animation_get_height (anim) :
                 cdk_pixbuf_get_height (pixbuf);
 
-G_GNUC_END_IGNORE_DEPRECATIONS
 
         if (!priv->size_fixed) 
                 {
@@ -365,12 +363,9 @@ G_GNUC_END_IGNORE_DEPRECATIONS
                         g_free (original_height_str);
                 }
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
                 anim = cdk_pixbuf_non_anim_new (pixbuf);
-G_GNUC_END_IGNORE_DEPRECATIONS
         }
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 	if (priv->needs_scale && width != 0 && height != 0) {
 		priv->animation  = CDK_PIXBUF_ANIMATION (_cdk_pixbuf_scaled_anim_new (anim,
                                          (double) priv->width / width,
@@ -380,7 +375,6 @@ G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 	}
 	else
         	priv->animation = anim;
-G_GNUC_END_IGNORE_DEPRECATIONS
   
         if (!priv->needs_scale)
                 g_signal_emit (loader, pixbuf_loader_signals[AREA_PREPARED], 0);
@@ -396,7 +390,6 @@ cdk_pixbuf_loader_update (CdkPixbuf *pixbuf,
 {
         CdkPixbufLoaderPrivate *priv = CDK_PIXBUF_LOADER (loader)->priv;
   
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
         if (!priv->needs_scale)
                 g_signal_emit (loader,
                                pixbuf_loader_signals[AREA_UPDATED],
@@ -405,7 +398,6 @@ G_GNUC_BEGIN_IGNORE_DEPRECATIONS
                                /* sanity check in here.  Defend against an errant loader */
                                MIN (width, cdk_pixbuf_animation_get_width (priv->animation)),
                                MIN (height, cdk_pixbuf_animation_get_height (priv->animation)));
-G_GNUC_END_IGNORE_DEPRECATIONS
 }
 
 /* Defense against broken loaders; DO NOT take this as a GError example! */
@@ -776,12 +768,10 @@ cdk_pixbuf_loader_get_pixbuf (CdkPixbufLoader *loader)
   
         priv = loader->priv;
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
         if (priv->animation)
                 return cdk_pixbuf_animation_get_static_image (priv->animation);
         else
                 return NULL;
-G_GNUC_END_IGNORE_DEPRECATIONS
 }
 
 /**

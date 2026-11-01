@@ -27,7 +27,6 @@
 #include "io-gif-animation.h"
 #include "lzw.h"
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 
 static void cdk_pixbuf_gif_anim_finalize   (GObject        *object);
 

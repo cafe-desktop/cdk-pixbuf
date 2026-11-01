@@ -82,7 +82,6 @@ typedef struct _CdkPixbufAniAnimIterClass CdkPixbufAniAnimIterClass;
 #define CDK_IS_PIXBUF_ANI_ANIM_ITER_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), CDK_TYPE_PIXBUF_ANI_ANIM_ITER))
 #define CDK_PIXBUF_ANI_ANIM_ITER_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), CDK_TYPE_PIXBUF_ANI_ANIM_ITER, CdkPixbufAniAnimIterClass))
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 struct _CdkPixbufAniAnimIter {
         CdkPixbufAnimationIter parent_instance;
         
@@ -101,7 +100,6 @@ struct _CdkPixbufAniAnimIter {
            begin of the current frame */
         gint                elapsed;
 };
-G_GNUC_END_IGNORE_DEPRECATIONS
 
 struct _CdkPixbufAniAnimIterClass {
         CdkPixbufAnimationIterClass parent_class;

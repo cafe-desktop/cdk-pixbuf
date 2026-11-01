@@ -29,7 +29,6 @@
 
 #include <glib/gstdio.h>
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 
 /**
  * CdkPixbufAnimation:

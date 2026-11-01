@@ -25,7 +25,6 @@
 #include "test-common.h"
 #include <string.h>
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 static void
 test_pixdata_deserialize (gconstpointer data)
 {
@@ -94,7 +93,6 @@ test_pixdata_success (void)
   g_object_unref (pixbuf);
   g_object_unref (ref);
 }
-G_GNUC_END_IGNORE_DEPRECATIONS
 
 static void
 test_pixdata (void)

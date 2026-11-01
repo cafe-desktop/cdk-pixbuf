@@ -78,10 +78,8 @@ main (int   argc,
       return 1;
     }
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
   free_me = cdk_pixdata_from_pixbuf (&pixdata, pixbuf, use_rle);
   data = cdk_pixdata_serialize (&pixdata, &data_len);
-G_GNUC_END_IGNORE_DEPRECATIONS
   if (data == NULL)
     {
       g_printerr ("failed to serialize \"%s\"", argv[1]);

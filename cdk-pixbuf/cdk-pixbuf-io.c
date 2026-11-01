@@ -42,7 +42,6 @@
 #include <mach-o/dyld.h>
 #endif
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 
 /**
  * CdkPixbufModule:
@@ -1611,7 +1610,6 @@ _cdk_pixbuf_new_from_resource_try_pixdata (const char *resource_path)
 	gsize data_size;
 	GBytes *bytes;
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 	/* We specialize CdkPixdata files, making these a reference to the
 	 * compiled-in resource data, whether uncompressed and mmap'ed, or
 	 * compressed, and uncompressed on-the-fly.
@@ -1641,7 +1639,6 @@ G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 			g_bytes_unref (bytes);
 		}
 	}
-G_GNUC_END_IGNORE_DEPRECATIONS
 
         return NULL;
 }

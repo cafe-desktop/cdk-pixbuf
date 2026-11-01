@@ -26,7 +26,6 @@
 #include "cdk-pixbuf-io.h"
 #include "cdk-pixbuf-scaled-anim.h"
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 
 struct _CdkPixbufScaledAnimClass
 {

@@ -23,7 +23,6 @@
 #include <errno.h>
 #include "io-ani-animation.h"
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 
 static void cdk_pixbuf_ani_anim_finalize   (GObject        *object);
 

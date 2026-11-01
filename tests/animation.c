@@ -3,7 +3,6 @@
 
 #include "test-common.h"
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 
 static void
 test_animation (const gchar *filename)
