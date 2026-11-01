@@ -181,11 +181,11 @@ if host_machine.system() == 'darwin'
   cdk_pixbuf_conf.set('OS_DARWIN', 1)
 endif
 
-# On non-macOS/android systems we always required shared-mime-info and GIO
+# On non-macOS systems we always required shared-mime-info and GIO
 # shared_mime_dep = []
 shared_mime_dep = []
 use_gio_mime = false
-if get_option('gio_sniffing') and host_system not in ['darwin', 'android']
+if get_option('gio_sniffing') and host_system not in ['darwin']
   shared_mime_dep += dependency('shared-mime-info')
   cdk_pixbuf_conf.set('CDK_PIXBUF_USE_GIO_MIME', 1)
   use_gio_mime = true
