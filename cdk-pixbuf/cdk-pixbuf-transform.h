@@ -56,9 +56,9 @@ G_BEGIN_DECLS
  *  Wolberg's "Digital Image Warping", and is formally defined as the
  *  hyperbolic-filter sampling the ideal hyperbolic-filter interpolated
  *  image (the filter is designed to be idempotent for 1:1 pixel mapping).
- *  **Deprecated**: this interpolation filter is deprecated, as in reality
- *  it has a lower quality than the @CDK_INTERP_BILINEAR filter
- *  (Since: 2.38)
+ *
+ *  **Note**: In reality this interpolation filter has a lower quality
+ *  than the @CDK_INTERP_BILINEAR filter.
  *
  * Interpolation modes for scaling functions.
  *

@@ -98,7 +98,7 @@ gboolean             cdk_pixbuf_loader_write_bytes   (CdkPixbufLoader *loader,
                                                       GError         **error);
 CDK_PIXBUF_AVAILABLE_IN_ALL
 CdkPixbuf *          cdk_pixbuf_loader_get_pixbuf    (CdkPixbufLoader *loader);
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 CdkPixbufAnimation * cdk_pixbuf_loader_get_animation (CdkPixbufLoader *loader);
 CDK_PIXBUF_AVAILABLE_IN_ALL
 gboolean             cdk_pixbuf_loader_close         (CdkPixbufLoader *loader,

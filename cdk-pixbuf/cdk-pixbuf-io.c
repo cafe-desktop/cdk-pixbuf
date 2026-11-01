@@ -2008,10 +2008,6 @@ cdk_pixbuf_get_file_info_finish (GAsyncResult         *async_result,
  * program's C source.
  *
  * Returns: (nullable): A newly-created pixbuf
- * 
- * Deprecated: 2.44: Use [ctor@CdkPixbuf.Pixbuf.new_from_stream] with
- *   a [class@Gio.MemoryInputStream], making sure to handle errors in
- *   case the XPM format loader is not available
  **/
 CdkPixbuf *
 cdk_pixbuf_new_from_xpm_data (const char **data)

@@ -418,8 +418,6 @@ cdk_pixbuf_finalize (GObject *object)
  * Adds a reference to a pixbuf.
  *
  * Return value: The same as the @pixbuf argument.
- *
- * Deprecated: 2.0: Use g_object_ref().
  **/
 CdkPixbuf *
 cdk_pixbuf_ref (CdkPixbuf *pixbuf)
@@ -432,8 +430,6 @@ cdk_pixbuf_ref (CdkPixbuf *pixbuf)
  * @pixbuf: A pixbuf.
  *
  * Removes a reference from a pixbuf.
- *
- * Deprecated: 2.0: Use g_object_unref().
  **/
 void
 cdk_pixbuf_unref (CdkPixbuf *pixbuf)

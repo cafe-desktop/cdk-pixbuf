@@ -57,10 +57,6 @@ G_BEGIN_DECLS
  * In the future, when the X Window System gets an alpha channel extension,
  * it will be possible to do full alpha compositing onto arbitrary drawables.
  * For now both cases fall back to a bilevel clipping mask.
- *
- * Deprecated: 2.42: There is no user of CdkPixbufAlphaMode in CdkPixbuf,
- *   and the Xlib utility functions have been split out to their own
- *   library, cdk-pixbuf-xlib
  */
 typedef enum
 {
@@ -161,9 +157,9 @@ GType cdk_pixbuf_get_type (void) G_GNUC_CONST;
 
 /* Reference counting */
 
-CDK_PIXBUF_DEPRECATED_IN_2_0_FOR(g_object_ref)
+CDK_PIXBUF_AVAILABLE_IN_ALL
 CdkPixbuf *cdk_pixbuf_ref      (CdkPixbuf *pixbuf);
-CDK_PIXBUF_DEPRECATED_IN_2_0_FOR(g_object_unref)
+CDK_PIXBUF_AVAILABLE_IN_ALL
 void       cdk_pixbuf_unref    (CdkPixbuf *pixbuf);
 
 /* CdkPixbuf accessors */
@@ -268,10 +264,10 @@ CdkPixbuf *cdk_pixbuf_new_from_bytes (GBytes *data,
 				      int width, int height,
 				      int rowstride);
 
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 CdkPixbuf *cdk_pixbuf_new_from_xpm_data (const char **data);
 
-CDK_PIXBUF_DEPRECATED_IN_2_32
+CDK_PIXBUF_AVAILABLE_IN_ALL
 CdkPixbuf* cdk_pixbuf_new_from_inline	(gint          data_length,
 					 const guint8 *data,
 					 gboolean      copy_pixels,

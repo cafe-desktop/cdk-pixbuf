@@ -155,8 +155,6 @@ cdk_pixbuf_simple_anim_class_init (CdkPixbufSimpleAnimClass *klass)
          * Whether the animation should loop when it reaches the end.
          *
          * Since: 2.18
-         *
-         * Deprecated: 2.44: Use a different image loading library for animatable assets
          */
         g_object_class_install_property (object_class,
                                          PROP_LOOP,
@@ -422,8 +420,6 @@ on_currently_loading_frame (CdkPixbufAnimationIter *anim_iter)
  * Returns: a newly allocated #CdkPixbufSimpleAnim 
  *
  * Since: 2.8
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 CdkPixbufSimpleAnim *
 cdk_pixbuf_simple_anim_new (gint   width, 
@@ -450,8 +446,6 @@ cdk_pixbuf_simple_anim_new (gint   width,
  * was constructed.
  *
  * Since: 2.8
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 void
 cdk_pixbuf_simple_anim_add_frame (CdkPixbufSimpleAnim *animation,
@@ -520,8 +514,6 @@ cdk_pixbuf_simple_anim_set_property (GObject         *object,
  * Sets whether @animation should loop indefinitely when it reaches the end.
  *
  * Since: 2.18
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  **/
 void
 cdk_pixbuf_simple_anim_set_loop (CdkPixbufSimpleAnim *animation,
@@ -544,8 +536,6 @@ cdk_pixbuf_simple_anim_set_loop (CdkPixbufSimpleAnim *animation,
  * Returns: %TRUE if the animation loops forever, %FALSE otherwise
  *
  * Since: 2.18
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  **/
 gboolean
 cdk_pixbuf_simple_anim_get_loop (CdkPixbufSimpleAnim *animation)

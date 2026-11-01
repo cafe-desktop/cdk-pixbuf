@@ -44,10 +44,6 @@
  * can be used to convert image files into `CdkPixdata` structures suitable
  * for inclusion in C sources. To convert the `CdkPixdata` structures back
  * into a `CdkPixbuf`, use `cdk_pixbuf_from_pixdata()`.
- *
- * Deprecated: 2.32: `CdkPixdata` should not be used any more. `GResource`
- *   should be used to save the original compressed images inside the
- *   program's binary
  */
 
 #define APPEND g_string_append_printf
@@ -119,8 +115,6 @@ pixdata_get_length (const CdkPixdata *pixdata)
  * Return value: (array length=stream_length_p) (transfer full): A
  * newly-allocated string containing the serialized #CdkPixdata
  * structure.
- *
- * Deprecated: 2.32: Use #GResource instead.
  **/
 guint8* /* free result */
 cdk_pixdata_serialize (const CdkPixdata *pixdata,
@@ -217,8 +211,6 @@ get_uint32 (const guint8 *stream, guint *result)
  *
  * Return value: Upon successful deserialization `TRUE` is returned,
  * `FALSE` otherwise.
- *
- * Deprecated: 2.32: Use `GResource` instead.
  **/
 gboolean
 cdk_pixdata_deserialize (CdkPixdata   *pixdata,
@@ -348,8 +340,6 @@ free_buffer (guchar *pixels, gpointer data)
  * Returns: (nullable) (array) (element-type guint8): If `use_rle` is
  *   `TRUE`, a pointer to the newly-allocated memory for the run-length
  *   encoded pixel data, otherwise `NULL`.
- *
- * Deprecated: 2.32: Use #GResource instead.
  **/
 gpointer
 cdk_pixdata_from_pixbuf (CdkPixdata      *pixdata,
@@ -448,8 +438,6 @@ cdk_pixdata_from_pixbuf (CdkPixdata      *pixdata,
  * reused.
  *
  * Returns: (transfer full): a new pixbuf
- *
- * Deprecated: 2.32: Use `GResource` instead.
  **/
 CdkPixbuf*
 cdk_pixbuf_from_pixdata (const CdkPixdata *pixdata,
@@ -721,8 +709,6 @@ save_rle_decoder (GString     *gstring,
  *
  * Returns: (transfer full): a newly-allocated string buffer containing
  *   the C source form of `pixdata`.
- *
- * Deprecated: 2.32: Use #GResource instead.
  **/
 GString*
 cdk_pixdata_to_csource (CdkPixdata        *pixdata,
@@ -992,8 +978,6 @@ cdk_pixdata_to_csource (CdkPixdata        *pixdata,
  * addition.
  *
  * Return value: A newly-created pixbuf
- *
- * Deprecated: 2.32: Use `GResource` instead.
  **/
 CdkPixbuf*
 cdk_pixbuf_new_from_inline (gint          data_length,

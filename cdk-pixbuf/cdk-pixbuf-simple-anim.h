@@ -51,18 +51,18 @@ GType cdk_pixbuf_simple_anim_get_type (void) G_GNUC_CONST;
 CDK_PIXBUF_AVAILABLE_IN_ALL
 GType cdk_pixbuf_simple_anim_iter_get_type (void) G_GNUC_CONST;
 
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 CdkPixbufSimpleAnim *cdk_pixbuf_simple_anim_new           (gint   width, 
                                                            gint   height,
                                                            gfloat rate);
 
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 void                 cdk_pixbuf_simple_anim_add_frame     (CdkPixbufSimpleAnim *animation,
                                                            CdkPixbuf           *pixbuf);
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 void                 cdk_pixbuf_simple_anim_set_loop      (CdkPixbufSimpleAnim *animation,
                                                            gboolean             loop);
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 gboolean             cdk_pixbuf_simple_anim_get_loop      (CdkPixbufSimpleAnim *animation);
 
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (CdkPixbufSimpleAnim, g_object_unref)

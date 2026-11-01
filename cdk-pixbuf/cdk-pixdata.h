@@ -47,8 +47,6 @@ G_BEGIN_DECLS
  * An enumeration containing three sets of flags for a #CdkPixdata struct: 
  * one for the used colorspace, one for the width of the samples and one 
  * for the encoding of the pixel data.
- *
- * Deprecated: 2.32
  **/
 typedef enum
 {
@@ -83,25 +81,23 @@ struct _CdkPixdata
  * CDK_PIXDATA_HEADER_LENGTH:
  *
  * The length of a #CdkPixdata structure without the @pixel_data pointer.
- *
- * Deprecated: 2.32
  **/
 #define	CDK_PIXDATA_HEADER_LENGTH	(4 + 4 + 4 + 4 + 4 + 4)
 
 /* the returned stream is plain htonl of CdkPixdata members + pixel_data */
-CDK_PIXBUF_DEPRECATED_IN_2_32
+CDK_PIXBUF_AVAILABLE_IN_ALL
 guint8*		cdk_pixdata_serialize	(const CdkPixdata	*pixdata,
 					 guint			*stream_length_p);
-CDK_PIXBUF_DEPRECATED_IN_2_32
+CDK_PIXBUF_AVAILABLE_IN_ALL
 gboolean	cdk_pixdata_deserialize	(CdkPixdata		*pixdata,
 					 guint			 stream_length,
 					 const guint8		*stream,
 					 GError		       **error);
-CDK_PIXBUF_DEPRECATED_IN_2_32
+CDK_PIXBUF_AVAILABLE_IN_ALL
 gpointer	cdk_pixdata_from_pixbuf	(CdkPixdata		*pixdata,
 					 const CdkPixbuf	*pixbuf,
 					 gboolean		 use_rle);
-CDK_PIXBUF_DEPRECATED_IN_2_32
+CDK_PIXBUF_AVAILABLE_IN_ALL
 CdkPixbuf*	cdk_pixbuf_from_pixdata	(const CdkPixdata	*pixdata,
 					 gboolean		 copy_pixels,
 					 GError		       **error);
@@ -132,8 +128,6 @@ CdkPixbuf*	cdk_pixbuf_from_pixdata	(const CdkPixdata	*pixdata,
  * and @CDK_PIXDATA_DUMP_MACROS are mutually exclusive, as are
  * @CDK_PIXBUF_DUMP_GTYPES and @CDK_PIXBUF_DUMP_CTYPES. The remaining
  * elements are optional flags that can be freely added.
- *
- * Deprecated: 2.32
  **/
 typedef enum
 {
@@ -151,7 +145,7 @@ typedef enum
 } CdkPixdataDumpType;
   
 
-CDK_PIXBUF_DEPRECATED_IN_2_32
+CDK_PIXBUF_AVAILABLE_IN_ALL
 GString*	cdk_pixdata_to_csource	(CdkPixdata		*pixdata,
 					 const gchar		*name,
 					 CdkPixdataDumpType	 dump_type);

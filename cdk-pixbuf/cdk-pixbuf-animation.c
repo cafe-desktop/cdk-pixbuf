@@ -45,8 +45,6 @@
  * To display an animation you don't need to understand its
  * representation, however; you just ask `CdkPixbuf` what should
  * be displayed at a given point in time.
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 
 /**
@@ -54,8 +52,6 @@
  *
  * An opaque object representing an iterator which points to a
  * certain position in an animation.
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 
 typedef struct _CdkPixbufNonAnim CdkPixbufNonAnim;
@@ -161,8 +157,6 @@ noop_updated_notify (CdkPixbuf *pixbuf,
  * Possible errors are in the `CDK_PIXBUF_ERROR` and `G_FILE_ERROR` domains.
  *
  * Return value: (transfer full) (nullable): A newly-created animation
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 CdkPixbufAnimation *
 cdk_pixbuf_animation_new_from_file (const gchar  *filename,
@@ -347,8 +341,6 @@ fail_begin_load:
  * Return value: (transfer full) (nullable): A newly-created animation
  *
  * Since: 2.28
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 CdkPixbufAnimation *
 cdk_pixbuf_animation_new_from_stream (GInputStream  *stream,
@@ -441,8 +433,6 @@ animation_new_from_stream_thread (GTask        *task,
  * result of the operation.
  *
  * Since: 2.28
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  **/
 void
 cdk_pixbuf_animation_new_from_stream_async (GInputStream        *stream,
@@ -473,8 +463,6 @@ cdk_pixbuf_animation_new_from_stream_async (GInputStream        *stream,
  * Return value: (transfer full) (nullable): the newly created animation
  *
  * Since: 2.28
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  **/
 CdkPixbufAnimation *
 cdk_pixbuf_animation_new_from_stream_finish (GAsyncResult  *async_result,
@@ -502,8 +490,6 @@ cdk_pixbuf_animation_new_from_stream_finish (GAsyncResult  *async_result,
  * Return value: (transfer full) (nullable): A newly-created animation
  *
  * Since: 2.28
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 CdkPixbufAnimation *
 cdk_pixbuf_animation_new_from_resource (const gchar  *resource_path,
@@ -536,8 +522,6 @@ cdk_pixbuf_animation_new_from_resource (const gchar  *resource_path,
  * Adds a reference to an animation.
  *
  * Return value: The same as the @animation argument.
- *
- * Deprecated: 2.0: Use g_object_ref().
  */
 CdkPixbufAnimation *
 cdk_pixbuf_animation_ref (CdkPixbufAnimation *animation)
@@ -550,8 +534,6 @@ cdk_pixbuf_animation_ref (CdkPixbufAnimation *animation)
  * @animation: An animation.
  *
  * Removes a reference from an animation.
- *
- * Deprecated: 2.0: Use g_object_unref().
  */
 void
 cdk_pixbuf_animation_unref (CdkPixbufAnimation *animation)
@@ -571,8 +553,6 @@ cdk_pixbuf_animation_unref (CdkPixbufAnimation *animation)
  * the image.
  *
  * Return value: `TRUE` if the "animation" was really just an image
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 gboolean
 cdk_pixbuf_animation_is_static_image (CdkPixbufAnimation *animation)
@@ -599,8 +579,6 @@ cdk_pixbuf_animation_is_static_image (CdkPixbufAnimation *animation)
  * return `NULL`.
  *
  * Return value: (transfer none): unanimated image representing the animation
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 CdkPixbuf*
 cdk_pixbuf_animation_get_static_image (CdkPixbufAnimation *animation)
@@ -617,8 +595,6 @@ cdk_pixbuf_animation_get_static_image (CdkPixbufAnimation *animation)
  * Queries the width of the bounding box of a pixbuf animation.
  *
  * Return value: Width of the bounding box of the animation.
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 gint
 cdk_pixbuf_animation_get_width (CdkPixbufAnimation *animation)
@@ -641,8 +617,6 @@ cdk_pixbuf_animation_get_width (CdkPixbufAnimation *animation)
  * Queries the height of the bounding box of a pixbuf animation.
  *
  * Return value: Height of the bounding box of the animation.
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 gint
 cdk_pixbuf_animation_get_height (CdkPixbufAnimation *animation)
@@ -702,8 +676,6 @@ cdk_pixbuf_animation_get_height (CdkPixbufAnimation *animation)
  * A delay time of -1 is possible, indicating "infinite".
  *
  * Return value: (transfer full): an iterator to move over the animation
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 CdkPixbufAnimationIter*
 cdk_pixbuf_animation_get_iter (CdkPixbufAnimation *animation,
@@ -749,8 +721,6 @@ cdk_pixbuf_animation_iter_init (CdkPixbufAnimationIter *iter)
  * for GIF images is currently 20 milliseconds.
  *
  * Return value: delay time in milliseconds (thousandths of a second)
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 gint
 cdk_pixbuf_animation_iter_get_delay_time (CdkPixbufAnimationIter *iter)
@@ -782,8 +752,6 @@ cdk_pixbuf_animation_iter_get_delay_time (CdkPixbufAnimationIter *iter)
  * recycled as you advance the iterator.
  *
  * Return value: (transfer none): the pixbuf to be displayed
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 CdkPixbuf*
 cdk_pixbuf_animation_iter_get_pixbuf (CdkPixbufAnimationIter *iter)
@@ -806,8 +774,6 @@ cdk_pixbuf_animation_iter_get_pixbuf (CdkPixbufAnimationIter *iter)
  * you will need to redraw the screen for the updated area.
  *
  * Return value: `TRUE` if the frame we're on is partially loaded, or the last frame
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 gboolean
 cdk_pixbuf_animation_iter_on_currently_loading_frame (CdkPixbufAnimationIter *iter)
@@ -848,8 +814,6 @@ cdk_pixbuf_animation_iter_on_currently_loading_frame (CdkPixbufAnimationIter *it
  * and update the display with the new pixbuf.
  *
  * Returns: `TRUE` if the image may need updating
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 gboolean
 cdk_pixbuf_animation_iter_advance (CdkPixbufAnimationIter *iter,

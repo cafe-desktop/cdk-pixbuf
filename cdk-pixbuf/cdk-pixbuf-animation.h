@@ -53,52 +53,52 @@ CDK_PIXBUF_AVAILABLE_IN_ALL
 GType               cdk_pixbuf_animation_get_type        (void) G_GNUC_CONST;
 
 
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 CdkPixbufAnimation *cdk_pixbuf_animation_new_from_file   (const char         *filename,
                                                           GError            **error);
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 CdkPixbufAnimation *cdk_pixbuf_animation_new_from_stream (GInputStream       *stream,
                                                           GCancellable       *cancellable,
                                                           GError            **error);
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 void                cdk_pixbuf_animation_new_from_stream_async (GInputStream *stream,
                                                           GCancellable       *cancellable,
                                                           GAsyncReadyCallback callback,
                                                           gpointer            user_data);
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 CdkPixbufAnimation *cdk_pixbuf_animation_new_from_stream_finish (GAsyncResult*async_result,
                                                           GError            **error);
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 CdkPixbufAnimation *cdk_pixbuf_animation_new_from_resource(const char        *resource_path,
                                                           GError            **error);
 
-CDK_PIXBUF_DEPRECATED_IN_2_0_FOR(g_object_ref)
+CDK_PIXBUF_AVAILABLE_IN_ALL
 CdkPixbufAnimation *cdk_pixbuf_animation_ref             (CdkPixbufAnimation *animation);
-CDK_PIXBUF_DEPRECATED_IN_2_0_FOR(g_object_unref)
+CDK_PIXBUF_AVAILABLE_IN_ALL
 void                cdk_pixbuf_animation_unref           (CdkPixbufAnimation *animation);
 
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 int                 cdk_pixbuf_animation_get_width       (CdkPixbufAnimation *animation);
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 int                 cdk_pixbuf_animation_get_height      (CdkPixbufAnimation *animation);
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 gboolean            cdk_pixbuf_animation_is_static_image  (CdkPixbufAnimation *animation);
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 CdkPixbuf          *cdk_pixbuf_animation_get_static_image (CdkPixbufAnimation *animation);
 
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 CdkPixbufAnimationIter *cdk_pixbuf_animation_get_iter                        (CdkPixbufAnimation     *animation,
                                                                               const gint64           *start_time);
 
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 GType                   cdk_pixbuf_animation_iter_get_type                   (void) G_GNUC_CONST;
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 int                     cdk_pixbuf_animation_iter_get_delay_time             (CdkPixbufAnimationIter *iter);
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 CdkPixbuf              *cdk_pixbuf_animation_iter_get_pixbuf                 (CdkPixbufAnimationIter *iter);
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 gboolean                cdk_pixbuf_animation_iter_on_currently_loading_frame (CdkPixbufAnimationIter *iter);
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 gboolean                cdk_pixbuf_animation_iter_advance                    (CdkPixbufAnimationIter *iter,
                                                                               const gint64           *current_time);
 
@@ -118,8 +118,6 @@ gboolean                cdk_pixbuf_animation_iter_advance                    (Cd
  * Modules supporting animations must derive a type from 
  * #CdkPixbufAnimation, providing suitable implementations of the 
  * virtual functions.
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 typedef struct _CdkPixbufAnimationClass CdkPixbufAnimationClass;
 
@@ -168,8 +166,6 @@ struct _CdkPixbufAnimationClass {
  * Modules supporting animations must derive a type from 
  * #CdkPixbufAnimationIter, providing suitable implementations of the 
  * virtual functions.
- *
- * Deprecated: 2.44: Use a different image loading library for animatable assets
  */
 typedef struct _CdkPixbufAnimationIterClass CdkPixbufAnimationIterClass;
 
@@ -206,7 +202,7 @@ struct _CdkPixbufAnimationIterClass {
 
 CDK_PIXBUF_AVAILABLE_IN_ALL
 GType               cdk_pixbuf_non_anim_get_type (void) G_GNUC_CONST;
-CDK_PIXBUF_DEPRECATED_IN_2_44
+CDK_PIXBUF_AVAILABLE_IN_ALL
 CdkPixbufAnimation* cdk_pixbuf_non_anim_new (CdkPixbuf *pixbuf);
 
 #endif /* CDK_PIXBUF_ENABLE_BACKEND */
