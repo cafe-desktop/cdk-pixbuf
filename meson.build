@@ -231,21 +231,10 @@ cdk_pixbuf_conf.set('USE_GMODULE', build_modules)
 enabled_loaders = []
 loaders_deps = []
 
-glycin_opt = get_option('glycin').enable_auto_if(host_machine.system() == 'linux')
-if glycin_opt.disabled()
-  glycin_dep = disabler()
-else
-  glycin_dep = dependency('glycin-2', version: '>= 2.0.1', required: glycin_opt)
-endif
-
 # Check which loaders should be built into cdk-pixbuf
 builtin_loaders = get_option('builtin_loaders')
 if builtin_loaders.contains('default')
-  if glycin_dep.found()
-    builtin_loaders = ['glycin']
-  else
-    builtin_loaders = ['png','jpeg']
-  endif
+  builtin_loaders = ['png','jpeg']
 endif
 
 # If 'all' is specified for builtin_loaders, build all
@@ -257,7 +246,7 @@ elif builtin_loaders.contains('none')
   builtin_loaders = []
 endif
 
-png_opt = get_option('png').disable_auto_if(glycin_dep.found())
+png_opt = get_option('png')
 
 if not png_opt.disabled()
   png_dep = dependency('libpng', required: false)
@@ -279,12 +268,7 @@ if not png_opt.disabled()
   endif
 endif
 
-if glycin_dep.found()
-  enabled_loaders += 'glycin'
-  loaders_deps += [ glycin_dep ]
-endif
-
-gif_opt = get_option('gif').disable_auto_if(glycin_dep.found())
+gif_opt = get_option('gif')
 if not gif_opt.disabled()
   enabled_loaders += 'gif'
 endif
@@ -305,7 +289,7 @@ if not others_opt.disabled()
   ]
 endif
 
-jpeg_opt = get_option('jpeg').disable_auto_if(glycin_dep.found())
+jpeg_opt = get_option('jpeg')
 if not jpeg_opt.disabled()
   jpeg_dep = dependency('libjpeg', required: false)
 
@@ -335,7 +319,7 @@ if not jpeg_opt.disabled()
   endif
 endif
 
-tiff_opt = get_option('tiff').disable_auto_if(glycin_dep.found())
+tiff_opt = get_option('tiff')
 if not tiff_opt.disabled()
   # We currently don't have a fallback subproject, but this handles error
   # reporting if tiff_opt is enabled.
@@ -348,7 +332,7 @@ if not tiff_opt.disabled()
 endif
 
 # --- SVG Loader (Depends on system librsvg) ---
-svg_opt = get_option('svg').disable_auto_if(glycin_dep.found())
+svg_opt = get_option('svg')
 svg_dep = dependency('librsvg-2.0', version: '>= 2.60.0', required: svg_opt)
 
 if svg_dep.found()
@@ -389,7 +373,7 @@ if not meson.is_cross_build()
   if get_option('tests')
     subdir('tests')
   endif
-  thumbnailer_opt = get_option('thumbnailer').disable_auto_if(glycin_dep.found())
+  thumbnailer_opt = get_option('thumbnailer')
   if not thumbnailer_opt.disabled()
     subdir('thumbnailer')
   endif

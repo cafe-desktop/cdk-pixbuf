@@ -1,6 +1,6 @@
 # Resources contain PNG and BMP files, so we need these two loaders
 # enabled in order to build them
-if enabled_loaders.contains('png') or enabled_loaders.contains('glycin')
+if enabled_loaders.contains('png')
   # Resources; we cannot use gnome.compile_resources() here, because we need to
   # override the environment in order to use the utilities we just built instead
   # of the system ones
@@ -67,21 +67,19 @@ installed_tests = {
   },
   'pixbuf-fail': { 'suites': ['conform', 'slow'], },
   'pixbuf-icon-serialize': { 'suites': ['conform'], },
-  'pixbuf-randomly-modified': { 'suites': ['slow'], 'skip': enabled_loaders.contains('glycin') },
+  'pixbuf-randomly-modified': { 'suites': ['slow'] },
   'pixbuf-threads': { 'suites': ['io'], },
   'pixbuf-gif': {
     'suites': ['io'],
   },
   'pixbuf-icc': {
     'suites': ['io'],
-    'skip': enabled_loaders.contains('glycin'),
   },
   'pixbuf-jpeg': {
     'suites': ['format'],
   },
   'pixbuf-dpi': {
     'suites': ['io'],
-    'skip': enabled_loaders.contains('glycin'),
   },
   'pixbuf-pixdata': {
     'suites': ['format'],
@@ -101,7 +99,6 @@ installed_tests = {
   'pixbuf-scale-two-step': { 'suites': ['ops'], },
   'pixbuf-short-gif-write': {
     'suites': ['format'],
-    'skip': enabled_loaders.contains('glycin'),
   },
   'pixbuf-gif-circular-table': {
     'suites': ['format'],

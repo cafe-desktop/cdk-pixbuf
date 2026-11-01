@@ -617,28 +617,6 @@ cdk_pixbuf_io_init_builtin (void)
 #ifdef INCLUDE_qtif
         load_one_builtin_module (qtif);
 #endif
-#ifdef INCLUDE_glycin
-        load_one_builtin_module (avif);
-        load_one_builtin_module (bmp);
-        load_one_builtin_module (dds);
-        load_one_builtin_module (gif);
-        load_one_builtin_module (heic);
-        load_one_builtin_module (ico);
-        load_one_builtin_module (jpeg);
-        load_one_builtin_module (jxl);
-        load_one_builtin_module (openexr);
-        load_one_builtin_module (png);
-        load_one_builtin_module (pnm);
-        load_one_builtin_module (qoi);
-        load_one_builtin_module (raw);
-        load_one_builtin_module (svg);
-        load_one_builtin_module (tga);
-        load_one_builtin_module (tiff);
-        load_one_builtin_module (webp);
-        load_one_builtin_module (xbm);
-        load_one_builtin_module (xpm);
-#endif
-
 #undef load_one_builtin_module
 }
 
@@ -676,26 +654,6 @@ module (tga);
 module (icns);
 module (qtif);
 
-module (glycin_avif);
-module (glycin_bmp);
-module (glycin_dds);
-module (glycin_gif);
-module (glycin_heic);
-module (glycin_ico);
-module (glycin_jpeg);
-module (glycin_jxl);
-module (glycin_openexr);
-module (glycin_png);
-module (glycin_pnm);
-module (glycin_qoi);
-module (glycin_raw);
-module (glycin_svg);
-module (glycin_tga);
-module (glycin_tiff);
-module (glycin_webp);
-module (glycin_xbm);
-module (glycin_xpm);
-
 #undef module
 
 /* actually load the image handler - cdk_pixbuf_get_module only get a */
@@ -718,27 +676,6 @@ cdk_pixbuf_load_module_unlocked (CdkPixbufModule *image_module,
                 fill_vtable = _cdk_pixbuf__##id##_fill_vtable;  \
         }
 
-#ifdef INCLUDE_glycin
-        try_module (avif,    glycin_avif);
-        try_module (bmp,     glycin_bmp);
-        try_module (dds,     glycin_dds);
-        try_module (gif,     glycin_gif);
-        try_module (heic,    glycin_heic);
-        try_module (ico,     glycin_ico);
-        try_module (jpeg,    glycin_jpeg);
-        try_module (jxl,     glycin_jxl);
-        try_module (openexr, glycin_openexr);
-        try_module (png,     glycin_png);
-        try_module (pnm,     glycin_pnm);
-        try_module (qoi,     glycin_qoi);
-        try_module (raw,     glycin_raw);
-        try_module (svg,     glycin_svg);
-        try_module (tga,     glycin_tga);
-        try_module (tiff,    glycin_tiff);
-        try_module (webp,    glycin_webp);
-        try_module (xbm,     glycin_xbm);
-        try_module (xpm,     glycin_xpm);
-#endif
 #ifdef INCLUDE_png
         try_module (png,png);
 #endif

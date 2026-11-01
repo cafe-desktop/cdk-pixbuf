@@ -161,51 +161,6 @@ foreach name, loader: loaders
   endif
 endforeach
 
-if enabled_loaders.contains('glycin')
-  # List of formats supported by the glycin-based loader(s)
-  glycin_loader_formats = [
-    'avif',
-    'bmp',
-    'dds',
-    'gif',
-    'heic',
-    'ico',
-    'jpeg',
-    'jxl',
-    'openexr',
-    'png',
-    'pnm',
-    'qoi',
-    'raw',
-    'svg',
-    'tga',
-    'tiff',
-    'webp',
-    'xbm',
-    'xpm',
-  ]
-  glycin_base_loader_sources = [ 'io-glycin-utils.c' ]
-
-  # Build the glycin loaders as static modules, if requested
-  if builtin_loaders.contains('glycin') or builtin_all_loaders
-    cflag_for_included_loader = ['-DINCLUDE_glycin']
-    included_loaders_cflags += cflag_for_included_loader
-    glycin_loader_sources = glycin_base_loader_sources
-    foreach loader: glycin_loader_formats
-      glycin_loader_sources += 'io-glycin-@0@.c'.format(loader)
-    endforeach
-
-    mod = static_library('staticpixbufloader-glycin',
-                         glycin_loader_sources,
-                         cdkpixbuf_enum_h,
-                         dependencies: loaders_deps + cdk_pixbuf_deps,
-                         include_directories: [ root_inc, cdk_pixbuf_inc ],
-                         c_args: common_cflags + cdk_pixbuf_cflags + cflag_for_included_loader)
-
-    included_loaders_deps += declare_dependency(link_with: mod)
-  endif
-endif
-
 # The main cdk-pixbuf shared library
 cdkpixbuf = library('cdk_pixbuf-2.0',
                     sources: [
