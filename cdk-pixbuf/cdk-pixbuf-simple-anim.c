@@ -24,7 +24,6 @@
  */
 
 #include "config.h"
-#define GLIB_DISABLE_DEPRECATION_WARNINGS
 #include <glib.h>
 
 #define CDK_PIXBUF_C_COMPILATION
